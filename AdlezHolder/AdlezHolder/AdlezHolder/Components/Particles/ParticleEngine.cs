@@ -76,7 +76,7 @@ namespace AdlezHolder
             {
                 p = new Particle(color, rand.Next(MIN_SIZE, MAX_SIZE),
                     new Vector2(rand.Next(0, Game1.DisplayWidth), -5),
-                    new Vector2(rand.Next(-MAX_VELO, MAX_VELO), rand.Next(MIN_VELO, MAX_VELO)));
+                    new Vector2((float)rand.NextDouble(), rand.Next(MIN_VELO, MAX_VELO)));
             }
             else if (yVelo)
             {
@@ -104,7 +104,7 @@ namespace AdlezHolder
             {
                 p = new Particle(new Color(r, g, b), rand.Next(MIN_SIZE, MAX_SIZE),
                     new Vector2(rand.Next(0, Game1.DisplayWidth), -5),
-                    new Vector2(rand.Next(-MAX_VELO, MAX_VELO), rand.Next(MIN_VELO, MAX_VELO)));
+                    new Vector2((float)rand.NextDouble(), rand.Next(MIN_VELO, MAX_VELO)));
             }
             else if (yVelo)
             {
