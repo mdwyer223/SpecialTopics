@@ -26,7 +26,7 @@ namespace AdlezHolder
             backRec = new Rectangle(Game1.DisplayWidth - (int)(Game1.DisplayWidth * 1.05), Game1.DisplayHeight - (int)(Game1.DisplayHeight * 1.05),
                 (int)(Game1.DisplayWidth * 1.1), (int)(Game1.DisplayHeight * 1.1));
 
-            texture = Game1.GameContent.Load<Texture2D>("The best thing ever");
+            texture = Game1.GameContent.Load<Texture2D>("Random/The best thing ever");
         }
 
         public void update(HealthBar healthBar, Character player)

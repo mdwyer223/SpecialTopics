@@ -48,7 +48,7 @@ namespace AdlezHolder
             // save = new SaveMenu();
             ePressed = true;
 
-            placementButton = new Button(Game1.GameContent.Load<Texture2D>("transparent"), .3f, buttonPosition);
+            placementButton = new Button(Game1.GameContent.Load<Texture2D>("MenuButtons/NewGame"), .3f, buttonPosition);
 
             int marginWidth = (int)(displayWidth * .1);
             int marginHeight = (int)(displayHeight * .1);

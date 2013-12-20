@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Content;
 
@@ -12,7 +11,7 @@ namespace AdlezHolder
 {
     public class Skeleton : Enemy
     {
-        protected SoundEffect damaged;
+        private Skeleton() { }
 
         public Skeleton(Texture2D defaultTexture, float scaleFactor, int SecondsToCrossScreen, Vector2 startPosition)
             : base(defaultTexture, scaleFactor, SecondsToCrossScreen, startPosition)
@@ -72,30 +71,11 @@ namespace AdlezHolder
             right[0] = content.Load<Texture2D>(attcDirec + "SRA");
             right[1] = content.Load<Texture2D>(attcDirec + "SRA2");
             attackAn = new FullAnimation(backward, forward, left, right, .2f);
-
-            damaged = Game1.GameContent.Load<SoundEffect>("Music/SFX/Hit Enemy");
-
-            this.strength = 10;
         }
 
-        public override void damage(MapDataHolder data, int hit)
+        protected override void setAttributes()
         {
-            if (immunityTimer >= (IMMUNITY_TIME * 1000))
-            {
-                hitPoints -= hit;
-                addMessage(new Message("" + hit, Color.Red));
-                if (hitPoints <= 0)
-                {
-                    hitPoints = 0;
-                    dropItem(data);
-                    IsDead = true;
-                    IsVisible = false;
-                }
-                damaged.Play();
-                immunityTimer = 0;
-            }
-
-            this.knockBack();
+            Strength = 10;
         }
     }
 }

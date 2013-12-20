@@ -9,15 +9,13 @@ using Microsoft.Xna.Framework.Content;
 
 namespace AdlezHolder
 {
-    class Minotaur : Enemy
-    {        
-        Vector2 oldVelocity;
-
+    public class Minotaur : Enemy
+    {
         Orientation waveDirec;
         Texture2D waveText;
         Rectangle waveRec;
         bool hasCross;
-        int waveDis, waveTimer;
+        int waveDis;
 
         public Minotaur(Texture2D defaultTexture, float scaleFactor, int SecondsToCrossScreen, Vector2 startPosition)
             :base(defaultTexture, scaleFactor, SecondsToCrossScreen, startPosition)
@@ -76,12 +74,13 @@ namespace AdlezHolder
             right[0] = content.Load<Texture2D>(attcDirec + "R1");
             right[1] = content.Load<Texture2D>(attcDirec + "R2");
             attackAn = new FullAnimation(backward, forward, left, right, .2f);
-
-            attackRange = (CollisionRec.Height + CollisionRec.Width) * 2;
-
-            hitPoints = maxHealthPoints = 300;
         }
-        
+
+        protected override void setAttributes()
+        {
+            Strength = 5;
+        }
+
         protected override void attack(Map data)
         {
             base.attack(data);
@@ -120,20 +119,19 @@ namespace AdlezHolder
                 // move untill hit a range
                 waveDis += speed;
 
-                if (waveDis >= attackRange / 2)
+                if (waveDis >= AttackRange / 2)
                 {
                     hasCross = false;
                     waveDis = 0;
                 }
                 else if (waveRec.Intersects(data.Player.CollisionRec))// check for objects
                 {
-                    data.Player.damage(strength);
+                    data.Player.damage(Strength);
                 }                
             }
-            oldVelocity = velocity;
         }
 
-        public override void wander()
+        protected override void wander()
         {
             base.wander();
             hasCross = false;
@@ -155,25 +153,25 @@ namespace AdlezHolder
                     waveRec.Width = waveRec.Height = TopRec.Width;
                     waveRec.Y = CollisionRec.Y - waveRec.Height;
                     waveRec.X = CollisionRec.X + (CollisionRec.Width - waveRec.Width) / 2;
-                    waveText = Game1.GameContent.Load<Texture2D>("AlistarSwordAttack/BackSwoosh");
+                    waveText = Game1.GameContent.Load<Texture2D>("AlistarAttack/BackSwoosh");
                     break;
                 case Orientation.DOWN:
                     waveRec.Width = waveRec.Height = TopRec.Width;
                     waveRec.Y = CollisionRec.Y + CollisionRec.Height;
                     waveRec.X = CollisionRec.X + (CollisionRec.Width - waveRec.Width) / 2;
-                    waveText = Game1.GameContent.Load<Texture2D>("AlistarSwordAttack/FrontSwoosh");
+                    waveText = Game1.GameContent.Load<Texture2D>("AlistarAttack/FrontSwoosh");
                     break;
                 case Orientation.LEFT:
                     waveRec.Height = waveRec.Width = LeftRec.Height;
                     waveRec.X = CollisionRec.X - waveRec.Width;
                     waveRec.Y = CollisionRec.Y + (CollisionRec.Height - waveRec.Height) / 2;
-                    waveText = Game1.GameContent.Load<Texture2D>("AlistarSwordAttack/LeftSwoosh");
+                    waveText = Game1.GameContent.Load<Texture2D>("AlistarAttack/LeftSwoosh");
                     break;
                 case Orientation.RIGHT:
                     waveRec.Height = waveRec.Width = LeftRec.Height;
                     waveRec.X = CollisionRec.X + CollisionRec.Width;
                     waveRec.Y = CollisionRec.Y + (CollisionRec.Height - waveRec.Height) / 2;
-                    waveText = Game1.GameContent.Load<Texture2D>("AlistarSwordAttack/RightSwoosh");
+                    waveText = Game1.GameContent.Load<Texture2D>("AlistarAttack/RightSwoosh");
                     break;
             }
             waveDirec = direction;
