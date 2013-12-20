@@ -69,41 +69,32 @@ namespace AdlezHolder
         {
             get { return invent; }
         }
-        
+
+        private Character() { }
+
+        public void load(CharacterVars inPlayerVar)
+        {
+            sword = inPlayerVar.sword;
+            HitPoints = inPlayerVar.curHealth;
+            speed = inPlayerVar.speed;
+            base.load(inPlayerVar);
+            construct();
+        }
+
         public Character(Texture2D defaultTexture, float scaleFactor, int displayWidth, float secondsToCrossScreen, Vector2 start)
             : base(defaultTexture, scaleFactor, displayWidth, secondsToCrossScreen, start)
         {
+            construct();
+        }
+
+        private void construct()
+        {
             ContentManager content = Game1.GameContent;
             messages = new List<Message>();
-            invent = new Inventory();
 
             sword = new Sword(.05f);
-            bow = new Bow(0f);
-            bomb = new Bomb(.03f);
-            
+
             Texture2D[] left, right, forward, backward;
-
-            left = new Texture2D[3];
-            right = new Texture2D[3];
-            forward = new Texture2D[3];
-            backward = new Texture2D[3];
-
-            backward[0] = content.Load<Texture2D>("Alistar/B");
-            backward[1] = content.Load<Texture2D>("Alistar/BR");
-            backward[2] = content.Load<Texture2D>("Alistar/BL");
-
-            forward[0] = content.Load<Texture2D>("Alistar/F");
-            forward[1] = content.Load<Texture2D>("Alistar/FR");
-            forward[2] = content.Load<Texture2D>("Alistar/FL");
-
-            left[0] = content.Load<Texture2D>("Alistar/L");
-            left[1] = content.Load<Texture2D>("Alistar/LR");
-            left[2] = content.Load<Texture2D>("Alistar/LL");
-
-            right[0] = content.Load<Texture2D>("Alistar/R");
-            right[1] = content.Load<Texture2D>("Alistar/RR");
-            right[2] = content.Load<Texture2D>("Alistar/RL");
-            move = new FullAnimation(backward, forward, left, right, .2f);
 
             left = new Texture2D[3];
             right = new Texture2D[3];
@@ -125,29 +116,7 @@ namespace AdlezHolder
             right[0] = content.Load<Texture2D>("AlistarSword/R");
             right[1] = content.Load<Texture2D>("AlistarSword/RR");
             right[2] = content.Load<Texture2D>("AlistarSword/RL");
-            swordMove = new FullAnimation(backward, forward, left, right,.2f);
-
-            left = new Texture2D[3];
-            right = new Texture2D[3];
-            forward = new Texture2D[3];
-            backward = new Texture2D[3];
-
-            backward[0] = content.Load<Texture2D>("AlistarBow/B");
-            backward[1] = content.Load<Texture2D>("AlistarBow/BR");
-            backward[2] = content.Load<Texture2D>("AlistarBow/BL");
-
-            forward[0] = content.Load<Texture2D>("AlistarBow/F");
-            forward[1] = content.Load<Texture2D>("AlistarBow/FR");
-            forward[2] = content.Load<Texture2D>("AlistarBow/FL");
-
-            left[0] = content.Load<Texture2D>("AlistarBow/L");
-            left[1] = content.Load<Texture2D>("AlistarBow/LR");
-            left[2] = content.Load<Texture2D>("AlistarBow/LL");
-
-            right[0] = content.Load<Texture2D>("AlistarBow/R");
-            right[1] = content.Load<Texture2D>("AlistarBow/RR");
-            right[2] = content.Load<Texture2D>("AlistarBow/RL");
-            bowMove = new FullAnimation(backward, forward, left, right, .2f);
+            move = new FullAnimation(backward, forward, left, right, .2f);
 
             left = new Texture2D[1];
             right = new Texture2D[1];
@@ -165,38 +134,24 @@ namespace AdlezHolder
             forward = new Texture2D[2];
             backward = new Texture2D[2];
 
-            forward[0] = content.Load<Texture2D>("AlistarSwordAttack/F1");
-            forward[1] = content.Load<Texture2D>("AlistarSwordAttack/F2");
-            backward[0] = content.Load<Texture2D>("AlistarSwordAttack/B1");
-            backward[1] = content.Load<Texture2D>("AlistarSwordAttack/B2");
-            right[0] = content.Load<Texture2D>("AlistarSwordAttack/R1");
-            right[1] = content.Load<Texture2D>("AlistarSwordAttack/R2");
-            left[0] = content.Load<Texture2D>("AlistarSwordAttack/L1");
-            left[1] = content.Load<Texture2D>("AlistarSwordAttack/L2");
-            swordAttack = new FullAnimation(backward, forward, left, right, .3f);
-
-            left = new Texture2D[2];
-            right = new Texture2D[2];
-            forward = new Texture2D[2];
-            backward = new Texture2D[2];
-
-            forward[0] = content.Load<Texture2D>("AlistarBowAttack/F1");
-            forward[1] = content.Load<Texture2D>("AlistarBowAttack/F2");
-            backward[0] = content.Load<Texture2D>("AlistarBowAttack/B1");
-            backward[1] = content.Load<Texture2D>("AlistarBowAttack/B2");
-            right[0] = content.Load<Texture2D>("AlistarBowAttack/R1");
-            right[1] = content.Load<Texture2D>("AlistarBowAttack/R2");
-            left[0] = content.Load<Texture2D>("AlistarBowAttack/L1");
-            left[1] = content.Load<Texture2D>("AlistarBowAttack/L2");
-            bowAttack = new FullAnimation(backward, forward, left, right, .1f);
-
-            selectedItem = EquippedItem.SWORD;
+            forward[0] = content.Load<Texture2D>("AlistarAttack/F1");
+            forward[1] = content.Load<Texture2D>("AlistarAttack/F2");
+            Animation frontAttack = new Animation(forward, .1f, Orientation.DOWN);
+            backward[0] = content.Load<Texture2D>("AlistarAttack/B1");
+            backward[1] = content.Load<Texture2D>("AlistarAttack/B2");
+            Animation backAttack = new Animation(backward, .1f, Orientation.UP);
+            right[0] = content.Load<Texture2D>("AlistarAttack/R1");
+            right[1] = content.Load<Texture2D>("AlistarAttack/R2");
+            Animation rightAttack = new Animation(right, .1f, Orientation.RIGHT);
+            left[0] = content.Load<Texture2D>("AlistarAttack/L1");
+            left[1] = content.Load<Texture2D>("AlistarAttack/L2");
+            Animation leftAttack = new Animation(left, .1f, Orientation.LEFT);
+            Attack = new FullAnimation(backAttack, frontAttack, leftAttack, rightAttack);
+            selectedItem = EquippedItem.NONE;
 
             playAnimation(Idle);
 
             currentHealthPoints = healthPointsMax = 200;
-
-            damaged = Game1.GameContent.Load<SoundEffect>("Music/SFX/Hit By Enemy");
 
             canMoveDown = true;
             canMoveUp = true;
@@ -474,6 +429,9 @@ namespace AdlezHolder
                         || objectsColliding[i].GetType() == typeof(Wall)
                         || objectsColliding[i].GetType() == typeof (Chest)
                         || objectsColliding[i].GetType() == typeof(Skeleton)
+                        || objectsColliding[i].GetType() == typeof(Minotaur)
+                        || objectsColliding[i].GetType() == typeof(Mage)
+                        || objectsColliding[i].GetType() == typeof(Thing)
                         || objectsColliding[i].GetType() == typeof (BuildingObject))
                     {
                         canMoveRight = direction != Orientation.RIGHT;

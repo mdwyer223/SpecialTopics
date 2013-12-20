@@ -298,5 +298,10 @@ namespace AdlezHolder
 
             pHandler.Draw(gameTime);
         }
+
+        public void loadGame(GameData dataFile)
+        {
+            world.load(dataFile);
+        }
     }
 }

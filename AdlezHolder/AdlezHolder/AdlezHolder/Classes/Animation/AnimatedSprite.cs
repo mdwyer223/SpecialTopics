@@ -22,6 +22,10 @@ namespace AdlezHolder
             set { direction = value; }
         }
 
+        protected AnimatedSprite()
+        {
+        }
+
         public AnimatedSprite(Texture2D texture, float scaleFactor, int inDisplayWidth, float SecondsToCrossScreen,
              Vector2 startPosition)
             : base(texture, scaleFactor, inDisplayWidth, SecondsToCrossScreen, startPosition)

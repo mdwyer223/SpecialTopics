@@ -132,6 +132,26 @@ namespace AdlezHolder
             protected set;
         }
 
+        protected BaseSprite()
+        {
+        }
+
+        public void load(BaseSpriteVars inVar)
+        {
+            //image = inVar.image;
+            ImageColor = inVar.imageColor;
+            IsDead = inVar.isDead;
+            IsVisible = inVar.isVisible;
+            position = inVar.position;
+            //Center = inVar.center;
+
+            drawnRec.Width = inVar.drawnRec.Width;
+            drawnRec.Height = inVar.drawnRec.Height;
+
+            collisionRec.Width = inVar.collisionRec.Width;
+            collisionRec.Height = inVar.collisionRec.Height;
+        }
+
         public BaseSprite(Texture2D texture, float scaleFactor, int inDisplayWidth, float SecondsToCrossScreen
             ,Vector2 startPosition)
             : base()

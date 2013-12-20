@@ -43,6 +43,13 @@ namespace AdlezHolder
 
         bool delay;
 
+        protected string backgroundDirectory;
+
+        public string BackgroundDirectory
+        {
+            get { return backgroundDirectory; }
+        }
+
         public Rectangle BackgroundRec
         {
             get { return backgroundRec; }
@@ -91,6 +98,39 @@ namespace AdlezHolder
         {
             get { return new Vector2(backgroundRec.X, backgroundRec.Y); }
             protected set { position = value; }
+        }
+
+        public void load(MapDataHolderVars inMDHVar)
+        {
+            for (int i = 0; i < inMDHVar.everything.Count; i++)
+            {
+                everything[i].load(inMDHVar.everything[i]);
+            }
+
+            for (int i = 0; i < inMDHVar.objects.Count; i++)
+            {
+                objects[i].load(inMDHVar.objects[i]);
+            }
+            // spikeTraps
+            // arrowTraps
+
+            for (int i = 0; i < inMDHVar.enemies.Count; i++)
+            {
+                enemies[i].load(inMDHVar.enemies[i]);
+            }
+            // npcs = inMDHVar.npcs;
+
+            //tripWires = inMDHVar.tripWires;
+            //arrowTraps = inMDHVar.arrowTraps;
+            //chests = inMDHVar.chests;
+
+            background = Game1.GameContent.Load<Texture2D>(inMDHVar.backgroundDirectory);
+            backgroundRec.Width = inMDHVar.backgroundRec.Width;
+            backgroundRec.Height = inMDHVar.backgroundRec.Height;
+            position = inMDHVar.position;
+            // this.adjustObjectsBackgroundTripWires(-inMDHVar.position);
+            // music
+
         }
 
         public MapDataHolder()

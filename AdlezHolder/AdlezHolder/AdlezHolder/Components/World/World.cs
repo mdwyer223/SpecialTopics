@@ -44,6 +44,11 @@ namespace AdlezHolder
             base.Initialize();
         }
 
+        public void load(GameData dataFile)
+        {
+            map.load(dataFile.mapVars);
+        }
+
         protected override void LoadContent()
         {
             spriteBatch = new SpriteBatch(GraphicsDevice);

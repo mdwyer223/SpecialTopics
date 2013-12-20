@@ -31,6 +31,13 @@ namespace AdlezHolder
         //each map will have an index to align each rectangle with a certain map, will go in order from the town hub 
         //to each individual dungeon map. Set up folders to differentiate which mapdatas are held where. The index won't 
         //be some complicated algorithm.
+        
+        public void load(MapVars mapVar)
+        {
+            this.currentMapData.load(mapVar.mapDataVar);
+            this.player.load(mapVar.playerVar);
+            currentMapData.changePlayer(player);
+        }
 
         public Map()
         {

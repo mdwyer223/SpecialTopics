@@ -16,42 +16,48 @@ namespace AdlezHolder
     {
         Song music;
 
-        SaveSlots save;
+        SaveMenu save;
+        Game1 game;
 
-        KeyboardState keys, oldKeys;
-        int displayWidth;
+        KeyboardState keys, oldKeys;       
 
-        Button Newbutton, Loadbutton, Continuebutton, placementButton;
-        int numOfButton;
-        bool ePressed, contPressed;
+        Button Newbutton, Loadbutton, Continuebutton;
         BaseSprite adlezGraphic;
-        Rectangle overScan;
-        int middleScreen, middleButton, buttonSeparation;
-        Vector2 buttonPosition, adlezPos;
-        Vector2 startPosition;
+        int buttonIndex;
+        bool ePressed;
 
-        public MenuInterface(Viewport view, float scaleFactor)
+        public MenuInterface(Game1 game)
         {
+            this.game = game;
+
+            int middleScreen, middleButton, buttonSeparation;
+            int displayWidth, displayHeight;
+            Button placementButton;
+            Rectangle overScan;            
+            Vector2 buttonPosition, adlezPos;
+            Vector2 startPosition;
+
+            buttonPosition = Vector2.Zero;
+
             music = Game1.GameContent.Load<Song>("Music/Theme");
 
-            displayWidth = view.Width;
-            numOfButton = 0;
-            save = new SaveSlots(view, scaleFactor);
+            displayWidth = Game1.DisplayWidth;
+            displayHeight = Game1.DisplayHeight;
+
+            buttonIndex = 0;
+            // save = new SaveMenu();
             ePressed = true;
-            contPressed = false;
 
-            placementButton = new Button(Game1.GameContent.Load<Texture2D>("transparent"),
-                .3f, displayWidth, buttonPosition, Game1.GameContent.Load<SpriteFont>("SpriteFont1"), "");
+            placementButton = new Button(Game1.GameContent.Load<Texture2D>("transparent"), .3f, buttonPosition);
 
-            int marginWidth = (int)(view.Width * .1);
-            int marginHeight = (int)(view.Height * .1);
-            int marginX = (int)(view.X * .1);
+            int marginWidth = (int)(displayWidth * .1);
+            int marginHeight = (int)(displayHeight * .1);
 
-            overScan.Width = view.Width - marginWidth;
-            overScan.Height = view.Height - marginHeight;
+            overScan.Width = displayWidth - marginWidth;
+            overScan.Height = displayHeight - marginHeight;
 
-            overScan.X = view.X + marginWidth;
-            overScan.Y = view.Y + marginHeight;
+            overScan.X = marginWidth;
+            overScan.Y = marginHeight;
 
             middleScreen = overScan.Width / 2;
             middleButton = placementButton.DrawnRec.Width / 2;
@@ -62,20 +68,19 @@ namespace AdlezHolder
             
             buttonSeparation = (overScan.Height / 4) ;
             adlezPos.X = startPosition.X;
-            adlezPos.Y = view.Y;
+            adlezPos.Y = 0;//TODO: cahnge
             
-            adlezGraphic = new BaseSprite(Game1.GameContent.Load<Texture2D>("AdlezTitle"), .4f, overScan.Width,0, adlezPos);
-            //adlezGraphic.Position = new Vector2((Game1.DisplayWidth / 2) - (adlezGraphic.DrawnRec.Width /2) , 0);
+            adlezGraphic = new BaseSprite(Game1.GameContent.Load<Texture2D>("Menu Pics/AdlezTitle"), .4f, overScan.Width, 0, adlezPos);
            
 
             startPosition.Y = startPosition.Y +( buttonSeparation );
-            Newbutton = new Button(Game1.GameContent.Load<Texture2D>("MenuButtons/NewGame"), .4f, overScan.Width, startPosition, Game1.GameContent.Load<SpriteFont>("SpriteFont1"), "");
+            Newbutton = new Button(Game1.GameContent.Load<Texture2D>("MenuButtons/NewGame"), .4f, startPosition);
             startPosition.Y = startPosition.Y + buttonSeparation;
-            Loadbutton = new Button(Game1.GameContent.Load<Texture2D>("MenuButtons/LoadGame"), .4f, overScan.Width, startPosition, Game1.GameContent.Load<SpriteFont>("SpriteFont1"), "");
+            Loadbutton = new Button(Game1.GameContent.Load<Texture2D>("MenuButtons/LoadGame"), .4f, startPosition);
             startPosition.Y = startPosition.Y + buttonSeparation;
-            Continuebutton = new Button(Game1.GameContent.Load<Texture2D>("MenuButtons/Continue"), .4f, overScan.Width, startPosition, Game1.GameContent.Load<SpriteFont>("SpriteFont1"), "");
+            Continuebutton = new Button(Game1.GameContent.Load<Texture2D>("MenuButtons/Continue"), .4f, startPosition);
 
-            Newbutton.Selected(Newbutton);
+            Newbutton.Selected = true;
 
         }
 
@@ -92,80 +97,68 @@ namespace AdlezHolder
                 MediaPlayer.Play(music);
             }
 
-            if (ePressed)
+            if (ePressed)//TODO: change to game state
             {
-                Newbutton.Update(gameTime);
-                Loadbutton.Update(gameTime);
-                Continuebutton.Update(gameTime);
-                adlezGraphic.Update(gameTime);
 
                 if (keys.IsKeyDown(Keys.S) && oldKeys.IsKeyUp(Keys.S))
                 {
-                    if (numOfButton < 2)
+                    if (buttonIndex < 2)
                     {
-                        numOfButton = numOfButton + 1;
-                    }
-                    else
-                    {
-                        numOfButton = 0;
+                        buttonIndex = (buttonIndex + 1) % 3;
                     }
 
                 }
 
                 if (keys.IsKeyDown(Keys.W) && oldKeys.IsKeyUp(Keys.W))
                 {
-                    if (numOfButton > 0)
+                    if (buttonIndex > 0)
                     {
-                        numOfButton = numOfButton - 1;
+                        buttonIndex = buttonIndex - 1;
                     }
                     else
                     {
-                        numOfButton = 2;
+                        buttonIndex = 2;
                     }
 
                 }
-                if (numOfButton == 0)
+                if (buttonIndex == 0)
                 {
-                    Newbutton.Selected(Newbutton);
-
-                    Loadbutton.OrignalColor(Loadbutton);
-                    Continuebutton.OrignalColor(Continuebutton);
-
+                    Newbutton.Selected = true;
+                    Loadbutton.Selected = false;
+                    Continuebutton.Selected = false;
                 }
-                else if (numOfButton == 1)
+                else if (buttonIndex == 1)
                 {
-                    Loadbutton.Selected(Loadbutton);
-
-                    Continuebutton.OrignalColor(Continuebutton);
-                    Newbutton.OrignalColor(Newbutton);
+                    Newbutton.Selected = false;
+                    Loadbutton.Selected = true;
+                    Continuebutton.Selected = false;                    
                 }
                 else
                 {
-                    Continuebutton.Selected(Continuebutton);
-
-                    Loadbutton.OrignalColor(Loadbutton);
-                    Newbutton.OrignalColor(Newbutton);
+                    Newbutton.Selected = false;
+                    Loadbutton.Selected = false;
+                    Continuebutton.Selected = true;                    
                 }
 
                 //Checks if enter is pressed and which button it is pressed on
                 if (keys.IsKeyDown(Keys.Enter) && oldKeys.IsKeyUp(Keys.Enter))
                 {
-                    if (numOfButton == 0)
-                    {
-                        MediaPlayer.Stop();
-                        changeGameState(GameState.CUTSCENE);
+                    if (buttonIndex == 0)
+                    {                        
+                        save = new SaveMenu(game, SenderButton.NEW);
+                        ePressed = false;
                     }
-
-                    else if (numOfButton == 1)
+                    else if (buttonIndex == 1)
                     {
-                        //ePressed = false;
+                        save = new SaveMenu(game, SenderButton.LOAD);
+                        ePressed = false;
                     }
-                    else if (numOfButton == 2)
+                    else if (buttonIndex == 2)
                     {
                         MediaPlayer.Stop();
                         changeGameState(GameState.PLAYING);
-                        contPressed = true;
                     }
+                    
                 }
 
                 oldKeys = keys;
@@ -184,8 +177,7 @@ namespace AdlezHolder
                 adlezGraphic.Draw(spriteBatch);
                 Newbutton.Draw(spriteBatch);
                 Loadbutton.Draw(spriteBatch);
-                Continuebutton.Draw(spriteBatch);
-                
+                Continuebutton.Draw(spriteBatch);                
             }
             else
             {

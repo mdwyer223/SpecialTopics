@@ -139,7 +139,7 @@
     <Compile Include="Classes\Inventory\Inventory.cs" />
     <Compile Include="Classes\MenuClasses\Button.cs" />
     <Compile Include="Classes\MenuClasses\MenuInterface.cs" />
-    <Compile Include="Classes\MenuClasses\SaveSlots.cs" />
+    <Compile Include="Classes\MenuClasses\SaveMenu.cs" />
     <Compile Include="Classes\Message.cs" />
     <Compile Include="Classes\Npc\Bosses\Minotaur.cs" />
     <Compile Include="Classes\Npc\Enemies\Enemy.cs" />
@@ -203,6 +203,12 @@
     <Compile Include="Data\Landscapes\LeftPassage.cs" />
     <Compile Include="Data\Landscapes\Nwot.cs" />
     <Compile Include="Data\Map.cs" />
+    <Compile Include="Data\SaveStuff\GameData.cs" />
+    <Compile Include="Data\SaveStuff\Guts\BaseSpriteVars.cs" />
+    <Compile Include="Data\SaveStuff\Guts\CharacterVars.cs" />
+    <Compile Include="Data\SaveStuff\Guts\MapDataHolderVars.cs" />
+    <Compile Include="Data\SaveStuff\Guts\MapVars.cs" />
+    <Compile Include="Data\SaveStuff\SaveFile.cs" />
     <Compile Include="Data\TestingField.cs" />
     <Compile Include="Data\MapDataHolder.cs" />
     <Compile Include="Game2.cs" />
