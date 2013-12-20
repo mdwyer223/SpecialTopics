@@ -20,6 +20,7 @@ namespace AdlezHolder
         int lifeLengthTimer;
 
         float damage;
+        float damageReduction;
 
         public bool OffScreen
         {
@@ -87,6 +88,7 @@ namespace AdlezHolder
             lifeLengthTimer = 0;
 
             this.damage = damage;
+            calcDamage(damage);
         }
 
         public Particle(int r, int g, int b, int size, int damage, float secondsAlive, Vector2 start, Vector2 velocity)
@@ -102,11 +104,12 @@ namespace AdlezHolder
             lifeLengthTimer = 0;
 
             this.damage = damage;
+            calcDamage(damage);
         }
 
         public void Update(GameTime gameTime)
         {
-            damage -= .4f;
+            damage -= damageReduction;
             lifeLengthTimer += gameTime.ElapsedGameTime.Milliseconds;
             position += velo;
         }
@@ -114,6 +117,12 @@ namespace AdlezHolder
         public void Draw(SpriteBatch spriteBatch)
         {
             spriteBatch.Draw(blankTexture, Rec, color);
+        }
+
+        public void calcDamage(int damage) // TODO:
+        {
+            int endDamage = (int)((damage * .2f) + .5f);
+            damageReduction = (damage - endDamage) / lifeLength;
         }
     }
 }
