@@ -143,7 +143,9 @@
     <Compile Include="Classes\Message.cs" />
     <Compile Include="Classes\Npc\Bosses\Minotaur.cs" />
     <Compile Include="Classes\Npc\Enemies\Enemy.cs" />
+    <Compile Include="Classes\Npc\Enemies\Mage.cs" />
     <Compile Include="Classes\Npc\Enemies\Skeleton.cs" />
+    <Compile Include="Classes\Npc\Enemies\Thing.cs" />
     <Compile Include="Classes\Npc\Nodes.cs" />
     <Compile Include="Classes\Npc\Npc.cs" />
     <Compile Include="Classes\Npc\WanderingSprite.cs" />

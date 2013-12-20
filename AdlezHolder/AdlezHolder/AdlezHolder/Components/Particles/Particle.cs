@@ -29,7 +29,8 @@ namespace AdlezHolder
 
         public int Damage
         {
-            get {
+            get 
+            {
                 if (damage >= 0)
                     return (int)damage;
                 else
