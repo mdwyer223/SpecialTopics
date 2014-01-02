@@ -47,7 +47,7 @@ namespace AdlezHolder
             displayWidth = Game1.DisplayWidth;
             displayHeight = Game1.DisplayHeight;
             buttonIndex = 0;
-            placementButton = new Button(Game1.GameContent.Load<Texture2D>("transparent"), .3f, Vector2.Zero);
+            placementButton = new Button(Game1.GameContent.Load<Texture2D>("Random/The best thing ever"), .3f, Vector2.Zero);
 
             int marginWidth = (int)(displayHeight * .1);
             int marginHeight = (int)(displayHeight * .1);
@@ -82,7 +82,7 @@ namespace AdlezHolder
             bowPic = new BaseSprite(Game1.GameContent.Load<Texture2D>("Wep Icons/bow selected"), PIC_SCALE_FACTOR, displayWidth, 0, picPosition);
 
 
-            Texture2D buttonImage = Game1.GameContent.Load<Texture2D>("The best thing ever");
+            Texture2D buttonImage = Game1.GameContent.Load<Texture2D>("Random/The best thing ever");
 
             file1Button = new Button(buttonImage, .25f, startPosition);
             startPosition.Y += heightSeparation;

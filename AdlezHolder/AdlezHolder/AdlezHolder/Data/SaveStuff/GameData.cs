@@ -36,10 +36,5 @@ namespace AdlezHolder
             return newData;
         }
 
-        //public Map getMap()
-        //{
-        //    return new Map(new MapVars(mapVars.mapDataVar, mapVars.playerVar));
-        //}
-
     }
 }

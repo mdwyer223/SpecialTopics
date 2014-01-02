@@ -44,6 +44,10 @@ namespace AdlezHolder
             protected set { ifTripped = value; }
         }
 
+        private TripWire()
+        {
+        }
+
         public TripWire(float scaleFactor, Rectangle tripper)
         {
             this.tripper = tripper;

@@ -28,7 +28,6 @@ namespace AdlezHolder
         //public List<TripWire> tripWires;
         //public List<Chest> chests;
 
-        public Texture2D background;
         public Rectangle backgroundRec;
         public Vector2 position;
 
@@ -36,15 +35,12 @@ namespace AdlezHolder
 
         public string backgroundDirectory;
 
-        //public Type type;
-
         private MapDataHolderVars()
         {
         }
         
         public MapDataHolderVars(MapDataHolder inMDH)
         {
-            //type = inMDH.GetType();
             everything = new List<BaseSpriteVars>();
             for (int i = 0; i < inMDH.Everything.Count; i++)
             {

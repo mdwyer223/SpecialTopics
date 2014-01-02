@@ -29,6 +29,10 @@ namespace AdlezHolder
             get { return applyDamageTime; }
         }
 
+        private Gem()
+        {
+        }
+
         public Gem(Texture2D texture, float scaleFactor, Vector2 startPosition, string tag, int value)
             :base(texture, scaleFactor, startPosition, tag, true, false, false, value)
         {

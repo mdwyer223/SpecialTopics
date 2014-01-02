@@ -20,6 +20,10 @@ namespace AdlezHolder
             get { return new Rectangle(LeftRec.X, TopRec.Y, (RightRec.X + RightRec.Width) - LeftRec.X, (BottomRec.Y + BottomRec.Height) - TopRec.Y); }
         }
 
+        protected Npc()
+        {
+        }
+
         public Npc(Texture2D defaultTexture, Texture2D messageBoxBackground,float scaleFactor, int SecondsToCrossScreen,
              int displayWidth, int displayHeight, Vector2 startPosition)
             : base(defaultTexture, scaleFactor, SecondsToCrossScreen, displayWidth,startPosition)

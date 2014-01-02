@@ -488,7 +488,7 @@ namespace AdlezHolder
                     if (objectsColliding[i].GetType() == typeof(ImmovableObject)
                         || objectsColliding[i].GetType() == typeof(HittableObject)
                         || objectsColliding[i].GetType() == typeof(Wall)
-                        || objectsColliding[i].GetType() == typeof (Chest)
+                        || objectsColliding[i].GetType() == typeof(Chest)
                         || objectsColliding[i].GetType() == typeof(Skeleton)
                         || objectsColliding[i].GetType() == typeof(Minotaur)
                         || objectsColliding[i].GetType() == typeof(Mage)

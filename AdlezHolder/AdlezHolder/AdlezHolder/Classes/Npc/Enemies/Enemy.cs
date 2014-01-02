@@ -11,12 +11,13 @@ namespace AdlezHolder
 {
     public abstract class Enemy : WanderingSprite
     {
-        // TODO: make MapData.add smart, make an AdvancedSprite
+        // TODO: make MapData.add smart, make an AdvancedSprite, RangedEnemy, path finding
 
         // wizards with bombs on their chests : explode on death or when close to u
         // LoL Zac style slimes : big enemies that spwans smaller ones when it dies
         // enemy that steels your money
         // knight:tanky,slow
+        // shock wave mage        
         // ranger
         
         protected FullAnimation attackAn; // move some animations to AnimatiedSprite

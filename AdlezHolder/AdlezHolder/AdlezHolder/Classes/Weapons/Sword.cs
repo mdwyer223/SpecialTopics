@@ -74,8 +74,13 @@ namespace AdlezHolder
             get { return gemList; }
         }
 
+        private Sword()
+        {
+        }
+
         public Sword(float scaleFactor)
-        {   
+        {
+            gemList = new List<Gem>();
             texture = Game1.GameContent.Load<Texture2D>("AlistarSwordAttack/LeftSwoosh");
             color = Color.White;
 

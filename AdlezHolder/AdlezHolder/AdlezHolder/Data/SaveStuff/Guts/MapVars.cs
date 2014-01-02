@@ -12,7 +12,7 @@ namespace AdlezHolder
 {
     public class MapVars
     {
-        public MapDataHolderVars mapDataVar;
+        //public MapDataHolderVars mapDataVar;
         public CharacterVars playerVar;
 
         private MapVars()
@@ -21,13 +21,13 @@ namespace AdlezHolder
 
         public MapVars(MapDataHolderVars inMDHVars, CharacterVars inPlayerVar)
         { 
-            mapDataVar = inMDHVars;
+            //mapDataVar = inMDHVars;
             playerVar = inPlayerVar;            
         }
 
         public MapVars(Map inMap)
         {
-            mapDataVar = new MapDataHolderVars(inMap.CurrentData);
+            //mapDataVar = new MapDataHolderVars(inMap.CurrentData);
             playerVar = new CharacterVars(inMap.Player);
             
         }

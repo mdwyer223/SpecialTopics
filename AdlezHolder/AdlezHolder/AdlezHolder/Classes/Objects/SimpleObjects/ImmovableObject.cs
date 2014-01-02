@@ -15,6 +15,10 @@ namespace AdlezHolder
         protected bool dead, visible;
         public Vector2[] nodes;
 
+        protected ImmovableObject()
+        {
+        }
+
         public ImmovableObject(Texture2D texture, float scaleFactor, float secondsToCrossScreen, Vector2 start)
             : base(texture, scaleFactor, Game1.DisplayWidth, secondsToCrossScreen, start)
         {

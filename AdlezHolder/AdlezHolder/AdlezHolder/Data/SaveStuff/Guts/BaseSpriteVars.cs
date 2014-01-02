@@ -11,7 +11,6 @@ namespace AdlezHolder
 {
     public class BaseSpriteVars
     {
-        public Texture2D image;
         public Color imageColor;
         public bool isDead, isVisible;
         public Vector2 position;
@@ -20,8 +19,6 @@ namespace AdlezHolder
         public Rectangle drawnRec;
         public Rectangle collisionRec;
 
-        // TODO: if each class had a property with only the guts of the class
-        // Need to save data to re-create the player: all the stuff in the constructor
         protected BaseSpriteVars()
         {
         }

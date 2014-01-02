@@ -34,7 +34,7 @@ namespace AdlezHolder
         
         public void load(MapVars mapVar)
         {
-            this.currentMapData.load(mapVar.mapDataVar);
+            //this.currentMapData.load(mapVar.mapDataVar);
             this.player.load(mapVar.playerVar);
             currentMapData.changePlayer(player);
         }
