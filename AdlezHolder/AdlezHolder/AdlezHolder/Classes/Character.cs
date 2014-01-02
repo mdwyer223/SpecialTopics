@@ -194,7 +194,7 @@ namespace AdlezHolder
 
             playAnimation(Idle);
 
-            currentHealthPoints = healthPointsMax = 200;
+            currentHealthPoints = healthPointsMax = 500;
 
             damaged = Game1.GameContent.Load<SoundEffect>("Music/SFX/Hit By Enemy");
 
@@ -395,11 +395,12 @@ namespace AdlezHolder
             }
         }
 
-        private void heal(int healPoints)
+        public void heal(int healPoints)
         {
             if (currentHealthPoints + healPoints <= healthPointsMax)
             {
                 currentHealthPoints += healPoints;
+                addMessage(new Message("" + healPoints, Color.Green));
             }
         }
 

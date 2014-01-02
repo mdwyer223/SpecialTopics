@@ -86,11 +86,11 @@ namespace AdlezHolder
             upgradeDamageLev = 1;
             upgradeRangeLev = 1;
             upgradeSpeedLev = 1;
-            damage = 5;
+            damage = 10;
             range = 5;
             speed = 5;
 
-            
+            gemList = new List<Gem>();
         }
 
         public void UpgradeDamage()
@@ -157,7 +157,7 @@ namespace AdlezHolder
                 {
                     if (collisionRec.Intersects(enemy.CollisionRec))
                     {
-                        damageEnemy(enemy, data);
+                        damageEnemy(enemy, data, player);
                     }
                 }
             }
@@ -171,10 +171,10 @@ namespace AdlezHolder
             }
         }
 
-        public void damageEnemy(Enemy enemy, MapDataHolder data)
+        public void damageEnemy(Enemy enemy, MapDataHolder data, Character player)
         {
             float burnChance = 0f, poisonChance = 0f, lightningChance = 0f,
-                freezeChance = 0f, vampirePercent = 0f;
+                freezeChance = 0f, vampirePercent = .10f;
             float burnDuration = 0f, poisonDuration = 0f, stunDuration = 0f, 
                 freezeDuration = 0f;
             int burnDamage = 0, poisonDamage = 0, freezeDamage = 0;
@@ -214,6 +214,11 @@ namespace AdlezHolder
                 
             }
 
+            enemy.damage(data, damage);
+            if (vampirePercent > 0)
+            {
+                player.heal((int)(vampirePercent * damage));
+            }
         }
 
         public void toggle(bool newValue)

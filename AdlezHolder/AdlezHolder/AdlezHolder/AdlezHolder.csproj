@@ -164,9 +164,6 @@
     <Compile Include="Classes\Objects\SimpleObjects\TripWire.cs" />
     <Compile Include="Classes\Objects\SimpleObjects\Wall.cs" />
     <Compile Include="Classes\Objects\Traps\Trap.cs" />
-    <Compile Include="Classes\UpgradeClasses\ItemSelectClass.cs" />
-    <Compile Include="Classes\UpgradeClasses\SwordUpgradeClass.cs" />
-    <Compile Include="Classes\UpgradeClasses\UpgradeNode.cs" />
     <Compile Include="Classes\Weapons\Bomb.cs" />
     <Compile Include="Classes\Weapons\BombObj.cs" />
     <Compile Include="Classes\Weapons\Bow.cs" />
