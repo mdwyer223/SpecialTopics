@@ -75,19 +75,18 @@ namespace AdlezHolder
 
             damaged = Game1.GameContent.Load<SoundEffect>("Music/SFX/Hit Enemy");
 
-            this.
-            this.hitPoints = this.maxHealthPoints = 400;
+            this.HitPoints = this.MaxHealthPoints = 400;
         }
 
         public override void damage(MapDataHolder data, int hit)
         {
             if (immunityTimer >= (IMMUNITY_TIME * 1000))
             {
-                hitPoints -= hit;
+                HitPoints -= hit;
                 addMessage(new Message("" + hit, Color.Red));
-                if (hitPoints <= 0)
+                if (HitPoints <= 0)
                 {
-                    hitPoints = 0;
+                    HitPoints = 0;
                     dropItem(data);
                     IsDead = true;
                     IsVisible = false;

@@ -39,6 +39,10 @@ namespace AdlezHolder
             
         }
 
+        protected WanderingSprite()
+        {
+        }
+
         public override void Update(Map data, GameTime gameTime)
         {
             setCanMoves(data);
@@ -115,5 +119,12 @@ namespace AdlezHolder
             moveCount = 0;
         }
 
+        protected void startWander()
+        {
+        }
+
+        protected void stopWander()
+        {
+        }
     }
 }

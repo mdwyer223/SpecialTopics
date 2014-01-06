@@ -167,6 +167,10 @@ namespace AdlezHolder
             Position = startPosition;
         }
 
+        protected BaseSprite()
+        {
+        }
+
         public virtual void Update(Map data)
         {
         }        

@@ -31,6 +31,10 @@ namespace AdlezHolder
             playAnimation(new FullAnimation(ani, 5));
         }
 
+        protected AnimatedSprite()
+        {
+        }
+
         public override void Update(Map data, GameTime gameTime)
         {
             elapse += (float)gameTime.ElapsedGameTime.TotalSeconds;

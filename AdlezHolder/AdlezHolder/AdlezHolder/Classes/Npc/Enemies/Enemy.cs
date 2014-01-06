@@ -24,11 +24,12 @@ namespace AdlezHolder
                
         protected bool isAttacking;
 
-        int attackTimer, tolerence, nodeIndex;        
+        int attackTimer, tolerence, nodeIndex;
+        List<Message> messages;
 
-        const float IMMUNITY_TIME = .025f;
-        const float SEC_TO_ATTACK = 1;
-        int immunityTimer = 0;
+        protected const float IMMUNITY_TIME = .025f;
+        protected const float SEC_TO_ATTACK = 1;
+        protected int immunityTimer = 0;
         
         public int AttackRange
         {
@@ -44,7 +45,7 @@ namespace AdlezHolder
         }
 
         int hitPoints = 150;
-        public int HitPoint
+        public int HitPoints
         {
             get { return hitPoints; }
             protected set 
@@ -91,6 +92,8 @@ namespace AdlezHolder
             Texture2D[] ani = new Texture2D[1];
             ani[0] = defaultTexture;
             attackAn = new FullAnimation(ani, 5);
+
+            messages = new List<Message>();
         }
 
         protected abstract void setAttributes();
@@ -99,6 +102,22 @@ namespace AdlezHolder
         {
             if (IsDead)
                 return;
+
+            for (int i = 0; i < messages.Count; i++)
+            {
+                if (messages[i] != null)
+                {
+                    messages[i].Update(gameTime, new Vector2(position.X, position.Y - 20), collisionRec.Width);
+                    if (messages[i].TimeUp)
+                    {
+                        messages.RemoveAt(i);
+                        i--;
+
+                        if (i < 0)
+                            i = 0;
+                    }
+                }
+            }
 
             if (immunityTimer <= IMMUNITY_TIME * 1000)
             {
@@ -131,6 +150,30 @@ namespace AdlezHolder
                 base.Draw(spriteBatch);
         }
 
+        protected virtual void dropItem(MapDataHolder data)
+        {
+            Random rand = new Random();
+            int dropValue = rand.Next(1, 10);
+
+
+            if (dropValue < 6)
+            {
+                int arrow = rand.Next(1, 4);
+                if (arrow < 4)
+                {
+                    data.addItem(new Arrow(.03f, false, "Wooden Arrow", 0, this.Position));
+                }
+                else
+                {
+                    data.addItem(new Arrow(.03f, true, "Steel Arrow", 0, this.Position));
+                }
+            }
+            else if (dropValue >= 6)
+            {
+                data.addItem(new Money(.01f, this.position, "Coins", 5));
+            }
+        }
+
         public void damage(MapDataHolder data, int hit)
         {
             if (immunityTimer >= (IMMUNITY_TIME * 1000))
@@ -149,9 +192,33 @@ namespace AdlezHolder
             this.knockBack();
         }
 
-        private void knockBack()
+        protected void knockBack()
         {
 
+        }
+
+        public void addMessage(Message message)
+        {
+            char[] a = message.Text.Substring(0, 1).ToCharArray();
+            char b = 'A';
+
+            if (a[0] > b)
+            {
+
+                if (messages.Count - 1 >= 0 && message.Text.Equals(messages[messages.Count - 1].Text,
+                    StringComparison.CurrentCultureIgnoreCase))
+                {
+                    return;
+                }
+                else
+                {
+                    messages.Add(message);
+                }
+            }
+            else
+            {
+                messages.Add(message);
+            }
         }
 
         protected virtual void attack(Map data)
