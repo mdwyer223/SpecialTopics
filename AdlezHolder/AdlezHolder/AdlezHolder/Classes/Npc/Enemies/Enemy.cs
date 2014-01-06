@@ -22,12 +22,18 @@ namespace AdlezHolder
         
         protected FullAnimation attackAn; // move some animations to AnimatiedSprite
                
-        protected bool isAttacking;
+        protected bool isAttacking, burned, poisoned, stunned, frozen;
+
+        protected int burnTimer, burnDamagePerTick,
+            freezeTimer,
+            poisonTimer, poisonDamagePerTick,
+            stunTimer,
+            stunDuration, burnDuration, freezeDuration, poisonDuration;
 
         int attackTimer, tolerence, nodeIndex;
         List<Message> messages;
 
-        protected const float IMMUNITY_TIME = .025f;
+        protected const float IMMUNITY_TIME = .25f;
         protected const float SEC_TO_ATTACK = 1;
         protected int immunityTimer = 0;
         
@@ -100,7 +106,7 @@ namespace AdlezHolder
 
         public override void Update(Map data, GameTime gameTime)
         {
-            if (IsDead)
+            if (IsDead || stunned)
                 return;
 
             for (int i = 0; i < messages.Count; i++)
@@ -174,7 +180,28 @@ namespace AdlezHolder
             }
         }
 
-        public void damage(MapDataHolder data, int hit)
+        public virtual void burn(int damage, float duration)
+        {
+            burned = true;
+        }
+
+        public virtual void stun(float duration)
+        {
+            stunned = true;
+        }
+
+        public virtual void freeze(int damage, float duration)
+        {
+            frozen = true;
+            //speed cut by percentage
+        }
+
+        public virtual void poison(int damage, float duration)
+        {
+            poisoned = true;
+        }
+
+        public virtual void damage(MapDataHolder data, int hit)
         {
             if (immunityTimer >= (IMMUNITY_TIME * 1000))
             {

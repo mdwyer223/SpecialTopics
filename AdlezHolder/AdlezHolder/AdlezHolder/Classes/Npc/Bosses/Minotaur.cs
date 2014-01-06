@@ -77,9 +77,14 @@ namespace AdlezHolder
             right[1] = content.Load<Texture2D>(attcDirec + "R2");
             attackAn = new FullAnimation(backward, forward, left, right, .2f);
 
-            attackRange = (CollisionRec.Height + CollisionRec.Width) * 2;
+            AttackRange = (CollisionRec.Height + CollisionRec.Width) * 2;
 
-            hitPoints = maxHealthPoints = 300;
+            HitPoints = MaxHealthPoints = 300;
+        }
+
+        protected override void setAttributes()
+        {
+            
         }
         
         protected override void attack(Map data)
@@ -120,14 +125,14 @@ namespace AdlezHolder
                 // move untill hit a range
                 waveDis += speed;
 
-                if (waveDis >= attackRange / 2)
+                if (waveDis >= AttackRange / 2)
                 {
                     hasCross = false;
                     waveDis = 0;
                 }
                 else if (waveRec.Intersects(data.Player.CollisionRec))// check for objects
                 {
-                    data.Player.damage(strength);
+                    data.Player.damage(Strength);
                 }                
             }
             oldVelocity = velocity;

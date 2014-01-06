@@ -75,7 +75,14 @@ namespace AdlezHolder
 
             damaged = Game1.GameContent.Load<SoundEffect>("Music/SFX/Hit Enemy");
 
-            this.HitPoints = this.MaxHealthPoints = 400;
+
+            this.Strength = 15;
+            this.HitPoints = this.MaxHealthPoints = 200;
+        }
+
+        protected override void setAttributes()
+        {
+            
         }
 
         public override void damage(MapDataHolder data, int hit)
