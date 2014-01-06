@@ -9,83 +9,96 @@ using Microsoft.Xna.Framework.Content;
 
 namespace AdlezHolder
 {
-    public class Enemy : WanderingSprite
+    public abstract class Enemy : WanderingSprite
     {
-        // wizards with bombs on their chests :explode on death or when close to u
-        // LoL Zac style slimes
-        // small speedy enemies vs Big slow enemies
-        // big enemies that spwans smaller ones when it dies
+        // TODO: make MapData.add smart, make an AdvancedSprite, RangedEnemy, path finding
 
-        enum Behavior { WONDER, ATTACK, CHASE }
-        Behavior currentBehavior;
-
+        // wizards with bombs on their chests : explode on death or when close to u
+        // LoL Zac style slimes : big enemies that spwans smaller ones when it dies
+        // enemy that steels your money
+        // knight:tanky,slow
+        // shock wave mage        
+        // ranger
+        
         protected FullAnimation attackAn; // move some animations to AnimatiedSprite
-        protected List<Message> messages;
-
-        protected int chaseRange, attackRange;
-        int attackTimer, tolerence, nodeIndex;
+               
         protected bool isAttacking;
 
-        const int BASE_CHASE_RANGE = 250;
-        const int BASE_ATTACK_RANGE = 180;
-        protected const float IMMUNITY_TIME = .1f;
+        int attackTimer, tolerence, nodeIndex;        
+
+        const float IMMUNITY_TIME = .025f;
         const float SEC_TO_ATTACK = 1;
+        int immunityTimer = 0;
+        
+        public int AttackRange
+        {
+            get;
+            protected set;
+        }
 
-        protected int immunityTimer = 0;
-        protected int maxHealthPoints, hitPoints, strength = 5;
+        float attackRangeMod = 2;
+        public float AttackRangeMod
+        {
+            get { return attackRangeMod; }
+            protected set { attackRangeMod = value; }
+        }
 
+        int hitPoints = 150;
+        public int HitPoint
+        {
+            get { return hitPoints; }
+            protected set 
+            {
+                if (hitPoints > maxHealthPoints)
+                    hitPoints = maxHealthPoints;
+                else
+                    hitPoints = value;
+            } 
+        }
+
+        int maxHealthPoints = 150;
         public int MaxHealthPoints
         {
             get { return maxHealthPoints; }
             protected set
             {
                 maxHealthPoints = value;
-                hitPoints = value;
+                if (hitPoints > value)
+                    hitPoints = value;
             }
+
         }
 
-        public int CurrentHP
+        int strength = 5;
+        public int Strength
         {
-            get { return hitPoints; }
-            set { hitPoints = value; }
+            get { return strength; }
+            protected set { strength = value; }
+        }
+
+        protected Enemy() 
+        { 
         }
 
         public Enemy(Texture2D defaultTexture, float scaleFactor, int SecondsToCrossScreen, Vector2 startPosition)
             : base(defaultTexture, scaleFactor, SecondsToCrossScreen, Game1.DisplayWidth, startPosition)
         {
-            chaseRange = (int)(BASE_CHASE_RANGE * scaleFactor);
-            attackRange = CollisionRec.Height + CollisionRec.Width + (int)(BASE_ATTACK_RANGE * scaleFactor);
+            setAttributes();
+            AttackRange = (int)(attackRangeMod * (CollisionRec.Height + CollisionRec.Width));
             
             tolerence = speed * 3;
 
             Texture2D[] ani = new Texture2D[1];
             ani[0] = defaultTexture;
             attackAn = new FullAnimation(ani, 5);
-
-            MaxHealthPoints = 100;
-            messages = new List<Message>();
         }
+
+        protected abstract void setAttributes();
 
         public override void Update(Map data, GameTime gameTime)
         {
             if (IsDead)
                 return;
-
-            for (int i = 0; i < messages.Count; i++)
-            {
-                if (messages[i] != null)
-                {
-                    messages[i].Update(gameTime, new Vector2(position.X, position.Y - 20), collisionRec.Width);
-                    if (messages[i].TimeUp)
-                    {
-                        messages.RemoveAt(i);
-                        i--;
-
-                        if (i < 0)
-                            i = 0;
-                    }
-                }
-            }
 
             if (immunityTimer <= IMMUNITY_TIME * 1000)
             {
@@ -96,92 +109,36 @@ namespace AdlezHolder
                 immunityTimer = (int)(IMMUNITY_TIME * 1000);
             }
 
-            if (measureDistance(data.Player.Center) >= attackRange)
+            //if (xDis > yDis && Math.Abs(target.X - Center.X) >= tolerence) 
+            if (measureDistance(data.Player.Center) >= AttackRange)
             {
-                // TODO: wander back to start when not chasing
+                startWander();
                 wander();
             }
             else
             {
+                stopWander();
                 attack(data);
-
                 chase(data);
             }
 
-            base.Update(data, gameTime);
-
+            base.Update(data, gameTime);            
         }
 
         public override void Draw(SpriteBatch spriteBatch)
         {
             if (!IsDead && IsVisible)
-            {
-                for (int i = 0; i < messages.Count; i++)
-                {
-                    messages[i].Draw(spriteBatch);
-                }
                 base.Draw(spriteBatch);
-            }
         }
 
-        public void addMessage(Message message)
-        {
-            char[] a = message.Text.Substring(0, 1).ToCharArray();
-            char b = 'A';
-
-            if (a[0] > b)
-            {
-
-                if (messages.Count - 1 >= 0 && message.Text.Equals(messages[messages.Count - 1].Text,
-                    StringComparison.CurrentCultureIgnoreCase))
-                {
-                    return;
-                }
-                else
-                {
-                    messages.Add(message);
-                }
-            }
-            else
-            {
-                messages.Add(message);
-            }
-        }
-
-        protected virtual void dropItem(MapDataHolder data)
-        {
-            Random rand = new Random();
-            int dropValue = rand.Next(1, 10);
-          
-
-            if (dropValue < 6)
-            {
-                int arrow = rand.Next(1, 4);
-                if (arrow < 4)
-                {
-                    data.addItem(new Arrow(.03f, false, "Wooden Arrow", 0, this.Position));
-                }
-                else
-                {
-                    data.addItem(new Arrow(.03f, true, "Steel Arrow", 0, this.Position));
-                }
-            }
-            else if (dropValue >= 6)
-            {
-                 data.addItem(new Money(.01f, this.position, "Coins", 5));
-            }
-        }
-
-        public virtual void damage(MapDataHolder data, int hit)
+        public void damage(MapDataHolder data, int hit)
         {
             if (immunityTimer >= (IMMUNITY_TIME * 1000))
             {
                 hitPoints -= hit;
-                addMessage(new Message("" + hit, Color.Red));
                 if (hitPoints <= 0)
                 {
                     hitPoints = 0;
-                    dropItem(data);
                     IsDead = true;
                     IsVisible = false;
                 }
@@ -192,7 +149,7 @@ namespace AdlezHolder
             this.knockBack();
         }
 
-        protected void knockBack()
+        private void knockBack()
         {
 
         }
@@ -245,7 +202,6 @@ namespace AdlezHolder
         protected virtual void chase(Map data)
         {
             // Movement code
-            resetWander();
             Vector2 target = data.Player.Center;
 
             Vector2 velocity = target - Center;
@@ -267,7 +223,7 @@ namespace AdlezHolder
                     {
                         if (canMoveLeft)
                             moveLeft();
-                        else
+                        else                            
                             moveY(velocity);
                     }
                 }
@@ -286,7 +242,7 @@ namespace AdlezHolder
                         if (canMoveUp)
                             moveUp();
                         else
-                            moveX(velocity);
+                             moveX(velocity);
                     }
                 }
         }
@@ -496,38 +452,46 @@ namespace AdlezHolder
 
         private void moveX(Vector2 velocity)
         {
-            if (velocity.X > 0)
+            if (velocity.X >= 0)
             {
                 if (canMoveRight)
                     moveRight();
-                else
+                else if (canMoveLeft)
                     moveLeft();
+                //else
+                //    moveY(velocity);
             }
-            else
+            else if (velocity.X < 0)
             {
                 if (canMoveLeft)
                     moveLeft();
-                else
+                else if (canMoveRight)
                     moveRight();
+                //else
+                //    moveY(velocity);
             }
         }
 
         private void moveY(Vector2 velocity)
         {
-            if (velocity.Y > 0)
+            if (velocity.Y >= 0)
             {
                 if (canMoveDown)
                     moveDown();
                 else
                     moveUp();
+                //else
+                //    moveX(velocity);
             }
-            else
+            else if (velocity.Y < 0)
             {
                 if (canMoveUp)
                     moveUp();
-                else
+                else 
                     moveDown();
-            } 
+                //else
+                //    moveX(velocity);
+            }
         }
 
         private void moveRight()
@@ -553,7 +517,6 @@ namespace AdlezHolder
             position.Y += speed;
             direction = Orientation.DOWN;
         }
-
 
 
 
