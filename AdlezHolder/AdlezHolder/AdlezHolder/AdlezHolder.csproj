@@ -164,6 +164,29 @@
     <Compile Include="Classes\Objects\SimpleObjects\TripWire.cs" />
     <Compile Include="Classes\Objects\SimpleObjects\Wall.cs" />
     <Compile Include="Classes\Objects\Traps\Trap.cs" />
+    <Compile Include="Classes\UpgradeClasses\BlankNode.cs" />
+    <Compile Include="Classes\UpgradeClasses\ItemSelectClass.cs" />
+    <Compile Include="Classes\UpgradeClasses\SwordUpgradeClass.cs" />
+    <Compile Include="Classes\UpgradeClasses\TreeDisplay.cs" />
+    <Compile Include="Classes\UpgradeClasses\UpgradeNode.cs" />
+    <Compile Include="Classes\UpgradeClasses\Weapons\Bomb\BombDamageNode.cs" />
+    <Compile Include="Classes\UpgradeClasses\Weapons\Bomb\BombESlotNode.cs" />
+    <Compile Include="Classes\UpgradeClasses\Weapons\Bomb\ManualDetNode.cs" />
+    <Compile Include="Classes\UpgradeClasses\Weapons\Bomb\RadiusNode.cs" />
+    <Compile Include="Classes\UpgradeClasses\Weapons\Bomb\SmokeBombNode.cs" />
+    <Compile Include="Classes\UpgradeClasses\Weapons\Bomb\TripMineNode.cs" />
+    <Compile Include="Classes\UpgradeClasses\Weapons\Bow\ArrowsShotNode.cs" />
+    <Compile Include="Classes\UpgradeClasses\Weapons\Bow\BowDamageNode.cs" />
+    <Compile Include="Classes\UpgradeClasses\Weapons\Bow\BowESlotNode.cs" />
+    <Compile Include="Classes\UpgradeClasses\Weapons\Bow\RangeNode.cs" />
+    <Compile Include="Classes\UpgradeClasses\Weapons\Bow\SaveArrowsNode.cs" />
+    <Compile Include="Classes\UpgradeClasses\Weapons\Bow\SeekArrowNode.cs" />
+    <Compile Include="Classes\UpgradeClasses\Weapons\Bow\SpeedBowNode.cs" />
+    <Compile Include="Classes\UpgradeClasses\Weapons\Sword\SizeNode.cs" />
+    <Compile Include="Classes\UpgradeClasses\Weapons\Sword\SwordDamageNode.cs" />
+    <Compile Include="Classes\UpgradeClasses\Weapons\Sword\SwordESlotNode.cs" />
+    <Compile Include="Classes\UpgradeClasses\Weapons\Sword\SwordSpeedNode.cs" />
+    <Compile Include="Classes\UpgradeClasses\Weapons\Sword\WaveNode.cs" />
     <Compile Include="Classes\Weapons\Bomb.cs" />
     <Compile Include="Classes\Weapons\BombObj.cs" />
     <Compile Include="Classes\Weapons\Bow.cs" />
@@ -246,9 +269,6 @@
       <ProductName>Microsoft XNA Framework Redistributable 4.0</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="AdlezHolder_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

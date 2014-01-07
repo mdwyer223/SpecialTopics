@@ -11,18 +11,16 @@ namespace AdlezHolder
 {
     public class Sword
     {
-        float speed, lifeSteal = 0f;
-        int damage, range;
-        int upgradeDamageLev, upgradeRangeLev, 
-            upgradeSpeedLev;
+        float speed;
+        int damage, range, enchantmentSlots,size;
+        int upgradeDamageLev, upgradeRangeLev, upgradeSpeedLev;
         bool dead = true;
+        bool wave = false;
+        UpgradeNode[,] multiNodeArray;
 
         Color color;
         Texture2D texture;
         Rectangle collisionRec;
-
-        List<Gem> gemList;
-        int gemSlots;
         
         public float Speed
         {
@@ -38,30 +36,18 @@ namespace AdlezHolder
         {
             get{ return range; }
         }
-
-        public int MaxGemSlots
+        public int Size
         {
-            get { return gemSlots; }
+            get { return Size; }
         }
-
-        public int getDamageUpgradeLev
-        {
-            get{return upgradeDamageLev;}
-        }
-
-        public int getRangeUpgradeLev
-        {
-            get{return upgradeRangeLev;}
-        }
-
-        public int getSpeedUpgradeLev
-        {
-            get{return upgradeSpeedLev;}
-        }
-
         public bool isDead
         {
             get { return dead; }
+        }
+
+        public bool isWaveActivated
+        {
+            get { return wave; }
         }
 
         public Rectangle CollisionRec
@@ -69,9 +55,9 @@ namespace AdlezHolder
             get { return collisionRec; }
         }
 
-        public List<Gem> Gems
+        public void increaseEnchantmentSlot(int numOfIncrease)
         {
-            get { return gemList; }
+            enchantmentSlots += numOfIncrease;
         }
 
         public Sword(float scaleFactor)
@@ -93,33 +79,81 @@ namespace AdlezHolder
             
         }
 
-        public void UpgradeDamage()
+        public void UpgradeDamage(double multiplier)
         {
-            if (upgradeDamageLev <= 5)
-            {
-                damage = (int)(damage * 1.25);
-                upgradeDamageLev++;
-            }
-            
-        }
-           
-        public void UpgradeRange()
-        {
-            if (upgradeRangeLev <= 5)
-            {
-                range = (int)(range * 1.25);
-                upgradeRangeLev++;
-            }
-
+                damage =(int)(damage * multiplier);       
         }
 
-        public void UpgradeSpeed()
+        public void UpgradeWave(bool onOff)
         {
-            if (upgradeSpeedLev <= 5)
-            {
-                speed = (int)(speed * 1.25);
-                upgradeSpeedLev++;
-            }
+                wave = onOff;       
+        }
+        public void UpgradeSize(double multiplier)
+        {
+                size =(int)(size * multiplier);       
+        }
+        public void UpgradeRange(double multiplier)
+        {
+            range = (int)(range * multiplier);
+        }
+
+        public void UpgradeSpeed(double multiplier)
+        {
+                speed = (int)(speed * multiplier);
+        }
+
+        public void GetTree()
+        {
+            Texture2D nodeTexture = Game1.GameContent.Load<Texture2D>("Particle");
+            float scalefactor = .3f;
+
+            int displayWidth, displayHeight;
+            int widthSeperation, heightSeparation, nodeTopRow, nodeMiddleRow, nodeBottomRow;
+            int marginWidth = (int)(displayWidth * .05);
+            int marginHeight = (int)(displayHeight * .05);
+            Vector2 nodePosition;
+
+            nodePosition.X = widthSeperation;
+            nodePosition.Y = heightSeparation;
+
+            overScan.Width = displayWidth - marginWidth;
+            overScan.Height = displayHeight - marginHeight;
+
+            overScan.X = displayWidth + marginWidth;
+            overScan.Y = displayHeight - marginHeight;
+
+            heightSeparation = overScan.Height / 6;
+            widthSeperation = overScan.Width / 4;
+
+            multiNodeArray = new UpgradeNode[7, 3];
+            //Row1
+            multiNodeArray[0, 0] = null;
+            multiNodeArray[0, 1] = new SwordDamageNode(nodeTexture, scalefactor, nodePosition);
+            multiNodeArray[0, 2] = null;
+            //Row 2
+            multiNodeArray[1, 0] = new SwordESlotNode(nodeTexture, scalefactor, nodePosition);//work on eSLots
+            multiNodeArray[1, 1] = new SizeNode(nodeTexture, scalefactor, nodePosition);
+            multiNodeArray[1, 2] = new SpeedSwordNode(nodeTexture, scalefactor, nodePosition);
+            //Row 3
+            multiNodeArray[2, 0] = null;
+            multiNodeArray[2, 1] = new SwordDamageNode(nodeTexture, scalefactor, nodePosition);
+            multiNodeArray[2, 2] = null;
+            //Row 4
+            multiNodeArray[3, 0] = null;
+            multiNodeArray[3, 1] = new UpgradeNode(nodeTexture, scalefactor, nodePosition);
+            multiNodeArray[3, 2] = null;
+            //Row 5
+            multiNodeArray[4, 0] = new SwordDamageNode(nodeTexture, scalefactor, nodePosition);
+            multiNodeArray[4, 1] = new SpeedSwordNode(nodeTexture, scalefactor, nodePosition);
+            multiNodeArray[4, 2] = new SwordESlotNode(nodeTexture, scalefactor, nodePosition);
+            //Row 6
+            multiNodeArray[5, 0] = new SpeedSwordNode(nodeTexture, scalefactor, nodePosition);
+            multiNodeArray[5, 1] = new SizeNode(nodeTexture, scalefactor, nodePosition);
+            multiNodeArray[5, 2] = new SwordDamageNode(nodeTexture, scalefactor, nodePosition);
+            //Row 7
+            multiNodeArray[6, 0] = new SwordESlotNode(nodeTexture, scalefactor, nodePosition);//work on eSLots
+            multiNodeArray[6, 1] = new WaveNode(nodeTexture, scalefactor, nodePosition);
+            multiNodeArray[6, 2] = new SizeNode(nodeTexture, scalefactor, nodePosition);
         }
 
         public void Update(MapDataHolder data, Character player,GameTime gameTime)
@@ -157,7 +191,7 @@ namespace AdlezHolder
                 {
                     if (collisionRec.Intersects(enemy.CollisionRec))
                     {
-                        damageEnemy(enemy, data);
+                        enemy.damage(data, (int)damage);
                     }
                 }
             }
@@ -171,62 +205,20 @@ namespace AdlezHolder
             }
         }
 
-        public void damageEnemy(Enemy enemy, MapDataHolder data)
-        {
-            float burnChance = 0f, poisonChance = 0f, lightningChance = 0f,
-                freezeChance = 0f, vampirePercent = 0f;
-            float burnDuration = 0f, poisonDuration = 0f, stunDuration = 0f, 
-                freezeDuration = 0f;
-            int burnDamage = 0, poisonDamage = 0, freezeDamage = 0;
-
-            for (int i = 0; i < gemList.Count; i++)
-            {
-                if (gemList[i].GetType() == typeof(FireStone))
-                {
-                    burnChance += gemList[i].Chance;
-                    burnDamage += gemList[i].Damage;
-                    burnDuration += gemList[i].Duration;
-                }
-                if (gemList[i].GetType() == typeof(VampiricStone))
-                {
-                    vampirePercent = gemList[i].Chance;
-                }
-                if (gemList[i].GetType() == typeof(PoisonStone))
-                {
-                    poisonChance += gemList[i].Chance;
-                    poisonDamage += gemList[i].Damage;
-                    poisonDuration += gemList[i].Duration;
-                }
-                if (gemList[i].GetType() == typeof(IceStone))
-                {
-                    freezeChance += gemList[i].Chance;
-                    freezeDamage += gemList[i].Damage;
-                    freezeDuration += gemList[i].Duration;
-                }
-                if (gemList[i].GetType() == typeof(LightningStone))
-                {
-                    lightningChance += gemList[i].Chance;
-                    stunDuration += gemList[i].Duration;
-                }
-
-                Random rand = new Random();
-                //check all the stats with a new randy every time
-                
-            }
-
-        }
-
         public void toggle(bool newValue)
         {
             dead = newValue;
         }
 
-        public void addGem(Gem gem)
+        public string[] getStatBoxes()
         {
-            if (gemList.Count == MaxGemSlots)
-                return;
-
-            this.gemList.Add(gem);
+            string[] finishedArray;
+            finishedArray = new string[3];
+            finishedArray[0] = "Damage  " + damage;
+            finishedArray[0] = "Speed  " + speed;
+            finishedArray[0] = "Range  " + range;
+            return finishedArray;
         }
+
     }
 }
