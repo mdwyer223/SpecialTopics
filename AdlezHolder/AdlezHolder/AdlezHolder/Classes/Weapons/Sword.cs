@@ -174,10 +174,10 @@ namespace AdlezHolder
         public void damageEnemy(Enemy enemy, MapDataHolder data, Character player)
         {
             float burnChance = 0f, poisonChance = 0f, lightningChance = 0f,
-                freezeChance = 0f, vampirePercent = .10f;
-            float burnDuration = 0f, poisonDuration = 0f, stunDuration = 0f, 
-                freezeDuration = 0f;
-            int burnDamage = 0, poisonDamage = 0, freezeDamage = 0;
+                freezeChance = 1f, vampirePercent = .10f;
+            float burnDuration = 0f, poisonDuration = 0f, stunDuration = 3f, 
+                freezeDuration = 3f;
+            int burnDamage = 0, poisonDamage = 0, freezeDamage = (int)(damage * 1.25);
 
             for (int i = 0; i < gemList.Count; i++)
             {
@@ -200,24 +200,44 @@ namespace AdlezHolder
                 if (gemList[i].GetType() == typeof(IceStone))
                 {
                     freezeChance += gemList[i].Chance;
-                    freezeDamage += gemList[i].Damage;
+                    IceStone stone = (IceStone)(gemList[i]);
+                    freezeDamage += (int)(stone.CritDamage * damage) + damage;
                     freezeDuration += gemList[i].Duration;
+                    stone = null;
                 }
                 if (gemList[i].GetType() == typeof(LightningStone))
                 {
                     lightningChance += gemList[i].Chance;
                     stunDuration += gemList[i].Duration;
-                }
-
-                Random rand = new Random();
-                //check all the stats with a new randy every time
-                
+                } 
             }
 
             enemy.damage(data, damage);
             if (vampirePercent > 0)
             {
                 player.heal((int)(vampirePercent * damage));
+            }
+            Random rand = new Random();
+            //check all the stats with a new randy every time
+
+            if (rand.NextDouble() < poisonChance)
+            {
+                enemy.poison(poisonDamage, poisonDuration);
+            }
+
+            if (rand.NextDouble() < burnChance)
+            {
+                enemy.burn(burnDamage, burnDuration);
+            }
+
+            if (rand.NextDouble() < freezeChance)
+            {
+                enemy.freeze(freezeDamage, freezeDuration);
+            }
+
+            if (rand.NextDouble() <= lightningChance)
+            {
+                enemy.stun(stunDuration);
             }
         }
 

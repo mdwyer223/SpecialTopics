@@ -25,10 +25,11 @@ namespace AdlezHolder
         protected bool isAttacking, burned, poisoned, stunned, frozen;
 
         protected int burnTimer, burnDamagePerTick,
-            freezeTimer,
+            freezeTimer, freezeSpeed, originalSpeed,
             poisonTimer, poisonDamagePerTick,
-            stunTimer,
-            stunDuration, burnDuration, freezeDuration, poisonDuration;
+            stunTimer;
+        protected float stunDuration, burnDuration, freezeDuration, poisonDuration;
+            
 
         int attackTimer, tolerence, nodeIndex;
         List<Message> messages;
@@ -94,6 +95,7 @@ namespace AdlezHolder
             AttackRange = (int)(attackRangeMod * (CollisionRec.Height + CollisionRec.Width));
             
             tolerence = speed * 3;
+            originalSpeed = speed;
 
             Texture2D[] ani = new Texture2D[1];
             ani[0] = defaultTexture;
@@ -106,9 +108,6 @@ namespace AdlezHolder
 
         public override void Update(Map data, GameTime gameTime)
         {
-            if (IsDead || stunned)
-                return;
-
             for (int i = 0; i < messages.Count; i++)
             {
                 if (messages[i] != null)
@@ -134,6 +133,62 @@ namespace AdlezHolder
                 immunityTimer = (int)(IMMUNITY_TIME * 1000);
             }
 
+            if (IsDead || stunned)
+            {
+                stunTimer += gameTime.ElapsedGameTime.Milliseconds;
+                addMessage(new Message("Stun", Color.Yellow));
+                if (stunTimer >= stunDuration * 1000)
+                {
+                    stunned = false;
+                    stunTimer = 0;
+                    stunDuration = 0;
+                }
+                return;
+            }
+
+            if (frozen)
+            {
+                this.speed = freezeSpeed;
+            }
+            else
+            {
+                this.speed = originalSpeed;
+            }
+
+            if (burned)
+            {
+                burnTimer += gameTime.ElapsedGameTime.Milliseconds;
+                if (burnTimer < burnDuration * 1000)
+                {
+                    this.damage(data.CurrentData, (int)burnDamagePerTick);
+                    addMessage(new Message("" + burnDamagePerTick, Color.Orange));
+                }
+                else
+                {
+                    burned = false;
+                    burnTimer = 0;
+                    burnDuration = 0;
+                    burnDamagePerTick = 0;
+                }
+            }
+
+            if (poisoned)
+            {
+                poisonTimer += gameTime.ElapsedGameTime.Milliseconds;
+                if (poisonTimer < poisonDuration * 1000)
+                {
+                    this.damage(data.CurrentData, (int)poisonDamagePerTick);
+                    addMessage(new Message("" + poisonDamagePerTick, Color.Orange));
+                }
+                else
+                {
+                    poisoned = false;
+                    poisonTimer = 0;
+                    poisonDuration = 0;
+                    poisonDamagePerTick = 0;
+                }
+            }
+
             //if (xDis > yDis && Math.Abs(target.X - Center.X) >= tolerence) 
             if (measureDistance(data.Player.Center) >= AttackRange)
             {
@@ -153,7 +208,13 @@ namespace AdlezHolder
         public override void Draw(SpriteBatch spriteBatch)
         {
             if (!IsDead && IsVisible)
+            {
+                for (int i = 0; i < messages.Count; i++)
+                {
+                    messages[i].Draw(spriteBatch);
+                }
                 base.Draw(spriteBatch);
+            }
         }
 
         protected virtual void dropItem(MapDataHolder data)
@@ -183,22 +244,35 @@ namespace AdlezHolder
         public virtual void burn(int damage, float duration)
         {
             burned = true;
+            burnDamagePerTick = (int)((damage / duration) + .5f);
+            burnDuration = duration;
+            burnTimer = 0;
         }
 
         public virtual void stun(float duration)
         {
             stunned = true;
+            stunDuration = duration;
+            stunTimer = 0;
         }
 
         public virtual void freeze(int damage, float duration)
         {
             frozen = true;
             //speed cut by percentage
+            this.HitPoints -= damage;
+            addMessage(new Message("" + damage, Color.Cyan));
+            freezeSpeed = speed /2; 
+            freezeDuration = duration;
+            freezeTimer = 0;
         }
 
         public virtual void poison(int damage, float duration)
         {
             poisoned = true;
+            poisonDamagePerTick = (int)((damage / duration) + .5f);
+            poisonDuration = duration;
+            poisonTimer = 0;
         }
 
         public virtual void damage(MapDataHolder data, int hit)
