@@ -11,7 +11,6 @@ namespace AdlezHolder
 {
     public class PoisonStone : Gem
     {
-        //purple
         public PoisonStone(Texture2D texture, float scaleFactor, Vector2 startPosition, string tag, int value)
             :base(texture, scaleFactor, startPosition, tag, value)
         {

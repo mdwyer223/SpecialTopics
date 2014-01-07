@@ -11,8 +11,8 @@ namespace AdlezHolder
 {
     public class IceStone : Gem
     {
-        //cyan
-        public IceStone(Texture2D texture, float scaleFactor, Vector2 startPosition, string tag, int value)
+        public IceStone(Texture2D texture, float scaleFactor, Vector2 startPosition, string tag, bool isPickUp,
+            bool isCurrency, bool isStackable, int value)
             :base(texture, scaleFactor, startPosition, tag, value)
         {
         }
