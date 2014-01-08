@@ -16,6 +16,7 @@ namespace AdlezHolder
         int upgradeDamageLev, upgradeRangeLev, 
             upgradeSpeedLev;
         bool dead = true;
+        bool stoleLife = false;
 
         Color color;
         Texture2D texture;
@@ -161,6 +162,10 @@ namespace AdlezHolder
                     }
                 }
             }
+            else
+            {
+                stoleLife = false;
+            }
         }
 
         public void Draw(SpriteBatch spriteBatch)
@@ -173,11 +178,11 @@ namespace AdlezHolder
 
         public void damageEnemy(Enemy enemy, MapDataHolder data, Character player)
         {
-            float burnChance = 0f, poisonChance = 0f, lightningChance = 0f,
-                freezeChance = 1f, vampirePercent = .10f;
-            float burnDuration = 0f, poisonDuration = 0f, stunDuration = 3f, 
+            float burnChance = .25f, poisonChance = .25f, lightningChance = .25f,
+                freezeChance = .15f, vampirePercent = .10f;
+            float burnDuration = 3f, poisonDuration = 20f, stunDuration = 1f, 
                 freezeDuration = 3f;
-            int burnDamage = 0, poisonDamage = 0, freezeDamage = (int)(damage * 1.25);
+            int burnDamage = 45, poisonDamage = 60, freezeDamage = damage;
 
             for (int i = 0; i < gemList.Count; i++)
             {
@@ -215,7 +220,11 @@ namespace AdlezHolder
             enemy.damage(data, damage);
             if (vampirePercent > 0)
             {
-                player.heal((int)(vampirePercent * damage));
+                if (!stoleLife)
+                {
+                    player.heal((int)(vampirePercent * damage));
+                    stoleLife = true;
+                }
             }
             Random rand = new Random();
             //check all the stats with a new randy every time
@@ -230,7 +239,7 @@ namespace AdlezHolder
                 enemy.burn(burnDamage, burnDuration);
             }
 
-            if (rand.NextDouble() < freezeChance)
+            if (rand.NextDouble() < freezeChance && !enemy.Frozen)
             {
                 enemy.freeze(freezeDamage, freezeDuration);
             }

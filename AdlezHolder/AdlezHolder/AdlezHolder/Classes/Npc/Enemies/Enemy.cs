@@ -24,9 +24,9 @@ namespace AdlezHolder
                
         protected bool isAttacking, burned, poisoned, stunned, frozen;
 
-        protected int burnTimer, burnDamagePerTick,
-            freezeTimer, freezeSpeed, originalSpeed,
-            poisonTimer, poisonDamagePerTick,
+        protected int burnTimer, burnDamagePerTick, bTickTimer,
+            freezeTimer, freezeSpeed, originalSpeed, originalDamage, frozenDamage,
+            poisonTimer, poisonDamagePerTick, pTickTimer,
             stunTimer;
         protected float stunDuration, burnDuration, freezeDuration, poisonDuration;
             
@@ -37,7 +37,22 @@ namespace AdlezHolder
         protected const float IMMUNITY_TIME = .25f;
         protected const float SEC_TO_ATTACK = 1;
         protected int immunityTimer = 0;
-        
+
+        public bool Frozen
+        {
+            get { return frozen; }
+        }
+
+        public bool Burned
+        {
+            get { return burned; }
+        }
+
+        public bool Poisoned
+        {
+            get { return poisoned; }
+        }
+
         public int AttackRange
         {
             get;
@@ -102,6 +117,7 @@ namespace AdlezHolder
             attackAn = new FullAnimation(ani, 5);
 
             messages = new List<Message>();
+            originalDamage = this.strength;
         }
 
         protected abstract void setAttributes();
@@ -148,20 +164,32 @@ namespace AdlezHolder
 
             if (frozen)
             {
-                this.speed = freezeSpeed;
+                this.Strength = frozenDamage;
+                freezeTimer += gameTime.ElapsedGameTime.Milliseconds;
+                if (freezeTimer >= (freezeDuration * 1000))
+                {
+                    freezeDuration = 0;
+                    freezeTimer = 0;
+                    frozen = false;
+                }
             }
             else
             {
-                this.speed = originalSpeed;
+                this.Strength = this.originalDamage;
             }
 
             if (burned)
             {
                 burnTimer += gameTime.ElapsedGameTime.Milliseconds;
+                bTickTimer += gameTime.ElapsedGameTime.Milliseconds;
                 if (burnTimer < burnDuration * 1000)
                 {
-                    this.damage(data.CurrentData, (int)burnDamagePerTick);
-                    addMessage(new Message("" + burnDamagePerTick, Color.Orange));
+                    if (bTickTimer > 1000)
+                    {
+                        this.damage(data.CurrentData, (int)burnDamagePerTick);
+                        addMessage(new Message("" + burnDamagePerTick, Color.Orange));
+                        bTickTimer = 0;
+                    }
                 }
                 else
                 {
@@ -175,10 +203,15 @@ namespace AdlezHolder
             if (poisoned)
             {
                 poisonTimer += gameTime.ElapsedGameTime.Milliseconds;
+                pTickTimer += gameTime.ElapsedGameTime.Milliseconds;
                 if (poisonTimer < poisonDuration * 1000)
                 {
-                    this.damage(data.CurrentData, (int)poisonDamagePerTick);
-                    addMessage(new Message("" + poisonDamagePerTick, Color.Orange));
+                    if (pTickTimer > 1000)
+                    {
+                        this.damage(data.CurrentData, (int)poisonDamagePerTick);
+                        addMessage(new Message("" + poisonDamagePerTick, Color.Purple));
+                        pTickTimer = 0;
+                    }
                 }
                 else
                 {
@@ -262,7 +295,7 @@ namespace AdlezHolder
             //speed cut by percentage
             this.HitPoints -= damage;
             addMessage(new Message("" + damage, Color.Cyan));
-            freezeSpeed = speed /2; 
+            frozenDamage = (int)((this.Strength * .5f) + .5f);
             freezeDuration = duration;
             freezeTimer = 0;
         }
