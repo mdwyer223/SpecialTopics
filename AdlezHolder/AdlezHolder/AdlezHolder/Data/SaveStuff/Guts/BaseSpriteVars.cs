@@ -24,8 +24,7 @@ namespace AdlezHolder
         }
 
         public BaseSpriteVars(BaseSprite inBaseSprite)
-        {            
-            //image = inBaseSprite.Image;
+        {
             imageColor = inBaseSprite.ImageColor;
             isDead = inBaseSprite.IsDead;
             isVisible = inBaseSprite.IsVisible;

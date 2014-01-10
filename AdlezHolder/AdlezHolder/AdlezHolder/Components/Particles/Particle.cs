@@ -24,7 +24,7 @@ namespace AdlezHolder
 
         public bool OffScreen
         {
-            get { return position.Y > Game1.DisplayHeight || position.X > Game1.DisplayWidth || position.X < 0 || (lifeLengthTimer / 1000) >= lifeLength; }
+            get { return (position.Y > Game1.DisplayHeight || position.X > Game1.DisplayWidth || position.X < 0) || lifeLengthTimer >= lifeLength * 1000; }
         }
 
         public int Damage
@@ -110,7 +110,7 @@ namespace AdlezHolder
 
         public void Update(GameTime gameTime)
         {
-            damage -= damageReduction;
+            damage += damageReduction;
             lifeLengthTimer += gameTime.ElapsedGameTime.Milliseconds;
             position += velo;
         }
@@ -120,10 +120,10 @@ namespace AdlezHolder
             spriteBatch.Draw(blankTexture, Rec, color);
         }
 
-        public void calcDamage(int damage) // TODO:
+        public void calcDamage(int damage)
         {
             int endDamage = (int)((damage * .2f) + .5f);
-            damageReduction = (damage - endDamage) / lifeLength;
+            damageReduction = (endDamage - damage) / (lifeLength * 60);
         }
     }
 }

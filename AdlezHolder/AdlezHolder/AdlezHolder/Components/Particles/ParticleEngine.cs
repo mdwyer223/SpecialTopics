@@ -135,7 +135,7 @@ namespace AdlezHolder
         public Particle getMageParticle(Vector2 start, Vector2 velocity, int damage)
         {
             Color color = new Color(0, 0, rand.Next(40, 255));
-            Particle p = new Particle(color, rand.Next(2, 5), damage, (float)(rand.NextDouble() * 2), start, velocity);
+            Particle p = new Particle(color, rand.Next(2, 5), damage, (float)(rand.NextDouble() * .15f + .4f), start, velocity);
 
             return p;
         }

@@ -188,7 +188,7 @@ namespace AdlezHolder
             Rectangle rect = new Rectangle(Game1.DisplayWidth - (int)(Game1.DisplayWidth * 1.05), Game1.DisplayHeight - (int)(Game1.DisplayHeight * 1.05),
                 (int)(Game1.DisplayWidth * 1.05), (int)(Game1.DisplayHeight * 1.05));
 
-            spriteBatch.Draw(Game1.GameContent.Load<Texture2D>("The best thing ever"), rect, new Color(0,0,0, 130));
+            spriteBatch.Draw(Game1.GameContent.Load<Texture2D>("Random/The best thing ever"), rect, new Color(0,0,0, 130));
 
             if (inTabs)
             {

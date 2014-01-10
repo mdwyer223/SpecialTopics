@@ -44,7 +44,7 @@ namespace AdlezHolder
 
                 for (int i = 0; i < sprites.Count; i++)
                 {
-                    if (sprites[i] != null && sprites[i].GetType() != typeof (ArrowTrap) && sprites[i].GetType() != typeof(Wall))
+                    if (sprites[i] != null && sprites[i].GetType() != typeof(ArrowTrap) && sprites[i].GetType() != typeof(Wall))
                     {
                         if (sprites[i] != this && this.CollisionRec.Intersects(sprites[i].CollisionRec) 
                             && !sprites[i].IsDead)

@@ -9,22 +9,16 @@ using Microsoft.Xna.Framework.Content;
 
 namespace AdlezHolder
 {
-    public class Mage : Enemy
+    public class Mage : RangedEnemy
     {
-        Orientation blastDirec;
-        Texture2D blastText;
-        Rectangle blastRec;
-        bool hasCross;
-        int blastDis;
-
         ParticleEngine pEngine;
 
         public Mage(Texture2D defaultTexture, float scaleFactor, Vector2 startPosition)
             : base(defaultTexture, scaleFactor, 7, startPosition)
         {
             pEngine = new ParticleEngine();
-            blastText = Game1.GameContent.Load<Texture2D>("White Block");
-            blastRec = new Rectangle(0, 0, 10, 10);
+            projectileText = Game1.GameContent.Load<Texture2D>("Random/Particle");
+            projectileRec = new Rectangle(0, 0, 10, 10);
 
 
             // load in animations
@@ -91,97 +85,16 @@ namespace AdlezHolder
             Strength = 10;
         }
 
-        protected override void attack(Map data)
+        protected override void projectileEnd(Map data, BaseSprite collidedObject, Vector2 position)
         {
-            base.attack(data);
-            Vector2 velocity = data.Player.Center - Center;
-
-            if (Math.Abs(data.Player.Center.X - Center.X) < CollisionRec.Height / 2
-                || Math.Abs(data.Player.Center.Y - Center.Y) < CollisionRec.Width / 2)
+            base.projectileEnd(data, collidedObject, position);
+            List<Particle> pStuff = pEngine.generateMageBurst(position, Strength);
+            foreach (Particle p in pStuff)
             {
-                if (!hasCross)
-                {
-                    blastDirec = direction;
-                    isAttacking = true;
-                    hasCross = true;                    
-                    createShot();
-                }
-            }
-
-            // shoot wave 
-            if (hasCross)
-            {
-                // move rec based on direction
-                switch (blastDirec)
-                {
-                    case Orientation.UP:
-                        blastRec.Y -= speed * 4;
-                        break;
-                    case Orientation.DOWN:
-                        blastRec.Y += speed * 4;
-                        break;
-                    case Orientation.LEFT:
-                        blastRec.X -= speed * 4;
-                        break;
-                    case Orientation.RIGHT:
-                        blastRec.X += speed * 4;
-                        break;
-                }
-                // move untill hit a range
-                blastDis += speed;
-
-                if (blastDis >= AttackRange / 3)
-                {
-                    createBurst(new Vector2(blastRec.X, blastRec.Y), data.CurrentData);
-                }
-                else if (blastRec.Intersects(data.Player.CollisionRec))// check for objects
-                {
-                    data.Player.damage(Strength);
-                    hasCross = false;
-                    blastDis = 0;
-                }
-                
-                foreach(BaseSprite sprite in data.CurrentData.AllObjects)
-                    if (blastRec.Intersects(sprite.CollisionRec))
-                    {
-                        createBurst(new Vector2(blastRec.X, blastRec.Y), data.CurrentData);
-                        break;
-                    }
-
-
+                data.CurrentData.addParticle(p);
             }
         }
 
-        protected override void wander()
-        {
-            base.wander();
-            hasCross = false;
-            blastDis = 0;
-        }
 
-        public override void Draw(SpriteBatch spriteBatch)
-        {
-            base.Draw(spriteBatch);
-            if (hasCross)
-                spriteBatch.Draw(blastText, blastRec, Color.Blue);
-        }
-
-        private void createShot()
-        {
-            blastRec.X = (int)Center.X;
-            blastRec.Y = (int)Center.Y;
-        }
-
-        private void createBurst(Vector2 startPos, MapDataHolder data)
-        {
-
-            hasCross = false;
-            blastDis = 0;
-            List<Particle> pStuff = pEngine.generateMageBurst(startPos, Strength);
-            foreach(Particle p in pStuff)
-            {
-                data.addParticle(p);
-            }
-        }
     }
 }

@@ -219,6 +219,8 @@ namespace AdlezHolder
                 
             }
 
+            enemy.damage(data, damage);
+
         }
 
         public void toggle(bool newValue)

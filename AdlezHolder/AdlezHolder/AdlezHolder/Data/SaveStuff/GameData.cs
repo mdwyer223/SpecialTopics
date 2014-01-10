@@ -17,8 +17,7 @@ namespace AdlezHolder
         public GameData()
         {
             Map map = new Map();
-            map.changeMap(new MainRoom());
-            
+            map.changeMap(new MainRoom());            
 
             mapVars = new MapVars(map);
         }

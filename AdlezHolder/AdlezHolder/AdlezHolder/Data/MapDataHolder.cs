@@ -281,15 +281,10 @@ namespace AdlezHolder
                                 Character c = (Character)sprites[j];
                                 c.damage(particles[i].Damage);
                             }
-                            else if (sprites[j].GetType() == typeof(Skeleton))
+                            else if (sprites[j].GetType().IsSubclassOf(typeof(Enemy)))
                             {
-                                Skeleton s = (Skeleton)sprites[j];
+                                Enemy s = (Enemy)sprites[j];
                                 s.damage(this, particles[i].Damage);
-                            }
-                            else if (sprites[j].GetType() == typeof(Minotaur))
-                            {
-                                Minotaur m = (Minotaur)sprites[j];
-                                m.damage(this, particles[i].Damage);
                             }
                             else if (sprites[j].GetType() == typeof(BombObj))
                             {
@@ -297,9 +292,7 @@ namespace AdlezHolder
                                 b.rushDelay();
                             }
 
-                            if (sprites[j].GetType() != typeof(Arrow)
-                                && sprites[j].GetType() != typeof(Money)
-                                && sprites[j].GetType() != typeof(Item)
+                            if (sprites[j].GetType().IsSubclassOf(typeof(Item))
                                 && sprites[j].GetType() != typeof(BombObj))
                             {
                                 particles.RemoveAt(i);

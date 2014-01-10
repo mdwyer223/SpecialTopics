@@ -51,7 +51,9 @@ namespace AdlezHolder
             canMoveDown = true;
             foreach (BaseSprite sprite in map.CurrentData.Everything)
             {
-                if (!sprite.IsDead)
+                if (!sprite.IsDead && sprite != this &&
+                    sprite.GetType().IsSubclassOf(typeof(ImmovableObject)) &&
+                    sprite.GetType().IsSubclassOf(typeof(Enemy)))
                 {
                     canMoveDown = canMoveDown && !BottomRec.Intersects(sprite.CollisionRec);
                     canMoveUp = canMoveUp && !TopRec.Intersects(sprite.CollisionRec);
