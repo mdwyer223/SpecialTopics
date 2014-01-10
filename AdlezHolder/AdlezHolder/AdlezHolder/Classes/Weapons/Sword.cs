@@ -13,8 +13,6 @@ namespace AdlezHolder
     {
         float speed, lifeSteal = 0f;
         int damage, range;
-        int upgradeDamageLev, upgradeRangeLev, 
-            upgradeSpeedLev;
         bool dead = true;
         bool stoleLife = false;
 
@@ -24,7 +22,9 @@ namespace AdlezHolder
 
         List<Gem> gemList;
         int gemSlots;
-        
+
+        GemStruct lifestealStruct, freezeStruct, poisonStruct, lightningStruct, fireStruct;
+
         public float Speed
         {
             get{ return speed; }
@@ -45,21 +45,6 @@ namespace AdlezHolder
             get { return gemSlots; }
         }
 
-        public int getDamageUpgradeLev
-        {
-            get{return upgradeDamageLev;}
-        }
-
-        public int getRangeUpgradeLev
-        {
-            get{return upgradeRangeLev;}
-        }
-
-        public int getSpeedUpgradeLev
-        {
-            get{return upgradeSpeedLev;}
-        }
-
         public bool isDead
         {
             get { return dead; }
@@ -75,6 +60,38 @@ namespace AdlezHolder
             get { return gemList; }
         }
 
+        public GemStruct LifeStealStruct
+        {
+            get { return lifestealStruct; }
+        }
+
+        public GemStruct FireStruct
+        {
+            get { return fireStruct; }
+        }
+
+        public GemStruct PoisonStruct
+        { 
+            get { return poisonStruct; } 
+        }
+
+        public GemStruct StunStruct
+        {
+            get { return lightningStruct; }
+        }
+
+        public GemStruct IceStruct
+        {
+            get { return freezeStruct; }
+        }
+
+        public struct GemStruct
+        {
+            public float duration;
+            public int damage;
+            public float chance;
+        }
+
         public Sword(float scaleFactor)
         {   
             texture = Game1.GameContent.Load<Texture2D>("AlistarSwordAttack/LeftSwoosh");
@@ -84,43 +101,17 @@ namespace AdlezHolder
             float aspectRatio = (float)texture.Width / texture.Height;
             collisionRec.Height = (int)(collisionRec.Width / aspectRatio + 0.5f);
 
-            upgradeDamageLev = 1;
-            upgradeRangeLev = 1;
-            upgradeSpeedLev = 1;
             damage = 10;
             range = 5;
             speed = 5;
 
             gemList = new List<Gem>();
-        }
 
-        public void UpgradeDamage()
-        {
-            if (upgradeDamageLev <= 5)
-            {
-                damage = (int)(damage * 1.25);
-                upgradeDamageLev++;
-            }
-            
-        }
-           
-        public void UpgradeRange()
-        {
-            if (upgradeRangeLev <= 5)
-            {
-                range = (int)(range * 1.25);
-                upgradeRangeLev++;
-            }
-
-        }
-
-        public void UpgradeSpeed()
-        {
-            if (upgradeSpeedLev <= 5)
-            {
-                speed = (int)(speed * 1.25);
-                upgradeSpeedLev++;
-            }
+            lifestealStruct = new GemStruct();
+            freezeStruct = new GemStruct();
+            fireStruct = new GemStruct();
+            poisonStruct = new GemStruct();
+            lightningStruct = new GemStruct();
         }
 
         public void Update(MapDataHolder data, Character player,GameTime gameTime)
@@ -261,6 +252,42 @@ namespace AdlezHolder
                 return;
 
             this.gemList.Add(gem);
+        }
+
+        public void calcStats()
+        {
+            for (int i = 0; i < gemList.Count; i++)
+            {
+                if (gemList[i].GetType() == typeof(FireStone))
+                {
+                    fireStruct.chance += gemList[i].Chance;
+                    fireStruct.damage += gemList[i].Damage;
+                    fireStruct.duration += gemList[i].Duration;
+                }
+                if (gemList[i].GetType() == typeof(VampiricStone))
+                {
+                    lifestealStruct.chance = gemList[i].Chance;
+                }
+                if (gemList[i].GetType() == typeof(PoisonStone))
+                {
+                    poisonStruct.chance += gemList[i].Chance;
+                    poisonStruct.damage += gemList[i].Damage;
+                    poisonStruct.duration += gemList[i].Duration;
+                }
+                if (gemList[i].GetType() == typeof(IceStone))
+                {
+                    freezeStruct.chance += gemList[i].Chance;
+                    IceStone stone = (IceStone)(gemList[i]);
+                    freezeStruct.damage += (int)(stone.CritDamage * damage) + damage;
+                    freezeStruct.duration += gemList[i].Duration;
+                    stone = null;
+                }
+                if (gemList[i].GetType() == typeof(LightningStone))
+                {
+                    lightningStruct.chance += gemList[i].Chance;
+                    lightningStruct.duration += gemList[i].Duration;
+                }
+            }
         }
     }
 }

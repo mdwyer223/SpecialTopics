@@ -235,9 +235,10 @@ namespace AdlezHolder
             spriteBatch.End();
         }
 
-        public void getInventory(List<Item> items, int slots)
+        public void getPlayer(Character player)
         {
-            invent.updateInvent(items, slots);
+            stats.updatePlayer(player);
+            invent.updateInvent(player.PlayerInvent.ItemList, player.PlayerInvent.MaxSlots);
         }
     }
 }

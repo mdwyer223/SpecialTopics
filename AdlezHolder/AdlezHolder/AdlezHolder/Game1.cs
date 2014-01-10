@@ -203,7 +203,7 @@ namespace AdlezHolder
             else if (mainGameState == GameState.PAUSEMENU)
             {
                 pauseMenu.Visible = pauseMenu.Enabled = true;
-                pauseMenu.getInventory(world.Map.Player.PlayerInvent.ItemList, world.Map.Player.PlayerInvent.MaxSlots);
+                pauseMenu.getPlayer(world.Map.Player); 
 
                 menu.Visible = false;
                 menu.Enabled = false;

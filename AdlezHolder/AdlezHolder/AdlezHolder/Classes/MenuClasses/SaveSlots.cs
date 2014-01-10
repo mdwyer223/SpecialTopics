@@ -16,11 +16,11 @@ namespace AdlezHolder
     public class SaveSlots
     {
         Rectangle overScan;
-        int middleScreen, middleButton, buttonSeparation, PicSeparation, CharacterSeparation,upgradeSeparation;
+        int middleScreen, middleButton, buttonSeparation, PicSeparation, CharacterSeparation, upgradeSeparation;
         Vector2 buttonPosition, PicPosition, CharacterPosition, SwordUpgradePosition;
         Vector2 startPosition;
         int width1, numOfButton, displayWidth;
-        Button File1, File2, File3,Character, Character2;
+        Button File1, File2, File3, Character, Character2;
         Button placementButton;
         KeyboardState keys, oldKeys;
         BaseSprite bowPic, swordPic, bombPic, upgradeDamageStatSword, upgradeRangeStatSword, upgradeSpeedStatSword;
@@ -29,7 +29,7 @@ namespace AdlezHolder
 
         public SaveSlots(Viewport view, float scaleFactor)
         {
-
+            /*
             // PLACMENT CODE_____________________________________________________________________________
             displayWidth = view.Width;
             placementButton = new Button(Game1.GameContent.Load<Texture2D>("transparent"), .3f, displayWidth,
@@ -506,6 +506,8 @@ namespace AdlezHolder
                     File3.enteredPress();
                 }
             }
+        }
+             */
         }
     }
 }

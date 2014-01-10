@@ -11,11 +11,11 @@ using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Input;
 
 namespace AdlezHolder
-{
+{        
+    public enum EquippedItem { SWORD, BOW, BOMB, NONE }
+    
     public class Character : AnimatedSprite
     {
-        public enum EquippedItem { SWORD, BOW, BOMB, NONE }
-
         List<Message> messages;
         SoundEffect damaged;
         EquippedItem selectedItem;
