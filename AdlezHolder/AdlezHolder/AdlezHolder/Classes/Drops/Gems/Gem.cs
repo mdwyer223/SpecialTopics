@@ -17,16 +17,19 @@ namespace AdlezHolder
         public int Damage
         {
             get { return damage; }
+            protected set { damage = value; }
         }
 
         public float Chance
         {
             get { return chance; }
+            protected set { chance = value; }
         }
 
         public float Duration
         {
             get { return applyDamageTime; }
+            protected set { applyDamageTime = value; }
         }
 
         public Gem(Texture2D texture, float scaleFactor, Vector2 startPosition, string tag, int value)

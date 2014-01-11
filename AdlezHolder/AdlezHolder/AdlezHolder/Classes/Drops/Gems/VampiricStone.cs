@@ -11,9 +11,12 @@ namespace AdlezHolder
 {
     public class VampiricStone : Gem
     {
-        public VampiricStone(Texture2D texture, float scaleFactor, Vector2 startPosition, string tag, int value)
-            :base(texture, scaleFactor, startPosition, tag, value)
+        public VampiricStone(float scaleFactor, Vector2 startPosition)
+            :base(null, scaleFactor, startPosition, "Vampiric Stone", 50)
         {
+            setImage(Game1.GameContent.Load<Texture2D>("Items/MagentaStone"));
+
+            Chance = .1f;
         }
     }
 }

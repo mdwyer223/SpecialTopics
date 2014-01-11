@@ -11,7 +11,7 @@ namespace AdlezHolder
 {
     public class Sword
     {
-        float speed, lifeSteal = 0f;
+        float speed;
         int damage, range;
         bool dead = true;
         bool stoleLife = false;
@@ -112,6 +112,9 @@ namespace AdlezHolder
             fireStruct = new GemStruct();
             poisonStruct = new GemStruct();
             lightningStruct = new GemStruct();
+
+            VampiricStone vStone = new VampiricStone(.02f, new Vector2(0, 0));
+            gemList.Add(vStone);
         }
 
         public void Update(MapDataHolder data, Character player,GameTime gameTime)
@@ -153,10 +156,6 @@ namespace AdlezHolder
                     }
                 }
             }
-            else
-            {
-                stoleLife = false;
-            }
         }
 
         public void Draw(SpriteBatch spriteBatch)
@@ -169,11 +168,11 @@ namespace AdlezHolder
 
         public void damageEnemy(Enemy enemy, MapDataHolder data, Character player)
         {
-            float burnChance = .25f, poisonChance = .25f, lightningChance = .25f,
-                freezeChance = .15f, vampirePercent = .10f;
-            float burnDuration = 3f, poisonDuration = 20f, stunDuration = 1f, 
-                freezeDuration = 3f;
-            int burnDamage = 45, poisonDamage = 60, freezeDamage = damage;
+            float burnChance = 0f, poisonChance = 0f, lightningChance = 0f,
+                freezeChance = 0f, vampirePercent = 0f;
+            float burnDuration = 0f, poisonDuration = 0f, stunDuration = 0f, 
+                freezeDuration = 0f;
+            int burnDamage = 0, poisonDamage = 0, freezeDamage = 0;
 
             for (int i = 0; i < gemList.Count; i++)
             {
@@ -211,12 +210,10 @@ namespace AdlezHolder
             enemy.damage(data, damage);
             if (vampirePercent > 0)
             {
-                if (!stoleLife)
-                {
-                    player.heal((int)(vampirePercent * damage));
-                    stoleLife = true;
-                }
+                player.heal((int)(vampirePercent * damage));
+                stoleLife = true;
             }
+
             Random rand = new Random();
             //check all the stats with a new randy every time
 
