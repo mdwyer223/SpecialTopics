@@ -30,8 +30,8 @@ namespace AdlezHolder
         bool attacking, bowShot, bombSet;
 
         int healthPointsMax, currentHealthPoints;
-        int immunityTimer = 0, attackTimer = 0;
-        const float IMMUNITY_TIME = .06f, ATTACK_TIME = .17f;
+        int immunityTimer = 0, attackTimer = 0, healingTimer = 0;
+        const float IMMUNITY_TIME = .25f, ATTACK_TIME = .17f, HEALING_SICKNESS = .25f;
         
         public int Speed
         {
@@ -277,6 +277,15 @@ namespace AdlezHolder
                 immunityTimer = (int)(IMMUNITY_TIME * 1000) + 1;
             }
 
+            if (healingTimer < (HEALING_SICKNESS * 1000))
+            {
+                healingTimer += gameTime.ElapsedGameTime.Milliseconds;
+            }
+            else
+            {
+                healingTimer = (int)(HEALING_SICKNESS * 1000) + 1;
+            }
+
             if (keys.IsKeyDown(Keys.W))
             {
                 direction = Orientation.UP;
@@ -397,10 +406,14 @@ namespace AdlezHolder
 
         public void heal(int healPoints)
         {
-            if (currentHealthPoints + healPoints <= healthPointsMax)
+            if (healingTimer > (HEALING_SICKNESS * 1000))
             {
-                currentHealthPoints += healPoints;
-                addMessage(new Message("" + healPoints, Color.Green));
+                if (currentHealthPoints + healPoints <= healthPointsMax)
+                {
+                    currentHealthPoints += healPoints;
+                    addMessage(new Message("" + healPoints, Color.Green));
+                }
+                healingTimer = 0;
             }
         }
 

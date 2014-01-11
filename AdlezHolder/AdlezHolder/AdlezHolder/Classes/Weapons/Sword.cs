@@ -150,7 +150,7 @@ namespace AdlezHolder
             {
                 foreach (Enemy enemy in data.Enemies)
                 {
-                    if (collisionRec.Intersects(enemy.CollisionRec))
+                    if (collisionRec.Intersects(enemy.CollisionRec) && !enemy.IsDead)
                     {
                         damageEnemy(enemy, data, player);
                     }

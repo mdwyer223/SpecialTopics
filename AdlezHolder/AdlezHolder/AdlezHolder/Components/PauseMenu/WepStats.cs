@@ -74,7 +74,8 @@ namespace AdlezHolder
                 itemSelected = EquippedItem.BOMB;
             else if (currentIndex == 2)
                 itemSelected = EquippedItem.BOW;
-
+            //set up a state, to equip gems into one weapon.
+            //check for space being pressed down.
             if (keys.IsKeyDown(Keys.A) && oldKeys.IsKeyUp(Keys.A))
             {
                 currentIndex--;
@@ -172,9 +173,9 @@ namespace AdlezHolder
                     baseDamagePos.Y + spriteFont.MeasureString("Base Damage").Y), Color.Green);
 
                 chancePos.Y += spriteFont.MeasureString(pSword.LifeStealStruct.chance.ToString()).Y;
-                spriteBatch.DrawString(spriteFont, "" + (int)(pSword.LifeStealStruct.chance * 10) + "%\n" +
-                    pSword.IceStruct.chance + "%\n" + pSword.PoisonStruct.chance * 10 + "%\n" + pSword.FireStruct.chance * 10 + "%\n" +
-                    pSword.StunStruct.chance * 10 + "%", chancePos, Color.Green);
+                spriteBatch.DrawString(spriteFont, "" + (int)(pSword.LifeStealStruct.chance * 100) + "%\n" +
+                    pSword.IceStruct.chance * 100 + "%\n" + pSword.PoisonStruct.chance * 100 + "%\n" + pSword.FireStruct.chance * 100 + "%\n" +
+                    pSword.StunStruct.chance * 100 + "%", chancePos, Color.Green);
 
                 damagePos.Y += spriteFont.MeasureString("" + 0).Y;
                 spriteBatch.DrawString(spriteFont, "0\n" + pSword.IceStruct.damage + "\n" + pSword.PoisonStruct.damage + "\n" + pSword.FireStruct.damage +
