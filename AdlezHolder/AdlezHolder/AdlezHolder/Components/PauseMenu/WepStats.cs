@@ -76,6 +76,9 @@ namespace AdlezHolder
                 itemSelected = EquippedItem.BOW;
             //set up a state, to equip gems into one weapon.
             //check for space being pressed down.
+
+
+
             if (keys.IsKeyDown(Keys.A) && oldKeys.IsKeyUp(Keys.A))
             {
                 currentIndex--;

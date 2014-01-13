@@ -12,9 +12,28 @@ namespace AdlezHolder
     public class PoisonStone : Gem
     {
         //purple
-        public PoisonStone(Texture2D texture, float scaleFactor, Vector2 startPosition, string tag, int value)
-            :base(texture, scaleFactor, startPosition, tag, value)
+        public PoisonStone(float scaleFactor, Vector2 startPosition, int tier)
+            : base(null, scaleFactor, startPosition, "Poison Stone", 0)
         {
+            if (tier == 1)
+            {
+                //load texture, value, and stats
+            }
+            else if (tier == 2)
+            {
+            }
+            else if (tier == 3)
+            {
+            }
+            else if (tier == 4)
+            {
+            }
+            else if (tier == 5)
+            {
+            }
+            else
+            {
+            }
         }
     }
 }

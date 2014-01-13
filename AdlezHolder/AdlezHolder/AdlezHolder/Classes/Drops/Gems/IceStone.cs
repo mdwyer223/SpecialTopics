@@ -16,10 +16,30 @@ namespace AdlezHolder
         {
             get { return critDamagePercent; }
         }
+
         //cyan
-        public IceStone(Texture2D texture, float scaleFactor, Vector2 startPosition, string tag, int value)
-            :base(texture, scaleFactor, startPosition, tag, value)
+        public IceStone(float scaleFactor, Vector2 startPosition, int tier)
+            : base(null, scaleFactor, startPosition, "Ice Stone", 0)
         {
+            if (tier == 1)
+            {
+                //load texture, value, and stats
+            }
+            else if (tier == 2)
+            {
+            }
+            else if (tier == 3)
+            {
+            }
+            else if (tier == 4)
+            {
+            }
+            else if (tier == 5)
+            {
+            }
+            else
+            {
+            }
         }
     }
 }
