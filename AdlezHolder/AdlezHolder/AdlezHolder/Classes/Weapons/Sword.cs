@@ -114,6 +114,8 @@ namespace AdlezHolder
             lightningStruct = new GemStruct();
 
             VampiricStone vStone = new VampiricStone(.02f, new Vector2(0, 0), 1);
+            IceStone iStone = new IceStone(.02f, Vector2.Zero, 1);
+            gemList.Add(iStone);
             gemList.Add(vStone);
         }
 
@@ -253,38 +255,61 @@ namespace AdlezHolder
 
         public void calcStats()
         {
+            float burnChance = 0f, poisonChance = 0f, lightningChance = 0f,
+               freezeChance = 0f, vampirePercent = 0f;
+            float burnDuration = 0f, poisonDuration = 0f, stunDuration = 0f,
+                freezeDuration = 0f;
+            int burnDamage = 0, poisonDamage = 0, freezeDamage = 0;
+
             for (int i = 0; i < gemList.Count; i++)
             {
                 if (gemList[i].GetType() == typeof(FireStone))
                 {
-                    fireStruct.chance += gemList[i].Chance;
-                    fireStruct.damage += gemList[i].Damage;
-                    fireStruct.duration += gemList[i].Duration;
+                    burnChance += gemList[i].Chance;
+                    burnDamage += gemList[i].Damage;
+                    burnDuration += gemList[i].Duration;
                 }
                 if (gemList[i].GetType() == typeof(VampiricStone))
                 {
-                    lifestealStruct.chance = gemList[i].Chance;
+                    vampirePercent = gemList[i].Chance;
                 }
                 if (gemList[i].GetType() == typeof(PoisonStone))
                 {
-                    poisonStruct.chance += gemList[i].Chance;
-                    poisonStruct.damage += gemList[i].Damage;
-                    poisonStruct.duration += gemList[i].Duration;
+                    poisonChance += gemList[i].Chance;
+                    poisonDamage += gemList[i].Damage;
+                    poisonDuration += gemList[i].Duration;
                 }
                 if (gemList[i].GetType() == typeof(IceStone))
                 {
-                    freezeStruct.chance += gemList[i].Chance;
+                    freezeChance += gemList[i].Chance;
                     IceStone stone = (IceStone)(gemList[i]);
-                    freezeStruct.damage += (int)(stone.CritDamage * damage) + damage;
-                    freezeStruct.duration += gemList[i].Duration;
+                    freezeDamage += (int)(stone.CritDamage * damage) + damage;
+                    freezeDuration += gemList[i].Duration;
                     stone = null;
                 }
                 if (gemList[i].GetType() == typeof(LightningStone))
                 {
-                    lightningStruct.chance += gemList[i].Chance;
-                    lightningStruct.duration += gemList[i].Duration;
+                    lightningChance += gemList[i].Chance;
+                    stunDuration += gemList[i].Duration;
                 }
             }
+
+            lifestealStruct.chance = vampirePercent;
+
+            fireStruct.chance = burnChance;
+            fireStruct.damage = burnDamage;
+            fireStruct.duration = burnDuration;
+
+            poisonStruct.chance = poisonChance;
+            poisonStruct.damage = poisonDamage;
+            poisonStruct.duration = poisonDuration;
+
+            freezeStruct.chance = freezeChance;
+            freezeStruct.damage = freezeDamage;
+            freezeStruct.duration = freezeDuration;
+
+            lightningStruct.chance = lightningChance;
+            lightningStruct.duration = stunDuration;
         }
     }
 }

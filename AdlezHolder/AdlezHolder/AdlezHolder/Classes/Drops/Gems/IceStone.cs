@@ -15,6 +15,7 @@ namespace AdlezHolder
         public float CritDamage
         {
             get { return critDamagePercent; }
+            protected set { critDamagePercent = value; }
         }
 
         //cyan
@@ -24,6 +25,9 @@ namespace AdlezHolder
             if (tier == 1)
             {
                 //load texture, value, and stats
+                this.Chance = .1f;
+                this.CritDamage = 1f;
+                this.Duration = 3f;
             }
             else if (tier == 2)
             {
