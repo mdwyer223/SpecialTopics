@@ -186,7 +186,7 @@ namespace AdlezHolder
                 }
                 if (gemList[i].GetType() == typeof(VampiricStone))
                 {
-                    vampirePercent = gemList[i].Chance;
+                    vampirePercent += gemList[i].Chance;
                 }
                 if (gemList[i].GetType() == typeof(PoisonStone))
                 {
@@ -271,7 +271,7 @@ namespace AdlezHolder
                 }
                 if (gemList[i].GetType() == typeof(VampiricStone))
                 {
-                    vampirePercent = gemList[i].Chance;
+                    vampirePercent += gemList[i].Chance;
                 }
                 if (gemList[i].GetType() == typeof(PoisonStone))
                 {

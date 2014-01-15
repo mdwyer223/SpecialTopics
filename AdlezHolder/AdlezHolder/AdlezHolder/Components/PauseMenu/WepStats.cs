@@ -17,10 +17,17 @@ namespace AdlezHolder
         Texture2D sword, bomb, bow, locked;
         List<Texture2D> weapons;
         
-        int iconSize, currentIndex = 0, nextIndex = 1, lastIndex = 2;
+        int iconSize, currentIndex = 0, nextIndex = 1, lastIndex = 2,
+            equipOptionsIndex = 0, gemChoiceIndex = 0, optionHeight;
         
         KeyboardState keys, oldKeys;
-        Boolean bowLocked = false, bombLocked = false;
+        Boolean bowLocked = false, bombLocked = false,
+            equipOrUnequipMenu = false, gemSelect = false, gemRemove = false,
+            weaponSelect = true,
+            gotOptions = false;
+
+        List<string> equipOptions, gemChoices;
+        List<int> gemIndexInInvent;
 
         List<Gem> gems;
         EquippedItem itemSelected;
@@ -62,6 +69,14 @@ namespace AdlezHolder
             iconSize = (int)(innerRect.Height * 1.2);
 
             upgradesRect = new Rectangle(leftRect.X, menuRect.Y + iconSize, (rightRect.X + rightRect.Width), 500);
+
+            equipOptions = new List<string>();
+            gemChoices = new List<string>();
+            gemIndexInInvent = new List<int>();
+
+            equipOptions.Add("Equip");
+            equipOptions.Add("Unequip");
+            equipOptions.Add("Cancel");
         }
 
         public void update()
@@ -78,59 +93,215 @@ namespace AdlezHolder
             //check for space being pressed down.
 
 
+            if (weaponSelect)
+            {
+                if (keys.IsKeyDown(Keys.A) && oldKeys.IsKeyUp(Keys.A))
+                {
+                    currentIndex--;
+                    nextIndex--;
+                    lastIndex--;
+                    if (currentIndex < 0 && !bowLocked)
+                    {
+                        currentIndex = 2;
+                    }
+                    else if (currentIndex < 0 && !bombLocked)
+                    {
+                        currentIndex = 1;
+                    }
+                    else if (bowLocked && bombLocked)
+                    {
+                        currentIndex = 0;
+                    }
+                }
 
-            if (keys.IsKeyDown(Keys.A) && oldKeys.IsKeyUp(Keys.A))
-            {
-                currentIndex--;
-                nextIndex--;
-                lastIndex--;
-                if (currentIndex < 0 && !bowLocked)
+                if (keys.IsKeyDown(Keys.D) && oldKeys.IsKeyUp(Keys.D))
                 {
-                    currentIndex = 2;
+                    currentIndex++;
+                    nextIndex++;
+                    lastIndex++;
+                    if (currentIndex > 1 && bowLocked)
+                    {
+                        currentIndex = 0;
+                    }
+                    else if (bombLocked)
+                    {
+                        currentIndex = 0;
+                    }
+                    else if (currentIndex > 2)
+                    {
+                        currentIndex = 0;
+                    }
                 }
-                else if (currentIndex < 0 && !bombLocked)
-                {
-                    currentIndex = 1;
-                }
-                else if (bowLocked && bombLocked)
-                {
-                    currentIndex = 0;
-                }
-            }
 
-            if (keys.IsKeyDown(Keys.D) && oldKeys.IsKeyUp(Keys.D))
-            {
-                currentIndex++;
-                nextIndex++;
-                lastIndex++;
-                if (currentIndex > 1 && bowLocked)
+                if (currentIndex == 0)
                 {
-                    currentIndex = 0;
+                    lastIndex = 2;
+                    nextIndex = currentIndex + 1;
                 }
-                else if (bombLocked)
+                else if (currentIndex == 2)
                 {
-                    currentIndex = 0;
+                    lastIndex = currentIndex - 1;
+                    nextIndex = 0;
                 }
-                else if (currentIndex > 2)
+                else
                 {
-                    currentIndex = 0;
+                    lastIndex = currentIndex - 1;
+                    nextIndex = currentIndex + 1;
                 }
-            }
 
-            if (currentIndex == 0)
-            {
-                lastIndex = 2;
-                nextIndex = currentIndex + 1;
+                if (keys.IsKeyDown(Keys.Space) && oldKeys.IsKeyUp(Keys.Space))
+                {
+                    equipOrUnequipMenu = true;
+                    weaponSelect = false;
+                }
             }
-            else if (currentIndex == 2)
+            else if (equipOrUnequipMenu)
             {
-                lastIndex = currentIndex - 1;
-                nextIndex = 0;
+                gemChoices.Clear();
+                gemChoiceIndex = 0;
+                gotOptions = false;
+                if (keys.IsKeyDown(Keys.S) && oldKeys.IsKeyUp(Keys.S))
+                {
+                    equipOptionsIndex++;
+                    if (equipOptionsIndex >= equipOptions.Count)
+                    {
+                        equipOptionsIndex = 0;
+                    }
+                }
+                else if (keys.IsKeyDown(Keys.W) && oldKeys.IsKeyUp(Keys.W))
+                {
+                    equipOptionsIndex--;
+                    if (equipOptionsIndex < 0)
+                    {
+                        equipOptionsIndex = equipOptions.Count - 1;
+                    }
+                }
+
+                if (keys.IsKeyDown(Keys.Space) && oldKeys.IsKeyUp(Keys.Space))
+                {
+                    if (equipOptions[equipOptionsIndex].Equals("Equip"))
+                    {
+                        gemSelect = true;
+                        equipOrUnequipMenu = false;
+                    }
+                    else if (equipOptions[equipOptionsIndex].Equals("Unequip"))
+                    {
+                        gemRemove = true;
+                        equipOrUnequipMenu = false;
+                    }
+                    else if (equipOptions[equipOptionsIndex].Equals("Cancel"))
+                    {
+                        weaponSelect = true;
+                        equipOrUnequipMenu = false;
+                    }
+                }
             }
-            else
+            else if (gemSelect)
             {
-                lastIndex = currentIndex - 1;
-                nextIndex = currentIndex + 1;
+                if (!gotOptions)
+                {
+                    List<Item> items = player.PlayerInvent.ItemList;
+                    for (int i = 0; i < player.PlayerInvent.ItemList.Count; i++)
+                    {
+                        if (items[i].ItemName.Contains("Stone"))
+                        {
+                            gemChoices.Add(items[i].ItemName);
+                            gemIndexInInvent.Add(i);
+                        }
+                    }
+                    gemChoices.Add("Cancel");
+                    gotOptions = true;
+                }
+
+                if (keys.IsKeyDown(Keys.S) && oldKeys.IsKeyUp(Keys.S))
+                {
+                    gemChoiceIndex++;
+                    if (gemChoiceIndex >= gemChoices.Count)
+                    {
+                        gemChoiceIndex = 0;
+                    }
+                }
+                else if (keys.IsKeyDown(Keys.W) && oldKeys.IsKeyUp(Keys.W))
+                {
+                    gemChoiceIndex--;
+                    if (gemChoiceIndex < 0)
+                    {
+                        gemChoiceIndex = gemChoices.Count - 1;
+                    }
+                }
+
+                if (keys.IsKeyDown(Keys.Space) && oldKeys.IsKeyUp(Keys.Space))
+                {
+                    if (gemChoiceIndex != gemChoices.Count - 1)
+                    {
+                        player.Sword.addGem((Gem)(player.PlayerInvent.ItemList[gemIndexInInvent[gemChoiceIndex]]));
+                        player.PlayerInvent.ItemList.RemoveAt(gemIndexInInvent[gemChoiceIndex]);
+                        equipOrUnequipMenu = true;
+                        gemSelect = false;
+                        gemRemove = false;
+                    }
+                    else
+                    {
+                        gemSelect = false;
+                        gemRemove = false;
+                        equipOrUnequipMenu = true;
+                    }
+                }
+            }
+            else if (gemRemove)
+            {
+                if (player.Sword.Gems.Count == 0)
+                {
+                    equipOrUnequipMenu = true;
+                    gemRemove = false;
+                    gemSelect = false;
+                }
+                else
+                {
+                    if (!gotOptions)
+                    {
+                        for (int i = 0; i < player.Sword.Gems.Count; i++)
+                        {
+                            gemChoices.Add(player.Sword.Gems[i].ItemName);
+                        }
+                        gemChoices.Add("Cancel");
+                        gotOptions = true;
+                    }
+
+                    if (keys.IsKeyDown(Keys.S) && oldKeys.IsKeyUp(Keys.S))
+                    {
+                        gemChoiceIndex++;
+                        if (gemChoiceIndex >= gemChoices.Count)
+                        {
+                            gemChoiceIndex = 0;
+                        }
+                    }
+                    else if (keys.IsKeyDown(Keys.W) && oldKeys.IsKeyUp(Keys.W))
+                    {
+                        gemChoiceIndex--;
+                        if (gemChoiceIndex < 0)
+                        {
+                            gemChoiceIndex = gemChoices.Count - 1;
+                        }
+                    }
+
+                    if (keys.IsKeyDown(Keys.Space) && oldKeys.IsKeyUp(Keys.Space))
+                    {
+                        if (gemChoiceIndex != gemChoices.Count - 1)
+                        {
+                            player.Sword.Gems.RemoveAt(gemChoiceIndex);
+                            equipOrUnequipMenu = true;
+                            gemSelect = false;
+                            gemRemove = false;
+                        }
+                        else
+                        {
+                            gemRemove = false;
+                            gemSelect = false;
+                            equipOrUnequipMenu = true;
+                        }
+                    }
+                }
             }
 
             oldKeys = keys;
@@ -192,6 +363,85 @@ namespace AdlezHolder
             spriteBatch.Draw(weapons[lastIndex], leftRect, Color.White);
             spriteBatch.Draw(weapons[nextIndex], rightRect, Color.White);
             spriteBatch.Draw(weapons[currentIndex], innerRect, Color.White);
+
+            if (equipOrUnequipMenu)
+            {
+                int numOptions;
+                Rectangle optionsRec;
+
+                optionHeight = (int)(spriteFont.MeasureString(equipOptions[0]).Y) + 4;
+                Vector2 vec = Vector2.Zero;
+                numOptions = equipOptions.Count;
+
+                optionsRec = new Rectangle((int)vec.X, (int)vec.Y, 100, optionHeight * numOptions);
+                spriteBatch.Draw(Game1.GameContent.Load<Texture2D>("The best thing ever"), optionsRec, Color.White);
+
+                for (int k = 0; k < equipOptions.Count; k++)
+                {
+                    if (k == equipOptionsIndex)
+                    {
+                        spriteBatch.DrawString(spriteFont, equipOptions[k], new Vector2(vec.X, optionsRec.Y + (optionHeight * k)), Color.Red);
+                    }
+                    else
+                    {
+                        spriteBatch.DrawString(spriteFont, equipOptions[k], new Vector2(vec.X, optionsRec.Y + (optionHeight * k)), Color.White);
+                    }
+                }
+            }
+            else if (gemSelect)
+            {
+                if (gemChoices.Count != 0)
+                {
+                    int numOptions;
+                    Rectangle optionsRec;
+
+                    optionHeight = (int)(spriteFont.MeasureString(gemChoices[0]).Y) + 4;
+                    Vector2 vec = Vector2.Zero;
+                    numOptions = gemChoices.Count;
+
+                    optionsRec = new Rectangle((int)vec.X, (int)vec.Y, 100, optionHeight * numOptions);
+                    spriteBatch.Draw(Game1.GameContent.Load<Texture2D>("The best thing ever"), optionsRec, Color.White);
+
+                    for (int k = 0; k < gemChoices.Count; k++)
+                    {
+                        if (k == gemChoiceIndex)
+                        {
+                            spriteBatch.DrawString(spriteFont, gemChoices[k], new Vector2(vec.X, optionsRec.Y + (optionHeight * k)), Color.Red);
+                        }
+                        else
+                        {
+                            spriteBatch.DrawString(spriteFont, gemChoices[k], new Vector2(vec.X, optionsRec.Y + (optionHeight * k)), Color.White);
+                        }
+                    }
+                }
+            }
+            else if (gemRemove)
+            {
+                if (gemChoices.Count != 0)
+                {
+                    int numOptions;
+                    Rectangle optionsRec;
+
+                    optionHeight = (int)(spriteFont.MeasureString(gemChoices[0]).Y) + 4;
+                    Vector2 vec = Vector2.Zero;
+                    numOptions = gemChoices.Count;
+
+                    optionsRec = new Rectangle((int)vec.X, (int)vec.Y, 100, optionHeight * numOptions);
+                    spriteBatch.Draw(Game1.GameContent.Load<Texture2D>("The best thing ever"), optionsRec, Color.White);
+
+                    for (int k = 0; k < gemChoices.Count; k++)
+                    {
+                        if (k == gemChoiceIndex)
+                        {
+                            spriteBatch.DrawString(spriteFont, gemChoices[k], new Vector2(vec.X, optionsRec.Y + (optionHeight * k)), Color.Red);
+                        }
+                        else
+                        {
+                            spriteBatch.DrawString(spriteFont, gemChoices[k], new Vector2(vec.X, optionsRec.Y + (optionHeight * k)), Color.White);
+                        }
+                    }
+                }
+            }
         }
 
         public void updatePlayer(Character player)

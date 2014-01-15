@@ -33,6 +33,8 @@ namespace AdlezHolder
         {
             items = new List<Item>();
             maxSlots = 6;
+
+            items.Add(new VampiricStone(.02f, Vector2.Zero, 1));
         }
 
         public Inventory(List<Item> oldItems, int newMaxSlots)
