@@ -203,9 +203,7 @@ namespace AdlezHolder
                                 i = 0;
                         }
                     }
-                    if (everything[i].GetType() == typeof(Item)
-                        || everything[i].GetType() == typeof(Arrow)
-                        || everything[i].GetType() == typeof(Money))
+                    if (everything[i].GetType().IsSubclassOf(typeof(Item)))
                     {
                         Item item = (Item)everything[i];
                         if (item.Dead)
@@ -241,15 +239,19 @@ namespace AdlezHolder
                                 Character c = (Character)sprites[j];
                                 c.damage(particles[i].Damage);
                             }
-                            else if (sprites[j].GetType() == typeof(Skeleton))
+                            else if (sprites[j].GetType().IsSubclassOf(typeof(Enemy)))
                             {
-                                Skeleton s = (Skeleton)sprites[j];
-                                s.damage(this, particles[i].Damage);
-                            }
-                            else if (sprites[j].GetType() == typeof(Minotaur))
-                            {
-                                Minotaur m = (Minotaur)sprites[j];
-                                m.damage(this, particles[i].Damage);
+                                Skeleton e = (Skeleton)sprites[j];
+                                e.damage(this, particles[i].Damage);
+                                switch (particles[i].Type)
+                                {
+                                    case GemType.FIRE:
+                                        {
+                                            e.burn(particles[i].GemEffects[0].damage, 
+                                                particles[i].GemEffects[0].duration);
+                                            break;
+                                        }
+                                }
                             }
                             else if (sprites[j].GetType() == typeof(BombObj))
                             {

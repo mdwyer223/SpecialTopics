@@ -65,6 +65,16 @@ namespace AdlezHolder
             get { return sword; }
         }
 
+        public Bomb Bomb
+        {
+            get { return bomb; }
+        }
+
+        public Bow Bow
+        {
+            get { return bow; }
+        }
+
         public Inventory PlayerInvent
         {
             get { return invent; }
@@ -243,10 +253,10 @@ namespace AdlezHolder
 
             bow.Update(data, gameTime);
             bomb.Update(data, gameTime);
+            sword.Update(data.CurrentData, this, gameTime);
             if (attacking && selectedItem == EquippedItem.SWORD)
             {
                 sword.toggle(false);
-                sword.Update(data.CurrentData, this, gameTime);
                 return;
             }
             else if (attacking && selectedItem == EquippedItem.BOW)

@@ -12,13 +12,17 @@ namespace AdlezHolder
     public class Bow
     {
         int damage, range;
-        int upgradeDamageLev, upgradeRangeLev, 
-            upgradeSpeedLev;
         float speed;
 
         Color color;
         Vector2 velocity, start;
         Texture2D texture;
+
+        List<Gem> gemList;
+        int gemSlots;
+
+        GemStruct lifestealStruct, freezeStruct, poisonStruct,
+            lightningStruct, fireStruct;
         
         public Vector2 Velocity
         {
@@ -35,58 +39,53 @@ namespace AdlezHolder
             get{ return range; }
         }
 
-        public int getDamageUpgradeLev
+        public List<Gem> Gems
         {
-            get{return upgradeDamageLev;}
+            get { return gemList; }
         }
 
-        public int getRangeUpgradeLev
+        public GemStruct LifeStealStruct
         {
-            get{return upgradeRangeLev;}
+            get { return lifestealStruct; }
         }
 
-        public int getSpeedUpgradeLev
+        public GemStruct FireStruct
         {
-            get{return upgradeSpeedLev;}
+            get { return fireStruct; }
+        }
+
+        public GemStruct PoisonStruct
+        {
+            get { return poisonStruct; }
+        }
+
+        public GemStruct StunStruct
+        {
+            get { return lightningStruct; }
+        }
+
+        public GemStruct IceStruct
+        {
+            get { return freezeStruct; }
         }
 
         public Bow(float scaleFactor)
         {   
             color = Color.White;
+            gemList = new List<Gem>();
+            gemSlots = 3;
 
-            upgradeDamageLev = 1;
-            upgradeRangeLev = 1;
-            upgradeSpeedLev = 1;
+            lifestealStruct = new GemStruct();
+            freezeStruct = new GemStruct();
+            fireStruct = new GemStruct();
+            poisonStruct = new GemStruct();
+            lightningStruct = new GemStruct();
+
             speed = 3;
             damage = 5;
             range = 300;
-        }
 
-        public void UpgradeDamage()
-        {
-            if (upgradeDamageLev <= 5)
-            {
-                damage = (int)(damage * 1.25);
-                upgradeDamageLev++;
-            }
-        }
-           
-        public void UpgradeRange()
-        {
-            if (upgradeRangeLev <= 5)
-            {
-                range = (int)(range * 1.25);
-                upgradeRangeLev++;
-            }
-        }
-
-        public void UpgradeSpeed()
-        {
-            if (upgradeSpeedLev <= 5)
-            {
-                speed = (int)(speed * 1.25);
-                upgradeSpeedLev++;
-            }
+            gemList.Add(new IceStone(.02f, Vector2.Zero, 1));
         }
 
         public void Update(Map data, GameTime gameTime)
@@ -122,10 +121,99 @@ namespace AdlezHolder
         {
         }
 
+        public void calcStats()
+        {
+            float burnChance = 0f, poisonChance = 0f, lightningChance = 0f,
+               freezeChance = 0f, vampirePercent = 0f;
+            float burnDuration = 0f, poisonDuration = 0f, stunDuration = 0f,
+                freezeDuration = 0f;
+            int burnDamage = 0, poisonDamage = 0, freezeDamage = 0;
+
+            for (int i = 0; i < gemList.Count; i++)
+            {
+                if (gemList[i].GetType() == typeof(FireStone))
+                {
+                    burnChance += gemList[i].Chance;
+                    burnDamage += gemList[i].Damage;
+                    burnDuration += gemList[i].Duration;
+                }
+                if (gemList[i].GetType() == typeof(VampiricStone))
+                {
+                    vampirePercent += gemList[i].Chance;
+                }
+                if (gemList[i].GetType() == typeof(PoisonStone))
+                {
+                    poisonChance += gemList[i].Chance;
+                    poisonDamage += gemList[i].Damage;
+                    poisonDuration += gemList[i].Duration;
+                }
+                if (gemList[i].GetType() == typeof(IceStone))
+                {
+                    freezeChance += gemList[i].Chance;
+                    IceStone stone = (IceStone)(gemList[i]);
+                    freezeDamage += (int)(stone.CritDamage * damage) + damage;
+                    freezeDuration += gemList[i].Duration;
+                    stone = null;
+                }
+                if (gemList[i].GetType() == typeof(LightningStone))
+                {
+                    lightningChance += gemList[i].Chance;
+                    stunDuration += gemList[i].Duration;
+                }
+            }
+
+            lifestealStruct.chance = vampirePercent;
+
+            fireStruct.chance = burnChance;
+            fireStruct.damage = burnDamage;
+            fireStruct.duration = burnDuration;
+
+            poisonStruct.chance = poisonChance;
+            poisonStruct.damage = poisonDamage;
+            poisonStruct.duration = poisonDuration;
+
+            freezeStruct.chance = freezeChance;
+            freezeStruct.damage = freezeDamage;
+            freezeStruct.duration = freezeDuration;
+
+            lightningStruct.chance = lightningChance;
+            lightningStruct.duration = stunDuration;
+        }
+
         public void addArrow(Map data)
         {
-            data.CurrentData.addProjectile(new Projectile(damage, range, speed, .035f, 
-                velocity, start, texture));
+            calcStats();
+            Random rand = new Random();
+            Projectile p = new Projectile(damage, range, speed, .035f,
+                    velocity, start, texture);
+
+            if (rand.NextDouble() < lightningStruct.chance)
+            {
+                p.addGemStruct(lightningStruct);
+                p.addGemType(GemType.STUN);
+            }
+            if (rand.NextDouble() < poisonStruct.chance)
+            {
+                p.addGemStruct(poisonStruct);
+                p.addGemType(GemType.POISON);
+            }
+            if (rand.NextDouble() < freezeStruct.chance)
+            {
+                p.addGemStruct(freezeStruct);
+                p.addGemType(GemType.FREEZE);
+            }
+            if (rand.NextDouble() < fireStruct.chance)
+            {
+                p.addGemStruct(fireStruct);
+                p.addGemType(GemType.FIRE);
+            }
+            if (rand.NextDouble() < lifestealStruct.chance)
+            {
+                p.addGemStruct(lifestealStruct);
+                p.addGemType(GemType.LS);
+            }
+
+            data.CurrentData.addProjectile(p); 
         }
 
         public void changeImage(Texture2D texture)

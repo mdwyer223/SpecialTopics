@@ -19,6 +19,7 @@ namespace AdlezHolder
         
         int iconSize, currentIndex = 0, nextIndex = 1, lastIndex = 2,
             equipOptionsIndex = 0, gemChoiceIndex = 0, optionHeight;
+        string optionsMessage;
         
         KeyboardState keys, oldKeys;
         Boolean bowLocked = false, bombLocked = false,
@@ -34,13 +35,16 @@ namespace AdlezHolder
 
         public WepStats(Game1 game, Vector2 border)
         {
+            optionsMessage = "";
+
             sword = game.Content.Load<Texture2D>("Weapons/sword selected");
             bomb = game.Content.Load<Texture2D>("Weapons/bomb selected");
             bow = game.Content.Load<Texture2D>("Weapons/bow selected");
             locked = game.Content.Load<Texture2D>("Weapons/lock");
 
             menuRect = new Rectangle((int)border.X, (int)border.Y, (int)(game.GraphicsDevice.Viewport.Width - border.X), game.GraphicsDevice.Viewport.Height);
-            innerRect = new Rectangle(menuRect.X + (int)((menuRect.Width / 2) - (menuRect.Width * .25)), (int)((menuRect.Height / 3) - (menuRect.Height * .25)), (int)(menuRect.Width * .5), (int)(menuRect.Height * .5));
+            
+            innerRect = new Rectangle(menuRect.X + (int)((menuRect.Width / 2) - (menuRect.Width * .15)), (int)((menuRect.Height / 3) - (menuRect.Height * .25)), (int)(menuRect.Width * .3), (int)(menuRect.Height * .3));
             leftRect = new Rectangle(innerRect.X - (int)(innerRect.Width * .25), (int)(innerRect.Y + (innerRect.Height / 2) - (innerRect.Height * .25)), (int)(innerRect.Width * .5), (int)(innerRect.Height * .5));
             rightRect = new Rectangle(innerRect.X + innerRect.Width - (int)(innerRect.Width * .25), (int)(innerRect.Y + (innerRect.Height / 2) - (innerRect.Height * .25)), (int)(innerRect.Width * .5), (int)(innerRect.Height * .5));
 
@@ -75,7 +79,7 @@ namespace AdlezHolder
             gemIndexInInvent = new List<int>();
 
             equipOptions.Add("Equip");
-            equipOptions.Add("Unequip");
+            equipOptions.Add("Remove");
             equipOptions.Add("Cancel");
         }
 
@@ -95,6 +99,7 @@ namespace AdlezHolder
 
             if (weaponSelect)
             {
+                optionsMessage = "Press space to get options";
                 if (keys.IsKeyDown(Keys.A) && oldKeys.IsKeyUp(Keys.A))
                 {
                     currentIndex--;
@@ -157,7 +162,9 @@ namespace AdlezHolder
             }
             else if (equipOrUnequipMenu)
             {
+                optionsMessage = "Press space to select an option";
                 gemChoices.Clear();
+                gemIndexInInvent.Clear();
                 gemChoiceIndex = 0;
                 gotOptions = false;
                 if (keys.IsKeyDown(Keys.S) && oldKeys.IsKeyUp(Keys.S))
@@ -184,7 +191,7 @@ namespace AdlezHolder
                         gemSelect = true;
                         equipOrUnequipMenu = false;
                     }
-                    else if (equipOptions[equipOptionsIndex].Equals("Unequip"))
+                    else if (equipOptions[equipOptionsIndex].Equals("Remove"))
                     {
                         gemRemove = true;
                         equipOrUnequipMenu = false;
@@ -198,6 +205,7 @@ namespace AdlezHolder
             }
             else if (gemSelect)
             {
+                optionsMessage = "Press space to add a gem";
                 if (!gotOptions)
                 {
                     List<Item> items = player.PlayerInvent.ItemList;
@@ -234,8 +242,11 @@ namespace AdlezHolder
                 {
                     if (gemChoiceIndex != gemChoices.Count - 1)
                     {
-                        player.Sword.addGem((Gem)(player.PlayerInvent.ItemList[gemIndexInInvent[gemChoiceIndex]]));
-                        player.PlayerInvent.ItemList.RemoveAt(gemIndexInInvent[gemChoiceIndex]);
+                        if (player.Sword.MaxGemSlots != player.Sword.Gems.Count)
+                        {
+                            player.Sword.addGem((Gem)(player.PlayerInvent.ItemList[gemIndexInInvent[gemChoiceIndex]]));
+                            player.PlayerInvent.ItemList.RemoveAt(gemIndexInInvent[gemChoiceIndex]);
+                        }
                         equipOrUnequipMenu = true;
                         gemSelect = false;
                         gemRemove = false;
@@ -250,7 +261,10 @@ namespace AdlezHolder
             }
             else if (gemRemove)
             {
-                if (player.Sword.Gems.Count == 0)
+                optionsMessage = "Press space to remove and destroy the gem";
+                if (player.Sword.Gems.Count == 0 &&
+                    player.Bomb.Gems.Count == 0 && 
+                    player.Bow.Gems.Count == 0)
                 {
                     equipOrUnequipMenu = true;
                     gemRemove = false;
@@ -260,9 +274,20 @@ namespace AdlezHolder
                 {
                     if (!gotOptions)
                     {
-                        for (int i = 0; i < player.Sword.Gems.Count; i++)
+                        if (itemSelected == EquippedItem.SWORD)
                         {
-                            gemChoices.Add(player.Sword.Gems[i].ItemName);
+                            for (int i = 0; i < player.Sword.Gems.Count; i++)
+                            {
+                                gemChoices.Add(player.Sword.Gems[i].ItemName);
+                            }
+                        }
+                        else if (itemSelected == EquippedItem.BOW)
+                        {
+
+                        }
+                        else if (itemSelected == EquippedItem.BOMB)
+                        {
+
                         }
                         gemChoices.Add("Cancel");
                         gotOptions = true;
@@ -319,8 +344,8 @@ namespace AdlezHolder
              */
             float originOverLayPercent = 1.1f;
             float categoryOverLayPercent = 1.75f;
-            Vector2 origin, chancePos, damagePos, durationPos, baseDamagePos;
-            Vector2 weaponStatsVec = origin = new Vector2((int)(menuRect.X * originOverLayPercent), upgradesRect.Y);
+            Vector2 origin, chancePos, damagePos, durationPos, baseDamagePos, delayOrRangePos;
+            Vector2 weaponStatsVec = origin = new Vector2((int)(menuRect.X * originOverLayPercent), (int)(upgradesRect.Y * 1.25f));
             spriteBatch.DrawString(spriteFont, "Type", weaponStatsVec, Color.White);
             Vector2 spacingVec = spriteFont.MeasureString("Lifesteal");
             chancePos = new Vector2(weaponStatsVec.X + (spacingVec.X * originOverLayPercent), weaponStatsVec.Y);
@@ -333,6 +358,8 @@ namespace AdlezHolder
             spriteBatch.DrawString(spriteFont, "Duration", durationPos, Color.White);
             spacingVec = spriteFont.MeasureString("Duration");
             baseDamagePos = new Vector2(durationPos.X + (spacingVec.X * (categoryOverLayPercent - .25f)), durationPos.Y);
+            spacingVec = spriteFont.MeasureString("Base Damage\n0");
+            delayOrRangePos = new Vector2(baseDamagePos.X, baseDamagePos.Y + spacingVec.Y + 3);
             weaponStatsVec = origin;
             spriteBatch.DrawString(spriteFont, "Base Damage", baseDamagePos, Color.White);
             weaponStatsVec.Y += spriteFont.MeasureString("Type").Y * originOverLayPercent;
@@ -356,9 +383,62 @@ namespace AdlezHolder
                     "\n0", damagePos, Color.Green);
 
                 durationPos.Y += spriteFont.MeasureString("" + 0).Y;
-                spriteBatch.DrawString(spriteFont, "0\n" + pSword.IceStruct.duration + "\n" + pSword.PoisonStruct.duration + "\n" + pSword.FireStruct.duration +
-                    "\n" + pSword.StunStruct.duration, durationPos, Color.Green);
+                spriteBatch.DrawString(spriteFont, "0 sec\n" + pSword.IceStruct.duration + " sec\n" + pSword.PoisonStruct.duration + " sec\n" + pSword.FireStruct.duration +
+                    " sec\n" + pSword.StunStruct.duration + " sec", durationPos, Color.Green);
             }
+            else if (itemSelected == EquippedItem.BOMB)
+            {
+                player.Bomb.calcStats();
+                Bomb pBomb = player.Bomb;
+
+                spriteBatch.DrawString(spriteFont, "" + pBomb.Damage, new Vector2(baseDamagePos.X,
+                    baseDamagePos.Y + spriteFont.MeasureString("Base Damage").Y), Color.Green);
+                spriteBatch.DrawString(spriteFont, "Delay", delayOrRangePos, Color.White);
+                spriteBatch.DrawString(spriteFont, "" + pBomb.Delay,
+                    new Vector2(delayOrRangePos.X, delayOrRangePos.Y + spriteFont.MeasureString("Delay").Y), Color.Green);
+
+                chancePos.Y += spriteFont.MeasureString(pBomb.LifeStealStruct.chance.ToString()).Y;
+                spriteBatch.DrawString(spriteFont, "" + (int)(pBomb.LifeStealStruct.chance * 100) + "%\n" +
+                    pBomb.IceStruct.chance * 100 + "%\n" + pBomb.PoisonStruct.chance * 100 + "%\n" + pBomb.FireStruct.chance * 100 + "%\n" +
+                    pBomb.StunStruct.chance * 100 + "%", chancePos, Color.Green);
+
+                damagePos.Y += spriteFont.MeasureString("" + 0).Y;
+                spriteBatch.DrawString(spriteFont, "0\n" + pBomb.IceStruct.damage + "\n" + pBomb.PoisonStruct.damage + "\n" + pBomb.FireStruct.damage +
+                    "\n0", damagePos, Color.Green);
+
+                durationPos.Y += spriteFont.MeasureString("" + 0).Y;
+                spriteBatch.DrawString(spriteFont, "0 sec\n" + pBomb.IceStruct.duration + " sec\n" + pBomb.PoisonStruct.duration + " sec\n" + pBomb.FireStruct.duration +
+                    " sec\n" + pBomb.StunStruct.duration + " sec", durationPos, Color.Green);
+            }
+            else if (itemSelected == EquippedItem.BOW)
+            {
+                player.Bow.calcStats();
+                Bow pBow = player.Bow;
+
+                spriteBatch.DrawString(spriteFont, "" + pBow.Damage, new Vector2(baseDamagePos.X,
+                    baseDamagePos.Y + spriteFont.MeasureString("Base Damage").Y), Color.Green);
+                spriteBatch.DrawString(spriteFont, "Range", delayOrRangePos, Color.White);
+                spriteBatch.DrawString(spriteFont, "" + pBow.Range,
+                    new Vector2(delayOrRangePos.X, delayOrRangePos.Y + spriteFont.MeasureString("Delay").Y), Color.Green);
+
+                chancePos.Y += spriteFont.MeasureString(pBow.LifeStealStruct.chance.ToString()).Y;
+                spriteBatch.DrawString(spriteFont, "" + (int)(pBow.LifeStealStruct.chance * 100) + "%\n" +
+                    pBow.IceStruct.chance * 100 + "%\n" + pBow.PoisonStruct.chance * 100 + "%\n" + pBow.FireStruct.chance * 100 + "%\n" +
+                    pBow.StunStruct.chance * 100 + "%", chancePos, Color.Green);
+
+                damagePos.Y += spriteFont.MeasureString("" + 0).Y;
+                spriteBatch.DrawString(spriteFont, "0\n" + pBow.IceStruct.damage + "\n" + pBow.PoisonStruct.damage + "\n" + pBow.FireStruct.damage +
+                    "\n0", damagePos, Color.Green);
+
+                durationPos.Y += spriteFont.MeasureString("" + 0).Y;
+                spriteBatch.DrawString(spriteFont, "0 sec\n" + pBow.IceStruct.duration + " sec\n" + pBow.PoisonStruct.duration + " sec\n" + pBow.FireStruct.duration +
+                    " sec\n" + pBow.StunStruct.duration + " sec", durationPos, Color.Green);
+            }
+
+            Vector2 directionsVec;
+            directionsVec = new Vector2(menuRect.X + (menuRect.Width / 2) - (spriteFont.MeasureString(optionsMessage).X / 2),
+                Game1.DisplayHeight - spriteFont.MeasureString(optionsMessage).Y);
+            spriteBatch.DrawString(spriteFont, optionsMessage, directionsVec, Color.White);
 
             spriteBatch.Draw(weapons[lastIndex], leftRect, Color.White);
             spriteBatch.Draw(weapons[nextIndex], rightRect, Color.White);
@@ -370,7 +450,7 @@ namespace AdlezHolder
                 Rectangle optionsRec;
 
                 optionHeight = (int)(spriteFont.MeasureString(equipOptions[0]).Y) + 4;
-                Vector2 vec = Vector2.Zero;
+                Vector2 vec = new Vector2(menuRect.X + 4, menuRect.Y);
                 numOptions = equipOptions.Count;
 
                 optionsRec = new Rectangle((int)vec.X, (int)vec.Y, 100, optionHeight * numOptions);
@@ -396,7 +476,7 @@ namespace AdlezHolder
                     Rectangle optionsRec;
 
                     optionHeight = (int)(spriteFont.MeasureString(gemChoices[0]).Y) + 4;
-                    Vector2 vec = Vector2.Zero;
+                    Vector2 vec = new Vector2(menuRect.X + 4, menuRect.Y);
                     numOptions = gemChoices.Count;
 
                     optionsRec = new Rectangle((int)vec.X, (int)vec.Y, 100, optionHeight * numOptions);
@@ -423,7 +503,7 @@ namespace AdlezHolder
                     Rectangle optionsRec;
 
                     optionHeight = (int)(spriteFont.MeasureString(gemChoices[0]).Y) + 4;
-                    Vector2 vec = Vector2.Zero;
+                    Vector2 vec = new Vector2(menuRect.X + 4, menuRect.Y);
                     numOptions = gemChoices.Count;
 
                     optionsRec = new Rectangle((int)vec.X, (int)vec.Y, 100, optionHeight * numOptions);

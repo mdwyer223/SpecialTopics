@@ -255,8 +255,7 @@ namespace AdlezHolder
             Random rand = new Random();
             int dropValue = rand.Next(1, 10);
 
-
-            if (dropValue < 6)
+            if (dropValue < 2)
             {
                 int arrow = rand.Next(1, 4);
                 if (arrow < 4)
@@ -268,7 +267,7 @@ namespace AdlezHolder
                     data.addItem(new Arrow(.03f, true, "Steel Arrow", 0, this.Position));
                 }
             }
-            else if (dropValue >= 6)
+            else if (dropValue < 4 && dropValue > 2)
             {
                 data.addItem(new Money(.01f, this.position, "Coins", 5));
             }
@@ -447,8 +446,6 @@ namespace AdlezHolder
                     }
                 }
         }
-
-
 
         private Node[] findPath(Map data)
         {

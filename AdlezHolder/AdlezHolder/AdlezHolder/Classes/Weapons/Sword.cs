@@ -9,12 +9,19 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace AdlezHolder
 {
+    public struct GemStruct
+    {
+        public float duration;
+        public int damage;
+        public float chance;
+    }
+
     public class Sword
     {
-        float speed;
-        int damage, range;
+        float speed, reductionTime;
+        int damage, range, originalDamage, reductionTimer;
         bool dead = true;
-        bool stoleLife = false;
+        //bool stoleLife = false;
 
         Color color;
         Texture2D texture;
@@ -23,7 +30,8 @@ namespace AdlezHolder
         List<Gem> gemList;
         int gemSlots;
 
-        GemStruct lifestealStruct, freezeStruct, poisonStruct, lightningStruct, fireStruct;
+        GemStruct lifestealStruct, freezeStruct, poisonStruct, 
+            lightningStruct, fireStruct;
 
         public float Speed
         {
@@ -85,13 +93,6 @@ namespace AdlezHolder
             get { return freezeStruct; }
         }
 
-        public struct GemStruct
-        {
-            public float duration;
-            public int damage;
-            public float chance;
-        }
-
         public Sword(float scaleFactor)
         {   
             texture = Game1.GameContent.Load<Texture2D>("AlistarSwordAttack/LeftSwoosh");
@@ -101,11 +102,12 @@ namespace AdlezHolder
             float aspectRatio = (float)texture.Width / texture.Height;
             collisionRec.Height = (int)(collisionRec.Width / aspectRatio + 0.5f);
 
-            damage = 10;
+            originalDamage = damage = 10;
             range = 5;
             speed = 5;
 
             gemList = new List<Gem>();
+            gemSlots = 3;
 
             lifestealStruct = new GemStruct();
             freezeStruct = new GemStruct();
@@ -213,7 +215,6 @@ namespace AdlezHolder
             if (vampirePercent > 0)
             {
                 player.heal((int)(vampirePercent * damage));
-                stoleLife = true;
             }
 
             Random rand = new Random();
@@ -310,6 +311,12 @@ namespace AdlezHolder
 
             lightningStruct.chance = lightningChance;
             lightningStruct.duration = stunDuration;
+        }
+
+        public void reduceDamage(Gem gem)
+        {
+            reductionTime = gem.Duration;
+            damage = (int)(originalDamage * .75f);
         }
     }
 }

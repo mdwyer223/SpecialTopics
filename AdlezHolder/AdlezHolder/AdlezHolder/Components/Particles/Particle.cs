@@ -21,6 +21,19 @@ namespace AdlezHolder
 
         float damage;
 
+        GemType type;
+        List<GemStruct> gemEffects;
+
+        public GemType Type
+        {
+            get { return type; }
+        }
+
+        public List<GemStruct> GemEffects
+        {
+            get { return gemEffects; }
+        }
+
         public bool OffScreen
         {
             get { return position.Y > Game1.DisplayHeight || position.X > Game1.DisplayWidth || position.X < 0 || (lifeLengthTimer / 1000) >= lifeLength; }
@@ -114,6 +127,11 @@ namespace AdlezHolder
         public void Draw(SpriteBatch spriteBatch)
         {
             spriteBatch.Draw(blankTexture, Rec, color);
+        }
+
+        public void addGemStruct(GemStruct newStruct)
+        {
+            this.gemEffects.Add(newStruct);
         }
     }
 }
