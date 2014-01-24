@@ -28,6 +28,9 @@ namespace AdlezHolder
             background = Game1.GameContent.Load<Texture2D>("BackgroundsAndFloors/Dungeons/FixedDungeon1/DungeonHallwayLeft");
             backgroundRec = new Rectangle(0, 0, background.Width, background.Height);
 
+            Random rand = new Random();
+
+
             Skeleton sprite = new Skeleton(Game1.GameContent.Load<Texture2D>("ComputerPpl/Enemies/Skeleton/Move/SF"),
                 .04f, 8, new Vector2(300, 200));
             addEnemy(sprite);
@@ -37,31 +40,33 @@ namespace AdlezHolder
             sprite = new Skeleton(Game1.GameContent.Load<Texture2D>("ComputerPpl/Enemies/Skeleton/Move/SF"),
                 .04f, 8, new Vector2(300, 300));
             addEnemy(sprite);
-            //sprite = new Skeleton(Game1.GameContent.Load<Texture2D>("ComputerPpl/Enemies/Skeleton/Move/SF"),
-                //.04f, 8, new Vector2(300, 400));
-            //addEnemy(sprite);
-            //sprite = new Skeleton(Game1.GameContent.Load<Texture2D>("ComputerPpl/Enemies/Skeleton/Move/SF"),
-                //.04f, 8, new Vector2(200, 200));
-            //addEnemy(sprite);
-            //sprite = new Skeleton(Game1.GameContent.Load<Texture2D>("ComputerPpl/Enemies/Skeleton/Move/SF"),
-                //.04f, 8, new Vector2(300, 500));
-            //addEnemy(sprite);
+            sprite = new Skeleton(Game1.GameContent.Load<Texture2D>("ComputerPpl/Enemies/Skeleton/Move/SF"),
+                .04f, 8, new Vector2(300, 400));
+            addEnemy(sprite);
+            sprite = new Skeleton(Game1.GameContent.Load<Texture2D>("ComputerPpl/Enemies/Skeleton/Move/SF"),
+                .04f, 8, new Vector2(200, 200));
+            addEnemy(sprite);
+            sprite = new Skeleton(Game1.GameContent.Load<Texture2D>("ComputerPpl/Enemies/Skeleton/Move/SF"),
+                .04f, 8, new Vector2(300, 500));
+            addEnemy(sprite);
+
+            addEnemy(new Thing(Game1.GameContent.Load<Texture2D>("ComputerPpl/Enemies/Skeleton/Move/SF"), .05f, new Vector2(300, 0))); 
 
 
             Wall wall = new Wall(new Rectangle(130, 215 - backgroundRec.Height, backgroundRec.Width, backgroundRec.Height),
-                Game1.GameContent.Load<Texture2D>("The best thing ever"), new Vector2(130, 215 - backgroundRec.Height));
+                Game1.GameContent.Load<Texture2D>("Random/The best thing ever"), new Vector2(130, 215 - backgroundRec.Height));
             addImmovable(wall);
 
             wall = new Wall(new Rectangle(129 - backgroundRec.Width, 215, backgroundRec.Width, backgroundRec.Width),
-                Game1.GameContent.Load<Texture2D>("The best thing ever"), new Vector2(129 - backgroundRec.Width, 215));
+                Game1.GameContent.Load<Texture2D>("Random/The best thing ever"), new Vector2(129 - backgroundRec.Width, 215));
             addImmovable(wall);
 
             wall = new Wall(new Rectangle(852, 216, backgroundRec.Width, backgroundRec.Height),
-                Game1.GameContent.Load<Texture2D>("The best thing ever"), new Vector2(852, 216));
+                Game1.GameContent.Load<Texture2D>("Random/The best thing ever"), new Vector2(852, 216));
             addImmovable(wall);
 
             wall = new Wall(new Rectangle(130, backgroundRec.Height, backgroundRec.Width, backgroundRec.Height),
-                Game1.GameContent.Load<Texture2D>("The best thing ever"), new Vector2(130, backgroundRec.Height));
+                Game1.GameContent.Load<Texture2D>("Random/The best thing ever"), new Vector2(130, backgroundRec.Height));
             addImmovable(wall);
             
             TripWire newTrip = new TripWire(.02f, new Rectangle(848, 339, 3, 30));

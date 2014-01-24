@@ -16,6 +16,9 @@ namespace AdlezHolder
         int upgradeDamageLev, upgradeRangeLev, 
             upgradeSpeedLev;
         bool dead = true;
+        int originalDamage;
+        int reductionTimer;
+        float reductionTime;
 
         Color color;
         Texture2D texture;
@@ -91,7 +94,7 @@ namespace AdlezHolder
             upgradeDamageLev = 1;
             upgradeRangeLev = 1;
             upgradeSpeedLev = 1;
-            damage = 5;
+            originalDamage = damage = 5;
             range = 5;
             speed = 5;
 
@@ -219,6 +222,19 @@ namespace AdlezHolder
                 
             }
 
+            if (reductionTime > 0)
+            {
+                reductionTimer++;
+                if (reductionTimer >= reductionTime * 60)
+                {
+                    reductionTime = 0;
+                    reductionTimer = 0;
+                }
+                else
+                    damage = (int)((originalDamage * .75f) +.5f);
+            }
+            else
+                damage = originalDamage;
             enemy.damage(data, damage);
 
         }
@@ -234,6 +250,12 @@ namespace AdlezHolder
                 return;
 
             this.gemList.Add(gem);
+        }
+
+        public void reduceDamage(GemStruct gem)
+        {
+            reductionTimer = 0;
+            reductionTime = gem.duration;
         }
     }
 }

@@ -35,19 +35,19 @@ namespace AdlezHolder
             addEnemy(sprite);
 
             Wall wall = new Wall(new Rectangle(130, 215 - backgroundRec.Height, backgroundRec.Width, backgroundRec.Height),
-                Game1.GameContent.Load<Texture2D>("The best thing ever"), new Vector2(130, 215 - backgroundRec.Height));
+                Game1.GameContent.Load<Texture2D>("Random/The best thing ever"), new Vector2(130, 215 - backgroundRec.Height));
             addImmovable(wall);
 
             wall = new Wall(new Rectangle(129 - backgroundRec.Width, 215, backgroundRec.Width, backgroundRec.Width),
-                Game1.GameContent.Load<Texture2D>("The best thing ever"), new Vector2(129 - backgroundRec.Width, 215));
+                Game1.GameContent.Load<Texture2D>("Random/The best thing ever"), new Vector2(129 - backgroundRec.Width, 215));
             addImmovable(wall);
 
             wall = new Wall(new Rectangle(852, 216, backgroundRec.Width, backgroundRec.Height),
-                Game1.GameContent.Load<Texture2D>("The best thing ever"), new Vector2(852, 216));
+                Game1.GameContent.Load<Texture2D>("Random/The best thing ever"), new Vector2(852, 216));
             addImmovable(wall);
 
             wall = new Wall(new Rectangle(130, backgroundRec.Height, backgroundRec.Width, backgroundRec.Height),
-                Game1.GameContent.Load<Texture2D>("The best thing ever"), new Vector2(130, backgroundRec.Height));
+                Game1.GameContent.Load<Texture2D>("Random/The best thing ever"), new Vector2(130, backgroundRec.Height));
             addImmovable(wall);
 
             //algorithm for the player position: take the position they are currently at and flip them to the other side of the screen

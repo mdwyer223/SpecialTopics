@@ -16,6 +16,7 @@ namespace AdlezHolder
     {
         public enum EquippedItem { SWORD, BOW, BOMB, NONE }
 
+        List<GemStruct> Affects;
         List<Message> messages;
         SoundEffect damaged;
         EquippedItem selectedItem;
@@ -32,6 +33,9 @@ namespace AdlezHolder
         int healthPointsMax, currentHealthPoints;
         int immunityTimer = 0, attackTimer = 0;
         const float IMMUNITY_TIME = .25f, ATTACK_TIME = .17f;
+
+        private GemStruct burnTotal, freezeTotal, stunTotal, poisonTotal;
+        private int burnTimer, freezeTimer, stunTimer, poisonTimer;
         
         public int Speed
         {
@@ -89,6 +93,7 @@ namespace AdlezHolder
 
         private void construct()
         {
+            Affects = new List<GemStruct>();
             ContentManager content = Game1.GameContent;
             messages = new List<Message>();
             invent = new Inventory();
@@ -223,8 +228,7 @@ namespace AdlezHolder
 
         public override void Update(Map data, GameTime gameTime)
         {
-            KeyboardState keys = Keyboard.GetState();
-
+            KeyboardState keys = Keyboard.GetState();            
             for (int i = 0; i < messages.Count; i++)
             {
                 if (messages[i] != null)
@@ -255,14 +259,27 @@ namespace AdlezHolder
                 }
             }
 
-            base.Update(data, gameTime);
+            if (immunityTimer < (IMMUNITY_TIME * 1000))
+            {
+                immunityTimer += gameTime.ElapsedGameTime.Milliseconds;
+            }
+            else
+            {
+                immunityTimer = (int)(IMMUNITY_TIME * 1000) + 1;
+            }
+
+            updateAffects();
+            if (stunTotal.duration > 0)
+                return;
+
+            base.Update(data, gameTime);            
 
             bow.Update(data, gameTime);
             bomb.Update(data, gameTime);
+            sword.Update(data.CurrentData, this, gameTime);
             if (attacking && selectedItem == EquippedItem.SWORD)
             {
                 sword.toggle(false);
-                sword.Update(data.CurrentData, this, gameTime);
                 return;
             }
             else if (attacking && selectedItem == EquippedItem.BOW)
@@ -283,16 +300,7 @@ namespace AdlezHolder
                 }
                 return;
             }
-
-            if (immunityTimer < (IMMUNITY_TIME * 1000))
-            {
-                immunityTimer += gameTime.ElapsedGameTime.Milliseconds;
-            }
-            else
-            {
-                immunityTimer = (int)(IMMUNITY_TIME * 1000) + 1;
-            }
-
+            
             if (keys.IsKeyDown(Keys.W))
             {
                 direction = Orientation.UP;
@@ -334,8 +342,7 @@ namespace AdlezHolder
                 attack();
             }
 
-            fixSpacing(data.CurrentData.Everything.ToArray(), keys);
-
+            fixSpacing(data.CurrentData.Everything.ToArray(), keys);            
             oldKeys = keys;
         }
 
@@ -399,6 +406,11 @@ namespace AdlezHolder
         {
             if(immunityTimer >= (IMMUNITY_TIME * 1000))
             {
+                if (freezeTotal.duration > 0)                   
+                {
+                    damagePoints = damagePoints + (int)((damagePoints * freezeTotal.damage) + .5f);                    
+                }
+
                 currentHealthPoints -= damagePoints;
                 if (currentHealthPoints <= 0)
                 {
@@ -411,12 +423,125 @@ namespace AdlezHolder
             }
         }
 
+        public void damage(Enemy enemy)
+        {
+            this.damage(enemy.Strength);
+            Random rand = new Random();
+            if (rand.NextDouble() <= enemy.Gem.chance)
+            {
+                switch (enemy.Atrib)
+                {
+                    case Enemy.Attribute.FIRE:
+                        burn(enemy.Gem);
+                        break;
+                    case Enemy.Attribute.ICE:
+                        freeze(enemy.Gem);
+                        break;
+                    case Enemy.Attribute.LIGHTNING:
+                        stun(enemy.Gem);
+                        break;
+                    case Enemy.Attribute.POISON:
+                        poison(enemy.Gem);
+                        break;
+                }
+            }
+
+        }
+
         private void heal(int healPoints)
         {
             if (currentHealthPoints + healPoints <= healthPointsMax)
             {
                 currentHealthPoints += healPoints;
             }
+        }
+
+        private void updateAffects()
+        {
+            if (burnTotal.duration > 0)
+            {
+                burnTimer++;
+                if (burnTimer % 60 == 0)
+                {
+                    currentHealthPoints -= burnTotal.damage;
+                    this.addMessage(new Message(burnTotal.damage.ToString(),
+                        new Vector2(Game1.DisplayWidth, Game1.DisplayHeight), Color.Orange));
+                }
+                else if (burnTimer >= burnTotal.duration * 60)
+                {
+                    burnTotal.duration = 0;
+                    burnTimer = 0;
+                }
+            }
+
+            if (poisonTotal.duration > 0)
+            {
+                poisonTimer++;
+                if (poisonTimer % 60 == 0)
+                {
+                    currentHealthPoints -= poisonTotal.damage;
+                    this.addMessage(new Message(poisonTotal.damage.ToString(),
+                        new Vector2(Game1.DisplayWidth, Game1.DisplayHeight), Color.Purple));
+                }
+                else if (poisonTimer >= poisonTotal.duration * 60)
+                {
+                    poisonTotal.duration = 0;
+                    poisonTimer = 0;
+                }
+            }
+
+            if (freezeTotal.duration > 0)
+            {
+                freezeTimer++;
+                if (stunTimer % 60 == 0)
+                {
+                    this.addMessage(new Message("frozen",
+                        new Vector2(Game1.DisplayWidth, Game1.DisplayHeight), Color.Cyan));
+                }
+                if (freezeTimer >= freezeTotal.duration * 60)
+                {
+                    freezeTotal.duration = 0;
+                    freezeTimer = 0;
+                }
+                else
+                    sword.reduceDamage(freezeTotal);
+            }
+
+            if (stunTotal.duration > 0)
+            {
+                stunTimer++;
+                if (stunTimer % 60 == 0)
+                {
+                    this.addMessage(new Message("stunned",
+                        new Vector2(Game1.DisplayWidth, Game1.DisplayHeight), Color.Yellow));
+                }
+                else if (stunTimer >= stunTotal.duration * 60)
+                {
+                    stunTotal.duration = 0;
+                    stunTimer = 0;
+                }
+            }
+
+        }
+
+        private void burn(GemStruct gem)
+        {
+            burnTotal.damage = gem.damage;
+            burnTotal.duration = gem.duration;
+        }
+        private void freeze(GemStruct gem)
+        {
+            freezeTotal.damage = gem.damage;
+            freezeTotal.duration = gem.duration;
+        }
+        private void stun(GemStruct gem)
+        {
+            stunTotal.duration = gem.duration;
+        }
+        private void poison(GemStruct gem)
+        {
+            poisonTotal.damage = gem.damage;
+            poisonTotal.duration = gem.duration;
         }
 
         private void attack()
@@ -439,7 +564,7 @@ namespace AdlezHolder
         {
             Rectangle futureRec = new Rectangle(CollisionRec.X, CollisionRec.Y,
                 CollisionRec.Width, CollisionRec.Height);
-
+            
             if (canMoveUp && keys.IsKeyDown(Keys.W))
             {
                 position.Y -= speed;

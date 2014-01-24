@@ -51,8 +51,9 @@ namespace AdlezHolder
             canMoveDown = true;
             foreach (BaseSprite sprite in map.CurrentData.Everything)
             {
-                if (!sprite.IsDead && sprite != this &&
-                    sprite.GetType().IsSubclassOf(typeof(ImmovableObject)) &&
+                if (!sprite.IsDead && sprite != this ||
+                    sprite.GetType() == typeof(Character) ||
+                    sprite.GetType().IsSubclassOf(typeof(ImmovableObject)) ||
                     sprite.GetType().IsSubclassOf(typeof(Enemy)))
                 {
                     canMoveDown = canMoveDown && !BottomRec.Intersects(sprite.CollisionRec);
@@ -125,7 +126,7 @@ namespace AdlezHolder
 
         protected void startWander()
         {
-            runWander = true;
+            runWander = true;            
         }
 
     }
