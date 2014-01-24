@@ -34,6 +34,11 @@ namespace AdlezHolder
             get { return delay / 1000; }
         }
 
+        public int MaxGemSlots
+        {
+            get { return gemSlots; }
+        }
+
         public List<Gem> Gems
         {
             get { return gemList; }
@@ -177,12 +182,48 @@ namespace AdlezHolder
         public void blowUp(Map data, Vector2 start)
         {
             List<Particle> particles = pEngine.generateExplosion(start, damage);
+            calcStats();
+            Random rand = new Random();
+
             foreach (Particle p in particles)
             {
+                if (rand.NextDouble() < lightningStruct.chance)
+                {
+                    p.addGemStruct(lightningStruct);
+                    p.addGemType(GemType.STUN);
+                }
+                if (rand.NextDouble() < poisonStruct.chance)
+                {
+                    p.addGemStruct(poisonStruct);
+                    p.addGemType(GemType.POISON);
+                }
+                if (rand.NextDouble() < freezeStruct.chance)
+                {
+                    p.addGemStruct(freezeStruct);
+                    p.addGemType(GemType.FREEZE);
+                }
+                if (rand.NextDouble() < fireStruct.chance)
+                {
+                    p.addGemStruct(fireStruct);
+                    p.addGemType(GemType.FIRE);
+                }
+                if (rand.NextDouble() < lifestealStruct.chance)
+                {
+                    p.addGemStruct(lifestealStruct);
+                    p.addGemType(GemType.LS);
+                }
                 data.CurrentData.addParticle(p);
             }
 
             particles = null;
+        }
+
+        public void addGem(Gem gem)
+        {
+            if (gemList.Count == MaxGemSlots)
+                return;
+
+            this.gemList.Add(gem);
         }
 
         public void addBomb(Vector2 start, MapDataHolder data)

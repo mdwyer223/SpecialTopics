@@ -243,14 +243,39 @@ namespace AdlezHolder
                             {
                                 Skeleton e = (Skeleton)sprites[j];
                                 e.damage(this, particles[i].Damage);
-                                switch (particles[i].Type)
+                                for (int k = 0; k < particles[i].Types.Count; k++)
                                 {
-                                    case GemType.FIRE:
-                                        {
-                                            e.burn(particles[i].GemEffects[0].damage, 
-                                                particles[i].GemEffects[0].duration);
-                                            break;
-                                        }
+                                    switch (particles[i].Types[k])
+                                    {
+                                        case GemType.FIRE:
+                                            {
+                                                e.burn(particles[i].GemEffects[k].damage,
+                                                    particles[i].GemEffects[k].duration);
+                                                break;
+                                            }
+                                        case GemType.FREEZE:
+                                            {
+                                                e.freeze(particles[i].GemEffects[k].damage,
+                                                    particles[i].GemEffects[k].duration);
+                                                break;
+                                            }
+                                        case GemType.STUN:
+                                            {
+                                                e.stun(particles[i].GemEffects[k].duration);
+                                                break;
+                                            }
+                                        case GemType.POISON:
+                                            {
+                                                e.freeze(particles[i].GemEffects[k].damage,
+                                                    particles[i].GemEffects[k].duration);
+                                                break;
+                                            }
+                                        case GemType.LS:
+                                            {
+                                                map.Player.heal((int)(particles[i].GemEffects[k].chance * particles[i].Damage));
+                                                break;
+                                            }
+                                    }
                                 }
                             }
                             else if (sprites[j].GetType() == typeof(BombObj))

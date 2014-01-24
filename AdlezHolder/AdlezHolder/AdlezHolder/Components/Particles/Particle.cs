@@ -21,12 +21,12 @@ namespace AdlezHolder
 
         float damage;
 
-        GemType type;
+        List<GemType> types;
         List<GemStruct> gemEffects;
 
-        public GemType Type
+        public List<GemType> Types
         {
-            get { return type; }
+            get { return types; }
         }
 
         public List<GemStruct> GemEffects
@@ -72,6 +72,8 @@ namespace AdlezHolder
 
             lifeLength = int.MaxValue;
             lifeLengthTimer = 0;
+            gemEffects = new List<GemStruct>();
+            types = new List<GemType>();
         }
 
         public Particle(int r, int g, int b, int size, Vector2 start, Vector2 velocity)
@@ -85,6 +87,8 @@ namespace AdlezHolder
 
             lifeLength = int.MaxValue;
             lifeLengthTimer = 0;
+            gemEffects = new List<GemStruct>();
+            types = new List<GemType>();
         }
 
         public Particle(Color color, int size, int damage, float secondsAlive, Vector2 start, Vector2 velocity)
@@ -100,6 +104,8 @@ namespace AdlezHolder
             lifeLengthTimer = 0;
 
             this.damage = damage;
+            gemEffects = new List<GemStruct>();
+            types = new List<GemType>();
         }
 
         public Particle(int r, int g, int b, int size, int damage, float secondsAlive, Vector2 start, Vector2 velocity)
@@ -115,6 +121,8 @@ namespace AdlezHolder
             lifeLengthTimer = 0;
 
             this.damage = damage;
+            gemEffects = new List<GemStruct>();
+            types = new List<GemType>();
         }
 
         public void Update(GameTime gameTime)
@@ -132,6 +140,11 @@ namespace AdlezHolder
         public void addGemStruct(GemStruct newStruct)
         {
             this.gemEffects.Add(newStruct);
+        }
+
+        public void addGemType(GemType type)
+        {
+            this.types.Add(type);
         }
     }
 }

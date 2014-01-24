@@ -34,8 +34,8 @@ namespace AdlezHolder
         {
             get { return gemEffects; }
         }
-        
-        public Projectile(int damage, int maxRange, float speed, float scaleFactor, 
+
+        public Projectile(int damage, int maxRange, float speed, float scaleFactor,
             Vector2 velocity, Vector2 start, Texture2D texture)
             : base(texture, scaleFactor, Game1.DisplayWidth, 4, start)
         {
@@ -126,7 +126,7 @@ namespace AdlezHolder
                             IsVisible = false;
                             IsDead = true;
                         }
-                        
+
                     }
                 }
             }
@@ -143,8 +143,8 @@ namespace AdlezHolder
         }
 
         public void addGemType(GemType type)
-{
-    this.types.Add(type);
-}
+        {
+            this.types.Add(type);
+        }
     }
 }

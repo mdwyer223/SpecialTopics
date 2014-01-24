@@ -39,6 +39,11 @@ namespace AdlezHolder
             get{ return range; }
         }
 
+        public int MaxGemSlots
+        {
+            get { return gemSlots; }
+        }
+
         public List<Gem> Gems
         {
             get { return gemList; }
@@ -214,6 +219,14 @@ namespace AdlezHolder
             }
 
             data.CurrentData.addProjectile(p); 
+        }
+
+        public void addGem(Gem gem)
+        {
+            if (gemList.Count == MaxGemSlots)
+                return;
+
+            this.gemList.Add(gem);
         }
 
         public void changeImage(Texture2D texture)

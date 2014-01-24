@@ -25,7 +25,8 @@ namespace AdlezHolder
         Sword sword;
         Bow bow;
         Bomb bomb;
-        int money;
+        int money, arrowCount, bombCount,
+            maxArrows, maxBombs;
 
         bool attacking, bowShot, bombSet;
 
@@ -58,6 +59,11 @@ namespace AdlezHolder
         {
             get { return selectedItem; }
             set { selectedItem = value; }
+        }
+
+        public bool QuiverFull
+        {
+            get { return arrowCount >= maxArrows; }
         }
 
         public Sword Sword
@@ -205,6 +211,9 @@ namespace AdlezHolder
             playAnimation(Idle);
 
             currentHealthPoints = healthPointsMax = 500;
+            arrowCount = bombCount = 0;
+            maxBombs = 10;
+            maxArrows = 30;
 
             damaged = Game1.GameContent.Load<SoundEffect>("Music/SFX/Hit By Enemy");
 
@@ -263,8 +272,16 @@ namespace AdlezHolder
             {
                 if (!bowShot)
                 {
-                    bow.addArrow(data);
-                    bowShot = true;
+                    if (arrowCount > 0)
+                    {
+                        bow.addArrow(data);
+                        arrowCount--;
+                        bowShot = true;
+                    }
+                    else
+                    {
+                        addMessage(new Message("Quiver Empty!", Color.Yellow));
+                    }
                 }
                 return;
             }
@@ -441,6 +458,24 @@ namespace AdlezHolder
 
         private void knockBack(Vector2 vecToMove)
         {
+        }
+
+        public void addArrow()
+        {
+            if (arrowCount >= maxArrows)
+            {
+                return;
+            }
+            arrowCount++;
+        }
+
+        public void addBomb()
+        {
+            if (bombCount >= maxBombs)
+            {
+                return;
+            }
+            bombCount++;
         }
 
         private void fixSpacing(BaseSprite[] objects, KeyboardState keys)

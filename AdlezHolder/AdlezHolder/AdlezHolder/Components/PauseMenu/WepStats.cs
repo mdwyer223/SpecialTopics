@@ -242,10 +242,32 @@ namespace AdlezHolder
                 {
                     if (gemChoiceIndex != gemChoices.Count - 1)
                     {
-                        if (player.Sword.MaxGemSlots != player.Sword.Gems.Count)
+                        if (itemSelected == EquippedItem.SWORD)
                         {
-                            player.Sword.addGem((Gem)(player.PlayerInvent.ItemList[gemIndexInInvent[gemChoiceIndex]]));
-                            player.PlayerInvent.ItemList.RemoveAt(gemIndexInInvent[gemChoiceIndex]);
+                            if (player.Sword.MaxGemSlots != player.Sword.Gems.Count)
+                            {
+                                player.Sword.addGem((Gem)(player.PlayerInvent.ItemList[gemIndexInInvent[gemChoiceIndex]]));
+                                player.PlayerInvent.ItemList.RemoveAt(gemIndexInInvent[gemChoiceIndex]);
+                            }
+                        }
+                        else if (itemSelected == EquippedItem.BOMB)
+                        {
+                            if (player.Bomb.MaxGemSlots != player.Bomb.Gems.Count)
+                            {
+                                if (!((Gem)(player.PlayerInvent.ItemList[gemIndexInInvent[gemChoiceIndex]])) .ItemName.Contains("Vampiric"))
+                                {
+                                    player.Bomb.addGem((Gem)(player.PlayerInvent.ItemList[gemIndexInInvent[gemChoiceIndex]]));
+                                    player.PlayerInvent.ItemList.RemoveAt(gemIndexInInvent[gemChoiceIndex]);
+                                }
+                            }
+                        }
+                        else if (itemSelected == EquippedItem.BOW)
+                        {
+                            if (player.Bow.MaxGemSlots != player.Bow.Gems.Count)
+                            {
+                                player.Bow.addGem((Gem)(player.PlayerInvent.ItemList[gemIndexInInvent[gemChoiceIndex]]));
+                                player.PlayerInvent.ItemList.RemoveAt(gemIndexInInvent[gemChoiceIndex]);
+                            }
                         }
                         equipOrUnequipMenu = true;
                         gemSelect = false;
@@ -314,7 +336,18 @@ namespace AdlezHolder
                     {
                         if (gemChoiceIndex != gemChoices.Count - 1)
                         {
-                            player.Sword.Gems.RemoveAt(gemChoiceIndex);
+                            if (itemSelected == EquippedItem.SWORD)
+                            {
+                                player.Sword.Gems.RemoveAt(gemChoiceIndex);
+                            }
+                            else if (itemSelected == EquippedItem.BOMB)
+                            {
+                                player.Bomb.Gems.RemoveAt(gemChoiceIndex);
+                            }
+                            else if (itemSelected == EquippedItem.BOW)
+                            {
+                                player.Bow.Gems.RemoveAt(gemChoiceIndex);
+                            }
                             equipOrUnequipMenu = true;
                             gemSelect = false;
                             gemRemove = false;

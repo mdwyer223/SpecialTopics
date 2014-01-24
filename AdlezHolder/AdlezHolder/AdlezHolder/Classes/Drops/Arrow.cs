@@ -21,6 +21,11 @@ namespace AdlezHolder
             }
         }
 
+        public bool Steel
+        {
+            get { return steel; }
+        }
+
         public Arrow(float scaleFactor, bool steel, string tag, int value, Vector2 startPosition)
             : base(Game1.GameContent.Load<Texture2D>("Items/WoodenArrow"), scaleFactor, startPosition, tag, true, false, true, value)
         {
@@ -42,16 +47,16 @@ namespace AdlezHolder
         {
             if (this.isColliding(data.Player.CollisionRec))
             {
-                if (!data.Player.PlayerInvent.Full)
+                if (!data.Player.QuiverFull)
                 {
-                    data.Player.addItem(this); //change to add arrow for arrow count
-                    data.Player.addMessage(new Message("Wooden Arrow", new Vector2(Game1.DisplayWidth, Game1.DisplayHeight), Color.White));
+                    data.Player.addArrow();
+                    data.Player.addMessage(new Message("Arrow", new Vector2(Game1.DisplayWidth, Game1.DisplayHeight), Color.White));
                     collected = true;
                 }
                 else
                 {
-                    data.Player.addMessage(new Message("Inventory Full",
-                        new Vector2(Game1.DisplayWidth, Game1.DisplayHeight), Color.White)); //change to "Quiver Full"
+                    data.Player.addMessage(new Message("Quiver Full",
+                        new Vector2(Game1.DisplayWidth, Game1.DisplayHeight), Color.White));
                 }
             }
 
