@@ -31,6 +31,7 @@ namespace AdlezHolder
         bool attacking, bowShot, bombSet;
 
         int healthPointsMax, currentHealthPoints;
+
         int immunityTimer = 0, attackTimer = 0, healingTimer = 0;
         const float IMMUNITY_TIME = .25f, ATTACK_TIME = .17f, HEALING_SICKNESS = .25f;
         
@@ -85,9 +86,23 @@ namespace AdlezHolder
         {
             get { return invent; }
         }
-        
+
+        public void load(CharacterVars inPlayerVar)
+        {
+            sword = inPlayerVar.sword;
+            HitPoints = inPlayerVar.curHealth;
+            speed = inPlayerVar.speed;
+            base.load(inPlayerVar);
+            construct();
+        }
+
         public Character(Texture2D defaultTexture, float scaleFactor, int displayWidth, float secondsToCrossScreen, Vector2 start)
             : base(defaultTexture, scaleFactor, displayWidth, secondsToCrossScreen, start)
+        {
+            construct();
+        }
+
+        private void construct()
         {
             ContentManager content = Game1.GameContent;
             messages = new List<Message>();
@@ -96,7 +111,7 @@ namespace AdlezHolder
             sword = new Sword(.05f);
             bow = new Bow(0f);
             bomb = new Bomb(.03f);
-            
+
             Texture2D[] left, right, forward, backward;
 
             left = new Texture2D[3];
@@ -141,7 +156,7 @@ namespace AdlezHolder
             right[0] = content.Load<Texture2D>("AlistarSword/R");
             right[1] = content.Load<Texture2D>("AlistarSword/RR");
             right[2] = content.Load<Texture2D>("AlistarSword/RL");
-            swordMove = new FullAnimation(backward, forward, left, right,.2f);
+            swordMove = new FullAnimation(backward, forward, left, right, .2f);
 
             left = new Texture2D[3];
             right = new Texture2D[3];
@@ -516,7 +531,7 @@ namespace AdlezHolder
                 if (!objects[i].IsDead)
                 {
                     if (futureRec.Intersects(objects[i].CollisionRec) && 
-                        objects[i].CollisionRec.GetType() != typeof(Character))
+                        objects[i].GetType() != typeof(Character))
                     {
                         objectsColliding.Add(objects[i]);
 
@@ -528,23 +543,6 @@ namespace AdlezHolder
             {
                 if (!objectsColliding[i].IsDead)
                 {
-                    if (objectsColliding[i].GetType() == typeof(ImmovableObject)
-                        || objectsColliding[i].GetType() == typeof(HittableObject)
-                        || objectsColliding[i].GetType() == typeof(Wall)
-                        || objectsColliding[i].GetType() == typeof (Chest)
-                        || objectsColliding[i].GetType() == typeof(Skeleton)
-                        || objectsColliding[i].GetType() == typeof (BuildingObject))
-                    {
-                        canMoveRight = direction != Orientation.RIGHT;
-                        canMoveDown = direction != Orientation.DOWN;
-                        canMoveUp = direction != Orientation.UP;
-                        canMoveLeft = direction != Orientation.LEFT;
-
-                        Vector2 vecToMove = measureCollison(objectsColliding[i].CollisionRec);
-                        position += vecToMove;
-                        break;
-                    }
-
                     if (objectsColliding[i].GetType() == typeof(MovableObject))
                     {
                         if (!keys.IsKeyDown(Keys.LeftShift))
@@ -560,7 +558,7 @@ namespace AdlezHolder
                         }
                         else
                         {
-                            canMoveRight = objectsColliding[i].CanMoveRight; // make these properties
+                            canMoveRight = objectsColliding[i].CanMoveRight;
                             canMoveDown = objectsColliding[i].CanMoveDown;
                             canMoveUp = objectsColliding[i].CanMoveUp;
                             canMoveLeft = objectsColliding[i].CanMoveLeft;
@@ -569,6 +567,20 @@ namespace AdlezHolder
                             position += vecToMove;
                         }
                     }
+                    else if (objectsColliding[i].GetType().IsSubclassOf(typeof(ImmovableObject))
+                        || objectsColliding[i].GetType().IsSubclassOf(typeof(Enemy)))
+                    {
+                        canMoveRight = direction != Orientation.RIGHT;
+                        canMoveDown = direction != Orientation.DOWN;
+                        canMoveUp = direction != Orientation.UP;
+                        canMoveLeft = direction != Orientation.LEFT;
+
+                        Vector2 vecToMove = measureCollison(objectsColliding[i].CollisionRec);
+                        position += vecToMove;
+                        break;
+                    }
+
+
                 }
                 
             }

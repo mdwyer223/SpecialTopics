@@ -4,16 +4,14 @@ using System.Linq;
 using System.Text;
 
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Content;
+using Microsoft.Xna.Framework.Audio;
 
 namespace AdlezHolder
 {
     public class Skeleton : Enemy
     {
-        protected SoundEffect damaged;
-
         public Skeleton(Texture2D defaultTexture, float scaleFactor, int SecondsToCrossScreen, Vector2 startPosition)
             : base(defaultTexture, scaleFactor, SecondsToCrossScreen, startPosition)
         {
@@ -104,6 +102,7 @@ namespace AdlezHolder
 
             this.knockBack();
         }
+        
 
         protected override void dropItem(MapDataHolder data)
         {

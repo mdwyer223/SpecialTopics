@@ -18,16 +18,18 @@ namespace AdlezHolder
         SpriteBatch spriteBatch;
         Color screenColor;
         MenuInterface menu;
+        Game1 game;
 
-        public MainMenu(Game game)
+        public MainMenu(Game1 game)
             : base(game)
         {
             screenColor = Color.MidnightBlue;
+            this.game = game;
         }
 
         public override void Initialize()
         {
-            menu = new MenuInterface(Game.GraphicsDevice.Viewport, .3f);
+            menu = new MenuInterface(game);
             spriteBatch = new SpriteBatch(Game.GraphicsDevice);
             base.Initialize();
         }

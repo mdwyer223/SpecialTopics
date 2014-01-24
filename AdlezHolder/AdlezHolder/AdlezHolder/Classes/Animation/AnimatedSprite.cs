@@ -22,6 +22,10 @@ namespace AdlezHolder
             set { direction = value; }
         }
 
+        protected AnimatedSprite()
+        {
+        }
+
         public AnimatedSprite(Texture2D texture, float scaleFactor, int inDisplayWidth, float SecondsToCrossScreen,
              Vector2 startPosition)
             : base(texture, scaleFactor, inDisplayWidth, SecondsToCrossScreen, startPosition)
@@ -29,10 +33,6 @@ namespace AdlezHolder
             Texture2D[] ani = new Texture2D[1];
             ani[0] = texture;
             playAnimation(new FullAnimation(ani, 5));
-        }
-
-        protected AnimatedSprite()
-        {
         }
 
         public override void Update(Map data, GameTime gameTime)

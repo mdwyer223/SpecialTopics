@@ -6,6 +6,7 @@ using System.Text;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Content;
+using Microsoft.Xna.Framework.Audio;
 
 namespace AdlezHolder
 {
@@ -21,7 +22,7 @@ namespace AdlezHolder
         // ranger
         
         protected FullAnimation attackAn; // move some animations to AnimatiedSprite
-               
+
         protected bool isAttacking, burned, poisoned, stunned, frozen;
 
         protected int burnTimer, burnDamagePerTick, bTickTimer,
@@ -38,6 +39,8 @@ namespace AdlezHolder
         protected const float SEC_TO_ATTACK = 1;
         protected int immunityTimer = 0;
 
+        protected SoundEffect damaged;
+
         public bool Frozen
         {
             get { return frozen; }
@@ -51,8 +54,8 @@ namespace AdlezHolder
         public bool Poisoned
         {
             get { return poisoned; }
-        }
-
+        }     
+        
         public int AttackRange
         {
             get;
@@ -99,10 +102,6 @@ namespace AdlezHolder
             protected set { strength = value; }
         }
 
-        protected Enemy() 
-        { 
-        }
-
         public Enemy(Texture2D defaultTexture, float scaleFactor, int SecondsToCrossScreen, Vector2 startPosition)
             : base(defaultTexture, scaleFactor, SecondsToCrossScreen, Game1.DisplayWidth, startPosition)
         {
@@ -139,6 +138,8 @@ namespace AdlezHolder
                     }
                 }
             }
+            if (IsDead)
+                return;
 
             if (immunityTimer <= IMMUNITY_TIME * 1000)
             {
@@ -149,7 +150,7 @@ namespace AdlezHolder
                 immunityTimer = (int)(IMMUNITY_TIME * 1000);
             }
 
-            if (IsDead || stunned)
+            if (stunned)
             {
                 stunTimer += gameTime.ElapsedGameTime.Milliseconds;
                 addMessage(new Message("Stun", Color.Yellow));

@@ -50,6 +50,10 @@ namespace AdlezHolder
             protected set { pickUp = value;}
         }
 
+        protected Item()
+        {
+        }
+
         public Item(Texture2D texture, float scaleFactor, Vector2 startPosition, string tag, bool isPickUp, 
             bool isCurrency, bool isStackable, int value)
             : base(texture, scaleFactor, Game1.DisplayWidth, 0, startPosition)

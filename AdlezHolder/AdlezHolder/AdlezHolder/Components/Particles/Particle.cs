@@ -20,6 +20,7 @@ namespace AdlezHolder
         int lifeLengthTimer;
 
         float damage;
+        float damageReduction;
 
         List<GemType> types;
         List<GemStruct> gemEffects;
@@ -36,12 +37,13 @@ namespace AdlezHolder
 
         public bool OffScreen
         {
-            get { return position.Y > Game1.DisplayHeight || position.X > Game1.DisplayWidth || position.X < 0 || (lifeLengthTimer / 1000) >= lifeLength; }
+            get { return (position.Y > Game1.DisplayHeight || position.X > Game1.DisplayWidth || position.X < 0) || lifeLengthTimer >= lifeLength * 1000; }
         }
 
         public int Damage
         {
-            get {
+            get 
+            {
                 if (damage >= 0)
                     return (int)damage;
                 else
@@ -104,8 +106,11 @@ namespace AdlezHolder
             lifeLengthTimer = 0;
 
             this.damage = damage;
+
             gemEffects = new List<GemStruct>();
             types = new List<GemType>();
+
+            calcDamage(damage);
         }
 
         public Particle(int r, int g, int b, int size, int damage, float secondsAlive, Vector2 start, Vector2 velocity)
@@ -121,13 +126,16 @@ namespace AdlezHolder
             lifeLengthTimer = 0;
 
             this.damage = damage;
+
             gemEffects = new List<GemStruct>();
             types = new List<GemType>();
+
+            calcDamage(damage);
         }
 
         public void Update(GameTime gameTime)
         {
-            damage -= .4f;
+            damage += damageReduction;
             lifeLengthTimer += gameTime.ElapsedGameTime.Milliseconds;
             position += velo;
         }
@@ -145,6 +153,12 @@ namespace AdlezHolder
         public void addGemType(GemType type)
         {
             this.types.Add(type);
+        }
+
+        public void calcDamage(int damage)
+        {
+            int endDamage = (int)((damage * .2f) + .5f);
+            damageReduction = (endDamage - damage) / (lifeLength * 60);
         }
     }
 }

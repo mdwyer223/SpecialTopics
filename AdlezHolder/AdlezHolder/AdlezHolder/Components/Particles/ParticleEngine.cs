@@ -132,6 +132,14 @@ namespace AdlezHolder
             return p;
         }
 
+        public Particle getMageParticle(Vector2 start, Vector2 velocity, int damage)
+        {
+            Color color = new Color(0, 0, rand.Next(40, 255));
+            Particle p = new Particle(color, rand.Next(2, 5), damage, (float)(rand.NextDouble() * .15f + .4f), start, velocity);
+
+            return p;
+        }
+
         public List<Particle> generateExplosion(Vector2 exploStart, int damage)
         {
             List<Particle> pStuff = new List<Particle>();
@@ -149,6 +157,29 @@ namespace AdlezHolder
                 }
 
                 pStuff.Add(getExplosionParticle(exploStart, 
+                    new Vector2(xVelo, yVelo), damage));
+            }
+
+            return pStuff;
+        }
+
+        public List<Particle> generateMageBurst(Vector2 exploStart, int damage)
+        {
+            List<Particle> pStuff = new List<Particle>();
+
+            int numParticles = rand.Next(30, 60);
+            for (int i = 0; i < numParticles; i++)
+            {
+                float xVelo = (float)rand.NextDouble() * rand.Next(-4, 4);
+                float yVelo = (float)rand.NextDouble() * rand.Next(-4, 4);
+
+                while (yVelo == 0 || xVelo == 0)
+                {
+                    xVelo = (float)rand.NextDouble() * rand.Next(-4, 4);
+                    yVelo = (float)rand.NextDouble() * rand.Next(-4, 4);
+                }
+
+                pStuff.Add(getMageParticle(exploStart,
                     new Vector2(xVelo, yVelo), damage));
             }
 

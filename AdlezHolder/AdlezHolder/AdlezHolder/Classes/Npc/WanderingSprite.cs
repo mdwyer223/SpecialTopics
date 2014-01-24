@@ -12,9 +12,8 @@ namespace AdlezHolder
     public class WanderingSprite : AnimatedSprite
     {
         int moveCount, moveIndex;
-        bool isWaiting;
+        bool isWaiting, runWander;
         Random rand;
-        Vector2 startPoint;
         protected FullAnimation idle, move;
 
         protected bool canMoveRight, canMoveDown, canMoveLeft, canMoveUp;// TODO: make property
@@ -23,24 +22,17 @@ namespace AdlezHolder
         const float SEC_MOVING = 1;
         const int TICK_IN_A_SEC = 60;
 
-        public int maxWanderRange { get; protected set; }
-
         public WanderingSprite(Texture2D defaultTexture, float scaleFactor, int SecondsToCrossScreen,
             int displayWidth, Vector2 startPosition)
             : base(defaultTexture, scaleFactor, displayWidth, SecondsToCrossScreen,startPosition)
         {
             rand = new Random();
-            startPoint = startPosition;
 
             Texture2D[] ani = new Texture2D[1];
             ani[0] = defaultTexture;
             idle = new FullAnimation(ani, 5);
             move = new FullAnimation(ani, 5);
             
-        }
-
-        protected WanderingSprite()
-        {
         }
 
         public override void Update(Map data, GameTime gameTime)
@@ -50,23 +42,31 @@ namespace AdlezHolder
         }
 
         protected void setCanMoves(Map map)
-        {// TODO: make MapData.add smart, make an AdvancedSprite,
+        {
             canMoveRight = true;
             canMoveLeft = true;
             canMoveUp = true;
             canMoveDown = true;
             foreach (BaseSprite sprite in map.CurrentData.Everything)
             {
-                canMoveDown = canMoveDown && !BottomRec.Intersects(sprite.CollisionRec);
-                canMoveUp = canMoveUp && !TopRec.Intersects(sprite.CollisionRec);
-                canMoveLeft = canMoveLeft && !LeftRec.Intersects(sprite.CollisionRec);
-                canMoveRight = canMoveRight && !RightRec.Intersects(sprite.CollisionRec);
+                if (!sprite.IsDead && sprite != this &&
+                    sprite.GetType().IsSubclassOf(typeof(ImmovableObject)) &&
+                    sprite.GetType().IsSubclassOf(typeof(Enemy)))
+                {
+                    canMoveDown = canMoveDown && !BottomRec.Intersects(sprite.CollisionRec);
+                    canMoveUp = canMoveUp && !TopRec.Intersects(sprite.CollisionRec);
+                    canMoveLeft = canMoveLeft && !LeftRec.Intersects(sprite.CollisionRec);
+                    canMoveRight = canMoveRight && !RightRec.Intersects(sprite.CollisionRec);
+                }
             }
 
         }
         
-        public virtual void wander()
+        protected virtual void wander()
         {
+            if (!runWander)
+                return;
+
             moveCount++;
             if (moveCount >= SEC_MOVING * TICK_IN_A_SEC)
             {
@@ -114,17 +114,16 @@ namespace AdlezHolder
             playAnimation(move);
         }        
 
-        protected void resetWander()
+        protected void stopWander()
         {
             moveCount = 0;
+            runWander = false;
+            isWaiting = true;
         }
 
         protected void startWander()
         {
-        }
-
-        protected void stopWander()
-        {
+            runWander = true;
         }
     }
 }

@@ -9,18 +9,10 @@ using Microsoft.Xna.Framework.Content;
 
 namespace AdlezHolder
 {
-    class Minotaur : Enemy
-    {        
-        Vector2 oldVelocity;
-
-        Orientation waveDirec;
-        Texture2D waveText;
-        Rectangle waveRec;
-        bool hasCross;
-        int waveDis, waveTimer;
-
-        public Minotaur(Texture2D defaultTexture, float scaleFactor, int SecondsToCrossScreen, Vector2 startPosition)
-            :base(defaultTexture, scaleFactor, SecondsToCrossScreen, startPosition)
+    public class Minotaur : RangedEnemy
+    {
+        public Minotaur(Texture2D defaultTexture, float scaleFactor, Vector2 startPosition)
+            :base(defaultTexture, scaleFactor, 9, startPosition)
         {
             // load in animations
             ContentManager content = Game1.GameContent;
@@ -84,105 +76,43 @@ namespace AdlezHolder
 
         protected override void setAttributes()
         {
-            
-        }
-        
-        protected override void attack(Map data)
-        {
-            base.attack(data);
-            Vector2 velocity = data.Player.Center - Center;
-
-            if (Math.Abs(data.Player.Center.X - Center.X) < CollisionRec.Height / 2 
-                || Math.Abs(data.Player.Center.Y - Center.Y) < CollisionRec.Width / 2)
-            {
-                if (!hasCross)
-                {
-                    isAttacking = true;
-                    hasCross = true;
-                    createWave();
-                } 
-            }
-
-            // shoot wave 
-            if (hasCross)
-            {
-                // move rec based on direction
-                switch (waveDirec)
-                {
-                    case Orientation.UP:
-                        waveRec.Y -= speed * 4;
-                        break;
-                    case Orientation.DOWN:
-                        waveRec.Y += speed * 4;
-                        break;
-                    case Orientation.LEFT:
-                        waveRec.X -= speed * 4;
-                        break;
-                    case Orientation.RIGHT:
-                        waveRec.X += speed * 4;
-                        break;
-                }
-                // move untill hit a range
-                waveDis += speed;
-
-                if (waveDis >= AttackRange / 2)
-                {
-                    hasCross = false;
-                    waveDis = 0;
-                }
-                else if (waveRec.Intersects(data.Player.CollisionRec))// check for objects
-                {
-                    data.Player.damage(Strength);
-                }                
-            }
-            oldVelocity = velocity;
+            Strength = 5;
+            PlayerCollision = false;
         }
 
-        public override void wander()
+        protected override void createProjetile()
         {
-            base.wander();
-            hasCross = false;
-            waveDis = 0;
-        }
-
-        public override void Draw(SpriteBatch spriteBatch)
-        {
-            base.Draw(spriteBatch);
-            if (hasCross)
-                spriteBatch.Draw(waveText, waveRec, Color.White);
-        }
-
-        private void createWave()
-        {
+            base.createProjetile();
             switch (direction)
             {
                 case Orientation.UP:
-                    waveRec.Width = waveRec.Height = TopRec.Width;
-                    waveRec.Y = CollisionRec.Y - waveRec.Height;
-                    waveRec.X = CollisionRec.X + (CollisionRec.Width - waveRec.Width) / 2;
-                    waveText = Game1.GameContent.Load<Texture2D>("AlistarSwordAttack/BackSwoosh");
+                    projectileRec.Width = projectileRec.Height = TopRec.Width;
+                    projectileRec.Y = CollisionRec.Y - projectileRec.Height;
+                    projectileRec.X = CollisionRec.X + (CollisionRec.Width - projectileRec.Width) / 2;
+                    projectileText = Game1.GameContent.Load<Texture2D>("AlistarSwordAttack/BackSwoosh");
                     break;
                 case Orientation.DOWN:
-                    waveRec.Width = waveRec.Height = TopRec.Width;
-                    waveRec.Y = CollisionRec.Y + CollisionRec.Height;
-                    waveRec.X = CollisionRec.X + (CollisionRec.Width - waveRec.Width) / 2;
-                    waveText = Game1.GameContent.Load<Texture2D>("AlistarSwordAttack/FrontSwoosh");
+                    projectileRec.Width = projectileRec.Height = TopRec.Width;
+                    projectileRec.Y = CollisionRec.Y + CollisionRec.Height;
+                    projectileRec.X = CollisionRec.X + (CollisionRec.Width - projectileRec.Width) / 2;
+                    projectileText = Game1.GameContent.Load<Texture2D>("AlistarSwordAttack/FrontSwoosh");
                     break;
                 case Orientation.LEFT:
-                    waveRec.Height = waveRec.Width = LeftRec.Height;
-                    waveRec.X = CollisionRec.X - waveRec.Width;
-                    waveRec.Y = CollisionRec.Y + (CollisionRec.Height - waveRec.Height) / 2;
-                    waveText = Game1.GameContent.Load<Texture2D>("AlistarSwordAttack/LeftSwoosh");
+                    projectileRec.Height = projectileRec.Width = LeftRec.Height;
+                    projectileRec.X = CollisionRec.X - projectileRec.Width;
+                    projectileRec.Y = CollisionRec.Y + (CollisionRec.Height - projectileRec.Height) / 2;
+                    projectileText = Game1.GameContent.Load<Texture2D>("AlistarSwordAttack/LeftSwoosh");
                     break;
                 case Orientation.RIGHT:
-                    waveRec.Height = waveRec.Width = LeftRec.Height;
-                    waveRec.X = CollisionRec.X + CollisionRec.Width;
-                    waveRec.Y = CollisionRec.Y + (CollisionRec.Height - waveRec.Height) / 2;
-                    waveText = Game1.GameContent.Load<Texture2D>("AlistarSwordAttack/RightSwoosh");
+                    projectileRec.Height = projectileRec.Width = LeftRec.Height;
+                    projectileRec.X = CollisionRec.X + CollisionRec.Width;
+                    projectileRec.Y = CollisionRec.Y + (CollisionRec.Height - projectileRec.Height) / 2;
+                    projectileText = Game1.GameContent.Load<Texture2D>("AlistarSwordAttack/RightSwoosh");
                     break;
             }
-            waveDirec = direction;
         }
+
+
 
     }
 }

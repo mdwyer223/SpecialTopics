@@ -163,7 +163,7 @@ namespace AdlezHolder
         {
             for (int i = 0; i < slots.Count; i++)
             {
-                spriteBatch.Draw(Game1.GameContent.Load<Texture2D>("The best thing ever"), slots[i], Color.White);
+                spriteBatch.Draw(Game1.GameContent.Load<Texture2D>("Random/The best thing ever"), slots[i], Color.White);
 
                 if (i >= maxSlots)
                 {
@@ -199,7 +199,7 @@ namespace AdlezHolder
                     numOptions = options.Count;
 
                     optionsRec = new Rectangle((int)vec.X, (int)vec.Y, 100, optionHeight * numOptions);
-                    spriteBatch.Draw(Game1.GameContent.Load<Texture2D>("The best thing ever"), optionsRec, Color.White);
+                    spriteBatch.Draw(Game1.GameContent.Load<Texture2D>("Random/The best thing ever"), optionsRec, Color.White);
 
                     for(int k = 0; k < options.Count; k++)
                     {

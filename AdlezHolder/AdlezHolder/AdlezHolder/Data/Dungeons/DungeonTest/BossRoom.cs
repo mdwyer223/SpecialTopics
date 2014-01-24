@@ -36,7 +36,7 @@ namespace AdlezHolder
             addImmovable(wall);
 
             Minotaur minotaur = new Minotaur(Game1.GameContent.Load<Texture2D>("ComputerPpl/Bosses/D1 Boss/Move/F"),
-                .15f, 9, new Vector2(140, 220));
+                .15f, new Vector2(140, 220));
             addEnemy(minotaur);
 
             if (player.Direction == Orientation.UP)

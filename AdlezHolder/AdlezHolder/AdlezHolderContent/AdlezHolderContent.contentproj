@@ -148,78 +148,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="bomb selected.png">
-      <Name>bomb selected</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="bow selected.png">
-      <Name>bow selected</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="FL.png">
-      <Name>FL</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="ForwardRightFootSword.png">
-      <Name>ForwardRightFootSword</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="sword selected.png">
-      <Name>sword selected</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="The best thing ever 2.png">
-      <Name>The best thing ever 2</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="The best thing ever.png">
-      <Name>The best thing ever</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="transparent.png">
-      <Name>transparent</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Upgrade bar %28lev 1%29.png">
-      <Name>Upgrade bar %28lev 1%29</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Upgrade bar %28lev 2%29.png">
-      <Name>Upgrade bar %28lev 2%29</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Upgrade bar %28lev 3%29.png">
-      <Name>Upgrade bar %28lev 3%29</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Upgrade bar %28lev 4%29.png">
-      <Name>Upgrade bar %28lev 4%29</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Upgrade Bar Default.png">
-      <Name>Upgrade Bar Default</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Upgrade bar Full%28lev 5%29.png">
-      <Name>Upgrade bar Full%28lev 5%29</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="SpriteFont1.spritefont">
       <Name>SpriteFont1</Name>
       <Importer>FontDescriptionImporter</Importer>
@@ -347,6 +275,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="ComputerPpl\Enemies\Mage\Attack\" />
+    <Folder Include="ComputerPpl\Enemies\Thing\Attack\" />
     <Folder Include="ComputerPpl\Npcs\" />
   </ItemGroup>
   <ItemGroup>
@@ -466,13 +396,6 @@
     </Compile>
     <Compile Include="MenuButtons\NewGame.png">
       <Name>NewGame</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="AdlezTitle.png">
-      <Name>AdlezTitle</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
@@ -792,13 +715,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="SteelArrow.png">
-      <Name>SteelArrow</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="Music\SFX\Hit By Enemy.wav">
       <Name>Hit By Enemy</Name>
       <Importer>WavImporter</Importer>
@@ -1112,6 +1028,161 @@
     </Compile>
     <Compile Include="Weapons\BombAnime\Bomb4.png">
       <Name>Bomb4</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ComputerPpl\Enemies\Mage\Move\B.png">
+      <Name>B</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="ComputerPpl\Enemies\Mage\Move\BL.png">
+      <Name>BL</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="ComputerPpl\Enemies\Mage\Move\BR.png">
+      <Name>BR</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="ComputerPpl\Enemies\Mage\Move\F.png">
+      <Name>F</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="ComputerPpl\Enemies\Mage\Move\FL.png">
+      <Name>FL</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="ComputerPpl\Enemies\Mage\Move\FR.png">
+      <Name>FR</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="ComputerPpl\Enemies\Mage\Move\L.png">
+      <Name>L</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="ComputerPpl\Enemies\Mage\Move\LL.png">
+      <Name>LL</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="ComputerPpl\Enemies\Mage\Move\LR.png">
+      <Name>LR</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="ComputerPpl\Enemies\Mage\Move\R.png">
+      <Name>R</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="ComputerPpl\Enemies\Mage\Move\RL.png">
+      <Name>RL</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="ComputerPpl\Enemies\Mage\Move\RR.png">
+      <Name>RR</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ComputerPpl\Enemies\Thing\Move\TB.png">
+      <Name>TB</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="ComputerPpl\Enemies\Thing\Move\TBL.png">
+      <Name>TBL</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="ComputerPpl\Enemies\Thing\Move\TBR.png">
+      <Name>TBR</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="ComputerPpl\Enemies\Thing\Move\TF.png">
+      <Name>TF</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="ComputerPpl\Enemies\Thing\Move\TFL.png">
+      <Name>TFL</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="ComputerPpl\Enemies\Thing\Move\TFR.png">
+      <Name>TFR</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="ComputerPpl\Enemies\Thing\Move\TL.png">
+      <Name>TL</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="ComputerPpl\Enemies\Thing\Move\TLL.png">
+      <Name>TLL</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="ComputerPpl\Enemies\Thing\Move\TLR.png">
+      <Name>TLR</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="ComputerPpl\Enemies\Thing\Move\TR.png">
+      <Name>TR</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="ComputerPpl\Enemies\Thing\Move\TRL.png">
+      <Name>TRL</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="ComputerPpl\Enemies\Thing\Move\TRR.png">
+      <Name>TRR</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Ronnin\FL.png">
+      <Name>FL</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Wep Icons\bomb selected.png">
+      <Name>bomb selected</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Wep Icons\bow selected.png">
+      <Name>bow selected</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Wep Icons\sword selected.png">
+      <Name>sword selected</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Menu Pics\AdlezTitle.png">
+      <Name>AdlezTitle</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>

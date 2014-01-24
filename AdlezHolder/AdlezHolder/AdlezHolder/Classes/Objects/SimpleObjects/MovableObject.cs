@@ -13,7 +13,11 @@ namespace AdlezHolder
     public class MovableObject : ImmovableObject
     {
         Orientation direction;
-        Rectangle futureRec;        
+        Rectangle futureRec;
+
+        protected MovableObject()
+        {
+        }
 
         public MovableObject(Texture2D image, float scaleFactor, int displayWidth, float secondsToCrossScreen, Vector2 start)
             : base(image, scaleFactor, secondsToCrossScreen, start)
