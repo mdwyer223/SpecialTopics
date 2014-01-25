@@ -20,7 +20,8 @@ namespace AdlezHolder
         // knight:tanky,slow
         // shock wave mage        
         // ranger
-        
+        public enum Attribute { POISON, FIRE, ICE, LIGHTNING, VAMPIRISM };
+
         protected FullAnimation attackAn; // move some animations to AnimatiedSprite
 
         protected bool isAttacking, burned, poisoned, stunned, frozen;
@@ -102,6 +103,12 @@ namespace AdlezHolder
             protected set { strength = value; }
         }
 
+        public bool HasEle { get; protected set; }
+        public Attribute Atrib { get; protected set; }
+        public GemStruct Gem { get; protected set; }
+
+        private static int randSeed;
+
         public Enemy(Texture2D defaultTexture, float scaleFactor, int SecondsToCrossScreen, Vector2 startPosition)
             : base(defaultTexture, scaleFactor, SecondsToCrossScreen, Game1.DisplayWidth, startPosition)
         {
@@ -117,6 +124,51 @@ namespace AdlezHolder
 
             messages = new List<Message>();
             originalDamage = this.strength;
+            randSeed++;
+            Random rand = new Random(randSeed);
+            bool hasEle = rand.NextDouble() <= .1f;
+            
+            if (hasEle)
+            {
+                GemStruct gem = new GemStruct();
+                switch (rand.Next(5))
+                {
+                    case 0://Fire
+                        ImageColor = new Color(255, 40, 0);
+                        Atrib = Attribute.FIRE;
+                        gem.damage = 10;
+                        gem.duration = 3;
+                        gem.chance = .30f;
+                        break;
+                    case 1://Poison
+                        ImageColor = new Color(180, 0, 200);
+                        Atrib = Attribute.POISON;
+                        gem.damage = 3;
+                        gem.duration = 10;
+                        gem.chance = .30f;
+                        break;
+                    case 2://Ice
+                        ImageColor = new Color(0, 0, 170);
+                        Atrib = Attribute.ICE;
+                        gem.damage = 1; //* base + base,  const damage reduction
+                        gem.duration = 3;
+                        gem.chance = .20f;
+                        break;
+                    case 3://Lightning
+                        ImageColor = new Color(120, 100, 0);
+                        Atrib = Attribute.LIGHTNING;
+                        gem.duration = 2;
+                        gem.chance = .25f;
+                        break;
+                    case 4://Vampirism
+                        ImageColor = new Color(120, 0, 0);
+                        Atrib = Attribute.VAMPIRISM;
+                        gem.chance = .30f;
+                        break;
+                }
+                Gem = gem;
+            }
+            
         }
 
         protected abstract void setAttributes();
@@ -395,7 +447,15 @@ namespace AdlezHolder
                 {
                     attackTimer = 0;
                     isAttacking = false;
-                    data.Player.damage(strength);
+                    data.Player.damage(this);
+                    if (this.Atrib == Attribute.VAMPIRISM)
+                    {
+                        Random rand = new Random();
+                        int vampHP = (int)((Strength * .1f) + .5f);
+                        if (rand.NextDouble() <= Gem.chance && hitPoints + vampHP <= MaxHealthPoints)
+                            hitPoints += (int)((Strength * .1f) +.5f);
+                    }
+
                 }
             }
         }

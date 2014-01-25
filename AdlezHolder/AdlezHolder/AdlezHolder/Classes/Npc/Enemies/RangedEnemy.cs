@@ -26,7 +26,7 @@ namespace AdlezHolder
             get{ return 60 / maxDelay; }
             protected set { maxDelay = 60 / value; }
         }
-
+                
         public int ProjectileDamage
         {
             get;
@@ -34,6 +34,12 @@ namespace AdlezHolder
         }
 
         public int ProjectileSpeed
+        {
+            get;
+            protected set;
+        }
+
+        public Color ProjectileColor
         {
             get;
             protected set;
@@ -150,16 +156,17 @@ namespace AdlezHolder
 
         protected override void wander()
         {
-            base.wander();            
-            hasCross = false;
+            base.wander();
+            isAttacking = false;
+            hasCross = false;            
             projectileDis = 0;
         }
 
         public override void Draw(SpriteBatch spriteBatch)
         {
-            base.Draw(spriteBatch);
             if (hasCross)
-                spriteBatch.Draw(projectileText, projectileRec, Color.White);
+                spriteBatch.Draw(projectileText, projectileRec, ProjectileColor);
+            base.Draw(spriteBatch);
         }
 
         protected virtual void createProjetile()

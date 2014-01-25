@@ -83,12 +83,14 @@ namespace AdlezHolder
             AttackRangeMod = 2.5f;
             HitPoints = MaxHealthPoints = 70;
             Strength = 10;
+            ProjectileColor = Color.Blue;
+            ProjectileDamage = (int)(Strength * 1.5f + .5f);
         }
 
         protected override void projectileEnd(Map data, BaseSprite collidedObject, Vector2 position)
         {
             base.projectileEnd(data, collidedObject, position);
-            List<Particle> pStuff = pEngine.generateMageBurst(position, Strength);
+            List<Particle> pStuff = pEngine.generateMageBurst(position, ProjectileDamage);
             foreach (Particle p in pStuff)
             {
                 data.CurrentData.addParticle(p);

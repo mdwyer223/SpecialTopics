@@ -21,7 +21,6 @@ namespace AdlezHolder
         float speed, reductionTime;
         int damage, range, originalDamage, reductionTimer;
         bool dead = true;
-        //bool stoleLife = false;
 
         Color color;
         Texture2D texture;
@@ -216,7 +215,20 @@ namespace AdlezHolder
                 } 
             }
 
-            enemy.damage(data, damage);
+            if (reductionTime > 0)
+            {
+                reductionTimer++;
+                if (reductionTimer >= reductionTime * 60)
+                {
+                    reductionTime = 0;
+                    reductionTimer = 0;
+                }
+                else
+                    damage = (int)((originalDamage * .75f) +.5f);
+            }
+            else
+                damage = originalDamage;
+
             if (vampirePercent > 0)
             {
                 player.heal((int)(vampirePercent * damage));
@@ -318,9 +330,9 @@ namespace AdlezHolder
             lightningStruct.duration = stunDuration;
         }
 
-        public void reduceDamage(Gem gem)
+        public void reduceDamage(GemStruct gem)
         {
-            reductionTime = gem.Duration;
+            reductionTime = gem.duration;
             damage = (int)(originalDamage * .75f);
         }
     }
