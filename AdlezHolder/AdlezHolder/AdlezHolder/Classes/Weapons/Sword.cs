@@ -234,6 +234,8 @@ namespace AdlezHolder
                 player.heal((int)(vampirePercent * damage));
             }
 
+            enemy.damage(data, damage);
+
             Random rand = new Random();
             //check all the stats with a new randy every time
 
