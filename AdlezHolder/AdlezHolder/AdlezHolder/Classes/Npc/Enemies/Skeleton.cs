@@ -108,7 +108,7 @@ namespace AdlezHolder
         {
             Random rand = new Random();
 
-            if (rand.NextDouble() < .6f)
+            if (rand.NextDouble() < .1f)
             {
                   data.addItem(new VampiricStone(.02f, this.Position, 1));
             }

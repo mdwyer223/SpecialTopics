@@ -87,7 +87,7 @@ namespace AdlezHolder
             lightningStruct = new GemStruct();
 
             speed = 3;
-            damage = 5;
+            damage = 25;
             range = 300;
 
             gemList.Add(new IceStone(.02f, Vector2.Zero, 1));

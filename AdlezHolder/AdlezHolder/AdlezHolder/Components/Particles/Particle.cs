@@ -37,7 +37,8 @@ namespace AdlezHolder
 
         public bool OffScreen
         {
-            get { return (position.Y > Game1.DisplayHeight || position.X > Game1.DisplayWidth || position.X < 0) || lifeLengthTimer >= lifeLength * 1000; }
+            get { return (position.Y > Game1.DisplayHeight || position.X > Game1.DisplayWidth || position.X < 0)
+                || lifeLengthTimer >= lifeLength * 1000; }
         }
 
         public int Damage
