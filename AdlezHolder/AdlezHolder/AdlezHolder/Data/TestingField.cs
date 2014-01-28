@@ -22,9 +22,9 @@ namespace AdlezHolder
             backgroundRec = new Rectangle(0, 0, 0, 0);
             
 
-            //Mage sprite = new Mage(Game1.GameContent.Load<Texture2D>("ComputerPpl/Enemies/Skeleton/Move/SF"),
-            //    .04f, new Vector2(300, -300));
-            //addEnemy(sprite);
+            Mage sprite = new Mage(Game1.GameContent.Load<Texture2D>("ComputerPpl/Enemies/Skeleton/Move/SF"),
+                .04f, new Vector2(300, -300));
+            addEnemy(sprite);
         }
 
         public override void Update(Map map, GameTime gameTime)
