@@ -42,43 +42,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BackgroundsAndFloors\Dungeons\Dungeon1\DungeonHallwayLeft.png">
-      <Name>DungeonHallwayLeft</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="BackgroundsAndFloors\Dungeons\Dungeon1\DungeonHallwayRight.png">
-      <Name>DungeonHallwayRight</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="BackgroundsAndFloors\Dungeons\Dungeon1\DungeonMainRoom.png">
-      <Name>DungeonMainRoom</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="BackgroundsAndFloors\Dungeons\Dungeon1\LeftCorner.png">
-      <Name>LeftCorner</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="BackgroundsAndFloors\Dungeons\Dungeon1\RightCorner.png">
-      <Name>RightCorner</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="BackgroundsAndFloors\Dungeons\Dungeon1\TopLeft.png">
-      <Name>TopLeft</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="BackgroundsAndFloors\Dungeons\Dungeon1\TopRight.png">
-      <Name>TopRight</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="Alistar\B.png">
       <Name>B</Name>
       <Importer>TextureImporter</Importer>
@@ -1183,6 +1146,38 @@
   <ItemGroup>
     <Compile Include="Menu Pics\AdlezTitle.png">
       <Name>AdlezTitle</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BackgroundsAndFloors\Dungeons\Dungeon2\Up.png">
+      <Name>Up</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="BackgroundsAndFloors\Dungeons\Dungeon2\Right.png">
+      <Name>Right</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="BackgroundsAndFloors\Dungeons\Dungeon2\RightUp.png">
+      <Name>RightUp</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="BackgroundsAndFloors\Dungeons\Dungeon2\MainRoom.png">
+      <Name>MainRoom</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="BackgroundsAndFloors\Dungeons\Dungeon2\Left.png">
+      <Name>Left</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="BackgroundsAndFloors\Dungeons\Dungeon2\Down.png">
+      <Name>Down</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>

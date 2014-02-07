@@ -28,7 +28,7 @@ namespace AdlezHolder
             this.spawnTimer = 100;
             this.arrowVelocity = velocity;
             this.scaleFactor = scaleFactor;
-            this.projectileImage = Game1.GameContent.Load<Texture2D>("SteelArrow");
+            this.projectileImage = Game1.GameContent.Load<Texture2D>("Items/SteelArrow");
         }
 
         public override void Update(Map data, GameTime gameTime)

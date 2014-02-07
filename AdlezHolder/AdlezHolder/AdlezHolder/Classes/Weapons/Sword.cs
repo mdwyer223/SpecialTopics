@@ -121,8 +121,10 @@ namespace AdlezHolder
 
             VampiricStone vStone = new VampiricStone(.02f, new Vector2(0, 0), 1);
             IceStone iStone = new IceStone(.02f, Vector2.Zero, 1);
+            LightningStone lStone = new LightningStone(.02f, Vector2.Zero, 1);
             gemList.Add(iStone);
             gemList.Add(vStone);
+            gemList.Add(lStone);
         }
 
         public void Update(MapDataHolder data, Character player,GameTime gameTime)

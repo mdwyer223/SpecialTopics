@@ -15,6 +15,8 @@ namespace AdlezHolder
         public LightningStone(float scaleFactor, Vector2 startPosition, int tier)
             : base(null, scaleFactor, startPosition, "Lightning Stone", 0)
         {
+            Chance = 1f;
+            Duration = 3f;
             if (tier == 1)
             {
                 //load texture, value, and stats

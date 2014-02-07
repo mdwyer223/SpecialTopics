@@ -283,6 +283,7 @@ namespace AdlezHolder
                             {
                                 Enemy e = (Enemy)sprites[j];
                                 e.damage(this, particles[i].Damage);
+
                                 for (int k = 0; k < particles[i].Types.Count; k++)
                                 {
                                     switch (particles[i].Types[k])
@@ -316,13 +317,12 @@ namespace AdlezHolder
                                                 break;
                                             }
                                     }
-
-                                    particles.RemoveAt(i);
-                                    i--;
-                                    if (i < 0)
-                                        i = 0;
-                                    break;
                                 }
+                                particles.RemoveAt(i);
+                                i--;
+                                if (i < 0)
+                                    i = 0;
+                                break;
                             }
                             else if (sprites[j].GetType() == typeof(BombObj))
                             {
