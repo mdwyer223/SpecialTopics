@@ -84,6 +84,7 @@ namespace AdlezHolder
 
             damage = 50;
             delay = 3000;
+            numParticles = 45;
 
             this.scaleFactor = scaleFactor;
             texture = Game1.GameContent.Load<Texture2D>("Weapons/Bomb");
@@ -181,7 +182,7 @@ namespace AdlezHolder
 
         public void blowUp(Map data, Vector2 start)
         {
-            List<Particle> particles = pEngine.generateExplosion(start, damage);
+            List<Particle> particles = pEngine.generateExplosion(start, damage, numParticles);
             calcStats();
             Random rand = new Random();
 

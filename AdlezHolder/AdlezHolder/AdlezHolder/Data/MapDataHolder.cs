@@ -283,7 +283,6 @@ namespace AdlezHolder
                             {
                                 Enemy e = (Enemy)sprites[j];
                                 e.damage(this, particles[i].Damage);
-
                                 for (int k = 0; k < particles[i].Types.Count; k++)
                                 {
                                     switch (particles[i].Types[k])
@@ -317,12 +316,13 @@ namespace AdlezHolder
                                                 break;
                                             }
                                     }
+
+                                    particles.RemoveAt(i);
+                                    i--;
+                                    if (i < 0)
+                                        i = 0;
+                                    break;
                                 }
-                                particles.RemoveAt(i);
-                                i--;
-                                if (i < 0)
-                                    i = 0;
-                                break;
                             }
                             else if (sprites[j].GetType() == typeof(BombObj))
                             {
@@ -360,6 +360,20 @@ namespace AdlezHolder
 
         protected virtual void adjustBackground(Character player, KeyboardState keys)
         {
+            float moveToY = (Game1.DisplayHeight / 2) - player.Center.Y;
+            float moveToX = (Game1.DisplayWidth / 2) - player.Center.X;
+
+            if (topLeftCorner.Y + moveToY < topLeftCornerView.Y && bottomLeftCorner.Y + moveToY > bottomLeftCornerView.Y)
+            {
+                adjustObjectsBackgroundTripWires(new Vector2(0, moveToY), true);
+            }
+
+            if (topLeftCorner.X + moveToX < topLeftCornerView.X && topRightCorner.X + moveToX > topRightCornerView.X)
+            {
+                adjustObjectsBackgroundTripWires(new Vector2(moveToX, 0), true);
+            }
+
+            /*
             //see if there can be a way to have a free moving camera with the arrow keys
             if (player.Center.Y >= (Game1.DisplayHeight / 2) - 1 && player.Center.Y <= (Game1.DisplayHeight / 2) + 1)
             {
@@ -415,20 +429,35 @@ namespace AdlezHolder
                     adjustObjectsBackgroundTripWires(new Vector2(botLeftMove, 0));
                 }
             }
+             */
         }
 
-        public virtual void adjustObjectsBackgroundTripWires(Vector2 vecToMove)
+        public virtual void adjustObjectsBackgroundTripWires(Vector2 vecToMove, bool player)
         {
             backgroundRec.X += (int)vecToMove.X;
             backgroundRec.Y += (int)vecToMove.Y;
 
             foreach (BaseSprite obj in everything)
             {
-                Vector2 pos = obj.Position;
+                if (obj.GetType() == typeof(Character))
+                {
+                    if (player)
+                    {
+                        Vector2 pos = obj.Position;
 
-                pos += vecToMove;
+                        pos += vecToMove;
 
-                obj.Position = pos;
+                        obj.Position = pos;
+                    }
+                }
+                else
+                {
+                    Vector2 pos = obj.Position;
+
+                    pos += vecToMove;
+
+                    obj.Position = pos;
+                }
             }
 
             foreach (TripWire obj in tripWires)

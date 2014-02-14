@@ -14,14 +14,12 @@ namespace AdlezHolder
 {
     public class LeftTop : MapDataHolder
     {
+        bool changePos;
         public LeftTop(Character player)
-            : base(player)
         {
             background = Game1.GameContent.Load<Texture2D>("BackgroundsAndFloors/Dungeons/Dungeon2/Left");
             backgroundRec = new Rectangle(0, 0, background.Width, background.Height);
-
-            updateCorners();
-
+            changePos = false;
             
             //Top
             Wall wall = new Wall(new Rectangle(148, 215 - backgroundRec.Height, backgroundRec.Width, backgroundRec.Height),
@@ -43,6 +41,43 @@ namespace AdlezHolder
                 Game1.GameContent.Load<Texture2D>("Random/The best thing ever"), new Vector2(130, backgroundRec.Height));
             addImmovable(wall);
              
+
+            TripWire trip = new TripWire(.02f, new Rectangle(backgroundRec.Width - 156, 315, 3, 50));
+            addTripWire(trip);
+            
+            adjustObjectsBackgroundTripWires(new Vector2(Game1.DisplayWidth - background.Width,  Game1.DisplayHeight - backgroundRec.Height), true);
+        }
+
+        public override void Update(Map map, GameTime gameTime)
+        {
+            if (!changePos)
+            {
+                map.Player.Position = new Vector2(659 - map.Player.CollisionRec.Width - 10, 315);
+                changePos = true;
+            }
+
+            bool change = false;
+
+            for (int i = 0; i < tripWires.Count; i++)
+            {
+                tripWires[i].Update(map.Player.CollisionRec);
+
+                if (map.Player.Direction == Orientation.RIGHT)
+                {
+                    if (i == 0 && tripWires[i].IfTripped)
+                    {
+                        change = true;
+                    }
+                }
+            }
+
+            if (change)
+            {
+                map.changeMap(new MainRoom2());
+                map.Player.Position = new Vector2(155, 355);
+            }
+
+            base.Update(map, gameTime);
         }
     }
 }

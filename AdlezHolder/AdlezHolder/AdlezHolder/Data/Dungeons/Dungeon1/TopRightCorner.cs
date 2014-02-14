@@ -169,7 +169,7 @@ namespace AdlezHolder
             //for example, if he exits to the right, and enters on the left. exits top, enters bottom
             if (player.Direction == Orientation.UP)
             {
-                adjustObjectsBackgroundTripWires(new Vector2(x,y));
+                adjustObjectsBackgroundTripWires(new Vector2(x,y), true);
                 player.Position = new Vector2((Game1.DisplayWidth / 2) - player.CollisionRec.Width, 
                     Game1.DisplayHeight - player.CollisionRec.Height - 5);
             }

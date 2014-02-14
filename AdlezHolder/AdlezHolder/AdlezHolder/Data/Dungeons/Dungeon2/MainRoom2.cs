@@ -74,6 +74,9 @@ namespace AdlezHolder
             //Rightbot
             trip = new TripWire(.02f, new Rectangle(background.Width - 156, background.Height - 200, 3, 50));
             addTripWire(trip);
+
+            int x = (Game1.DisplayWidth - background.Width) / 2;
+            int y = (Game1.DisplayHeight - background.Height);
         
           }
 
@@ -117,13 +120,11 @@ namespace AdlezHolder
                     if (i == 0 && tripWires[i].IfTripped)
                     {
                         changeTopL = true;
-                        tL = new TopLeft(map.Player);
                     }
 
                     if (i == 1 && tripWires[i].IfTripped)
                     {
                         changeTopR = true;
-                        tR = new TopRight(map.Player);
                     }
                 }
                 else if (map.Player.Direction == Orientation.LEFT)
@@ -131,13 +132,11 @@ namespace AdlezHolder
                     if (i == 2 && tripWires[i].IfTripped)
                     {
                         changeLeftT = true;
-                        lT = new LeftTop(map.Player);
                     }
 
                     if (i == 3 && tripWires[i].IfTripped)
                     {
                         changeLeftB = true;
-                        lB = new LeftBot(map.Player);
                     }
                 }
                 else if (map.Player.Direction == Orientation.RIGHT)
@@ -145,27 +144,49 @@ namespace AdlezHolder
                     if (i == 4 && tripWires[i].IfTripped)
                     {
                         changeRightT = true;
-                        rT = new RightTop(map.Player);
                     }
 
                     if (i == 5 && tripWires[i].IfTripped)
                     {
                         changeRightB = true;
-                        rB = new RightBot(map.Player);
                     }
                 }
                 else if (map.Player.Direction == Orientation.DOWN)
                 {
 
                 }
-
-                if (changeLeftT)
-                {
-                    map.changeMap(lT);
-                }
             }
 
-            base.Update(map, gameTime);
+
+            if (changeLeftT)
+            {
+                //map.changeMap(new LeftTop(map.Player));
+                map.changeMap(new LeftTop(map.Player));
+            }
+            else if (changeLeftB)
+            {
+                map.changeMap(new LeftBot(map.Player));
+            }
+            else if (changeTopL)
+            {
+                map.changeMap(new TopLeft(map.Player));
+            }
+            else if (changeTopR)
+            {
+                map.changeMap(new TopRight(map.Player));
+            }
+            else if (changeRightT)
+            {
+                map.changeMap(new RightTop(map.Player));
+            }
+            else if (changeRightB)
+            {
+                map.changeMap(new RightBot(map.Player));
+            }
+            else
+            {
+                base.Update(map, gameTime);
+            }
         }
     }
 }

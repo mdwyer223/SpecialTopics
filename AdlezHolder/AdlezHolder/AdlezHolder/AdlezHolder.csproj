@@ -211,6 +211,7 @@
     <Compile Include="Data\Landscapes\LeftPassage.cs" />
     <Compile Include="Data\Landscapes\Nwot.cs" />
     <Compile Include="Data\Map.cs" />
+    <Compile Include="Data\MapDataHolder.cs" />
     <Compile Include="Data\SaveStuff\GameData.cs" />
     <Compile Include="Data\SaveStuff\Guts\BaseSpriteVars.cs" />
     <Compile Include="Data\SaveStuff\Guts\CharacterVars.cs" />
@@ -218,7 +219,6 @@
     <Compile Include="Data\SaveStuff\Guts\MapVars.cs" />
     <Compile Include="Data\SaveStuff\SaveFile.cs" />
     <Compile Include="Data\TestingField.cs" />
-    <Compile Include="Data\MapDataHolder.cs" />
     <Compile Include="Game2.cs" />
     <Compile Include="InformationScreen.cs" />
     <Compile Include="Input.cs" />

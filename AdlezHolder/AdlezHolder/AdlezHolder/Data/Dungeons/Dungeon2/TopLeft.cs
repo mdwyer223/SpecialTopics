@@ -18,7 +18,7 @@ namespace AdlezHolder
         public TopLeft(Character player)
             : base(player)
         {
-            background = Game1.GameContent.Load<Texture2D>("BackgroundsAndFloors/Dungeons/Dungeon2/Top");
+            background = Game1.GameContent.Load<Texture2D>("BackgroundsAndFloors/Dungeons/Dungeon2/Up");
             backgroundRec = new Rectangle(0, 0, background.Width, background.Height);
 
             updateCorners();
@@ -42,6 +42,16 @@ namespace AdlezHolder
             wall = new Wall(new Rectangle(148 - backgroundRec.Width, 215, backgroundRec.Width, backgroundRec.Height),
                 Game1.GameContent.Load<Texture2D>("Random/The best thing ever"), new Vector2(130, backgroundRec.Height));
             addImmovable(wall);
+
+            player.Position = new Vector2(383, 444);
+            //adjustObjectsBackgroundTripWires(new Vector2(0, backgroundRec.Height - Game1.DisplayHeight), false);
+        }
+
+        public override void Update(Map map, GameTime gameTime)
+        {
+            bool change;
+            
+            base.Update(map, gameTime);
         }
     }
 }

@@ -140,11 +140,12 @@ namespace AdlezHolder
             return p;
         }
 
-        public List<Particle> generateExplosion(Vector2 exploStart, int damage)
+        public List<Particle> generateExplosion(Vector2 exploStart, int damage, int particles)
         {
             List<Particle> pStuff = new List<Particle>();
+            int range = 15;
 
-            int numParticles = rand.Next(30, 60);
+            int numParticles = rand.Next(particles - range, particles + range);
             for (int i = 0; i < numParticles; i++)
             {
                 float xVelo = (float)rand.NextDouble() * rand.Next(-4, 4);

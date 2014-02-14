@@ -43,7 +43,7 @@ namespace AdlezHolder
         {
             player = new Character(Game1.GameContent.Load<Texture2D>("Alistar/F"),
                 .04f, 800, 5, Vector2.Zero);
-            player.Position = new Vector2((Game1.DisplayWidth / 2) - player.CollisionRec.Width,
+            player.Position = new Vector2((Game1.DisplayWidth / 2) - (player.CollisionRec.Width / 2),
                     Game1.DisplayHeight - player.CollisionRec.Height - 5);
         }
 

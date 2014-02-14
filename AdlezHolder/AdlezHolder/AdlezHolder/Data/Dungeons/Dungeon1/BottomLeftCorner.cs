@@ -63,11 +63,11 @@ namespace AdlezHolder
             if (player.Direction == Orientation.DOWN)
             {
                 player.Position = new Vector2(407, 211);
-                adjustObjectsBackgroundTripWires(new Vector2(-94, -8));  
+                adjustObjectsBackgroundTripWires(new Vector2(-94, -8), true);  
             }
             else if (player.Direction == Orientation.LEFT)
             {
-                adjustObjectsBackgroundTripWires(new Vector2(Game1.DisplayWidth - backgroundRec.Width, 0));
+                adjustObjectsBackgroundTripWires(new Vector2(Game1.DisplayWidth - backgroundRec.Width, 0), true);
                 player.Position = new Vector2(659 - player.CollisionRec.Width, 339);
             }
 

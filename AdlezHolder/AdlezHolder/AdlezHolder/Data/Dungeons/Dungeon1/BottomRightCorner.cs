@@ -52,7 +52,7 @@ namespace AdlezHolder
             if (player.Direction == Orientation.DOWN)
             {
                 player.Position = new Vector2(407, 211);
-                adjustObjectsBackgroundTripWires(new Vector2(-94, -8));  
+                adjustObjectsBackgroundTripWires(new Vector2(-94, -8), true);  
             }
             else if (player.Direction == Orientation.RIGHT)
             {

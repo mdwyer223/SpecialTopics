@@ -82,7 +82,7 @@ namespace AdlezHolder
 
             int x = (Game1.DisplayWidth - background.Width) / 2;
             int y = (Game1.DisplayHeight - background.Height);
-            adjustObjectsBackgroundTripWires(new Vector2(x, y));
+            adjustObjectsBackgroundTripWires(new Vector2(x, y), true);
 
             music = Game1.GameContent.Load<Song>("Music/DungeonTheme1");
   
@@ -145,7 +145,7 @@ namespace AdlezHolder
 
             if (player.Direction == Orientation.LEFT)
             {
-                adjustObjectsBackgroundTripWires(new Vector2(Game1.DisplayWidth - backgroundRec.Width, 0));
+                adjustObjectsBackgroundTripWires(new Vector2(Game1.DisplayWidth - backgroundRec.Width, 0), true);
                 player.Position = new Vector2(659 - player.CollisionRec.Width - 10, player.Position.Y);
             }
             else if (player.Direction == Orientation.RIGHT)
@@ -155,7 +155,7 @@ namespace AdlezHolder
             else if (player.Direction == Orientation.DOWN)
             {
                 player.Position = new Vector2(407, 211);
-                adjustObjectsBackgroundTripWires(new Vector2(-94, -8));
+                adjustObjectsBackgroundTripWires(new Vector2(-94, -8), true);
             }
             else if (player.Direction == Orientation.UP)
             {
