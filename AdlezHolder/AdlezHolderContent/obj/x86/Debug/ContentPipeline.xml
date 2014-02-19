@@ -1786,6 +1786,60 @@
       <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Music\SFX\Hit Enemy.xnb</Output>
       <Time>2013-12-20T09:17:33-08:00</Time>
     </Item>
+    <Item>
+      <Source>blank.png</Source>
+      <Name>blank</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\blank.xnb</Output>
+      <Time>2014-02-19T12:43:39.5255221-08:00</Time>
+    </Item>
+    <Item>
+      <Source>capacity.png</Source>
+      <Name>capacity</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\capacity.xnb</Output>
+      <Time>2014-02-19T12:43:39.5255221-08:00</Time>
+    </Item>
+    <Item>
+      <Source>damage.png</Source>
+      <Name>damage</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\damage.xnb</Output>
+      <Time>2014-02-19T12:43:39.5255221-08:00</Time>
+    </Item>
+    <Item>
+      <Source>range.png</Source>
+      <Name>range</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\range.xnb</Output>
+      <Time>2014-02-19T12:43:39.5255221-08:00</Time>
+    </Item>
+    <Item>
+      <Source>speed.png</Source>
+      <Name>speed</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\speed.xnb</Output>
+      <Time>2014-02-19T12:43:39.5255221-08:00</Time>
+    </Item>
+    <Item>
+      <Source>special.png</Source>
+      <Name>special</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\special.xnb</Output>
+      <Time>2014-02-19T12:43:39.5255221-08:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>

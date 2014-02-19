@@ -113,71 +113,71 @@ namespace AdlezHolder
             bombTreeArray = new UpgradeNode[7, 3];
             //row1    
             nodePosition.Y = nodeMiddleRow;
-            bombTreeArray[0, 1] = new BombDamageNode(nodeTexture, scalefactor, nodePosition, cost);
+            bombTreeArray[0, 1] = new BombDamageNode(Game1.GameContent.Load<Texture2D>("damage"), scalefactor, nodePosition, cost);
             cost = (int)(cost * 1.265);
             nodePosition.Y = nodeTopRow;
-            bombTreeArray[0, 0] = new RadiusNode(nodeTexture, scalefactor, nodePosition, cost);
+            bombTreeArray[0, 0] = new RadiusNode(Game1.GameContent.Load<Texture2D>("range"), scalefactor, nodePosition, cost);
             cost = (int)(cost * 1.265);
             nodePosition.Y = nodeBottomRow;
-            bombTreeArray[0, 2] = new BombCarryNode(nodeTexture, scalefactor, nodePosition, cost);
+            bombTreeArray[0, 2] = new BombCarryNode(Game1.GameContent.Load<Texture2D>("capacity"), scalefactor, nodePosition, cost);
             cost = (int)(cost * 1.265);
             //row2
             nodePosition.X = nodePosition.X + widthSeperation;
             nodePosition.Y = nodeTopRow;
-            bombTreeArray[1, 0] = new BombCarryNode(nodeTexture, scalefactor, nodePosition, cost);
+            bombTreeArray[1, 0] = new BombCarryNode(Game1.GameContent.Load<Texture2D>("capacity"), scalefactor, nodePosition, cost);
             cost = (int)(cost * 1.265);
             nodePosition.Y = nodeMiddleRow;
-            bombTreeArray[1, 1] = new RadiusNode(nodeTexture, scalefactor, nodePosition, cost);
+            bombTreeArray[1, 1] = new RadiusNode(Game1.GameContent.Load<Texture2D>("range"), scalefactor, nodePosition, cost);
             cost = (int)(cost * 1.265);
             nodePosition.Y = nodeBottomRow;
-            bombTreeArray[1, 2] = new BombESlotNode(nodeTexture, scalefactor, nodePosition, cost);
+            bombTreeArray[1, 2] = new BombESlotNode(Game1.GameContent.Load<Texture2D>("special"), scalefactor, nodePosition, cost);
             cost = (int)(cost * 1.265);
 
 
             //row3
             nodePosition.X = nodePosition.X + widthSeperation;
             nodePosition.Y = nodeMiddleRow;
-            bombTreeArray[2, 1] = new UpgradeNode(nodeTexture, scalefactor, nodePosition, cost);
+            bombTreeArray[2, 1] = new UpgradeNode(Game1.GameContent.Load<Texture2D>("blank"), scalefactor, nodePosition, cost);
             cost = (int)(cost * 1.265);
             //row4
             nodePosition.X = nodePosition.X + widthSeperation;
             nodePosition.Y = nodeTopRow;
-            bombTreeArray[3, 0] = new BombESlotNode(nodeTexture, scalefactor, nodePosition, cost);
+            bombTreeArray[3, 0] = new BombESlotNode(Game1.GameContent.Load<Texture2D>("special"), scalefactor, nodePosition, cost);
             cost = (int)(cost - (cost * .1));
             nodePosition.Y = nodeMiddleRow;
-            bombTreeArray[3, 1] = new BombDamageNode(nodeTexture, scalefactor, nodePosition, cost);
+            bombTreeArray[3, 1] = new BombDamageNode(Game1.GameContent.Load<Texture2D>("damage"), scalefactor, nodePosition, cost);
             cost = (int)(cost -(cost * .15));
             nodePosition.Y = nodeBottomRow;
-            bombTreeArray[3, 2] = new BombESlotNode(nodeTexture, scalefactor, nodePosition, cost);
+            bombTreeArray[3, 2] = new BombESlotNode(Game1.GameContent.Load<Texture2D>("special"), scalefactor, nodePosition, cost);
             cost = (int)(cost * 1.265);
             //row5
             nodePosition.X = nodePosition.X + widthSeperation;
             nodePosition.Y = nodeTopRow;
             cost = (int)(cost - (cost * .01));
-            bombTreeArray[4, 0] = new RadiusNode(nodeTexture, scalefactor, nodePosition, cost);
+            bombTreeArray[4, 0] = new RadiusNode(Game1.GameContent.Load<Texture2D>("range"),scalefactor, nodePosition, cost);
             cost = (int)(cost * 1.265);
             nodePosition.Y = nodeMiddleRow;
-            bombTreeArray[4, 1] = new BombDamageNode(nodeTexture, scalefactor, nodePosition, cost);
+            bombTreeArray[4, 1] = new BombDamageNode(Game1.GameContent.Load<Texture2D>("damage"), scalefactor, nodePosition, cost);
             cost = (int)(cost * 1.265);
             nodePosition.Y = nodeBottomRow;
-            bombTreeArray[4, 2] = new BombCarryNode(nodeTexture, scalefactor, nodePosition, cost);
+            bombTreeArray[4, 2] = new BombCarryNode(Game1.GameContent.Load<Texture2D>("capacity"), scalefactor, nodePosition, cost);
             cost = (int)(cost * 1.265);
             //row6
             nodePosition.X = nodePosition.X + widthSeperation;
             nodePosition.Y = nodeMiddleRow;
-            bombTreeArray[5, 1] = new UpgradeNode(nodeTexture, scalefactor, nodePosition, cost);
+            bombTreeArray[5, 1] = new UpgradeNode(Game1.GameContent.Load<Texture2D>("blank"), scalefactor, nodePosition, cost);
 
             //row7
             nodePosition.X = nodePosition.X + widthSeperation;
             nodePosition.Y = nodeTopRow;
             cost = (int)(cost * 1.465);
-            bombTreeArray[6, 0] = new TripMineNode(nodeTexture, scalefactor, nodePosition, cost);
+            bombTreeArray[6, 0] = new TripMineNode(Game1.GameContent.Load<Texture2D>("special"), scalefactor, nodePosition, cost);
             nodePosition.Y = nodeMiddleRow;
             cost = (int)(cost -(cost * .02));
-            bombTreeArray[6, 1] = new ManualDetNode(nodeTexture, scalefactor, nodePosition, cost);
+            bombTreeArray[6, 1] = new ManualDetNode(Game1.GameContent.Load<Texture2D>("special"), scalefactor, nodePosition, cost);
             cost = (int)(cost * 1.165);
             nodePosition.Y = nodeBottomRow;
-            bombTreeArray[6, 2] = new SmokeBombNode(nodeTexture, scalefactor, nodePosition, cost);
+            bombTreeArray[6, 2] = new SmokeBombNode(Game1.GameContent.Load<Texture2D>("special"), scalefactor, nodePosition, cost);
 
             return bombTreeArray;
         }

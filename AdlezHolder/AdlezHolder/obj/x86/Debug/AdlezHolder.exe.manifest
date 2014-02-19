@@ -93,14 +93,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="AdlezHolder.exe" size="156160">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="AdlezHolder.exe" size="156672">
       <assemblyIdentity name="AdlezHolder" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>1cixSdXHoeCJRJnEOcYAPkS01ck=</dsig:DigestValue>
+        <dsig:DigestValue>CX4Jy4lo2q0rrSQSzi7L2zS/ez4=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -842,6 +842,15 @@
       <dsig:DigestValue>tEMpw3YzyyR9jeDKKUZ5BJzrQpY=</dsig:DigestValue>
     </hash>
   </file>
+  <file name="Content\blank.xnb" size="360187">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>CMHyGKfT704s2Bo2lzk/6BTmSp8=</dsig:DigestValue>
+    </hash>
+  </file>
   <file name="Content\bomb selected.xnb" size="259259">
     <hash>
       <dsig:Transforms>
@@ -948,6 +957,15 @@
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
       <dsig:DigestValue>fXCl79ndFonv3hikwVCmYzcT3uY=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\capacity.xnb" size="360187">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>0UEfIF2wQM52Awo0AOTjpg2HLyU=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\Chests\Chest.xnb" size="3787">
@@ -1328,6 +1346,15 @@
       <dsig:DigestValue>EjIkGkskj5u1q6EP/QpZcWQXvaU=</dsig:DigestValue>
     </hash>
   </file>
+  <file name="Content\damage.xnb" size="360187">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>oOKpQ/+8q3rU0sB8YWZfIam54qc=</dsig:DigestValue>
+    </hash>
+  </file>
   <file name="Content\FL.xnb" size="4187">
     <hash>
       <dsig:Transforms>
@@ -1607,6 +1634,15 @@
       <dsig:DigestValue>ltiaVXdyRUo6LmPd5U5k4UB1KAg=</dsig:DigestValue>
     </hash>
   </file>
+  <file name="Content\range.xnb" size="360187">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>3bR5AdJvocMi1ijBxAQdZCHw7t0=</dsig:DigestValue>
+    </hash>
+  </file>
   <file name="Content\shield.xnb" size="1440187">
     <hash>
       <dsig:Transforms>
@@ -1614,6 +1650,24 @@
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
       <dsig:DigestValue>ysWy0fq7HoLSeh2VrcJloM+ZGoU=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\special.xnb" size="360187">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>tCf2wu00loZrtlTJn+Vb4Lnhh7Y=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\speed.xnb" size="360187">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>TUwDWYQIA5VyNEAmvBPc5STEDUs=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\SpriteFont1.xnb" size="23214">

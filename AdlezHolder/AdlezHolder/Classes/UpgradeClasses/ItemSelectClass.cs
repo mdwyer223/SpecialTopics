@@ -74,14 +74,14 @@ namespace AdlezHolder
 
 
 
-            swordButton = new Button(Game1.GameContent.Load<Texture2D>("MenuButtons/NewGame"), .3f, startPosition);
+            swordButton = new Button(Game1.GameContent.Load<Texture2D>("sword selected"), .3f, startPosition);
             startPosition.X = startPosition.X + widthSeperation;
             
-            bombButton = new Button(Game1.GameContent.Load<Texture2D>("MenuButtons/NewGame"), .3f, startPosition);
+            bombButton = new Button(Game1.GameContent.Load<Texture2D>("bomb selected"), .3f, startPosition);
            
             startPosition.X = startPosition.X + widthSeperation;
             
-            bowButton = new Button(Game1.GameContent.Load<Texture2D>("MenuButtons/NewGame"), .3f, startPosition);
+            bowButton = new Button(Game1.GameContent.Load<Texture2D>("bow selected"), .3f, startPosition);
             
 
             swordButton.Selected = true;

@@ -106,17 +106,17 @@ namespace AdlezHolder
             nodeTopRow = heightSeparation * 2;
             int cost = 100;
 
-            UpgradeNode[,] bombTreeArray = new UpgradeNode[7, 3];
-            bombTreeArray = new UpgradeNode[7, 3];
+            UpgradeNode[,] bowTreeArray = new UpgradeNode[7, 3];
+            bowTreeArray = new UpgradeNode[7, 3];
             //row1    
             nodePosition.Y = nodeMiddleRow;
-            bombTreeArray[0, 1] = new BowDamageNode(nodeTexture, scalefactor, nodePosition, cost);
+            bowTreeArray[0, 1] = new BowDamageNode(nodeTexture, scalefactor, nodePosition, cost);
             cost = (int)(cost * 1.265);
             nodePosition.Y = nodeTopRow;
-            bombTreeArray[0, 0] = new RangeNode(nodeTexture, scalefactor, nodePosition, cost);
+            bowTreeArray[0, 0] = new RangeNode(nodeTexture, scalefactor, nodePosition, cost);
             cost = (int)(cost * 1.265);
             nodePosition.Y = nodeBottomRow;
-            bombTreeArray[0, 2] = new BowESlotNode(nodeTexture, scalefactor, nodePosition, cost);
+            bowTreeArray[0, 2] = new BowESlotNode(nodeTexture, scalefactor, nodePosition, cost);
             cost = (int)(cost * 1.265);
             //row2
             nodePosition.X = nodePosition.X + widthSeperation;

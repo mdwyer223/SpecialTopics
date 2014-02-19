@@ -19,8 +19,7 @@ namespace AdlezHolder
         KeyboardState keys, oldKeys;
         UpgradeNode selectedNode, lastNode;
         int NodeColumnIndex, NodeRowIndex;
-        Texture2D nodeTexture = Game1.GameContent.Load<Texture2D>("Particle");
-        Texture2D bombImage = Game1.GameContent.Load<Texture2D>("Particle");
+        Texture2D bombImage = Game1.GameContent.Load<Texture2D>("bomb selected");
         float scalefactor = .3f;
         int moveNodes, playersCash;
         Character tempCharacter;
@@ -29,9 +28,6 @@ namespace AdlezHolder
         BaseSprite bombPicture;
         string nodeMessage, lockedPurchasedMessage;
         bool wasJustPurchased = false;
-        SwordUpgradeClass swordTree;
-        bool isEPressed = false;
-        bool isQPressed = false;
 
 
         public BombUpgradeClass()

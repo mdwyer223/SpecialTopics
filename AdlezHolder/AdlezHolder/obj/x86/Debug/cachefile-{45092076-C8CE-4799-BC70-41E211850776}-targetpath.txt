@@ -199,3 +199,9 @@ Content\Music\DungeonTheme1.xnb
 Content\Music\DungeonTheme1.wma
 Content\Music\SFX\Hit By Enemy.xnb
 Content\Music\SFX\Hit Enemy.xnb
+Content\blank.xnb
+Content\capacity.xnb
+Content\damage.xnb
+Content\range.xnb
+Content\speed.xnb
+Content\special.xnb
