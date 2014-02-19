@@ -1,0 +1,4 @@
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolderContent\obj\x86\Debug\AdlezHolderContent.contentprojResolveAssemblyReference.cache
+C:\Users\Nick\Dropbox\Game Applications\Adlez\~Solutions\Nick's\COPY THIS JOSH\AdlezHolder\AdlezHolder\AdlezHolderContent\obj\x86\Debug\AdlezHolderContent.contentprojResolveAssemblyReference.cache
+C:\Users\Josh Raslowsky\Dropbox\Game Applications\Adlez\~Solutions\Nick's\COPY THIS JOSH\AdlezHolder\AdlezHolder\AdlezHolderContent\obj\x86\Debug\AdlezHolderContent.contentprojResolveAssemblyReference.cache
+C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolderContent\obj\x86\Debug\AdlezHolderContent.contentprojResolveAssemblyReference.cache
