@@ -45,6 +45,10 @@ namespace AdlezHolder
             {
                 Game1.ParticleState = ParticleState.RAIN;
             }
+            else if (Keyboard.GetState().IsKeyDown(Keys.T))
+            {
+                Game1.ParticleState = ParticleState.SNOW;
+            }
             else if (Keyboard.GetState().IsKeyDown(Keys.F))
             {
                 Game1.ParticleState = ParticleState.OFF;

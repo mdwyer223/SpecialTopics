@@ -11,7 +11,8 @@ namespace AdlezHolder
 {
     public class Gem : Item
     {
-        int damage;
+        protected int damage, tier;
+        protected bool collected;
         float applyDamageTime, chance;
 
         public int Damage

@@ -58,6 +58,10 @@ namespace AdlezHolder
             {
                 pEngine.SimulateRain(gameTime);
             }
+            else if (Game1.ParticleState == ParticleState.SNOW)
+            {
+                pEngine.SimulateSnow(gameTime);
+            }
 
             base.Update(gameTime);
         }

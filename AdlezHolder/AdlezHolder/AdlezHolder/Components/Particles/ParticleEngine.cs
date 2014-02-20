@@ -15,7 +15,6 @@ namespace AdlezHolder
         int spawnTimer, spawnTime;
 
         const int MAX_SIZE = 4, MIN_SIZE = 1,
-            MAX_VELO = 4, MIN_VELO = 2,
             MAX_SPAWN = 2, MIN_SPAWN = 1;
 
         public ParticleEngine()
@@ -28,19 +27,20 @@ namespace AdlezHolder
         public void SimulateRain(GameTime gameTime)
         {
             int blue = rand.Next(50, 255);
+            const int MAX_VELO = 4, MIN_VELO = 2;
             if (spawnTimer >= spawnTime)
             {
                 int checkVelo = rand.Next(1, 10);
 
                 if (checkVelo < 11)
                 {
-                    particles.Add(getParticle(0, 0, blue, false, true));
-                    particles.Add(getParticle(0, 0, blue, false, true));
-                    particles.Add(getParticle(0, 0, blue, false, true));
+                    particles.Add(getParticle(0, 0, blue, false, true, MIN_VELO, MAX_VELO, ParticleType.RAIN));
+                    particles.Add(getParticle(0, 0, blue, false, true, MIN_VELO, MAX_VELO, ParticleType.RAIN));
+                    particles.Add(getParticle(0, 0, blue, false, true, MIN_VELO, MAX_VELO, ParticleType.RAIN));
                 }
                 else
                 {
-                    particles.Add(getParticle(0, 0, blue, true, true));
+                    particles.Add(getParticle(0, 0, blue, true, true, MIN_VELO, MAX_VELO, ParticleType.RAIN));
                 }
 
                 spawnTimer = 0;
@@ -68,7 +68,51 @@ namespace AdlezHolder
             }
         }
 
-        public Particle getParticle(Color color, bool xVelo, bool yVelo)
+        public void SimulateSnow(GameTime gameTime)
+        {
+            Color color = Color.White;
+            const int MAX_VELO = 1, MIN_VELO = 1;
+            if (spawnTimer >= spawnTime)
+            {
+                int checkVelo = rand.Next(1, 10);
+
+                if (checkVelo < 11)
+                {
+                    particles.Add(getParticle(color, false, true, MIN_VELO, MAX_VELO, ParticleType.SNOW));
+                    particles.Add(getParticle(color, false, true, MIN_VELO, MAX_VELO, ParticleType.SNOW));
+                    particles.Add(getParticle(color, false, true, MIN_VELO, MAX_VELO, ParticleType.SNOW));
+                }
+                else
+                {
+                    particles.Add(getParticle(255, 255, 255, true, true, MIN_VELO, MAX_VELO, ParticleType.SNOW));
+                }
+
+                spawnTimer = 0;
+                spawnTime = rand.Next(MIN_SPAWN, MAX_SPAWN);
+            }
+            else
+            {
+                spawnTimer++;
+            }
+
+
+            for (int i = 0; i < particles.Count; i++)
+            {
+                if (particles[i] != null)
+                {
+                    particles[i].Update(gameTime);
+                    if (particles[i].OffScreen)
+                    {
+                        particles.RemoveAt(i);
+                        i--;
+                        if (i < 0)
+                            i = 0;
+                    }
+                }
+            }
+        }
+
+        public Particle getParticle(Color color, bool xVelo, bool yVelo, int minVelo, int maxVelo, ParticleType t)
         {
             Particle p;
 
@@ -76,19 +120,19 @@ namespace AdlezHolder
             {
                 p = new Particle(color, rand.Next(MIN_SIZE, MAX_SIZE),
                     new Vector2(rand.Next(0, Game1.DisplayWidth), -5),
-                    new Vector2((float)rand.NextDouble(), rand.Next(MIN_VELO, MAX_VELO)));
+                    new Vector2((float)rand.NextDouble(), rand.Next(minVelo, maxVelo)), t);
             }
             else if (yVelo)
             {
                 p = new Particle(color, rand.Next(MIN_SIZE, MAX_SIZE),
                     new Vector2(rand.Next(0, Game1.DisplayWidth), -5),
-                    new Vector2(0, rand.Next(MIN_VELO, MAX_VELO)));
+                    new Vector2(0, rand.Next(minVelo, maxVelo)), t);
             }
             else if (xVelo)
             {
                 p = new Particle(color, rand.Next(MIN_SIZE, MAX_SIZE),
                     new Vector2(-5, rand.Next(0, Game1.DisplayHeight)),
-                    new Vector2(rand.Next(MIN_VELO, MAX_VELO), 0));
+                    new Vector2(rand.Next(minVelo, maxVelo), 0), t);
             }
             else
                 p = null;
@@ -96,7 +140,7 @@ namespace AdlezHolder
             return p;
         }
 
-        public Particle getParticle(int r, int g, int b, bool xVelo, bool yVelo)
+        public Particle getParticle(int r, int g, int b, bool xVelo, bool yVelo, int minVelo, int maxVelo, ParticleType t)
         {
             Particle p;
 
@@ -104,19 +148,19 @@ namespace AdlezHolder
             {
                 p = new Particle(new Color(r, g, b), rand.Next(MIN_SIZE, MAX_SIZE),
                     new Vector2(rand.Next(0, Game1.DisplayWidth), -5),
-                    new Vector2((float)rand.NextDouble(), rand.Next(MIN_VELO, MAX_VELO)));
+                    new Vector2((float)rand.NextDouble(), rand.Next(minVelo, maxVelo)), t);
             }
             else if (yVelo)
             {
                 p = new Particle(new Color(r,g,b), rand.Next(MIN_SIZE, MAX_SIZE),
                     new Vector2(rand.Next(0, Game1.DisplayWidth), -5),
-                    new Vector2(0, rand.Next(MIN_VELO, MAX_VELO)));
+                    new Vector2(0, rand.Next(minVelo, maxVelo)), t);
             }
             else if (xVelo)
             {
                 p = new Particle(new Color(r,g,b), rand.Next(MIN_SIZE, MAX_SIZE),
                     new Vector2(-5, rand.Next(0, Game1.DisplayHeight)),
-                    new Vector2(rand.Next(MIN_VELO, MAX_VELO), 0));
+                    new Vector2(rand.Next(minVelo, maxVelo), 0), t);
             }
             else
                 p = null;

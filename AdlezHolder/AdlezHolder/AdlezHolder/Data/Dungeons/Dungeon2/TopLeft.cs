@@ -48,9 +48,7 @@ namespace AdlezHolder
         }
 
         public override void Update(Map map, GameTime gameTime)
-        {
-            bool change;
-            
+        {            
             base.Update(map, gameTime);
         }
     }

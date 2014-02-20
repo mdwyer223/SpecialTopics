@@ -106,16 +106,7 @@ namespace AdlezHolder
 
         protected override void dropItem(MapDataHolder data)
         {
-            Random rand = new Random();
-
-            if (rand.NextDouble() < .1f)
-            {
-                  data.addItem(new VampiricStone(.02f, this.Position, 1));
-            }
-            else
-            {
-                  base.dropItem(data);
-            }
+            base.dropItem(data);
         }
     }
 }

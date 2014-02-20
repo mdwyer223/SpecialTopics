@@ -79,8 +79,10 @@ namespace AdlezHolder
                 map.Player.Position = new Vector2(156, 800);
                 //map.CurrentData.adjustObjectsBackgroundTripWires(new Vector2(0, map.CurrentData.BackgroundRec.Height - Game1.DisplayHeight), true);
             }
-
-            base.Update(map, gameTime);
+            else
+            {
+                base.Update(map, gameTime);
+            }
         }
     }
 }

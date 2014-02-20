@@ -9,12 +9,15 @@ using Microsoft.Xna.Framework.Content;
 
 namespace AdlezHolder
 {
+    public enum ParticleType { RAIN, SNOW, SAND, NONE };
+
     public class Particle
     {
         Texture2D blankTexture;
         Color color;
         Rectangle rec;
-        Vector2 velo, position;
+        Vector2 velo, position, accel = Vector2.Zero;
+        ParticleType pType = ParticleType.NONE;
 
         float lifeLength;
         int lifeLengthTimer;
@@ -24,6 +27,10 @@ namespace AdlezHolder
 
         List<GemType> types;
         List<GemStruct> gemEffects;
+
+        int maxAccel = 2, minAccel = -2;
+        float accelPerTick;
+        int accelTimer = 0, accelTime = 0;
 
         public List<GemType> Types
         {
@@ -77,10 +84,13 @@ namespace AdlezHolder
             lifeLengthTimer = 0;
             gemEffects = new List<GemStruct>();
             types = new List<GemType>();
+
+            getAccel();
         }
 
         public Particle(int r, int g, int b, int size, Vector2 start, Vector2 velocity)
         {
+            getAccel();
             this.color = new Color(r, g, b);
             position = start;
             rec = new Rectangle((int)start.X, (int)start.Y, size, size*2);
@@ -94,8 +104,45 @@ namespace AdlezHolder
             types = new List<GemType>();
         }
 
+        public Particle(Color color, int size, Vector2 start, Vector2 velocity, ParticleType t)
+        {
+            getAccel();
+            this.color = color;
+            position = start;
+            rec = new Rectangle((int)start.X, (int)start.Y, size, size);
+            this.velo = velocity;
+
+            blankTexture = Game1.GameContent.Load<Texture2D>("Random/Particle");
+
+            lifeLength = int.MaxValue;
+            lifeLengthTimer = 0;
+            gemEffects = new List<GemStruct>();
+            types = new List<GemType>();
+
+            pType = t;
+        }
+
+        public Particle(int r, int g, int b, int size, Vector2 start, Vector2 velocity, ParticleType t)
+        {
+            getAccel();
+            this.color = new Color(r, g, b);
+            position = start;
+            rec = new Rectangle((int)start.X, (int)start.Y, size, size * 2);
+            this.velo = velocity;
+
+            blankTexture = Game1.GameContent.Load<Texture2D>("Random/Particle");
+
+            lifeLength = int.MaxValue;
+            lifeLengthTimer = 0;
+            gemEffects = new List<GemStruct>();
+            types = new List<GemType>();
+
+            pType = t;
+        }
+
         public Particle(Color color, int size, int damage, float secondsAlive, Vector2 start, Vector2 velocity)
         {
+            getAccel();
             this.color = color;
             position = start;
             rec = new Rectangle((int)start.X, (int)start.Y, size, size * 2);
@@ -116,6 +163,7 @@ namespace AdlezHolder
 
         public Particle(int r, int g, int b, int size, int damage, float secondsAlive, Vector2 start, Vector2 velocity)
         {
+            getAccel();
             this.color = new Color(r, g, b);
             position = start;
             rec = new Rectangle((int)start.X, (int)start.Y, size, size * 2);
@@ -136,7 +184,21 @@ namespace AdlezHolder
 
         public void Update(GameTime gameTime)
         {
-            damage += damageReduction;
+            if (pType == ParticleType.NONE)
+            {
+                damage += damageReduction;
+            }
+            else if (pType == ParticleType.SNOW)
+            {
+                accelTimer++;
+                accel.X += accelPerTick;
+                velo += accel;
+                if (accelTimer >= accelTime)
+                {
+                    accelTimer = 0;
+                    getAccel();
+                }
+            }
             lifeLengthTimer += gameTime.ElapsedGameTime.Milliseconds;
             position += velo;
         }
@@ -144,6 +206,23 @@ namespace AdlezHolder
         public void Draw(SpriteBatch spriteBatch)
         {
             spriteBatch.Draw(blankTexture, Rec, color);
+        }
+
+        protected void getAccel()
+        {
+            Random rand = new Random();
+            accelTime = 50;
+            accel.Y = 0;
+            int scale = rand.Next(1, 3);
+
+            if (scale == 1)
+            {
+                accelPerTick = (float)((((rand.NextDouble() * .00025f) * scale) / accelTime));
+            }
+            else if (scale == 2)
+            {
+                accelPerTick = (float)((((rand.NextDouble() * -.00025f) * scale) / accelTime));
+            }
         }
 
         public void addGemStruct(GemStruct newStruct)

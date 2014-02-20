@@ -306,23 +306,203 @@ namespace AdlezHolder
         protected virtual void dropItem(MapDataHolder data)
         {
             Random rand = new Random();
-            int dropValue = rand.Next(1, 10);
+            float dropValue = (float)(rand.NextDouble() * 100);
 
-            if (dropValue < 2)
+            if (dropValue <= 5)
             {
-                int arrow = rand.Next(1, 4);
-                if (arrow < 4)
+                float tier = (float)(rand.NextDouble() * 100);
+                int type = rand.Next(1, 6);
+                if(tier <= 10)
                 {
-                    data.addItem(new Arrow(.03f, false, "Wooden Arrow", 0, this.Position));
+                    switch (type)
+                    {
+                        case 1:
+                            {
+                                LightningStone stone = new LightningStone(.02f, this.Position, 5);
+                                data.addItem(stone);
+                                break;
+                            }
+                        case 2:
+                            {
+                                PoisonStone stone = new PoisonStone(.02f, this.Position, 5);
+                                data.addItem(stone);
+                                break;
+                            }
+                        case 3:
+                            {
+                                FireStone stone = new FireStone(.02f, this.Position, 5);
+                                data.addItem(stone);
+                                break;
+                            }
+                        case 4:
+                            {
+                                VampiricStone stone = new VampiricStone(.02f, this.Position, 5);
+                                data.addItem(stone);
+                                break;
+                            }
+                        case 5:
+                            {
+                                IceStone stone = new IceStone(.02f, this.Position, 5);
+                                data.addItem(stone);
+                                break;
+                            }
+                    }
+                }
+                else if(tier <= 20)
+                {
+                    switch (type)
+                    {
+                        case 1:
+                            {
+                                LightningStone stone = new LightningStone(.02f, this.Position, 4);
+                                data.addItem(stone);
+                                break;
+                            }
+                        case 2:
+                            {
+                                PoisonStone stone = new PoisonStone(.02f, this.Position, 4);
+                                data.addItem(stone);
+                                break;
+                            }
+                        case 3:
+                            {
+                                FireStone stone = new FireStone(.02f, this.Position, 4);
+                                data.addItem(stone);
+                                break;
+                            }
+                        case 4:
+                            {
+                                VampiricStone stone = new VampiricStone(.02f, this.Position, 4);
+                                data.addItem(stone);
+                                break;
+                            }
+                        case 5:
+                            {
+                                IceStone stone = new IceStone(.02f, this.Position, 4);
+                                data.addItem(stone);
+                                break;
+                            }
+                    }
+                }
+                else if (tier <= 30)
+                {
+                    switch (type)
+                    {
+                        case 1:
+                            {
+                                LightningStone stone = new LightningStone(.02f, this.Position, 3);
+                                data.addItem(stone);
+                                break;
+                            }
+                        case 2:
+                            {
+                                PoisonStone stone = new PoisonStone(.02f, this.Position, 3);
+                                data.addItem(stone);
+                                break;
+                            }
+                        case 3:
+                            {
+                                FireStone stone = new FireStone(.02f, this.Position, 3);
+                                data.addItem(stone);
+                                break;
+                            }
+                        case 4:
+                            {
+                                VampiricStone stone = new VampiricStone(.02f, this.Position, 3);
+                                data.addItem(stone);
+                                break;
+                            }
+                        case 5:
+                            {
+                                IceStone stone = new IceStone(.02f, this.Position, 3);
+                                data.addItem(stone);
+                                break;
+                            }
+                    }
+                }
+                else if (tier <= 50)
+                {
+                    switch (type)
+                    {
+                        case 1:
+                            {
+                                LightningStone stone = new LightningStone(.02f, this.Position, 2);
+                                data.addItem(stone);
+                                break;
+                            }
+                        case 2:
+                            {
+                                PoisonStone stone = new PoisonStone(.02f, this.Position, 2);
+                                data.addItem(stone);
+                                break;
+                            }
+                        case 3:
+                            {
+                                FireStone stone = new FireStone(.02f, this.Position, 2);
+                                data.addItem(stone);
+                                break;
+                            }
+                        case 4:
+                            {
+                                VampiricStone stone = new VampiricStone(.02f, this.Position, 2);
+                                data.addItem(stone);
+                                break;
+                            }
+                        case 5:
+                            {
+                                IceStone stone = new IceStone(.02f, this.Position, 2);
+                                data.addItem(stone);
+                                break;
+                            }
+                    }
                 }
                 else
                 {
-                    data.addItem(new Arrow(.03f, true, "Steel Arrow", 0, this.Position));
+                    switch (type)
+                    {
+                        case 1:
+                            {
+                                LightningStone stone = new LightningStone(.02f, this.Position, 1);
+                                data.addItem(stone);
+                                break;
+                            }
+                        case 2:
+                            {
+                                PoisonStone stone = new PoisonStone(.02f, this.Position, 1);
+                                data.addItem(stone);
+                                break;
+                            }
+                        case 3:
+                            {
+                                FireStone stone = new FireStone(.02f, this.Position, 1);
+                                data.addItem(stone);
+                                break;
+                            }
+                        case 4:
+                            {
+                                VampiricStone stone = new VampiricStone(.02f, this.Position, 1);
+                                data.addItem(stone);
+                                break;
+                            }
+                        case 5:
+                            {
+                                IceStone stone = new IceStone(.02f, this.Position, 1);
+                                data.addItem(stone);
+                                break;
+                            }
+                    }
                 }
             }
-            else if (dropValue < 4 && dropValue > 2)
+            else if (dropValue <= 30)
             {
-                data.addItem(new Money(.01f, this.position, "Coins", 5));
+                Arrow a = new Arrow(.02f, false, "Arrow", 20, this.Position);
+                data.addItem(a);
+            }
+            else if (dropValue <= 70)
+            {
+                int val = rand.Next(25, 70);
+                Money m = new Money(.02f, this.Position, "" + val + " Coins", val);
+                data.addItem(m);
             }
         }
 

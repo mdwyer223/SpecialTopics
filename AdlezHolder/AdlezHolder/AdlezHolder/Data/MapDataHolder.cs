@@ -362,15 +362,38 @@ namespace AdlezHolder
         {
             float moveToY = (Game1.DisplayHeight / 2) - player.Center.Y;
             float moveToX = (Game1.DisplayWidth / 2) - player.Center.X;
-
-            if (topLeftCorner.Y + moveToY < topLeftCornerView.Y && bottomLeftCorner.Y + moveToY > bottomLeftCornerView.Y)
+            if (backgroundRec.Height != 0 && backgroundRec.Width != 0)
             {
-                adjustObjectsBackgroundTripWires(new Vector2(0, moveToY), true);
-            }
 
-            if (topLeftCorner.X + moveToX < topLeftCornerView.X && topRightCorner.X + moveToX > topRightCornerView.X)
-            {
-                adjustObjectsBackgroundTripWires(new Vector2(moveToX, 0), true);
+                if (topLeftCorner.Y + moveToY < topLeftCornerView.Y && bottomLeftCorner.Y + moveToY > bottomLeftCornerView.Y)
+                {
+                    adjustObjectsBackgroundTripWires(new Vector2(0, moveToY), true);
+                }
+                else if (bottomLeftCorner.Y + moveToY < bottomLeftCornerView.Y)
+                {
+                    moveToY = bottomLeftCornerView.Y - bottomLeftCorner.Y;
+                    adjustObjectsBackgroundTripWires(new Vector2(0, moveToY), true);
+                }
+                else if (topLeftCorner.Y + moveToY > topLeftCornerView.Y)
+                {
+                    moveToY = topLeftCornerView.Y - topLeftCorner.Y;
+                    adjustObjectsBackgroundTripWires(new Vector2(0, moveToY), true);
+                }
+
+                if (topLeftCorner.X + moveToX < topLeftCornerView.X && topRightCorner.X + moveToX > topRightCornerView.X)
+                {
+                    adjustObjectsBackgroundTripWires(new Vector2(moveToX, 0), true);
+                }
+                else if (topLeftCorner.X + moveToX > topLeftCornerView.X)
+                {
+                    moveToX = topLeftCornerView.X - topLeftCorner.X;
+                    adjustObjectsBackgroundTripWires(new Vector2(moveToX, 0), true);
+                }
+                else if (topRightCorner.X + moveToX < topRightCornerView.X)
+                {
+                    moveToX = topRightCornerView.X - topRightCorner.X;
+                    adjustObjectsBackgroundTripWires(new Vector2(moveToX, 0), true);
+                }
             }
 
             /*

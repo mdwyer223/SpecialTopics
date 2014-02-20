@@ -74,7 +74,7 @@ namespace AdlezHolder
             if (change)
             {
                 map.changeMap(new MainRoom2());
-                map.Player.Position = new Vector2(155, 355);
+                map.Player.Position = new Vector2(1000, 355);
             }
 
             base.Update(map, gameTime);

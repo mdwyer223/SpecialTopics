@@ -11,8 +11,6 @@ namespace AdlezHolder
 {
     public class VampiricStone : Gem
     {
-        bool collected;
-
         public override bool Dead
         {
             get
@@ -24,23 +22,27 @@ namespace AdlezHolder
         public VampiricStone(float scaleFactor, Vector2 startPosition, int tier)
             :base(Game1.GameContent.Load<Texture2D>("Items/MagentaStone"), scaleFactor, startPosition, "Vampiric Stone", 50)
         {
-            Chance = .1f;
+            this.tier = tier;
 
             if (tier == 1)
             {
-                //load texture, value, and stats
+                this.Chance = .1f;
             }
             else if (tier == 2)
             {
+                this.Chance = .15f;
             }
             else if (tier == 3)
             {
+                this.Chance = .175f;
             }
             else if (tier == 4)
             {
+                this.Chance = .2f;
             }
             else if (tier == 5)
             {
+                this.Chance = .25f;
             }
             else
             {

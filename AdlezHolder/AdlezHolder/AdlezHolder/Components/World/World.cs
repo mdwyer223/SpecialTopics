@@ -39,7 +39,7 @@ namespace AdlezHolder
         {
             map = new Map();
 
-            map.changeMap(new MainRoom2());
+            map.changeMap(new TestingField());
 
             base.Initialize();
         }

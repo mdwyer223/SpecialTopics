@@ -21,7 +21,7 @@ namespace AdlezHolder
 
     public enum ParticleState
     {
-        OFF, RAIN, SANDSTORM
+        OFF, RAIN, SANDSTORM, SNOW
     }
 
     public class Game1 : Microsoft.Xna.Framework.Game

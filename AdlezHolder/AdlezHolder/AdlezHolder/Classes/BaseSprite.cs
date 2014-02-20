@@ -201,7 +201,7 @@ namespace AdlezHolder
 
         public virtual void Draw(SpriteBatch spriteBatch)
         {
-            if (IsVisible)
+            if (IsVisible && Image != null)
                 spriteBatch.Draw(Image, DrawnRec, ImageColor);
         }
 
