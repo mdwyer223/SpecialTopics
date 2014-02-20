@@ -20,7 +20,7 @@ namespace AdlezHolder
         NodeMessageBox infoBox;
         Texture2D swordImage;
         UpgradeNode selectedNode, lastNode;
-        UpgradeNode[,] multiNodeArray;
+        UpgradeNode[,] swordTreeArray;
         int NodeColumnIndex, NodeRowIndex;
         float scalefactor = .3f;
         int moveNodes = 50, playersCash;
@@ -31,76 +31,74 @@ namespace AdlezHolder
         BaseSprite swordPicture;
         bool wasJustPurchased = false;
 
-        public SwordUpgradeClass()
+        public SwordUpgradeClass(Character Character)
         {
             oldKeys = Keyboard.GetState();
-            Texture2D nodeTexture = Game1.GameContent.Load<Texture2D>("MenuButtons/Continue");
-            tempCharacter = new Character(Game1.GameContent.Load<Texture2D>("MenuButtons/Continue"), scalefactor, 4, 3, Vector2.Zero);
-            tempCharacter.addFunds(7500);
-            playersCash = tempCharacter.Money;
-            multiNodeArray = tempCharacter.Sword.GetTree(displayWidth, displayHeight);
-
-            NodeColumnIndex = 1;
-            NodeRowIndex = 0;
-            multiNodeArray[0, 1].Selected = false;
-            multiNodeArray[0, 1].unlockItem();
+            tempCharacter = Character;
             NodeColumnIndex = 0;
-            NodeRowIndex = 1;
+            NodeRowIndex = 0;
+            tempSword= new Sword(.3f);
+            swordTreeArray = tempSword.GetTree(Game1.DisplayWidth, Game1.DisplayHeight);
             nodeMessage = "";
             infoBox = new NodeMessageBox(1);
-            nodeMessage = multiNodeArray[NodeColumnIndex, NodeRowIndex].getName + ":  $" + multiNodeArray[NodeColumnIndex, NodeRowIndex].getCost;
+            nodeMessage = swordTreeArray[0, 1].getName + ":  $" + swordTreeArray[0, 1].getCost;
             infoBox.receiveMessage("Players Cash:  $" + playersCash + "  " + nodeMessage);
             tempSword = tempCharacter.Sword;
             lockedPurchasedMessage = "\nPress Enter to Purchase";
-            swordImage = Game1.GameContent.Load <Texture2D> ("Particle");
+            swordImage = Game1.GameContent.Load <Texture2D> ("sword selected");
 
             swordPicture = new BaseSprite(swordImage, .1f, displayWidth, 0, Vector2.One);
-
+            tempCharacter = Character;
+            playersCash = tempCharacter.Money;
+            swordTreeArray = tempCharacter.Sword.GetTree(displayWidth, displayHeight);
+            swordTreeArray[0, 1].unlockItem(); 
         }
 
 
         public void Update(GameTime gameTime)
         {
             moveNodes = 0;
+            playersCash = tempCharacter.Money;
             keys = Keyboard.GetState();
-           
+
+
             if (keys.IsKeyDown(Keys.S) && oldKeys.IsKeyUp(Keys.S))
+            {
+                wasJustPurchased = false;
+                lockedPurchasedMessage = "\nPress Enter to Purchase";
+                if (swordTreeArray[NodeColumnIndex, NodeRowIndex] != null)
                 {
-                    wasJustPurchased = false;
-                    lockedPurchasedMessage = "\nPress Enter to Purchase";         
-                        if (multiNodeArray[NodeColumnIndex, NodeRowIndex] != null)
-                        {
-                            lastNode = multiNodeArray[NodeColumnIndex, NodeRowIndex];
-                            if (NodeRowIndex != 2)
-                            {
-                                NodeRowIndex = (NodeRowIndex + 1) % 3;
-                            }
-                            else
-                            {
-                                NodeRowIndex = 0;
-                                multiNodeArray[NodeColumnIndex, NodeRowIndex].Selected = false;
-                            }
-                            if (multiNodeArray[NodeColumnIndex, NodeRowIndex] != null)
-                            {
-                                multiNodeArray[NodeColumnIndex, NodeRowIndex].Selected = false;
-                            }
-                            else
-                            {
-                                NodeRowIndex = 1;
-                                multiNodeArray[NodeColumnIndex, NodeRowIndex].Selected = false;
-                                lastNode = multiNodeArray[1, 0];
-                            }
-                         
-                        }
+                    lastNode = swordTreeArray[NodeColumnIndex, NodeRowIndex];
+                    if (NodeRowIndex != 2)
+                    {
+                        NodeRowIndex = (NodeRowIndex + 1) % 3;
+                    }
+                    else
+                    {
+                        NodeRowIndex = 0;
+                        swordTreeArray[NodeColumnIndex, NodeRowIndex].Selected = false;
+                    }
+                    if (swordTreeArray[NodeColumnIndex, NodeRowIndex] != null)
+                    {
+                        swordTreeArray[NodeColumnIndex, NodeRowIndex].Selected = false;
+                    }
+                    else
+                    {
+                        NodeRowIndex = 1;
+                        swordTreeArray[NodeColumnIndex, NodeRowIndex].Selected = false;
+                        lastNode = swordTreeArray[1, 0];
+                    }
+
                 }
+            }
 
             if (keys.IsKeyDown(Keys.W) && oldKeys.IsKeyUp(Keys.W))
             {
                 wasJustPurchased = false;
-                lockedPurchasedMessage = "\nPress Enter to Purchase";  
-                if (multiNodeArray[NodeColumnIndex, NodeRowIndex] != null)
+                lockedPurchasedMessage = "\nPress Enter to Purchase";
+                if (swordTreeArray[NodeColumnIndex, NodeRowIndex] != null)
                 {
-                    lastNode = multiNodeArray[NodeColumnIndex, NodeRowIndex];
+                    lastNode = swordTreeArray[NodeColumnIndex, NodeRowIndex];
                     if (NodeRowIndex != 0)
                     {
                         NodeRowIndex = (NodeRowIndex - 1) % 3;
@@ -109,49 +107,49 @@ namespace AdlezHolder
                     {
                         NodeRowIndex = 2;
                     }
-                    if (multiNodeArray[NodeColumnIndex, NodeRowIndex] != null)
+                    if (swordTreeArray[NodeColumnIndex, NodeRowIndex] != null)
                     {
-                        multiNodeArray[NodeColumnIndex, NodeRowIndex].Selected = false;
+                        swordTreeArray[NodeColumnIndex, NodeRowIndex].Selected = false;
                     }
                     else
                     {
                         NodeRowIndex = 1;
-                        multiNodeArray[NodeColumnIndex, NodeRowIndex].Selected = false;
-                        lastNode = multiNodeArray[1, 0];
+                        swordTreeArray[NodeColumnIndex, NodeRowIndex].Selected = false;
+                        lastNode = swordTreeArray[1, 0];
                     }
                 }
             }
 
             if (keys.IsKeyDown(Keys.A) && oldKeys.IsKeyUp(Keys.A))
             {
-                lockedPurchasedMessage = "\nPress Enter to Purchase";  
-                if ( NodeColumnIndex != 0)
+                lockedPurchasedMessage = "\nPress Enter to Purchase";
+                if (NodeColumnIndex != 0)
                 {
                     wasJustPurchased = false;
-                    lastNode = multiNodeArray[NodeColumnIndex, NodeRowIndex];
+                    lastNode = swordTreeArray[NodeColumnIndex, NodeRowIndex];
                     NodeColumnIndex--;
                     NodeRowIndex = 1;
-                    multiNodeArray[NodeColumnIndex, NodeRowIndex].Selected = false;
+                    swordTreeArray[NodeColumnIndex, NodeRowIndex].Selected = false;
                     moveNodes = 150;
                 }
-                
+
 
 
             }
 
             if (keys.IsKeyDown(Keys.D) && oldKeys.IsKeyUp(Keys.D))
             {
-                lockedPurchasedMessage = "\nPress Enter to Purchase";  
-                    if (NodeColumnIndex != 6)
-                    {
-                        wasJustPurchased = false;
-                        lastNode = multiNodeArray[NodeColumnIndex, NodeRowIndex];
-                        NodeColumnIndex++;
-                        NodeRowIndex = 1;
-                        multiNodeArray[NodeColumnIndex, NodeRowIndex].Selected = false;
-                        moveNodes = -150;
-                    }
-              }
+                lockedPurchasedMessage = "\nPress Enter to Purchase";
+                if (NodeColumnIndex != 6)
+                {
+                    wasJustPurchased = false;
+                    lastNode = swordTreeArray[NodeColumnIndex, NodeRowIndex];
+                    NodeColumnIndex++;
+                    NodeRowIndex = 1;
+                    swordTreeArray[NodeColumnIndex, NodeRowIndex].Selected = false;
+                    moveNodes = -150;
+                }
+            }
 
             if (keys.IsKeyDown(Keys.Q) && oldKeys.IsKeyUp(Keys.Q))
             {
@@ -162,90 +160,92 @@ namespace AdlezHolder
             {
                 changeTreeGameState(TreeGameState.BOWTREE);
             }
+            if (swordTreeArray[NodeColumnIndex, NodeRowIndex] != null)
+            {
             if (keys.IsKeyDown(Keys.Enter) && oldKeys.IsKeyUp(Keys.Enter))
             {
-
-                if (multiNodeArray[NodeColumnIndex, NodeRowIndex].isLocked != true && multiNodeArray[NodeColumnIndex, NodeRowIndex].isPurchased != true)
-                {
-
-                    if (playersCash >= multiNodeArray[NodeColumnIndex, NodeRowIndex].getCost)
+                    if (swordTreeArray[NodeColumnIndex, NodeRowIndex].isLocked != true && swordTreeArray[NodeColumnIndex, NodeRowIndex].isPurchased != true)
                     {
-                        lockedPurchasedMessage = "\nPurchase Complete!!!!";
-                        multiNodeArray[NodeColumnIndex, NodeRowIndex].upgradeSword(tempSword);
-                        multiNodeArray[NodeColumnIndex, NodeRowIndex].purchaseItem();
-                        tempCharacter.subtractFunds(multiNodeArray[NodeColumnIndex, NodeRowIndex].getCost);
-                        playersCash = tempCharacter.Money;
-                        wasJustPurchased = true;
 
-                        if (NodeColumnIndex > 0 && multiNodeArray[NodeColumnIndex - 1, NodeRowIndex] != null)
-                            multiNodeArray[NodeColumnIndex - 1, NodeRowIndex].unlockItem();
-                        if (NodeColumnIndex < 6 && multiNodeArray[NodeColumnIndex + 1, NodeRowIndex] != null)
-                            multiNodeArray[NodeColumnIndex + 1, NodeRowIndex].unlockItem();
-                        if (NodeRowIndex < 2 && multiNodeArray[NodeColumnIndex, NodeRowIndex + 1] != null)
-                            multiNodeArray[NodeColumnIndex, NodeRowIndex + 1].unlockItem();
-                        if (NodeRowIndex > 0 && multiNodeArray[NodeColumnIndex, NodeRowIndex - 1] != null)
-                            multiNodeArray[NodeColumnIndex, NodeRowIndex - 1].unlockItem();
+                        if (playersCash >= swordTreeArray[NodeColumnIndex, NodeRowIndex].getCost)
+                        {
+                            lockedPurchasedMessage = "\nPurchase Complete!!!!";
+                            swordTreeArray[NodeColumnIndex, NodeRowIndex].upgradeSword(tempSword);
+                            swordTreeArray[NodeColumnIndex, NodeRowIndex].purchaseItem();
+                            tempCharacter.subtractFunds(swordTreeArray[NodeColumnIndex, NodeRowIndex].getCost);
+                            playersCash = tempCharacter.Money;
+                            wasJustPurchased = true;
 
+                            if (NodeColumnIndex > 0 && swordTreeArray[NodeColumnIndex - 1, NodeRowIndex] != null)
+                                swordTreeArray[NodeColumnIndex - 1, NodeRowIndex].unlockItem();
+                            if (NodeColumnIndex < 6 && swordTreeArray[NodeColumnIndex + 1, NodeRowIndex] != null)
+                                swordTreeArray[NodeColumnIndex + 1, NodeRowIndex].unlockItem();
+                            if (NodeRowIndex < 2 && swordTreeArray[NodeColumnIndex, NodeRowIndex + 1] != null)
+                                swordTreeArray[NodeColumnIndex, NodeRowIndex + 1].unlockItem();
+                            if (NodeRowIndex > 0 && swordTreeArray[NodeColumnIndex, NodeRowIndex - 1] != null)
+                                swordTreeArray[NodeColumnIndex, NodeRowIndex - 1].unlockItem();
+
+
+                        }
+                        else
+                        {
+                            lockedPurchasedMessage = "\nYou do not have enough cash!";
+                        }
 
                     }
-                    else
-                    {
-                        lockedPurchasedMessage = "\nYou do not have enough cash!";
-                    }
+
 
                 }
 
-                   
-            }
-
-            else if (multiNodeArray[NodeColumnIndex, NodeRowIndex].isLocked == true)
+                else if (swordTreeArray[NodeColumnIndex, NodeRowIndex].isLocked == true)
                 {
                     lockedPurchasedMessage = "\nThis Node Is Locked \nYou Cannot Purchase This Node at This Time";
                 }
-            else  if (multiNodeArray[NodeColumnIndex, NodeRowIndex].isPurchased == true && wasJustPurchased != true)
+                else if (swordTreeArray[NodeColumnIndex, NodeRowIndex].isPurchased == true && wasJustPurchased != true)
                 {
                     lockedPurchasedMessage = "\nThis Node Has Already Been Purchased";
                 }
-            
 
 
 
-            if (lastNode != null)
-            {
-                lastNode.Selected = true;
-            }
-            oldKeys = keys;
-      
 
-
-
-            selectedNode = multiNodeArray[NodeColumnIndex, NodeRowIndex];
-
-            for (int i = 0; i < 7; i++)
-            {
-                for (int x = 0; x < 3; x++)
+                if (lastNode != null)
                 {
-                    if (multiNodeArray.GetValue(i, x) != null)
-                    {
-                        multiNodeArray[i, x].setRec(moveNodes);
+                    lastNode.Selected = true;
+                }
+                oldKeys = keys;
 
+
+
+
+                selectedNode = swordTreeArray[NodeColumnIndex, NodeRowIndex];
+
+                for (int i = 0; i < 7; i++)
+                {
+                    for (int x = 0; x < 3; x++)
+                    {
+                        if (swordTreeArray.GetValue(i, x) != null)
+                        {
+                            swordTreeArray[i, x].setRec(moveNodes);
+
+                        }
                     }
                 }
-            }
 
-            if (wasJustPurchased)
-            {
-                nodeMessage = multiNodeArray[NodeColumnIndex, NodeRowIndex].getName + ":  $" + multiNodeArray[NodeColumnIndex, NodeRowIndex].getCost + lockedPurchasedMessage + multiNodeArray[NodeColumnIndex, NodeRowIndex].getChangesString;
-            }
-            else
-            {
-                nodeMessage = multiNodeArray[NodeColumnIndex, NodeRowIndex].getName + ":  $" + multiNodeArray[NodeColumnIndex, NodeRowIndex].getCost + lockedPurchasedMessage;
-            }
-        
+                if (wasJustPurchased)
+                {
+                    nodeMessage = swordTreeArray[NodeColumnIndex, NodeRowIndex].getName + ":  $" + swordTreeArray[NodeColumnIndex, NodeRowIndex].getCost + lockedPurchasedMessage + swordTreeArray[NodeColumnIndex, NodeRowIndex].getChangesString;
+                }
+                else
+                {
+                    nodeMessage = swordTreeArray[NodeColumnIndex, NodeRowIndex].getName + ":  $" + swordTreeArray[NodeColumnIndex, NodeRowIndex].getCost + lockedPurchasedMessage;
+                }
+
                 infoBox.deleteMessage();
                 infoBox.receiveMessage("Players Cash:  $" + playersCash + "  " + nodeMessage);
                 infoBox.update();
-           
+
+            }
         }
         private void changeTreeGameState(TreeGameState newState)
         {
@@ -259,9 +259,9 @@ namespace AdlezHolder
                 {
                     for (int x = 0; x < 3; x++)
                     {
-                        if (multiNodeArray.GetValue(i, x) != null)
+                        if (swordTreeArray.GetValue(i, x) != null)
                         {
-                            multiNodeArray[i, x].Draw(spriteBatch);
+                            swordTreeArray[i, x].Draw(spriteBatch);
                         }
                     }
 

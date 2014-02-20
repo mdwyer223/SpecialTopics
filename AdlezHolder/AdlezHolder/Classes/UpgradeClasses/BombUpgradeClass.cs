@@ -30,7 +30,7 @@ namespace AdlezHolder
         bool wasJustPurchased = false;
 
 
-        public BombUpgradeClass()
+        public BombUpgradeClass(Character Character)
         {
             tempBomb = new Bomb(.3f);
             bombTreeArray = tempBomb.GetTree(Game1.DisplayWidth, Game1.DisplayHeight);
@@ -49,8 +49,7 @@ namespace AdlezHolder
             NodeColumnIndex = 0;
             NodeRowIndex = 1;
 
-            tempCharacter = new Character(Game1.GameContent.Load<Texture2D>("MenuButtons/Continue"), scalefactor, 4, 3, Vector2.Zero);
-            tempCharacter.addFunds(7500);
+            tempCharacter = Character;
             playersCash = tempCharacter.Money;
 
         }
@@ -58,6 +57,7 @@ namespace AdlezHolder
 
         public void Update(GameTime gameTime)
         {
+            playersCash = tempCharacter.Money;
             moveNodes = 0;
             keys = Keyboard.GetState();
             if (keys.IsKeyDown(Keys.S) && oldKeys.IsKeyUp(Keys.S))
@@ -151,7 +151,7 @@ namespace AdlezHolder
             {
                 changeTreeGameState(TreeGameState.BOWTREE);
             }
-            if (keys.IsKeyDown(Keys.Q) && oldKeys.IsKeyUp(Keys.E))
+            if (keys.IsKeyDown(Keys.E) && oldKeys.IsKeyUp(Keys.E))
             {
                 changeTreeGameState(TreeGameState.SWORDTREE);
             }

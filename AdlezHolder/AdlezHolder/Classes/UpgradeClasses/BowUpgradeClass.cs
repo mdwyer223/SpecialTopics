@@ -19,9 +19,7 @@ namespace AdlezHolder
         KeyboardState keys, oldKeys;
         UpgradeNode selectedNode, lastNode;
         int NodeColumnIndex, NodeRowIndex;
-        Texture2D nodeTexture = Game1.GameContent.Load<Texture2D>("Particle");
-        Texture2D bowImage = Game1.GameContent.Load<Texture2D>("Particle");
-        float scalefactor = .3f;
+        Texture2D bowImage = Game1.GameContent.Load<Texture2D>("bow selected");
         int moveNodes, playersCash;
         Character tempCharacter;
         Bow tempBow;
@@ -29,11 +27,9 @@ namespace AdlezHolder
         BaseSprite bowPicture;
         string nodeMessage, lockedPurchasedMessage;
         bool wasJustPurchased = false;
-        bool isEPressed = false;
-        bool isQPressed = false;
 
 
-        public BowUpgradeClass()
+        public BowUpgradeClass(Character Character)
         {
             tempBow = new Bow(.3f);
             bowTreeArray = tempBow.GetTree(Game1.DisplayWidth, Game1.DisplayHeight);
@@ -46,14 +42,13 @@ namespace AdlezHolder
             lockedPurchasedMessage = "\nPress Enter to Purchase";
             bowPicture = new BaseSprite(bowImage, .1f, Game1.DisplayWidth, 0, Vector2.One);
 
-
-            bowTreeArray[0, 1].Selected = false;
-            bowTreeArray[0, 1].unlockItem();
             NodeColumnIndex = 0;
             NodeRowIndex = 1;
 
-            tempCharacter = new Character(Game1.GameContent.Load<Texture2D>("MenuButtons/Continue"), scalefactor, 4, 3, Vector2.Zero);
-            tempCharacter.addFunds(7500);
+        
+            bowTreeArray[0, 1].Selected = false;
+            bowTreeArray[0, 1].unlockItem();
+            tempCharacter = Character;
             playersCash = tempCharacter.Money;
 
         }
@@ -62,6 +57,7 @@ namespace AdlezHolder
         public void Update(GameTime gameTime)
         {
             moveNodes = 0;
+            playersCash = tempCharacter.Money;
             keys = Keyboard.GetState();
             if (keys.IsKeyDown(Keys.S) && oldKeys.IsKeyUp(Keys.S))
             {

@@ -44,7 +44,7 @@ namespace AdlezHolder
         public UpgradeNode(Texture2D texture, float scaleFactor, Vector2 startPosition, int price)
             :base(texture,scaleFactor,Game1.DisplayWidth,5, startPosition)
         {
-            DrawnRec = new Rectangle(0, 0, 20, 20);
+            DrawnRec = new Rectangle(0, 0, 55, 55);
             purchased = false;
             locked = true;
             cost = price;

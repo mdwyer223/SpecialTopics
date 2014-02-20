@@ -18,17 +18,18 @@ namespace AdlezHolder
         SpriteBatch spriteBatch;
         Color screenColor;
         BowUpgradeClass bowNodes;
-
-        public BowTree(Game game)
+        Character tempCharacter;
+        public BowTree(Game game, Character character)
             : base(game)
         {
             screenColor = Color.DarkSlateGray;
+            tempCharacter = character;
         }
 
         public override void Initialize()
         {
             spriteBatch = new SpriteBatch(Game.GraphicsDevice);
-            bowNodes = new BowUpgradeClass();
+            bowNodes = new BowUpgradeClass(tempCharacter);
             base.Initialize();
         }
 

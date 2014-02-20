@@ -18,17 +18,19 @@ namespace AdlezHolder
         SpriteBatch spriteBatch;
         Color screenColor;
         BombUpgradeClass bombNodes;
+        Character tempCharacter;
 
-        public BombTree(Game game)
+        public BombTree(Game game, Character character)
             : base(game)
         {
             screenColor = Color.DarkRed;
+            tempCharacter = character;
         }
 
         public override void Initialize()
         {
             spriteBatch = new SpriteBatch(Game.GraphicsDevice);
-            bombNodes = new BombUpgradeClass();
+            bombNodes = new BombUpgradeClass(tempCharacter);
             base.Initialize();
         }
 

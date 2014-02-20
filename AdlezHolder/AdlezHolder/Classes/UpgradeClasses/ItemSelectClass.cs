@@ -27,6 +27,7 @@ namespace AdlezHolder
         SwordTree swordtree;
         BombTree bombtree;
         BowTree bowtree;
+        Character tempCharacter;
 
         static TreeGameState currentTreeGameState = TreeGameState.ITEMSELECT;
         public static TreeGameState CurrentTreeGameState
@@ -82,20 +83,23 @@ namespace AdlezHolder
             startPosition.X = startPosition.X + widthSeperation;
             
             bowButton = new Button(Game1.GameContent.Load<Texture2D>("bow selected"), .3f, startPosition);
+
+            tempCharacter = new Character(Game1.GameContent.Load<Texture2D>("MenuButtons/Continue"), .3f, 4, 3, Vector2.Zero);
+            tempCharacter.addFunds(15000);
             
 
             swordButton.Selected = true;
-            swordtree = new SwordTree(game);
+            swordtree = new SwordTree(game, tempCharacter);
             game.Components.Add(swordtree);
             swordtree.Enabled = false;
             swordtree.Initialize();
             swordtree.Visible = false;
-            bombtree = new BombTree(game);
+            bombtree = new BombTree(game, tempCharacter);
             game.Components.Add(bombtree);
             bombtree.Enabled = false;
             bombtree.Initialize();
             bombtree.Visible = false;
-            bowtree = new BowTree(game);
+            bowtree = new BowTree(game, tempCharacter);
             game.Components.Add(bowtree);
             bowtree.Enabled = false;
             bowtree.Initialize();
@@ -105,16 +109,7 @@ namespace AdlezHolder
         public void Update(GameTime gameTime)
         {
             keys = Keyboard.GetState();
-            if (CurrentTreeGameState == TreeGameState.SWORDTREE)
-            {
-                swordtree.Enabled = true;
-                swordtree.Visible = true;
-                bombtree.Enabled = false;
-                bombtree.Visible = false;
-                bowtree.Enabled = false;
-                bowtree.Visible = false;
-            }
-            else if (CurrentTreeGameState == TreeGameState.BOMBTREE)
+            if (CurrentTreeGameState == TreeGameState.BOMBTREE)
             {
                 swordtree.Enabled = false;
                 swordtree.Visible = false;
@@ -131,6 +126,15 @@ namespace AdlezHolder
                 swordtree.Visible = false;
                 bombtree.Enabled = false;
                 bombtree.Visible = false;
+            }
+            else if (CurrentTreeGameState == TreeGameState.SWORDTREE)
+            {
+                swordtree.Enabled = true;
+                swordtree.Visible = true;
+                bombtree.Enabled = false;
+                bombtree.Visible = false;
+                bowtree.Enabled = false;
+                bowtree.Visible = false;
             }
             else
             {

@@ -17,17 +17,19 @@ namespace AdlezHolder
         SpriteBatch spriteBatch;
         Color screenColor;
         SwordUpgradeClass swordNodes;
+        Character tempCharacter;
 
-        public SwordTree(Game game)
+        public SwordTree(Game game, Character character)
             : base(game)
         {
             screenColor = Color.DarkSlateBlue;
+            tempCharacter = character;
         }
 
         public override void Initialize()
         {
             spriteBatch = new SpriteBatch(Game.GraphicsDevice);
-            swordNodes = new SwordUpgradeClass();
+            swordNodes = new SwordUpgradeClass(tempCharacter);
             base.Initialize();
         }
 
