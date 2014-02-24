@@ -25,7 +25,7 @@ namespace AdlezHolder
         float scalefactor = .3f;
         int moveNodes = 50, playersCash;
         Character tempCharacter;
-        int  displayWidth = Game1.DisplayWidth;
+        int displayWidth = Game1.DisplayWidth;
         int displayHeight = Game1.DisplayHeight;
         Sword tempSword;
         BaseSprite swordPicture;
@@ -33,11 +33,12 @@ namespace AdlezHolder
 
         public SwordUpgradeClass(Character Character)
         {
-            oldKeys = Keyboard.GetState();
+            keys = Keyboard.GetState();
+            oldKeys = keys;
             tempCharacter = Character;
             NodeColumnIndex = 0;
             NodeRowIndex = 0;
-            tempSword= new Sword(.3f);
+            tempSword = new Sword(.3f);
             swordTreeArray = tempSword.GetTree(Game1.DisplayWidth, Game1.DisplayHeight);
             nodeMessage = "";
             infoBox = new NodeMessageBox(1);
@@ -45,13 +46,13 @@ namespace AdlezHolder
             infoBox.receiveMessage("Players Cash:  $" + playersCash + "  " + nodeMessage);
             tempSword = tempCharacter.Sword;
             lockedPurchasedMessage = "\nPress Enter to Purchase";
-            swordImage = Game1.GameContent.Load <Texture2D> ("sword selected");
+            swordImage = Game1.GameContent.Load<Texture2D>("sword selected");
 
             swordPicture = new BaseSprite(swordImage, .1f, displayWidth, 0, Vector2.One);
             tempCharacter = Character;
             playersCash = tempCharacter.Money;
             swordTreeArray = tempCharacter.Sword.GetTree(displayWidth, displayHeight);
-            swordTreeArray[0, 1].unlockItem(); 
+            swordTreeArray[0, 1].unlockItem();
         }
 
 
@@ -61,6 +62,16 @@ namespace AdlezHolder
             playersCash = tempCharacter.Money;
             keys = Keyboard.GetState();
 
+            if (keys.IsKeyDown(Keys.Q) && oldKeys.IsKeyUp(Keys.Q))
+            {
+                changeTreeGameState(TreeGameState.BOMBTREE);
+                return;
+            }
+            else if (keys.IsKeyDown(Keys.E) && oldKeys.IsKeyUp(Keys.E))
+            {
+                changeTreeGameState(TreeGameState.BOWTREE);
+                return;
+            }
 
             if (keys.IsKeyDown(Keys.S) && oldKeys.IsKeyUp(Keys.S))
             {
@@ -149,21 +160,12 @@ namespace AdlezHolder
                     swordTreeArray[NodeColumnIndex, NodeRowIndex].Selected = false;
                     moveNodes = -150;
                 }
-            }
+            }            
 
-            if (keys.IsKeyDown(Keys.Q) && oldKeys.IsKeyUp(Keys.Q))
-            {
-                changeTreeGameState(TreeGameState.BOMBTREE);
-            }
-
-            if (keys.IsKeyDown(Keys.E) && oldKeys.IsKeyUp(Keys.E))
-            {
-                changeTreeGameState(TreeGameState.BOWTREE);
-            }
             if (swordTreeArray[NodeColumnIndex, NodeRowIndex] != null)
             {
-            if (keys.IsKeyDown(Keys.Enter) && oldKeys.IsKeyUp(Keys.Enter))
-            {
+                if (keys.IsKeyDown(Keys.Enter) && oldKeys.IsKeyUp(Keys.Enter))
+                {
                     if (swordTreeArray[NodeColumnIndex, NodeRowIndex].isLocked != true && swordTreeArray[NodeColumnIndex, NodeRowIndex].isPurchased != true)
                     {
 
@@ -196,7 +198,6 @@ namespace AdlezHolder
 
 
                 }
-
                 else if (swordTreeArray[NodeColumnIndex, NodeRowIndex].isLocked == true)
                 {
                     lockedPurchasedMessage = "\nThis Node Is Locked \nYou Cannot Purchase This Node at This Time";
@@ -255,20 +256,26 @@ namespace AdlezHolder
 
         public void Draw(SpriteBatch spriteBatch)
         {
-                for (int i = 0; i < 7; i++)
+            for (int i = 0; i < 7; i++)
+            {
+                for (int x = 0; x < 3; x++)
                 {
-                    for (int x = 0; x < 3; x++)
+                    if (swordTreeArray.GetValue(i, x) != null)
                     {
-                        if (swordTreeArray.GetValue(i, x) != null)
-                        {
-                            swordTreeArray[i, x].Draw(spriteBatch);
-                        }
+                        swordTreeArray[i, x].Draw(spriteBatch);
                     }
-
-                    infoBox.draw(spriteBatch);
-                    swordPicture.Draw(spriteBatch);
                 }
+
+                infoBox.draw(spriteBatch);
+                swordPicture.Draw(spriteBatch);
             }
         }
 
+        public void stopKeyPress()
+        {
+            oldKeys = keys = Keyboard.GetState();
+        }
+
     }
+
+}

@@ -104,7 +104,7 @@ namespace AdlezHolder
             bowtree.Enabled = false;
             bowtree.Initialize();
             bowtree.Visible = false;
-            
+            this.changeTreeGameState(TreeGameState.SWORDTREE);
         }
         public void Update(GameTime gameTime)
         {
@@ -113,17 +113,21 @@ namespace AdlezHolder
             {
                 swordtree.Enabled = false;
                 swordtree.Visible = false;
+
                 bowtree.Enabled = false;
                 bowtree.Visible = false;
+
                 bombtree.Enabled = true;
                 bombtree.Visible = true;
             }
             else if (CurrentTreeGameState == TreeGameState.BOWTREE)
             {
-                bowtree.Enabled = true;
-                bowtree.Visible = true;
                 swordtree.Enabled = false;
                 swordtree.Visible = false;
+
+                bowtree.Enabled = true;
+                bowtree.Visible = true;
+
                 bombtree.Enabled = false;
                 bombtree.Visible = false;
             }
@@ -131,74 +135,75 @@ namespace AdlezHolder
             {
                 swordtree.Enabled = true;
                 swordtree.Visible = true;
-                bombtree.Enabled = false;
-                bombtree.Visible = false;
+
                 bowtree.Enabled = false;
                 bowtree.Visible = false;
+
+                bombtree.Enabled = false;
+                bombtree.Visible = false;
             }
-            else
-            {
-                if (keys.IsKeyDown(Keys.A) && oldKeys.IsKeyUp(Keys.A))
-                {
-                    if (numOfButton > 0)
-                        numOfButton -= 1;
-                    else
-                    {
-                        numOfButton = 2;
-                    }
+            
+                //if (keys.IsKeyDown(Keys.A) && oldKeys.IsKeyUp(Keys.A))
+                //{
+                //    if (numOfButton > 0)
+                //        numOfButton -= 1;
+                //    else
+                //    {
+                //        numOfButton = 2;
+                //    }
 
-                }
+                //}
 
-                if (keys.IsKeyDown(Keys.D) && oldKeys.IsKeyUp(Keys.D))
-                {
-                    if (numOfButton < 2)
-                        numOfButton += 1;
-                    else
-                        numOfButton = 0;
+                //if (keys.IsKeyDown(Keys.D) && oldKeys.IsKeyUp(Keys.D))
+                //{
+                //    if (numOfButton < 2)
+                //        numOfButton += 1;
+                //    else
+                //        numOfButton = 0;
 
-                }
+                //}
 
-                if (numOfButton == 0)
-                {
-                    swordButton.Selected = true;
-                    bombButton.Selected = false;
-                    bowButton.Selected = false;
+                //if (numOfButton == 0)
+                //{
+                //    swordButton.Selected = true;
+                //    bombButton.Selected = false;
+                //    bowButton.Selected = false;
 
-                }
-                else if (numOfButton == 1)
-                {
-                    bombButton.Selected = true;
-                    swordButton.Selected = false;
-                    bowButton.Selected = false;
-                }
-                else if (numOfButton == 2)
-                {
-                    bowButton.Selected = true;
-                    bombButton.Selected = false;
-                    swordButton.Selected = false;
-                }
+                //}
+                //else if (numOfButton == 1)
+                //{
+                //    bombButton.Selected = true;
+                //    swordButton.Selected = false;
+                //    bowButton.Selected = false;
+                //}
+                //else if (numOfButton == 2)
+                //{
+                //    bowButton.Selected = true;
+                //    bombButton.Selected = false;
+                //    swordButton.Selected = false;
+                //}
 
-                //Checks if enter is pressed and which button it is pressed on
-                keys = Keyboard.GetState();
-                if (keys.IsKeyDown(Keys.Enter) && oldKeys.IsKeyUp(Keys.Enter))
-                {
-                    if (numOfButton == 0)
-                    {
-                        this.changeTreeGameState(TreeGameState.SWORDTREE);
-                    }
+                ////Checks if enter is pressed and which button it is pressed on
+                //keys = Keyboard.GetState();
+                //if (keys.IsKeyDown(Keys.Enter) && oldKeys.IsKeyUp(Keys.Enter))
+                //{
+                //    if (numOfButton == 0)
+                //    {
+                //        this.changeTreeGameState(TreeGameState.SWORDTREE);
+                //    }
 
-                    else if (numOfButton == 1)
-                    {
-                        this.changeTreeGameState(TreeGameState.BOMBTREE);
-                    }
-                    else if (numOfButton == 2)
-                    {
-                        this.changeTreeGameState(TreeGameState.BOWTREE);
-                    }
-                }
+                //    else if (numOfButton == 1)
+                //    {
+                //        this.changeTreeGameState(TreeGameState.BOMBTREE);
+                //    }
+                //    else if (numOfButton == 2)
+                //    {
+                //        this.changeTreeGameState(TreeGameState.BOWTREE);
+                //    }
+                //}
                 oldKeys = keys;
 
-            }
+            
         }
 
         public void Draw(SpriteBatch spriteBatch)

@@ -34,7 +34,8 @@ namespace AdlezHolder
         {
             tempBomb = new Bomb(.3f);
             bombTreeArray = tempBomb.GetTree(Game1.DisplayWidth, Game1.DisplayHeight);
-            oldKeys = Keyboard.GetState();
+            keys = Keyboard.GetState();
+            oldKeys = keys;
             NodeColumnIndex = 1;
             NodeRowIndex = 0;
             infoBox = new NodeMessageBox(1);
@@ -60,6 +61,18 @@ namespace AdlezHolder
             playersCash = tempCharacter.Money;
             moveNodes = 0;
             keys = Keyboard.GetState();
+
+            if (keys.IsKeyDown(Keys.Q) && oldKeys.IsKeyUp(Keys.Q))
+            {
+                changeTreeGameState(TreeGameState.BOWTREE);
+                return;
+            }
+            else if (keys.IsKeyDown(Keys.E) && oldKeys.IsKeyUp(Keys.E))
+            {
+                changeTreeGameState(TreeGameState.SWORDTREE);
+                return;
+            }
+
             if (keys.IsKeyDown(Keys.S) && oldKeys.IsKeyUp(Keys.S))
             {
                 lockedPurchasedMessage = "\nPress Enter to Purchase";
@@ -147,14 +160,6 @@ namespace AdlezHolder
                     wasJustPurchased = false;
                 }
             }
-            if (keys.IsKeyDown(Keys.Q) && oldKeys.IsKeyUp(Keys.Q))
-            {
-                changeTreeGameState(TreeGameState.BOWTREE);
-            }
-            if (keys.IsKeyDown(Keys.E) && oldKeys.IsKeyUp(Keys.E))
-            {
-                changeTreeGameState(TreeGameState.SWORDTREE);
-            }
 
 
             if (lastNode != null)
@@ -233,12 +238,6 @@ namespace AdlezHolder
 
             selectedNode = bombTreeArray[NodeColumnIndex, NodeRowIndex];
 
-            if (keys.IsKeyDown(Keys.Q) && oldKeys.IsKeyUp(Keys.Q))
-            {
-                changeTreeGameState(TreeGameState.SWORDTREE);
-            }
-
-
             for (int i = 0; i < 7; i++)
             {
                 for (int x = 0; x < 3; x++)
@@ -273,6 +272,11 @@ namespace AdlezHolder
                 infoBox.draw(spriteBatch);
                 bombPicture.Draw(spriteBatch);
             }
+        }
+
+        public void stopKeyPress()
+        {
+            oldKeys = keys = Keyboard.GetState();
         }
 
     }

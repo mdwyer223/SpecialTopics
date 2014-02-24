@@ -143,7 +143,7 @@ namespace AdlezHolder
                     {
                         MediaPlayer.Stop();
                         //save = new SaveMenu(senderButton.NEW);
-                        changeGameState(GameState.CUTSCENE);
+                        changeGameState(GameState.PLAYING);
                         ePressed = false;
                     }
 

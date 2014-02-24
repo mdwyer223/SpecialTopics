@@ -14,11 +14,11 @@ namespace AdlezHolder
 {
     public class BombTree : Microsoft.Xna.Framework.DrawableGameComponent
     {
-        KeyboardState keys, oldKeys;
         SpriteBatch spriteBatch;
         Color screenColor;
         BombUpgradeClass bombNodes;
         Character tempCharacter;
+        bool oldEnabled;
 
         public BombTree(Game game, Character character)
             : base(game)
@@ -40,12 +40,13 @@ namespace AdlezHolder
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         public override void Update(GameTime gameTime)
         {
-            keys = Keyboard.GetState();
+            if (oldEnabled != this.Enabled)
+                bombNodes.stopKeyPress();
 
             bombNodes.Update(gameTime);
 
-            oldKeys = keys;
-
+            oldEnabled = this.Enabled;
+            
             base.Update(gameTime);
         }
 

@@ -33,7 +33,8 @@ namespace AdlezHolder
         {
             tempBow = new Bow(.3f);
             bowTreeArray = tempBow.GetTree(Game1.DisplayWidth, Game1.DisplayHeight);
-            oldKeys = Keyboard.GetState();
+            keys = Keyboard.GetState();
+            oldKeys = keys;
             NodeColumnIndex = 0;
             NodeRowIndex = 1;
             infoBox = new NodeMessageBox(1);
@@ -59,6 +60,18 @@ namespace AdlezHolder
             moveNodes = 0;
             playersCash = tempCharacter.Money;
             keys = Keyboard.GetState();
+
+            if (keys.IsKeyDown(Keys.Q) && oldKeys.IsKeyUp(Keys.Q))
+            {
+                changeTreeGameState(TreeGameState.SWORDTREE);
+                return;
+            }
+            else if (keys.IsKeyDown(Keys.E) && oldKeys.IsKeyUp(Keys.E))
+            {
+                changeTreeGameState(TreeGameState.BOMBTREE);
+                return;
+            }
+
             if (keys.IsKeyDown(Keys.S) && oldKeys.IsKeyUp(Keys.S))
             {
                 lockedPurchasedMessage = "\nPress Enter to Purchase";
@@ -146,14 +159,6 @@ namespace AdlezHolder
                     wasJustPurchased = false;
                 }
             }
-            if (keys.IsKeyDown(Keys.Q) && oldKeys.IsKeyUp(Keys.Q))
-            {
-                changeTreeGameState(TreeGameState.SWORDTREE);
-            }
-            if (keys.IsKeyDown(Keys.E) && oldKeys.IsKeyUp(Keys.E))
-            {
-                changeTreeGameState(TreeGameState.BOMBTREE);
-            }
 
 
             if (lastNode != null)
@@ -232,11 +237,6 @@ namespace AdlezHolder
 
             selectedNode = bowTreeArray[NodeColumnIndex, NodeRowIndex];
 
-            if (keys.IsKeyDown(Keys.Q) && oldKeys.IsKeyUp(Keys.Q))
-            {
-                changeTreeGameState(TreeGameState.SWORDTREE);
-            }
-
 
             for (int i = 0; i < 7; i++)
             {
@@ -273,6 +273,12 @@ namespace AdlezHolder
                 bowPicture.Draw(spriteBatch);
             }
         }
+
+        public void stopKeyPress()
+        {
+            oldKeys = keys = Keyboard.GetState();
+        }
+
     }
 }
     

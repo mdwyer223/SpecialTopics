@@ -14,11 +14,12 @@ namespace AdlezHolder
 {
     public class BowTree : Microsoft.Xna.Framework.DrawableGameComponent
     {
-        KeyboardState keys, oldKeys;
         SpriteBatch spriteBatch;
         Color screenColor;
         BowUpgradeClass bowNodes;
         Character tempCharacter;
+        bool oldEnabled;
+
         public BowTree(Game game, Character character)
             : base(game)
         {
@@ -39,11 +40,12 @@ namespace AdlezHolder
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         public override void Update(GameTime gameTime)
         {
-            keys = Keyboard.GetState();
+            if (oldEnabled != this.Enabled)
+                bowNodes.stopKeyPress();
 
             bowNodes.Update(gameTime);
 
-            oldKeys = keys;
+            oldEnabled = this.Enabled;
 
             base.Update(gameTime);
         }

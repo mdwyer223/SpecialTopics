@@ -13,11 +13,11 @@ namespace AdlezHolder
 {
     public class SwordTree : Microsoft.Xna.Framework.DrawableGameComponent
     {
-        KeyboardState keys, oldKeys;
         SpriteBatch spriteBatch;
         Color screenColor;
         SwordUpgradeClass swordNodes;
         Character tempCharacter;
+        bool oldEnabled;
 
         public SwordTree(Game game, Character character)
             : base(game)
@@ -39,11 +39,12 @@ namespace AdlezHolder
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         public override void Update(GameTime gameTime)
         {
-            keys = Keyboard.GetState();
+            if (oldEnabled != this.Enabled)
+                swordNodes.stopKeyPress();
 
             swordNodes.Update(gameTime);
 
-            oldKeys = keys;
+            oldEnabled = this.Enabled;
 
             base.Update(gameTime);
         }
