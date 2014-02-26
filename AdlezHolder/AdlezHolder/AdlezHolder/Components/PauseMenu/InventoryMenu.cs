@@ -26,6 +26,7 @@ namespace AdlezHolder
         Boolean selected;
         List<Rectangle> slots;
         List<Item> items;
+        int[] counts;
         List<string> options;
 
         public InventoryMenu(Vector2 border)
@@ -139,7 +140,7 @@ namespace AdlezHolder
                         {
                             if (options.Count > 0 && items.Count > 0)
                             {
-                                items[currentIndex].chooseOption(options[optionIndex], items);
+                                items[currentIndex].chooseOption(options[optionIndex], items, this.counts);
                             }
                         }
                     }
@@ -217,8 +218,9 @@ namespace AdlezHolder
             }
         }
 
-        public void updateInvent(List<Item> newList, int slotsAvailable)
+        public void updateInvent(List<Item> newList, int[] counts, int slotsAvailable)
         {
+            this.counts = counts;
             items = newList;
             maxSlots = slotsAvailable;
         }

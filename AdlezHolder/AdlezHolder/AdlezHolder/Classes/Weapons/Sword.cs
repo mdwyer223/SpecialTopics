@@ -20,7 +20,7 @@ namespace AdlezHolder
     {
         float speed, reductionTime;
         int damage, range, originalDamage, reductionTimer;
-        bool dead = true;
+        bool dead = true, hit = false;
 
         Color color;
         Texture2D texture;
@@ -121,6 +121,8 @@ namespace AdlezHolder
 
             VampiricStone vStone = new VampiricStone(.02f, new Vector2(0, 0), 1);
             IceStone iStone = new IceStone(.02f, Vector2.Zero, 1);
+            LightningStone lStone = new LightningStone(.02f, Vector2.Zero, 5);
+            gemList.Add(lStone);
             gemList.Add(iStone);
             gemList.Add(vStone);
         }
@@ -158,9 +160,10 @@ namespace AdlezHolder
             {
                 foreach (Enemy enemy in data.Enemies)
                 {
-                    if (collisionRec.Intersects(enemy.CollisionRec) && !enemy.IsDead)
+                    if (collisionRec.Intersects(enemy.CollisionRec) && !enemy.IsDead && !hit)
                     {
                         damageEnemy(enemy, data, player);
+                        hit = true;
                     }
                 }
             }
@@ -238,23 +241,23 @@ namespace AdlezHolder
 
             Random rand = new Random();
             //check all the stats with a new randy every time
-
-            if (rand.NextDouble() < poisonChance)
+            double chance = rand.NextDouble();
+            if (chance < poisonChance)
             {
                 enemy.poison(poisonDamage, poisonDuration);
             }
-
-            if (rand.NextDouble() < burnChance)
+            chance = rand.NextDouble();
+            if (chance < burnChance)
             {
                 enemy.burn(burnDamage, burnDuration);
             }
-
-            if (rand.NextDouble() < freezeChance && !enemy.Frozen)
+            chance = rand.NextDouble();
+            if (chance < freezeChance && !enemy.Frozen)
             {
                 enemy.freeze(freezeDamage, freezeDuration);
             }
-
-            if (rand.NextDouble() <= lightningChance)
+            chance = rand.NextDouble();
+            if (chance <= lightningChance && !enemy.Stunned)
             {
                 enemy.stun(stunDuration);
             }
@@ -263,6 +266,10 @@ namespace AdlezHolder
         public void toggle(bool newValue)
         {
             dead = newValue;
+            if (newValue)
+            {
+                hit = false;
+            }
         }
 
         public void addGem(Gem gem)

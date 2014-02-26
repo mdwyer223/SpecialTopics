@@ -55,7 +55,12 @@ namespace AdlezHolder
         public bool Poisoned
         {
             get { return poisoned; }
-        }     
+        }
+
+        public bool Stunned
+        {
+            get { return stunned; }
+        }
         
         public int AttackRange
         {

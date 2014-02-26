@@ -37,6 +37,7 @@ namespace AdlezHolder
         Cutscene scene;
         ParticleHandler pHandler;
         InformationScreen infoScreen;
+        InGameEditor editor;
 
         MouseState mouse;
 
@@ -126,6 +127,10 @@ namespace AdlezHolder
             Components.Add(pHandler);
             pHandler.Visible = pHandler.Enabled = true;
 
+            editor = new InGameEditor(this);
+            Components.Add(editor);
+            editor.Enabled = editor.Visible = true;
+
             
             base.Initialize();
         }
@@ -158,6 +163,11 @@ namespace AdlezHolder
         {
             KeyboardState keys = Keyboard.GetState();
             mouse = Mouse.GetState();
+
+            if (world.Map != null)
+            {
+                editor.getMap(world.Map);
+            }
 
             if (mainGameState == GameState.PLAYING)
             {
@@ -203,7 +213,7 @@ namespace AdlezHolder
             else if (mainGameState == GameState.PAUSEMENU)
             {
                 pauseMenu.Visible = pauseMenu.Enabled = true;
-                pauseMenu.getPlayer(world.Map.Player); 
+                pauseMenu.getPlayer(world.Map.Player);  
 
                 menu.Visible = false;
                 menu.Enabled = false;

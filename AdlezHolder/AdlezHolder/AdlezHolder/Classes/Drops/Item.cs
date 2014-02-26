@@ -11,6 +11,8 @@ namespace AdlezHolder
 {
     public class Item : BaseSprite
     {
+        protected Character playerTemp;
+
         protected int value, aliveTimer, flashTimer;
         protected bool pickUp, currency, stackable, drawing;
 
@@ -106,14 +108,14 @@ namespace AdlezHolder
             return options;
         }
 
-        public virtual void chooseOption(string s, List<Item> items)
+        public virtual void chooseOption(string s, List<Item> items, int[] counts)
         {
             //compare the string to the options chosen
             switch(s)
             {
                 case "Drop":
                     {
-                        this.drop(items);
+                        this.drop(items, counts);
                         break;
                     }
             }
@@ -122,7 +124,7 @@ namespace AdlezHolder
         //********************************************
         //some sort of list should be passed to these methods
         //*********************************************
-        public virtual void drop(List<Item> items)
+        public virtual void drop(List<Item> items, int[] counts)
         {
             for (int i = 0; i < items.Count; i++ )
             {
@@ -134,6 +136,9 @@ namespace AdlezHolder
             }
         }
 
-
+        public virtual void addPlayer(Character player)
+        {
+            playerTemp = player;
+        }
     }
 }

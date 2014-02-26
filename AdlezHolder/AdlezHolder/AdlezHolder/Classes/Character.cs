@@ -241,6 +241,8 @@ namespace AdlezHolder
             canMoveRight = true;
             canMoveLeft = true;
             attacking = false;
+
+            invent.addItem(new Potion(Vector2.Zero, .04f, 2), this);
         }
 
         public override void Update(Map data, GameTime gameTime)
@@ -383,6 +385,7 @@ namespace AdlezHolder
                     playAnimation(bowAttack);
                 }
                 attack();
+                attackTimer = 0;
             }
 
             fixSpacing(data.CurrentData.Everything.ToArray(), keys);            
@@ -494,12 +497,18 @@ namespace AdlezHolder
 
         public void heal(int healPoints)
         {
-            if (healingTimer > (HEALING_SICKNESS * 1000))
+             if (healingTimer > (HEALING_SICKNESS * 1000))
             {
                 if (currentHealthPoints + healPoints <= healthPointsMax)
                 {
                     currentHealthPoints += healPoints;
                     addMessage(new Message("" + healPoints, Color.Green));
+                }
+                else
+                {
+                    int display = healthPointsMax - currentHealthPoints;
+                    currentHealthPoints = healthPointsMax;
+                    addMessage(new Message("" + display, Color.Green));
                 }
                 healingTimer = 0;
             }

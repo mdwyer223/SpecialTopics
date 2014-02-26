@@ -43,11 +43,11 @@ namespace AdlezHolder
             }
             if (Keyboard.GetState().IsKeyDown(Keys.R))
             {
-                Game1.ParticleState = ParticleState.RAIN;
+                //Game1.ParticleState = ParticleState.RAIN;
             }
             else if (Keyboard.GetState().IsKeyDown(Keys.T))
             {
-                Game1.ParticleState = ParticleState.SNOW;
+                //Game1.ParticleState = ParticleState.SNOW;
             }
             else if (Keyboard.GetState().IsKeyDown(Keys.F))
             {
@@ -59,6 +59,8 @@ namespace AdlezHolder
                 Skeleton sprite = new Skeleton(Game1.GameContent.Load<Texture2D>("ComputerPpl/Enemies/Skeleton/Move/SF"),
                     .04f, 8, new Vector2(300, 300));
                 addEnemy(sprite);
+                //Thing t = new Thing(Game1.GameContent.Load<Texture2D>("ComputerPpl/Enemies/Skeleton/Move/SF"), .04f, new Vector2(300, 400));
+                //addEnemy(t);
             }
             base.Update(map, gameTime);
 

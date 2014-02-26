@@ -133,6 +133,7 @@
     <Compile Include="Classes\Drops\Gems\LightningStone.cs" />
     <Compile Include="Classes\Drops\Money.cs" />
     <Compile Include="Classes\Drops\Gems\PoisonStone.cs" />
+    <Compile Include="Classes\Drops\Potion.cs" />
     <Compile Include="Classes\Drops\RuggedLeather.cs" />
     <Compile Include="Classes\Drops\Gems\VampiricStone.cs" />
     <Compile Include="Classes\Gameover.cs" />
@@ -172,6 +173,7 @@
     <Compile Include="Classes\Weapons\Bow.cs" />
     <Compile Include="Classes\Weapons\Projectile.cs" />
     <Compile Include="Classes\Weapons\Sword.cs" />
+    <Compile Include="Components\Admin Stuff\InGameEditor.cs" />
     <Compile Include="Components\CutscenePlayer.cs" />
     <Compile Include="Components\MainMenu\MainMenu.cs" />
     <Compile Include="Components\Particles\Particle.cs" />

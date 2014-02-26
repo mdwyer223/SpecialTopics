@@ -238,7 +238,7 @@ namespace AdlezHolder
         public void getPlayer(Character player)
         {
             stats.updatePlayer(player);
-            invent.updateInvent(player.PlayerInvent.ItemList, player.PlayerInvent.MaxSlots);
+            invent.updateInvent(player.PlayerInvent.ItemList, player.PlayerInvent.Counts, player.PlayerInvent.MaxSlots);
         }
     }
 }
