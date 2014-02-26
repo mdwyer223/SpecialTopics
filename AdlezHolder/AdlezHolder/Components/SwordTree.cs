@@ -17,7 +17,20 @@ namespace AdlezHolder
         Color screenColor;
         SwordUpgradeClass swordNodes;
         Character tempCharacter;
-        bool oldEnabled;
+
+        int count;
+        const int TICK_IN_SEC = 60;
+
+        public new bool Enabled
+        {
+            get { return base.Enabled; }
+            set
+            {
+                base.Enabled = value;
+                if (value == false)
+                    count = 0;
+            }
+        }
 
         public SwordTree(Game game, Character character)
             : base(game)
@@ -39,13 +52,11 @@ namespace AdlezHolder
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         public override void Update(GameTime gameTime)
         {
-            if (oldEnabled != this.Enabled)
-                swordNodes.stopKeyPress();
-
-            swordNodes.Update(gameTime);
-
-            oldEnabled = this.Enabled;
-
+            if (count > TICK_IN_SEC / 3)
+                swordNodes.Update(gameTime);
+            else
+                count++;
+            
             base.Update(gameTime);
         }
 

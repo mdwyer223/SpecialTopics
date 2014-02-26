@@ -64,12 +64,12 @@ namespace AdlezHolder
 
             if (keys.IsKeyDown(Keys.Q) && oldKeys.IsKeyUp(Keys.Q))
             {
-                changeTreeGameState(TreeGameState.BOWTREE);
+                changeTreeGameState(TreeGameState.SWORDTREE);
                 return;
             }
-            else if (keys.IsKeyDown(Keys.E) && oldKeys.IsKeyUp(Keys.E))
+            if (keys.IsKeyDown(Keys.E) && oldKeys.IsKeyUp(Keys.E))
             {
-                changeTreeGameState(TreeGameState.SWORDTREE);
+                changeTreeGameState(TreeGameState.BOWTREE);
                 return;
             }
 
@@ -228,7 +228,6 @@ namespace AdlezHolder
             {
                 nodeMessage = bombTreeArray[NodeColumnIndex, NodeRowIndex].getName + ":  $" + bombTreeArray[NodeColumnIndex, NodeRowIndex].getCost + lockedPurchasedMessage;
             }
-            oldKeys = keys;
 
 
 
@@ -249,6 +248,7 @@ namespace AdlezHolder
                     }
                 }
             }
+            oldKeys = keys;
 
         }
                  

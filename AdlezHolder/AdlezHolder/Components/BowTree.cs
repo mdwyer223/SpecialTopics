@@ -18,7 +18,20 @@ namespace AdlezHolder
         Color screenColor;
         BowUpgradeClass bowNodes;
         Character tempCharacter;
-        bool oldEnabled;
+
+        int count;
+        const int TICK_IN_SEC = 60;
+
+        public new bool Enabled
+        {
+            get { return base.Enabled; }
+            set
+            {
+                base.Enabled = value;
+                if (value == false)
+                    count = 0;
+            }
+        }
 
         public BowTree(Game game, Character character)
             : base(game)
@@ -40,12 +53,10 @@ namespace AdlezHolder
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         public override void Update(GameTime gameTime)
         {
-            if (oldEnabled != this.Enabled)
-                bowNodes.stopKeyPress();
-
-            bowNodes.Update(gameTime);
-
-            oldEnabled = this.Enabled;
+            if (count > TICK_IN_SEC / 3)
+                bowNodes.Update(gameTime);
+            else
+                count++;
 
             base.Update(gameTime);
         }

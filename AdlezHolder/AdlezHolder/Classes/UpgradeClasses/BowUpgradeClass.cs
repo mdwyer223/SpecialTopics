@@ -63,12 +63,12 @@ namespace AdlezHolder
 
             if (keys.IsKeyDown(Keys.Q) && oldKeys.IsKeyUp(Keys.Q))
             {
-                changeTreeGameState(TreeGameState.SWORDTREE);
+                changeTreeGameState(TreeGameState.BOMBTREE);
                 return;
             }
-            else if (keys.IsKeyDown(Keys.E) && oldKeys.IsKeyUp(Keys.E))
+            if (keys.IsKeyDown(Keys.E) && oldKeys.IsKeyUp(Keys.E))
             {
-                changeTreeGameState(TreeGameState.BOMBTREE);
+                changeTreeGameState(TreeGameState.SWORDTREE);
                 return;
             }
 
@@ -227,9 +227,6 @@ namespace AdlezHolder
             {
                 nodeMessage = bowTreeArray[NodeColumnIndex, NodeRowIndex].getName + ":  $" + bowTreeArray[NodeColumnIndex, NodeRowIndex].getCost + lockedPurchasedMessage;
             }
-            oldKeys = keys;
-
-
 
             infoBox.deleteMessage();
             infoBox.receiveMessage("Players Cash:  $" + tempCharacter.Money + "  " + nodeMessage);
@@ -249,6 +246,7 @@ namespace AdlezHolder
                     }
                 }
             }
+            oldKeys = keys;
 
         }
 
@@ -277,6 +275,7 @@ namespace AdlezHolder
         public void stopKeyPress()
         {
             oldKeys = keys = Keyboard.GetState();
+            
         }
 
     }

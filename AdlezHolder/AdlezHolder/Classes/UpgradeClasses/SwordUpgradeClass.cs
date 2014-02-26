@@ -18,7 +18,7 @@ namespace AdlezHolder
         KeyboardState keys, oldKeys;
         string nodeMessage, lockedPurchasedMessage;
         NodeMessageBox infoBox;
-        Texture2D swordImage;
+        Texture2D swordImage, bombImage, bowImage;
         UpgradeNode selectedNode, lastNode;
         UpgradeNode[,] swordTreeArray;
         int NodeColumnIndex, NodeRowIndex;
@@ -28,16 +28,21 @@ namespace AdlezHolder
         int displayWidth = Game1.DisplayWidth;
         int displayHeight = Game1.DisplayHeight;
         Sword tempSword;
-        BaseSprite swordPicture;
+        BaseSprite swordPicture, bombPicture, bowPicture;
         bool wasJustPurchased = false;
 
         public SwordUpgradeClass(Character Character)
         {
             keys = Keyboard.GetState();
             oldKeys = keys;
+            int widthSeperation;
+            widthSeperation = Game1.DisplayWidth / 20;
             tempCharacter = Character;
             NodeColumnIndex = 0;
             NodeRowIndex = 0;
+            Vector2 tempVector;
+            tempVector.X = widthSeperation;
+            tempVector.Y = ((int)(displayHeight * .05));
             tempSword = new Sword(.3f);
             swordTreeArray = tempSword.GetTree(Game1.DisplayWidth, Game1.DisplayHeight);
             nodeMessage = "";
@@ -47,8 +52,15 @@ namespace AdlezHolder
             tempSword = tempCharacter.Sword;
             lockedPurchasedMessage = "\nPress Enter to Purchase";
             swordImage = Game1.GameContent.Load<Texture2D>("sword selected");
+            bombImage = Game1.GameContent.Load<Texture2D>("bomb selected");
+            bowImage = Game1.GameContent.Load<Texture2D>("bow selected");
 
-            swordPicture = new BaseSprite(swordImage, .1f, displayWidth, 0, Vector2.One);
+            bombPicture = new BaseSprite(bombImage, .05f, displayWidth, 0,tempVector);
+            tempVector.X =  tempVector.X + (widthSeperation / 8);
+            swordPicture = new BaseSprite(swordImage, .15f, displayWidth, 0,tempVector );
+            tempVector.X = tempVector.X + (widthSeperation * 3);
+            bowPicture = new BaseSprite(bowImage, .05f, displayWidth, 0, tempVector);
+            
             tempCharacter = Character;
             playersCash = tempCharacter.Money;
             swordTreeArray = tempCharacter.Sword.GetTree(displayWidth, displayHeight);
@@ -61,15 +73,16 @@ namespace AdlezHolder
             moveNodes = 0;
             playersCash = tempCharacter.Money;
             keys = Keyboard.GetState();
+            
 
             if (keys.IsKeyDown(Keys.Q) && oldKeys.IsKeyUp(Keys.Q))
             {
-                changeTreeGameState(TreeGameState.BOMBTREE);
+                changeTreeGameState(TreeGameState.BOWTREE);
                 return;
             }
-            else if (keys.IsKeyDown(Keys.E) && oldKeys.IsKeyUp(Keys.E))
+            if (keys.IsKeyDown(Keys.E) && oldKeys.IsKeyUp(Keys.E))
             {
-                changeTreeGameState(TreeGameState.BOWTREE);
+                changeTreeGameState(TreeGameState.BOMBTREE);
                 return;
             }
 
@@ -207,17 +220,10 @@ namespace AdlezHolder
                     lockedPurchasedMessage = "\nThis Node Has Already Been Purchased";
                 }
 
-
-
-
                 if (lastNode != null)
                 {
                     lastNode.Selected = true;
                 }
-                oldKeys = keys;
-
-
-
 
                 selectedNode = swordTreeArray[NodeColumnIndex, NodeRowIndex];
 
@@ -247,12 +253,13 @@ namespace AdlezHolder
                 infoBox.update();
 
             }
+            oldKeys = keys;
         }
+
         private void changeTreeGameState(TreeGameState newState)
         {
             ItemSelectClass.CurrentTreeGameState = newState;
         }
-
 
         public void Draw(SpriteBatch spriteBatch)
         {
@@ -268,6 +275,8 @@ namespace AdlezHolder
 
                 infoBox.draw(spriteBatch);
                 swordPicture.Draw(spriteBatch);
+                bombPicture.Draw(spriteBatch);
+                bowPicture.Draw(spriteBatch);
             }
         }
 
