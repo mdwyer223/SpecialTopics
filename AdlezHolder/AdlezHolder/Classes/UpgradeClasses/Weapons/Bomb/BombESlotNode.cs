@@ -28,5 +28,10 @@ namespace AdlezHolder
             base.upgradeBomb(x);
             this.setChangesString("\nYour Enchantment Slots Have Increased By 1!");
         }
+        public override string getEffectsString()
+        {
+            return "This Increases Your Bomb's Enchantment Slots By 1! ";
+        }
+
     }
 }

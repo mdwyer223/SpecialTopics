@@ -27,5 +27,10 @@ namespace AdlezHolder
             base.upgradeBow(x);
             this.setChangesString("\nYour Bow Now Has An Extra Enchanment Slot!");
         }
+
+        public override string getEffectsString()
+        {
+            return "This Increases Your Bow's Enchantment Slots By One! ";
+        }
     }
 }

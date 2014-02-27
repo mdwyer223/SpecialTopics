@@ -13,7 +13,7 @@ namespace AdlezHolder
 {
     class SpeedSwordNode: UpgradeNode
     {
-        double multiplier = 1.25;
+        double multiplier = 1.5;
         public SpeedSwordNode(Texture2D texture, float scaleFactor, Vector2 startPosition, int price)
             : base(texture, scaleFactor, startPosition,price)
         {
@@ -28,6 +28,11 @@ namespace AdlezHolder
             this.setChangesString("\nYour Swords Speed Has Now Increased!");
         }
 
+
+        public override string getEffectsString()
+        {
+            return "This Increases Your Sword's Speed By One and a Half Times! ";
+        }
 
     }
 }

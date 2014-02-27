@@ -326,7 +326,7 @@ namespace AdlezHolder
                 menu.Visible = false;
 
                 world.Visible = false ;
-                world.Enabled = true;
+                world.Enabled = false;
 
                 healthDisplay.Visible = false;
                 healthDisplay.Enabled = false;
@@ -365,6 +365,7 @@ namespace AdlezHolder
             else if (mainGameState == GameState.UPGRADESHOP)
             {
                 spriteBatch.Begin();
+                spriteBatch.Draw(Content.Load<Texture2D>("TitleScreen"), new Rectangle(0, 0, DisplayWidth, DisplayHeight), Color.White);
                 upgradeShop.Draw(gameTime);
                 spriteBatch.End();
             }

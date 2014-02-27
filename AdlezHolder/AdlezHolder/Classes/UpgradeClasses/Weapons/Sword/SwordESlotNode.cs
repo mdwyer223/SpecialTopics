@@ -27,5 +27,11 @@ namespace AdlezHolder
             base.upgradeSword(x);
         }
 
+
+        public override string getEffectsString()
+        {
+            return "This Increases Your Sword's Enchantment Slots By One! ";
+        }
+
     }
 }

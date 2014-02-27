@@ -28,6 +28,8 @@ namespace AdlezHolder
         BombTree bombtree;
         BowTree bowtree;
         Character tempCharacter;
+        int count = 0;
+        const int TICK_IN_SEC = 60;
 
         static TreeGameState currentTreeGameState = TreeGameState.ITEMSELECT;
         public static TreeGameState CurrentTreeGameState
@@ -52,15 +54,14 @@ namespace AdlezHolder
 
             placementButton = new Button(Game1.GameContent.Load<Texture2D>("transparent"), displayWidth, Vector2.Zero);
            
-            int marginWidth = (int)(displayWidth * .1);
-            int marginHeight = (int)(displayHeight * .1);
+            int marginWidth = (int)(displayWidth * .3);
+            int marginHeight = (int)(displayHeight * .3);
            
 
             overScan.Width = displayWidth - marginWidth;
             overScan.Height = displayHeight - marginHeight;
 
             overScan.X = displayWidth + marginWidth;
-
             overScan.Y = displayHeight + marginHeight;
 
             middleScreen = overScan.Width / 2;
@@ -68,24 +69,21 @@ namespace AdlezHolder
             buttonPosition.X = middleScreen - middleButton;
 
             widthSeperation = overScan.Width / 3;
-            heightSeparation = overScan.Height / 6;
+            heightSeparation = overScan.Height / 3;
 
             startPosition.X = heightSeparation;
-            startPosition.Y = widthSeperation;
+            startPosition.Y = widthSeperation / 3;
 
 
 
             swordButton = new Button(Game1.GameContent.Load<Texture2D>("sword selected"), .3f, startPosition);
             startPosition.X = startPosition.X + widthSeperation;
-            
-            bombButton = new Button(Game1.GameContent.Load<Texture2D>("bomb selected"), .3f, startPosition);
-           
-            startPosition.X = startPosition.X + widthSeperation;
-            
+            bombButton = new Button(Game1.GameContent.Load<Texture2D>("bomb selected"), .3f, startPosition);    
+            startPosition.X = startPosition.X + widthSeperation;         
             bowButton = new Button(Game1.GameContent.Load<Texture2D>("bow selected"), .3f, startPosition);
 
             tempCharacter = new Character(Game1.GameContent.Load<Texture2D>("MenuButtons/Continue"), .3f, 4, 3, Vector2.Zero);
-            tempCharacter.addFunds(15000);
+            tempCharacter.addFunds(25000);
             
 
             swordButton.Selected = true;
@@ -104,7 +102,6 @@ namespace AdlezHolder
             bowtree.Enabled = false;
             bowtree.Initialize();
             bowtree.Visible = false;
-            this.changeTreeGameState(TreeGameState.SWORDTREE);
         }
         public void Update(GameTime gameTime)
         {
@@ -142,74 +139,88 @@ namespace AdlezHolder
                 bombtree.Enabled = false;
                 bombtree.Visible = false;
             }
-            
-                //if (keys.IsKeyDown(Keys.A) && oldKeys.IsKeyUp(Keys.A))
-                //{
-                //    if (numOfButton > 0)
-                //        numOfButton -= 1;
-                //    else
-                //    {
-                //        numOfButton = 2;
-                //    }
 
-                //}
+            if (CurrentTreeGameState == TreeGameState.ITEMSELECT)
+            {
+                swordtree.Enabled = false;
+                swordtree.Visible = false;
 
-                //if (keys.IsKeyDown(Keys.D) && oldKeys.IsKeyUp(Keys.D))
-                //{
-                //    if (numOfButton < 2)
-                //        numOfButton += 1;
-                //    else
-                //        numOfButton = 0;
+                bowtree.Enabled = false;
+                bowtree.Visible = false;
 
-                //}
+                bombtree.Enabled = false;
+                bombtree.Visible = false;
 
-                //if (numOfButton == 0)
-                //{
-                //    swordButton.Selected = true;
-                //    bombButton.Selected = false;
-                //    bowButton.Selected = false;
+                if (keys.IsKeyDown(Keys.A) && oldKeys.IsKeyUp(Keys.A))
+                {
+                    if (numOfButton > 0)
+                        numOfButton -= 1;
+                    else
+                    {
+                        numOfButton = 2;
+                    }
 
-                //}
-                //else if (numOfButton == 1)
-                //{
-                //    bombButton.Selected = true;
-                //    swordButton.Selected = false;
-                //    bowButton.Selected = false;
-                //}
-                //else if (numOfButton == 2)
-                //{
-                //    bowButton.Selected = true;
-                //    bombButton.Selected = false;
-                //    swordButton.Selected = false;
-                //}
+                }
 
-                ////Checks if enter is pressed and which button it is pressed on
-                //keys = Keyboard.GetState();
-                //if (keys.IsKeyDown(Keys.Enter) && oldKeys.IsKeyUp(Keys.Enter))
-                //{
-                //    if (numOfButton == 0)
-                //    {
-                //        this.changeTreeGameState(TreeGameState.SWORDTREE);
-                //    }
+                if (keys.IsKeyDown(Keys.D) && oldKeys.IsKeyUp(Keys.D))
+                {
+                    if (numOfButton < 2)
+                        numOfButton += 1;
+                    else
+                        numOfButton = 0;
 
-                //    else if (numOfButton == 1)
-                //    {
-                //        this.changeTreeGameState(TreeGameState.BOMBTREE);
-                //    }
-                //    else if (numOfButton == 2)
-                //    {
-                //        this.changeTreeGameState(TreeGameState.BOWTREE);
-                //    }
-                //}
+                }
+
+                if (numOfButton == 0)
+                {
+                    swordButton.Selected = true;
+                    bombButton.Selected = false;
+                    bowButton.Selected = false;
+
+                }
+                else if (numOfButton == 1)
+                {
+                    bombButton.Selected = true;
+                    swordButton.Selected = false;
+                    bowButton.Selected = false;
+                }
+                else if (numOfButton == 2)
+                {
+                    bowButton.Selected = true;
+                    bombButton.Selected = false;
+                    swordButton.Selected = false;
+                }
+
+                //Checks if enter is pressed and which button it is pressed on
+                keys = Keyboard.GetState();
+                if (keys.IsKeyDown(Keys.Enter) && oldKeys.IsKeyUp(Keys.Enter))
+                {
+                    if (numOfButton == 0)
+                    {
+                        this.changeTreeGameState(TreeGameState.SWORDTREE);
+                    }
+
+                    else if (numOfButton == 1)
+                    {
+                        this.changeTreeGameState(TreeGameState.BOMBTREE);
+                    }
+                    else if (numOfButton == 2)
+                    {
+                        this.changeTreeGameState(TreeGameState.BOWTREE);
+                    }
+
+
+
+                }
                 oldKeys = keys;
 
-            
+            }
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
             
-            if(swordtree.Enabled != true && bombtree.Enabled != true && bowtree.Enabled !=true )
+            if(CurrentTreeGameState == TreeGameState.ITEMSELECT )
             {
                 swordButton.Draw(spriteBatch);
                 bombButton.Draw(spriteBatch);

@@ -27,5 +27,10 @@ namespace AdlezHolder
             base.upgradeBomb(x);
             this.setChangesString("\nYour Bomb Now Has The Manual Denonation Ability");
         }
+
+        public override string getEffectsString()
+        {
+            return "This Gives Your Bomb The Manual Detonation Ability ";
+        }
     }
 }

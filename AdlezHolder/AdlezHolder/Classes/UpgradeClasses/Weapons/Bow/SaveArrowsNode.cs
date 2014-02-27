@@ -25,7 +25,13 @@ namespace AdlezHolder
         {
             x.SaveArrows(true);
             base.upgradeBow(x);
-            this.setChangesString("\nYour Bow Now Has Save Arrows!");
+            this.setChangesString("\nYour Bow Now Has The Save Arrows Ability!");
         }
+
+        public override string getEffectsString()
+        {
+            return "This Will Randomly Not Take Arrows From Your Inventory When You Shoot!";
+        }
+
     }
 }

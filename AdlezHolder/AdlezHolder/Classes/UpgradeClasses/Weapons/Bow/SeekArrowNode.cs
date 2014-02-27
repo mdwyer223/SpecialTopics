@@ -27,6 +27,11 @@ namespace AdlezHolder
             base.upgradeBow(x);
             this.setChangesString("\nYour Bow Now Has Seek Arrows!");
         }
+
+        public override string getEffectsString()
+        {
+            return "This Will Make Your Bow's Arrows Heat Seeking, They Will Chase Down Your Enemies!";
+        }
 }
 }
 

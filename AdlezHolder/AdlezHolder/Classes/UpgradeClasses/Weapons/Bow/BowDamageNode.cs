@@ -19,7 +19,7 @@ namespace AdlezHolder
             : base(texture, scaleFactor, startPosition, price)
         {
             this.setNodeName("Damage Node");
-            multiplier = 1;
+            multiplier = 1.5;
             this.setCost(price);
         }
 
@@ -29,5 +29,10 @@ namespace AdlezHolder
             base.upgradeBow(x);
             this.setChangesString("\nYour Bow Now Does " + x.Damage + "!!!");
         }
+        public override string getEffectsString()
+        {
+            return "This Increases Your Bow's Damage By One and a Half Times! ";
+        }
+
     }
 }

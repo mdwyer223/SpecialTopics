@@ -29,5 +29,9 @@ namespace AdlezHolder
             base.upgradeBomb(x);
             this.setChangesString("\nYour Bomb Now Does " + x.Damage  + " Damage!");
         }
+        public override string getEffectsString()
+        {
+            return "This Makes Your Damage Increase By 1 And a Half Times! ";
+        }
     }
 }

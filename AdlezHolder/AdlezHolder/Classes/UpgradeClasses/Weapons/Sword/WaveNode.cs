@@ -27,5 +27,11 @@ namespace AdlezHolder
             this.setChangesString("\nYour Sword Now Has The Wave Ability!");
         }
 
+
+        public override string getEffectsString()
+        {
+            return "This Gives Your Sword A Wave Of Damage When You Swing! ";
+        }
+
     }
 }

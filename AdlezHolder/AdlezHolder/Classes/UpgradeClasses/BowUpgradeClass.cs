@@ -18,15 +18,17 @@ namespace AdlezHolder
         UpgradeNode[,] bowTreeArray;
         KeyboardState keys, oldKeys;
         UpgradeNode selectedNode, lastNode;
+        Texture2D swordImage, bombImage, bowImage;
         int NodeColumnIndex, NodeRowIndex;
-        Texture2D bowImage = Game1.GameContent.Load<Texture2D>("bow selected");
         int moveNodes, playersCash;
         Character tempCharacter;
         Bow tempBow;
         NodeMessageBox infoBox;
-        BaseSprite bowPicture;
         string nodeMessage, lockedPurchasedMessage;
         bool wasJustPurchased = false;
+        int displayWidth = Game1.DisplayWidth;
+        int displayHeight = Game1.DisplayHeight;
+        BaseSprite swordPicture, bombPicture, bowPicture;
 
 
         public BowUpgradeClass(Character Character)
@@ -41,7 +43,25 @@ namespace AdlezHolder
             nodeMessage = bowTreeArray[NodeColumnIndex, NodeRowIndex].getName + ":  $" + bowTreeArray[NodeColumnIndex, NodeRowIndex].getCost;
             infoBox.receiveMessage("Players Cash:  $" + playersCash + "  " + nodeMessage);
             lockedPurchasedMessage = "\nPress Enter to Purchase";
-            bowPicture = new BaseSprite(bowImage, .1f, Game1.DisplayWidth, 0, Vector2.One);
+
+            int widthSeperation;
+            widthSeperation = Game1.DisplayWidth / 20;
+            Vector2 tempVector;
+            tempVector.X = widthSeperation / 2;
+            tempVector.Y = ((int)(displayHeight * .05));
+
+            swordImage = Game1.GameContent.Load<Texture2D>("sword selected");
+            bombImage = Game1.GameContent.Load<Texture2D>("bomb selected");
+            bowImage = Game1.GameContent.Load<Texture2D>("bow selected");
+
+            tempVector.Y = ((int)(displayHeight * .075));
+            bombPicture = new BaseSprite(bombImage, .035f, displayWidth, 0, tempVector);
+            tempVector.X = tempVector.X + (widthSeperation);
+            tempVector.Y = ((int)(displayHeight * .025));
+            bowPicture = new BaseSprite(bowImage, .15f, displayWidth, 0, tempVector);
+            tempVector.Y = ((int)(displayHeight * .075));
+            tempVector.X = tempVector.X + (widthSeperation * 3);
+            swordPicture = new BaseSprite(swordImage, .035f, displayWidth, 0, tempVector);
 
             NodeColumnIndex = 0;
             NodeRowIndex = 1;
@@ -71,10 +91,15 @@ namespace AdlezHolder
                 changeTreeGameState(TreeGameState.SWORDTREE);
                 return;
             }
+            if (keys.IsKeyDown(Keys.Escape) && oldKeys.IsKeyUp(Keys.Escape))
+            {
+                changeTreeGameState(TreeGameState.ITEMSELECT);
+                return;
+            }
 
             if (keys.IsKeyDown(Keys.S) && oldKeys.IsKeyUp(Keys.S))
             {
-                lockedPurchasedMessage = "\nPress Enter to Purchase";
+                lockedPurchasedMessage = "\nPress Enter to Purchase" + bowTreeArray[NodeColumnIndex, NodeRowIndex].getEffectsString();
                 wasJustPurchased = false;
                 if (bowTreeArray[NodeColumnIndex, NodeRowIndex] != null)
                 {
@@ -105,7 +130,7 @@ namespace AdlezHolder
             {
                 if (bowTreeArray[NodeColumnIndex, NodeRowIndex] != null)
                 {
-                    lockedPurchasedMessage = "\nPress Enter to Purchase";
+                    lockedPurchasedMessage = "\nPress Enter to Purchase" + bowTreeArray[NodeColumnIndex, NodeRowIndex].getEffectsString();
                     wasJustPurchased = false;
                     lastNode = bowTreeArray[NodeColumnIndex, NodeRowIndex];
                     if (NodeRowIndex != 0)
@@ -131,7 +156,7 @@ namespace AdlezHolder
 
             if (keys.IsKeyDown(Keys.A) && oldKeys.IsKeyUp(Keys.A))
             {
-                lockedPurchasedMessage = "\nPress Enter to Purchase";
+                lockedPurchasedMessage = "\nPress Enter to Purchase" + bowTreeArray[NodeColumnIndex, NodeRowIndex].getEffectsString();
                 if (NodeColumnIndex != 0)
                 {
                     lastNode = bowTreeArray[NodeColumnIndex, NodeRowIndex];
@@ -148,7 +173,7 @@ namespace AdlezHolder
 
             if (keys.IsKeyDown(Keys.D) && oldKeys.IsKeyUp(Keys.D))
             {
-                lockedPurchasedMessage = "\nPress Enter to Purchase";
+                lockedPurchasedMessage = "\nPress Enter to Purchase" + bowTreeArray[NodeColumnIndex, NodeRowIndex].getEffectsString();
                 if (NodeColumnIndex != 6)
                 {
                     lastNode = bowTreeArray[NodeColumnIndex, NodeRowIndex];
@@ -268,6 +293,8 @@ namespace AdlezHolder
                     }
                 }
                 infoBox.draw(spriteBatch);
+                bombPicture.Draw(spriteBatch);
+                swordPicture.Draw(spriteBatch);
                 bowPicture.Draw(spriteBatch);
             }
         }

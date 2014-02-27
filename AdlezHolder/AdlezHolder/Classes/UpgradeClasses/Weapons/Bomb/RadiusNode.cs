@@ -27,7 +27,12 @@ namespace AdlezHolder
         {
             x.UpgradeRadius(multiplier);
             base.upgradeBomb(x);
-            this.setChangesString("\nYour Bomb's Range Increased!");
+            this.setChangesString("\nYour Bomb's Explosion Radius Increased!");
+        }
+
+        public override string getEffectsString()
+        {
+            return "This Makes Your Bomb's Radius Increase By 1 And a Half Times! ";
         }
     }
 }

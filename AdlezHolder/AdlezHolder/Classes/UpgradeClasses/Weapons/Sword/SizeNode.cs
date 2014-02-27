@@ -28,5 +28,10 @@ namespace AdlezHolder
             this.setChangesString("\nYour Swords Size Has Now Increased!");
         }
 
+        public override string getEffectsString()
+        {
+            return "This Increases Your Swords Size One and a Quarter Times! ";
+        }
+
     }
 }

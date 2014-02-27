@@ -19,7 +19,7 @@ namespace AdlezHolder
             : base(texture, scaleFactor, startPosition, price)
         {
             this.setNodeName("Range Node");
-            multiplier = 1.25;
+            multiplier = 1.5;
             this.setCost(price);
         }
 
@@ -29,5 +29,10 @@ namespace AdlezHolder
             base.upgradeBow(x);
             this.setChangesString("\nYour Bow's Range Has Increased!");
         }
+        public override string getEffectsString()
+        {
+            return "This Increases Your Bow's Range By One and a Half Times! ";
+        }
+
     }
 }

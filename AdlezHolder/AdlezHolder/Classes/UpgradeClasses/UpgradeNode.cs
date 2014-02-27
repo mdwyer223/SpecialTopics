@@ -29,12 +29,20 @@ namespace AdlezHolder
             get { return selected; }
             set
             {
-                if (value && ImageColor != Color.OrangeRed)
+                if (value && ImageColor != Color.Black && ImageColor != Color.DarkSlateGray)
                     ImageColor = NORMAL;
                 else
                 {
-                    if (ImageColor != Color.OrangeRed)
+                    if (ImageColor != Color.Black && ImageColor != Color.DarkSlateGray)
                         ImageColor = FADED;
+                }
+                if (value == false && ImageColor == Color.Black)
+                {
+                    ImageColor = Color.DarkSlateGray;
+                }
+                else if (value && ImageColor == Color.DarkSlateGray)
+                {
+                    ImageColor = Color.Black;
                 }
                
                 selected = value;
@@ -58,7 +66,7 @@ namespace AdlezHolder
         public void purchaseItem()
         {
             purchased = true;
-            this.ImageColor = Color.OrangeRed;
+            this.ImageColor = Color.DarkSlateGray;
         }
         public void setRec(int moveAmount)
         {
@@ -109,6 +117,10 @@ namespace AdlezHolder
         }
         public virtual void upgradeBow(Bow x)
         {
+        }
+        public virtual string getEffectsString()
+        {
+            return nodeName;
         }
             
         public override void Draw(SpriteBatch spriteBatch)

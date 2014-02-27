@@ -27,6 +27,11 @@ namespace AdlezHolder
             base.upgradeBomb(x);
             this.setChangesString("\nYou Can Now Carry " + x.CarryLimit  + " Bombs!");
         }
+
+        public override string getEffectsString()
+        {
+            return "This Increases Your Carry Limit By 1!";
+        }
     }
 }
 

@@ -27,5 +27,10 @@ namespace AdlezHolder
             base.upgradeBomb(x);
             this.setChangesString("\nYour Bomb Now Has The Smoke Ability");
         }
+        public override string getEffectsString()
+        {
+            return "This Gives Your Bomb The Smoke Ability ";
+        }
+
     }
 }

@@ -20,7 +20,7 @@ namespace AdlezHolder
             : base(texture, scaleFactor, startPosition, price)
         {
             this.setNodeName("Speed Node");
-            multiplier = 1.25;
+            multiplier = 1.5;
             this.setCost(price);
         }
 
@@ -30,5 +30,10 @@ namespace AdlezHolder
             base.upgradeBow(x);
             this.setChangesString("\nYour Bow's Speed Has Increased!");
         }
+        public override string getEffectsString()
+        {
+            return "This Increases Your Bow's Arrow Speed By One and a Half Times! ";
+        }
+
     }
 }

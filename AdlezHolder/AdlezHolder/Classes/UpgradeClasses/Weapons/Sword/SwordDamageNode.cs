@@ -31,5 +31,10 @@ namespace AdlezHolder
             this.setChangesString("\nYour Sword Now Does " + x.Damage + " Damage!");
         }
 
+        public override string getEffectsString()
+        {
+            return "This Increases Your Sword's Damage By One and a Half Times! ";
+        }
+
     }
 }
