@@ -13,7 +13,8 @@ namespace AdlezHolder
 
     public class Particle
     {
-        Texture2D blankTexture;
+        Texture2D blankTexture, rainTexture;
+        Texture2D[] rainAnimation;
         Color color;
         Rectangle rec;
         Vector2 velo, position, accel = Vector2.Zero;
@@ -21,6 +22,10 @@ namespace AdlezHolder
 
         float lifeLength;
         int lifeLengthTimer;
+
+        bool stopping;
+        int secondsToTravel, travelTimer;
+        int animeIndex = 0, animeTimer;
 
         float damage;
         float damageReduction;
@@ -199,8 +204,25 @@ namespace AdlezHolder
                     getAccel();
                 }
             }
+            else if (pType == ParticleType.RAIN)
+            {
+                if (travelTimer < secondsToTravel)
+                {
+                    travelTimer++;
+                }
+                else
+                {
+                    travelTimer = secondsToTravel;
+                    rainSploosh();
+                }
+            }
+
             lifeLengthTimer += gameTime.ElapsedGameTime.Milliseconds;
-            position += velo;
+
+            if (pType != ParticleType.RAIN)
+            {
+                position += velo;
+            }
         }
 
         public void Draw(SpriteBatch spriteBatch)
@@ -223,6 +245,18 @@ namespace AdlezHolder
             {
                 accelPerTick = (float)((((rand.NextDouble() * -.00025f) * scale) / accelTime));
             }
+        }
+
+        protected void rainSploosh()
+        {
+            if(animeTimer % 10 == 0)
+            {
+                if(animeIndex + 1 < rainAnimation.Length -1)
+                {
+                    animeIndex++;
+                }
+            }
+
         }
 
         public void addGemStruct(GemStruct newStruct)

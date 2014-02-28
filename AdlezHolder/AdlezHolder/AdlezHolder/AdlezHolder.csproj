@@ -126,6 +126,7 @@
     <Compile Include="Classes\BaseSprite.cs" />
     <Compile Include="Classes\Character.cs" />
     <Compile Include="Classes\Drops\Arrow.cs" />
+    <Compile Include="Classes\Drops\Gems\BombItem.cs" />
     <Compile Include="Classes\Drops\Gems\FireStone.cs" />
     <Compile Include="Classes\Drops\Gems\Gem.cs" />
     <Compile Include="Classes\Drops\Gems\IceStone.cs" />
@@ -187,6 +188,7 @@
     <Compile Include="Components\Shop.cs" />
     <Compile Include="Components\World\DisplayComponent.cs" />
     <Compile Include="Components\World\HealthBar.cs" />
+    <Compile Include="Components\World\ItemDisplay.cs" />
     <Compile Include="Components\World\WeaponSelect.cs" />
     <Compile Include="Components\World\World.cs" />
     <Compile Include="Data\Buildings\Building4.cs" />

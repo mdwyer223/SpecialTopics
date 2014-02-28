@@ -41,8 +41,6 @@ namespace AdlezHolder
         {
             items = new List<Item>();
             maxSlots = 6;
-
-            items.Add(new VampiricStone(.02f, Vector2.Zero, 1));
         }
 
         public Inventory(List<Item> oldItems, int newMaxSlots)
@@ -53,13 +51,21 @@ namespace AdlezHolder
 
         public void addItem(Item item, Character player)
         {
+            if (currentIndex != 0 && counts[currentIndex- 1] == 0)
+            {
+                while (counts[currentIndex] == 0)
+                {
+                    currentIndex--;
+                }
+            }
+
             bool sameObj = false;
 
             for (int i = 0; i < items.Count; i++)
             {
                 if (items[i] != null)
                 {
-                    if (item.ItemName.Equals(items[i].ItemName))
+                    if (item.ItemName.Equals(items[i].ItemName) && item.IsStackable)
                     {
                         counts[i]++;
                         sameObj = true;
@@ -73,6 +79,7 @@ namespace AdlezHolder
                 {
                     item.addPlayer(player);
                     items.Add(item);
+                    counts[currentIndex]++;
                     currentIndex++;
                 }
                 else

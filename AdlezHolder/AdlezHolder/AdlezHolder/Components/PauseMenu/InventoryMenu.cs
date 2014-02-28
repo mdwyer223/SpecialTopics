@@ -141,6 +141,8 @@ namespace AdlezHolder
                             if (options.Count > 0 && items.Count > 0)
                             {
                                 items[currentIndex].chooseOption(options[optionIndex], items, this.counts);
+                                selected = false;
+                                items[currentIndex].getOptions().Remove("Cancel");
                             }
                         }
                     }
@@ -183,9 +185,21 @@ namespace AdlezHolder
                         items[i].DrawnRec.Width * 5, items[i].DrawnRec.Height * 5);
                     tagPos = new Vector2((int)(slots[i].X + (slots[i].Width / 2)) - (spriteFont.MeasureString(items[i].ItemName).X / 2), 
                         (int)(slots[i].Y + (slots[i].Height / 4)));
-                    
-                    spriteBatch.Draw(items[i].Image, iconPos, Color.White);
-                    spriteBatch.DrawString(spriteFont, items[i].ItemName, tagPos, Color.White);
+                    Vector2 numberPos = new Vector2((slots[i].X + slotWidth) - spriteFont.MeasureString("(" + counts[i] + ")").X, 
+                        (slots[i].Y + slots[i].Height) - spriteFont.MeasureString("(" + counts[i] + ")").Y);
+
+                    if (currentIndex != i)
+                    {
+                        spriteBatch.Draw(items[i].Image, iconPos, Color.White);
+                        spriteBatch.DrawString(spriteFont, items[i].ItemName, tagPos, Color.White);
+                        spriteBatch.DrawString(spriteFont, "(" + counts[i] + ")", numberPos, Color.White);
+                    }
+                    else
+                    {
+                        spriteBatch.Draw(items[i].Image, iconPos, Color.White);
+                        spriteBatch.DrawString(spriteFont, items[i].ItemName, tagPos, Color.Black);
+                        spriteBatch.DrawString(spriteFont, "(" + counts[i] + ")", numberPos, Color.Black);
+                    }
                 }
                 else if (i < maxSlots)
                 {

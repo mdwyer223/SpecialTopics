@@ -52,6 +52,11 @@ namespace AdlezHolder
                 editing = !editing;
             }
 
+            if (Game1.MainGameState != GameState.PLAYING)
+            {
+                editing = false;
+            }
+
             if (editing)
             {
                 if (enteringCommand)
@@ -532,6 +537,10 @@ namespace AdlezHolder
                     else if (option.Equals("POTION"))
                     {
                         m.CurrentData.addItem(new Potion(new Vector2(Game1.DisplayWidth / 2, Game1.DisplayHeight / 2), .02f, 2));
+                    }
+                    else if (option.Equals("BOMB"))
+                    {
+                        m.CurrentData.addItem(new BombItem(.02f, new Vector2(Game1.DisplayWidth / 2, Game1.DisplayHeight / 2)));
                     }
                     else if (option.Equals("SKELETON"))
                     {

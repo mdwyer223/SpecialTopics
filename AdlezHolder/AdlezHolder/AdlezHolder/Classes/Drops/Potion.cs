@@ -68,11 +68,6 @@ namespace AdlezHolder
             //compare the string to the options chosen
             switch (s)
             {
-                case "Drop":
-                    {
-                        this.drop(items, counts);
-                        break;
-                    }
                 case "Use":
                     {
                         if (playerTemp != null)
@@ -84,6 +79,8 @@ namespace AdlezHolder
                         break;
                     }
             }
+
+            base.chooseOption(s, items, counts);
         }
     }
 }

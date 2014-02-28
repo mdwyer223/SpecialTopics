@@ -500,8 +500,17 @@ namespace AdlezHolder
             }
             else if (dropValue <= 30)
             {
-                Arrow a = new Arrow(.02f, false, "Arrow", 20, this.Position);
-                data.addItem(a);
+                int wepSelect = rand.Next(1, 10);
+                if (wepSelect <= 7)
+                {
+                    Arrow a = new Arrow(.02f, false, "Arrow", 20, this.Position);
+                    data.addItem(a);
+                }
+                else
+                {
+                    BombItem b = new BombItem(.02f, this.Position);
+                    data.addItem(b);
+                }
             }
             else if (dropValue <= 70)
             {

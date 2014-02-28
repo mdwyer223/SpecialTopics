@@ -60,6 +60,16 @@ namespace AdlezHolder
             get { return healthPointsMax; }
         }
 
+        public int BombBag
+        {
+            get { return bombCount; }
+        }
+
+        public int Quiver
+        {
+            get { return arrowCount; }
+        }
+
         public EquippedItem ItemEquipped
         {
             get { return selectedItem; }
@@ -69,6 +79,11 @@ namespace AdlezHolder
         public bool QuiverFull
         {
             get { return arrowCount >= maxArrows; }
+        }
+
+        public bool BombBagFull
+        {
+            get { return bombCount >= maxBombs; }
         }
 
         public Sword Sword
@@ -242,7 +257,13 @@ namespace AdlezHolder
             canMoveLeft = true;
             attacking = false;
 
-            invent.addItem(new Potion(Vector2.Zero, .04f, 2), this);
+            invent.addItem(new Potion(Vector2.Zero, .02f, 2), this);
+            invent.addItem(new Potion(Vector2.Zero, .02f, 2), this);
+            invent.addItem(new Potion(Vector2.Zero, .02f, 2), this);
+            invent.addItem(new Potion(Vector2.Zero, .02f, 2), this);
+            invent.addItem(new Potion(Vector2.Zero, .02f, 2), this);
+            invent.addItem(new Potion(Vector2.Zero, .02f, 2), this);
+            invent.addItem(new Potion(Vector2.Zero, .02f, 2), this);
         }
 
         public override void Update(Map data, GameTime gameTime)
@@ -322,8 +343,16 @@ namespace AdlezHolder
             {
                 if (!bombSet)
                 {
-                    bomb.addBomb(this.position, data.CurrentData);
-                    bombSet = true;
+                    if (bombCount > 0)
+                    {
+                        bomb.addBomb(this.position, data.CurrentData);
+                        bombCount--;
+                        bombSet = true;
+                    }
+                    else
+                    {
+                        addMessage(new Message("Bomb Bag Empty!", Color.Yellow));
+                    }
                 }
                 return;
             }

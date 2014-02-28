@@ -130,7 +130,21 @@ namespace AdlezHolder
             {
                 if (items[i] == this)
                 {
-                    items.RemoveAt(i);
+                    if (counts[i] == 1)
+                    {
+                        items.RemoveAt(i);
+                        counts[i]--;
+                        for (int j = i; j < counts.Length - 1; j++)
+                        {
+                            int temp = counts[j];
+                            counts[j] = counts[j + 1];
+                            counts[j + 1] = temp;
+                        }
+                    }
+                    else
+                    {
+                        counts[i]--;
+                    }
                     break;
                 }
             }
