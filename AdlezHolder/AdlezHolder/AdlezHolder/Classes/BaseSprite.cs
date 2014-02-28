@@ -21,6 +21,59 @@ namespace AdlezHolder
 
         protected bool canMoveRight, canMoveDown, canMoveLeft, canMoveUp;
 
+        public virtual BaseSpriteStruct SaveData
+        {
+            get
+            {
+                BaseSpriteStruct data = new BaseSpriteStruct();
+                data.drawnRec.Width = drawnRec.Width;
+                data.drawnRec.Height = drawnRec.Height;
+
+                data.collisionRec.Width = collisionRec.Width;
+                data.collisionRec.Height = collisionRec.Height;
+
+                data.position = position;
+                data.color = color;
+                data.speed = speed;
+                data.invisRecWidth = invisRecWidth;
+                data.widthDifference = widthDifference;
+                data.isDead = IsDead;
+                data.isVisible = IsVisible;
+
+                data.canMoveRight = CanMoveRight;
+                data.canMoveDown = CanMoveDown;
+                data.canMoveLeft = CanMoveLeft;
+                data.canMoveUp = CanMoveUp;
+                data.saveId = "";
+
+                return data;
+            }
+            set
+            {
+                drawnRec.Width = value.drawnRec.Width;
+                drawnRec.Height = value.drawnRec.Height;
+
+                collisionRec.Width = value.collisionRec.Width;
+                collisionRec.Height = value.collisionRec.Height;
+
+                position = value.position;
+                color = value.color;
+                speed = value.speed;
+                invisRecWidth = value.invisRecWidth;
+                widthDifference = value.widthDifference;
+                IsDead = value.isDead;
+                IsVisible = value.isVisible;
+
+                canMoveRight = value.canMoveRight;
+                canMoveDown = value.canMoveDown;
+                canMoveLeft = value.canMoveLeft;
+                canMoveUp = value.canMoveUp;
+
+            }
+
+
+        }
+
         public bool CanMoveRight
         {
             get { return canMoveRight; }
@@ -66,26 +119,34 @@ namespace AdlezHolder
         {
             get 
             {
-                return new Rectangle(   
+                return new Rectangle(
                    (int)position.X + drawnRec.X,
                    (int)position.Y + drawnRec.Y,
                    drawnRec.Width,
                    drawnRec.Height);
             }
-            protected set { drawnRec = value; }
+            protected set 
+            { 
+                drawnRec.Width = value.Width;
+                drawnRec.Height = value.Height;
+            }
         }
 
-        public virtual Rectangle CollisionRec
+        public Rectangle CollisionRec
         {
             get
             {
-                return new Rectangle(   
+                return new Rectangle(
                     (int)DrawnRec.X,
                     (int)DrawnRec.Y + collisionRec.Y,
                     collisionRec.Width,
                     collisionRec.Height);
             }
-            protected set { collisionRec = value; }
+            protected set 
+            { 
+                collisionRec.Width = value.Width;
+                collisionRec.Height = value.Height;
+            }
         }
 
         public Rectangle LeftRec
@@ -134,22 +195,6 @@ namespace AdlezHolder
 
         protected BaseSprite()
         {
-        }
-
-        public void load(BaseSpriteVars inVar)
-        {
-            //image = inVar.image;
-            ImageColor = inVar.imageColor;
-            IsDead = inVar.isDead;
-            IsVisible = inVar.isVisible;
-            position = inVar.position;
-            //Center = inVar.center;
-
-            drawnRec.Width = inVar.drawnRec.Width;
-            drawnRec.Height = inVar.drawnRec.Height;
-
-            collisionRec.Width = inVar.collisionRec.Width;
-            collisionRec.Height = inVar.collisionRec.Height;
         }
 
         public BaseSprite(Texture2D texture, float scaleFactor, int inDisplayWidth, float SecondsToCrossScreen

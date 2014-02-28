@@ -12,7 +12,21 @@ namespace AdlezHolder
     public class Thing : Enemy
     {
         Random rand;
-        int teleTimer;        
+        int teleTimer;
+
+        public override BaseSpriteStruct SaveData
+        {
+            get
+            {
+                BaseSpriteStruct myData = base.SaveData;
+                myData.saveId = "ETh";
+                return myData;
+            }
+            set
+            {
+                base.SaveData = value;
+            }
+        }
 
         public Thing(Texture2D defaultTexture, float scaleFactor,  Vector2 startPosition)
             :base(defaultTexture, scaleFactor, 9, startPosition)

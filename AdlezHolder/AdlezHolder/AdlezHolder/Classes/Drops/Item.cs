@@ -23,6 +23,25 @@ namespace AdlezHolder
 
         int flashInterval = 70;
 
+        public new ItemStruct SaveData
+        {
+            get
+            {
+                ItemStruct itemData = new ItemStruct();
+                if (this.GetType() == typeof(Arrow))
+                    itemData.type = ItemType.ARROW;
+                else if (this.GetType() == typeof(Money))
+                    itemData.type = ItemType.CURRENCY;
+                else
+                    itemData.type = ItemType.CRAP; 
+
+                return itemData;
+            }
+            set
+            {
+            }
+        }
+
         public string ItemName
         {
             get { return tag; }

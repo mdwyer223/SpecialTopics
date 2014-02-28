@@ -15,6 +15,20 @@ namespace AdlezHolder
         protected bool dead, visible;
         public Vector2[] nodes;
 
+        public override BaseSpriteStruct SaveData
+        {
+            get
+            {
+                BaseSpriteStruct myData = base.SaveData;
+                myData.saveId = "BIm";
+                return myData;
+            }
+            set
+            {
+                base.SaveData = value;
+            }
+        }
+
         protected ImmovableObject()
         {
         }

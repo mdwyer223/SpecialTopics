@@ -52,8 +52,8 @@ namespace AdlezHolder
 
             if (keys.IsKeyDown(Keys.K) && oldKeys.IsKeyUp(Keys.K))
             {
-                Skeleton sprite = new Skeleton(Game1.GameContent.Load<Texture2D>("ComputerPpl/Enemies/Skeleton/Move/SF"),
-                    .04f, 8, new Vector2(300, 300));
+                Thing sprite = new Thing(Game1.GameContent.Load<Texture2D>("ComputerPpl/Enemies/Skeleton/Move/SF"),
+                    .04f, new Vector2(300, 300));
                 addEnemy(sprite);
             }
             base.Update(map, gameTime);

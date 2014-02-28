@@ -24,6 +24,49 @@ namespace AdlezHolder
         GemStruct lifestealStruct, freezeStruct, poisonStruct,
             lightningStruct, fireStruct;
 
+        public new BombStruct SaveData
+        {
+            get
+            {
+                BombStruct myStruct = new BombStruct();
+                myStruct.damage = Damage;
+
+                myStruct.maxGems = MaxGemSlots;
+                myStruct.gemsData = new GemStruct[MaxGemSlots];
+                for (int i = 0; i < gemList.Count; i++)
+                    myStruct.gemsData[i] = this.gemList[i].SaveData;
+
+                return myStruct;
+            }
+            set
+            {
+                damage = value.damage;
+                speed = (int)(value.speed + .5f);
+                gemSlots = value.maxGems;
+                this.gemList = new List<Gem>();
+
+                foreach (GemStruct gem in value.gemsData)
+                    switch (gem.type)
+                    {
+                        case GemType.FIRE:
+                            gemList.Add(new FireStone(gem));
+                            break;
+                        case GemType.FREEZE:
+                            gemList.Add(new IceStone(gem));
+                            break;
+                        case GemType.LS:
+                            gemList.Add(new VampiricStone(gem));
+                            break;
+                        case GemType.POISON:
+                            gemList.Add(new PoisonStone(gem));
+                            break;
+                        case GemType.STUN:
+                            gemList.Add(new LightningStone(gem));
+                            break;
+                    }
+            }
+        }
+
         public int Damage
         {
             get { return damage; }

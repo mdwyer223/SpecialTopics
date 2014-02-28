@@ -157,7 +157,7 @@ namespace AdlezHolder
                 {
                     case SenderButton.NEW:
                         file.save(new GameData());
-                        game.loadGame(file.Data);
+                        //game.loadGame(file.Data);
                         Game1.MainGameState = GameState.CUTSCENE;
                         break;
                     case SenderButton.LOAD:

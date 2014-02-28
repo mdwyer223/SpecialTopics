@@ -12,6 +12,11 @@ namespace AdlezHolder
     public class PoisonStone : Gem
     {
         //purple
+        public PoisonStone(GemStruct gemData)
+            : base(gemData)
+        {
+        }
+
         public PoisonStone(float scaleFactor, Vector2 startPosition, int tier)
             : base(null, scaleFactor, startPosition, "Poison Stone", 0)
         {

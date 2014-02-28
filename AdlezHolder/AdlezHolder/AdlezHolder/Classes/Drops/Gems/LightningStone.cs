@@ -12,6 +12,11 @@ namespace AdlezHolder
     public class LightningStone : Gem
     {
         //white/yellow
+        public LightningStone(GemStruct gemData)
+            : base(gemData)
+        {
+        }
+
         public LightningStone(float scaleFactor, Vector2 startPosition, int tier)
             : base(null, scaleFactor, startPosition, "Lightning Stone", 0)
         {

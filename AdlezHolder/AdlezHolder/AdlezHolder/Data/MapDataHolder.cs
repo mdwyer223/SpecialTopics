@@ -50,6 +50,8 @@ namespace AdlezHolder
             get { return backgroundDirectory; }
         }
 
+
+
         public Rectangle BackgroundRec
         {
             get { return backgroundRec; }
@@ -63,6 +65,93 @@ namespace AdlezHolder
 
         bool moveObjectsUp, moveObjectsDown,
             moveObjectsLeft, moveObjectsRight;
+
+        public MapDataStruct SaveData
+        {
+            get
+            {
+                MapDataStruct mapData = new MapDataStruct();
+
+                BaseSpriteStruct[] everythingData = new BaseSpriteStruct[Everything.Count];
+                for(int i=0; i < everything.Count; i++)
+                    everythingData[i] = everything[i].SaveData;
+                mapData.everythingData = everythingData;
+
+                if (this.GetType() == typeof(BossHall))
+                    mapData.mapId = "bHall";
+                else if (this.GetType() == typeof(BossRoom))
+                    mapData.mapId = "bRoom1";
+                else if (this.GetType() == typeof(BottomLeftCorner))
+                    mapData.mapId = "bLCorner";
+                else if (this.GetType() == typeof(BottomRightCorner))
+                    mapData.mapId = "bRCorner";
+                else if (this.GetType() == typeof(LeftHallway))
+                    mapData.mapId = "lHallway";
+                else if (this.GetType() == typeof(MainRoom))
+                    mapData.mapId = "mainRoom1";
+                else if (this.GetType() == typeof(RightHallway))
+                    mapData.mapId = "rHallway";
+                else if (this.GetType() == typeof(TopLeftCorner))
+                    mapData.mapId = "tLCorner";
+                else if (this.GetType() == typeof(TopRightCorner))
+                    mapData.mapId = "tRCorner";
+                else if (this.GetType() == typeof(LeftPassage))
+                    mapData.mapId = "lPassage"; //this will probably be changed to a better name later
+                else if (this.GetType() == typeof(Nwot))
+                    mapData.mapId = "nwot";
+
+                mapData.backgroundPath = backgroundDirectory;
+                return mapData;
+            }
+            set
+            {
+                // close, open list logic
+                // Key
+                //      Character       = 'Chr'
+                //
+                //      Torch           = 'BTo'
+                //
+                //      Immoveable      = 'BIm'
+                //      Chest           = 'ICh'
+                //      Building        = 'IBu'
+                //      Hittable        = 'IHi'
+                //      Movable         = 'IMo'
+                //      MultiTrigger    = 'IMt'
+                //      SingleTrigger   = 'ISt'
+                //      Wall            = 'IWa'
+                //      SpikeTrap       = 'BSt'
+                //      ArrowTrap       = 'BAt'
+                //      
+                //      Npc             = 'Npc'
+                //      Mage            = 'EMa'
+                //      Skeleton        = 'ESk'
+                //      Thing           = 'ETh'
+                //      Minotaur        = 'EMi'
+                //
+                //      Item stuff~~~
+                List<BaseSprite> openList = everything;
+                List<BaseSprite> closedList = new List<BaseSprite>();
+
+                foreach (BaseSprite sprite in openList)
+                {
+                    for(int i=0; i < value.everythingData.Length; i++)
+                    {
+                        if (!closedList.Contains(sprite) && // sprite.GetType() != typeof(Wall) &&
+                            sprite.SaveData.saveId.Equals(value.everythingData[i].saveId))
+                        {
+                            closedList.Add(sprite);
+                            sprite.SaveData = value.everythingData[i];
+                        }
+                    }
+
+                }
+
+                if (value.backgroundPath != null)
+                    background = Game1.GameContent.Load<Texture2D>(value.backgroundPath);               
+
+            }
+        }
+        
 
         public List<ImmovableObject> AllObjects
         {
@@ -100,37 +189,9 @@ namespace AdlezHolder
             protected set { position = value; }
         }
 
-        public void load(MapDataHolderVars inMDHVar)
+        public void load(MapStruct inMDHStruct)
         {
-            for (int i = 0; i < inMDHVar.everything.Count; i++)
-            {
-                everything[i].load(inMDHVar.everything[i]);
-            }
-
-            for (int i = 0; i < inMDHVar.objects.Count; i++)
-            {
-                objects[i].load(inMDHVar.objects[i]);
-            }
-            // spikeTraps
-            // arrowTraps
-
-            for (int i = 0; i < inMDHVar.enemies.Count; i++)
-            {
-                enemies[i].load(inMDHVar.enemies[i]);
-            }
-            // npcs = inMDHVar.npcs;
-
-            //tripWires = inMDHVar.tripWires;
-            //arrowTraps = inMDHVar.arrowTraps;
-            //chests = inMDHVar.chests;
-
-            background = Game1.GameContent.Load<Texture2D>(inMDHVar.backgroundDirectory);
-            backgroundRec.Width = inMDHVar.backgroundRec.Width;
-            backgroundRec.Height = inMDHVar.backgroundRec.Height;
-            position = inMDHVar.position;
-            // this.adjustObjectsBackgroundTripWires(-inMDHVar.position);
-            // music
-
+            this.SaveData = inMDHStruct.mapData;
         }
 
         public MapDataHolder()

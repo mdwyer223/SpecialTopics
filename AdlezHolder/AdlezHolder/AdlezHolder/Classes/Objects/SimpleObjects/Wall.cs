@@ -11,15 +11,17 @@ namespace AdlezHolder
 {
     public class Wall : ImmovableObject
     {
-        public override Rectangle CollisionRec
+        public override BaseSpriteStruct SaveData
         {
             get
             {
-                return collisionRec;
+                BaseSpriteStruct myData = base.SaveData;
+                myData.saveId = "IWa";
+                return myData;
             }
-            protected set
+            set
             {
-                collisionRec = value;
+                base.SaveData = value;
             }
         }
 

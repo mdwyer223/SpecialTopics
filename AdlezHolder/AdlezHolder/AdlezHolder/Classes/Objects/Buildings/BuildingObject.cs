@@ -11,6 +11,20 @@ namespace AdlezHolder
 {
     public class BuildingObject : ImmovableObject
     {
+        public override BaseSpriteStruct SaveData
+        {
+            get
+            {
+                BaseSpriteStruct myData = base.SaveData;
+                myData.saveId = "IBu";
+                return myData;
+            }
+            set
+            {
+                base.SaveData = value;
+            }
+        }
+
         public BuildingObject(Texture2D texture, float scaleFactor, Vector2 start)
             : base(texture, scaleFactor, 0, start)
         {

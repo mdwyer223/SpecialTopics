@@ -15,6 +15,20 @@ namespace AdlezHolder
         MessageBox box;
         bool isTalking;
 
+        public override BaseSpriteStruct SaveData
+        {
+            get
+            {
+                BaseSpriteStruct myData = base.SaveData;
+                myData.saveId = "Npc";
+                return myData;
+            }
+            set
+            {
+                base.SaveData = value;
+            }
+        }
+
         public Rectangle TalkRec
         {
             get { return new Rectangle(LeftRec.X, TopRec.Y, (RightRec.X + RightRec.Width) - LeftRec.X, (BottomRec.Y + BottomRec.Height) - TopRec.Y); }

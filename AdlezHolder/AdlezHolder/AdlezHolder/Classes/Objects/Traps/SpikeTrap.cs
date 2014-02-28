@@ -16,6 +16,20 @@ namespace AdlezHolder
         bool active, inactive;
         Texture2D[] spikes;
 
+        public override BaseSpriteStruct SaveData
+        {
+            get
+            {
+                BaseSpriteStruct myData = base.SaveData;
+                myData.saveId = "BSt";
+                return myData;
+            }
+            set
+            {
+                base.SaveData = value;
+            }
+        }
+
         /// <summary>
         /// 
         /// </summary>

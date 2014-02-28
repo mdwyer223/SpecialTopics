@@ -540,7 +540,7 @@ namespace AdlezHolder
                     numOptions = gemChoices.Count;
 
                     optionsRec = new Rectangle((int)vec.X, (int)vec.Y, 100, optionHeight * numOptions);
-                    spriteBatch.Draw(Game1.GameContent.Load<Texture2D>("The best thing ever"), optionsRec, Color.White);
+                    spriteBatch.Draw(Game1.GameContent.Load<Texture2D>("Random/The best thing ever"), optionsRec, Color.White);
 
                     for (int k = 0; k < gemChoices.Count; k++)
                     {

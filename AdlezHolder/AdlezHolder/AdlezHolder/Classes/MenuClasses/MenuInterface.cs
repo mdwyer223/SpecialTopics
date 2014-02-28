@@ -165,7 +165,7 @@ namespace AdlezHolder
             }
             else
             {
-                //save.Update(gameTime);
+                save.Update(gameTime);
             }
 
         }
@@ -181,7 +181,7 @@ namespace AdlezHolder
             }
             else
             {
-                //save.Draw(spriteBatch);
+                save.Draw(spriteBatch);
             }
         }
 

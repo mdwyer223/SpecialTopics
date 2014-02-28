@@ -45,19 +45,19 @@ namespace AdlezHolder
             backgroundRec = new Rectangle(0, 0, background.Width, background.Height);
 
             Wall wall = new Wall(new Rectangle(130, 215 - backgroundRec.Height, backgroundRec.Width, backgroundRec.Height),
-                Game1.GameContent.Load<Texture2D>("The best thing ever"), new Vector2(130, 215 - backgroundRec.Height));
+                Game1.GameContent.Load<Texture2D>("Random/The best thing ever"), new Vector2(130, 215 - backgroundRec.Height));
             addImmovable(wall);
 
             wall = new Wall(new Rectangle(129 - backgroundRec.Width, 215, backgroundRec.Width, backgroundRec.Width),
-                Game1.GameContent.Load<Texture2D>("The best thing ever"), new Vector2(129 - backgroundRec.Width, 215));
+                Game1.GameContent.Load<Texture2D>("Random/The best thing ever"), new Vector2(129 - backgroundRec.Width, 215));
             addImmovable(wall);
 
             wall = new Wall(new Rectangle(852, 216, backgroundRec.Width, backgroundRec.Height),
-                Game1.GameContent.Load<Texture2D>("The best thing ever"), new Vector2(852, 216));
+                Game1.GameContent.Load<Texture2D>("Random/The best thing ever"), new Vector2(852, 216));
             addImmovable(wall);
 
             wall = new Wall(new Rectangle(130, backgroundRec.Height, backgroundRec.Width, backgroundRec.Height),
-                Game1.GameContent.Load<Texture2D>("The best thing ever"), new Vector2(130, backgroundRec.Height));
+                Game1.GameContent.Load<Texture2D>("Random/The best thing ever"), new Vector2(130, backgroundRec.Height));
             addImmovable(wall);
 
             Texture2D metalCrate = Game1.GameContent.Load<Texture2D>("Box/MetalBox");
@@ -115,7 +115,7 @@ namespace AdlezHolder
             addImmovable(hittable);
 
            MovableObject mover2 = new MovableObject(metalCrate, .05f, Game1.DisplayWidth,
-                7, new Vector2(179, 297));
+                7, new Vector2(170, 297));
             addMovable(mover2);
 
             hittable = new ImmovableObject(metalCrate, .05f,

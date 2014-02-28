@@ -17,6 +17,20 @@ namespace AdlezHolder
         int frame, frameTimer, frameTimeLength, lightValue;
         const int higestSwitch = 12, lowestSwitch = 5;
 
+        public override BaseSpriteStruct SaveData
+        {
+            get
+            {
+                BaseSpriteStruct myData = base.SaveData;
+                myData.saveId = "BTo";
+                return myData;
+            }
+            set
+            {
+                base.SaveData = value;
+            }
+        }
+
         public int LightingValue
         {
             get { return lightValue; }

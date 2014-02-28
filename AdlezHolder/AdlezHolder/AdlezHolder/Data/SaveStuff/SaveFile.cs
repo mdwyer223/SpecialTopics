@@ -59,7 +59,7 @@ namespace AdlezHolder
             device = StorageDevice.EndShowSelector(result);
 
             result = device.BeginOpenContainer(SAVE_LOCATION, null, null);
-
+            //if result.IsCompleted
             result.AsyncWaitHandle.WaitOne();
 
             container = device.EndOpenContainer(result);
@@ -73,6 +73,7 @@ namespace AdlezHolder
             }
 
             container.Dispose();
+            //storage container = null
             myData = saveData.clone();
         }
 

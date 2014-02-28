@@ -19,6 +19,11 @@ namespace AdlezHolder
         }
 
         //cyan
+        public IceStone(GemStruct gemData)
+            : base(gemData)
+        {
+        }
+
         public IceStone(float scaleFactor, Vector2 startPosition, int tier)
             : base(null, scaleFactor, startPosition, "Ice Stone", 0)
         {

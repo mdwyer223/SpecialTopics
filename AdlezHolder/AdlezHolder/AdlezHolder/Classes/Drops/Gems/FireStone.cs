@@ -12,6 +12,11 @@ namespace AdlezHolder
     public class FireStone : Gem
     {
         //orange
+        public FireStone(GemStruct gemData)
+            : base(gemData)
+        {
+        }
+
         public FireStone(float scaleFactor, Vector2 startPosition, int tier)
             :base(null, scaleFactor, startPosition, "Fire Stone", 0)
         {
