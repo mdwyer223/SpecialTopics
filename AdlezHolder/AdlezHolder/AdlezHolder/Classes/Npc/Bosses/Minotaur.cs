@@ -11,6 +11,21 @@ namespace AdlezHolder
 {
     public class Minotaur : RangedEnemy
     {
+
+        public override BaseSpriteStruct SaveData
+        {
+            get
+            {
+                BaseSpriteStruct myData = base.SaveData;
+                myData.saveId = "EMi";
+                return myData;
+            }
+            set
+            {
+                base.SaveData = value;
+            }
+        }
+
         public Minotaur(Texture2D defaultTexture, float scaleFactor, Vector2 startPosition)
             :base(defaultTexture, scaleFactor, 9, startPosition)
         {

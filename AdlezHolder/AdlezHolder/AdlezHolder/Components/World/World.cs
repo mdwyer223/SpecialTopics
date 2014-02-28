@@ -31,8 +31,7 @@ namespace AdlezHolder
         public World(Game game)
             : base(game)
         {
-            screenColor = Color.Green;
-            
+            screenColor = Color.Green;            
         }
         
         public override void Initialize()
@@ -40,13 +39,13 @@ namespace AdlezHolder
             map = new Map();
 
             map.changeMap(new TestingField());
-
+                
             base.Initialize();
         }
 
         public void load(GameData dataFile)
         {
-            map.load(dataFile.mapVars);
+            map.load(dataFile.mapStruct);
         }
 
         protected override void LoadContent()

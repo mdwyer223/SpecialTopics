@@ -20,6 +20,20 @@ namespace AdlezHolder
         Texture2D projectileImage;
         Vector2 arrowVelocity;
 
+        public override BaseSpriteStruct SaveData
+        {
+            get
+            {
+                BaseSpriteStruct myData = base.SaveData;
+                myData.saveId = "BAt";
+                return myData;
+            }
+            set
+            {
+                base.SaveData = value;
+            }
+        }
+
         public ArrowTrap(float scaleFactor, Vector2 startPosition, Vector2 velocity)
             : base(Game1.GameContent.Load<Texture2D>("Traps/arrowtrap"), 
             scaleFactor, Game1.DisplayWidth, 0, startPosition)

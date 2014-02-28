@@ -20,6 +20,11 @@ namespace AdlezHolder
         }
 
         //white/yellow
+        public LightningStone(GemStruct gemData)
+            : base(gemData)
+        {
+        }
+
         public LightningStone(float scaleFactor, Vector2 startPosition, int tier)
             : base(Game1.GameContent.Load<Texture2D>("Items/YellowStone"), scaleFactor, startPosition, "Lightning Stone", 0)
         {

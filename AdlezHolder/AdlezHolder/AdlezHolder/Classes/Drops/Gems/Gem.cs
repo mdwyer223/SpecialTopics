@@ -9,11 +9,42 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace AdlezHolder
 {
-    public class Gem : Item
+    public abstract class Gem : Item
     {
         protected int damage, tier;
         protected bool collected;
         float applyDamageTime, chance;
+
+        public new GemStruct SaveData
+        {
+            get
+            {
+                GemStruct data = new GemStruct();
+                data.damage = Damage;
+                data.chance = Chance;
+                data.duration = Duration;
+                if (this.GetType() == typeof(FireStone))
+                    data.type = GemType.FIRE;
+                else if (this.GetType() == typeof(IceStone))
+                    data.type = GemType.FREEZE;
+                else if (this.GetType() == typeof(VampiricStone))
+                    data.type = GemType.LS;
+                else if (this.GetType() == typeof(PoisonStone))
+                    data.type = GemType.POISON;
+                else if (this.GetType() == typeof(LightningStone))
+                    data.type = GemType.STUN;   
+                                
+                return data;
+            }
+            set
+            {
+                damage = value.damage;
+                chance = value.chance;
+                Duration = value.duration;
+            }
+
+
+        }
 
         public int Damage
         {
@@ -35,6 +66,11 @@ namespace AdlezHolder
 
         private Gem()
         {
+        }
+
+        public Gem(GemStruct gemData)
+        {
+            this.SaveData = gemData;
         }
 
         public Gem(Texture2D texture, float scaleFactor, Vector2 startPosition, string tag, int value)

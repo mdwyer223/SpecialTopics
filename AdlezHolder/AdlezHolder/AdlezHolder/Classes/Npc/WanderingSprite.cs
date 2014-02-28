@@ -9,7 +9,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace AdlezHolder
 {
-    public class WanderingSprite : AnimatedSprite
+    public abstract class WanderingSprite : AnimatedSprite
     {
         int moveCount, moveIndex;
         bool isWaiting, runWander;

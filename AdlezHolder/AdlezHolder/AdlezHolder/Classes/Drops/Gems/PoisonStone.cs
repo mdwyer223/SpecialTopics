@@ -11,12 +11,18 @@ namespace AdlezHolder
 {
     public class PoisonStone : Gem
     {
+
         public override bool Dead
         {
             get
             {
                 return collected || base.Dead;
             }
+        }
+
+        public PoisonStone(GemStruct gemData)
+            : base(gemData)
+        {
         }
 
         public PoisonStone(float scaleFactor, Vector2 startPosition, int tier)

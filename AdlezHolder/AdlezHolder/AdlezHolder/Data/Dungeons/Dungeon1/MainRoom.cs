@@ -21,7 +21,8 @@ namespace AdlezHolder
         public MainRoom()
             : base()
         {
-            background = Game1.GameContent.Load<Texture2D>("BackgroundsAndFloors/Dungeons/FixedDungeon1/MainRoom");
+            backgroundDirectory = "BackgroundsAndFloors/Dungeons/FixedDungeon1/MainRoom";
+            background = Game1.GameContent.Load<Texture2D>(backgroundDirectory);
             backgroundRec = new Rectangle(0, 0, (int)(background.Width), (int)(background.Height));
 
             updateCorners();
@@ -82,7 +83,7 @@ namespace AdlezHolder
 
             int x = (Game1.DisplayWidth - background.Width) / 2;
             int y = (Game1.DisplayHeight - background.Height);
-            adjustObjectsBackgroundTripWires(new Vector2(x, y), true);
+            //adjustObjectsBackgroundTripWires(new Vector2(x, y), true);
 
             music = Game1.GameContent.Load<Song>("Music/DungeonTheme1");
   
@@ -155,7 +156,7 @@ namespace AdlezHolder
             else if (player.Direction == Orientation.DOWN)
             {
                 player.Position = new Vector2(407, 211);
-                adjustObjectsBackgroundTripWires(new Vector2(-94, -8), true);
+                //adjustObjectsBackgroundTripWires(new Vector2(-94, -8), true);
             }
             else if (player.Direction == Orientation.UP)
             {

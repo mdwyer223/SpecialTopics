@@ -14,6 +14,20 @@ namespace AdlezHolder
     {
         protected Trigger[] triggers;
 
+        public override BaseSpriteStruct SaveData
+        {
+            get
+            {
+                BaseSpriteStruct myData = base.SaveData;
+                myData.saveId = "IMt";
+                return myData;
+            }
+            set
+            {
+                base.SaveData = value;
+            }
+        }
+
         public MultiTriggerObject(Game1 game, Texture2D texture, Texture2D triggerFirstImage,
             Texture2D triggerSecondImage, Vector2 objectStart, Trigger[] triggers, float scaleFactor,
             int displayWidth, float secondsToCrossScreen)

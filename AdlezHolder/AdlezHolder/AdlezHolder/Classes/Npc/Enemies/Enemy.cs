@@ -20,7 +20,6 @@ namespace AdlezHolder
         // knight:tanky,slow
         // shock wave mage        
         // ranger
-        public enum Attribute { POISON, FIRE, ICE, LIGHTNING, VAMPIRISM };
 
         protected FullAnimation attackAn; // move some animations to AnimatiedSprite
 
@@ -109,7 +108,7 @@ namespace AdlezHolder
         }
 
         public bool HasEle { get; protected set; }
-        public Attribute Atrib { get; protected set; }
+        public GemType Atrib { get; protected set; }
         public GemStruct Gem { get; protected set; }
 
         private static int randSeed;
@@ -140,34 +139,34 @@ namespace AdlezHolder
                 {
                     case 0://Fire
                         ImageColor = new Color(255, 40, 0);
-                        Atrib = Attribute.FIRE;
+                        Atrib = GemType.FIRE;
                         gem.damage = 10;
                         gem.duration = 3;
                         gem.chance = .30f;
                         break;
                     case 1://Poison
                         ImageColor = new Color(180, 0, 200);
-                        Atrib = Attribute.POISON;
+                        Atrib = GemType.POISON;
                         gem.damage = 3;
                         gem.duration = 10;
                         gem.chance = .30f;
                         break;
                     case 2://Ice
                         ImageColor = new Color(0, 0, 170);
-                        Atrib = Attribute.ICE;
+                        Atrib = GemType.FREEZE;
                         gem.damage = 1; //* base + base,  const damage reduction
                         gem.duration = 3;
                         gem.chance = .20f;
                         break;
                     case 3://Lightning
                         ImageColor = new Color(120, 100, 0);
-                        Atrib = Attribute.LIGHTNING;
+                        Atrib = GemType.STUN;
                         gem.duration = 2;
                         gem.chance = .25f;
                         break;
                     case 4://Vampirism
                         ImageColor = new Color(120, 0, 0);
-                        Atrib = Attribute.VAMPIRISM;
+                        Atrib = GemType.LS;
                         gem.chance = .30f;
                         break;
                 }
@@ -642,7 +641,7 @@ namespace AdlezHolder
                     attackTimer = 0;
                     isAttacking = false;
                     data.Player.damage(this);
-                    if (this.Atrib == Attribute.VAMPIRISM)
+                    if (this.Atrib == GemType.LS)
                     {
                         Random rand = new Random();
                         int vampHP = (int)((Strength * .1f) + .5f);

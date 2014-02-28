@@ -19,7 +19,7 @@ namespace AdlezHolder
     {
         public enum SelectedMenu
         {
-            RESUME, WEPSTAT, INVENTORY, WORLDMAP, SAVE, QUIT
+            RESUME, WEPSTAT, INVENTORY, WORLDMAP, LOAD, SAVE, QUIT
         }
 
         List<SelectedMenu> menus;
@@ -31,7 +31,7 @@ namespace AdlezHolder
         int menuIndex, prevSelected, vertDistance;
         SpriteBatch spriteBatch;
         SpriteFont spriteFont;
-        Vector2 position, textSize, nextText, inventPos, mapPos, resumePos, savePos, quitPos, border, wepStatsPos;
+        Vector2 position, textSize, nextText, inventPos, mapPos, resumePos, loadPos, savePos, quitPos, border, wepStatsPos;
         Rectangle screenRect;
         Boolean inTabs = true;
         Game1 game1;
@@ -47,7 +47,7 @@ namespace AdlezHolder
             spriteFont = game.Content.Load<SpriteFont>("SpriteFont1");
             screenRect = new Rectangle((int)(game.GraphicsDevice.Viewport.Width * .05), (int)(game.GraphicsDevice.Viewport.Height * .05), (int)(game.GraphicsDevice.Viewport.Width * .9), (int)(game.GraphicsDevice.Viewport.Height * .9));
 
-            vertDistance = (int)(screenRect.Height / 6); 
+            vertDistance = (int)(screenRect.Height / 7); 
             textSize = spriteFont.MeasureString("Weapon Stats");
 
             position = new Vector2(screenRect.X, screenRect.Y);
@@ -60,10 +60,12 @@ namespace AdlezHolder
             mapPos = new Vector2((position.X + textSize.X) - nextText.X, (position.Y + 3 * vertDistance));
             nextText = spriteFont.MeasureString("Weapon Stats");
             wepStatsPos = new Vector2((position.X + textSize.X) - nextText.X, (position.Y + vertDistance));
+            nextText = spriteFont.MeasureString("Load");
+            loadPos = new Vector2((position.X + textSize.X) - nextText.X, (position.Y + 4 * vertDistance));
             nextText = spriteFont.MeasureString("Save");
-            savePos = new Vector2((position.X + textSize.X) - nextText.X, (position.Y + 4 * vertDistance));
+            savePos = new Vector2((position.X + textSize.X) - nextText.X, (position.Y + 5 * vertDistance));
             nextText = spriteFont.MeasureString("Quit");
-            quitPos = new Vector2((position.X + textSize.X) - nextText.X, (position.Y + 5 * vertDistance));
+            quitPos = new Vector2((position.X + textSize.X) - nextText.X, (position.Y + 6 * vertDistance));
             spriteBatch = new SpriteBatch(game.GraphicsDevice);
 
             border = new Vector2((position.X + textSize.X), 0);
@@ -74,12 +76,14 @@ namespace AdlezHolder
             menus.Add(SelectedMenu.WEPSTAT);
             menus.Add(SelectedMenu.INVENTORY);
             menus.Add(SelectedMenu.WORLDMAP);
+            menus.Add(SelectedMenu.LOAD);
             menus.Add(SelectedMenu.SAVE);
             menus.Add(SelectedMenu.QUIT);
 
             selected = new List<Color>();
 
             selected.Add(Color.Black);
+            selected.Add(Color.White);
             selected.Add(Color.White);
             selected.Add(Color.White);
             selected.Add(Color.White);
@@ -92,6 +96,7 @@ namespace AdlezHolder
             tabNames.Add("Weapon Stats");
             tabNames.Add("Inventory");
             tabNames.Add("World Map");
+            tabNames.Add("Load");
             tabNames.Add("Save");
             tabNames.Add("Quit");
 
@@ -101,6 +106,7 @@ namespace AdlezHolder
             positions.Add(wepStatsPos);
             positions.Add(inventPos);
             positions.Add(mapPos);
+            positions.Add(loadPos);
             positions.Add(savePos);
             positions.Add(quitPos);
 
@@ -135,7 +141,7 @@ namespace AdlezHolder
                     menuIndex--;
                     if (menuIndex < 0)
                     {
-                        menuIndex = 5;
+                        menuIndex = 6;
                     }
                     currentMenu = menus[menuIndex];
                     selected[menuIndex] = Color.Red;
@@ -146,7 +152,7 @@ namespace AdlezHolder
                 if (keys.IsKeyDown(Keys.S) && oldKeys.IsKeyUp(Keys.S))
                 {
                     menuIndex++;
-                    if (menuIndex > 5)
+                    if (menuIndex > 6)
                     {
                         menuIndex = 0;
                     }
@@ -160,7 +166,7 @@ namespace AdlezHolder
             if (keys.IsKeyDown(Keys.Enter) && oldKeys.IsKeyUp(Keys.Enter))
             {
                 inTabs = false;
-                for(int y = 0; y < 6; y++)
+                for(int y = 0; y < 7; y++)
                 {
                     selected[y] = Color.Gray;
                 }
@@ -170,7 +176,7 @@ namespace AdlezHolder
             if (keys.IsKeyDown(Keys.Escape) && oldKeys.IsKeyUp(Keys.Escape))
             {
                 inTabs = true;
-                for (int y = 0; y < 6; y++)
+                for (int y = 0; y < 7; y++)
                 {
                     selected[y] = Color.White;
                 }
@@ -192,7 +198,7 @@ namespace AdlezHolder
 
             if (inTabs)
             {
-                for (int x = 0; x < 6; x++)
+                for (int x = 0; x < 7; x++)
                 {
                     spriteBatch.DrawString(spriteFont, tabNames[x], positions[x], selected[x]);
                 }
@@ -226,8 +232,16 @@ namespace AdlezHolder
                 {
                     spriteBatch.DrawString(spriteFont, "Unavailable in the alpha.", new Vector2(351, 208), Color.White);
                 }
+                else if (currentMenu == SelectedMenu.LOAD)
+                {
+                    SaveFile file = new SaveFile(1);
+                    file.load();
+                        game1.loadGame(file.Data);
+                        Game1.MainGameState = GameState.PLAYING;
+                
+                }
 
-                for (int x = 0; x < 6; x++)
+                for (int x = 0; x < 7; x++)
                 {
                     spriteBatch.DrawString(spriteFont, tabNames[x], positions[x], selected[x]);
                 }

@@ -9,13 +9,6 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace AdlezHolder
 {
-    public struct GemStruct
-    {
-        public float duration;
-        public int damage;
-        public float chance;
-    }
-
     public class Sword
     {
         float speed, reductionTime;
@@ -31,6 +24,53 @@ namespace AdlezHolder
 
         GemStruct lifestealStruct, freezeStruct, poisonStruct, 
             lightningStruct, fireStruct;
+
+        public new SwordStruct SaveData
+        {
+            get
+            {
+                SwordStruct myStruct = new SwordStruct();
+                myStruct.damage = Damage;
+                myStruct.speed = Speed;
+                myStruct.range = Range;
+
+                myStruct.maxGems = MaxGemSlots;
+                myStruct.gemsData = new GemStruct[MaxGemSlots];
+                for(int i=0; i < gemList.Count; i++)
+                    myStruct.gemsData[i] = this.gemList[i].SaveData;
+
+                return myStruct;
+            }
+            set
+            {
+                damage = value.damage;
+                speed = value.speed;
+                range = value.range;
+                gemSlots = value.maxGems;
+                this.gemList = new List<Gem>();
+
+                foreach(GemStruct gem in value.gemsData)
+                    switch (gem.type)
+                    {
+                        case GemType.FIRE:
+                            gemList.Add(new FireStone(gem));
+                            break;
+                        case GemType.FREEZE:
+                            gemList.Add(new IceStone(gem));
+                            break;
+                        case GemType.LS:
+                            gemList.Add(new VampiricStone(gem));
+                            break;
+                        case GemType.POISON:
+                            gemList.Add(new PoisonStone(gem));
+                            break;
+                        case GemType.STUN:
+                            gemList.Add(new LightningStone(gem));
+                            break;
+                    }
+
+            }
+        }
 
         public float Speed
         {
@@ -231,6 +271,8 @@ namespace AdlezHolder
             }
             else
                 damage = originalDamage;
+
+            enemy.damage(data, damage);
 
             if (vampirePercent > 0)
             {

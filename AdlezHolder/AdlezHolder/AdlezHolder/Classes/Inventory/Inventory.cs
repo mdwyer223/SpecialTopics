@@ -17,6 +17,32 @@ namespace AdlezHolder
         int arrowCount, bombCount;
         int maxSlots;
 
+        public ItemStruct[] SaveData
+        {
+            get
+            {
+                ItemStruct[] savaData = new ItemStruct[MaxSlots];
+                for(int i=0; i< items.Count; i++)
+                    savaData[i] = items[i].SaveData;
+
+                return savaData;
+            }
+            set
+            {
+                items = new List<Item>();
+                for (int i = 0; i < value.Length; i++)
+                {
+                    if (value[i].type == ItemType.ARROW)
+                        items.Add(new Arrow(.02f, false, "Wooden Arrow", 10, Vector2.Zero));
+                    else if (value[i].type == ItemType.CURRENCY)
+                    {
+                    }
+                    else
+                        items.Add(new RuggedLeather());
+                }
+            }
+        }
+
         public bool Full
         {
             get { return items.Count == maxSlots; }

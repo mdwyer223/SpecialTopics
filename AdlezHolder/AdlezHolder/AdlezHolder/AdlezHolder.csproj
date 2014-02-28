@@ -222,6 +222,7 @@
     <Compile Include="Data\SaveStuff\Guts\MapDataHolderVars.cs" />
     <Compile Include="Data\SaveStuff\Guts\MapVars.cs" />
     <Compile Include="Data\SaveStuff\SaveFile.cs" />
+    <Compile Include="Data\SaveStuff\SaveStructs.cs" />
     <Compile Include="Data\TestingField.cs" />
     <Compile Include="Game2.cs" />
     <Compile Include="InformationScreen.cs" />

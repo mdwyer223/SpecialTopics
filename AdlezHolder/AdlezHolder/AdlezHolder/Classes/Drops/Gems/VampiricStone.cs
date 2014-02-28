@@ -19,6 +19,11 @@ namespace AdlezHolder
             }
         }
 
+        public VampiricStone(GemStruct gemData)
+            : base(gemData)
+        {
+        }
+
         public VampiricStone(float scaleFactor, Vector2 startPosition, int tier)
             :base(Game1.GameContent.Load<Texture2D>("Items/MagentaStone"), scaleFactor, startPosition, "Vampiric Stone", 50)
         {

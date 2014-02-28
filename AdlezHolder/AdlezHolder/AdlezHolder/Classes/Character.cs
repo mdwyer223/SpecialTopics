@@ -13,7 +13,7 @@ using Microsoft.Xna.Framework.Input;
 namespace AdlezHolder
 {        
     public enum EquippedItem { SWORD, BOW, BOMB, NONE }
-    
+
     public class Character : AnimatedSprite
     {
         List<Message> messages;
@@ -38,6 +38,51 @@ namespace AdlezHolder
 
         private GemStruct burnTotal, freezeTotal, stunTotal, poisonTotal;
         private int burnTimer, freezeTimer, stunTimer, poisonTimer;
+
+        public new CharacterStruct SaveData
+        {
+            get
+            {
+                CharacterStruct myStruct = new CharacterStruct();
+                myStruct.BaseStruct = base.SaveData;
+                myStruct.currentHP = currentHealthPoints;
+                myStruct.maxHP = MaxHitPoints;
+                myStruct.currency = money;
+
+                myStruct.inventData = invent.SaveData;
+
+                myStruct.swordData = sword.SaveData;
+                myStruct.bombData = bomb.SaveData;
+                myStruct.bowData = bow.SaveData;
+
+                myStruct.maxArrows = maxArrows;
+                myStruct.maxBombs = maxBombs;
+                myStruct.arrowCount = arrowCount;
+                myStruct.bombCount = bombCount;
+                myStruct.BaseStruct.saveId = "Chr";
+
+                return myStruct;
+            }
+            set
+            {
+                base.SaveData = value.BaseStruct;
+                healthPointsMax = value.maxHP;
+                HitPoints = value.currentHP;
+                money = value.currency;
+
+                invent.SaveData = value.inventData;
+
+                sword.SaveData = value.swordData;
+                bomb.SaveData = value.bombData;
+                bow.SaveData = value.bowData;
+
+                maxArrows = value.maxArrows;
+                maxBombs = value.maxBombs;
+                arrowCount = value.arrowCount;
+                bombCount = value.bombCount;
+
+            }
+        }
         
         public int Speed
         {
@@ -106,18 +151,24 @@ namespace AdlezHolder
             get { return invent; }
         }
 
-        public void load(CharacterVars inPlayerVar)
+        public void load(MapStruct mapStruct)
         {
-            sword = inPlayerVar.sword;
-            HitPoints = inPlayerVar.curHealth;
-            speed = inPlayerVar.speed;
-            base.load(inPlayerVar);
-            construct();
+            SaveData = mapStruct.playerData;
         }
 
         public Character(Texture2D defaultTexture, float scaleFactor, int displayWidth, float secondsToCrossScreen, Vector2 start)
             : base(defaultTexture, scaleFactor, displayWidth, secondsToCrossScreen, start)
         {
+            currentHealthPoints = healthPointsMax = 500;
+            arrowCount = bombCount = 0;
+            maxBombs = 10;
+            maxArrows = 30;
+
+            canMoveDown = true;
+            canMoveUp = true;
+            canMoveRight = true;
+            canMoveLeft = true;
+            attacking = false;
             construct();
         }
 
@@ -244,11 +295,6 @@ namespace AdlezHolder
 
             playAnimation(Idle);
 
-            currentHealthPoints = healthPointsMax = 500;
-            arrowCount = bombCount = 0;
-            maxBombs = 10;
-            maxArrows = 30;
-
             damaged = Game1.GameContent.Load<SoundEffect>("Music/SFX/Hit By Enemy");
 
             canMoveDown = true;
@@ -308,6 +354,15 @@ namespace AdlezHolder
                 immunityTimer = (int)(IMMUNITY_TIME * 1000) + 1;
             }
 
+            if (healingTimer < (HEALING_SICKNESS * 1000))
+            {
+                healingTimer += gameTime.ElapsedGameTime.Milliseconds;
+            }
+            else
+            {
+                healingTimer = (int)(HEALING_SICKNESS * 1000) + 1;
+            }
+
             updateAffects();
             if (stunTotal.duration > 0)
                 return;
@@ -355,24 +410,6 @@ namespace AdlezHolder
                     }
                 }
                 return;
-            }
-
-            if (immunityTimer < (IMMUNITY_TIME * 1000))
-            {
-                immunityTimer += gameTime.ElapsedGameTime.Milliseconds;
-            }
-            else
-            {
-                immunityTimer = (int)(IMMUNITY_TIME * 1000) + 1;
-            }
-
-            if (healingTimer < (HEALING_SICKNESS * 1000))
-            {
-                healingTimer += gameTime.ElapsedGameTime.Milliseconds;
-            }
-            else
-            {
-                healingTimer = (int)(HEALING_SICKNESS * 1000) + 1;
             }
 
             if (keys.IsKeyDown(Keys.W))
@@ -507,16 +544,16 @@ namespace AdlezHolder
             {
                 switch (enemy.Atrib)
                 {
-                    case Enemy.Attribute.FIRE:
+                    case GemType.FIRE:
                         burn(enemy.Gem);
                         break;
-                    case Enemy.Attribute.ICE:
+                    case GemType.FREEZE:
                         freeze(enemy.Gem);
                         break;
-                    case Enemy.Attribute.LIGHTNING:
+                    case GemType.STUN:
                         stun(enemy.Gem);
                         break;
-                    case Enemy.Attribute.POISON:
+                    case GemType.POISON:
                         poison(enemy.Gem);
                         break;
                 }
@@ -739,8 +776,9 @@ namespace AdlezHolder
                             position += vecToMove;
                         }
                     }
-                    else if (objectsColliding[i].GetType().IsSubclassOf(typeof(ImmovableObject))
-                        || objectsColliding[i].GetType().IsSubclassOf(typeof(Enemy)))
+                    else if (objectsColliding[i].GetType() == typeof(ImmovableObject) ||
+                        objectsColliding[i].GetType().IsSubclassOf(typeof(ImmovableObject)) || 
+                        objectsColliding[i].GetType().IsSubclassOf(typeof(Enemy)))
                     {
                         canMoveRight = direction != Orientation.RIGHT;
                         canMoveDown = direction != Orientation.DOWN;

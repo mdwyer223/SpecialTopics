@@ -11,7 +11,7 @@ namespace AdlezHolder
 {
     public class Arrow : Item
     {
-        bool steel, wooden, collected;
+        bool steel, collected;
 
         public override bool Dead
         {
@@ -31,7 +31,6 @@ namespace AdlezHolder
         {
             collected = false;
             this.steel = steel;
-            wooden = !steel;
 
             if (steel)
             {

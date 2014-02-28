@@ -12,6 +12,21 @@ namespace AdlezHolder
 {
     public class Skeleton : Enemy
     {
+
+        public override BaseSpriteStruct SaveData
+        {
+            get
+            {
+                BaseSpriteStruct myData = base.SaveData;
+                myData.saveId = "ESk";
+                return myData;
+            }
+            set
+            {
+                base.SaveData = value;
+            }
+        }
+
         public Skeleton(Texture2D defaultTexture, float scaleFactor, int SecondsToCrossScreen, Vector2 startPosition)
             : base(defaultTexture, scaleFactor, SecondsToCrossScreen, startPosition)
         {
@@ -74,13 +89,13 @@ namespace AdlezHolder
             damaged = Game1.GameContent.Load<SoundEffect>("Music/SFX/Hit Enemy");
 
 
-            this.Strength = 15;
-            this.HitPoints = this.MaxHealthPoints = 200;
         }
 
         protected override void setAttributes()
         {
-            
+
+            this.Strength = 15;
+            this.HitPoints = this.MaxHealthPoints = 200;
         }
 
         public override void damage(MapDataHolder data, int hit)

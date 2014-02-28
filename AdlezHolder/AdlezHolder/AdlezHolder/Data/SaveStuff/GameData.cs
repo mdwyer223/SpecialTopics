@@ -12,25 +12,25 @@ namespace AdlezHolder
     [Serializable]
     public class GameData
     {
-        public MapVars mapVars;
+        public MapStruct mapStruct;
 
         public GameData()
         {
             Map map = new Map();
-            map.changeMap(new MainRoom());            
+            map.changeMap(new MainRoom());
 
-            mapVars = new MapVars(map);
+            mapStruct = map.SaveData;
         }
 
         public GameData(Map inMap)
         {
-            mapVars = new MapVars(inMap);
+            mapStruct = inMap.SaveData;
         }  
 
         public GameData clone()
         {
             GameData newData = new GameData();
-            newData.mapVars = this.mapVars;
+            newData.mapStruct = this.mapStruct;
 
             return newData;
         }

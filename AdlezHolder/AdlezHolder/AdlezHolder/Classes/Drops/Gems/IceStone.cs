@@ -27,6 +27,11 @@ namespace AdlezHolder
         }
 
         //cyan
+        public IceStone(GemStruct gemData)
+            : base(gemData)
+        {
+        }
+
         public IceStone(float scaleFactor, Vector2 startPosition, int tier)
             : base(Game1.GameContent.Load<Texture2D>("Items/CyanStone"), scaleFactor, startPosition, "Ice Stone", 0)
         {
