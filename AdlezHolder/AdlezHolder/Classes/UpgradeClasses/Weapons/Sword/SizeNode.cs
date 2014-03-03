@@ -30,7 +30,7 @@ namespace AdlezHolder
 
         public override string getEffectsString()
         {
-            return "This Increases Your Swords Size One and a Quarter Times! ";
+            return "\nThis Increases Your Swords Size One and a Quarter Times! ";
         }
 
     }

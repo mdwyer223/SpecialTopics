@@ -31,7 +31,7 @@ namespace AdlezHolder
         }
         public override string getEffectsString()
         {
-            return "This Increases The Amount of Bows You Shoot By 1! ";
+            return "\nThis Increases The Amount of Bows You Shoot By 1! ";
         }
     }
 }

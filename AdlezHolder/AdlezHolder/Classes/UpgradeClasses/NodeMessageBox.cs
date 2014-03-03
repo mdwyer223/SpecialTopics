@@ -58,6 +58,7 @@ namespace AdlezHolder
                                 {
                                     if (spaceIndex > 0)
                                     {
+                                        
                                         tempString = currentMessage.Substring(nextLineCount) + message.Substring(prevSpaceIndex + 1, spaceIndex - prevSpaceIndex - 1);
                                     }
                                     else
@@ -177,6 +178,7 @@ namespace AdlezHolder
             this.message = message;
             messageSize = spritefont.MeasureString(this.message);
             messageLength = message.Length;
+            prevSpaceIndex = 0;
         }
         public int getLength
         {

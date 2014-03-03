@@ -32,7 +32,7 @@ namespace AdlezHolder
 
         public override string getEffectsString()
         {
-            return "This Makes Your Bomb's Radius Increase By 1 And a Half Times! ";
+            return "\nThis Makes Your Bomb's Radius Increase By 1 And a Half Times! ";
         }
     }
 }

@@ -137,6 +137,7 @@
     <Compile Include="Classes\Drops\VampiricStone.cs" />
     <Compile Include="Classes\Gameover.cs" />
     <Compile Include="Classes\Inventory\Inventory.cs" />
+    <Compile Include="Classes\ItemShop\ItemShop.cs" />
     <Compile Include="Classes\MenuClasses\Button.cs" />
     <Compile Include="Classes\MenuClasses\MenuInterface.cs" />
     <Compile Include="Classes\MenuClasses\SaveMenu.cs" />

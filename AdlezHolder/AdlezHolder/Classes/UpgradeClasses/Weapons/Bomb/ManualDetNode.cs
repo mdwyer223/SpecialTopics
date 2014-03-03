@@ -30,7 +30,7 @@ namespace AdlezHolder
 
         public override string getEffectsString()
         {
-            return "This Gives Your Bomb The Manual Detonation Ability ";
+            return "\nThis Gives Your Bomb The Manual Detonation Ability ";
         }
     }
 }

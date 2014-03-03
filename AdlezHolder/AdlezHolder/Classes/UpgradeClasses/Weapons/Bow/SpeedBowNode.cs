@@ -32,7 +32,7 @@ namespace AdlezHolder
         }
         public override string getEffectsString()
         {
-            return "This Increases Your Bow's Arrow Speed By One and a Half Times! ";
+            return "\nThis Increases Your Bow's Arrow Speed By One and a Half Times! ";
         }
 
     }

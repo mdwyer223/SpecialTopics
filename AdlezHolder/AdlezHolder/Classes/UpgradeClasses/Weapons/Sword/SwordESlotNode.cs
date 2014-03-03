@@ -30,7 +30,7 @@ namespace AdlezHolder
 
         public override string getEffectsString()
         {
-            return "This Increases Your Sword's Enchantment Slots By One! ";
+            return "\nThis Increases Your Sword's Enchantment Slots By One! ";
         }
 
     }

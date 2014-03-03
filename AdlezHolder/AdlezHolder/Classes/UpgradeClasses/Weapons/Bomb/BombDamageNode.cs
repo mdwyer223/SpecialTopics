@@ -31,7 +31,7 @@ namespace AdlezHolder
         }
         public override string getEffectsString()
         {
-            return "This Makes Your Damage Increase By 1 And a Half Times! ";
+            return "\nThis Makes Your Damage Increase By 1 And a Half Times! ";
         }
     }
 }

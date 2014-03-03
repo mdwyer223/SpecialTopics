@@ -102,7 +102,6 @@ namespace AdlezHolder
             if (keys.IsKeyDown(Keys.S) && oldKeys.IsKeyUp(Keys.S))
             {
                 wasJustPurchased = false;
-                lockedPurchasedMessage = "\nPress Enter to Purchase" + swordTreeArray[NodeColumnIndex, NodeRowIndex].getEffectsString();
                 if (swordTreeArray[NodeColumnIndex, NodeRowIndex] != null)
                 {
                     lastNode = swordTreeArray[NodeColumnIndex, NodeRowIndex];
@@ -118,12 +117,14 @@ namespace AdlezHolder
                     if (swordTreeArray[NodeColumnIndex, NodeRowIndex] != null)
                     {
                         swordTreeArray[NodeColumnIndex, NodeRowIndex].Selected = false;
+                        lockedPurchasedMessage = "\nPress Enter to Purchase" + swordTreeArray[NodeColumnIndex, NodeRowIndex].getEffectsString();
                     }
                     else
                     {
                         NodeRowIndex = 1;
                         swordTreeArray[NodeColumnIndex, NodeRowIndex].Selected = false;
                         lastNode = swordTreeArray[1, 0];
+                        lockedPurchasedMessage = "\nPress Enter to Purchase" + swordTreeArray[NodeColumnIndex, NodeRowIndex].getEffectsString();
                     }
 
                 }
@@ -132,7 +133,6 @@ namespace AdlezHolder
             if (keys.IsKeyDown(Keys.W) && oldKeys.IsKeyUp(Keys.W))
             {
                 wasJustPurchased = false;
-                lockedPurchasedMessage = "\nPress Enter to Purchase" + swordTreeArray[NodeColumnIndex, NodeRowIndex].getEffectsString();
                 if (swordTreeArray[NodeColumnIndex, NodeRowIndex] != null)
                 {
                     lastNode = swordTreeArray[NodeColumnIndex, NodeRowIndex];
@@ -147,19 +147,20 @@ namespace AdlezHolder
                     if (swordTreeArray[NodeColumnIndex, NodeRowIndex] != null)
                     {
                         swordTreeArray[NodeColumnIndex, NodeRowIndex].Selected = false;
+                        lockedPurchasedMessage = "\nPress Enter to Purchase" + swordTreeArray[NodeColumnIndex, NodeRowIndex].getEffectsString();
                     }
                     else
                     {
                         NodeRowIndex = 1;
                         swordTreeArray[NodeColumnIndex, NodeRowIndex].Selected = false;
                         lastNode = swordTreeArray[1, 0];
+                        lockedPurchasedMessage = "\nPress Enter to Purchase" + swordTreeArray[NodeColumnIndex, NodeRowIndex].getEffectsString();
                     }
                 }
             }
 
             if (keys.IsKeyDown(Keys.A) && oldKeys.IsKeyUp(Keys.A))
             {
-                lockedPurchasedMessage = "\nPress Enter to Purchase" + swordTreeArray[NodeColumnIndex, NodeRowIndex].getEffectsString();
                 if (NodeColumnIndex != 0)
                 {
                     wasJustPurchased = false;
@@ -168,6 +169,7 @@ namespace AdlezHolder
                     NodeRowIndex = 1;
                     swordTreeArray[NodeColumnIndex, NodeRowIndex].Selected = false;
                     moveNodes = 150;
+                    lockedPurchasedMessage = "\nPress Enter to Purchase" + swordTreeArray[NodeColumnIndex, NodeRowIndex].getEffectsString();
                 }
 
 
@@ -176,7 +178,6 @@ namespace AdlezHolder
 
             if (keys.IsKeyDown(Keys.D) && oldKeys.IsKeyUp(Keys.D))
             {
-                lockedPurchasedMessage = "\nPress Enter to Purchase" + swordTreeArray[NodeColumnIndex, NodeRowIndex].getEffectsString();
                 if (NodeColumnIndex != 6)
                 {
                     wasJustPurchased = false;
@@ -185,6 +186,7 @@ namespace AdlezHolder
                     NodeRowIndex = 1;
                     swordTreeArray[NodeColumnIndex, NodeRowIndex].Selected = false;
                     moveNodes = -150;
+                    lockedPurchasedMessage = "\nPress Enter to Purchase" + swordTreeArray[NodeColumnIndex, NodeRowIndex].getEffectsString();
                 }
             }            
 

@@ -29,7 +29,7 @@ namespace AdlezHolder
         }
         public override string getEffectsString()
         {
-            return "This Gives Your Bomb The Smoke Ability ";
+            return "\nThis Gives Your Bomb The Smoke Ability ";
         }
 
     }

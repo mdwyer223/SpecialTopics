@@ -99,7 +99,6 @@ namespace AdlezHolder
 
             if (keys.IsKeyDown(Keys.S) && oldKeys.IsKeyUp(Keys.S))
             {
-                lockedPurchasedMessage = "\nPress Enter to Purchase" + bowTreeArray[NodeColumnIndex, NodeRowIndex].getEffectsString();
                 wasJustPurchased = false;
                 if (bowTreeArray[NodeColumnIndex, NodeRowIndex] != null)
                 {
@@ -116,12 +115,14 @@ namespace AdlezHolder
                     if (bowTreeArray[NodeColumnIndex, NodeRowIndex] != null)
                     {
                         bowTreeArray[NodeColumnIndex, NodeRowIndex].Selected = false;
+                        lockedPurchasedMessage = "\nPress Enter to Purchase" + bowTreeArray[NodeColumnIndex, NodeRowIndex].getEffectsString();
                     }
                     else
                     {
                         NodeRowIndex = 1;
                         bowTreeArray[NodeColumnIndex, NodeRowIndex].Selected = false;
                         lastNode = bowTreeArray[1, 0];
+                        lockedPurchasedMessage = "\nPress Enter to Purchase" + bowTreeArray[NodeColumnIndex, NodeRowIndex].getEffectsString();
                     }
                 }
             }
@@ -130,12 +131,12 @@ namespace AdlezHolder
             {
                 if (bowTreeArray[NodeColumnIndex, NodeRowIndex] != null)
                 {
-                    lockedPurchasedMessage = "\nPress Enter to Purchase" + bowTreeArray[NodeColumnIndex, NodeRowIndex].getEffectsString();
                     wasJustPurchased = false;
                     lastNode = bowTreeArray[NodeColumnIndex, NodeRowIndex];
                     if (NodeRowIndex != 0)
                     {
                         NodeRowIndex = (NodeRowIndex - 1) % 3;
+                       
                     }
                     else
                     {
@@ -144,19 +145,20 @@ namespace AdlezHolder
                     if (bowTreeArray[NodeColumnIndex, NodeRowIndex] != null)
                     {
                         bowTreeArray[NodeColumnIndex, NodeRowIndex].Selected = false;
+                        lockedPurchasedMessage = "\nPress Enter to Purchase" + bowTreeArray[NodeColumnIndex, NodeRowIndex].getEffectsString();
                     }
                     else
                     {
                         NodeRowIndex = 1;
                         bowTreeArray[NodeColumnIndex, NodeRowIndex].Selected = false;
                         lastNode = bowTreeArray[1, 0];
+                        lockedPurchasedMessage = "\nPress Enter to Purchase" + bowTreeArray[NodeColumnIndex, NodeRowIndex].getEffectsString();
                     }
                 }
             }
 
             if (keys.IsKeyDown(Keys.A) && oldKeys.IsKeyUp(Keys.A))
             {
-                lockedPurchasedMessage = "\nPress Enter to Purchase" + bowTreeArray[NodeColumnIndex, NodeRowIndex].getEffectsString();
                 if (NodeColumnIndex != 0)
                 {
                     lastNode = bowTreeArray[NodeColumnIndex, NodeRowIndex];
@@ -165,6 +167,7 @@ namespace AdlezHolder
                     bowTreeArray[NodeColumnIndex, NodeRowIndex].Selected = false;
                     moveNodes = 75;
                     wasJustPurchased = false;
+                    lockedPurchasedMessage = "\nPress Enter to Purchase" + bowTreeArray[NodeColumnIndex, NodeRowIndex].getEffectsString();
                 }
 
 
@@ -173,7 +176,6 @@ namespace AdlezHolder
 
             if (keys.IsKeyDown(Keys.D) && oldKeys.IsKeyUp(Keys.D))
             {
-                lockedPurchasedMessage = "\nPress Enter to Purchase" + bowTreeArray[NodeColumnIndex, NodeRowIndex].getEffectsString();
                 if (NodeColumnIndex != 6)
                 {
                     lastNode = bowTreeArray[NodeColumnIndex, NodeRowIndex];
@@ -182,6 +184,7 @@ namespace AdlezHolder
                     bowTreeArray[NodeColumnIndex, NodeRowIndex].Selected = false;
                     moveNodes = -75;
                     wasJustPurchased = false;
+                    lockedPurchasedMessage = "\nPress Enter to Purchase" + bowTreeArray[NodeColumnIndex, NodeRowIndex].getEffectsString();
                 }
             }
 
@@ -197,7 +200,7 @@ namespace AdlezHolder
                 {
                     if (tempCharacter.Money >= bowTreeArray[NodeColumnIndex, NodeRowIndex].getCost)
                     {
-                        nodeMessage = "Purchase Complete";
+                        lockedPurchasedMessage = "\nPurchase Complete";
                         wasJustPurchased = true;
                         bowTreeArray[NodeColumnIndex, NodeRowIndex].upgradeBow(tempBow);
                         bowTreeArray[NodeColumnIndex, NodeRowIndex].purchaseItem();

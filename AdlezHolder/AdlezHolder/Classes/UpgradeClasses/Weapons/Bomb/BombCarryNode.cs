@@ -30,7 +30,7 @@ namespace AdlezHolder
 
         public override string getEffectsString()
         {
-            return "This Increases Your Carry Limit By 1!";
+            return "\nThis Increases Your Carry Limit By 1!";
         }
     }
 }

@@ -13,7 +13,7 @@ using Microsoft.Xna.Framework.Media;
 namespace AdlezHolder
 {
     class WaveNode : UpgradeNode
-     {
+    {
         public WaveNode(Texture2D texture, float scaleFactor, Vector2 startPosition, int price)
             : base(texture, scaleFactor, startPosition, price)
         {
@@ -30,7 +30,7 @@ namespace AdlezHolder
 
         public override string getEffectsString()
         {
-            return "This Gives Your Sword A Wave Of Damage When You Swing! ";
+            return "\nThis Gives Your Sword A Wave Of Damage When You Swing! ";
         }
 
     }

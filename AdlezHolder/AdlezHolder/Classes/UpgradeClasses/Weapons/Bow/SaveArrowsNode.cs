@@ -30,7 +30,7 @@ namespace AdlezHolder
 
         public override string getEffectsString()
         {
-            return "This Will Randomly Not Take Arrows From Your Inventory When You Shoot!";
+            return "\nThis Will Randomly Not Take Arrows From Your Inventory When You Shoot!";
         }
 
     }

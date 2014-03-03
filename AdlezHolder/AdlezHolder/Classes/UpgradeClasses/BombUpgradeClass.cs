@@ -98,7 +98,7 @@ namespace AdlezHolder
 
             if (keys.IsKeyDown(Keys.S) && oldKeys.IsKeyUp(Keys.S))
             {
-                lockedPurchasedMessage = "\nPress Enter to Purchase" + bombTreeArray[NodeColumnIndex,NodeRowIndex].getEffectsString();
+               
                 wasJustPurchased = false;
                 if (bombTreeArray[NodeColumnIndex, NodeRowIndex] != null)
                 {
@@ -115,12 +115,14 @@ namespace AdlezHolder
                     if (bombTreeArray[NodeColumnIndex, NodeRowIndex] != null)
                     {
                         bombTreeArray[NodeColumnIndex, NodeRowIndex].Selected = false;
+                        lockedPurchasedMessage = "\nPress Enter to Purchase" + bombTreeArray[NodeColumnIndex, NodeRowIndex].getEffectsString();
                     }
                     else
                     {
                         NodeRowIndex = 1;
                         bombTreeArray[NodeColumnIndex, NodeRowIndex].Selected = false;
                         lastNode = bombTreeArray[1, 0];
+                        lockedPurchasedMessage = "\nPress Enter to Purchase" + bombTreeArray[NodeColumnIndex, NodeRowIndex].getEffectsString();
                     }
                 }
             }
@@ -129,7 +131,6 @@ namespace AdlezHolder
             {
                 if (bombTreeArray[NodeColumnIndex, NodeRowIndex] != null)
                 {
-                    lockedPurchasedMessage = "\nPress Enter to Purchase" + bombTreeArray[NodeColumnIndex, NodeRowIndex].getEffectsString();
                     wasJustPurchased = false;
                     lastNode = bombTreeArray[NodeColumnIndex, NodeRowIndex];
                     if (NodeRowIndex != 0)
@@ -143,19 +144,20 @@ namespace AdlezHolder
                     if (bombTreeArray[NodeColumnIndex, NodeRowIndex] != null)
                     {
                         bombTreeArray[NodeColumnIndex, NodeRowIndex].Selected = false;
+                        lockedPurchasedMessage = "\nPress Enter to Purchase" + bombTreeArray[NodeColumnIndex, NodeRowIndex].getEffectsString();
                     }
                     else
                     {
                         NodeRowIndex = 1;
                         bombTreeArray[NodeColumnIndex, NodeRowIndex].Selected = false;
                         lastNode = bombTreeArray[1, 0];
+                        lockedPurchasedMessage = "\nPress Enter to Purchase" + bombTreeArray[NodeColumnIndex, NodeRowIndex].getEffectsString();
                     }
                 }
             }
 
             if (keys.IsKeyDown(Keys.A) && oldKeys.IsKeyUp(Keys.A))
             {
-                lockedPurchasedMessage = "\nPress Enter to Purchase" + bombTreeArray[NodeColumnIndex, NodeRowIndex].getEffectsString();
                 if (NodeColumnIndex != 0)
                 {
                     lastNode = bombTreeArray[NodeColumnIndex, NodeRowIndex];
@@ -164,6 +166,7 @@ namespace AdlezHolder
                     bombTreeArray[NodeColumnIndex, NodeRowIndex].Selected = false;
                     moveNodes = 75;
                     wasJustPurchased = false;
+                    lockedPurchasedMessage = "\nPress Enter to Purchase" + bombTreeArray[NodeColumnIndex, NodeRowIndex].getEffectsString();
                 }
 
 
@@ -172,7 +175,6 @@ namespace AdlezHolder
 
             if (keys.IsKeyDown(Keys.D) && oldKeys.IsKeyUp(Keys.D))
             {
-                lockedPurchasedMessage = "\nPress Enter to Purchase" + bombTreeArray[NodeColumnIndex, NodeRowIndex].getEffectsString();
                 if (NodeColumnIndex != 6)
                 {
                     lastNode = bombTreeArray[NodeColumnIndex, NodeRowIndex];
@@ -181,6 +183,7 @@ namespace AdlezHolder
                     bombTreeArray[NodeColumnIndex, NodeRowIndex].Selected = false;
                     moveNodes = -75;
                     wasJustPurchased = false;
+                    lockedPurchasedMessage = "\nPress Enter to Purchase" + bombTreeArray[NodeColumnIndex, NodeRowIndex].getEffectsString();
                 }
             }
 
@@ -196,7 +199,7 @@ namespace AdlezHolder
                 {
                     if (tempCharacter.Money >= bombTreeArray[NodeColumnIndex, NodeRowIndex].getCost)
                     {
-                        nodeMessage = "Purchase Complete";
+                        lockedPurchasedMessage = "\nPurchase Complete";
                         wasJustPurchased = true;
                         bombTreeArray[NodeColumnIndex, NodeRowIndex].upgradeBomb(tempBomb);
                         bombTreeArray[NodeColumnIndex, NodeRowIndex].purchaseItem();

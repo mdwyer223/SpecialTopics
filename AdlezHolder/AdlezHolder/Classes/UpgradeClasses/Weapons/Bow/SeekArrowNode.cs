@@ -30,7 +30,7 @@ namespace AdlezHolder
 
         public override string getEffectsString()
         {
-            return "This Will Make Your Bow's Arrows Heat Seeking, They Will Chase Down Your Enemies!";
+            return "\nThis Will Make Your Bow's Arrows Heat Seeking, They Will Chase Down Your Enemies!";
         }
 }
 }

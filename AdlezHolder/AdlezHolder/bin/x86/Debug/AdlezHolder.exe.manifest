@@ -93,14 +93,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="AdlezHolder.exe" size="162304">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="AdlezHolder.exe" size="162816">
       <assemblyIdentity name="AdlezHolder" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>fB8mEWi+iiJD4ee0o6ZNNQOlLMg=</dsig:DigestValue>
+        <dsig:DigestValue>buFeHA71YK2CQ+Su3a26ADdvJ4E=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -1496,7 +1496,7 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>jYCWHh6NgMV0g6xEh97Rwgv3NVU=</dsig:DigestValue>
+      <dsig:DigestValue>/B+k0og0kwHuNfZRmwyoh2+xv10=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\Music\DungeonTheme1.xnb" size="131">
@@ -1532,7 +1532,7 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>Yosg4MEF1/15iyJRuutWnbq60Yk=</dsig:DigestValue>
+      <dsig:DigestValue>J7b0zke9MwVIyZXN0fa+cvHhHgE=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\Music\Theme.xnb" size="123">
@@ -1550,7 +1550,7 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>HOLyL8WcCOWXh3GiIeQMnS8rfic=</dsig:DigestValue>
+      <dsig:DigestValue>tWTMrl6GPaXi3QZbTpBWyohfnZs=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\Music\TravelingSong.xnb" size="131">
