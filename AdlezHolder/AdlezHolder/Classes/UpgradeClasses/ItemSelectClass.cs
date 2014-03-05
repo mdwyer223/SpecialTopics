@@ -30,6 +30,7 @@ namespace AdlezHolder
         Character tempCharacter;
         int count = 0;
         const int TICK_IN_SEC = 60;
+        BasicItemShop bItemShop;
 
         static TreeGameState currentTreeGameState = TreeGameState.ITEMSELECT;
         public static TreeGameState CurrentTreeGameState
@@ -102,130 +103,139 @@ namespace AdlezHolder
             bowtree.Enabled = false;
             bowtree.Initialize();
             bowtree.Visible = false;
+
+
+
+            bItemShop = new BasicItemShop(tempCharacter);
+
+
+
         }
         public void Update(GameTime gameTime)
-        {
-            keys = Keyboard.GetState();
-            if (CurrentTreeGameState == TreeGameState.BOMBTREE)
-            {
-                swordtree.Enabled = false;
-                swordtree.Visible = false;
+        { 
+            bItemShop.Update(gameTime);
+            //keys = Keyboard.GetState();
+            //if (CurrentTreeGameState == TreeGameState.BOMBTREE)
+            //{
+            //    swordtree.Enabled = false;
+            //    swordtree.Visible = false;
 
-                bowtree.Enabled = false;
-                bowtree.Visible = false;
+            //    bowtree.Enabled = false;
+            //    bowtree.Visible = false;
 
-                bombtree.Enabled = true;
-                bombtree.Visible = true;
-            }
-            else if (CurrentTreeGameState == TreeGameState.BOWTREE)
-            {
-                swordtree.Enabled = false;
-                swordtree.Visible = false;
+            //    bombtree.Enabled = true;
+            //    bombtree.Visible = true;
+            //}
+            //else if (CurrentTreeGameState == TreeGameState.BOWTREE)
+            //{
+            //    swordtree.Enabled = false;
+            //    swordtree.Visible = false;
 
-                bowtree.Enabled = true;
-                bowtree.Visible = true;
+            //    bowtree.Enabled = true;
+            //    bowtree.Visible = true;
 
-                bombtree.Enabled = false;
-                bombtree.Visible = false;
-            }
-            else if (CurrentTreeGameState == TreeGameState.SWORDTREE)
-            {
-                swordtree.Enabled = true;
-                swordtree.Visible = true;
+            //    bombtree.Enabled = false;
+            //    bombtree.Visible = false;
+            //}
+            //else if (CurrentTreeGameState == TreeGameState.SWORDTREE)
+            //{
+            //    swordtree.Enabled = true;
+            //    swordtree.Visible = true;
 
-                bowtree.Enabled = false;
-                bowtree.Visible = false;
+            //    bowtree.Enabled = false;
+            //    bowtree.Visible = false;
 
-                bombtree.Enabled = false;
-                bombtree.Visible = false;
-            }
+            //    bombtree.Enabled = false;
+            //    bombtree.Visible = false;
+            //}
 
-            if (CurrentTreeGameState == TreeGameState.ITEMSELECT)
-            {
-                swordtree.Enabled = false;
-                swordtree.Visible = false;
+            //if (CurrentTreeGameState == TreeGameState.ITEMSELECT)
+            //{
+            //    swordtree.Enabled = false;
+            //    swordtree.Visible = false;
 
-                bowtree.Enabled = false;
-                bowtree.Visible = false;
+            //    bowtree.Enabled = false;
+            //    bowtree.Visible = false;
 
-                bombtree.Enabled = false;
-                bombtree.Visible = false;
+            //    bombtree.Enabled = false;
+            //    bombtree.Visible = false;
 
-                if (keys.IsKeyDown(Keys.A) && oldKeys.IsKeyUp(Keys.A))
-                {
-                    if (numOfButton > 0)
-                        numOfButton -= 1;
-                    else
-                    {
-                        numOfButton = 2;
-                    }
+            //    if (keys.IsKeyDown(Keys.A) && oldKeys.IsKeyUp(Keys.A))
+            //    {
+            //        if (numOfButton > 0)
+            //            numOfButton -= 1;
+            //        else
+            //        {
+            //            numOfButton = 2;
+            //        }
 
-                }
+            //    }
 
-                if (keys.IsKeyDown(Keys.D) && oldKeys.IsKeyUp(Keys.D))
-                {
-                    if (numOfButton < 2)
-                        numOfButton += 1;
-                    else
-                        numOfButton = 0;
+            //    if (keys.IsKeyDown(Keys.D) && oldKeys.IsKeyUp(Keys.D))
+            //    {
+            //        if (numOfButton < 2)
+            //            numOfButton += 1;
+            //        else
+            //            numOfButton = 0;
 
-                }
+            //    }
 
-                if (numOfButton == 0)
-                {
-                    swordButton.Selected = true;
-                    bombButton.Selected = false;
-                    bowButton.Selected = false;
+            //    if (numOfButton == 0)
+            //    {
+            //        swordButton.Selected = true;
+            //        bombButton.Selected = false;
+            //        bowButton.Selected = false;
 
-                }
-                else if (numOfButton == 1)
-                {
-                    bombButton.Selected = true;
-                    swordButton.Selected = false;
-                    bowButton.Selected = false;
-                }
-                else if (numOfButton == 2)
-                {
-                    bowButton.Selected = true;
-                    bombButton.Selected = false;
-                    swordButton.Selected = false;
-                }
+            //    }
+            //    else if (numOfButton == 1)
+            //    {
+            //        bombButton.Selected = true;
+            //        swordButton.Selected = false;
+            //        bowButton.Selected = false;
+            //    }
+            //    else if (numOfButton == 2)
+            //    {
+            //        bowButton.Selected = true;
+            //        bombButton.Selected = false;
+            //        swordButton.Selected = false;
+            //    }
 
-                //Checks if enter is pressed and which button it is pressed on
-                keys = Keyboard.GetState();
-                if (keys.IsKeyDown(Keys.Enter) && oldKeys.IsKeyUp(Keys.Enter))
-                {
-                    if (numOfButton == 0)
-                    {
-                        this.changeTreeGameState(TreeGameState.SWORDTREE);
-                    }
+            //    //Checks if enter is pressed and which button it is pressed on
+            //    keys = Keyboard.GetState();
+            //    if (keys.IsKeyDown(Keys.Enter) && oldKeys.IsKeyUp(Keys.Enter))
+            //    {
+            //        if (numOfButton == 0)
+            //        {
+            //            this.changeTreeGameState(TreeGameState.SWORDTREE);
+            //        }
 
-                    else if (numOfButton == 1)
-                    {
-                        this.changeTreeGameState(TreeGameState.BOMBTREE);
-                    }
-                    else if (numOfButton == 2)
-                    {
-                        this.changeTreeGameState(TreeGameState.BOWTREE);
-                    }
+            //        else if (numOfButton == 1)
+            //        {
+            //            this.changeTreeGameState(TreeGameState.BOMBTREE);
+            //        }
+            //        else if (numOfButton == 2)
+            //        {
+            //            this.changeTreeGameState(TreeGameState.BOWTREE);
+            //        }
 
 
 
-                }
-                oldKeys = keys;
+            //    }
+            //    oldKeys = keys;
 
-            }
+            //}
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
+           
             
-            if(CurrentTreeGameState == TreeGameState.ITEMSELECT )
-            {
-                swordButton.Draw(spriteBatch);
-                bombButton.Draw(spriteBatch);
-                bowButton.Draw(spriteBatch);
-            }
+            //if(CurrentTreeGameState == TreeGameState.ITEMSELECT )
+            //{
+            //    swordButton.Draw(spriteBatch);
+            //    bombButton.Draw(spriteBatch);
+            //    bowButton.Draw(spriteBatch);
+            //}
         }
 
         private void changeTreeGameState( TreeGameState newState)    

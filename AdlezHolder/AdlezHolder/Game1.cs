@@ -94,6 +94,7 @@ namespace AdlezHolder
             filesMenu = new FilesMenu(this);
             infoScreen = new InformationScreen();
             upgradeShop = new UpgradeShop(this);
+            itemshop = new itemShop(this);
             upgradeShop.Initialize();
             filesMenu.Initialize();
 
