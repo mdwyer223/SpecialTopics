@@ -16,7 +16,7 @@ namespace AdlezHolder
     {
         CUTSCENE, PLAYING, INVENTORY,
         UPGRADESHOP, MAINMENU, PAUSEMENU,
-        GAMEOVER, INFOSCREEN, SAVEMENU
+        GAMEOVER, INFOSCREEN, SAVEMENU, ITEMSHOP
     }
 
     public enum ParticleState
@@ -32,6 +32,7 @@ namespace AdlezHolder
         World world;
         SwordTree swordtree;
         MainMenu menu;
+        itemShop itemshop;
         DisplayComponent healthDisplay;
         PauseComponent pauseMenu;
        // CutscenePlayer cutscene;
@@ -101,6 +102,11 @@ namespace AdlezHolder
 
             world.Visible = false;
             world.Enabled = false;
+
+            itemshop.Visible = false;
+            itemshop.Enabled = false;
+            Components.Add(itemshop);
+            itemshop.Initialize();
 
             menu = new MainMenu(this);
             Components.Add(menu);
@@ -184,6 +190,9 @@ namespace AdlezHolder
                 menu.Visible = false;
                 menu.Enabled = false;
 
+                itemshop.Enabled = false;
+                itemshop.Visible = false;
+
                 filesMenu.Enabled = false;
                 filesMenu.Visible = false;
 
@@ -208,6 +217,9 @@ namespace AdlezHolder
 
                 filesMenu.Enabled = false;
                 filesMenu.Visible = false;
+
+                itemshop.Enabled = false;
+                itemshop.Visible = false;
 
                 //cutscene.Enabled = false;
 
@@ -236,6 +248,9 @@ namespace AdlezHolder
                 upgradeShop.Visible = false;
                 upgradeShop.Enabled = false;
 
+                itemshop.Enabled = false;
+                itemshop.Visible = false;
+
 
             }
 
@@ -259,6 +274,9 @@ namespace AdlezHolder
 
                 healthDisplay.Visible = false;
                 healthDisplay.Enabled = false;
+
+                itemshop.Enabled = false;
+                itemshop.Visible = false;
             }
             else if (mainGameState == GameState.CUTSCENE)
             {
@@ -274,6 +292,9 @@ namespace AdlezHolder
                 world.Visible = true;
                 upgradeShop.Visible = false;
                 upgradeShop.Enabled = false;
+
+                itemshop.Enabled = false;
+                itemshop.Visible = false;
 
 
                 //cutscene.Enabled = true;
@@ -304,6 +325,8 @@ namespace AdlezHolder
                 upgradeShop.Visible = false;
                 upgradeShop.Enabled = false;
 
+                itemshop.Enabled = false;
+                itemshop.Visible = false;
 
                 //cutscene.Enabled = false;
 
@@ -326,6 +349,33 @@ namespace AdlezHolder
                 menu.Visible = false;
 
                 world.Visible = false ;
+                world.Enabled = false;
+
+                healthDisplay.Visible = false;
+                healthDisplay.Enabled = false;
+
+                filesMenu.Enabled = false;
+                filesMenu.Visible = false;
+
+                pauseMenu.Enabled = false;
+                pauseMenu.Visible = false;
+
+                itemshop.Enabled = false;
+                itemshop.Visible = false;
+
+            }
+
+            else if (mainGameState == GameState.ITEMSHOP)
+            {
+                itemshop.Visible = true;
+                itemshop.Enabled = true; 
+
+                upgradeShop.Visible = false;
+                upgradeShop.Enabled = false;
+                menu.Enabled = false;
+                menu.Visible = false;
+
+                world.Visible = false;
                 world.Enabled = false;
 
                 healthDisplay.Visible = false;
@@ -375,7 +425,13 @@ namespace AdlezHolder
                 filesMenu.Draw(gameTime);
                 spriteBatch.End();
             }
-
+            else if (mainGameState == GameState.ITEMSHOP)
+            {
+                spriteBatch.Begin();
+                spriteBatch.Draw(Content.Load<Texture2D>("TitleScreen"), new Rectangle(0, 0, DisplayWidth, DisplayHeight), Color.White);
+                itemshop.Draw(gameTime);
+                spriteBatch.End();
+            }
 
             base.Draw(gameTime);
 

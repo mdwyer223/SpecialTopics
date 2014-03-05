@@ -129,7 +129,7 @@
     <Compile Include="Classes\Drops\FireStone.cs" />
     <Compile Include="Classes\Drops\Gem.cs" />
     <Compile Include="Classes\Drops\IceStone.cs" />
-    <Compile Include="Classes\Drops\Item.cs" />
+    <Compile Include="Classes\ItemShop\Item.cs" />
     <Compile Include="Classes\Drops\LightningStone.cs" />
     <Compile Include="Classes\Drops\Money.cs" />
     <Compile Include="Classes\Drops\PoisonStone.cs" />
@@ -137,7 +137,7 @@
     <Compile Include="Classes\Drops\VampiricStone.cs" />
     <Compile Include="Classes\Gameover.cs" />
     <Compile Include="Classes\Inventory\Inventory.cs" />
-    <Compile Include="Classes\ItemShop\ItemShop.cs" />
+    <Compile Include="Classes\ItemShop\BasicItemShop.cs" />
     <Compile Include="Classes\MenuClasses\Button.cs" />
     <Compile Include="Classes\MenuClasses\MenuInterface.cs" />
     <Compile Include="Classes\MenuClasses\SaveMenu.cs" />
@@ -201,6 +201,7 @@
     <Compile Include="Components\BowTree.cs" />
     <Compile Include="Components\CutscenePlayer.cs" />
     <Compile Include="Components\FilesMenu.cs" />
+    <Compile Include="Components\MainMenu\itemShop.cs" />
     <Compile Include="Components\MainMenu\MainMenu.cs" />
     <Compile Include="Components\MainMenu\Shop.cs" />
     <Compile Include="Components\MainMenu\UpgradeShop.cs" />

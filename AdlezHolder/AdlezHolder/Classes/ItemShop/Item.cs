@@ -23,6 +23,40 @@ namespace AdlezHolder
 
         int flashInterval = 70;
 
+        string itemName, changesString;
+        int cost;
+
+
+        Color FADED = new Color(50, 50, 50, 50);
+        Color NORMAL = new Color(255, 255, 255, 250);
+        bool selected;
+
+        public bool Selected
+        {
+            get { return selected; }
+            set
+            {
+                if (value && ImageColor != Color.Black && ImageColor != Color.DarkSlateGray)
+                    ImageColor = NORMAL;
+                else
+                {
+                    if (ImageColor != Color.Black && ImageColor != Color.DarkSlateGray)
+                        ImageColor = FADED;
+                }
+                if (value == false && ImageColor == Color.Black)
+                {
+                    ImageColor = Color.DarkSlateGray;
+                }
+                else if (value && ImageColor == Color.DarkSlateGray)
+                {
+                    ImageColor = Color.Black;
+                }
+
+                selected = value;
+            }
+        }
+
+
         public string ItemName
         {
             get { return tag; }
@@ -50,6 +84,40 @@ namespace AdlezHolder
             protected set { pickUp = value;}
         }
 
+
+        public void setRec(int moveAmount)
+        {
+            this.position.X += moveAmount;
+        }
+        public void setCost(int x)
+        {
+            cost = x;
+        }
+        public virtual void setChangesString(string x)
+        {
+            changesString = x;
+        }
+        public void setitemName(string x)
+        {
+            itemName = x;
+        }
+        public int getCost
+        {
+            get { return cost; }
+        }
+        public string getChangesString
+        {
+            get { return changesString; }
+        }
+        public string getName
+        {
+            get { return itemName; }
+        }
+        public virtual string getEffectsString()
+        {
+            return itemName;
+        }
+
         public Item(Texture2D texture, float scaleFactor, Vector2 startPosition, string tag, bool isPickUp, 
             bool isCurrency, bool isStackable, int value)
             : base(texture, scaleFactor, Game1.DisplayWidth, 0, startPosition)
@@ -65,6 +133,11 @@ namespace AdlezHolder
 
             options = new List<string>();
             options.Add("Drop");
+
+            DrawnRec = new Rectangle(0, 0, 55, 55);
+            cost = value;
+            itemName = "Item Name";
+
         }
 
         public override void Update(Map data, GameTime gameTime)
