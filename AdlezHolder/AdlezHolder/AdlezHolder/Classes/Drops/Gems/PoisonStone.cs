@@ -25,8 +25,8 @@ namespace AdlezHolder
         {
         }
 
-        public PoisonStone(float scaleFactor, Vector2 startPosition, int tier)
-            : base(Game1.GameContent.Load<Texture2D>("Items/MagentaStone"), scaleFactor, startPosition, "Poison Stone", 0)
+        public PoisonStone(float scaleFactor, Vector2 startPosition, int tier, int numberOf)
+            : base(Game1.GameContent.Load<Texture2D>("Items/MagentaStone"), scaleFactor, startPosition, "Poison Stone", 0, numberOf)
         {
             color = Color.Purple;
             this.tier = tier;

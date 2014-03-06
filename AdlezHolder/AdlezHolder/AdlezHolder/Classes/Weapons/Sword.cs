@@ -159,9 +159,9 @@ namespace AdlezHolder
             poisonStruct = new GemStruct();
             lightningStruct = new GemStruct();
 
-            VampiricStone vStone = new VampiricStone(.02f, new Vector2(0, 0), 1);
-            IceStone iStone = new IceStone(.02f, Vector2.Zero, 1);
-            LightningStone lStone = new LightningStone(.02f, Vector2.Zero, 5);
+            VampiricStone vStone = new VampiricStone(.02f, new Vector2(0, 0), 1, 1);
+            IceStone iStone = new IceStone(.02f, Vector2.Zero, 1, 1);
+            LightningStone lStone = new LightningStone(.02f, Vector2.Zero, 5, 1);
             gemList.Add(lStone);
             gemList.Add(iStone);
             gemList.Add(vStone);

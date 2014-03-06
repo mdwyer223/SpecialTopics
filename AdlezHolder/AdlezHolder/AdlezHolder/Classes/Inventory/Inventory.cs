@@ -33,9 +33,13 @@ namespace AdlezHolder
                 for (int i = 0; i < value.Length; i++)
                 {
                     if (value[i].type == ItemType.ARROW)
-                        items.Add(new Arrow(.02f, false, "Wooden Arrow", 10, Vector2.Zero));
+                        items.Add(new Arrow(.02f, false, "Wooden Arrow", 10, Vector2.Zero, 1));
                     else if (value[i].type == ItemType.CURRENCY)
                     {
+                    }
+                    else if (value[i].type == ItemType.POTION)
+                    {
+                        items.Add(new Potion(Vector2.Zero, .02f, 2, 1));
                     }
                     else
                         items.Add(new RuggedLeather());
@@ -77,14 +81,6 @@ namespace AdlezHolder
 
         public void addItem(Item item, Character player)
         {
-            if (currentIndex != 0 && counts[currentIndex- 1] == 0)
-            {
-                while (counts[currentIndex] == 0)
-                {
-                    currentIndex--;
-                }
-            }
-
             bool sameObj = false;
 
             for (int i = 0; i < items.Count; i++)
@@ -93,7 +89,7 @@ namespace AdlezHolder
                 {
                     if (item.ItemName.Equals(items[i].ItemName) && item.IsStackable)
                     {
-                        counts[i]++;
+                        items[i].Count++;
                         sameObj = true;
                     }
                 }
@@ -105,8 +101,6 @@ namespace AdlezHolder
                 {
                     item.addPlayer(player);
                     items.Add(item);
-                    counts[currentIndex]++;
-                    currentIndex++;
                 }
                 else
                 {
@@ -114,7 +108,6 @@ namespace AdlezHolder
                     new Vector2(Game1.DisplayWidth, Game1.DisplayHeight), Color.White));
                 }
             }
-
 
             /*
             if (!Full)

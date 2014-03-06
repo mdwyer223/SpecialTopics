@@ -26,8 +26,8 @@ namespace AdlezHolder
             get { return steel; }
         }
 
-        public Arrow(float scaleFactor, bool steel, string tag, int value, Vector2 startPosition)
-            : base(Game1.GameContent.Load<Texture2D>("Items/WoodenArrow"), scaleFactor, startPosition, tag, true, false, true, value)
+        public Arrow(float scaleFactor, bool steel, string tag, int value, Vector2 startPosition, int numberOf)
+            : base(Game1.GameContent.Load<Texture2D>("Items/WoodenArrow"), scaleFactor, startPosition, tag, true, false, true, value, numberOf)
         {
             collected = false;
             this.steel = steel;

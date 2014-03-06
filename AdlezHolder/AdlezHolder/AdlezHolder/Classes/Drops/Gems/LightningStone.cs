@@ -25,8 +25,8 @@ namespace AdlezHolder
         {
         }
 
-        public LightningStone(float scaleFactor, Vector2 startPosition, int tier)
-            : base(Game1.GameContent.Load<Texture2D>("Items/YellowStone"), scaleFactor, startPosition, "Lightning Stone", 0)
+        public LightningStone(float scaleFactor, Vector2 startPosition, int tier, int numberOf)
+            : base(Game1.GameContent.Load<Texture2D>("Items/YellowStone"), scaleFactor, startPosition, "Lightning Stone", 0, numberOf)
         {
             this.tier = tier;
             if (tier == 1)

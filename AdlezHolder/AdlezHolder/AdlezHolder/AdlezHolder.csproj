@@ -152,6 +152,7 @@
     <Compile Include="Classes\Npc\Nodes.cs" />
     <Compile Include="Classes\Npc\Npc.cs" />
     <Compile Include="Classes\Npc\WanderingSprite.cs" />
+    <Compile Include="Classes\Objects\AdvancedObjects\Teleporter.cs" />
     <Compile Include="Classes\Objects\Buildings\BuildingObject.cs" />
     <Compile Include="Classes\Objects\SimpleObjects\Chest.cs" />
     <Compile Include="Classes\Objects\SimpleObjects\Torch.cs" />

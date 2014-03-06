@@ -32,8 +32,8 @@ namespace AdlezHolder
         {
         }
 
-        public IceStone(float scaleFactor, Vector2 startPosition, int tier)
-            : base(Game1.GameContent.Load<Texture2D>("Items/CyanStone"), scaleFactor, startPosition, "Ice Stone", 0)
+        public IceStone(float scaleFactor, Vector2 startPosition, int tier, int numberOf)
+            : base(Game1.GameContent.Load<Texture2D>("Items/CyanStone"), scaleFactor, startPosition, "Ice Stone", 0, numberOf)
         {
             this.tier = tier;
             if (tier == 1)

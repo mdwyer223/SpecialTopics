@@ -13,7 +13,7 @@ namespace AdlezHolder
     {
         protected Character playerTemp;
 
-        protected int value, aliveTimer, flashTimer;
+        protected int value, aliveTimer, flashTimer, count = 1;
         protected bool pickUp, currency, stackable, drawing;
 
         protected const int MAX_TIME_ALIVE = 60000;
@@ -34,6 +34,8 @@ namespace AdlezHolder
                     itemData.type = ItemType.ARROW;
                 else if (this.GetType() == typeof(Money))
                     itemData.type = ItemType.CURRENCY;
+                else if (this.GetType() == typeof(Potion))
+                    itemData.type = ItemType.POTION;
                 else
                     itemData.type = ItemType.CRAP; 
 
@@ -71,12 +73,18 @@ namespace AdlezHolder
             protected set { pickUp = value;}
         }
 
+        public int Count
+        {
+            get { return count; }
+            set { count = value; }
+        }
+
         protected Item()
         {
         }
 
         public Item(Texture2D texture, float scaleFactor, Vector2 startPosition, string tag, bool isPickUp, 
-            bool isCurrency, bool isStackable, int value)
+            bool isCurrency, bool isStackable, int value, int numberOf)
             : base(texture, scaleFactor, Game1.DisplayWidth, 0, startPosition)
         {
             this.pickUp = isPickUp;
@@ -86,6 +94,7 @@ namespace AdlezHolder
             this.value = value;
             this.tag = tag;
             aliveTimer = 0;
+            this.count = numberOf;
             drawing = true;
 
             options = new List<string>();
@@ -127,14 +136,14 @@ namespace AdlezHolder
             return options;
         }
 
-        public virtual void chooseOption(string s, List<Item> items, int[] counts)
+        public virtual void chooseOption(string s, List<Item> items)
         {
             //compare the string to the options chosen
             switch(s)
             {
                 case "Drop":
                     {
-                        this.drop(items, counts);
+                        this.drop(items);
                         break;
                     }
             }
@@ -143,26 +152,20 @@ namespace AdlezHolder
         //********************************************
         //some sort of list should be passed to these methods
         //*********************************************
-        public virtual void drop(List<Item> items, int[] counts)
+        public virtual void drop(List<Item> items)
         {
             for (int i = 0; i < items.Count; i++ )
             {
                 if (items[i] == this)
                 {
-                    if (counts[i] == 1)
+                    if (this.count <= 1)
                     {
                         items.RemoveAt(i);
-                        counts[i]--;
-                        for (int j = i; j < counts.Length - 1; j++)
-                        {
-                            int temp = counts[j];
-                            counts[j] = counts[j + 1];
-                            counts[j + 1] = temp;
-                        }
+                        this.count--;
                     }
                     else
                     {
-                        counts[i]--;
+                        this.count--;
                     }
                     break;
                 }

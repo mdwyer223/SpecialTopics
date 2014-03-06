@@ -22,9 +22,9 @@ namespace AdlezHolder
             }
         }
 
-        public Potion(Vector2 start, float scaleFactor, int tier)
+        public Potion(Vector2 start, float scaleFactor, int tier, int numberOf)
             : base(Game1.GameContent.Load<Texture2D>("Items/1RedPotion"), scaleFactor, start,
-                "Potion", true, false, true, 50)
+                "Potion", true, false, true, 50, numberOf)
         {
             options.Add("Use");
 
@@ -63,7 +63,7 @@ namespace AdlezHolder
             base.Update(gameTime);
         }
 
-        public override void chooseOption(string s, List<Item> items, int[] counts)
+        public override void chooseOption(string s, List<Item> items)
         {
             //compare the string to the options chosen
             switch (s)
@@ -74,13 +74,13 @@ namespace AdlezHolder
                         {
                             playerTemp.heal(healingPower);
                             playerTemp = null;
-                            this.drop(items, counts);
+                            this.drop(items);
                         }
                         break;
                     }
             }
 
-            base.chooseOption(s, items, counts);
+            base.chooseOption(s, items);
         }
     }
 }

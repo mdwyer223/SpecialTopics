@@ -15,6 +15,8 @@ namespace AdlezHolder
 {
     public class TopLeft : MapDataHolder
     {
+        bool changePos = false;
+
         public TopLeft(Character player)
             : base(player)
         {
@@ -43,13 +45,41 @@ namespace AdlezHolder
                 Game1.GameContent.Load<Texture2D>("Random/The best thing ever"), new Vector2(130, backgroundRec.Height));
             addImmovable(wall);
 
-            player.Position = new Vector2(383, 444);
-            //adjustObjectsBackgroundTripWires(new Vector2(0, backgroundRec.Height - Game1.DisplayHeight), false);
+            TripWire t = new TripWire(.02f, new Rectangle(440, 465, 100, 20));
+            addTripWire(t);
         }
 
         public override void Update(Map map, GameTime gameTime)
-        {            
-            base.Update(map, gameTime);
+        {
+            if (!changePos)
+            {
+                map.Player.Position = new Vector2(background.Width / 2, Game1.DisplayHeight - map.Player.CollisionRec.Height);
+                changePos = true;
+            }
+
+            bool change = false;
+
+            for (int i = 0; i < tripWires.Count; i++)
+            {
+                tripWires[i].Update(map.Player.CollisionRec);
+
+                if (map.Player.Direction == Orientation.DOWN)
+                {
+                    if (i == 0 && tripWires[i].IfTripped)
+                    {
+                        change = true;
+                    }
+                }
+            }
+
+            if (change)
+            {
+                map.changeMap(new MainRoom2("TopLeft"));
+            }
+            else
+            {
+                base.Update(map, gameTime);
+            }
         }
     }
 }

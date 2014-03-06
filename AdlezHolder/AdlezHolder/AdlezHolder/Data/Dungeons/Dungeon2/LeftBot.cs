@@ -16,6 +16,7 @@ namespace AdlezHolder
     public class LeftBot : MapDataHolder
     {
         bool changePos;
+
         public LeftBot(Character player)
             : base(player)
         {
@@ -75,9 +76,8 @@ namespace AdlezHolder
 
             if (change)
             {
-                map.changeMap(new MainRoom2());
-                map.Player.Position = new Vector2(156, 800);
-                //map.CurrentData.adjustObjectsBackgroundTripWires(new Vector2(0, map.CurrentData.BackgroundRec.Height - Game1.DisplayHeight), true);
+                map.changeMap(new MainRoom2("LeftBot"));
+                //map.Player.Position = new Vector2(156, 800);
             }
             else
             {

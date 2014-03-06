@@ -24,8 +24,8 @@ namespace AdlezHolder
         {
         }
 
-        public VampiricStone(float scaleFactor, Vector2 startPosition, int tier)
-            :base(Game1.GameContent.Load<Texture2D>("Items/MagentaStone"), scaleFactor, startPosition, "Vampiric Stone", 50)
+        public VampiricStone(float scaleFactor, Vector2 startPosition, int tier, int numberOf)
+            :base(Game1.GameContent.Load<Texture2D>("Items/MagentaStone"), scaleFactor, startPosition, "Vampiric Stone", 50, numberOf)
         {
             this.tier = tier;
 

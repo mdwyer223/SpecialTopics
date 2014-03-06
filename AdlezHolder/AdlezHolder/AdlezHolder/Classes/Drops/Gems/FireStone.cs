@@ -25,8 +25,8 @@ namespace AdlezHolder
         {
         }
 
-        public FireStone(float scaleFactor, Vector2 startPosition, int tier)
-            :base(Game1.GameContent.Load<Texture2D>("Items/MagentaStone"), scaleFactor, startPosition, "Fire Stone", 0)
+        public FireStone(float scaleFactor, Vector2 startPosition, int tier, int numberOf)
+            : base(Game1.GameContent.Load<Texture2D>("Items/MagentaStone"), scaleFactor, startPosition, "Fire Stone", 0, numberOf)
         {
             color = Color.Orange;
             this.tier = tier;

@@ -9,7 +9,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace AdlezHolder
 {
-    public enum ItemType { ARROW, CURRENCY, CRAP };
+    public enum ItemType { ARROW, CURRENCY, POTION, CRAP };
 
     public struct ItemStruct
     {

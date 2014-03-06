@@ -73,11 +73,12 @@ namespace AdlezHolder
 
             if (change)
             {
-                map.changeMap(new MainRoom2());
-                map.Player.Position = new Vector2(1000, 355);
+                map.changeMap(new MainRoom2("LeftTop"));
             }
-
-            base.Update(map, gameTime);
+            else
+            {
+                base.Update(map, gameTime);
+            }
         }
     }
 }
