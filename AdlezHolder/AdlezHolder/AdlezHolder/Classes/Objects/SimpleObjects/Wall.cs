@@ -23,20 +23,6 @@ namespace AdlezHolder
             }
         }
 
-        public override BaseSpriteStruct SaveData
-        {
-            get
-            {
-                BaseSpriteStruct myData = base.SaveData;
-                myData.saveId = "IWa";
-                return myData;
-            }
-            set
-            {
-                base.SaveData = value;
-            }
-        }
-
         public Wall(Rectangle objRec, Texture2D noTexture, Vector2 start)
             : base(noTexture, 0.1f, 0, start)
         {

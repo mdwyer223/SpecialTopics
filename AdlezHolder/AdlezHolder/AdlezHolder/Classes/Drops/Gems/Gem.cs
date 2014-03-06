@@ -62,11 +62,7 @@ namespace AdlezHolder
         {
             get { return applyDamageTime; }
             protected set { applyDamageTime = value; }
-        }
-
-        private Gem()
-        {
-        }
+        }        
 
         public Gem(GemStruct gemData)
         {

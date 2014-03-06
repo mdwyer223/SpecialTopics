@@ -20,8 +20,8 @@ namespace AdlezHolder
         public ItemStruct[] SaveData
         {
             get
-            {
-                ItemStruct[] savaData = new ItemStruct[MaxSlots];
+            {//TODO: save counts
+                ItemStruct[] savaData = new ItemStruct[items.Count];
                 for(int i=0; i< items.Count; i++)
                     savaData[i] = items[i].SaveData;
 
@@ -32,13 +32,18 @@ namespace AdlezHolder
                 items = new List<Item>();
                 for (int i = 0; i < value.Length; i++)
                 {
-                    if (value[i].type == ItemType.ARROW)
-                        items.Add(new Arrow(.02f, false, "Wooden Arrow", 10, Vector2.Zero));
-                    else if (value[i].type == ItemType.CURRENCY)
+                    if (value[i].itemId == "Arr")
                     {
+                        items.Add(new Arrow(value[i]));
                     }
-                    else
-                        items.Add(new RuggedLeather());
+                    else if (value[i].itemId == "Pot")
+                    {
+                        Potion pot = new Potion(value[i].baseStruct.position, 0, value[i].tier);
+                        pot.SaveData = value[i];
+                        items.Add(pot);
+                    }
+                    else if (value[i].itemId == "Rug")
+                        items.Add(new RuggedLeather());  
                 }
             }
         }

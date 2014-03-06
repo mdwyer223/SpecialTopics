@@ -18,7 +18,8 @@ namespace AdlezHolder
         public RightBot(Character player)
             : base(player)
         {
-            background = Game1.GameContent.Load<Texture2D>("BackgroundsAndFloors/Dungeons/Dungeon2/Right");
+            backgroundDirectory = "BackgroundsAndFloors/Dungeons/Dungeon2/Right";
+            background = Game1.GameContent.Load<Texture2D>(backgroundDirectory);
             backgroundRec = new Rectangle(0, 0, background.Width, background.Height);
 
             updateCorners();

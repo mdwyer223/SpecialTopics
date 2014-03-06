@@ -19,7 +19,8 @@ namespace AdlezHolder
         public LeftBot(Character player)
             : base(player)
         {
-            background = Game1.GameContent.Load<Texture2D>("BackgroundsAndFloors/Dungeons/Dungeon2/Left");
+            backgroundDirectory = "BackgroundsAndFloors/Dungeons/Dungeon2/Left";
+            background = Game1.GameContent.Load<Texture2D>(backgroundDirectory);
             backgroundRec = new Rectangle(0, 0, background.Width, background.Height);
             changePos = false;
 

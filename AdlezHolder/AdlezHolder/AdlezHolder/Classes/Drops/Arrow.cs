@@ -13,6 +13,8 @@ namespace AdlezHolder
     {
         bool steel, collected;
 
+        
+
         public override bool Dead
         {
             get
@@ -24,6 +26,11 @@ namespace AdlezHolder
         public bool Steel
         {
             get { return steel; }
+        }
+
+        public Arrow(ItemStruct itemStruct)
+            : base(itemStruct)
+        {
         }
 
         public Arrow(float scaleFactor, bool steel, string tag, int value, Vector2 startPosition)

@@ -44,7 +44,7 @@ namespace AdlezHolder
             get
             {
                 CharacterStruct myStruct = new CharacterStruct();
-                myStruct.BaseStruct = base.SaveData;
+                myStruct.baseStruct = base.SaveData;
                 myStruct.currentHP = currentHealthPoints;
                 myStruct.maxHP = MaxHitPoints;
                 myStruct.currency = money;
@@ -59,13 +59,13 @@ namespace AdlezHolder
                 myStruct.maxBombs = maxBombs;
                 myStruct.arrowCount = arrowCount;
                 myStruct.bombCount = bombCount;
-                myStruct.BaseStruct.saveId = "Chr";
+                myStruct.baseStruct.saveId = "Chr";
 
                 return myStruct;
             }
             set
             {
-                base.SaveData = value.BaseStruct;
+                base.SaveData = value.baseStruct;
                 healthPointsMax = value.maxHP;
                 HitPoints = value.currentHP;
                 money = value.currency;

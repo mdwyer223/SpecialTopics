@@ -15,20 +15,6 @@ namespace AdlezHolder
         //Rectangle trigger; // make this its own separate class (ie pressure plate or switch)
         protected Trigger trigger;
 
-        public override BaseSpriteStruct SaveData
-        {
-            get
-            {
-                BaseSpriteStruct myData = base.SaveData;
-                myData.saveId = "ISt";
-                return myData;
-            }
-            set
-            {
-                base.SaveData = value;
-            }
-        }
-
         public SingleTriggerObject(Texture2D texture, Texture2D triggerFirstImage, 
             Texture2D triggerSecondImage, Vector2 objectStart, Vector2 triggerStart, float scaleFactor, float triggerScale,
             int displayWidth, float secondsToCrossScreen)

@@ -9,13 +9,18 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace AdlezHolder
 {
-    public enum ItemType { ARROW, CURRENCY, CRAP };
 
     public struct ItemStruct
     {
+        public BaseSpriteStruct baseStruct;
+
+        public int count;
+        public int tier;
         public int price;
         public bool isStackable;
-        public ItemType type;
+
+        public string itemName;
+        public string itemId;
 
     }
 
@@ -59,6 +64,7 @@ namespace AdlezHolder
 
     public class MapDataStruct
     {
+        public Vector2 position; //TODO: ADD THIS IN DURP
         public string mapId;
 
         public string backgroundPath;
@@ -88,7 +94,7 @@ namespace AdlezHolder
 
     public struct CharacterStruct
     {
-        public BaseSpriteStruct BaseStruct;
+        public BaseSpriteStruct baseStruct;
         public ItemStruct[] inventData;
         public SwordStruct swordData;
         public BowStruct bowData;

@@ -41,6 +41,28 @@ namespace AdlezHolder
 
         protected SoundEffect damaged;
 
+        public override BaseSpriteStruct SaveData
+        {
+            get
+            {
+                BaseSpriteStruct myData = base.SaveData;
+                if (this.GetType() == typeof(Mage))
+                    myData.saveId = "EMa";
+                else if (this.GetType() == typeof(Skeleton))
+                    myData.saveId = "ESk";
+                else if (this.GetType() == typeof(Thing))
+                    myData.saveId = "ETh";
+                else if (this.GetType() == typeof(Minotaur))
+                    myData.saveId = "EMi";
+
+                return myData;
+            }
+            set
+            {
+                base.SaveData = value;
+            }
+        }
+
         public bool Frozen
         {
             get { return frozen; }

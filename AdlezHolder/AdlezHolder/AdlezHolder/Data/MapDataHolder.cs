@@ -76,6 +76,7 @@ namespace AdlezHolder
                 for(int i=0; i < everything.Count; i++)
                     everythingData[i] = everything[i].SaveData;
                 mapData.everythingData = everythingData;
+                mapData.position = this.position;
 
                 if (this.GetType() == typeof(BossHall))
                     mapData.mapId = "bHall";
@@ -99,36 +100,26 @@ namespace AdlezHolder
                     mapData.mapId = "lPassage"; //this will probably be changed to a better name later
                 else if (this.GetType() == typeof(Nwot))
                     mapData.mapId = "nwot";
+                else if (this.GetType() == typeof(LeftBot))
+                    mapData.mapId = "";
+                else if (this.GetType() == typeof(LeftTop))
+                    mapData.mapId = "";
+                else if (this.GetType() == typeof(MainRoom2))
+                    mapData.mapId = "";
+                else if (this.GetType() == typeof(RightBot))
+                    mapData.mapId = "";
+                else if (this.GetType() == typeof(RightTop))
+                    mapData.mapId = "";
+                else if (this.GetType() == typeof(TopLeft))
+                    mapData.mapId = "";
+                else if (this.GetType() == typeof(TopRight))
+                    mapData.mapId = "";
 
                 mapData.backgroundPath = backgroundDirectory;
                 return mapData;
             }
             set
             {
-                // close, open list logic
-                // Key
-                //      Character       = 'Chr'
-                //
-                //      Torch           = 'BTo'
-                //
-                //      Immoveable      = 'BIm'
-                //      Chest           = 'ICh'
-                //      Building        = 'IBu'
-                //      Hittable        = 'IHi'
-                //      Movable         = 'IMo'
-                //      MultiTrigger    = 'IMt'
-                //      SingleTrigger   = 'ISt'
-                //      Wall            = 'IWa'
-                //      SpikeTrap       = 'BSt'
-                //      ArrowTrap       = 'BAt'
-                //      
-                //      Npc             = 'Npc'
-                //      Mage            = 'EMa'
-                //      Skeleton        = 'ESk'
-                //      Thing           = 'ETh'
-                //      Minotaur        = 'EMi'
-                //
-                //      Item stuff~~~
                 List<BaseSprite> openList = everything;
                 List<BaseSprite> closedList = new List<BaseSprite>();
 
@@ -136,22 +127,19 @@ namespace AdlezHolder
                 {
                     for(int i=0; i < value.everythingData.Length; i++)
                     {
-                        if (!closedList.Contains(sprite) && // sprite.GetType() != typeof(Wall) &&
+                        if (!closedList.Contains(sprite) && 
                             sprite.SaveData.saveId.Equals(value.everythingData[i].saveId))
                         {
                             closedList.Add(sprite);
                             sprite.SaveData = value.everythingData[i];
-                        }
-                        else if (value.everythingData[i].saveId == "")
-                        {
-                            closedList.Add(sprite);
                         }
                     }
 
                 }
 
                 if (value.backgroundPath != null)
-                    background = Game1.GameContent.Load<Texture2D>(value.backgroundPath);               
+                    background = Game1.GameContent.Load<Texture2D>(value.backgroundPath);
+                this.position = value.position;
 
             }
         }

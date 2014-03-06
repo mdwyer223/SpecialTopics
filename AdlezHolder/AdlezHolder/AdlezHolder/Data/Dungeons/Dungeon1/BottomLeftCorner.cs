@@ -20,8 +20,8 @@ namespace AdlezHolder
         public BottomLeftCorner(Character player)
             : base (player)
         {
-
-            background = Game1.GameContent.Load<Texture2D>("BackgroundsAndFloors/Dungeons/FixedDungeon1/DungeonRoomBottomLeft");
+            backgroundDirectory = "BackgroundsAndFloors/Dungeons/FixedDungeon1/DungeonRoomBottomLeft";
+            background = Game1.GameContent.Load<Texture2D>(backgroundDirectory);
             backgroundRec = new Rectangle(0, 0, background.Width, background.Height);
 
             Skeleton sprite = new Skeleton(Game1.GameContent.Load<Texture2D>("ComputerPpl/Enemies/Skeleton/Move/SF"),

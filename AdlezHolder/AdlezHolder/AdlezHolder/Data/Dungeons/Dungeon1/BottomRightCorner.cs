@@ -20,8 +20,8 @@ namespace AdlezHolder
         public BottomRightCorner(Character player)
             : base (player)
         {
-
-            background = Game1.GameContent.Load<Texture2D>("BackgroundsAndFloors/Dungeons/FixedDungeon1/DungeonRoomBottomRight");
+            backgroundDirectory = "BackgroundsAndFloors/Dungeons/FixedDungeon1/DungeonRoomBottomRight";
+            background = Game1.GameContent.Load<Texture2D>(backgroundDirectory);
             backgroundRec = new Rectangle(0, 0, background.Width, background.Height);
 
             Wall wall = new Wall(new Rectangle(130, 215 - backgroundRec.Height, backgroundRec.Width, backgroundRec.Height),

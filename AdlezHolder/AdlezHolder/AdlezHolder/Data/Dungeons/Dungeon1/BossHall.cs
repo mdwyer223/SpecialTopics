@@ -20,7 +20,8 @@ namespace AdlezHolder
         public BossHall(Character player)
             : base(player)
         {
-            background = Game1.GameContent.Load<Texture2D>("BackgroundsAndFloors/Dungeons/FixedDungeon1/BossHallway");
+            backgroundDirectory = "BackgroundsAndFloors/Dungeons/FixedDungeon1/BossHallway";
+            background = Game1.GameContent.Load<Texture2D>(backgroundDirectory);
             backgroundRec = new Rectangle((Game1.DisplayWidth/2) - (background.Width / 2), -(background.Height) + Game1.DisplayHeight, 
                 background.Width, background.Height);
 

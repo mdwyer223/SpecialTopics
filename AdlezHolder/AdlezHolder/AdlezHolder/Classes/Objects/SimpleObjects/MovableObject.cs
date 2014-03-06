@@ -15,24 +15,6 @@ namespace AdlezHolder
         Orientation direction;
         Rectangle futureRec;
 
-        public override BaseSpriteStruct SaveData
-        {
-            get
-            {
-                BaseSpriteStruct myData = base.SaveData;
-                myData.saveId = "IMo";
-                return myData;
-            }
-            set
-            {
-                base.SaveData = value;
-            }
-        }
-
-        protected MovableObject()
-        {
-        }
-
         public MovableObject(Texture2D image, float scaleFactor, int displayWidth, float secondsToCrossScreen, Vector2 start)
             : base(image, scaleFactor, secondsToCrossScreen, start)
         {

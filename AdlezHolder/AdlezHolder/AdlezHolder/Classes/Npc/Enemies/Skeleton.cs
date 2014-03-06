@@ -11,21 +11,7 @@ using Microsoft.Xna.Framework.Audio;
 namespace AdlezHolder
 {
     public class Skeleton : Enemy
-    {
-
-        public override BaseSpriteStruct SaveData
-        {
-            get
-            {
-                BaseSpriteStruct myData = base.SaveData;
-                myData.saveId = "ESk";
-                return myData;
-            }
-            set
-            {
-                base.SaveData = value;
-            }
-        }
+    {  
 
         public Skeleton(Texture2D defaultTexture, float scaleFactor, int SecondsToCrossScreen, Vector2 startPosition)
             : base(defaultTexture, scaleFactor, SecondsToCrossScreen, startPosition)

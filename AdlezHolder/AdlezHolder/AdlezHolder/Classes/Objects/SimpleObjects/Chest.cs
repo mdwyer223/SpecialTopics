@@ -14,20 +14,6 @@ namespace AdlezHolder
         Texture2D openTexture;
         bool open;
 
-        public override BaseSpriteStruct SaveData
-        {
-            get
-            {
-                BaseSpriteStruct myData = base.SaveData;
-                myData.saveId = "ICh";
-                return myData;
-            }
-            set
-            {
-                base.SaveData = value;
-            }
-        }
-
         public bool Open
         {
             get { return open; }

@@ -27,7 +27,7 @@ namespace AdlezHolder
                 "Potion", true, false, true, 50)
         {
             options.Add("Use");
-
+            this.tier = tier;
             if (tier == 1)
             {
                 healingPower = 50;

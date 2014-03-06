@@ -13,20 +13,6 @@ namespace AdlezHolder
     {
         ParticleEngine pEngine;
 
-        public override BaseSpriteStruct SaveData
-        {
-            get
-            {
-                BaseSpriteStruct myData = base.SaveData;
-                myData.saveId = "EMa";
-                return myData;
-            }
-            set
-            {
-                base.SaveData = value;
-            }
-        }
-
         public Mage(Texture2D defaultTexture, float scaleFactor, Vector2 startPosition)
             : base(defaultTexture, scaleFactor, 7, startPosition)
         {

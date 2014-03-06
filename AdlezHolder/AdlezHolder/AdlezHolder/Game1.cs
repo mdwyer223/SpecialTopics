@@ -74,6 +74,14 @@ namespace AdlezHolder
             get { return displayHeight; }
         }
 
+        public World SaveData
+        {
+            get
+            {
+                return world;
+            }
+        }
+
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);

@@ -17,20 +17,6 @@ namespace AdlezHolder
         int currentPhase, breakFrameTimer;
         bool breaking;
 
-        public override BaseSpriteStruct SaveData
-        {
-            get
-            {
-                BaseSpriteStruct myData = base.SaveData;
-                myData.saveId = "IHi";
-                return myData;
-            }
-            set
-            {
-                base.SaveData = value;
-            }
-        }
-
         /// <summary>
         /// 
         /// </summary>

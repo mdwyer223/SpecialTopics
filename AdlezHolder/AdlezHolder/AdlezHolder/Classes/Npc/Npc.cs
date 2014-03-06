@@ -20,7 +20,9 @@ namespace AdlezHolder
             get
             {
                 BaseSpriteStruct myData = base.SaveData;
-                myData.saveId = "Npc";
+                if (this.GetType() == typeof(Npc))
+                    myData.saveId = "Npc";
+
                 return myData;
             }
             set

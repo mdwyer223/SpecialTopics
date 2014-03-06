@@ -44,7 +44,18 @@ namespace AdlezHolder
                 data.canMoveDown = CanMoveDown;
                 data.canMoveLeft = CanMoveLeft;
                 data.canMoveUp = CanMoveUp;
-                data.saveId = "";
+
+                if (this.GetType() == typeof(Character))
+                    data.saveId = "Chr";
+                else if (this.GetType() == typeof(Torch))
+                    data.saveId = "BTo";                 
+
+                else if (this.GetType() == typeof(SpikeTrap))
+                    data.saveId = "BSt";
+                else if (this.GetType() == typeof(ArrowTrap))
+                    data.saveId = "BAt";  
+
+                //      Item stuff~~~
 
                 return data;
             }

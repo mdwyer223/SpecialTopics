@@ -26,7 +26,8 @@ namespace AdlezHolder
         public MainRoom2()
             : base()
         {
-            background = Game1.GameContent.Load<Texture2D>("BackgroundsAndFloors/Dungeons/Dungeon2/MainRoom");
+            backgroundDirectory = "BackgroundsAndFloors/Dungeons/Dungeon2/MainRoom";
+            background = Game1.GameContent.Load<Texture2D>(backgroundDirectory);
             backgroundRec = new Rectangle(0, 0, background.Width, background.Height);
 
             updateCorners();
