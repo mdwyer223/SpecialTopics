@@ -15,11 +15,14 @@ namespace AdlezHolder
 {
     public class TopRight : MapDataHolder
     {
+        bool changePos = false;
+
         public TopRight(Character player)
             : base(player)
         {
             backgroundDirectory = "BackgroundsAndFloors/Dungeons/Dungeon2/Top";
             background = Game1.GameContent.Load<Texture2D>(backgroundDirectory);
+
             backgroundRec = new Rectangle(0, 0, background.Width, background.Height);
 
             updateCorners();
@@ -43,6 +46,42 @@ namespace AdlezHolder
             wall = new Wall(new Rectangle(148 - backgroundRec.Width, 215, backgroundRec.Width, backgroundRec.Height),
                 Game1.GameContent.Load<Texture2D>("Random/The best thing ever"), new Vector2(130, backgroundRec.Height));
             addImmovable(wall);
+
+            TripWire t = new TripWire(.02f, new Rectangle(440, 465, 100, 20));
+            addTripWire(t);
+        }
+
+        public override void Update(Map map, GameTime gameTime)
+        {
+            if (!changePos)
+            {
+                map.Player.Position = new Vector2(background.Width / 2, Game1.DisplayHeight - map.Player.CollisionRec.Height);
+                changePos = true;
+            }
+
+            bool change = false;
+
+            for (int i = 0; i < tripWires.Count; i++)
+            {
+                tripWires[i].Update(map.Player.CollisionRec);
+
+                if (map.Player.Direction == Orientation.DOWN)
+                {
+                    if (i == 0 && tripWires[i].IfTripped)
+                    {
+                        change = true;
+                    }
+                }
+            }
+
+            if (change)
+            {
+                map.changeMap(new MainRoom2("TopRight"));
+            }
+            else
+            {
+                base.Update(map, gameTime);
+            }
         }
     }
 }

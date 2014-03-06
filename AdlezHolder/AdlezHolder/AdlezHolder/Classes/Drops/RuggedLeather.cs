@@ -13,7 +13,7 @@ namespace AdlezHolder
     {
         //DO NOT IMPLEMENT THIS CLASS
         public RuggedLeather()
-            : base(null, 0f, Vector2.Zero, "", false, false, false, 0)
+            : base(null, 0f, Vector2.Zero, "", false, false, false, 0, 1)
         {
         }
     }

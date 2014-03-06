@@ -9,12 +9,12 @@ using Microsoft.Xna.Framework.Content;
 
 namespace AdlezHolder
 {
-    public enum ParticleType { RAIN, SNOW, SAND, NONE };
+    public enum ParticleType { RAIN, SNOW, SAND, TELEPORT, NONE };
 
     public class Particle
     {
-        Texture2D blankTexture, rainTexture;
-        Texture2D[] rainAnimation;
+        Texture2D blankTexture;
+        Texture2D[] rainAnimation = new Texture2D[4];
         Color color;
         Rectangle rec;
         Vector2 velo, position, accel = Vector2.Zero;
@@ -24,7 +24,8 @@ namespace AdlezHolder
         int lifeLengthTimer;
 
         bool stopping;
-        int secondsToTravel, travelTimer;
+        float secondsToTravel;
+        int travelTimer;
         int animeIndex = 0, animeTimer;
 
         float damage;
@@ -37,6 +38,9 @@ namespace AdlezHolder
         float accelPerTick;
         int accelTimer = 0, accelTime = 0;
 
+        float brightness = 255f;
+        bool fade = false;
+
         public List<GemType> Types
         {
             get { return types; }
@@ -47,10 +51,15 @@ namespace AdlezHolder
             get { return gemEffects; }
         }
 
+        public ParticleType PType
+        {
+            get { return pType; }
+        }
+
         public bool OffScreen
         {
             get { return (position.Y > Game1.DisplayHeight || position.X > Game1.DisplayWidth || position.X < 0)
-                || lifeLengthTimer >= lifeLength * 1000; }
+                || lifeLengthTimer >= lifeLength * 1000 || animeIndex == rainAnimation.Length; }
         }
 
         public int Damage
@@ -117,7 +126,7 @@ namespace AdlezHolder
             rec = new Rectangle((int)start.X, (int)start.Y, size, size);
             this.velo = velocity;
 
-            blankTexture = Game1.GameContent.Load<Texture2D>("Random/Particle");
+            blankTexture = Game1.GameContent.Load<Texture2D>("Random/Particle");  
 
             lifeLength = int.MaxValue;
             lifeLengthTimer = 0;
@@ -187,6 +196,23 @@ namespace AdlezHolder
             calcDamage(damage);
         }
 
+        public Particle(Color color, int size, Vector2 start, float secondsAlive, Vector2 velocity, Vector2 accel, ParticleType type)
+        {
+            this.color = color;
+            position = start;
+            rec = new Rectangle((int)start.X, (int)start.Y, size, size);
+            this.velo = velocity;
+            this.accel = accel;
+            pType = type;
+
+            blankTexture = Game1.GameContent.Load<Texture2D>("Random/Particle");
+
+            lifeLength = secondsAlive;
+            lifeLengthTimer = 0;
+            gemEffects = new List<GemStruct>();
+            types = new List<GemType>();
+        }
+
         public void Update(GameTime gameTime)
         {
             if (pType == ParticleType.NONE)
@@ -206,15 +232,27 @@ namespace AdlezHolder
             }
             else if (pType == ParticleType.RAIN)
             {
-                if (travelTimer < secondsToTravel)
+                travelTimer += gameTime.ElapsedGameTime.Milliseconds;
+                position += velo;
+            }
+            else if (pType == ParticleType.TELEPORT)
+            {
+                if (lifeLengthTimer % 3200 == 0)
                 {
-                    travelTimer++;
+                    fade = true;
                 }
-                else
+                velo += accel;
+                position += velo;
+                if (fade)
                 {
-                    travelTimer = secondsToTravel;
-                    rainSploosh();
+                    brightness -= .5f;
+                    if (brightness < 0)
+                    {
+                        brightness = 0f;
+                        fade = false;
+                    }
                 }
+                
             }
 
             lifeLengthTimer += gameTime.ElapsedGameTime.Milliseconds;
@@ -227,7 +265,14 @@ namespace AdlezHolder
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(blankTexture, Rec, color);
+            if (pType != ParticleType.TELEPORT)
+            {
+                spriteBatch.Draw(blankTexture, Rec, color);
+            }
+            else
+            {
+                spriteBatch.Draw(blankTexture, Rec, color * ((float)Math.Abs(brightness) / 255f));
+            }
         }
 
         protected void getAccel()
@@ -249,10 +294,13 @@ namespace AdlezHolder
 
         protected void rainSploosh()
         {
+            animeTimer++;
+
             if(animeTimer % 10 == 0)
             {
-                if(animeIndex + 1 < rainAnimation.Length -1)
+                if(animeIndex + 1 < rainAnimation.Length - 1)
                 {
+                    blankTexture = rainAnimation[animeIndex];
                     animeIndex++;
                 }
             }
@@ -273,6 +321,21 @@ namespace AdlezHolder
         {
             int endDamage = (int)((damage * .2f) + .5f);
             damageReduction = (endDamage - damage) / (lifeLength * 60);
+        }
+
+        public void rushOffScreen()
+        {
+            this.Position = new Vector2(Game1.DisplayWidth, Game1.DisplayHeight);
+        }
+
+        public void adjustAccel(Vector2 newAccel)
+        {
+            accel = newAccel;
+        }
+
+        public void adjustVelo(Vector2 newVelo)
+        {
+            velo = newVelo;
         }
     }
 }

@@ -38,12 +38,12 @@ namespace AdlezHolder
                     }
                     else if (value[i].itemId == "Pot")
                     {
-                        Potion pot = new Potion(value[i].baseStruct.position, 0, value[i].tier);
+                        Potion pot = new Potion(value[i].baseStruct.position, 0, value[i].tier, value[i].count);
                         pot.SaveData = value[i];
                         items.Add(pot);
                     }
                     else if (value[i].itemId == "Rug")
-                        items.Add(new RuggedLeather());  
+                        items.Add(new RuggedLeather()); 
                 }
             }
         }
@@ -82,14 +82,6 @@ namespace AdlezHolder
 
         public void addItem(Item item, Character player)
         {
-            if (currentIndex != 0 && counts[currentIndex- 1] == 0)
-            {
-                while (counts[currentIndex] == 0)
-                {
-                    currentIndex--;
-                }
-            }
-
             bool sameObj = false;
 
             for (int i = 0; i < items.Count; i++)
@@ -98,7 +90,7 @@ namespace AdlezHolder
                 {
                     if (item.ItemName.Equals(items[i].ItemName) && item.IsStackable)
                     {
-                        counts[i]++;
+                        items[i].Count++;
                         sameObj = true;
                     }
                 }
@@ -110,8 +102,6 @@ namespace AdlezHolder
                 {
                     item.addPlayer(player);
                     items.Add(item);
-                    counts[currentIndex]++;
-                    currentIndex++;
                 }
                 else
                 {
@@ -119,7 +109,6 @@ namespace AdlezHolder
                     new Vector2(Game1.DisplayWidth, Game1.DisplayHeight), Color.White));
                 }
             }
-
 
             /*
             if (!Full)

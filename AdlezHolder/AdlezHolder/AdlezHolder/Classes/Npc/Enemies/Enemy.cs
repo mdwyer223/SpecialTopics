@@ -344,31 +344,31 @@ namespace AdlezHolder
                     {
                         case 1:
                             {
-                                LightningStone stone = new LightningStone(.02f, this.Position, 5);
+                                LightningStone stone = new LightningStone(.02f, this.Position, 5, 1);
                                 data.addItem(stone);
                                 break;
                             }
                         case 2:
                             {
-                                PoisonStone stone = new PoisonStone(.02f, this.Position, 5);
+                                PoisonStone stone = new PoisonStone(.02f, this.Position, 5, 1);
                                 data.addItem(stone);
                                 break;
                             }
                         case 3:
                             {
-                                FireStone stone = new FireStone(.02f, this.Position, 5);
+                                FireStone stone = new FireStone(.02f, this.Position, 5, 1);
                                 data.addItem(stone);
                                 break;
                             }
                         case 4:
                             {
-                                VampiricStone stone = new VampiricStone(.02f, this.Position, 5);
+                                VampiricStone stone = new VampiricStone(.02f, this.Position, 5, 1);
                                 data.addItem(stone);
                                 break;
                             }
                         case 5:
                             {
-                                IceStone stone = new IceStone(.02f, this.Position, 5);
+                                IceStone stone = new IceStone(.02f, this.Position, 5, 1);
                                 data.addItem(stone);
                                 break;
                             }
@@ -380,31 +380,31 @@ namespace AdlezHolder
                     {
                         case 1:
                             {
-                                LightningStone stone = new LightningStone(.02f, this.Position, 4);
+                                LightningStone stone = new LightningStone(.02f, this.Position, 4, 1);
                                 data.addItem(stone);
                                 break;
                             }
                         case 2:
                             {
-                                PoisonStone stone = new PoisonStone(.02f, this.Position, 4);
+                                PoisonStone stone = new PoisonStone(.02f, this.Position, 4, 1);
                                 data.addItem(stone);
                                 break;
                             }
                         case 3:
                             {
-                                FireStone stone = new FireStone(.02f, this.Position, 4);
+                                FireStone stone = new FireStone(.02f, this.Position, 4, 1);
                                 data.addItem(stone);
                                 break;
                             }
                         case 4:
                             {
-                                VampiricStone stone = new VampiricStone(.02f, this.Position, 4);
+                                VampiricStone stone = new VampiricStone(.02f, this.Position, 4, 1);
                                 data.addItem(stone);
                                 break;
                             }
                         case 5:
                             {
-                                IceStone stone = new IceStone(.02f, this.Position, 4);
+                                IceStone stone = new IceStone(.02f, this.Position, 4, 1);
                                 data.addItem(stone);
                                 break;
                             }
@@ -416,31 +416,31 @@ namespace AdlezHolder
                     {
                         case 1:
                             {
-                                LightningStone stone = new LightningStone(.02f, this.Position, 3);
+                                LightningStone stone = new LightningStone(.02f, this.Position, 3, 1);
                                 data.addItem(stone);
                                 break;
                             }
                         case 2:
                             {
-                                PoisonStone stone = new PoisonStone(.02f, this.Position, 3);
+                                PoisonStone stone = new PoisonStone(.02f, this.Position, 3, 1);
                                 data.addItem(stone);
                                 break;
                             }
                         case 3:
                             {
-                                FireStone stone = new FireStone(.02f, this.Position, 3);
+                                FireStone stone = new FireStone(.02f, this.Position, 3, 1);
                                 data.addItem(stone);
                                 break;
                             }
                         case 4:
                             {
-                                VampiricStone stone = new VampiricStone(.02f, this.Position, 3);
+                                VampiricStone stone = new VampiricStone(.02f, this.Position, 3, 1);
                                 data.addItem(stone);
                                 break;
                             }
                         case 5:
                             {
-                                IceStone stone = new IceStone(.02f, this.Position, 3);
+                                IceStone stone = new IceStone(.02f, this.Position, 3, 1);
                                 data.addItem(stone);
                                 break;
                             }
@@ -452,31 +452,31 @@ namespace AdlezHolder
                     {
                         case 1:
                             {
-                                LightningStone stone = new LightningStone(.02f, this.Position, 2);
+                                LightningStone stone = new LightningStone(.02f, this.Position, 2, 1);
                                 data.addItem(stone);
                                 break;
                             }
                         case 2:
                             {
-                                PoisonStone stone = new PoisonStone(.02f, this.Position, 2);
+                                PoisonStone stone = new PoisonStone(.02f, this.Position, 2, 1);
                                 data.addItem(stone);
                                 break;
                             }
                         case 3:
                             {
-                                FireStone stone = new FireStone(.02f, this.Position, 2);
+                                FireStone stone = new FireStone(.02f, this.Position, 2, 1);
                                 data.addItem(stone);
                                 break;
                             }
                         case 4:
                             {
-                                VampiricStone stone = new VampiricStone(.02f, this.Position, 2);
+                                VampiricStone stone = new VampiricStone(.02f, this.Position, 2, 1);
                                 data.addItem(stone);
                                 break;
                             }
                         case 5:
                             {
-                                IceStone stone = new IceStone(.02f, this.Position, 2);
+                                IceStone stone = new IceStone(.02f, this.Position, 2, 1);
                                 data.addItem(stone);
                                 break;
                             }
@@ -488,31 +488,31 @@ namespace AdlezHolder
                     {
                         case 1:
                             {
-                                LightningStone stone = new LightningStone(.02f, this.Position, 1);
+                                LightningStone stone = new LightningStone(.02f, this.Position, 1, 1);
                                 data.addItem(stone);
                                 break;
                             }
                         case 2:
                             {
-                                PoisonStone stone = new PoisonStone(.02f, this.Position, 1);
+                                PoisonStone stone = new PoisonStone(.02f, this.Position, 1, 1);
                                 data.addItem(stone);
                                 break;
                             }
                         case 3:
                             {
-                                FireStone stone = new FireStone(.02f, this.Position, 1);
+                                FireStone stone = new FireStone(.02f, this.Position, 1, 1);
                                 data.addItem(stone);
                                 break;
                             }
                         case 4:
                             {
-                                VampiricStone stone = new VampiricStone(.02f, this.Position, 1);
+                                VampiricStone stone = new VampiricStone(.02f, this.Position, 1, 1);
                                 data.addItem(stone);
                                 break;
                             }
                         case 5:
                             {
-                                IceStone stone = new IceStone(.02f, this.Position, 1);
+                                IceStone stone = new IceStone(.02f, this.Position, 1, 1);
                                 data.addItem(stone);
                                 break;
                             }
@@ -524,12 +524,12 @@ namespace AdlezHolder
                 int wepSelect = rand.Next(1, 10);
                 if (wepSelect <= 7)
                 {
-                    Arrow a = new Arrow(.02f, false, "Arrow", 20, this.Position);
+                    Arrow a = new Arrow(.02f, false, "Arrow", 20, this.Position, 1);
                     data.addItem(a);
                 }
                 else
                 {
-                    BombItem b = new BombItem(.02f, this.Position);
+                    BombItem b = new BombItem(.02f, this.Position, 1);
                     data.addItem(b);
                 }
             }

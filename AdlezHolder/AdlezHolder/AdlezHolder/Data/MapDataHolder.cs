@@ -100,6 +100,7 @@ namespace AdlezHolder
                     mapData.mapId = "lPassage"; //this will probably be changed to a better name later
                 else if (this.GetType() == typeof(Nwot))
                     mapData.mapId = "nwot";
+
                 else if (this.GetType() == typeof(LeftBot))
                     mapData.mapId = "";
                 else if (this.GetType() == typeof(LeftTop))
@@ -322,54 +323,73 @@ namespace AdlezHolder
                 {
                     particles[i].Update(gameTime);
 
-                    List<BaseSprite> sprites = everything;
-                    for (int j = 0; j < sprites.Count; j++)
+                    if (particles[i].PType != ParticleType.TELEPORT)
                     {
-                        if (sprites[j].CollisionRec.Intersects(particles[i].Rec))
-                        {
-                            if (sprites[j].GetType() == typeof(Character))
-                            {
-                                Character c = (Character)sprites[j];
-                                c.damage(particles[i].Damage);
-                            }
-                            else if (sprites[j].GetType().IsSubclassOf(typeof(Enemy)))
-                            {
-                                Enemy e = (Enemy)sprites[j];
-                                e.damage(this, particles[i].Damage);
-                                for (int k = 0; k < particles[i].Types.Count; k++)
-                                {
-                                    switch (particles[i].Types[k])
-                                    {
-                                        case GemType.FIRE:
-                                            {
-                                                e.burn(particles[i].GemEffects[k].damage,
-                                                    particles[i].GemEffects[k].duration);
-                                                break;
-                                            }
-                                        case GemType.FREEZE:
-                                            {
-                                                e.freeze(particles[i].GemEffects[k].damage,
-                                                    particles[i].GemEffects[k].duration);
-                                                break;
-                                            }
-                                        case GemType.STUN:
-                                            {
-                                                e.stun(particles[i].GemEffects[k].duration);
-                                                break;
-                                            }
-                                        case GemType.POISON:
-                                            {
-                                                e.freeze(particles[i].GemEffects[k].damage,
-                                                    particles[i].GemEffects[k].duration);
-                                                break;
-                                            }
-                                        case GemType.LS:
-                                            {
-                                                map.Player.heal((int)(particles[i].GemEffects[k].chance * particles[i].Damage));
-                                                break;
-                                            }
-                                    }
 
+                        List<BaseSprite> sprites = everything;
+                        for (int j = 0; j < sprites.Count; j++)
+                        {
+                            if (sprites[j].CollisionRec.Intersects(particles[i].Rec))
+                            {
+                                if (sprites[j].GetType() == typeof(Character))
+                                {
+                                    Character c = (Character)sprites[j];
+                                    c.damage(particles[i].Damage);
+                                }
+                                else if (sprites[j].GetType().IsSubclassOf(typeof(Enemy)))
+                                {
+                                    Enemy e = (Enemy)sprites[j];
+                                    e.damage(this, particles[i].Damage);
+                                    for (int k = 0; k < particles[i].Types.Count; k++)
+                                    {
+                                        switch (particles[i].Types[k])
+                                        {
+                                            case GemType.FIRE:
+                                                {
+                                                    e.burn(particles[i].GemEffects[k].damage,
+                                                        particles[i].GemEffects[k].duration);
+                                                    break;
+                                                }
+                                            case GemType.FREEZE:
+                                                {
+                                                    e.freeze(particles[i].GemEffects[k].damage,
+                                                        particles[i].GemEffects[k].duration);
+                                                    break;
+                                                }
+                                            case GemType.STUN:
+                                                {
+                                                    e.stun(particles[i].GemEffects[k].duration);
+                                                    break;
+                                                }
+                                            case GemType.POISON:
+                                                {
+                                                    e.freeze(particles[i].GemEffects[k].damage,
+                                                        particles[i].GemEffects[k].duration);
+                                                    break;
+                                                }
+                                            case GemType.LS:
+                                                {
+                                                    map.Player.heal((int)(particles[i].GemEffects[k].chance * particles[i].Damage));
+                                                    break;
+                                                }
+                                        }
+
+                                        particles.RemoveAt(i);
+                                        i--;
+                                        if (i < 0)
+                                            i = 0;
+                                        break;
+                                    }
+                                }
+                                else if (sprites[j].GetType() == typeof(BombObj))
+                                {
+                                    BombObj b = (BombObj)sprites[j];
+                                    b.rushDelay();
+                                }
+
+                                if (sprites[j].GetType().IsSubclassOf(typeof(Item))
+                                    && sprites[j].GetType() != typeof(BombObj))
+                                {
                                     particles.RemoveAt(i);
                                     i--;
                                     if (i < 0)
@@ -377,32 +397,17 @@ namespace AdlezHolder
                                     break;
                                 }
                             }
-                            else if (sprites[j].GetType() == typeof(BombObj))
-                            {
-                                BombObj b = (BombObj)sprites[j];
-                                b.rushDelay();
-                            }
+                        }
 
-                            if (sprites[j].GetType().IsSubclassOf(typeof(Item))
-                                && sprites[j].GetType() != typeof(BombObj))
+                        if (i >= 0 && i < particles.Count)
+                        {
+                            if (particles[i].OffScreen)
                             {
                                 particles.RemoveAt(i);
                                 i--;
                                 if (i < 0)
                                     i = 0;
-                                break;
                             }
-                        }
-                    }
-
-                    if (i >= 0 && i < particles.Count)
-                    {
-                        if (particles[i].OffScreen)
-                        {
-                            particles.RemoveAt(i);
-                            i--;
-                            if (i < 0)
-                                i = 0;
                         }
                     }
                 }
@@ -417,7 +422,6 @@ namespace AdlezHolder
             float moveToX = (Game1.DisplayWidth / 2) - player.Center.X;
             if (backgroundRec.Height != 0 && backgroundRec.Width != 0)
             {
-
                 if (topLeftCorner.Y + moveToY < topLeftCornerView.Y && bottomLeftCorner.Y + moveToY > bottomLeftCornerView.Y)
                 {
                     adjustObjectsBackgroundTripWires(new Vector2(0, moveToY), true);
@@ -448,64 +452,6 @@ namespace AdlezHolder
                     adjustObjectsBackgroundTripWires(new Vector2(moveToX, 0), true);
                 }
             }
-
-            /*
-            //see if there can be a way to have a free moving camera with the arrow keys
-            if (player.Center.Y >= (Game1.DisplayHeight / 2) - 1 && player.Center.Y <= (Game1.DisplayHeight / 2) + 1)
-            {
-                //TODO: change if
-            }
-            else
-            {
-                moveObjectsUp = false;
-                moveObjectsDown = false;
-
-                float botLeftMove = (Game1.DisplayHeight / 2) - player.Center.Y;
-                float topLeftMove = (Game1.DisplayHeight / 2) - player.Center.Y;
-
-                if (player.Center.Y < (Game1.DisplayHeight / 2)  &&
-                    topLeftCorner.Y + topLeftMove <= topLeftCornerView.Y)
-                {
-                    adjustObjectsBackgroundTripWires(new Vector2(0, topLeftMove));
-                }
-                // may need to put an else here too, not sure yet
-                if (player.Center.Y > (Game1.DisplayHeight / 2) && 
-                    bottomLeftCorner.Y + botLeftMove >= bottomLeftCornerView.Y)
-                {
-                    adjustObjectsBackgroundTripWires(new Vector2(0, botLeftMove));
-                }
-                else if (player.Center.Y > (Game1.DisplayHeight / 2))
-                {
-                    adjustObjectsBackgroundTripWires(new Vector2(0, bottomLeftCornerView.Y - bottomLeftCorner.Y ));
-                }
-            }
-
-            if (player.Center.X >= (Game1.DisplayWidth / 2) - 1 && player.Center.X <= (Game1.DisplayWidth / 2) + 1)
-            {
-                //TODO: change if
-            }
-            else
-            {
-                moveObjectsLeft = false;
-                moveObjectsRight = false;
-
-                float botLeftMove = (Game1.DisplayWidth / 2) - 1 - player.Center.X;
-                float botRightMove = (Game1.DisplayWidth / 2) + 1 - player.Center.X;
-
-                if (player.Center.X > (Game1.DisplayWidth / 2) + 1 &&
-                   bottomRightCorner.X + botRightMove >= bottomRightCornerView.X)
-                {
-                    adjustObjectsBackgroundTripWires(new Vector2(botRightMove, 0));
-                }
-
-                if (player.Center.X < (Game1.DisplayWidth / 2) - 1 &&
-                    bottomLeftCorner.X + botLeftMove <= bottomLeftCornerView.X)
-                    
-                {
-                    adjustObjectsBackgroundTripWires(new Vector2(botLeftMove, 0));
-                }
-            }
-             */
         }
 
         public virtual void adjustObjectsBackgroundTripWires(Vector2 vecToMove, bool player)

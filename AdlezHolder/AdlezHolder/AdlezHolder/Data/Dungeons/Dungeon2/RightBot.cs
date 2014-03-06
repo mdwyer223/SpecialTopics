@@ -15,6 +15,8 @@ namespace AdlezHolder
 {
     public class RightBot : MapDataHolder
     {
+        bool changePos = false;
+
         public RightBot(Character player)
             : base(player)
         {
@@ -40,9 +42,45 @@ namespace AdlezHolder
             addImmovable(wall);
 
             //Left
-            wall = new Wall(new Rectangle(148 - backgroundRec.Width, 215, backgroundRec.Width, backgroundRec.Height),
+            wall = new Wall(new Rectangle(128 - backgroundRec.Width, 215, backgroundRec.Width, backgroundRec.Height),
                 Game1.GameContent.Load<Texture2D>("Random/The best thing ever"), new Vector2(130, backgroundRec.Height));
             addImmovable(wall);
+
+            TripWire t = new TripWire(.02f, new Rectangle(130, 320, 10, 370));
+            addTripWire(t);
+        }
+
+        public override void Update(Map map, GameTime gameTime)
+        {
+            if (!changePos)
+            {
+                map.Player.Position = new Vector2(130, 335);
+                changePos = true;
+            }
+
+            bool change = false;
+
+            for (int i = 0; i < tripWires.Count; i++)
+            {
+                tripWires[i].Update(map.Player.CollisionRec);
+
+                if (map.Player.Direction == Orientation.LEFT)
+                {
+                    if (i == 0 && tripWires[i].IfTripped)
+                    {
+                        change = true;
+                    }
+                }
+            }
+
+            if (change)
+            {
+                map.changeMap(new MainRoom2("RightBot"));
+            }
+            else
+            {
+                base.Update(map, gameTime);
+            }
         }
     }
 }

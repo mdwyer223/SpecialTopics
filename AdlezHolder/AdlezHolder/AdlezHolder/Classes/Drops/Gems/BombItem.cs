@@ -22,8 +22,8 @@ namespace AdlezHolder
         }
 
         //orange
-        public BombItem(float scaleFactor, Vector2 startPosition)
-            :base(Game1.GameContent.Load<Texture2D>("Weapons/Bomb"), scaleFactor, startPosition, "Bomb", true, false, true, 100)
+        public BombItem(float scaleFactor, Vector2 startPosition, int numberOf)
+            :base(Game1.GameContent.Load<Texture2D>("Weapons/Bomb"), scaleFactor, startPosition, "Bomb", true, false, true, 100, numberOf)
         {
             
         }

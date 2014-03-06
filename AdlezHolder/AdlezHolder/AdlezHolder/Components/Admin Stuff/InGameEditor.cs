@@ -50,6 +50,7 @@ namespace AdlezHolder
             if (keys.IsKeyDown(Keys.Enter) && oldkeys.IsKeyUp(Keys.Enter) && Game1.MainGameState == GameState.PLAYING)
             {
                 editing = !editing;
+                command += ">";
             }
 
             if (Game1.MainGameState != GameState.PLAYING)
@@ -477,6 +478,11 @@ namespace AdlezHolder
             }
             else
             {
+                if (command.Length != 0)
+                {
+                    command.Remove(0, 1);
+                }
+
                 if (command.Contains("CHANGE"))
                 {
                     //check options
@@ -503,32 +509,32 @@ namespace AdlezHolder
                     if (option.Equals("ARROW"))
                     {
                         m.CurrentData.addItem(new Arrow(.02f, false, "Arrow", 10, 
-                            new Vector2(Game1.DisplayWidth / 2, Game1.DisplayHeight / 2)));
+                            new Vector2(Game1.DisplayWidth / 2, Game1.DisplayHeight / 2), 1));
                     }
                     else if (option.Equals("LSTONE"))
                     {
                         m.CurrentData.addItem((new LightningStone(.02f,
-                            new Vector2(Game1.DisplayWidth / 2, Game1.DisplayHeight / 2), 4)));
+                            new Vector2(Game1.DisplayWidth / 2, Game1.DisplayHeight / 2), 4, 1)));
                     }
                     else if (option.Equals("VSTONE"))
                     {
                         m.CurrentData.addItem((new VampiricStone(.02f,
-                            new Vector2(Game1.DisplayWidth / 2, Game1.DisplayHeight / 2), 4)));
+                            new Vector2(Game1.DisplayWidth / 2, Game1.DisplayHeight / 2), 4, 1)));
                     }
                     else if (option.Equals("ISTONE"))
                     {
                         m.CurrentData.addItem((new IceStone(.02f,
-                            new Vector2(Game1.DisplayWidth / 2, Game1.DisplayHeight / 2), 4)));
+                            new Vector2(Game1.DisplayWidth / 2, Game1.DisplayHeight / 2), 4, 1)));
                     }
                     else if (option.Equals("FSTONE"))
                     {
                         m.CurrentData.addItem((new FireStone(.02f,
-                            new Vector2(Game1.DisplayWidth / 2, Game1.DisplayHeight / 2), 4)));
+                            new Vector2(Game1.DisplayWidth / 2, Game1.DisplayHeight / 2), 4, 1)));
                     }
                     else if (option.Equals("PSTONE"))
                     {
                         m.CurrentData.addItem((new PoisonStone(.02f,
-                            new Vector2(Game1.DisplayWidth / 2, Game1.DisplayHeight / 2), 4)));
+                            new Vector2(Game1.DisplayWidth / 2, Game1.DisplayHeight / 2), 4, 1)));
                     }
                     else if (option.Equals("MONEY"))
                     {
@@ -536,11 +542,11 @@ namespace AdlezHolder
                     }
                     else if (option.Equals("POTION"))
                     {
-                        m.CurrentData.addItem(new Potion(new Vector2(Game1.DisplayWidth / 2, Game1.DisplayHeight / 2), .02f, 2));
+                        m.CurrentData.addItem(new Potion(new Vector2(Game1.DisplayWidth / 2, Game1.DisplayHeight / 2), .02f, 2, 1));
                     }
                     else if (option.Equals("BOMB"))
                     {
-                        m.CurrentData.addItem(new BombItem(.02f, new Vector2(Game1.DisplayWidth / 2, Game1.DisplayHeight / 2)));
+                        m.CurrentData.addItem(new BombItem(.02f, new Vector2(Game1.DisplayWidth / 2, Game1.DisplayHeight / 2), 1));
                     }
                     else if (option.Equals("SKELETON"))
                     {

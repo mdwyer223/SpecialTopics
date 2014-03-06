@@ -17,6 +17,7 @@ namespace AdlezHolder
     public class Character : AnimatedSprite
     {
         List<Message> messages;
+        List<Particle> particles;
         SoundEffect damaged;
         EquippedItem selectedItem;
         FullAnimation swordMove, bowMove, move, Idle, swordAttack, bowAttack;
@@ -28,16 +29,17 @@ namespace AdlezHolder
         int money, arrowCount, bombCount,
             maxArrows, maxBombs;
 
-        bool attacking, bowShot, bombSet;
+        bool attacking, bowShot, bombSet, didTele;
 
         int healthPointsMax, currentHealthPoints;
-
 
         int immunityTimer = 0, attackTimer = 0, healingTimer = 0;
         const float IMMUNITY_TIME = .25f, ATTACK_TIME = .17f, HEALING_SICKNESS = .25f;
 
         private GemStruct burnTotal, freezeTotal, stunTotal, poisonTotal;
         private int burnTimer, freezeTimer, stunTimer, poisonTimer;
+
+        int r, g, b;
 
         public new CharacterStruct SaveData
         {
@@ -82,6 +84,11 @@ namespace AdlezHolder
                 bombCount = value.bombCount;
 
             }
+        }
+
+        public bool Teled
+        {
+            get { return didTele; }
         }
         
         public int Speed
@@ -170,12 +177,17 @@ namespace AdlezHolder
             canMoveLeft = true;
             attacking = false;
             construct();
+
+            r = color.R;
+            b = color.B;
+            g = color.G;
         }
 
         private void construct()
         {
             ContentManager content = Game1.GameContent;
             messages = new List<Message>();
+            particles = new List<Particle>();
             invent = new Inventory();
 
             sword = new Sword(.05f);
@@ -303,18 +315,22 @@ namespace AdlezHolder
             canMoveLeft = true;
             attacking = false;
 
-            invent.addItem(new Potion(Vector2.Zero, .02f, 2), this);
-            invent.addItem(new Potion(Vector2.Zero, .02f, 2), this);
-            invent.addItem(new Potion(Vector2.Zero, .02f, 2), this);
-            invent.addItem(new Potion(Vector2.Zero, .02f, 2), this);
-            invent.addItem(new Potion(Vector2.Zero, .02f, 2), this);
-            invent.addItem(new Potion(Vector2.Zero, .02f, 2), this);
-            invent.addItem(new Potion(Vector2.Zero, .02f, 2), this);
+            invent.addItem(new Potion(Vector2.Zero, .02f, 2, 7), this);
         }
 
         public override void Update(Map data, GameTime gameTime)
         {
-            KeyboardState keys = Keyboard.GetState();            
+            KeyboardState keys = Keyboard.GetState();
+            if (r < 255)
+                r++;
+            if (b < 255)
+                b++;
+            if (g < 255)
+                g++;
+
+            color = new Color(r, g, b);
+            Color c = Color.White;
+
             for (int i = 0; i < messages.Count; i++)
             {
                 if (messages[i] != null)
@@ -361,6 +377,22 @@ namespace AdlezHolder
             else
             {
                 healingTimer = (int)(HEALING_SICKNESS * 1000) + 1;
+            }
+
+            for (int i = 0; i < particles.Count; i++)
+            {
+                if (particles[i] != null)
+                {
+                    Vector2 velo = new Vector2((Center.X - particles[i].Position.X), (Center.Y - particles[i].Position.Y) );
+                    velo.Normalize();
+                    velo *= 1.1f;
+                    particles[i].adjustVelo(velo);
+                    if (particles[i].OffScreen || measureDistance(particles[i].Position) < 10)
+                    {
+                        particles[i].rushOffScreen();
+                        particles.RemoveAt(i);
+                    }
+                }
             }
 
             updateAffects();
@@ -776,9 +808,9 @@ namespace AdlezHolder
                             position += vecToMove;
                         }
                     }
-                    else if (objectsColliding[i].GetType() == typeof(ImmovableObject) ||
+                    else if ((objectsColliding[i].GetType() == typeof(ImmovableObject) ||
                         objectsColliding[i].GetType().IsSubclassOf(typeof(ImmovableObject)) || 
-                        objectsColliding[i].GetType().IsSubclassOf(typeof(Enemy)))
+                        objectsColliding[i].GetType().IsSubclassOf(typeof(Enemy))) && objectsColliding[i].GetType() != typeof(Teleporter))
                     {
                         canMoveRight = direction != Orientation.RIGHT;
                         canMoveDown = direction != Orientation.DOWN;
@@ -853,5 +885,69 @@ namespace AdlezHolder
             base.Update(null, gt);
         }
 
+        public void increaseColor(bool red, bool blue, bool green)
+        {
+            if (red)
+            {
+                r += 3;
+                if (r > 255)
+                    r = 255;
+            }
+            if (blue)
+            {
+                b += 3;
+                if (b > 255)
+                    b = 255;
+            }
+            if (green)
+            {
+                g += 3;
+                if (g > 255)
+                    g = 255;
+            }
+        }
+
+        public void decreaseColor(bool red, bool blue, bool green)
+        {
+            if (red)
+            {
+                r -= 3;
+                if (r < 0)
+                    r = 0;
+            }
+            if (blue)
+            {
+                b -= 3;
+                if (b < 0)
+                    b = 0;
+            }
+            if (green)
+            {
+                g -= 3;
+                if (g < 0)
+                    g = 0;
+            }
+        }
+
+        public void teleported(MapDataHolder data)
+        {
+            Random rand = new Random();
+            int maxDist = 120;
+
+            for (int i = 0; i < 800; i++)
+            {
+                Vector2 tempPos = new Vector2((float)(rand.NextDouble() * rand.Next(-maxDist, maxDist)) + Center.X, (float)(rand.NextDouble() * rand.Next(-maxDist, maxDist)) + Center.Y);
+                Particle p = new Particle(Color.Cyan, 2, tempPos, 7, new Vector2(0, 0),
+                   Vector2.Zero, ParticleType.TELEPORT);
+
+                particles.Add(p);
+                data.addParticle(p);
+            }
+        }
+
+        public void setTele(bool value)
+        {
+            didTele = value;
+        }
     }
 }

@@ -22,7 +22,7 @@ namespace AdlezHolder
             this.triggers = triggers;
         }
 
-        public virtual void Update(Map data, GameTime gametime)
+        public override void Update(Map data, GameTime gametime)
         {
             if (!dead)
             {

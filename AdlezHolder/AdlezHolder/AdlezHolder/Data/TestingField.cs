@@ -30,17 +30,7 @@ namespace AdlezHolder
         public override void Update(Map map, GameTime gameTime)
         {
             keys = Keyboard.GetState();
-            if (!itemAdd)
-            {
-                addItem(new Arrow(.02f, false, "Wooden Arrow", 10, new Vector2(300, -200)));
-                addItem((new Arrow(.02f, false, "Wooden Arrow", 10, new Vector2(325, -200))));
-                addItem((new Arrow(.02f, false, "Wooden Arrow", 10, new Vector2(350, -200))));
-                addItem((new Arrow(.02f, false, "Wooden Arrow", 10, new Vector2(375, -200))));
-                addItem((new Arrow(.02f, false, "Wooden Arrow", 10, new Vector2(400, -200))));
-                addItem((new Arrow(.02f, false, "Wooden Arrow", 10, new Vector2(425, -200))));
-                addItem((new Arrow(.02f, false, "Wooden Arrow", 10, new Vector2(450, -200))));
-                itemAdd = true;
-            }
+
             if (Keyboard.GetState().IsKeyDown(Keys.R))
             {
                 //Game1.ParticleState = ParticleState.RAIN;
@@ -68,6 +58,16 @@ namespace AdlezHolder
             {
                 map.Player.Position = new Vector2(Game1.DisplayWidth / 2, Game1.DisplayHeight / 2);
                 setPlayer = true;
+            }
+            if (!itemAdd)
+            {
+                addImmovable((new Teleporter(new Rectangle(100, 200, 50, 3), "")));
+                addImmovable((new Teleporter(new Rectangle(175, 200, 50, 3), "")));
+                addImmovable((new Teleporter(new Rectangle(250, 200, 50, 3), "")));
+                addImmovable((new Teleporter(new Rectangle(325, 200, 50, 3), "nwot")));
+                addImmovable((new Teleporter(new Rectangle(400, 200, 50, 3), "mroom2")));
+                addImmovable((new Teleporter(new Rectangle(475, 200, 50, 3), "mroom1")));
+                itemAdd = true;
             }
             oldKeys = keys;
         }

@@ -134,7 +134,7 @@ namespace AdlezHolder
             damage = 25;
             range = 300;
 
-            gemList.Add(new IceStone(.02f, Vector2.Zero, 1));
+            gemList.Add(new IceStone(.02f, Vector2.Zero, 1, 1));
         }
 
         public void Update(Map data, GameTime gameTime)

@@ -12,6 +12,9 @@ namespace AdlezHolder
 {
     public class BossRoom : MapDataHolder
     {
+        string lastPlace = "";
+        bool changePos = false;
+
         public BossRoom(Character player)
         {
             backgroundDirectory = "BackgroundsAndFloors/Dungeons/FixedDungeon1/DungeonRoomBoss";

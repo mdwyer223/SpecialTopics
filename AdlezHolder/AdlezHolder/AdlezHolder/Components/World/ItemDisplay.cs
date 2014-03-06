@@ -35,6 +35,7 @@ namespace AdlezHolder
 
             bombRec = new Rectangle((int)(screenRectangle.X), (int)(screenRectangle.Height - bombImage.Height), bombImage.Width, bombImage.Height);
 
+
             bombRec = scale(.02f, bombRec, bombImage);
         }
 
