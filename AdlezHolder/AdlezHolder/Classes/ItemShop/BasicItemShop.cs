@@ -18,6 +18,7 @@ namespace AdlezHolder
         Item[,] itemArray;
         int price;
         int inflation;
+        Texture2D itemImage;
         int displayHeight = Game1.DisplayHeight;
         int displayWidth = Game1.DisplayWidth;
         BaseSprite itemPicture;
@@ -33,6 +34,7 @@ namespace AdlezHolder
 
         public BasicItemShop(Character Character)
         {
+            Vector2 itemImageVector;
             keys = Keyboard.GetState();
             oldKeys = keys;
             itemColumnIndex = 0;
@@ -45,28 +47,23 @@ namespace AdlezHolder
             itemArray = new Item[4, 3];
             this.getTownsItems(1);
 
-            int widthSeperation;
-            widthSeperation = Game1.DisplayWidth / 20;
-            Vector2 tempVector;
-            tempVector.X = widthSeperation / 2;
-            tempVector.Y = ((int)(displayHeight * .05));
-
+            itemImageVector.X = (float)(Game1.DisplayHeight);
+            itemImageVector.Y = (float)(Game1.DisplayWidth);
             itemColumnIndex = 0;
             itemRowIndex = 1;
 
-            itemArray[0, 1].Selected = false;
+            itemArray[0, 0].Selected = false;
             tempCharacter = Character;
             playersCash = tempCharacter.Money;
+            itemImage = itemArray[0, 0].getItemImage();
 
-
-
+            itemPicture = new BaseSprite(itemImage, .3f, displayWidth, 0,itemImageVector) ;
         }
 
 
         public void Update(GameTime gameTime)
         {
             bool wasJustPurchased = false;
-            moveItems = 0;
             playersCash = tempCharacter.Money;
             keys = Keyboard.GetState();
 
@@ -88,14 +85,18 @@ namespace AdlezHolder
                     if (itemArray[itemColumnIndex, itemRowIndex] != null)
                     {
                         itemArray[itemColumnIndex, itemRowIndex].Selected = false;
-                        enoughCash = "\nPress Enter to Purchase" + itemArray[itemColumnIndex, itemRowIndex].getEffectsString();
+                        itemMessage = "\nPress Enter to Purchase" + itemArray[itemColumnIndex, itemRowIndex].getEffectsString();
+                        itemImage = itemArray[itemColumnIndex, itemRowIndex].getItemImage();
+
+
                     }
                     else
                     {
                         itemRowIndex = 1;
                         itemArray[itemColumnIndex, itemRowIndex].Selected = false;
                         lastItem = itemArray[1, 0];
-                        enoughCash = "\nPress Enter to Purchase" + itemArray[itemColumnIndex, itemRowIndex].getEffectsString();
+                        itemMessage = "\nPress Enter to Purchase" + itemArray[itemColumnIndex, itemRowIndex].getEffectsString();
+                        itemImage = itemArray[itemColumnIndex, itemRowIndex].getItemImage();
                     }
                 }
             }
@@ -118,14 +119,16 @@ namespace AdlezHolder
                     if (itemArray[itemColumnIndex, itemRowIndex] != null)
                     {
                         itemArray[itemColumnIndex, itemRowIndex].Selected = false;
-                        enoughCash = "\nPress Enter to Purchase" + itemArray[itemColumnIndex, itemRowIndex].getEffectsString();
+                        itemMessage = "\nPress Enter to Purchase" + itemArray[itemColumnIndex, itemRowIndex].getEffectsString();
+                        itemImage = itemArray[itemColumnIndex, itemRowIndex].getItemImage();
                     }
                     else
                     {
                         itemRowIndex = 1;
                         itemArray[itemColumnIndex, itemRowIndex].Selected = false;
                         lastItem = itemArray[1, 0];
-                        enoughCash = "\nPress Enter to Purchase" + itemArray[itemColumnIndex, itemRowIndex].getEffectsString();
+                        itemMessage = "\nPress Enter to Purchase" + itemArray[itemColumnIndex, itemRowIndex].getEffectsString();
+                        itemImage = itemArray[itemColumnIndex, itemRowIndex].getItemImage();
                     }
                 }
             }
@@ -136,11 +139,10 @@ namespace AdlezHolder
                 {
                     lastItem = itemArray[itemColumnIndex, itemRowIndex];
                     itemColumnIndex--;
-                    itemRowIndex = 1;
                     itemArray[itemColumnIndex, itemRowIndex].Selected = false;
-                    moveItems = 75;
                     wasJustPurchased = false;
-                    enoughCash = "\nPress Enter to Purchase" + itemArray[itemColumnIndex, itemRowIndex].getEffectsString();
+                    itemMessage = "\nPress Enter to Purchase" + itemArray[itemColumnIndex, itemRowIndex].getEffectsString();
+                    itemImage = itemArray[itemColumnIndex, itemRowIndex].getItemImage();
                 }
 
 
@@ -149,15 +151,14 @@ namespace AdlezHolder
 
             if (keys.IsKeyDown(Keys.D) && oldKeys.IsKeyUp(Keys.D))
             {
-                if (itemColumnIndex != 6)
+                if (itemColumnIndex != 3)
                 {
                     lastItem = itemArray[itemColumnIndex, itemRowIndex];
                     itemColumnIndex++;
-                    itemRowIndex = 1;
                     itemArray[itemColumnIndex, itemRowIndex].Selected = false;
-                    moveItems = -75;
                     wasJustPurchased = false;
-                    enoughCash = "\nPress Enter to Purchase" + itemArray[itemColumnIndex, itemRowIndex].getEffectsString();
+                    itemMessage = "\nPress Enter to Purchase" + itemArray[itemColumnIndex, itemRowIndex].getEffectsString();
+                    itemImage = itemArray[itemColumnIndex, itemRowIndex].getItemImage();
                 }
             }
 
@@ -174,7 +175,7 @@ namespace AdlezHolder
                     {
                         if (tempCharacter.PlayerInvent.Full != true)
                         {
-                            enoughCash = "\nPurchase Complete";
+                            itemMessage = "\nPurchase Complete";
                             wasJustPurchased = true;
                             tempCharacter.PlayerInvent.addItem(itemArray[itemColumnIndex, itemRowIndex],tempCharacter);
                             tempCharacter.subtractFunds(itemArray[itemColumnIndex, itemRowIndex].getCost);
@@ -183,25 +184,13 @@ namespace AdlezHolder
                     }
                     else
                     {
-                        enoughCash = "\nYou do not have enough cash!";
+                        itemMessage = "\nYou do not have enough cash!";
                     }
                 
 
             }
 
             selectedItem = itemArray[itemColumnIndex, itemRowIndex];
-
-            for (int i = 0; i < 4; i++)
-            {
-                for (int x = 0; x < 3; x++)
-                {
-                    if (itemArray.GetValue(i, x) != null)
-                    {
-                        itemArray[i, x].setRec(moveItems);
-
-                    }
-                }
-            }
 
             if (wasJustPurchased)
             {
@@ -213,25 +202,13 @@ namespace AdlezHolder
             }
 
             infoBox.deleteMessage();
-            infoBox.receiveMessage("Players Cash:  $" + tempCharacter.Money);
+            infoBox.receiveMessage("Players Cash:  $" + tempCharacter.Money + "     " + itemMessage);
             infoBox.update();
 
             selectedItem = itemArray[itemColumnIndex, itemRowIndex];
 
-
-            for (int i = 0; i < 4; i++)
-            {
-                for (int x = 0; x < 3; x++)
-                {
-                    if (itemArray.GetValue(i, x) != null)
-                    {
-                        itemArray[i, x].setRec(moveItems);
-
-                    }
-                }
-            }
             oldKeys = keys;
-
+            itemPicture.setImage(itemImage);
         }
 
         //private void changeItemGameState(ItemGameState newState)
@@ -252,6 +229,8 @@ namespace AdlezHolder
                     }
                 }
             }
+            infoBox.draw(spriteBatch);
+            itemPicture.Draw(spriteBatch);
         }
 
         public void getTownsItems(int x)
@@ -275,9 +254,9 @@ namespace AdlezHolder
             overScan.Y = displayHeight - marginHeight;
 
             heightSeparation = overScan.Height / 8;
-            widthSeperation = overScan.Width / 4;
+            widthSeperation = overScan.Width / 8;
 
-            itemPosition.X = widthSeperation;
+            itemPosition.X = widthSeperation * 4;
             itemPosition.Y = heightSeparation;
 
             itemBottomRow = heightSeparation * 4;
@@ -294,18 +273,21 @@ namespace AdlezHolder
                 itemPosition.Y = itemBottomRow;
                 itemArray[0, 2] = new IceStone(Game1.GameContent.Load<Texture2D>("Items/CyanStone"), scalefactor, itemPosition, "Ice Stone", false, false, false, 50);
                 itemPosition.Y = itemTopRow;
+                itemPosition.X = itemPosition.X + widthSeperation;
                 itemArray[1, 0] = new IceStone(Game1.GameContent.Load<Texture2D>("Items/CyanStone"), scalefactor, itemPosition, "Ice Stone", false, false, false, 50);
                 itemPosition.Y = itemMiddleRow;
                 itemArray[1, 1] = new IceStone(Game1.GameContent.Load<Texture2D>("Items/CyanStone"), scalefactor, itemPosition, "Ice Stone", false, false, false, 50);
                 itemPosition.Y = itemBottomRow;
                 itemArray[1, 2] = new IceStone(Game1.GameContent.Load<Texture2D>("Items/CyanStone"), scalefactor, itemPosition, "Ice Stone", false, false, false, 50);
                 itemPosition.Y = itemTopRow;
+                itemPosition.X = itemPosition.X + widthSeperation;
                 itemArray[2, 0] = new IceStone(Game1.GameContent.Load<Texture2D>("Items/CyanStone"), scalefactor, itemPosition, "Ice Stone", false, false, false, 50);
                 itemPosition.Y = itemMiddleRow;
                 itemArray[2, 1] = new IceStone(Game1.GameContent.Load<Texture2D>("Items/CyanStone"), scalefactor, itemPosition, "Ice Stone", false, false, false, 50);
                 itemPosition.Y = itemBottomRow;
                 itemArray[2, 2] = new IceStone(Game1.GameContent.Load<Texture2D>("Items/CyanStone"), scalefactor, itemPosition, "Ice Stone", false, false, false, 50);
                 itemPosition.Y = itemTopRow;
+                itemPosition.X = itemPosition.X + widthSeperation;
                 itemArray[3, 0] = new IceStone(Game1.GameContent.Load<Texture2D>("Items/CyanStone"), scalefactor, itemPosition, "Ice Stone", false, false, false, 50);
                 itemPosition.Y = itemMiddleRow;
                 itemArray[3, 1] = new IceStone(Game1.GameContent.Load<Texture2D>("Items/CyanStone"), scalefactor, itemPosition, "Ice Stone", false, false, false, 50);

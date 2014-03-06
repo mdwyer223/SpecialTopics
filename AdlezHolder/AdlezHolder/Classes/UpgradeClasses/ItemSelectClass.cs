@@ -228,8 +228,8 @@ namespace AdlezHolder
 
         public void Draw(SpriteBatch spriteBatch)
         {
-           
-            
+
+            bItemShop.Draw(spriteBatch);
             //if(CurrentTreeGameState == TreeGameState.ITEMSELECT )
             //{
             //    swordButton.Draw(spriteBatch);
