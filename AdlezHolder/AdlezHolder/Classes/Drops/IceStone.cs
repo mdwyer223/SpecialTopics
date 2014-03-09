@@ -16,5 +16,10 @@ namespace AdlezHolder
             :base(texture, scaleFactor, startPosition, tag, value)
         {
         }
+
+        public override Texture2D getItemImage()
+        {
+            return Game1.GameContent.Load<Texture2D>("Items/CyanStone");
+        }
     }
 }

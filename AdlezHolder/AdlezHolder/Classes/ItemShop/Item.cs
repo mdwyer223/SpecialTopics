@@ -110,7 +110,7 @@ namespace AdlezHolder
         }
         public virtual string getEffectsString()
         {
-            return " this is a temporary sentence for the items";
+            return "this is a temporary sentence for the items";
         }
 
         public Item(Texture2D texture, float scaleFactor, Vector2 startPosition, string tag, bool isPickUp, 
@@ -132,7 +132,7 @@ namespace AdlezHolder
             DrawnRec = new Rectangle(0, 0, 35, 35);
             cost = value;
             itemName = "Item Name";
-
+            changesString = "\nthis did something!";
         }
 
         public override void Update(Map data, GameTime gameTime)

@@ -57,5 +57,12 @@ namespace AdlezHolder
 
             base.Update(data, gameTime);
         }
+
+
+        public override Texture2D getItemImage()
+        {
+            return Image;
+        }
+
     }
 }
