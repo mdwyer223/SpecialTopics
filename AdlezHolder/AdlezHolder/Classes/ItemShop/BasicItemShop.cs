@@ -16,25 +16,23 @@ namespace AdlezHolder
     class BasicItemShop
     {
         Item[,] itemArray;
-        int price;
-        int inflation;
         Texture2D itemImage;
         int displayHeight = Game1.DisplayHeight;
         int displayWidth = Game1.DisplayWidth;
         BaseSprite itemPicture;
         NodeMessageBox infoBox;
+        Button switchToSell;
         Item selectedItem, lastItem;
         int itemRowIndex, itemColumnIndex;
         string itemMessage, enoughCash;
         KeyboardState keys, oldKeys;
         int playersCash;
         Character tempCharacter;
-        int moveItems;
         bool wasJustPurchased = false;
 
         public BasicItemShop(Character Character)
         {
-            Vector2 itemImageVector;
+            Vector2 itemImageVector, buttonPosition;
             keys = Keyboard.GetState();
             oldKeys = keys;
             itemColumnIndex = 0;
@@ -47,7 +45,9 @@ namespace AdlezHolder
             this.getTownsItems(1);
 
             itemImageVector.X = (float)(Game1.DisplayHeight * .05);
-            itemImageVector.Y = (float)(Game1.DisplayWidth * .05);
+            itemImageVector.Y = (float)(Game1.DisplayHeight * .05);
+            buttonPosition.X = (float)(Game1.DisplayWidth * .75);
+            buttonPosition.Y = (float)(Game1.DisplayHeight* .05);
             itemColumnIndex = 0;
             itemRowIndex = 1;
 
@@ -57,6 +57,7 @@ namespace AdlezHolder
             itemImage = itemArray[0, 0].getItemImage();
 
             itemPicture = new BaseSprite(itemImage, .2f, displayWidth, 0,itemImageVector) ;
+            switchToSell = new Button(Game1.GameContent.Load<Texture2D>("The best thing ever"), .3f, buttonPosition);
         }
 
 
@@ -166,6 +167,11 @@ namespace AdlezHolder
                 }
             }
 
+            if (keys.IsKeyDown(Keys.S) && oldKeys.IsKeyUp(Keys.S))
+            {
+                //switch to sell
+            }
+
 
             if (lastItem != null)
             {
@@ -179,7 +185,7 @@ namespace AdlezHolder
                     {
                         if (tempCharacter.PlayerInvent.Full != true)
                         {
-                            itemMessage = "\nPurchase Complete"  + itemArray[itemColumnIndex, itemRowIndex].getChangesString;
+                            itemMessage = itemArray[itemColumnIndex, itemRowIndex].getChangesString;
                             wasJustPurchased = true;
                             tempCharacter.PlayerInvent.addItem(itemArray[itemColumnIndex, itemRowIndex], tempCharacter);
                             tempCharacter.subtractFunds(itemArray[itemColumnIndex, itemRowIndex].getCost);
@@ -203,7 +209,7 @@ namespace AdlezHolder
 
             if (wasJustPurchased)
             {
-                itemMessage =  ":  $" + itemArray[itemColumnIndex, itemRowIndex].getCost + "\n" +  itemArray[itemColumnIndex, itemRowIndex].getChangesString;
+                itemMessage = "\nPurchase Complete" +  itemArray[itemColumnIndex, itemRowIndex].getChangesString;
             }
 
 
@@ -236,6 +242,7 @@ namespace AdlezHolder
             }
             infoBox.draw(spriteBatch);
             itemPicture.Draw(spriteBatch);
+            switchToSell.Draw(spriteBatch);
         }
 
         public void getTownsItems(int x)
