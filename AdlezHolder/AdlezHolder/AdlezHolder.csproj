@@ -138,6 +138,7 @@
     <Compile Include="Classes\Gameover.cs" />
     <Compile Include="Classes\Inventory\Inventory.cs" />
     <Compile Include="Classes\ItemShop\BasicItemShop.cs" />
+    <Compile Include="Classes\ItemShop\SellingItemShop.cs" />
     <Compile Include="Classes\MenuClasses\Button.cs" />
     <Compile Include="Classes\MenuClasses\MenuInterface.cs" />
     <Compile Include="Classes\MenuClasses\SaveMenu.cs" />

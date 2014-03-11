@@ -73,9 +73,6 @@ Content\ComputerPpl\Enemies\Skeleton\Attack\SLA.xnb
 Content\ComputerPpl\Enemies\Skeleton\Attack\SLA2.xnb
 Content\ComputerPpl\Enemies\Skeleton\Attack\SRA.xnb
 Content\ComputerPpl\Enemies\Skeleton\Attack\SRA2.xnb
-Content\MenuButtons\Continue.xnb
-Content\MenuButtons\LoadGame.xnb
-Content\MenuButtons\NewGame.xnb
 Content\AdlezTitle.xnb
 Content\AlistarSword\B.xnb
 Content\AlistarSword\BL.xnb
@@ -137,10 +134,6 @@ Content\Torch\Torch1.xnb
 Content\Torch\Torch2.xnb
 Content\Torch\Torch3.xnb
 Content\Random\LightScreen.xnb
-Content\Buildings\BottomLeftHouse.xnb
-Content\Buildings\BottomRightHouse.xnb
-Content\Buildings\TopLeftHouse.xnb
-Content\Buildings\TopRightHouse.xnb
 Content\BackgroundsAndFloors\Landscapes\FountainINTOWNSQUARE.xnb
 Content\BackgroundsAndFloors\Landscapes\TownSquare.xnb
 Content\BackgroundsAndFloors\Buildings\HOUSE4.xnb
@@ -205,3 +198,10 @@ Content\damage.xnb
 Content\range.xnb
 Content\speed.xnb
 Content\special.xnb
+Content\Items\Buildings\BottomLeftHouse.xnb
+Content\Items\Buildings\BottomRightHouse.xnb
+Content\Items\Buildings\TopLeftHouse.xnb
+Content\Items\Buildings\TopRightHouse.xnb
+Content\MenuButtons\Continue.xnb
+Content\MenuButtons\LoadGame.xnb
+Content\MenuButtons\NewGame.xnb

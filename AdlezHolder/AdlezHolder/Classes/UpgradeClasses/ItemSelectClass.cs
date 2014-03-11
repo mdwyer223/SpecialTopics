@@ -30,7 +30,7 @@ namespace AdlezHolder
         Character tempCharacter;
         int count = 0;
         const int TICK_IN_SEC = 60;
-        BasicItemShop bItemShop;
+        SellingItemShop bItemShop;
 
         static TreeGameState currentTreeGameState = TreeGameState.ITEMSELECT;
         public static TreeGameState CurrentTreeGameState
@@ -106,7 +106,7 @@ namespace AdlezHolder
 
 
 
-            bItemShop = new BasicItemShop(tempCharacter);
+            bItemShop = new SellingItemShop(tempCharacter);
 
 
 

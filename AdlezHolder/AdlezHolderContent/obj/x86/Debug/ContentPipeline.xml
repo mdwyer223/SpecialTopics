@@ -677,33 +677,6 @@
       <Time>2013-12-20T09:17:33-08:00</Time>
     </Item>
     <Item>
-      <Source>MenuButtons\Continue.png</Source>
-      <Name>MenuButtons\Continue</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\MenuButtons\Continue.xnb</Output>
-      <Time>2013-12-20T09:17:33-08:00</Time>
-    </Item>
-    <Item>
-      <Source>MenuButtons\LoadGame.png</Source>
-      <Name>MenuButtons\LoadGame</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\MenuButtons\LoadGame.xnb</Output>
-      <Time>2013-12-20T09:17:33-08:00</Time>
-    </Item>
-    <Item>
-      <Source>MenuButtons\NewGame.png</Source>
-      <Name>MenuButtons\NewGame</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\MenuButtons\NewGame.xnb</Output>
-      <Time>2013-12-20T09:17:33-08:00</Time>
-    </Item>
-    <Item>
       <Source>AdlezTitle.png</Source>
       <Name>AdlezTitle</Name>
       <Importer>TextureImporter</Importer>
@@ -1250,42 +1223,6 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Random\LightScreen.xnb</Output>
-      <Time>2013-12-20T09:17:33-08:00</Time>
-    </Item>
-    <Item>
-      <Source>Buildings\BottomLeftHouse.png</Source>
-      <Name>Buildings\BottomLeftHouse</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Buildings\BottomLeftHouse.xnb</Output>
-      <Time>2013-12-20T09:17:33-08:00</Time>
-    </Item>
-    <Item>
-      <Source>Buildings\BottomRightHouse.png</Source>
-      <Name>Buildings\BottomRightHouse</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Buildings\BottomRightHouse.xnb</Output>
-      <Time>2013-12-20T09:17:33-08:00</Time>
-    </Item>
-    <Item>
-      <Source>Buildings\TopLeftHouse.png</Source>
-      <Name>Buildings\TopLeftHouse</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Buildings\TopLeftHouse.xnb</Output>
-      <Time>2013-12-20T09:17:33-08:00</Time>
-    </Item>
-    <Item>
-      <Source>Buildings\TopRightHouse.png</Source>
-      <Name>Buildings\TopRightHouse</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Buildings\TopRightHouse.xnb</Output>
       <Time>2013-12-20T09:17:33-08:00</Time>
     </Item>
     <Item>
@@ -1839,6 +1776,69 @@
       <Options>None</Options>
       <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\special.xnb</Output>
       <Time>2014-02-19T12:43:39.5255221-08:00</Time>
+    </Item>
+    <Item>
+      <Source>Items\Buildings\BottomLeftHouse.png</Source>
+      <Name>Items\Buildings\BottomLeftHouse</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Items\Buildings\BottomLeftHouse.xnb</Output>
+      <Time>2013-12-20T09:17:33-08:00</Time>
+    </Item>
+    <Item>
+      <Source>Items\Buildings\BottomRightHouse.png</Source>
+      <Name>Items\Buildings\BottomRightHouse</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Items\Buildings\BottomRightHouse.xnb</Output>
+      <Time>2013-12-20T09:17:33-08:00</Time>
+    </Item>
+    <Item>
+      <Source>Items\Buildings\TopLeftHouse.png</Source>
+      <Name>Items\Buildings\TopLeftHouse</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Items\Buildings\TopLeftHouse.xnb</Output>
+      <Time>2013-12-20T09:17:33-08:00</Time>
+    </Item>
+    <Item>
+      <Source>Items\Buildings\TopRightHouse.png</Source>
+      <Name>Items\Buildings\TopRightHouse</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Items\Buildings\TopRightHouse.xnb</Output>
+      <Time>2013-12-20T09:17:33-08:00</Time>
+    </Item>
+    <Item>
+      <Source>MenuButtons\Continue.png</Source>
+      <Name>MenuButtons\Continue</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\MenuButtons\Continue.xnb</Output>
+      <Time>2013-12-20T09:17:33-08:00</Time>
+    </Item>
+    <Item>
+      <Source>MenuButtons\LoadGame.png</Source>
+      <Name>MenuButtons\LoadGame</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\MenuButtons\LoadGame.xnb</Output>
+      <Time>2013-12-20T09:17:33-08:00</Time>
+    </Item>
+    <Item>
+      <Source>MenuButtons\NewGame.png</Source>
+      <Name>MenuButtons\NewGame</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\MenuButtons\NewGame.xnb</Output>
+      <Time>2013-12-20T09:17:33-08:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

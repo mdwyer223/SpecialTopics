@@ -850,22 +850,22 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Buildings\BottomLeftHouse.png">
+    <Compile Include="Items\Buildings\BottomLeftHouse.png">
       <Name>BottomLeftHouse</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="Buildings\BottomRightHouse.png">
+    <Compile Include="Items\Buildings\BottomRightHouse.png">
       <Name>BottomRightHouse</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="Buildings\TopLeftHouse.png">
+    <Compile Include="Items\Buildings\TopLeftHouse.png">
       <Name>TopLeftHouse</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="Buildings\TopRightHouse.png">
+    <Compile Include="Items\Buildings\TopRightHouse.png">
       <Name>TopRightHouse</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>

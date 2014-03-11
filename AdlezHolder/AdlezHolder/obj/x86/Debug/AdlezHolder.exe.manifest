@@ -93,14 +93,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="AdlezHolder.exe" size="170496">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="AdlezHolder.exe" size="174080">
       <assemblyIdentity name="AdlezHolder" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>y/2uIj59LA72FuHN2gbtKFR2nqY=</dsig:DigestValue>
+        <dsig:DigestValue>WIyFmTKI1PNe2clHyHTItZ51Q74=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -923,42 +923,6 @@
       <dsig:DigestValue>/9NeVCNo85AswnAlWRwTP2f9Rd4=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Buildings\BottomLeftHouse.xnb" size="128763">
-    <hash>
-      <dsig:Transforms>
-        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-      </dsig:Transforms>
-      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>FFR5S5bwLg2BW1FmvaVTwK0dH/c=</dsig:DigestValue>
-    </hash>
-  </file>
-  <file name="Content\Buildings\BottomRightHouse.xnb" size="126411">
-    <hash>
-      <dsig:Transforms>
-        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-      </dsig:Transforms>
-      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>xwzbms7r6Ukxt8xmNtvJ4FYn8dE=</dsig:DigestValue>
-    </hash>
-  </file>
-  <file name="Content\Buildings\TopLeftHouse.xnb" size="129419">
-    <hash>
-      <dsig:Transforms>
-        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-      </dsig:Transforms>
-      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>Ga2djVr47lVl8hQYo4RHSz0cR14=</dsig:DigestValue>
-    </hash>
-  </file>
-  <file name="Content\Buildings\TopRightHouse.xnb" size="127055">
-    <hash>
-      <dsig:Transforms>
-        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-      </dsig:Transforms>
-      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>fXCl79ndFonv3hikwVCmYzcT3uY=</dsig:DigestValue>
-    </hash>
-  </file>
   <file name="Content\capacity.xnb" size="360187">
     <hash>
       <dsig:Transforms>
@@ -1407,6 +1371,42 @@
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
       <dsig:DigestValue>DY2uOywp5TxvT1FD/yy+YtpwVec=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\Items\Buildings\BottomLeftHouse.xnb" size="128763">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>FFR5S5bwLg2BW1FmvaVTwK0dH/c=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\Items\Buildings\BottomRightHouse.xnb" size="126411">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>xwzbms7r6Ukxt8xmNtvJ4FYn8dE=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\Items\Buildings\TopLeftHouse.xnb" size="129419">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>Ga2djVr47lVl8hQYo4RHSz0cR14=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\Items\Buildings\TopRightHouse.xnb" size="127055">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>fXCl79ndFonv3hikwVCmYzcT3uY=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\Items\CyanStone.xnb" size="443">

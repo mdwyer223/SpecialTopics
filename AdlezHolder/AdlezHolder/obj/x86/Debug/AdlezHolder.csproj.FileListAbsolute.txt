@@ -710,9 +710,6 @@ C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\b
 C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Enemies\Skeleton\Attack\SLA2.xnb
 C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Enemies\Skeleton\Attack\SRA.xnb
 C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Enemies\Skeleton\Attack\SRA2.xnb
-C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\MenuButtons\Continue.xnb
-C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\MenuButtons\LoadGame.xnb
-C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\MenuButtons\NewGame.xnb
 C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AdlezTitle.xnb
 C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarSword\B.xnb
 C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarSword\BL.xnb
@@ -774,10 +771,6 @@ C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\b
 C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Torch\Torch2.xnb
 C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Torch\Torch3.xnb
 C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Random\LightScreen.xnb
-C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Buildings\BottomLeftHouse.xnb
-C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Buildings\BottomRightHouse.xnb
-C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Buildings\TopLeftHouse.xnb
-C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Buildings\TopRightHouse.xnb
 C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\BackgroundsAndFloors\Landscapes\FountainINTOWNSQUARE.xnb
 C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\BackgroundsAndFloors\Landscapes\TownSquare.xnb
 C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\BackgroundsAndFloors\Buildings\HOUSE4.xnb
@@ -848,3 +841,10 @@ C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\b
 C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\range.xnb
 C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\speed.xnb
 C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\special.xnb
+C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Items\Buildings\BottomLeftHouse.xnb
+C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Items\Buildings\BottomRightHouse.xnb
+C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Items\Buildings\TopLeftHouse.xnb
+C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Items\Buildings\TopRightHouse.xnb
+C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\MenuButtons\Continue.xnb
+C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\MenuButtons\LoadGame.xnb
+C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\MenuButtons\NewGame.xnb
