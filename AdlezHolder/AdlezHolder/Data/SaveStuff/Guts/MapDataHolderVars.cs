@@ -28,11 +28,12 @@ namespace AdlezHolder
         //public List<TripWire> tripWires;
         //public List<Chest> chests;
 
-        public Texture2D background;
         public Rectangle backgroundRec;
         public Vector2 position;
 
         public Song music;
+
+        public string backgroundDirectory;
 
         private MapDataHolderVars()
         {
@@ -74,9 +75,10 @@ namespace AdlezHolder
             // npcs
             // trip wires
 
-          //  background = inMDH.Background;
-          //  backgroundRec = inMDH.BackgroundRec;
-           // position = inMDH.Position;
+            //backgroundDirectory = inMDH.BackgroundDirectory;
+            backgroundRec.Width = inMDH.BackgroundRec.Width;
+            backgroundRec.Height = inMDH.BackgroundRec.Height;
+            position = inMDH.Position;
             // music
 
         }

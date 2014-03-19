@@ -11,12 +11,13 @@ using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Input;
 
 namespace AdlezHolder
-{
+{        
+    public enum EquippedItem { SWORD, BOW, BOMB, NONE }
+
     public class Character : AnimatedSprite
     {
-        public enum EquippedItem { SWORD, BOW, BOMB, NONE }
-
         List<Message> messages;
+        List<Particle> particles;
         SoundEffect damaged;
         EquippedItem selectedItem;
         FullAnimation swordMove, bowMove, move, Idle, swordAttack, bowAttack;
@@ -25,13 +26,70 @@ namespace AdlezHolder
         Sword sword;
         Bow bow;
         Bomb bomb;
-        int money;
+        int money, arrowCount, bombCount,
+            maxArrows, maxBombs, bronzeCount, silverCount, goldCount;
 
-        bool attacking, bowShot, bombSet;
+        bool attacking, bowShot, bombSet, didTele;
 
         int healthPointsMax, currentHealthPoints;
-        int immunityTimer = 0, attackTimer = 0;
-        const float IMMUNITY_TIME = .06f, ATTACK_TIME = .17f;
+
+        int immunityTimer = 0, attackTimer = 0, healingTimer = 0;
+        const float IMMUNITY_TIME = .25f, ATTACK_TIME = .17f, HEALING_SICKNESS = .25f;
+
+        private GemStruct burnTotal, freezeTotal, stunTotal, poisonTotal;
+        private int burnTimer, freezeTimer, stunTimer, poisonTimer;
+
+        int r, g, b;
+
+        public new CharacterStruct SaveData
+        {
+            get
+            {
+                CharacterStruct myStruct = new CharacterStruct();
+                myStruct.BaseStruct = base.SaveData;
+                myStruct.currentHP = currentHealthPoints;
+                myStruct.maxHP = MaxHitPoints;
+                myStruct.currency = money;
+
+                myStruct.inventData = invent.SaveData;
+
+                //myStruct.swordData = sword.SaveData;
+                //myStruct.bombData = bomb.SaveData;
+                //myStruct.bowData = bow.SaveData;
+
+                myStruct.maxArrows = maxArrows;
+                myStruct.maxBombs = maxBombs;
+                myStruct.arrowCount = arrowCount;
+                myStruct.bombCount = bombCount;
+                myStruct.BaseStruct.saveId = "Chr";
+
+                return myStruct;
+            }
+            set
+            {
+                base.SaveData = value.BaseStruct;
+                healthPointsMax = value.maxHP;
+                HitPoints = value.currentHP;
+                money = value.currency;
+
+                invent.SaveData = value.inventData;
+
+                //sword.SaveData = value.swordData;
+                //bomb.SaveData = value.bombData;
+                //bow.SaveData = value.bowData;
+
+                maxArrows = value.maxArrows;
+                maxBombs = value.maxBombs;
+                arrowCount = value.arrowCount;
+                bombCount = value.bombCount;
+
+            }
+        }
+
+        public bool Teled
+        {
+            get { return didTele; }
+        }
         
         public int Speed
         {
@@ -41,6 +99,21 @@ namespace AdlezHolder
         public int Money
         {
             get { return money; }
+        }
+
+        public int GoldKeys
+        {
+            get { return goldCount; }
+        }
+
+        public int SilverKeys
+        {
+            get { return silverCount; }
+        }
+
+        public int Bronzekeys
+        {
+            get { return bronzeCount; }
         }
 
         public int HitPoints
@@ -54,10 +127,30 @@ namespace AdlezHolder
             get { return healthPointsMax; }
         }
 
+        public int BombBag
+        {
+            get { return bombCount; }
+        }
+
+        public int Quiver
+        {
+            get { return arrowCount; }
+        }
+
         public EquippedItem ItemEquipped
         {
             get { return selectedItem; }
             set { selectedItem = value; }
+        }
+
+        public bool QuiverFull
+        {
+            get { return arrowCount >= maxArrows; }
+        }
+
+        public bool BombBagFull
+        {
+            get { return bombCount >= maxBombs; }
         }
 
         public Sword Sword
@@ -65,22 +158,57 @@ namespace AdlezHolder
             get { return sword; }
         }
 
+        public Bomb Bomb
+        {
+            get { return bomb; }
+        }
+
+        public Bow Bow
+        {
+            get { return bow; }
+        }
+
         public Inventory PlayerInvent
         {
             get { return invent; }
         }
-        
+
+        public void load(MapStruct mapStruct)
+        {
+            SaveData = mapStruct.playerData;
+        }
+
         public Character(Texture2D defaultTexture, float scaleFactor, int displayWidth, float secondsToCrossScreen, Vector2 start)
             : base(defaultTexture, scaleFactor, displayWidth, secondsToCrossScreen, start)
         {
+            currentHealthPoints = healthPointsMax = 500;
+            arrowCount = bombCount = 0;
+            maxBombs = 30;
+            maxArrows = 50;
+
+            canMoveDown = true;
+            canMoveUp = true;
+            canMoveRight = true;
+            canMoveLeft = true;
+            attacking = false;
+            construct();
+
+            r = color.R;
+            b = color.B;
+            g = color.G;
+        }
+
+        private void construct()
+        {
             ContentManager content = Game1.GameContent;
             messages = new List<Message>();
+            particles = new List<Particle>();
             invent = new Inventory();
 
             sword = new Sword(.05f);
             bow = new Bow(0f);
             bomb = new Bomb(.03f);
-            
+
             Texture2D[] left, right, forward, backward;
 
             left = new Texture2D[3];
@@ -125,7 +253,7 @@ namespace AdlezHolder
             right[0] = content.Load<Texture2D>("AlistarSword/R");
             right[1] = content.Load<Texture2D>("AlistarSword/RR");
             right[2] = content.Load<Texture2D>("AlistarSword/RL");
-            swordMove = new FullAnimation(backward, forward, left, right,.2f);
+            swordMove = new FullAnimation(backward, forward, left, right, .2f);
 
             left = new Texture2D[3];
             right = new Texture2D[3];
@@ -194,8 +322,6 @@ namespace AdlezHolder
 
             playAnimation(Idle);
 
-            currentHealthPoints = healthPointsMax = 200;
-
             damaged = Game1.GameContent.Load<SoundEffect>("Music/SFX/Hit By Enemy");
 
             canMoveDown = true;
@@ -203,11 +329,22 @@ namespace AdlezHolder
             canMoveRight = true;
             canMoveLeft = true;
             attacking = false;
+
+            invent.addItem(new Potion(Vector2.Zero, .02f, 2, 7), this);
         }
 
         public override void Update(Map data, GameTime gameTime)
         {
             KeyboardState keys = Keyboard.GetState();
+            if (r < 255)
+                r++;
+            if (b < 255)
+                b++;
+            if (g < 255)
+                g++;
+
+            color = new Color(r, g, b);
+            Color c = Color.White;
 
             for (int i = 0; i < messages.Count; i++)
             {
@@ -239,35 +376,6 @@ namespace AdlezHolder
                 }
             }
 
-            base.Update(data, gameTime);
-
-            bow.Update(data, gameTime);
-            bomb.Update(data, gameTime);
-            if (attacking && selectedItem == EquippedItem.SWORD)
-            {
-                sword.toggle(false);
-                sword.Update(data.CurrentData, this, gameTime);
-                return;
-            }
-            else if (attacking && selectedItem == EquippedItem.BOW)
-            {
-                if (!bowShot)
-                {
-                    bow.addArrow(data);
-                    bowShot = true;
-                }
-                return;
-            }
-            else if (attacking && selectedItem == EquippedItem.BOMB)
-            {
-                if (!bombSet)
-                {
-                    bomb.addBomb(this.position);
-                    bombSet = true;
-                }
-                return;
-            }
-
             if (immunityTimer < (IMMUNITY_TIME * 1000))
             {
                 immunityTimer += gameTime.ElapsedGameTime.Milliseconds;
@@ -275,6 +383,80 @@ namespace AdlezHolder
             else
             {
                 immunityTimer = (int)(IMMUNITY_TIME * 1000) + 1;
+            }
+
+            if (healingTimer < (HEALING_SICKNESS * 1000))
+            {
+                healingTimer += gameTime.ElapsedGameTime.Milliseconds;
+            }
+            else
+            {
+                healingTimer = (int)(HEALING_SICKNESS * 1000) + 1;
+            }
+
+            //for (int i = 0; i < particles.Count; i++)
+            //{
+            //    if (particles[i] != null)
+            //    {
+            //        Vector2 velo = new Vector2((Center.X - particles[i].Position.X), (Center.Y - particles[i].Position.Y) );
+            //        velo.Normalize();
+            //        velo *= 1.075f;
+            //        particles[i].adjustVelo(velo);
+            //        if (particles[i].OffScreen || measureDistance(particles[i].Position) < 10)
+            //        {
+            //            particles[i].rushOffScreen();
+            //            particles.RemoveAt(i);
+            //        }
+            //    }
+            //}
+
+            updateAffects();
+            if (stunTotal.duration > 0)
+                return;
+
+            base.Update(data, gameTime);            
+
+            bow.Update(data, gameTime);
+            bomb.Update(data, gameTime);
+            sword.Update(data.CurrentData, this, gameTime);
+            if (attacking && selectedItem == EquippedItem.SWORD)
+            {
+                sword.toggle(false);
+                return;
+            }
+            else if (attacking && selectedItem == EquippedItem.BOW)
+            {
+                if (!bowShot)
+                {
+                    if (arrowCount > 0)
+                    {
+                        bow.addArrow(data);
+                        arrowCount--;
+                        bowShot = true;
+                    }
+                    else
+                    {
+                        addMessage(new Message("Quiver Empty!", Color.Yellow));
+                    }
+                }
+                return;
+            }
+            else if (attacking && selectedItem == EquippedItem.BOMB)
+            {
+                if (!bombSet)
+                {
+                    if (bombCount > 0)
+                    {
+                        //bomb.addBomb(this.position, data.CurrentData);
+                        bombCount--;
+                        bombSet = true;
+                    }
+                    else
+                    {
+                        addMessage(new Message("Bomb Bag Empty!", Color.Yellow));
+                    }
+                }
+                return;
             }
 
             if (keys.IsKeyDown(Keys.W))
@@ -316,10 +498,10 @@ namespace AdlezHolder
                     playAnimation(bowAttack);
                 }
                 attack();
+                attackTimer = 0;
             }
 
-            fixSpacing(data.CurrentData.Everything.ToArray(), keys);
-
+            fixSpacing(data.CurrentData.Everything.ToArray(), keys);            
             oldKeys = keys;
         }
 
@@ -340,7 +522,12 @@ namespace AdlezHolder
 
         public void addFunds(int value)
         {
-            money += value;
+            if (money <= 9999)
+            {
+                money += value;
+                if (money > 9999)
+                    money = 9999;
+            }
         }
 
         public void subtractFunds(int value)
@@ -353,6 +540,26 @@ namespace AdlezHolder
         public void addItem(Item item)
         {
             invent.addItem(item, this);
+        }
+
+        public void addKey(KeyType type)
+        {
+            if (type == KeyType.BRONZE)
+                bronzeCount++;
+            else if (type == KeyType.SILVER)
+                silverCount++;
+            else if (type == KeyType.GOLD)
+                goldCount++;
+        }
+
+        public void removeKey(KeyType type)
+        {
+            if (type == KeyType.BRONZE)
+                bronzeCount--;
+            else if (type == KeyType.SILVER)
+                silverCount--;
+            else if (type == KeyType.GOLD)
+                goldCount--;
         }
 
         public void addMessage(Message message)
@@ -383,6 +590,11 @@ namespace AdlezHolder
         {
             if(immunityTimer >= (IMMUNITY_TIME * 1000))
             {
+                if (freezeTotal.duration > 0)                   
+                {
+                    damagePoints = damagePoints + (int)((damagePoints * freezeTotal.damage) + .5f);                    
+                }
+
                 currentHealthPoints -= damagePoints;
                 if (currentHealthPoints <= 0)
                 {
@@ -395,12 +607,137 @@ namespace AdlezHolder
             }
         }
 
-        private void heal(int healPoints)
+
+        public void damage(Enemy enemy)
         {
-            if (currentHealthPoints + healPoints <= healthPointsMax)
+           // this.damage(enemy.Strength);
+            Random rand = new Random();
+            //if (rand.NextDouble() <= enemy.Gem.chance)
+            //{
+            //    switch (enemy.Atrib)
+            //    {
+            //        case GemType.FIRE:
+            //            burn(enemy.Gem);
+            //            break;
+            //        case GemType.FREEZE:
+            //            freeze(enemy.Gem);
+            //            break;
+            //        case GemType.STUN:
+            //            stun(enemy.Gem);
+            //            break;
+            //        case GemType.POISON:
+            //            poison(enemy.Gem);
+            //            break;
+                //}
+            //}
+
+        }
+
+        public void heal(int healPoints)
+        {
+            if (healingTimer > (HEALING_SICKNESS * 1000))
             {
-                currentHealthPoints += healPoints;
+                if (currentHealthPoints + healPoints <= healthPointsMax)
+                {
+                    currentHealthPoints += healPoints;
+                    addMessage(new Message("" + healPoints, Color.Green));
+                }
+                else
+                {
+                    int display = healthPointsMax - currentHealthPoints;
+                    currentHealthPoints = healthPointsMax;
+                    addMessage(new Message("" + display, Color.Green));
+                }
+                healingTimer = 0;
             }
+        }
+
+        private void updateAffects()
+        {
+            if (burnTotal.duration > 0)
+            {
+                burnTimer++;
+                if (burnTimer % 60 == 0)
+                {
+                    currentHealthPoints -= burnTotal.damage;
+                    this.addMessage(new Message(burnTotal.damage.ToString(),
+                        new Vector2(Game1.DisplayWidth, Game1.DisplayHeight), Color.Orange));
+                }
+                else if (burnTimer >= burnTotal.duration * 60)
+                {
+                    burnTotal.duration = 0;
+                    burnTimer = 0;
+                }
+            }
+
+            if (poisonTotal.duration > 0)
+            {
+                poisonTimer++;
+                if (poisonTimer % 60 == 0)
+                {
+                    currentHealthPoints -= poisonTotal.damage;
+                    this.addMessage(new Message(poisonTotal.damage.ToString(),
+                        new Vector2(Game1.DisplayWidth, Game1.DisplayHeight), Color.Purple));
+                }
+                else if (poisonTimer >= poisonTotal.duration * 60)
+                {
+                    poisonTotal.duration = 0;
+                    poisonTimer = 0;
+                }
+            }
+
+            if (freezeTotal.duration > 0)
+            {
+                freezeTimer++;
+                if (stunTimer % 60 == 0)
+                {
+                    this.addMessage(new Message("frozen",
+                        new Vector2(Game1.DisplayWidth, Game1.DisplayHeight), Color.Cyan));
+                }
+                if (freezeTimer >= freezeTotal.duration * 60)
+                {
+                    freezeTotal.duration = 0;
+                    freezeTimer = 0;
+                }
+                //else
+                //   // sword.reduceDamage(freezeTotal);
+            }
+
+            if (stunTotal.duration > 0)
+            {
+                stunTimer++;
+                if (stunTimer % 60 == 0)
+                {
+                    this.addMessage(new Message("stunned",
+                        new Vector2(Game1.DisplayWidth, Game1.DisplayHeight), Color.Yellow));
+                }
+                else if (stunTimer >= stunTotal.duration * 60)
+                {
+                    stunTotal.duration = 0;
+                    stunTimer = 0;
+                }
+            }
+
+        }
+
+        private void burn(GemStruct gem)
+        {
+            burnTotal.damage = gem.damage;
+            burnTotal.duration = gem.duration;
+        }
+        private void freeze(GemStruct gem)
+        {
+            freezeTotal.damage = gem.damage;
+            freezeTotal.duration = gem.duration;
+        }
+        private void stun(GemStruct gem)
+        {
+            stunTotal.duration = gem.duration;
+        }
+        private void poison(GemStruct gem)
+        {
+            poisonTotal.damage = gem.damage;
+            poisonTotal.duration = gem.duration;
         }
 
         private void attack()
@@ -419,11 +756,29 @@ namespace AdlezHolder
         {
         }
 
+        public void addArrow()
+        {
+            if (arrowCount >= maxArrows)
+            {
+                return;
+            }
+            arrowCount++;
+        }
+
+        public void addBomb()
+        {
+            if (bombCount >= maxBombs)
+            {
+                return;
+            }
+            bombCount++;
+        }
+
         private void fixSpacing(BaseSprite[] objects, KeyboardState keys)
         {
             Rectangle futureRec = new Rectangle(CollisionRec.X, CollisionRec.Y,
                 CollisionRec.Width, CollisionRec.Height);
-
+            
             if (canMoveUp && keys.IsKeyDown(Keys.W))
             {
                 position.Y -= speed;
@@ -457,7 +812,7 @@ namespace AdlezHolder
                 if (!objects[i].IsDead)
                 {
                     if (futureRec.Intersects(objects[i].CollisionRec) && 
-                        objects[i].CollisionRec.GetType() != typeof(Character))
+                        objects[i].GetType() != typeof(Character))
                     {
                         objectsColliding.Add(objects[i]);
 
@@ -469,23 +824,6 @@ namespace AdlezHolder
             {
                 if (!objectsColliding[i].IsDead)
                 {
-                    if (objectsColliding[i].GetType() == typeof(ImmovableObject)
-                        || objectsColliding[i].GetType() == typeof(HittableObject)
-                        || objectsColliding[i].GetType() == typeof(Wall)
-                        || objectsColliding[i].GetType() == typeof (Chest)
-                        || objectsColliding[i].GetType() == typeof(Skeleton)
-                        || objectsColliding[i].GetType() == typeof (BuildingObject))
-                    {
-                        canMoveRight = direction != Orientation.RIGHT;
-                        canMoveDown = direction != Orientation.DOWN;
-                        canMoveUp = direction != Orientation.UP;
-                        canMoveLeft = direction != Orientation.LEFT;
-
-                        Vector2 vecToMove = measureCollison(objectsColliding[i].CollisionRec);
-                        position += vecToMove;
-                        break;
-                    }
-
                     if (objectsColliding[i].GetType() == typeof(MovableObject))
                     {
                         if (!keys.IsKeyDown(Keys.LeftShift))
@@ -501,7 +839,7 @@ namespace AdlezHolder
                         }
                         else
                         {
-                            canMoveRight = objectsColliding[i].CanMoveRight; // make these properties
+                            canMoveRight = objectsColliding[i].CanMoveRight;
                             canMoveDown = objectsColliding[i].CanMoveDown;
                             canMoveUp = objectsColliding[i].CanMoveUp;
                             canMoveLeft = objectsColliding[i].CanMoveLeft;
@@ -510,6 +848,21 @@ namespace AdlezHolder
                             position += vecToMove;
                         }
                     }
+                    //else if ((objectsColliding[i].GetType() == typeof(ImmovableObject) ||
+                    //    objectsColliding[i].GetType().IsSubclassOf(typeof(ImmovableObject)) || 
+                    //    objectsColliding[i].GetType().IsSubclassOf(typeof(Enemy))) && objectsColliding[i].GetType() != typeof(Teleporter))
+                    //{
+                    //    canMoveRight = direction != Orientation.RIGHT;
+                    //    canMoveDown = direction != Orientation.DOWN;
+                    //    canMoveUp = direction != Orientation.UP;
+                    //    canMoveLeft = direction != Orientation.LEFT;
+
+                    //    Vector2 vecToMove = measureCollison(objectsColliding[i].CollisionRec);
+                    //    position += vecToMove;
+                    //    break;
+                    //}
+
+
                 }
                 
             }
@@ -572,5 +925,69 @@ namespace AdlezHolder
             base.Update(null, gt);
         }
 
+        public void increaseColor(bool red, bool blue, bool green)
+        {
+            if (red)
+            {
+                r += 3;
+                if (r > 255)
+                    r = 255;
+            }
+            if (blue)
+            {
+                b += 3;
+                if (b > 255)
+                    b = 255;
+            }
+            if (green)
+            {
+                g += 3;
+                if (g > 255)
+                    g = 255;
+            }
+        }
+
+        public void decreaseColor(bool red, bool blue, bool green)
+        {
+            if (red)
+            {
+                r -= 3;
+                if (r < 0)
+                    r = 0;
+            }
+            if (blue)
+            {
+                b -= 3;
+                if (b < 0)
+                    b = 0;
+            }
+            if (green)
+            {
+                g -= 3;
+                if (g < 0)
+                    g = 0;
+            }
+        }
+
+        public void teleported(MapDataHolder data)
+        {
+            Random rand = new Random();
+            int maxDist = 150;
+
+            for (int i = 0; i < 1500; i++)
+            {
+                //Vector2 tempPos = new Vector2((float)(rand.NextDouble() * rand.Next(-maxDist, maxDist)) + Center.X, (float)(rand.NextDouble() * rand.Next(-maxDist, maxDist)) + Center.Y);
+                //Particle p = new Particle(Color.Cyan, 2, tempPos, 7, new Vector2(0, 0),
+                ////   Vector2.Zero, ParticleType.TELEPORT);
+
+                //particles.Add(p);
+                //data.addParticle(p);
+            }
+        }
+
+        public void setTele(bool value)
+        {
+            didTele = value;
+        }
     }
 }

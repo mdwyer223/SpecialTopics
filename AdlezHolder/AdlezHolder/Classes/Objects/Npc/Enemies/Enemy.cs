@@ -159,11 +159,11 @@ namespace AdlezHolder
                 int arrow = rand.Next(1, 4);
                 if (arrow < 4)
                 {
-                    data.addItem(new Arrow(.03f, false, "Wooden Arrow", 0, this.Position));
+                   // data.addItem(new Arrow(.03f, false, "Wooden Arrow", 0, this.Position));
                 }
                 else
                 {
-                    data.addItem(new Arrow(.03f, true, "Steel Arrow", 0, this.Position));
+                   // data.addItem(new Arrow(.03f, true, "Steel Arrow", 0, this.Position));
                 }
             }
             else if (dropValue >= 6)

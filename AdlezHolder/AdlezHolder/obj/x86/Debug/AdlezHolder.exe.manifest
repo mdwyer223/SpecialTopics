@@ -93,14 +93,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="AdlezHolder.exe" size="174080">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="AdlezHolder.exe" size="188928">
       <assemblyIdentity name="AdlezHolder" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>WIyFmTKI1PNe2clHyHTItZ51Q74=</dsig:DigestValue>
+        <dsig:DigestValue>50f+USTjUJPI7D/085gLFWQU0pI=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -1346,6 +1346,15 @@
       <dsig:DigestValue>tRjaJnL6Tu97LE9yU3xX8p6tPtU=</dsig:DigestValue>
     </hash>
   </file>
+  <file name="Content\Items\10Coin(Diamond).xnb" size="379">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>AYWOTl5qqBa+wRfMIQHC+XywmeA=</dsig:DigestValue>
+    </hash>
+  </file>
   <file name="Content\Items\10Coin.xnb" size="379">
     <hash>
       <dsig:Transforms>
@@ -1355,13 +1364,94 @@
       <dsig:DigestValue>AYWOTl5qqBa+wRfMIQHC+XywmeA=</dsig:DigestValue>
     </hash>
   </file>
+  <file name="Content\Items\1BluePotion.xnb" size="1787">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>WoVcySZuYMKa6uyuSqeGD8zqb+I=</dsig:DigestValue>
+    </hash>
+  </file>
   <file name="Content\Items\1Coin.xnb" size="251">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>207ZCFdUB68GDjLBPDHM3THUN1I=</dsig:DigestValue>
+      <dsig:DigestValue>Gu865czXMs5s/AXXeSQIkvtykqU=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\Items\1GreenPotion.xnb" size="1787">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>VJMfh304M8LeKw4bm+XljJGz6P8=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\Items\1RedPotion.xnb" size="1787">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>bAd7EfE617KGbHkhsYUKzozwxNo=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\Items\2BluePotions.xnb" size="1787">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>fWs+SfIEao2ulnvlTQtZJWNvhAc=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\Items\2GreenPotions.xnb" size="1787">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>FBkBYOpZXT9Ykw8hhOCIpg+JODg=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\Items\2RedPotions.xnb" size="1787">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>SNyWjpOgODgHAURXdqQTpZlPBHA=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\Items\3BluePotions.xnb" size="1787">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>pPz9Zyij6GGyTn92RTxVyMKGzp8=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\Items\3GreenPotions.xnb" size="1787">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>J+6oPwPmlc7P6rNeFZmBa5lnvpo=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\Items\3RedPotions.xnb" size="1787">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>IKAKQnFEAt2LoqW2kfeWeq+K7do=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\Items\5Coin.xnb" size="383">
@@ -1371,6 +1461,69 @@
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
       <dsig:DigestValue>DY2uOywp5TxvT1FD/yy+YtpwVec=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\Items\Bomb.xnb" size="1211">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>bRTB9sVieUTUXBO5oKb/2CUlMG0=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\Items\Bomb2.xnb" size="1211">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>nZRQD0qagLdae26Bhj4XzkApXlg=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\Items\Bomb3.xnb" size="1211">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>d/pR6HAarpH90diuyiIpTQp5g4o=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\Items\Bomb4.xnb" size="1211">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>MxcZ030FDXSVpbAtajQQao668hk=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\Items\BossKey.xnb" size="6587">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>ytcOLUQFtI+vf0lSBDUtBDueFMA=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\Items\BowAndArrow.xnb" size="1787">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>XeE3ndYQPDY61zCxcqd5QiMaHaI=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\Items\BowAndSteelArrow.xnb" size="1787">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>uQFfL5v16W8r7sMd0EBgGVLs3Vw=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\Items\Buildings\BottomLeftHouse.xnb" size="128763">
@@ -1434,6 +1587,33 @@
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
       <dsig:DigestValue>+/RYcY52+kKafSZRNVQIVt6DX4o=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\Items\Sink.xnb" size="1787">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>30w/CBgN4ko38HJAtCOe6Jwn8IM=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\Items\Steak Cooked.xnb" size="1787">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>625l/XvkexBvvP1UGnFKjUSRWpU=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\Items\SteakRaw.xnb" size="1787">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>30w/CBgN4ko38HJAtCOe6Jwn8IM=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\Items\SteelArrow.xnb" size="787">

@@ -848,3 +848,23 @@ C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\b
 C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\MenuButtons\Continue.xnb
 C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\MenuButtons\LoadGame.xnb
 C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\MenuButtons\NewGame.xnb
+C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Items\10Coin(Diamond).xnb
+C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Items\1BluePotion.xnb
+C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Items\1GreenPotion.xnb
+C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Items\1RedPotion.xnb
+C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Items\2BluePotions.xnb
+C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Items\2GreenPotions.xnb
+C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Items\2RedPotions.xnb
+C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Items\3BluePotions.xnb
+C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Items\3GreenPotions.xnb
+C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Items\3RedPotions.xnb
+C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Items\Bomb.xnb
+C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Items\Bomb2.xnb
+C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Items\Bomb3.xnb
+C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Items\Bomb4.xnb
+C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Items\BossKey.xnb
+C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Items\BowAndArrow.xnb
+C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Items\BowAndSteelArrow.xnb
+C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Items\Sink.xnb
+C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Items\Steak Cooked.xnb
+C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Items\SteakRaw.xnb

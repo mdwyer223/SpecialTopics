@@ -1277,7 +1277,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Items\1Coin.xnb</Output>
-      <Time>2013-12-20T09:17:33-08:00</Time>
+      <Time>2014-03-18T12:25:19.1549258-07:00</Time>
     </Item>
     <Item>
       <Source>Items\5Coin.png</Source>
@@ -1286,7 +1286,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Items\5Coin.xnb</Output>
-      <Time>2013-12-20T09:17:33-08:00</Time>
+      <Time>2014-03-18T12:25:19.3580417-07:00</Time>
     </Item>
     <Item>
       <Source>Items\CyanStone.png</Source>
@@ -1295,7 +1295,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Items\CyanStone.xnb</Output>
-      <Time>2013-12-20T09:17:33-08:00</Time>
+      <Time>2014-03-18T12:25:58.8485268-07:00</Time>
     </Item>
     <Item>
       <Source>Items\Key.png</Source>
@@ -1313,7 +1313,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Items\MagentaStone.xnb</Output>
-      <Time>2013-12-20T09:17:33-08:00</Time>
+      <Time>2014-03-18T12:25:59.5362826-07:00</Time>
     </Item>
     <Item>
       <Source>Items\SteelArrow.png</Source>
@@ -1839,6 +1839,186 @@
       <Options>None</Options>
       <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\MenuButtons\NewGame.xnb</Output>
       <Time>2013-12-20T09:17:33-08:00</Time>
+    </Item>
+    <Item>
+      <Source>Items\10Coin(Diamond).png</Source>
+      <Name>Items\10Coin(Diamond)</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Items\10Coin(Diamond).xnb</Output>
+      <Time>2014-03-18T12:25:19.3580417-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Items\1BluePotion.png</Source>
+      <Name>Items\1BluePotion</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Items\1BluePotion.xnb</Output>
+      <Time>2014-03-18T12:25:15.596227-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Items\1GreenPotion.png</Source>
+      <Name>Items\1GreenPotion</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Items\1GreenPotion.xnb</Output>
+      <Time>2014-03-18T12:25:19.1549258-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Items\1RedPotion.png</Source>
+      <Name>Items\1RedPotion</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Items\1RedPotion.xnb</Output>
+      <Time>2014-03-18T12:25:19.1549258-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Items\2BluePotions.png</Source>
+      <Name>Items\2BluePotions</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Items\2BluePotions.xnb</Output>
+      <Time>2014-03-18T12:25:19.1861786-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Items\2GreenPotions.png</Source>
+      <Name>Items\2GreenPotions</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Items\2GreenPotions.xnb</Output>
+      <Time>2014-03-18T12:25:19.2017851-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Items\2RedPotions.png</Source>
+      <Name>Items\2RedPotions</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Items\2RedPotions.xnb</Output>
+      <Time>2014-03-18T12:25:19.2643073-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Items\3BluePotions.png</Source>
+      <Name>Items\3BluePotions</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Items\3BluePotions.xnb</Output>
+      <Time>2014-03-18T12:25:19.3111619-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Items\3GreenPotions.png</Source>
+      <Name>Items\3GreenPotions</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Items\3GreenPotions.xnb</Output>
+      <Time>2014-03-18T12:25:19.3424164-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Items\3RedPotions.png</Source>
+      <Name>Items\3RedPotions</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Items\3RedPotions.xnb</Output>
+      <Time>2014-03-18T12:25:19.3580417-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Items\Bomb.png</Source>
+      <Name>Items\Bomb</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Items\Bomb.xnb</Output>
+      <Time>2014-03-18T12:25:19.3736653-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Items\Bomb2.png</Source>
+      <Name>Items\Bomb2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Items\Bomb2.xnb</Output>
+      <Time>2014-03-18T12:25:19.3892932-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Items\Bomb3.png</Source>
+      <Name>Items\Bomb3</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Items\Bomb3.xnb</Output>
+      <Time>2014-03-18T12:25:19.3892932-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Items\Bomb4.png</Source>
+      <Name>Items\Bomb4</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Items\Bomb4.xnb</Output>
+      <Time>2014-03-18T12:25:19.3892932-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Items\BossKey.png</Source>
+      <Name>Items\BossKey</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Items\BossKey.xnb</Output>
+      <Time>2014-03-18T12:25:19.3892932-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Items\BowAndArrow.png</Source>
+      <Name>Items\BowAndArrow</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Items\BowAndArrow.xnb</Output>
+      <Time>2014-03-18T12:25:57.4671761-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Items\BowAndSteelArrow.png</Source>
+      <Name>Items\BowAndSteelArrow</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Items\BowAndSteelArrow.xnb</Output>
+      <Time>2014-03-18T12:25:57.4828022-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Items\Sink.png</Source>
+      <Name>Items\Sink</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Items\Sink.xnb</Output>
+      <Time>2014-03-18T12:25:59.5519092-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Items\Steak Cooked.png</Source>
+      <Name>Items\Steak Cooked</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Items\Steak Cooked.xnb</Output>
+      <Time>2014-03-18T12:25:59.5675627-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Items\SteakRaw.png</Source>
+      <Name>Items\SteakRaw</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Items\SteakRaw.xnb</Output>
+      <Time>2014-03-18T12:25:59.5675627-07:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

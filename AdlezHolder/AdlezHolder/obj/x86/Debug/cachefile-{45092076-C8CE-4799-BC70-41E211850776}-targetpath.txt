@@ -205,3 +205,23 @@ Content\Items\Buildings\TopRightHouse.xnb
 Content\MenuButtons\Continue.xnb
 Content\MenuButtons\LoadGame.xnb
 Content\MenuButtons\NewGame.xnb
+Content\Items\10Coin(Diamond).xnb
+Content\Items\1BluePotion.xnb
+Content\Items\1GreenPotion.xnb
+Content\Items\1RedPotion.xnb
+Content\Items\2BluePotions.xnb
+Content\Items\2GreenPotions.xnb
+Content\Items\2RedPotions.xnb
+Content\Items\3BluePotions.xnb
+Content\Items\3GreenPotions.xnb
+Content\Items\3RedPotions.xnb
+Content\Items\Bomb.xnb
+Content\Items\Bomb2.xnb
+Content\Items\Bomb3.xnb
+Content\Items\Bomb4.xnb
+Content\Items\BossKey.xnb
+Content\Items\BowAndArrow.xnb
+Content\Items\BowAndSteelArrow.xnb
+Content\Items\Sink.xnb
+Content\Items\Steak Cooked.xnb
+Content\Items\SteakRaw.xnb

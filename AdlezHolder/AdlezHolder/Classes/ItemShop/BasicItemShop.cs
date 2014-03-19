@@ -54,7 +54,7 @@ namespace AdlezHolder
             itemArray[0, 0].Selected = false;
             tempCharacter = Character;
             playersCash = tempCharacter.Money;
-            itemImage = itemArray[0, 0].getItemImage();
+            itemImage = itemArray[0, 1].getItemImage();
 
             itemPicture = new BaseSprite(itemImage, .2f, displayWidth, 0,itemImageVector) ;
             switchToSell = new Button(Game1.GameContent.Load<Texture2D>("The best thing ever"), .3f, buttonPosition);
@@ -181,14 +181,14 @@ namespace AdlezHolder
             if (keys.IsKeyDown(Keys.Enter) && oldKeys.IsKeyUp(Keys.Enter))
             {
                
-                    if (tempCharacter.Money >= itemArray[itemColumnIndex, itemRowIndex].getCost)
+                    if (tempCharacter.Money >= itemArray[itemColumnIndex, itemRowIndex].getCost())
                     {
                         if (tempCharacter.PlayerInvent.Full != true)
                         {
-                            itemMessage = itemArray[itemColumnIndex, itemRowIndex].getChangesString;
+                            itemMessage = "";
                             wasJustPurchased = true;
                             tempCharacter.PlayerInvent.addItem(itemArray[itemColumnIndex, itemRowIndex], tempCharacter);
-                            tempCharacter.subtractFunds(itemArray[itemColumnIndex, itemRowIndex].getCost);
+                            tempCharacter.subtractFunds(itemArray[itemColumnIndex, itemRowIndex].getCost());
                         }
                         else
                         {
@@ -209,12 +209,12 @@ namespace AdlezHolder
 
             if (wasJustPurchased)
             {
-                itemMessage = "\nPurchase Complete" +  itemArray[itemColumnIndex, itemRowIndex].getChangesString;
+                itemMessage = "\nPurchase Complete" +  itemArray[itemColumnIndex, itemRowIndex].getChangesString();
             }
 
 
             infoBox.deleteMessage();
-            infoBox.receiveMessage("Players Cash:  $" + tempCharacter.Money +  "        " + itemArray[itemColumnIndex, itemRowIndex].getName + ": $" + itemArray[itemColumnIndex, itemRowIndex].getCost + itemMessage);
+            infoBox.receiveMessage("Players Cash:  $" + tempCharacter.Money +  "        " + itemArray[itemColumnIndex, itemRowIndex].getName() + ": $" + itemArray[itemColumnIndex, itemRowIndex].getCost() + itemMessage);
             infoBox.update();
 
             selectedItem = itemArray[itemColumnIndex, itemRowIndex];
@@ -277,69 +277,66 @@ namespace AdlezHolder
 
             if (x == 1)
             {
-                int price = 5;
                 string name = "blank";
                 itemPosition.Y = itemTopRow;
-                itemArray[0, 0] = new Item(Game1.GameContent.Load<Texture2D>("Items/CyanStone"), scalefactor, itemPosition, name, false, false, false, price);
+                itemArray[0, 0] = new Item(Game1.GameContent.Load<Texture2D>("Items/CyanStone"), scalefactor, itemPosition, name, false, false, false, 50, 100000);
                 itemPosition.Y = itemMiddleRow;
-                itemArray[0, 1] = new Arrow(.3f,false,"Wood Arrow",100,itemPosition);
+                itemArray[0, 1] = new Arrow(.3f, true, "Steel Arrow", 100, itemPosition, 1000);
                 itemPosition.Y = itemBottomRow;
-                itemArray[0, 2] = new IceStone(Game1.GameContent.Load<Texture2D>("Items/CyanStone"), scalefactor, itemPosition, "Ice Stone", false, false, false, price);
+                itemArray[0, 2] = new IceStone(.3f, itemPosition, 2, 100000);
                 itemPosition.Y = itemTopRow;
                 itemPosition.X = itemPosition.X + widthSeperation;
-                itemArray[1, 0] = new IceStone(Game1.GameContent.Load<Texture2D>("Items/CyanStone"), scalefactor, itemPosition, "Ice Stone", false, false, false, price);
+                itemArray[1, 0] = new IceStone(.3f, itemPosition, 2, 100000);
                 itemPosition.Y = itemMiddleRow;
-                itemArray[1, 1] = new IceStone(Game1.GameContent.Load<Texture2D>("Items/CyanStone"), scalefactor, itemPosition, "Ice Stone", false, false, false, price);
+                itemArray[1, 1] = new IceStone(.3f, itemPosition, 2, 100000);
                 itemPosition.Y = itemBottomRow;
-                itemArray[1, 2] = new IceStone(Game1.GameContent.Load<Texture2D>("Items/CyanStone"), scalefactor, itemPosition, "Ice Stone", false, false, false, price);
+                itemArray[1, 2] = new IceStone(.3f, itemPosition, 2, 100000);
                 itemPosition.Y = itemTopRow;
                 itemPosition.X = itemPosition.X + widthSeperation;
-                itemArray[2, 0] = new Arrow(.3f, false, "Wood Arrow", price * 2, itemPosition);
+                itemArray[2, 0] = new Arrow(.3f, false, "Wood Arrow", 100, itemPosition, 100000);
                 itemPosition.Y = itemMiddleRow;
-                itemArray[2, 1] = new IceStone(Game1.GameContent.Load<Texture2D>("Items/CyanStone"), scalefactor, itemPosition, "Ice Stone", false, false, false, price);
+                itemArray[2, 1] = new IceStone(.3f, itemPosition, 2, 100000);
                 itemPosition.Y = itemBottomRow;
-                itemArray[2, 2] = new IceStone(Game1.GameContent.Load<Texture2D>("Items/CyanStone"), scalefactor, itemPosition, "Ice Stone", false, false, false, price);
+                itemArray[2, 2] = new FireStone(.3f, itemPosition, 2, 100000);
                 itemPosition.Y = itemTopRow;
                 itemPosition.X = itemPosition.X + widthSeperation;
-                itemArray[3, 0] = new IceStone(Game1.GameContent.Load<Texture2D>("Items/CyanStone"), scalefactor, itemPosition, "Ice Stone", false, false, false, price);
+                itemArray[3, 0] = new IceStone(.3f, itemPosition, 2, 100000);
                 itemPosition.Y = itemMiddleRow;
-                itemArray[3, 1] = new Arrow(.3f, true, "Steel Arrow", price * 5, itemPosition);
+                itemArray[3, 1] = new PoisonStone(.3f, itemPosition, 2, 100000);
                 itemPosition.Y = itemBottomRow;
-                itemArray[3, 2] = new IceStone(Game1.GameContent.Load<Texture2D>("Items/CyanStone"), scalefactor, itemPosition, "Ice Stone", false, false, false, price);
-               
-
+                itemArray[3, 2] = new IceStone(.3f, itemPosition, 2, 100000);
             }
 
             else if (x == 2)
             {
                 string name = "blank";
                 itemPosition.Y = itemTopRow;
-                itemArray[0, 0] = new Item(Game1.GameContent.Load<Texture2D>("Items/CyanStone"), scalefactor, itemPosition, name, false, false, false, 50);
+                itemArray[0, 0] = new Item(Game1.GameContent.Load<Texture2D>("Items/CyanStone"), scalefactor, itemPosition, name, false, false, false, 50,100000);
                 itemPosition.Y = itemMiddleRow;
-                itemArray[0, 1] = new Arrow(.3f, false, "Wood Arrow", 100, itemPosition);
+                itemArray[0, 1] = new Arrow(.3f, true, "Steel Arrow", 100, itemPosition,1000);
                 itemPosition.Y = itemBottomRow;
-                itemArray[0, 2] = new IceStone(Game1.GameContent.Load<Texture2D>("Items/CyanStone"), scalefactor, itemPosition, "Ice Stone", false, false, false, 50);
+                itemArray[0, 2] = new IceStone(.3f, itemPosition, 2, 100000);
                 itemPosition.Y = itemTopRow;
                 itemPosition.X = itemPosition.X + widthSeperation;
-                itemArray[1, 0] = new IceStone(Game1.GameContent.Load<Texture2D>("Items/CyanStone"), scalefactor, itemPosition, "Ice Stone", false, false, false, 50);
+                itemArray[1, 0] = new IceStone(.3f, itemPosition, 2, 100000);
                 itemPosition.Y = itemMiddleRow;
-                itemArray[1, 1] = new IceStone(Game1.GameContent.Load<Texture2D>("Items/CyanStone"), scalefactor, itemPosition, "Ice Stone", false, false, false, 50);
+                itemArray[1, 1] = new IceStone(.3f, itemPosition, 2, 100000);
                 itemPosition.Y = itemBottomRow;
-                itemArray[1, 2] = new IceStone(Game1.GameContent.Load<Texture2D>("Items/CyanStone"), scalefactor, itemPosition, "Ice Stone", false, false, false, 50);
+                itemArray[1, 2] = new IceStone(.3f, itemPosition, 2, 100000);
                 itemPosition.Y = itemTopRow;
                 itemPosition.X = itemPosition.X + widthSeperation;
-                itemArray[2, 0] = new Arrow(.3f, false, "Wood Arrow", 100, itemPosition);
+                itemArray[2, 0] = new Arrow(.3f, false, "Wood Arrow", 100, itemPosition,100000);
                 itemPosition.Y = itemMiddleRow;
-                itemArray[2, 1] = new IceStone(Game1.GameContent.Load<Texture2D>("Items/CyanStone"), scalefactor, itemPosition, "Ice Stone", false, false, false, 50);
+                itemArray[2, 1] = new IceStone(.3f, itemPosition, 2, 100000);
                 itemPosition.Y = itemBottomRow;
-                itemArray[2, 2] = new IceStone(Game1.GameContent.Load<Texture2D>("Items/CyanStone"), scalefactor, itemPosition, "Ice Stone", false, false, false, 50);
+                itemArray[2, 2] = new FireStone(.3f, itemPosition, 2, 100000);
                 itemPosition.Y = itemTopRow;
                 itemPosition.X = itemPosition.X + widthSeperation;
-                itemArray[3, 0] = new IceStone(Game1.GameContent.Load<Texture2D>("Items/CyanStone"), scalefactor, itemPosition, "Ice Stone", false, false, false, 50);
+                itemArray[3, 0] = new IceStone(.3f, itemPosition, 2, 100000);
                 itemPosition.Y = itemMiddleRow;
-                itemArray[3, 1] = new Arrow(.3f, true, "Steel Arrow", 100, itemPosition);
+                itemArray[3, 1] = new PoisonStone(.3f, itemPosition, 2, 100000);
                 itemPosition.Y = itemBottomRow;
-                itemArray[3, 2] = new IceStone(Game1.GameContent.Load<Texture2D>("Items/CyanStone"), scalefactor, itemPosition, "Ice Stone", false, false, false, 50);
+                itemArray[3, 2] = new IceStone(.3f, itemPosition, 2, 100000);
                
             }
 
@@ -347,65 +344,63 @@ namespace AdlezHolder
             {
                 string name = "blank";
                 itemPosition.Y = itemTopRow;
-                itemArray[0, 0] = new Item(Game1.GameContent.Load<Texture2D>("Items/CyanStone"), scalefactor, itemPosition, name, false, false, false, 50);
+                itemArray[0, 0] = new Item(Game1.GameContent.Load<Texture2D>("Items/CyanStone"), scalefactor, itemPosition, name, false, false, false, 50, 100000);
                 itemPosition.Y = itemMiddleRow;
-                itemArray[0, 1] = new Arrow(.3f, false, "Wood Arrow", 100, itemPosition);
+                itemArray[0, 1] = new Arrow(.3f, true, "Steel Arrow", 100, itemPosition, 1000);
                 itemPosition.Y = itemBottomRow;
-                itemArray[0, 2] = new IceStone(Game1.GameContent.Load<Texture2D>("Items/CyanStone"), scalefactor, itemPosition, "Ice Stone", false, false, false, 50);
+                itemArray[0, 2] = new IceStone(.3f, itemPosition, 2, 100000);
                 itemPosition.Y = itemTopRow;
                 itemPosition.X = itemPosition.X + widthSeperation;
-                itemArray[1, 0] = new IceStone(Game1.GameContent.Load<Texture2D>("Items/CyanStone"), scalefactor, itemPosition, "Ice Stone", false, false, false, 50);
+                itemArray[1, 0] = new IceStone(.3f, itemPosition, 2, 100000);
                 itemPosition.Y = itemMiddleRow;
-                itemArray[1, 1] = new IceStone(Game1.GameContent.Load<Texture2D>("Items/CyanStone"), scalefactor, itemPosition, "Ice Stone", false, false, false, 50);
+                itemArray[1, 1] = new IceStone(.3f, itemPosition, 2, 100000);
                 itemPosition.Y = itemBottomRow;
-                itemArray[1, 2] = new IceStone(Game1.GameContent.Load<Texture2D>("Items/CyanStone"), scalefactor, itemPosition, "Ice Stone", false, false, false, 50);
+                itemArray[1, 2] = new IceStone(.3f, itemPosition, 2, 100000);
                 itemPosition.Y = itemTopRow;
                 itemPosition.X = itemPosition.X + widthSeperation;
-                itemArray[2, 0] = new Arrow(.3f, false, "Wood Arrow", 100, itemPosition);
+                itemArray[2, 0] = new Arrow(.3f, false, "Wood Arrow", 100, itemPosition, 100000);
                 itemPosition.Y = itemMiddleRow;
-                itemArray[2, 1] = new IceStone(Game1.GameContent.Load<Texture2D>("Items/CyanStone"), scalefactor, itemPosition, "Ice Stone", false, false, false, 50);
+                itemArray[2, 1] = new IceStone(.3f, itemPosition, 2, 100000);
                 itemPosition.Y = itemBottomRow;
-                itemArray[2, 2] = new IceStone(Game1.GameContent.Load<Texture2D>("Items/CyanStone"), scalefactor, itemPosition, "Ice Stone", false, false, false, 50);
+                itemArray[2, 2] = new FireStone(.3f, itemPosition, 2, 100000);
                 itemPosition.Y = itemTopRow;
                 itemPosition.X = itemPosition.X + widthSeperation;
-                itemArray[3, 0] = new IceStone(Game1.GameContent.Load<Texture2D>("Items/CyanStone"), scalefactor, itemPosition, "Ice Stone", false, false, false, 50);
+                itemArray[3, 0] = new IceStone(.3f, itemPosition, 2, 100000);
                 itemPosition.Y = itemMiddleRow;
-                itemArray[3, 1] = new Arrow(.3f, true, "Steel Arrow", 100, itemPosition);
+                itemArray[3, 1] = new PoisonStone(.3f, itemPosition, 2, 100000);
                 itemPosition.Y = itemBottomRow;
-                itemArray[3, 2] = new IceStone(Game1.GameContent.Load<Texture2D>("Items/CyanStone"), scalefactor, itemPosition, "Ice Stone", false, false, false, 50);
-               
+                itemArray[3, 2] = new IceStone(.3f, itemPosition, 2, 100000);
             }
             else
             {
                 string name = "blank";
                 itemPosition.Y = itemTopRow;
-                itemArray[0, 0] = new Item(Game1.GameContent.Load<Texture2D>("Items/CyanStone"), scalefactor, itemPosition, name, false, false, false, 50);
+                itemArray[0, 0] = new Item(Game1.GameContent.Load<Texture2D>("Items/CyanStone"), scalefactor, itemPosition, name, false, false, false, 50, 100000);
                 itemPosition.Y = itemMiddleRow;
-                itemArray[0, 1] = new Arrow(.3f, false, "Wood Arrow", 100, itemPosition);
+                itemArray[0, 1] = new Arrow(.3f, true, "Steel Arrow", 100, itemPosition, 1000);
                 itemPosition.Y = itemBottomRow;
-                itemArray[0, 2] = new IceStone(Game1.GameContent.Load<Texture2D>("Items/CyanStone"), scalefactor, itemPosition, "Ice Stone", false, false, false, 50);
+                itemArray[0, 2] = new IceStone(.3f, itemPosition, 2, 100000);
                 itemPosition.Y = itemTopRow;
                 itemPosition.X = itemPosition.X + widthSeperation;
-                itemArray[1, 0] = new IceStone(Game1.GameContent.Load<Texture2D>("Items/CyanStone"), scalefactor, itemPosition, "Ice Stone", false, false, false, 50);
+                itemArray[1, 0] = new IceStone(.3f, itemPosition, 2, 100000);
                 itemPosition.Y = itemMiddleRow;
-                itemArray[1, 1] = new IceStone(Game1.GameContent.Load<Texture2D>("Items/CyanStone"), scalefactor, itemPosition, "Ice Stone", false, false, false, 50);
+                itemArray[1, 1] = new IceStone(.3f, itemPosition, 2, 100000);
                 itemPosition.Y = itemBottomRow;
-                itemArray[1, 2] = new IceStone(Game1.GameContent.Load<Texture2D>("Items/CyanStone"), scalefactor, itemPosition, "Ice Stone", false, false, false, 50);
+                itemArray[1, 2] = new IceStone(.3f, itemPosition, 2, 100000);
                 itemPosition.Y = itemTopRow;
                 itemPosition.X = itemPosition.X + widthSeperation;
-                itemArray[2, 0] = new Arrow(.3f, false, "Wood Arrow", 100, itemPosition);
+                itemArray[2, 0] = new Arrow(.3f, false, "Wood Arrow", 100, itemPosition, 100000);
                 itemPosition.Y = itemMiddleRow;
-                itemArray[2, 1] = new IceStone(Game1.GameContent.Load<Texture2D>("Items/CyanStone"), scalefactor, itemPosition, "Ice Stone", false, false, false, 50);
+                itemArray[2, 1] = new IceStone(.3f, itemPosition, 2, 100000);
                 itemPosition.Y = itemBottomRow;
-                itemArray[2, 2] = new IceStone(Game1.GameContent.Load<Texture2D>("Items/CyanStone"), scalefactor, itemPosition, "Ice Stone", false, false, false, 50);
+                itemArray[2, 2] = new FireStone(.3f, itemPosition, 2, 100000);
                 itemPosition.Y = itemTopRow;
                 itemPosition.X = itemPosition.X + widthSeperation;
-                itemArray[3, 0] = new IceStone(Game1.GameContent.Load<Texture2D>("Items/CyanStone"), scalefactor, itemPosition, "Ice Stone", false, false, false, 50);
+                itemArray[3, 0] = new IceStone(.3f, itemPosition, 2, 100000);
                 itemPosition.Y = itemMiddleRow;
-                itemArray[3, 1] = new Arrow(.3f, true, "Steel Arrow", 100, itemPosition);
+                itemArray[3, 1] = new PoisonStone(.3f, itemPosition, 2, 100000);
                 itemPosition.Y = itemBottomRow;
-                itemArray[3, 2] = new IceStone(Game1.GameContent.Load<Texture2D>("Items/CyanStone"), scalefactor, itemPosition, "Ice Stone", false, false, false, 50);
-               
+                itemArray[3, 2] = new IceStone(.3f, itemPosition, 2, 100000);
             }
         }
     }

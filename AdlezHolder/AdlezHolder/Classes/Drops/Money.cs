@@ -22,7 +22,7 @@ namespace AdlezHolder
         }
 
         public Money(float scaleFactor, Vector2 startPosition, string tag, int value)
-            : base(Game1.GameContent.Load<Texture2D>("Items/1Coin"), scaleFactor, startPosition, tag, false, true, false, value)
+            : base(Game1.GameContent.Load<Texture2D>("Items/1Coin"), scaleFactor, startPosition, tag, false, true, false, value, 0)
         {
             collected = false;
 

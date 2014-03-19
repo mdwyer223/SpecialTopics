@@ -32,13 +32,13 @@ namespace AdlezHolder
             keys = Keyboard.GetState();
             if (!itemAdd)
             {
-                addItem(new Arrow(.02f, false, "Wooden Arrow", 10, new Vector2(300, -200)));
-                addItem((new Arrow(.02f, false, "Wooden Arrow", 10, new Vector2(325, -200))));
-                addItem((new Arrow(.02f, false, "Wooden Arrow", 10, new Vector2(350, -200))));
-                addItem((new Arrow(.02f, false, "Wooden Arrow", 10, new Vector2(375, -200))));
-                addItem((new Arrow(.02f, false, "Wooden Arrow", 10, new Vector2(400, -200))));
-                addItem((new Arrow(.02f, false, "Wooden Arrow", 10, new Vector2(425, -200))));
-                addItem((new Arrow(.02f, false, "Wooden Arrow", 10, new Vector2(450, -200))));
+                //addItem(new Arrow(.02f, false, "Wooden Arrow", 10, new Vector2(300, -200)));
+                //addItem((new Arrow(.02f, false, "Wooden Arrow", 10, new Vector2(325, -200))));
+                //addItem((new Arrow(.02f, false, "Wooden Arrow", 10, new Vector2(350, -200))));
+                //addItem((new Arrow(.02f, false, "Wooden Arrow", 10, new Vector2(375, -200))));
+                //addItem((new Arrow(.02f, false, "Wooden Arrow", 10, new Vector2(400, -200))));
+                //addItem((new Arrow(.02f, false, "Wooden Arrow", 10, new Vector2(425, -200))));
+                //addItem((new Arrow(.02f, false, "Wooden Arrow", 10, new Vector2(450, -200))));
                 itemAdd = true;
             }
             if (Keyboard.GetState().IsKeyDown(Keys.R))

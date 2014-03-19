@@ -13,6 +13,7 @@ namespace AdlezHolder
     {
         public Sword sword;
         public int speed;
+        //Inventory invent;
         //Bow bow;
         //Bomb bomb;
 

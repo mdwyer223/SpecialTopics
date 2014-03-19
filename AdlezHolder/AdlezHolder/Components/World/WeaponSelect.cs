@@ -114,7 +114,7 @@ namespace AdlezHolder
                     selectedRectangle.X = (int)(swordRect.X + swordRect.Width * 1.1);
                     bowRect.X = (int)(selectedRectangle.X + selectedRectangle.Width * 1.1);
 
-                    player.ItemEquipped = Character.EquippedItem.BOMB;
+                    //player.ItemEquipped = Character.EquippedItem.BOMB;
                 }
                 else if (current == SelectedWeapon.BOW)
                 {
@@ -127,7 +127,7 @@ namespace AdlezHolder
                     selectedRectangle.X = (int)(bombRect.X + bombRect.Width * 1.1);
                     swordRect.X = (int)(screenRectangle.X);
 
-                    player.ItemEquipped = Character.EquippedItem.BOW;
+                    //player.ItemEquipped = Character.EquippedItem.BOW;
                 }
                 else
                 {
@@ -139,7 +139,7 @@ namespace AdlezHolder
                     bombRect.X = (int)(selectedRectangle.X + selectedRectangle.Width * 1.1);
                     bowRect.X = (int)(bombRect.X + bombRect.Width * 1.15);
 
-                    player.ItemEquipped = Character.EquippedItem.SWORD;
+                    //player.ItemEquipped = Character.EquippedItem.SWORD;
                 }
             }
 

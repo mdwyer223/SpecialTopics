@@ -11,7 +11,7 @@ namespace AdlezHolder
 {
     public class Arrow : Item
     {
-        bool steel, wooden, collected;
+        bool steel, collected;
 
         public override bool Dead
         {
@@ -21,12 +21,16 @@ namespace AdlezHolder
             }
         }
 
-        public Arrow(float scaleFactor, bool steel, string tag, int value, Vector2 startPosition)
-            : base(Game1.GameContent.Load<Texture2D>("Items/WoodenArrow"), scaleFactor, startPosition, tag, true, false, true, value)
+        public bool Steel
+        {
+            get { return steel; }
+        }
+
+        public Arrow(float scaleFactor, bool steel, string tag, int value, Vector2 startPosition, int numberOf)
+            : base(Game1.GameContent.Load<Texture2D>("Items/WoodenArrow"), scaleFactor, startPosition, tag, true, false, true, value, numberOf)
         {
             collected = false;
             this.steel = steel;
-            wooden = !steel;
 
             if (steel)
             {
@@ -42,26 +46,34 @@ namespace AdlezHolder
         {
             if (this.isColliding(data.Player.CollisionRec))
             {
-                if (!data.Player.PlayerInvent.Full)
+                if (!data.Player.QuiverFull)
                 {
-                    data.Player.addItem(this); //change to add arrow for arrow count
-                    data.Player.addMessage(new Message("Wooden Arrow", new Vector2(Game1.DisplayWidth, Game1.DisplayHeight), Color.White));
+                    data.Player.addArrow();
+                    data.Player.addMessage(new Message("Arrow", new Vector2(Game1.DisplayWidth, Game1.DisplayHeight), Color.White));
                     collected = true;
                 }
                 else
                 {
-                    data.Player.addMessage(new Message("Inventory Full",
-                        new Vector2(Game1.DisplayWidth, Game1.DisplayHeight), Color.White)); //change to "Quiver Full"
+                    data.Player.addMessage(new Message("Quiver Full",
+                        new Vector2(Game1.DisplayWidth, Game1.DisplayHeight), Color.White));
                 }
             }
 
             base.Update(data, gameTime);
         }
 
-
-        public override Texture2D getItemImage()
+        public override string getEffectsString()
         {
-            return Image;
+            return " ";
+        }
+        public override string getName()
+        {
+            return "Arrow";
+        }
+
+        public override string getChangesString()
+        {
+            return "+1 Arrow";
         }
 
     }

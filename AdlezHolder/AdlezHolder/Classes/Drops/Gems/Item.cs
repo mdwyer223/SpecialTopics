@@ -11,22 +11,6 @@ namespace AdlezHolder
 {
     public class Item : BaseSprite
     {
-        protected int value, aliveTimer, flashTimer;
-        protected bool pickUp, currency, stackable, drawing;
-
-        protected const int MAX_TIME_ALIVE = 60000;
-        protected const string DROP = "Drop", USE = "Use";
-
-        protected string tag;
-
-        protected List<string> options;
-
-        int flashInterval = 70;
-
-        string itemName, changesString;
-        int cost;
-
-
         Color FADED = new Color(50, 50, 50, 50);
         Color NORMAL = new Color(255, 255, 255, 250);
         bool selected;
@@ -43,19 +27,44 @@ namespace AdlezHolder
                     if (ImageColor != Color.Black && ImageColor != Color.DarkSlateGray)
                         ImageColor = FADED;
                 }
-                if (value == false && ImageColor == Color.Black)
-                {
-                    ImageColor = Color.DarkSlateGray;
-                }
-                else if (value && ImageColor == Color.DarkSlateGray)
-                {
-                    ImageColor = Color.Black;
-                }
-
                 selected = value;
             }
         }
 
+        protected Character playerTemp;
+
+        protected int value, aliveTimer, flashTimer, count = 1;
+        protected bool pickUp, currency, stackable, drawing;
+
+        protected const int MAX_TIME_ALIVE = 60000;
+        protected const string DROP = "Drop", USE = "Use";
+
+        protected string tag;
+
+        protected List<string> options;
+
+        int flashInterval = 70;
+
+        public new ItemStruct SaveData
+        {
+            get
+            {
+                ItemStruct itemData = new ItemStruct();
+                if (this.GetType() == typeof(Arrow))
+                    itemData.type = ItemType.ARROW;
+                else if (this.GetType() == typeof(Money))
+                    itemData.type = ItemType.CURRENCY;
+                else if (this.GetType() == typeof(Potion))
+                    itemData.type = ItemType.POTION;
+                else
+                    itemData.type = ItemType.CRAP; 
+
+                return itemData;
+            }
+            set
+            {
+            }
+        }
 
         public string ItemName
         {
@@ -84,37 +93,18 @@ namespace AdlezHolder
             protected set { pickUp = value;}
         }
 
-        public void setCost(int x)
+        public int Count
         {
-            cost = x;
+            get { return count; }
+            set { count = value; }
         }
-        public virtual void setChangesString(string x)
+
+        protected Item()
         {
-            changesString = x;
-        }
-        public void setitemName(string x)
-        {
-            itemName = x;
-        }
-        public int getCost
-        {
-            get { return cost; }
-        }
-        public string getChangesString
-        {
-            get { return changesString; }
-        }
-        public string getName
-        {
-            get { return itemName; }
-        }
-        public virtual string getEffectsString()
-        {
-            return "this is a temporary sentence for the items";
         }
 
         public Item(Texture2D texture, float scaleFactor, Vector2 startPosition, string tag, bool isPickUp, 
-            bool isCurrency, bool isStackable, int value)
+            bool isCurrency, bool isStackable, int value, int numberOf)
             : base(texture, scaleFactor, Game1.DisplayWidth, 0, startPosition)
         {
             this.pickUp = isPickUp;
@@ -124,15 +114,11 @@ namespace AdlezHolder
             this.value = value;
             this.tag = tag;
             aliveTimer = 0;
+            this.count = numberOf;
             drawing = true;
 
             options = new List<string>();
             options.Add("Drop");
-
-            DrawnRec = new Rectangle(0, 0, 35, 35);
-            cost = value;
-            itemName = "Item Name";
-            changesString = "\nthis did something!";
         }
 
         public override void Update(Map data, GameTime gameTime)
@@ -183,11 +169,6 @@ namespace AdlezHolder
             }
         }
 
-        public virtual Texture2D getItemImage()
-        {
-            return Game1.GameContent.Load <Texture2D>("Particle");
-        }
-
         //********************************************
         //some sort of list should be passed to these methods
         //*********************************************
@@ -197,12 +178,44 @@ namespace AdlezHolder
             {
                 if (items[i] == this)
                 {
-                    items.RemoveAt(i);
+                    if (this.count <= 1)
+                    {
+                        items.RemoveAt(i);
+                        this.count--;
+                    }
+                    else
+                    {
+                        this.count--;
+                    }
                     break;
                 }
             }
         }
 
+        public virtual void addPlayer(Character player)
+        {
+            playerTemp = player;
+        }
+        public Texture2D getItemImage()
+        {
+            return this.Image;
+        }
+        public int getCost()
+        {
+            return this.value;
+        }
+        public virtual string getEffectsString()
+        {
+            return "effects string";
+        }
+        public virtual string getName()
+        {
+            return "Item";
+        }
 
+        public virtual string getChangesString()
+        {
+            return "changes string";
+        }
     }
 }

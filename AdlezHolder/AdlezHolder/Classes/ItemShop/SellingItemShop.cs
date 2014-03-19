@@ -37,84 +37,28 @@ namespace AdlezHolder
 
             tempCharacter = Character;
             //tempData
-            VampiricStone vampStone = new VampiricStone(Game1.GameContent.Load<Texture2D>("Items/CyanStone"), .3f, Vector2.One, "", 50);
-            Gem gem = new Gem(Game1.GameContent.Load<Texture2D>("Items/CyanStone"), .3f, Vector2.One, "", 50);
+            VampiricStone vampStone = new VampiricStone(.05f,Vector2.One,3,4);
+            Arrow arrowS = new Arrow(.05f, true, "", 100, Vector2.One,5); ;
+            Arrow arrow = new Arrow(.05f,false,"",30,Vector2.One,10); 
+            RuggedLeather leather = new RuggedLeather();
+            FireStone gem = new FireStone(.05f,Vector2.One,1,2);
+            LightningStone lightStone = new LightningStone(.05f, Vector2.One, 1, 2);
+            PoisonStone pStone = new PoisonStone(.05f, Vector2.One, 1, 2);
             tempCharacter.PlayerInvent.addItem(vampStone, tempCharacter);
+            tempCharacter.PlayerInvent.addItem(lightStone, tempCharacter);
+            tempCharacter.PlayerInvent.addItem(arrow, tempCharacter);
+            tempCharacter.PlayerInvent.addItem(arrowS, tempCharacter);
             tempCharacter.PlayerInvent.addItem(vampStone, tempCharacter);
-            tempCharacter.PlayerInvent.addItem(vampStone, tempCharacter);
-            tempCharacter.PlayerInvent.addItem(gem, tempCharacter);
-            tempCharacter.PlayerInvent.addItem(gem, tempCharacter);
-            tempCharacter.PlayerInvent.addItem(gem, tempCharacter);
+            tempCharacter.PlayerInvent.addItem(lightStone, tempCharacter);
+            tempCharacter.PlayerInvent.addItem(pStone, tempCharacter);
             //EndTemp
 
-            Vector2 itemPosition;
-            Rectangle overScan;
-            int widthSeperation, heightSeparation, itemTopRow, itemMiddleRow, itemBottomRow;
-
-            displayWidth = Game1.DisplayWidth;
-            displayHeight = Game1.DisplayHeight;
-
-            int marginWidth = (int)(displayWidth * .05);
-            int marginHeight = (int)(displayHeight * .05);
-
-
-            overScan.Width = displayWidth - marginWidth;
-            overScan.Height = displayHeight - marginHeight;
-
-            overScan.X = displayWidth + marginWidth;
-            overScan.Y = displayHeight - marginHeight;
-
-            heightSeparation = overScan.Height / 8;
-            widthSeperation = overScan.Width / 8;
-
-            itemPosition.X = widthSeperation * 4;
-            itemPosition.Y = heightSeparation;
-
-            itemBottomRow = heightSeparation * 4;
-            itemMiddleRow = heightSeparation * 3;
-            itemTopRow = heightSeparation * 2;
-
-            itemArray = new Item[4, 3];
-            tempItemArray = new Item[18];
-
-
-            tempItemArray = tempCharacter.PlayerInvent.ItemList.ToArray<Item>();
-
-
-            itemPosition.Y = itemTopRow;
-            itemArray[0, 0] = tempItemArray[0];
-            itemPosition.Y = itemMiddleRow;
-            itemArray[0, 1] = tempItemArray[1];
-            itemPosition.Y = itemBottomRow;
-            itemArray[0, 2] = tempItemArray[2];
-            itemPosition.Y = itemTopRow;
-            itemPosition.X = itemPosition.X + widthSeperation;
-            itemArray[1, 0] = tempItemArray[3];
-            itemPosition.Y = itemMiddleRow;
-            itemArray[1, 1] = tempItemArray[4];
-            itemPosition.Y = itemBottomRow;
-            itemArray[1, 2] = tempItemArray[5];
-            itemPosition.Y = itemTopRow;
-            itemPosition.X = itemPosition.X + widthSeperation;
-            itemArray[2, 0] = tempItemArray[6];
-            itemPosition.Y = itemMiddleRow;
-            itemArray[2, 1] = tempItemArray[7];
-            itemPosition.Y = itemBottomRow;
-            itemArray[2, 2] = tempItemArray[8];
-            itemPosition.Y = itemTopRow;
-            itemPosition.X = itemPosition.X + widthSeperation;
-            itemArray[3, 0] = tempItemArray[9];
-            itemPosition.Y = itemMiddleRow;
-            itemArray[3, 1] = tempItemArray[10];
-            itemPosition.Y = itemBottomRow;
-            itemArray[3, 2] = tempItemArray[11];
                
-
             Vector2 itemImageVector, buttonPosition;
             keys = Keyboard.GetState();
             oldKeys = keys;
             itemColumnIndex = 0;
-            itemRowIndex = 1;
+            itemRowIndex =0;
             infoBox = new NodeMessageBox(1);
             itemMessage = "";
             infoBox.receiveMessage("Players Cash:  $" + playersCash + "  " + itemMessage);
@@ -124,11 +68,12 @@ namespace AdlezHolder
             buttonPosition.X = (float)(Game1.DisplayWidth * .75);
             buttonPosition.Y = (float)(Game1.DisplayHeight* .05);
             itemColumnIndex = 0;
-            itemRowIndex = 1;
+            itemRowIndex = 0;
+            this.setPlayerInvent();
 
-            itemArray[0, 0].Selected = false;
+            tempItemArray[0].Selected = false;
             playersCash = tempCharacter.Money;
-            itemImage = itemArray[0, 0].getItemImage();
+            itemImage = tempItemArray[0].getItemImage();
 
             itemPicture = new BaseSprite(itemImage, .2f, displayWidth, 0,itemImageVector) ;
             switchToBuy = new Button(Game1.GameContent.Load<Texture2D>("The best thing ever"), .3f, buttonPosition);
@@ -168,10 +113,13 @@ namespace AdlezHolder
                     else
                     {
                         itemRowIndex = 1;
-                        itemArray[itemColumnIndex, itemRowIndex].Selected = false;
-                        lastItem = itemArray[1, 0];
-                        itemMessage = "\nPress Enter to Sell";
-                        itemImage = itemArray[itemColumnIndex, itemRowIndex].getItemImage();
+                        if (itemArray[itemColumnIndex, itemRowIndex] != null)
+                        {
+                            itemArray[itemColumnIndex, itemRowIndex].Selected = false;
+                            lastItem = itemArray[1, 0];
+                            itemMessage = "\nPress Enter to Sell";
+                            itemImage = itemArray[itemColumnIndex, itemRowIndex].getItemImage();
+                        }
                     }
                 }
                 itemPicture.setImage(itemImage);
@@ -201,10 +149,13 @@ namespace AdlezHolder
                     else
                     {
                         itemRowIndex = 1;
-                        itemArray[itemColumnIndex, itemRowIndex].Selected = false;
-                        lastItem = itemArray[1, 0];
-                        itemMessage = "\nPress Enter to Sell";
-                        itemImage = itemArray[itemColumnIndex, itemRowIndex].getItemImage();
+                        if (itemArray[itemColumnIndex, itemRowIndex] != null)
+                        {
+                            itemArray[itemColumnIndex, itemRowIndex].Selected = false;
+                            lastItem = itemArray[1, 0];
+                            itemMessage = "\nPress Enter to Sell";
+                            itemImage = itemArray[itemColumnIndex, itemRowIndex].getItemImage();
+                        }
                     }
                 }
                 itemPicture.setImage(itemImage);
@@ -216,11 +167,25 @@ namespace AdlezHolder
                 {
                     lastItem = itemArray[itemColumnIndex, itemRowIndex];
                     itemColumnIndex--;
+                        if (itemRowIndex == 2 && itemArray[itemColumnIndex,itemRowIndex -1] != null )
+                        {
+                            itemRowIndex -= 1;
+                        }
+                        else if (itemRowIndex == 0 && itemArray[itemColumnIndex, itemRowIndex + 1] != null)
+                        {
+                            itemRowIndex += 1;
+                        }
+
+                   if (itemArray[itemColumnIndex, itemRowIndex] != null)
+                    {
                     itemArray[itemColumnIndex, itemRowIndex].Selected = false;
                     wasJustSold = false;
                     itemMessage = "\nPress Enter to Sell";
                     itemImage = itemArray[itemColumnIndex, itemRowIndex].getItemImage();
                     itemPicture.setImage(itemImage);
+                     }
+                        else
+                            itemColumnIndex--;
                 }
 
 
@@ -229,15 +194,28 @@ namespace AdlezHolder
 
             if (keys.IsKeyDown(Keys.D) && oldKeys.IsKeyUp(Keys.D))
             {
-                if (itemColumnIndex != 3)
+                if (itemColumnIndex != (tempItemArray.Length + 1) % 3)
                 {
                     lastItem = itemArray[itemColumnIndex, itemRowIndex];
                     itemColumnIndex++;
-                    itemArray[itemColumnIndex, itemRowIndex].Selected = false;
-                    wasJustSold = false;
-                    itemMessage = "\nPress Enter to Sell";
-                    itemImage = itemArray[itemColumnIndex, itemRowIndex].getItemImage();
-                    itemPicture.setImage(itemImage);
+                        if (itemRowIndex == 2 && itemArray[itemColumnIndex, itemRowIndex - 1] != null)
+                        {
+                            itemRowIndex -= 1;
+                        }
+                        else if (itemRowIndex == 0 && itemArray[itemColumnIndex, itemRowIndex + 1] != null)
+                        {
+                            itemRowIndex += 1;
+                        }
+                        if (itemArray[itemColumnIndex, itemRowIndex] != null)
+                        {
+                            itemArray[itemColumnIndex, itemRowIndex].Selected = false;
+                            wasJustSold = false;
+                            itemMessage = "\nPress Enter to Sell";
+                            itemImage = itemArray[itemColumnIndex, itemRowIndex].getItemImage();
+                            itemPicture.setImage(itemImage);
+                        }
+                        else
+                            itemColumnIndex--;
                 }
             }
 
@@ -256,13 +234,29 @@ namespace AdlezHolder
             {
                         if (itemArray[itemColumnIndex,itemRowIndex]!= null)
                         {
+                            int positionInList;
+                            if (itemColumnIndex == 0)
+                            {
+                                positionInList = itemRowIndex;
+                            }
+                            else
+                            {
+                                positionInList = itemRowIndex + (itemColumnIndex * 3);
+                            }
                             wasJustSold = true;
-                           // need a subrtact item method ..tempCharacter.PlayerInvent.subractItem(itemArray[itemColumnIndex, itemRowIndex], tempCharacter);
-                            tempCharacter.addFunds((int)(itemArray[itemColumnIndex, itemRowIndex].getCost * .75));
+                            tempCharacter.PlayerInvent.subtractItem(tempCharacter, positionInList);
+                            tempCharacter.addFunds((int)(itemArray[itemColumnIndex, itemRowIndex].getCost() * .75));
+                            this.setPlayerInvent();
+                        }
+                        if (itemArray[0, 0] != null)
+                        {
+                            itemColumnIndex = 0;
+                            itemRowIndex = 0;
+                            itemArray[itemColumnIndex, itemRowIndex].Selected = false;
                         }
                         else
                         {
-                            itemMessage ="\nYou Do Not Have Any Items Here to Sell!";
+                            itemMessage = "\nYou Do Not Have Any Items Here to Sell!";
                         }
                 
 
@@ -275,90 +269,119 @@ namespace AdlezHolder
                 itemMessage = "\nItem Sold!!";
             }
 
+            if (itemArray[itemColumnIndex, itemRowIndex] != null)
+            {
+                infoBox.deleteMessage();
+                infoBox.receiveMessage("Players Cash:  $" + tempCharacter.Money + "        " + itemArray[itemColumnIndex, itemRowIndex].getName() + ": $" + (int)(itemArray[itemColumnIndex, itemRowIndex].getCost() * .75) + itemMessage);
+                infoBox.update();
 
-            infoBox.deleteMessage();
-            infoBox.receiveMessage("Players Cash:  $" + tempCharacter.Money +  "        " + itemArray[itemColumnIndex, itemRowIndex].getName + ": $" + itemArray[itemColumnIndex, itemRowIndex].getCost + itemMessage);
-            infoBox.update();
-
-            selectedItem = itemArray[itemColumnIndex, itemRowIndex];
+                selectedItem = itemArray[itemColumnIndex, itemRowIndex];
+            }
+            else
+                infoBox.receiveMessage("You have no more items to sell!");
 
             oldKeys = keys;
         }
 
         //private void changeItemGameState(ItemGameState newState)
         //{
-        //tempItemArray = tempCharacter.PlayerInvent.ItemList.ToArray<Item>();
-          //Vector2 itemPosition;
-          //  float scalefactor = .3f;
-          //  Rectangle overScan;
-          //  int widthSeperation, heightSeparation, itemTopRow, itemMiddleRow, itemBottomRow;
-
-          //  displayWidth = Game1.DisplayWidth;
-          //  displayHeight = Game1.DisplayHeight;
-
-          //  int marginWidth = (int)(displayWidth * .05);
-          //  int marginHeight = (int)(displayHeight * .05);
-
-
-          //  overScan.Width = displayWidth - marginWidth;
-          //  overScan.Height = displayHeight - marginHeight;
-
-          //  overScan.X = displayWidth + marginWidth;
-          //  overScan.Y = displayHeight - marginHeight;
-
-          //  heightSeparation = overScan.Height / 8;
-          //  widthSeperation = overScan.Width / 8;
-
-          //  itemPosition.X = widthSeperation * 4;
-          //  itemPosition.Y = heightSeparation;
-
-          //  itemBottomRow = heightSeparation * 4;
-          //  itemMiddleRow = heightSeparation * 3;
-          //  itemTopRow = heightSeparation * 2;
-          //  tempItemArray = tempCharacter.PlayerInvent.ItemList.ToArray<Item>();
-
-
-          //  itemPosition.Y = itemTopRow;
-          //  itemArray[0, 0] = tempItemArray[0];
-          //  itemPosition.Y = itemMiddleRow;
-          //  itemArray[0, 1] = tempItemArray[1];
-          //  itemPosition.Y = itemBottomRow;
-          //  itemArray[0, 2] = tempItemArray[2];
-          //  itemPosition.Y = itemTopRow;
-          //  itemPosition.X = itemPosition.X + widthSeperation;
-          //  itemArray[1, 0] = tempItemArray[3];
-          //  itemPosition.Y = itemMiddleRow;
-          //  itemArray[1, 1] = tempItemArray[4];
-          //  itemPosition.Y = itemBottomRow;
-          //  itemArray[1, 2] = tempItemArray[5];
-          //  itemPosition.Y = itemTopRow;
-          //  itemPosition.X = itemPosition.X + widthSeperation;
-          //  itemArray[2, 0] = tempItemArray[6];
-          //  itemPosition.Y = itemMiddleRow;
-          //  itemArray[2, 1] = tempItemArray[7];
-          //  itemPosition.Y = itemBottomRow;
-          //  itemArray[2, 2] = tempItemArray[8];
-          //  itemPosition.Y = itemTopRow;
-          //  itemPosition.X = itemPosition.X + widthSeperation;
-          //  itemArray[3, 0] = tempItemArray[9];
-          //  itemPosition.Y = itemMiddleRow;
-          //  itemArray[3, 1] = tempItemArray[10];
-          //  itemPosition.Y = itemBottomRow;
-          //  itemArray[3, 2] = tempItemArray[11];
         //}
 
+        public void setPlayerInvent()
+        {
+
+            Vector2 itemPosition;
+            Rectangle overScan;
+            int widthSeperation, heightSeparation, itemTopRow, itemMiddleRow, itemBottomRow;
+
+            displayWidth = Game1.DisplayWidth;
+            displayHeight = Game1.DisplayHeight;
+
+            int marginWidth = (int)(displayWidth * .05);
+            int marginHeight = (int)(displayHeight * .05);
+
+
+            overScan.Width = displayWidth - marginWidth;
+            overScan.Height = displayHeight - marginHeight;
+
+            overScan.X = displayWidth + marginWidth;
+            overScan.Y = displayHeight - marginHeight;
+
+            heightSeparation = overScan.Height / 8;
+            widthSeperation = overScan.Width / 8;
+
+            itemPosition.X = widthSeperation * 3;
+            itemPosition.Y = heightSeparation;
+
+            itemBottomRow = heightSeparation * 4;
+            itemMiddleRow = heightSeparation * 3;
+            itemTopRow = heightSeparation * 2;
+
+            itemArray = new Item[4, 3];
+            tempItemArray = new Item[12];
+
+
+            tempItemArray = tempCharacter.PlayerInvent.ItemList.ToArray<Item>();
+
+            int count = 0;
+            for (int i = 0; i < tempItemArray.Length; i++)
+            {
+                if (count == 0)
+                {
+                    itemPosition.X += widthSeperation;
+                    itemPosition.Y = itemTopRow;
+                }
+                if (count == 1)
+                {
+                    itemPosition.Y = itemMiddleRow;
+                }
+                if (count == 2)
+                {
+                    itemPosition.Y = itemBottomRow;
+                }
+
+
+                if (tempItemArray[i] != null)
+                {
+                    tempItemArray[i].Position = itemPosition;
+                    if (count != 2)
+                        count++;
+                    else
+                    {
+                        count = 0;
+                        itemPosition.X = itemPosition.X + widthSeperation;
+                    }
+                }
+            }
+            int row = 0, column = 0;
+
+            for (int i = 0; i < tempItemArray.Length; i++)
+            {
+                itemArray[column, row] = tempItemArray[i];
+                row++;
+                if ((i + 1) % 3 == 0 && i != 0)
+                {
+                    column++;
+                    row = 0;
+                }
+            }
+        }
    
         public void Draw(SpriteBatch spriteBatch)
         {
-            for (int i = 0; i < 4; i++)
+            int countCol = 0,countRow = 0;
+            for (int i = 0; i < tempItemArray.Length; i++)
             {
-                for (int x = 0; x < 3; x++)
+                if (tempItemArray[i] != null)
                 {
-                    if (itemArray.GetValue(i, x) != null)
+                    if (countRow > 2)
                     {
-                        itemArray[i, x].Draw(spriteBatch);
-
+                        countCol++;
+                        countRow = 0;
                     }
+                    itemArray[countCol,countRow].Draw(spriteBatch);
+                    countRow++;
+
                 }
             }
             infoBox.draw(spriteBatch);
