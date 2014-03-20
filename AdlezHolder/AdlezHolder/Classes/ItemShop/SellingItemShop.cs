@@ -33,8 +33,7 @@ namespace AdlezHolder
 
         public SellingItemShop(Character Character)
         {
-
-
+            itemArray = new Item[5, 5];
             tempCharacter = Character;
             //tempData
             VampiricStone vampStone = new VampiricStone(.05f,Vector2.One,3,4);
@@ -52,7 +51,7 @@ namespace AdlezHolder
             tempCharacter.PlayerInvent.addItem(lightStone, tempCharacter);
             tempCharacter.PlayerInvent.addItem(pStone, tempCharacter);
             //EndTemp
-
+            this.setPlayerInvent();
                
             Vector2 itemImageVector, buttonPosition;
             keys = Keyboard.GetState();
@@ -69,8 +68,6 @@ namespace AdlezHolder
             buttonPosition.Y = (float)(Game1.DisplayHeight* .05);
             itemColumnIndex = 0;
             itemRowIndex = 0;
-            this.setPlayerInvent();
-
             tempItemArray[0].Selected = false;
             playersCash = tempCharacter.Money;
             itemImage = tempItemArray[0].getItemImage();
@@ -317,9 +314,6 @@ namespace AdlezHolder
             itemMiddleRow = heightSeparation * 3;
             itemTopRow = heightSeparation * 2;
 
-            itemArray = new Item[4, 3];
-            tempItemArray = new Item[12];
-
 
             tempItemArray = tempCharacter.PlayerInvent.ItemList.ToArray<Item>();
 
@@ -328,31 +322,34 @@ namespace AdlezHolder
             {
                 if (count == 0)
                 {
-                    itemPosition.X += widthSeperation;
                     itemPosition.Y = itemTopRow;
                 }
-                if (count == 1)
+                else if (count == 1)
                 {
                     itemPosition.Y = itemMiddleRow;
                 }
-                if (count == 2)
+                else if (count == 2)
                 {
                     itemPosition.Y = itemBottomRow;
                 }
-
+                
 
                 if (tempItemArray[i] != null)
                 {
                     tempItemArray[i].Position = itemPosition;
                     if (count != 2)
+                    {
                         count++;
+                    }
                     else
                     {
                         count = 0;
-                        itemPosition.X = itemPosition.X + widthSeperation;
+                        itemPosition = itemPosition;
+                        itemPosition.X += widthSeperation;
                     }
                 }
             }
+
             int row = 0, column = 0;
 
             for (int i = 0; i < tempItemArray.Length; i++)
@@ -379,6 +376,7 @@ namespace AdlezHolder
                         countCol++;
                         countRow = 0;
                     }
+                    itemArray[countCol, countRow].Position = itemArray[countCol, countRow].Position;
                     itemArray[countCol,countRow].Draw(spriteBatch);
                     countRow++;
 
