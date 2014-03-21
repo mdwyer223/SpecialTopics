@@ -29,8 +29,18 @@ namespace AdlezHolder
         int middleScreen, middleButton, buttonSeparation;
         Vector2 buttonPosition, adlezPos;
         Vector2 startPosition;
+        //CutscenePlayer cutscene;
+        //AlphaCutscene alphaScene;
+        World world;
+        Game game;
+        //MapDataHolder data;
 
-        public MenuInterface(Viewport view, float scaleFactor)
+        //public MapDataHolder Data
+        //{
+        //    set { data = value; }
+        //}
+
+        public MenuInterface(Viewport view, float scaleFactor, World ogWorld, Game ogGame)
         {
             music = Game1.GameContent.Load<Song>("Music/Theme");
 
@@ -76,6 +86,9 @@ namespace AdlezHolder
             Continuebutton = new Button(Game1.GameContent.Load<Texture2D>("MenuButtons/Continue"), .4f, overScan.Width, startPosition, Game1.GameContent.Load<SpriteFont>("SpriteFont1"), "");
 
             Newbutton.Selected(Newbutton);
+
+            world = ogWorld;
+            game = ogGame;
 
         }
 
@@ -154,6 +167,10 @@ namespace AdlezHolder
                     {
                         MediaPlayer.Stop();
                         changeGameState(GameState.CUTSCENE);
+                        //alphaScene = new AlphaCutscene(world);
+                        //cutscene = new CutscenePlayer(game, world);
+                        //cutscene.playCutscene(alphaScene, world.Map.Player);
+                        //cutscene.Update(gameTime);
                     }
 
                     else if (numOfButton == 1)
@@ -185,7 +202,6 @@ namespace AdlezHolder
                 Newbutton.Draw(spriteBatch);
                 Loadbutton.Draw(spriteBatch);
                 Continuebutton.Draw(spriteBatch);
-                
             }
             else
             {
