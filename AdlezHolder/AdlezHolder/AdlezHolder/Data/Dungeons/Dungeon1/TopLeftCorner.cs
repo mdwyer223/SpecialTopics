@@ -56,7 +56,7 @@ namespace AdlezHolder
                 Game1.GameContent.Load<Texture2D>("Random/The best thing ever"), new Vector2(130, backgroundRec.Height));
             addImmovable(wall);
 
-            Chest chest = new Chest(.1f, new Vector2(200, 300));
+            Chest chest = new Chest(.1f, new Vector2(200, 300), ChestType.DUNGEON);
             chest.Open = OpenChest;
             addChest(chest);
 
@@ -97,7 +97,7 @@ namespace AdlezHolder
                 Game1.GameContent.Load<Texture2D>("Random/The best thing ever"), new Vector2(130, backgroundRec.Height));
             addImmovable(wall);
 
-            Chest chest = new Chest(.1f, new Vector2(200, 300));
+            Chest chest = new Chest(.1f, new Vector2(200, 300), ChestType.DUNGEON);
             chest.Open = OpenChest;
             addChest(chest);
 

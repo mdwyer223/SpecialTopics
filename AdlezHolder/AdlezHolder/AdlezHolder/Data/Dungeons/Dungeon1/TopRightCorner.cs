@@ -163,7 +163,7 @@ namespace AdlezHolder
 
 
 
-            Chest chest = new Chest(.1f, new Vector2(350, 200));
+            Chest chest = new Chest(.1f, new Vector2(350, 200), ChestType.DUNGEON);
             chest.Open = OpenChest;
             addChest(chest);
 
@@ -304,7 +304,7 @@ namespace AdlezHolder
 
 
 
-            Chest chest = new Chest(.1f, new Vector2(350, 200));
+            Chest chest = new Chest(.1f, new Vector2(350, 200), ChestType.DUNGEON);
             chest.Open = OpenChest;
             addChest(chest);
 

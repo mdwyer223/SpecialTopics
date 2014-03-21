@@ -244,13 +244,11 @@ namespace AdlezHolder
                 {
                     map.Player.Position = new Vector2(425, 211);
                 }
+                else if (lastPlace.Equals(""))
+                {
+                    map.Player.Position = new Vector2((backgroundRec.Width / 2) - map.Player.CollisionRec.Width, backgroundRec.Height - map.Player.CollisionRec.Height);
+                }
                 lastPlace = "";
-            }
-
-            if (map.Player.Teled)
-            {
-                map.Player.teleported(map.CurrentData);
-                map.Player.setTele(false);
             }
 
             for (int i = 0; i < tripWires.Count; i++)

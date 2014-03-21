@@ -203,12 +203,6 @@ namespace AdlezHolder
                 lastPlace = "";
             }
 
-            if (map.Player.Teled)
-            {
-                map.Player.teleported(map.CurrentData);
-                map.Player.setTele(false);
-            }
-
             for (int i = 0; i < tripWires.Count; i++)
             {
                 tripWires[i].Update(map.Player.CollisionRec);

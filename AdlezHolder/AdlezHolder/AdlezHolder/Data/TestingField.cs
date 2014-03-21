@@ -20,11 +20,6 @@ namespace AdlezHolder
             : base()
         {
             backgroundRec = new Rectangle(0, 0, 0, 0);
-            
-
-            Mage sprite = new Mage(Game1.GameContent.Load<Texture2D>("ComputerPpl/Enemies/Skeleton/Move/SF"),
-                .04f, new Vector2(300, -300));
-            addEnemy(sprite);
         }
 
         public override void Update(Map map, GameTime gameTime)
@@ -48,7 +43,7 @@ namespace AdlezHolder
             {
                 Thing sprite = new Thing(Game1.GameContent.Load<Texture2D>("ComputerPpl/Enemies/Skeleton/Move/SF"),
                     .04f, new Vector2(300, 300));
-                addEnemy(sprite);
+                //addEnemy(sprite);
                 //Thing t = new Thing(Game1.GameContent.Load<Texture2D>("ComputerPpl/Enemies/Skeleton/Move/SF"), .04f, new Vector2(300, 400));
                 //addEnemy(t);
             }
@@ -67,9 +62,19 @@ namespace AdlezHolder
                 addImmovable((new Teleporter(new Rectangle(325, 200, 50, 3), "nwot")));
                 addImmovable((new Teleporter(new Rectangle(400, 200, 50, 3), "mroom2")));
                 addImmovable((new Teleporter(new Rectangle(475, 200, 50, 3), "mroom1")));
+                addItem(new Key(new Vector2(300, 240), KeyType.GOLD, 1));
+                addImmovable(new Chest(.07f, new Vector2(300, 300), ChestType.GOLD));
+                addImmovable(new Chest(.07f, new Vector2(225, 300), ChestType.SILVER));
+                addImmovable(new Chest(.07f, new Vector2(175, 300), ChestType.BRONZE));
+                addImmovable(new Chest(.07f, new Vector2(100, 300), ChestType.DUNGEON));
                 itemAdd = true;
             }
             oldKeys = keys;
+        }
+
+        public override void Draw(SpriteBatch spriteBatch)
+        {   
+            base.Draw(spriteBatch);
         }
     }
 }

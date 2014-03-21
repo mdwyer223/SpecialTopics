@@ -16,7 +16,7 @@ namespace AdlezHolder
     {
         CUTSCENE, PLAYING, INVENTORY,
         SHOP, MAINMENU, PAUSEMENU,
-        GAMEOVER, INFOSCREEN
+        GAMEOVER, INFOSCREEN, INTRO
     }
 
     public enum ParticleState
@@ -39,6 +39,8 @@ namespace AdlezHolder
         InformationScreen infoScreen;
         InGameEditor editor;
 
+        StoryIntro intro;
+
         MouseState mouse;
 
         // make viewport static too?
@@ -50,7 +52,7 @@ namespace AdlezHolder
             get { return otherContent; }
         }
 
-        static GameState mainGameState = GameState.INFOSCREEN;
+        static GameState mainGameState = GameState.INTRO;
         public static GameState MainGameState
         {
             get { return mainGameState; }
@@ -94,6 +96,7 @@ namespace AdlezHolder
             displayHeight = GraphicsDevice.Viewport.Height; 
             
             infoScreen = new InformationScreen();
+            intro = new StoryIntro();
 
             world = new World(this);
             Components.Add(world);
@@ -171,7 +174,7 @@ namespace AdlezHolder
 
             if (mainGameState == GameState.PLAYING)
             {
-                healthDisplay.getPlayerHealth(world.Map.Player.MaxHitPoints, 
+                healthDisplay.getPlayerHealth(world.Map.Player.MaxHitPoints,
                     world.Map.Player.HitPoints);
                 healthDisplay.getPlayer(world.Map.Player);
 
@@ -213,7 +216,7 @@ namespace AdlezHolder
             else if (mainGameState == GameState.PAUSEMENU)
             {
                 pauseMenu.Visible = pauseMenu.Enabled = true;
-                pauseMenu.getPlayer(world.Map.Player);  
+                pauseMenu.getPlayer(world.Map.Player);
 
                 menu.Visible = false;
                 menu.Enabled = false;
@@ -231,6 +234,8 @@ namespace AdlezHolder
 
                 menu.Visible = false;
                 menu.Enabled = false;
+
+                healthDisplay.Visible = false;
 
                 world.Enabled = false;
                 world.Visible = true;
@@ -270,6 +275,14 @@ namespace AdlezHolder
                     mainGameState = GameState.MAINMENU;
                 }
             }
+            else if (mainGameState == GameState.INTRO)
+            {
+                intro.Update(gameTime);
+                if (intro.Over)
+                {
+                    mainGameState = GameState.MAINMENU;
+                }
+            }
             base.Update(gameTime);
 
             pHandler.Update(gameTime);
@@ -292,6 +305,12 @@ namespace AdlezHolder
             {
                 spriteBatch.Begin();
                 infoScreen.Draw(spriteBatch);
+                spriteBatch.End();
+            }
+            else if (mainGameState == GameState.INTRO)
+            {
+                spriteBatch.Begin();
+                intro.Draw(spriteBatch);
                 spriteBatch.End();
             }
 

@@ -105,7 +105,7 @@ namespace AdlezHolder
                 }
                 else if (lastPlace.Equals("TopRightCorner"))
                 {
-                    map.Player.Position = new Vector2(407, 211);
+                    map.Player.Position = new Vector2(473, 211);
                 }
                 lastPlace = "";
             }

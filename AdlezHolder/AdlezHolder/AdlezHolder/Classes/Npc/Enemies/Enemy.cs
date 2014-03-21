@@ -511,6 +511,25 @@ namespace AdlezHolder
                     data.addItem(b);
                 }
             }
+            else if (dropValue <= 50)
+            {
+                int typeOf = rand.Next(1, 30);
+                if (typeOf <= 5)
+                {
+                    Key k = new Key(this.Position, KeyType.GOLD, 1);
+                    data.addItem(k);
+                }
+                else if (typeOf <= 15)
+                {
+                    Key k = new Key(this.Position, KeyType.SILVER, 1);
+                    data.addItem(k);
+                }
+                else
+                {
+                    Key k = new Key(this.Position, KeyType.BRONZE, 1);
+                    data.addItem(k);
+                }
+            }
             else if (dropValue <= 70)
             {
                 int val = rand.Next(25, 70);
@@ -561,6 +580,7 @@ namespace AdlezHolder
                 if (hitPoints <= 0)
                 {
                     hitPoints = 0;
+                    dropItem(data);
                     IsDead = true;
                     IsVisible = false;
                 }

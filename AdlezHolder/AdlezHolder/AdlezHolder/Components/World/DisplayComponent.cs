@@ -19,6 +19,7 @@ namespace AdlezHolder
     {
         SpriteBatch spriteBatch;
         WeaponSelect weaponSelect;
+        ItemDisplay items;
         HealthBar health;
         Character player;
 
@@ -39,6 +40,7 @@ namespace AdlezHolder
         {
             weaponSelect = new WeaponSelect(WeaponSelect.SelectedWeapon.SWORD);
             health = new HealthBar(((Game1)Game));
+            items = new ItemDisplay();
             spriteBatch = new SpriteBatch(((Game1)Game).GraphicsDevice);
             base.Initialize();
         }
@@ -51,15 +53,19 @@ namespace AdlezHolder
         {
             health.update(max, current, player);
             weaponSelect.update(player, gameTime);
+            items.Update(player);
             base.Update(gameTime);
         }
 
         public override void Draw(GameTime gameTime)
         {
-            spriteBatch.Begin();
-            weaponSelect.draw(spriteBatch);
-            health.draw(spriteBatch);
-            spriteBatch.End();
+
+                spriteBatch.Begin();
+                weaponSelect.draw(spriteBatch);
+                health.draw(spriteBatch);
+                items.Draw(spriteBatch);
+                spriteBatch.End();
+            
 
             base.Draw(gameTime);
         }

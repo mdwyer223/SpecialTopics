@@ -73,7 +73,10 @@ namespace AdlezHolder
                         if (playerTemp != null)
                         {
                             playerTemp.heal(healingPower);
-                            playerTemp = null;
+                            if (count <= 0)
+                            {
+                                playerTemp = null;
+                            }
                             this.drop(items);
                         }
                         break;

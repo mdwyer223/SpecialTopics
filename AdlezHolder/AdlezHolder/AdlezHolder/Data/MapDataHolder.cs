@@ -41,6 +41,8 @@ namespace AdlezHolder
         protected Texture2D bright, dark;
         protected int brightnessValue;
 
+        protected string teleID;
+
         bool delay;
 
         protected string backgroundDirectory;
@@ -50,7 +52,10 @@ namespace AdlezHolder
             get { return backgroundDirectory; }
         }
 
-
+        public string TeleID
+        {
+            get { return teleID; }
+        }
 
         public Rectangle BackgroundRec
         {
@@ -254,6 +259,7 @@ namespace AdlezHolder
         public virtual void Update(Map map, GameTime gameTime)
         {
             KeyboardState keys = Keyboard.GetState();
+            Random rand = new Random();
 
             if (MediaPlayer.State == MediaState.Paused || MediaPlayer.State == MediaState.Playing)
             {
@@ -267,7 +273,14 @@ namespace AdlezHolder
                 }
             }
 
-            brightnessValue = getBrightnessValue(map);
+            if (Game1.ParticleState == ParticleState.OFF)
+            {
+                brightnessValue = getBrightnessValue(map);
+            }
+            else
+            {
+                brightnessValue = rand.Next(-115, -105);
+            }
 
             topLeftCornerView = new Vector2(0, 0);
             topRightCornerView = new Vector2(Game1.DisplayWidth, 0);
@@ -280,6 +293,11 @@ namespace AdlezHolder
 
             adjustBackground(map.Player, keys);
 
+            if (map.Player.Teled)
+            {
+                map.Player.teleported(map.CurrentData);
+                map.Player.setTele(false);
+            }
 
             for (int i = 0; i < everything.Count; i++)
             {
@@ -334,9 +352,8 @@ namespace AdlezHolder
                 {
                     particles[i].Update(gameTime);
 
-                    if (particles[i].PType != ParticleType.TELEPORT)
+                    if (particles[i].PType != ParticleType.TELEPORT && particles[i].PType != ParticleType.COMET_TAIL)
                     {
-
                         List<BaseSprite> sprites = everything;
                         for (int j = 0; j < sprites.Count; j++)
                         {
@@ -409,16 +426,15 @@ namespace AdlezHolder
                                 }
                             }
                         }
-
-                        if (i >= 0 && i < particles.Count)
+                    }
+                    if (i >= 0 && i < particles.Count)
+                    {
+                        if (particles[i].OffScreen)
                         {
-                            if (particles[i].OffScreen)
-                            {
-                                particles.RemoveAt(i);
-                                i--;
-                                if (i < 0)
-                                    i = 0;
-                            }
+                            particles.RemoveAt(i);
+                            i--;
+                            if (i < 0)
+                                i = 0;
                         }
                     }
                 }
@@ -542,7 +558,7 @@ namespace AdlezHolder
 
             if (brightnessValue <= 0)
             {
-                spriteBatch.Draw(dark, new Rectangle(0, 0, Game1.DisplayWidth, Game1.DisplayHeight),
+                spriteBatch.Draw(dark, new Rectangle(-10, -10, Game1.DisplayWidth +20, Game1.DisplayHeight +20),
                     new Color(255, 255, 255) * (float)((Math.Abs(brightnessValue) / 255f)));
             }
 

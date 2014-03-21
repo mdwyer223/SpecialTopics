@@ -15,7 +15,7 @@ namespace AdlezHolder
         List<Particle> particles;
         Rectangle modified;
         Random rand = new Random();
-        string id;
+        string id, currentID;
 
         bool playerTouching;
         float spawnTime, spawnTimer,
@@ -27,7 +27,7 @@ namespace AdlezHolder
 
         // max when the player is not within the teleporter
         int maxParticles = 30;
-        int delay = 50, delayTimer;
+        int delay = 30, delayTimer;
 
         public override Rectangle CollisionRec
         {
@@ -52,9 +52,23 @@ namespace AdlezHolder
             spawnParticle();
         }
 
+        public Teleporter(Rectangle newColl, string mapID, string lastID)
+            : base(null, .02f, 0, new Vector2(newColl.X, newColl.Y))
+        {
+            id = mapID;
+            currentID = lastID;
+            modified = newColl;
+
+            this.color = Color.Cyan;
+            particles = new List<Particle>();
+            spawnParticle();
+        }
+
         public override void Update(Map data, GameTime gametime)
         {
             playerTouching = data.Player.CollisionRec.Intersects(this.CollisionRec);
+
+            currentID = data.CurrentData.TeleID;
 
             if (countDown)
             {
@@ -158,6 +172,10 @@ namespace AdlezHolder
                     else if (id.Equals("testingfield"))
                     {
                         data.changeMap(new TestingField());
+                    }
+                    else if (id.Equals("void"))
+                    {
+                        data.changeMap(new TheVoid(this.currentID, this.id));
                     }
                     data.Player.setTele(true);
                 }

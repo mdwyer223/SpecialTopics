@@ -9,6 +9,8 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace AdlezHolder
 {
+    public enum GemType { LS, FREEZE, FIRE, STUN, POISON, NONE }
+
     public abstract class Gem : Item
     {
         protected int damage, tier;

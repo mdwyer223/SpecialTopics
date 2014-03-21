@@ -502,6 +502,10 @@ namespace AdlezHolder
                     {
                         m.changeMap(new Nwot());
                     }
+                    else if (option.Equals("VOID"))
+                    {
+                        m.changeMap(new TheVoid());
+                    }
                     m.Player.Position = new Vector2(Game1.DisplayWidth / 2, Game1.DisplayHeight / 2);
                 }
                 else if (command.Contains("SPAWN"))
@@ -509,7 +513,7 @@ namespace AdlezHolder
                     if (option.Equals("ARROW"))
                     {
                         m.CurrentData.addItem(new Arrow(.02f, false, "Arrow", 10, 
-                            new Vector2(Game1.DisplayWidth / 2, Game1.DisplayHeight / 2), 1));
+                            new Vector2(Game1.DisplayWidth / 2, Game1.DisplayHeight / 2), 99));
                     }
                     else if (option.Equals("LSTONE"))
                     {
@@ -546,7 +550,7 @@ namespace AdlezHolder
                     }
                     else if (option.Equals("BOMB"))
                     {
-                        m.CurrentData.addItem(new BombItem(.02f, new Vector2(Game1.DisplayWidth / 2, Game1.DisplayHeight / 2), 1));
+                        m.CurrentData.addItem(new BombItem(.02f, new Vector2(Game1.DisplayWidth / 2, Game1.DisplayHeight / 2), 99));
                     }
                     else if (option.Equals("SKELETON"))
                     {
@@ -560,6 +564,19 @@ namespace AdlezHolder
                     {
                         m.CurrentData.addEnemy(new Thing(Game1.GameContent.Load<Texture2D>("ComputerPpl/Enemies/Thing/Move/TF"), .04f, new Vector2(400, 300)));
                     }
+                    else if (option.Equals("BKEY"))
+                    {
+                        m.CurrentData.addItem(new Key(new Vector2(400, 240), KeyType.BRONZE, 1));
+                    }
+                    else if (option.Equals("SKEY"))
+                    {
+                        m.CurrentData.addItem(new Key(new Vector2(400, 240), KeyType.SILVER, 1));
+                    }
+                    else if (option.Equals("GKEY"))
+                    {
+                        m.CurrentData.addItem(new Key(new Vector2(400, 240), KeyType.GOLD, 1));
+                    }
+
                 }
                 else if (command.Contains("RAIN"))
                 {

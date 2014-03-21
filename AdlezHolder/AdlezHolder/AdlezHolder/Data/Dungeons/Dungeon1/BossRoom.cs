@@ -12,12 +12,14 @@ namespace AdlezHolder
 {
     public class BossRoom : MapDataHolder
     {
+        Minotaur minotaur;
         string lastPlace = "";
-        bool changePos = false;
+        bool changePos = false, teleAdded;
 
         public BossRoom(Character player)
         {
             background = Game1.GameContent.Load<Texture2D>("BackgroundsAndFloors/Dungeons/FixedDungeon1/DungeonRoomBoss");
+            teleID = "dungeon1";
             int x = (Game1.DisplayWidth - background.Width) / 2;
             int y = (Game1.DisplayHeight - background.Height);
             backgroundRec = new Rectangle(0, 0, background.Width, background.Height);
@@ -38,18 +40,26 @@ namespace AdlezHolder
                 Game1.GameContent.Load<Texture2D>("Random/The best thing ever"), new Vector2(130, backgroundRec.Height));
             addImmovable(wall);
 
-            Minotaur minotaur = new Minotaur(Game1.GameContent.Load<Texture2D>("ComputerPpl/Bosses/D1 Boss/Move/F"),
+            minotaur = new Minotaur(Game1.GameContent.Load<Texture2D>("ComputerPpl/Bosses/D1 Boss/Move/F"),
                 .15f, new Vector2(140, 220));
             addEnemy(minotaur);
 
             if (player.Direction == Orientation.UP)
             {
-                adjustObjectsBackgroundTripWires(new Vector2(x, y), false);
-                player.Position = new Vector2((Game1.DisplayWidth / 2) - player.CollisionRec.Width,
-                    Game1.DisplayHeight - player.CollisionRec.Height - 50);
+                player.Position = new Vector2((backgroundRec.Width / 2) - player.CollisionRec.Width,
+                    backgroundRec.Height - player.CollisionRec.Height - 50);
             }
+        }
 
-
+        public override void Update(Map map, GameTime gameTime)
+        {
+            if (!everything.Contains(minotaur) && !teleAdded)
+            {
+                this.everything.Add(new Teleporter(new Rectangle(400, 300, 20, 20), "void", this.teleID));
+                teleAdded = true;
+            }
+            
+            base.Update(map, gameTime);
         }
 
     }

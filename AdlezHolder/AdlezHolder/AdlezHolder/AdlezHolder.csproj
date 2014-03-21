@@ -132,6 +132,7 @@
     <Compile Include="Classes\Drops\Gems\IceStone.cs" />
     <Compile Include="Classes\Drops\Item.cs" />
     <Compile Include="Classes\Drops\Gems\LightningStone.cs" />
+    <Compile Include="Classes\Drops\Key.cs" />
     <Compile Include="Classes\Drops\Money.cs" />
     <Compile Include="Classes\Drops\Gems\PoisonStone.cs" />
     <Compile Include="Classes\Drops\Potion.cs" />
@@ -197,6 +198,7 @@
     <Compile Include="Data\Buildings\Building2.cs" />
     <Compile Include="Data\Buildings\Building3.cs" />
     <Compile Include="Data\Cutscenes\Cutscene.cs" />
+    <Compile Include="Data\Cutscenes\StoryIntro.cs" />
     <Compile Include="Data\Dungeons\Dungeon2\LeftBot.cs" />
     <Compile Include="Data\Dungeons\Dungeon2\LeftTop.cs" />
     <Compile Include="Data\Dungeons\Dungeon2\MainRoom2.cs" />
@@ -213,6 +215,20 @@
     <Compile Include="Data\Dungeons\Dungeon2\RightTop.cs" />
     <Compile Include="Data\Dungeons\Dungeon2\TopLeft.cs" />
     <Compile Include="Data\Dungeons\Dungeon2\TopRight.cs" />
+    <Compile Include="Data\Landscapes\Connectors\VerticalCrossing.cs" />
+    <Compile Include="Data\Landscapes\Connectors\HTurnNorth.cs" />
+    <Compile Include="Data\Landscapes\Connectors\HTurnSouth.cs" />
+    <Compile Include="Data\Landscapes\Connectors\HorizontalCrossing.cs" />
+    <Compile Include="Data\Landscapes\Connectors\VHCrossing.cs" />
+    <Compile Include="Data\Landscapes\Connectors\VTurnEast.cs" />
+    <Compile Include="Data\Landscapes\Connectors\VTurnWest.cs" />
+    <Compile Include="Data\Landscapes\Dugneon1Path\D1First.cs" />
+    <Compile Include="Data\Landscapes\Dugneon1Path\D1Second.cs" />
+    <Compile Include="Data\Landscapes\Dugneon1Path\D1Third.cs" />
+    <Compile Include="Data\Landscapes\Dungeon2Path\D2Entrance.cs" />
+    <Compile Include="Data\Landscapes\Dungeon2Path\D2First.cs" />
+    <Compile Include="Data\Landscapes\Dungeon2Path\D2Second.cs" />
+    <Compile Include="Data\Landscapes\Dungeon2Path\D2Third.cs" />
     <Compile Include="Data\Landscapes\LeftPassage.cs" />
     <Compile Include="Data\Landscapes\Nwot.cs" />
     <Compile Include="Data\Map.cs" />
@@ -225,6 +241,9 @@
     <Compile Include="Data\SaveStuff\SaveFile.cs" />
     <Compile Include="Data\SaveStuff\SaveStructs.cs" />
     <Compile Include="Data\TestingField.cs" />
+    <Compile Include="Data\Tutorial.cs" />
+    <Compile Include="Data\Void stuff\Galaxy.cs" />
+    <Compile Include="Data\Void stuff\TheVoid.cs" />
     <Compile Include="Game2.cs" />
     <Compile Include="InformationScreen.cs" />
     <Compile Include="Input.cs" />

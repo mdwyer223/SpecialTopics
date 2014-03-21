@@ -9,8 +9,6 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace AdlezHolder
 {
-    public enum GemType { LS, FREEZE, FIRE, STUN, POISON, NONE }
-
     public class Projectile : BaseSprite
     {
         Vector2 velocity;

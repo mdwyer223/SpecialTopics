@@ -27,7 +27,7 @@ namespace AdlezHolder
         Bow bow;
         Bomb bomb;
         int money, arrowCount, bombCount,
-            maxArrows, maxBombs;
+            maxArrows, maxBombs, bronzeCount, silverCount, goldCount;
 
         bool attacking, bowShot, bombSet, didTele;
 
@@ -101,6 +101,21 @@ namespace AdlezHolder
             get { return money; }
         }
 
+        public int GoldKeys
+        {
+            get { return goldCount; }
+        }
+
+        public int SilverKeys
+        {
+            get { return silverCount; }
+        }
+
+        public int Bronzekeys
+        {
+            get { return bronzeCount; }
+        }
+
         public int HitPoints
         {
             get { return currentHealthPoints; }
@@ -168,8 +183,8 @@ namespace AdlezHolder
         {
             currentHealthPoints = healthPointsMax = 500;
             arrowCount = bombCount = 0;
-            maxBombs = 10;
-            maxArrows = 30;
+            maxBombs = 30;
+            maxArrows = 50;
 
             canMoveDown = true;
             canMoveUp = true;
@@ -385,7 +400,7 @@ namespace AdlezHolder
                 {
                     Vector2 velo = new Vector2((Center.X - particles[i].Position.X), (Center.Y - particles[i].Position.Y) );
                     velo.Normalize();
-                    velo *= 1.1f;
+                    velo *= 1.075f;
                     particles[i].adjustVelo(velo);
                     if (particles[i].OffScreen || measureDistance(particles[i].Position) < 10)
                     {
@@ -507,7 +522,12 @@ namespace AdlezHolder
 
         public void addFunds(int value)
         {
-            money += value;
+            if (money <= 9999)
+            {
+                money += value;
+                if (money > 9999)
+                    money = 9999;
+            }
         }
 
         public void subtractFunds(int value)
@@ -520,6 +540,26 @@ namespace AdlezHolder
         public void addItem(Item item)
         {
             invent.addItem(item, this);
+        }
+
+        public void addKey(KeyType type)
+        {
+            if (type == KeyType.BRONZE)
+                bronzeCount++;
+            else if (type == KeyType.SILVER)
+                silverCount++;
+            else if (type == KeyType.GOLD)
+                goldCount++;
+        }
+
+        public void removeKey(KeyType type)
+        {
+            if (type == KeyType.BRONZE)
+                bronzeCount--;
+            else if (type == KeyType.SILVER)
+                silverCount--;
+            else if (type == KeyType.GOLD)
+                goldCount--;
         }
 
         public void addMessage(Message message)
@@ -595,7 +635,7 @@ namespace AdlezHolder
 
         public void heal(int healPoints)
         {
-             if (healingTimer > (HEALING_SICKNESS * 1000))
+            if (healingTimer > (HEALING_SICKNESS * 1000))
             {
                 if (currentHealthPoints + healPoints <= healthPointsMax)
                 {
@@ -932,9 +972,9 @@ namespace AdlezHolder
         public void teleported(MapDataHolder data)
         {
             Random rand = new Random();
-            int maxDist = 120;
+            int maxDist = 150;
 
-            for (int i = 0; i < 800; i++)
+            for (int i = 0; i < 1500; i++)
             {
                 Vector2 tempPos = new Vector2((float)(rand.NextDouble() * rand.Next(-maxDist, maxDist)) + Center.X, (float)(rand.NextDouble() * rand.Next(-maxDist, maxDist)) + Center.Y);
                 Particle p = new Particle(Color.Cyan, 2, tempPos, 7, new Vector2(0, 0),

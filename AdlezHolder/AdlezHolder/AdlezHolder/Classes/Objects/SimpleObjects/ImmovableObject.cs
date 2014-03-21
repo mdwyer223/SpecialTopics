@@ -70,7 +70,7 @@ namespace AdlezHolder
         {
             if (visible)
             {
-                spriteBatch.Draw(Image, DrawnRec, Color.White);
+                spriteBatch.Draw(Image, DrawnRec, color);
             }
         }
     }

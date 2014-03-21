@@ -9,7 +9,7 @@ using Microsoft.Xna.Framework.Content;
 
 namespace AdlezHolder
 {
-    public enum ParticleType { RAIN, SNOW, SAND, TELEPORT, NONE };
+    public enum ParticleType { RAIN, SNOW, SAND, TELEPORT, STAR, COMET_TAIL, AMBIENT, NONE };
 
     public class Particle
     {
@@ -41,6 +41,12 @@ namespace AdlezHolder
         float brightness = 255f;
         bool fade = false;
 
+        //star stuff
+        int dilationTimer, dilationTime, 
+            pauseTimer, pauseTime;
+        float size = 0f, sizeToChange = 0f, brightnessAdjust;
+        bool countingUp = true, countingDown = false, pausedGrowth = false;
+
         public List<GemType> Types
         {
             get { return types; }
@@ -58,8 +64,12 @@ namespace AdlezHolder
 
         public bool OffScreen
         {
-            get { return (position.Y > Game1.DisplayHeight || position.X > Game1.DisplayWidth || position.X < 0)
-                || lifeLengthTimer >= lifeLength * 1000 || animeIndex == rainAnimation.Length; }
+            get
+            {
+                return (position.Y > Game1.DisplayHeight || position.X > Game1.DisplayWidth || position.X < 0)
+                    || lifeLengthTimer >= lifeLength * 1000 || animeIndex == rainAnimation.Length || (pausedGrowth && dilationTimer > dilationTime) 
+                    || (brightness <= 0 && !fade);
+            }
         }
 
         public int Damage
@@ -77,6 +87,16 @@ namespace AdlezHolder
         {
             get { return position; }
             set { position = value; }
+        }
+
+        public Vector2 Acceleration
+        {
+            get { return accel; }
+        }
+
+        public Vector2 Velocity
+        {
+            get { return velo; }
         }
 
         public Rectangle Rec
@@ -213,11 +233,35 @@ namespace AdlezHolder
             types = new List<GemType>();
         }
 
+        public Particle(Color color, int startSize, int finalSize, Vector2 start, ParticleType type)
+        {
+            lifeLength = int.MaxValue;
+            lifeLengthTimer = 0;
+            gemEffects = new List<GemStruct>();
+            types = new List<GemType>();
+
+            blankTexture = Game1.GameContent.Load<Texture2D>("Random/Particle");
+
+            Random rand = new Random();
+            dilationTime = rand.Next(3, 5);
+            dilationTimer = pauseTimer = 0;
+            sizeToChange = (float)finalSize / ((float)dilationTime * 100);
+            position = start;
+            this.color = color;
+            pType = type;
+            brightness = rand.Next(0, 255);
+            brightnessAdjust = (dilationTime + pauseTime) / 2;
+        }
+
         public void Update(GameTime gameTime)
         {
             if (pType == ParticleType.NONE)
             {
                 damage += damageReduction;
+            }
+            else if (pType == ParticleType.AMBIENT)
+            {
+                velo += accel;
             }
             else if (pType == ParticleType.SNOW)
             {
@@ -242,7 +286,7 @@ namespace AdlezHolder
                     fade = true;
                 }
                 velo += accel;
-                position += velo;
+                //position += velo;
                 if (fade)
                 {
                     brightness -= .5f;
@@ -252,7 +296,77 @@ namespace AdlezHolder
                         fade = false;
                     }
                 }
-                
+            }
+            else if (pType == ParticleType.COMET_TAIL)
+            {
+                if (lifeLengthTimer % 1600 == 0)
+                {
+                    fade = true;
+                }
+                velo *= .98f;
+                position += velo;
+                if (fade)
+                {
+                    brightness -= .75f;
+                    if (brightness < 0)
+                    {
+                        brightness = 0f;
+                        fade = false;
+                    }
+                }
+            }
+            else if (pType == ParticleType.STAR)
+            {
+                if (countingUp)
+                {
+                    brightness += brightnessAdjust;
+                    if (brightness > 255)
+                    {
+                        brightness = 255f;
+                        countingDown = true;
+                        countingUp = false;
+                    }
+                }
+                else if (countingDown)
+                {
+                    brightness -= brightnessAdjust;
+                    if (brightness < 50)
+                    {
+                        brightness = 50;
+                        countingDown = false;
+                        countingUp = true;
+                    }
+                }
+
+                if (!pausedGrowth)
+                {
+                    if (dilationTimer < dilationTime * 1000)
+                    {
+                        dilationTimer += gameTime.ElapsedGameTime.Milliseconds;
+                        //size += sizeToChange;
+                        if (size <= 1)
+                            size = 1;
+                        this.rec.Width = this.rec.Height = (int)size;
+                    }
+                    else
+                    {
+                        dilationTimer = 0;
+                        pausedGrowth = true;
+                    }
+                }
+                else
+                {
+                    if (pauseTimer < pauseTime * 1000)
+                    {
+                        pauseTimer += gameTime.ElapsedGameTime.Milliseconds;
+                    }
+                    else
+                    {
+                        pausedGrowth = false;
+                        sizeToChange *= -1;
+                    }
+
+                }
             }
 
             lifeLengthTimer += gameTime.ElapsedGameTime.Milliseconds;
@@ -265,7 +379,7 @@ namespace AdlezHolder
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            if (pType != ParticleType.TELEPORT)
+            if (pType != ParticleType.TELEPORT && pType != ParticleType.STAR && pType != ParticleType.COMET_TAIL)
             {
                 spriteBatch.Draw(blankTexture, Rec, color);
             }
