@@ -28,20 +28,14 @@ namespace AdlezHolder
 
         protected List<TripWire> tripWires;
         protected List<Chest> chests;
-        protected List<Projectile> projectiles;
-        protected List<Particle> particles;
-        protected List<Item> items;
+
+        protected MessageBox box;
 
         protected Texture2D background;
         protected Rectangle backgroundRec;
         protected Vector2 position;
 
         protected Song music;
-
-        protected Texture2D bright, dark;
-        protected int brightnessValue;
-
-        bool delay;
 
         public Rectangle BackgroundRec
         {
@@ -95,10 +89,6 @@ namespace AdlezHolder
 
         public MapDataHolder()
         {
-            delay = false;
-            dark = Game1.GameContent.Load<Texture2D>("Random/The best thing ever");
-            bright = Game1.GameContent.Load<Texture2D>("Random/LightScreen");
-
             everything = new List<BaseSprite>();
 
             objects = new List<ImmovableObject>();
@@ -108,21 +98,18 @@ namespace AdlezHolder
             anSprites = new List<AnimatedSprite>();
             enemies = new List<Enemy>();
             npcs = new List<Npc>();
-            items = new List<Item>();
-            particles = new List<Particle>();
 
             tripWires = new List<TripWire>();
             arrowTraps = new List<ArrowTrap>();
             chests = new List<Chest>();
+
+            //scene = new AlphaCutscene();
         }
 
         public MapDataHolder(Character player)
         {
             //object reference will allow for the change of the player
             //position
-            delay = false;
-            dark = Game1.GameContent.Load<Texture2D>("Random/The best thing ever");
-            bright = Game1.GameContent.Load<Texture2D>("Random/LightScreen");
 
             everything = new List<BaseSprite>();
 
@@ -133,12 +120,12 @@ namespace AdlezHolder
             anSprites = new List<AnimatedSprite>();
             enemies = new List<Enemy>();
             npcs = new List<Npc>();
-            items = new List<Item>();
-            particles = new List<Particle>();
 
             tripWires = new List<TripWire>();
             arrowTraps = new List<ArrowTrap>();
             chests = new List<Chest>();
+            
+            //scene = new AlphaCutscene();
         }
 
         public virtual void LoadContent(ContentManager Content, int displayWidth)
@@ -162,129 +149,35 @@ namespace AdlezHolder
                 }
             }
 
-            brightnessValue = getBrightnessValue(map);
-
             topLeftCornerView = new Vector2(0, 0);
             topRightCornerView = new Vector2(Game1.DisplayWidth, 0);
             bottomLeftCornerView = new Vector2(0, Game1.DisplayHeight);
             bottomRightCornerView = new Vector2(Game1.DisplayWidth, Game1.DisplayHeight);
 
-            //update the tripwires and adjust them here
-
             updateCorners();
 
             adjustBackground(map.Player, keys);
 
-
-            for (int i = 0; i < everything.Count; i++)
+            foreach (BaseSprite obj in everything)
             {
-                if (!everything[i].IsDead && everything[i].GetType() != typeof(Character))
+                if (!obj.IsDead && obj.GetType() != typeof(Character))
                 {
-                    everything[i].Update(map, gameTime);
-                    if (everything[i].GetType() == typeof(Projectile))
-                    {
-                        Projectile p = (Projectile)everything[i];
-                        if (p.MaxRange)
-                        {
-                            everything.RemoveAt(i);
-                            i--;
-                            if (i < 0)
-                                i = 0;
-                        }
-                    }
-                    if (everything[i].GetType() == typeof(BombObj))
-                    {
-                        BombObj b = (BombObj)everything[i];
-                        if (b.BlowUp)
-                        {
-                            everything.RemoveAt(i);
-                            i--;
-                            if (i < 0)
-                                i = 0;
-                        }
-                    }
-                    if (everything[i].GetType() == typeof(Item)
-                        || everything[i].GetType() == typeof(Arrow)
-                        || everything[i].GetType() == typeof(Money))
-                    {
-                        Item item = (Item)everything[i];
-                        if (item.Dead)
-                        {
-                            everything.RemoveAt(i);
-                            i--;
-                        }
-                    }
-                }
-                else if (everything[i].IsDead)
-                {
-                    everything.RemoveAt(i);
-                    i--;
-                    if (i < 0)
-                        i = 0;
-                }
+                    obj.Update(map, gameTime);
 
-            }
-
-            for (int i = 0; i < particles.Count; i++)
-            {
-                if (particles[i] != null)
-                {
-                    particles[i].Update(gameTime);
-
-                    List<BaseSprite> sprites = everything;
-                    for (int j = 0; j < sprites.Count; j++)
-                    {
-                        if (sprites[j].CollisionRec.Intersects(particles[i].Rec))
-                        {
-                            if (sprites[j].GetType() == typeof(Character))
-                            {
-                                Character c = (Character)sprites[j];
-                                c.damage(particles[i].Damage);
-                            }
-                            else if (sprites[j].GetType() == typeof(Skeleton))
-                            {
-                                Skeleton s = (Skeleton)sprites[j];
-                                s.damage(this, particles[i].Damage);
-                            }
-                            else if (sprites[j].GetType() == typeof(Minotaur))
-                            {
-                                Minotaur m = (Minotaur)sprites[j];
-                                m.damage(this, particles[i].Damage);
-                            }
-                            else if (sprites[j].GetType() == typeof(BombObj))
-                            {
-                                BombObj b = (BombObj)sprites[j];
-                                b.rushDelay();
-                            }
-
-                            if (sprites[j].GetType() != typeof(Arrow)
-                                && sprites[j].GetType() != typeof(Money)
-                                && sprites[j].GetType() != typeof(Item)
-                                && sprites[j].GetType() != typeof(BombObj))
-                            {
-                                particles.RemoveAt(i);
-                                i--;
-                                if (i < 0)
-                                    i = 0;
-                                break;
-                            }
-                        }
-                    }
-
-                    if (i >= 0 && i < particles.Count)
-                    {
-                        if (particles[i].OffScreen)
-                        {
-                            particles.RemoveAt(i);
-                            i--;
-                            if (i < 0)
-                                i = 0;
-                        }
-                    }
+                    adjust(map.Player, keys, obj);
                 }
             }
 
             changeDrawOrder(everything);
+
+            if (box != null)
+            {
+                box.update();
+                if (!box.Visible)
+                {
+                    box = null;
+                }
+            }
         }
 
         protected virtual void adjustBackground(Character player, KeyboardState keys)
@@ -292,57 +185,138 @@ namespace AdlezHolder
             //see if there can be a way to have a free moving camera with the arrow keys
             if (player.Center.Y >= (Game1.DisplayHeight / 2) - 1 && player.Center.Y <= (Game1.DisplayHeight / 2) + 1)
             {
-                //TODO: change if
+                player.CanMoveUp = player.CanMoveDown = false;
+
+                if (topLeftCorner.Y + player.Speed < topLeftCornerView.Y)
+                {
+                    if (keys.IsKeyDown(Keys.W) && player.Direction == Orientation.UP)
+                    {
+                        this.backgroundRec.Y += player.Speed;
+                        moveObjectsDown = true;
+                    }
+                }
+                else
+                {
+                    player.CanMoveUp = true;
+                    moveObjectsDown = false;
+                }
+
+                if (bottomLeftCorner.Y - player.Speed > bottomLeftCornerView.Y)
+                {
+                    if (keys.IsKeyDown(Keys.S) && player.Direction == Orientation.DOWN)
+                    {
+                        this.backgroundRec.Y -= player.Speed;
+                        moveObjectsUp = true;
+                    }
+                }
+                else
+                {
+                    player.CanMoveDown = true;
+                    moveObjectsUp = false;
+                }
             }
             else
             {
                 moveObjectsUp = false;
                 moveObjectsDown = false;
-
-                float botLeftMove = (Game1.DisplayHeight / 2) - player.Center.Y;
-                float topLeftMove = (Game1.DisplayHeight / 2) - player.Center.Y;
-
-                if (player.Center.Y < (Game1.DisplayHeight / 2)  &&
-                    topLeftCorner.Y + topLeftMove <= topLeftCornerView.Y)
-                {
-                    adjustObjectsBackgroundTripWires(new Vector2(0, topLeftMove));
-                }
-                // may need to put an else here too, not sure yet
-                if (player.Center.Y > (Game1.DisplayHeight / 2) && 
-                    bottomLeftCorner.Y + botLeftMove >= bottomLeftCornerView.Y)
-                {
-                    adjustObjectsBackgroundTripWires(new Vector2(0, botLeftMove));
-                }
-                else if (player.Center.Y > (Game1.DisplayHeight / 2))
-                {
-                    adjustObjectsBackgroundTripWires(new Vector2(0, bottomLeftCornerView.Y - bottomLeftCorner.Y ));
-                }
             }
 
             if (player.Center.X >= (Game1.DisplayWidth / 2) - 1 && player.Center.X <= (Game1.DisplayWidth / 2) + 1)
             {
-                //TODO: change if
+                player.CanMoveRight = player.CanMoveLeft = false;
+
+                if (bottomLeftCorner.X + player.Speed < bottomLeftCornerView.X)
+                {
+                    if (keys.IsKeyDown(Keys.A) && player.Direction == Orientation.LEFT)
+                    {
+                        this.backgroundRec.X += player.Speed;
+                        moveObjectsRight = true;
+                    }
+                }
+                else
+                {
+                    player.CanMoveLeft = true;
+                    moveObjectsRight = false;
+                }
+
+                if (bottomRightCorner.X - player.Speed > bottomRightCornerView.X)
+                {
+                    if (keys.IsKeyDown(Keys.D) && player.Direction == Orientation.RIGHT)
+                    {
+                        this.backgroundRec.X -= player.Speed;
+                        moveObjectsLeft = true;
+                    }
+                }
+                else
+                {
+                    player.CanMoveRight = true;
+                    moveObjectsLeft = false;
+                }
             }
             else
             {
                 moveObjectsLeft = false;
                 moveObjectsRight = false;
+            }
+        }
 
-                float botLeftMove = (Game1.DisplayWidth / 2) - 1 - player.Center.X;
-                float botRightMove = (Game1.DisplayWidth / 2) + 1 - player.Center.X;
+        protected virtual void adjust(Character player, KeyboardState keys, TripWire obj)
+        {
+            //check if the player is attacking here*******************************
+            if (keys.IsKeyDown(Keys.W) && player.Direction == Orientation.UP && moveObjectsDown)
+            {
+                Vector2 newPos = new Vector2(obj.Position.X, obj.Position.Y);
+                newPos.Y += player.Speed;
+                obj.Position = newPos;
+            }
+            else if (keys.IsKeyDown(Keys.S) && player.Direction == Orientation.DOWN && moveObjectsUp)
+            {
+                Vector2 newPos = new Vector2(obj.Position.X, obj.Position.Y);
+                newPos.Y -= player.Speed;
+                obj.Position = newPos;
+            }
 
-                if (player.Center.X > (Game1.DisplayWidth / 2) + 1 &&
-                   bottomRightCorner.X + botRightMove >= bottomRightCornerView.X)
-                {
-                    adjustObjectsBackgroundTripWires(new Vector2(botRightMove, 0));
-                }
+            if (keys.IsKeyDown(Keys.A) && player.Direction == Orientation.LEFT && moveObjectsRight)
+            {
+                Vector2 newPos = new Vector2(obj.Position.X, obj.Position.Y);
+                newPos.X += player.Speed;
+                obj.Position = newPos;
+            }
+            else if (keys.IsKeyDown(Keys.D) && player.Direction == Orientation.RIGHT && moveObjectsLeft)
+            {
+                Vector2 newPos = new Vector2(obj.Position.X, obj.Position.Y);
+                newPos.X -= player.Speed;
+                obj.Position = newPos;
+            }
+        }
 
-                if (player.Center.X < (Game1.DisplayWidth / 2) - 1 &&
-                    bottomLeftCorner.X + botLeftMove <= bottomLeftCornerView.X)
-                    
-                {
-                    adjustObjectsBackgroundTripWires(new Vector2(botLeftMove, 0));
-                }
+        public virtual void adjust(Character player, KeyboardState keys, BaseSprite obj)
+        {
+            //check if the player is attacking here*******************************
+            if (keys.IsKeyDown(Keys.W) && player.Direction == Orientation.UP && moveObjectsDown)
+            {
+                Vector2 newPos = new Vector2(obj.Position.X, obj.Position.Y);
+                newPos.Y += player.Speed;
+                obj.Position = newPos;
+            }
+            else if (keys.IsKeyDown(Keys.S) && player.Direction == Orientation.DOWN && moveObjectsUp)
+            {
+                Vector2 newPos = new Vector2(obj.Position.X, obj.Position.Y);
+                newPos.Y -= player.Speed;
+                obj.Position = newPos;
+            }
+
+            if (keys.IsKeyDown(Keys.A) && player.Direction == Orientation.LEFT && moveObjectsRight)
+            {
+                Vector2 newPos = new Vector2(obj.Position.X, obj.Position.Y);
+                newPos.X += player.Speed;
+                obj.Position = newPos;
+            }
+            else if (keys.IsKeyDown(Keys.D) && player.Direction == Orientation.RIGHT && moveObjectsLeft)
+            {
+                Vector2 newPos = new Vector2(obj.Position.X, obj.Position.Y);
+                newPos.X -= player.Speed;
+                obj.Position = newPos;
             }
         }
 
@@ -368,118 +342,24 @@ namespace AdlezHolder
 
                 obj.Position = pos;
             }
-
-            foreach (Particle p in particles)
-            {
-                Vector2 pos = p.Position;
-
-                pos += vecToMove;
-
-                p.Position = pos;
-            }
         }
 
         public virtual void Draw(SpriteBatch spriteBatch)
         {
-            if (delay || Game1.MainGameState == GameState.CUTSCENE)
+            spriteBatch.Draw(background, backgroundRec, Color.White);
+
+            foreach (BaseSprite sprite in everything)
             {
-                if (background != null)
+                if (sprite.IsVisible)
                 {
-                    spriteBatch.Draw(background, backgroundRec, Color.White);
-                }
-
-                foreach (BaseSprite sprite in everything)
-                {
-                    if (sprite.IsVisible)
-                    {
-                        sprite.Draw(spriteBatch);
-                    }
-                }
-
-                foreach (Particle p in particles)
-                {
-                    if (p != null)
-                        p.Draw(spriteBatch);
-                }
-            }
-            else
-            {
-                delay = true;
-            }
-
-            if (brightnessValue <= 0)
-            {
-                spriteBatch.Draw(dark, new Rectangle(0, 0, Game1.DisplayWidth, Game1.DisplayHeight),
-                    new Color(255, 255, 255) * (float)((Math.Abs(brightnessValue) / 255f)));
-            }
-
-        }
-
-        private int getBrightnessValue(Map data)
-        {
-            BaseSprite[] sprites = data.CurrentData.Everything.ToArray();
-            Torch[] torches = new Torch[data.CurrentData.Everything.Count];
-            int currentIndex = 0;
-
-            for (int i = 0; i < sprites.Length - 1; i++)
-            {
-                if (sprites[i].GetType() == typeof(Torch))
-                {
-                    torches[currentIndex] = (Torch)sprites[i];
-                    currentIndex++;
+                    sprite.Draw(spriteBatch);
                 }
             }
 
-            Torch torch = torches[0];
-            foreach (Torch t in torches)
+            if (box != null)
             {
-                if (t != null)
-                {
-                    if (measureDistance(data.Player.Position, t.Position) < measureDistance(data.Player.Position, torch.Position))
-                    {
-                        torch = t;
-                    }
-                }
+                box.draw(spriteBatch);
             }
-
-            float value;
-            if (torch != null)
-            {
-                float distance = (float)(measureDistance(data.Player.Position, torch.Position));
-                value = (80f / distance) * 160;
-            }
-            else
-                value = 0;
-
-            if (value > 0)
-            {
-                return (int)(value - 80);
-            }
-            else
-            {
-                return 0;
-            }
-        }
-
-        private double measureDistance(Vector2 Point1, Vector2 Point2)
-        {
-            double angle;
-            double distance;
-            if (Point1.X == Point2.X)
-                return Math.Abs(Point1.Y - Point2.Y);
-            if (Point1.Y == Point2.Y)
-                return Math.Abs(Point1.X - Point2.X);
-
-
-            Vector2 trig;
-            trig.X = Math.Abs(Point1.X - Point2.X);
-            trig.Y = Math.Abs(Point1.Y - Point2.Y);
-
-            angle = Math.Atan2(trig.X, trig.Y);
-
-            distance = trig.X / Math.Sin(angle);
-
-            return distance;
         }
 
         protected virtual void updateCorners()
@@ -515,11 +395,6 @@ namespace AdlezHolder
             }
         }
 
-        public void addBaseSprite(BaseSprite sprite)
-        {
-            everything.Add(sprite);
-        }
-
         public void addMovable(MovableObject newObject)
         {
             mObjects.Add(newObject);
@@ -546,12 +421,6 @@ namespace AdlezHolder
             npcs.Add(newNpc);
             anSprites.Add(newNpc);
             everything.Add(newNpc);  
-        }
-
-        public void addItem(Item item)
-        {
-            items.Add(item);
-            everything.Add(item);
         }
 
         public void addChest(Chest chest)
@@ -584,9 +453,9 @@ namespace AdlezHolder
             everything.Add(p);
         }
 
-        public void addParticle(Particle p)
+        public void addMBox(MessageBox b)
         {
-            particles.Add(p);
+            box = b;
         }
 
         public void changePlayer(Character player)
@@ -602,6 +471,6 @@ namespace AdlezHolder
         public void changeBackgroundY(int y)
         {
             backgroundRec.Y += y;
-        }
+        }       
     }
 }

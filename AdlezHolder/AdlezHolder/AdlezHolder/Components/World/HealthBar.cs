@@ -22,6 +22,9 @@ namespace AdlezHolder
         int inDisplayWidth, inDisplayHeight;
         Boolean dead = false;
         Gameover gameOver;
+        bool death = false, setDeath = false;
+        DeathAnimation deathAni;
+       
 
         public int MaxHealth
         {
@@ -43,7 +46,6 @@ namespace AdlezHolder
         public HealthBar(Game1 game)
         {
             game1 = game;
-
             inDisplayWidth = game.GraphicsDevice.Viewport.Width;
             inDisplayHeight = game.GraphicsDevice.Viewport.Height;
             screenRectangle = new Rectangle((int)(inDisplayWidth * .1), (int)(inDisplayHeight * .1), (int)(inDisplayWidth * .97), (int)(inDisplayHeight * .97));
@@ -82,10 +84,24 @@ namespace AdlezHolder
             totalHealth = max;
             
             damagedHealth = health;
-            damagedHealth = healthScale(currentHealth/(float)totalHealth, damagedHealth);         
-
+            damagedHealth = healthScale(currentHealth/(float)totalHealth, damagedHealth);
+            
+            if (!setDeath)
+            {
+                deathAni = new DeathAnimation();
+                setDeath = true;
+            }
+            
             if (currentHealth == 0)
             {
+                death = true;
+                if (death)
+                {
+                    deathAni.Update();
+
+                    if (deathAni.Over)
+                        death = false;
+                }
                 dead = true;
                 currentHealth = max;
                 gameOver.visible = true;

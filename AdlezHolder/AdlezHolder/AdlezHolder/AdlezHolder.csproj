@@ -188,7 +188,9 @@
     <Compile Include="Data\Buildings\Building1.cs" />
     <Compile Include="Data\Buildings\Building2.cs" />
     <Compile Include="Data\Buildings\Building3.cs" />
+    <Compile Include="Data\Cutscenes\AlphaCutscene.cs" />
     <Compile Include="Data\Cutscenes\Cutscene.cs" />
+    <Compile Include="Data\Cutscenes\DeathAnimation.cs" />
     <Compile Include="Data\Dungeons\DungeonTest\BossRoom.cs" />
     <Compile Include="Data\Dungeons\DungeonTest\BottomLeftCorner.cs" />
     <Compile Include="Data\Dungeons\DungeonTest\BottomRightCorner.cs" />
