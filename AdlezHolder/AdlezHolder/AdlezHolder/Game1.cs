@@ -16,7 +16,7 @@ namespace AdlezHolder
     {
         CUTSCENE, PLAYING, INVENTORY,
         SHOP, MAINMENU, PAUSEMENU,
-        GAMEOVER, INFOSCREEN
+        GAMEOVER, INFOSCREEN, TALKING
     }
 
     public enum ParticleState

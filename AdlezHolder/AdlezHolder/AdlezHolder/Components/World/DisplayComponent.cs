@@ -38,7 +38,7 @@ namespace AdlezHolder
         public override void Initialize()
         {
             weaponSelect = new WeaponSelect(WeaponSelect.SelectedWeapon.SWORD);
-            health = new HealthBar(((Game1)Game));
+            health = new HealthBar();
             spriteBatch = new SpriteBatch(((Game1)Game).GraphicsDevice);
             base.Initialize();
         }

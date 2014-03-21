@@ -24,19 +24,19 @@ namespace AdlezHolder
              int displayWidth, int displayHeight, Vector2 startPosition)
             : base(defaultTexture, scaleFactor, SecondsToCrossScreen, displayWidth,startPosition)
         {
-            box = new MessageBox(messageBoxBackground, 1, displayWidth, displayHeight);
+            box = new MessageBox(1f);
         }
 
         public override void Update(Map data)
         {
-            box.Update(data);
+            box.update();
 
             if (!isTalking)
             {
                 this.wander();
             }
 
-            if (!box.IsVisible)
+            if (!box.Visible)
             {
                 stopTalk();
             }
@@ -45,7 +45,7 @@ namespace AdlezHolder
         public override void Draw(SpriteBatch spriteBatch)
         {
             base.Draw(spriteBatch);
-            box.Draw(spriteBatch);            
+            box.draw(spriteBatch);            
         }
 
         public void talk()
@@ -55,12 +55,6 @@ namespace AdlezHolder
             // random select message  
             if (!isTalking)
             {
-                isTalking = true;
-                string[] message = new string[3];
-                message[0] = "I HATE U ALOT.";
-                message[1] = "STAY AWAY FROM ME.";
-                message[2] = "BLAH BLAH BLAH BLAH BLAH";
-                box.show(message);
             }
         }
 

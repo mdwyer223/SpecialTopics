@@ -149,12 +149,12 @@
     <Compile Include="Classes\Npc\WanderingSprite.cs" />
     <Compile Include="Classes\Objects\Buildings\BuildingObject.cs" />
     <Compile Include="Classes\Objects\SimpleObjects\Chest.cs" />
+    <Compile Include="Classes\Objects\SimpleObjects\MessageBox.cs" />
     <Compile Include="Classes\Objects\SimpleObjects\Torch.cs" />
     <Compile Include="Classes\Objects\Traps\ArrowTrap.cs" />
     <Compile Include="Classes\Objects\Traps\SpikeTrap.cs" />
     <Compile Include="Classes\Objects\SimpleObjects\HittableObject.cs" />
     <Compile Include="Classes\Objects\SimpleObjects\ImmovableObject.cs" />
-    <Compile Include="Classes\Objects\SimpleObjects\MessageBox.cs" />
     <Compile Include="Classes\Objects\SimpleObjects\MovableObject.cs" />
     <Compile Include="Classes\Objects\SimpleObjects\MultiTriggerObject.cs" />
     <Compile Include="Classes\Objects\SimpleObjects\Objects.cs" />
