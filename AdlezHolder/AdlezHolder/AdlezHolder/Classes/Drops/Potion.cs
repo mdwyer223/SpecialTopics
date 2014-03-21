@@ -22,6 +22,31 @@ namespace AdlezHolder
             }
         }
 
+        public override void load(ItemStruct itemStruct)
+        {
+            base.load(itemStruct);
+            options.Add("Use");
+
+            this.tier = itemStruct.tier;
+            if (tier == 1)
+            {
+                healingPower = 50;
+            }
+            else if (tier == 2)
+            {
+                healingPower = 100;
+            }
+            else if (tier == 3)
+            {
+                healingPower = 150;
+            }
+        }
+
+        public Potion(ItemStruct itemStruct)
+            : base(itemStruct)
+        {
+        }
+
         public Potion(Vector2 start, float scaleFactor, int tier, int numberOf)
             : base(Game1.GameContent.Load<Texture2D>("Items/1RedPotion"), scaleFactor, start,
                 "Potion", true, false, true, 50, numberOf)

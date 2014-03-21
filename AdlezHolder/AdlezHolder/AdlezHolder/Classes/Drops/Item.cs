@@ -33,19 +33,20 @@ namespace AdlezHolder
                 ItemStruct itemData = new ItemStruct();
                 itemData.baseStruct = base.SaveData;
 
-                if (this.GetType() == typeof(Arrow))
-                    itemData.itemId = "Arr";
-                else if (this.GetType() == typeof(Money))
-                    itemData.itemId = "Mon";
-                else if (this.GetType() == typeof(Potion))
-                    itemData.itemId = "Pot";
-                else if(this.GetType() == typeof(RuggedLeather))
-                    itemData.itemId = "Rug"; 
+                //if (this.GetType() == typeof(Arrow))
+                //    itemData.itemId = "Arr";
+                //else if (this.GetType() == typeof(Money))
+                //    itemData.itemId = "Mon";
+                //else if (this.GetType() == typeof(Potion))
+                //    itemData.itemId = "Pot";
+                //else if(this.GetType() == typeof(RuggedLeather))
+                //    itemData.itemId = "Rug"; 
 
                 itemData.price = this.value;
                 itemData.isStackable = this.IsStackable;
                 itemData.tier = this.tier;
                 itemData.itemName = this.tag;
+                itemData.count = count;
                 return itemData;
             }
             set
@@ -55,6 +56,7 @@ namespace AdlezHolder
                 this.IsStackable = value.isStackable;
                 this.value = value.price;
                 this.tag = value.itemName;
+                this.count = value.count;
             }
         }
 
@@ -91,13 +93,18 @@ namespace AdlezHolder
             set { count = value; }
         }
 
-        protected Item()
+        public virtual void load(ItemStruct itemStruct)
         {
+            this.SaveData = itemStruct;
         }
 
         public Item(ItemStruct itemStruct)
+            : base(Game1.GameContent.Load<Texture2D>("ComputerPpl/Enemies/Skeleton/Move/SF"),0,0,0,Vector2.Zero)
         {
-            this.SaveData = itemStruct;
+            options = new List<string>();
+            options.Add("Drop");
+
+            this.load(itemStruct);
         }
 
         public Item(Texture2D texture, float scaleFactor, Vector2 startPosition, string tag, bool isPickUp, 

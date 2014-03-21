@@ -46,14 +46,14 @@ namespace AdlezHolder
             get
             {
                 BaseSpriteStruct myData = base.SaveData;
-                if (this.GetType() == typeof(Mage))
-                    myData.saveId = "EMa";
-                else if (this.GetType() == typeof(Skeleton))
-                    myData.saveId = "ESk";
-                else if (this.GetType() == typeof(Thing))
-                    myData.saveId = "ETh";
-                else if (this.GetType() == typeof(Minotaur))
-                    myData.saveId = "EMi";
+                //if (this.GetType() == typeof(Mage))
+                //    myData.saveId = "EMa";
+                //else if (this.GetType() == typeof(Skeleton))
+                //    myData.saveId = "ESk";
+                //else if (this.GetType() == typeof(Thing))
+                //    myData.saveId = "ETh";
+                //else if (this.GetType() == typeof(Minotaur))
+                //    myData.saveId = "EMi";
 
                 return myData;
             }

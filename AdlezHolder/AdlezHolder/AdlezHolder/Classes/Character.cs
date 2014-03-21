@@ -61,7 +61,7 @@ namespace AdlezHolder
                 myStruct.maxBombs = maxBombs;
                 myStruct.arrowCount = arrowCount;
                 myStruct.bombCount = bombCount;
-                myStruct.baseStruct.saveId = "Chr";
+                //myStruct.baseStruct.saveId = "Chr";
 
                 return myStruct;
             }

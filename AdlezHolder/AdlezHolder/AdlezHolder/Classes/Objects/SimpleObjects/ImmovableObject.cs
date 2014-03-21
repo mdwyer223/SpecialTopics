@@ -20,22 +20,22 @@ namespace AdlezHolder
             get
             {
                 BaseSpriteStruct myData = base.SaveData;
-                if (this.GetType() == typeof(ImmovableObject))
-                    myData.saveId = "BIm";
-                else if (this.GetType() == typeof(Chest))
-                    myData.saveId = "ICh";
-                else if (this.GetType() == typeof(BuildingObject))
-                    myData.saveId = "IBu";
-                else if (this.GetType() == typeof(HittableObject))
-                    myData.saveId = "IHi";
-                else if (this.GetType() == typeof(MovableObject))
-                    myData.saveId = "IMo";
-                else if (this.GetType() == typeof(MultiTriggerObject))
-                    myData.saveId = "IMt";
-                else if (this.GetType() == typeof(SingleTriggerObject))
-                    myData.saveId = "ISt";
-                else if (this.GetType() == typeof(Wall))
-                    myData.saveId = "IWa";
+                //if (this.GetType() == typeof(ImmovableObject))
+                //    myData.saveId = "BIm";
+                //else if (this.GetType() == typeof(Chest))
+                //    myData.saveId = "ICh";
+                //else if (this.GetType() == typeof(BuildingObject))
+                //    myData.saveId = "IBu";
+                //else if (this.GetType() == typeof(HittableObject))
+                //    myData.saveId = "IHi";
+                //else if (this.GetType() == typeof(MovableObject))
+                //    myData.saveId = "IMo";
+                //else if (this.GetType() == typeof(MultiTriggerObject))
+                //    myData.saveId = "IMt";
+                //else if (this.GetType() == typeof(SingleTriggerObject))
+                //    myData.saveId = "ISt";
+                //else if (this.GetType() == typeof(Wall))
+                //    myData.saveId = "IWa";
 
                 return myData;
             }

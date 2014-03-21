@@ -38,7 +38,7 @@ namespace AdlezHolder
                     }
                     else if (value[i].itemId == "Pot")
                     {
-                        Potion pot = new Potion(value[i].baseStruct.position, 0, value[i].tier, value[i].count);
+                        Potion pot = new Potion(value[i]);
                         pot.SaveData = value[i];
                         items.Add(pot);
                     }

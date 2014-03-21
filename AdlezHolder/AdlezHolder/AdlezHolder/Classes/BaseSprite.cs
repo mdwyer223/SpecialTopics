@@ -21,6 +21,11 @@ namespace AdlezHolder
 
         protected bool canMoveRight, canMoveDown, canMoveLeft, canMoveUp;
 
+        private static int typeIndex;
+        private static List<Type> typeL;
+
+        private int id;
+
         public virtual BaseSpriteStruct SaveData
         {
             get
@@ -45,17 +50,27 @@ namespace AdlezHolder
                 data.canMoveLeft = CanMoveLeft;
                 data.canMoveUp = CanMoveUp;
 
-                if (this.GetType() == typeof(Character))
-                    data.saveId = "Chr";
-                else if (this.GetType() == typeof(Torch))
-                    data.saveId = "BTo";                 
+                //if (this.GetType() == typeof(Character))
+                //    data.saveId = "Chr";
+                //else if (this.GetType() == typeof(Torch))
+                //    data.saveId = "BTo";                 
 
-                else if (this.GetType() == typeof(SpikeTrap))
-                    data.saveId = "BSt";
-                else if (this.GetType() == typeof(ArrowTrap))
-                    data.saveId = "BAt";  
+                //else if (this.GetType() == typeof(SpikeTrap))
+                //    data.saveId = "BSt";
+                //else if (this.GetType() == typeof(ArrowTrap))
+                //    data.saveId = "BAt";
 
-                //      Item stuff~~~
+                if (!typeL.Contains(this.GetType()))
+                {
+                    typeL.Add(GetType());
+                    typeIndex++;
+                }
+                // for every type()
+                // find type == to yours
+                // set id to that count
+                // ~~~may not work if objects are created in different orders~~~
+                id = typeIndex;
+                
 
                 return data;
             }
@@ -202,10 +217,6 @@ namespace AdlezHolder
         {
             get;
             protected set;
-        }
-
-        protected BaseSprite()
-        {
         }
 
         public BaseSprite(Texture2D texture, float scaleFactor, int inDisplayWidth, float SecondsToCrossScreen
