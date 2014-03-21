@@ -27,7 +27,7 @@ namespace AdlezHolder
             }
             else
             {
-                spiral = new Galaxy(10, 5);
+                spiral = new Galaxy(10, 6);
             }
         }
 

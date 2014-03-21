@@ -17,6 +17,8 @@ namespace AdlezHolder
         Vector2 center;
         int arms, centerRadius;
 
+        float time;
+
         public Galaxy(int radiusOfCenter, int arms)
             : base()
         {
@@ -43,9 +45,11 @@ namespace AdlezHolder
 
         public virtual void Update(GameTime gameTime, MapDataHolder data)
         {
+            time += (float)gameTime.ElapsedGameTime.TotalMinutes;
+
             for (int i = 0; i < particles.Count; i++)
             {
-                if (gameTime.TotalGameTime.TotalMinutes < 1)
+                if (time < 1)
                 {
                     double radius = measureDistance(particles[i].Position, center);
                     float x = (float)((particles[i].Position.X - center.X));
