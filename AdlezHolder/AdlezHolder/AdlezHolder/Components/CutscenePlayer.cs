@@ -13,13 +13,13 @@ using Microsoft.Xna.Framework.Media;
 
 namespace AdlezHolder
 {
-    public class CutscenePlayer : Microsoft.Xna.Framework.GameComponent
+    public class CutscenePlayer : Microsoft.Xna.Framework.DrawableGameComponent
     {
-        KeyboardState keys, oldKeys;
         SpriteBatch spriteBatch;
-        MapDataHolder data;
-
+        MapDataHolder data, newMap;
+        World world;
         Cutscene currentCutscene;
+        bool setMap;
 
         public MapDataHolder Data
         {
@@ -31,10 +31,11 @@ namespace AdlezHolder
             get { return currentCutscene; }
         }
 
-        public CutscenePlayer(Game game)
+        public CutscenePlayer(Game game, World mainWorld)
             : base(game)
         {
             spriteBatch = new SpriteBatch(game.GraphicsDevice);
+            world = mainWorld;
         }
 
         public override void Initialize()
@@ -50,31 +51,51 @@ namespace AdlezHolder
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         public override void Update(GameTime gameTime)
         {
-            if (currentCutscene == null)
+            if (currentCutscene != null && currentCutscene.Over == true)
             {
                 Game1.MainGameState = GameState.PLAYING;
                 return;
             }
-            else
+            else if (currentCutscene !=null)
             {
-                currentCutscene.play(gameTime, spriteBatch);
+                addData(world.Map.CurrentData);
+                currentCutscene.play(gameTime);//, spriteBatch);
             }
 
             base.Update(gameTime);
         }
 
-        private void changeGameState(GameState newState)
+        public override void Draw(GameTime gameTime)
         {
-            Game1.MainGameState = newState;
+            base.Draw(gameTime);
         }
 
-        public void playCutscene(Cutscene newScene, Character player)
+        public void addData(MapDataHolder data)
         {
+            currentCutscene.Data = data;
+        }
+
+        private void changeGameState(GameState newState)
+        {
+            Game1.MainGameState = newState; 
+        }
+
+        public void playCutscene(Cutscene newScene, Character player)//, MapDataHolder nextMap)
+        { 
             if (currentCutscene == newScene)
                 return;
+            //if (!setMap)
+            //{
+            //    world.Map.changeMap(new LeftPassage());
+            //    setMap = true;
+            //}
             currentCutscene = newScene;
             currentCutscene.Data = data;
             currentCutscene.Player = player;
+            //newMap = nextMap;
+            Game1.PreviousGameState = GameState.CUTSCENE;
+
+          
         }
     }
 }

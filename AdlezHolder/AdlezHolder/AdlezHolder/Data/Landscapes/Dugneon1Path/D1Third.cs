@@ -70,7 +70,7 @@ namespace AdlezHolder
             }
             else if (next)
             {
-                Game1.MainGameState = GameState.CUTSCENE;
+                Game1.newCutscene(new AlphaCutscene(), map.Player);
             }
             else
             {

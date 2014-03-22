@@ -13,13 +13,11 @@ namespace AdlezHolder
 {
     public class Cutscene
     {
-        MapDataHolder data;
-        Character player;
-        int playOrder = 0;
-        int lastOrder = 7;
-        MessageBox box = new MessageBox(Game1.GameContent.Load<Texture2D>("Random/The best thing ever"), 1, 800, 400);
+        protected MapDataHolder data;
+        protected Character player;
+        protected World world;
+        protected bool over;
 
-        Song music;
 
         public MapDataHolder Data
         {
@@ -33,98 +31,46 @@ namespace AdlezHolder
 
         public bool Over
         {
-            get { return playOrder == lastOrder; }
+            get { return over; }
         }
 
-        public Cutscene()
+        public virtual void play(GameTime gameTime)
         {
-            music = Game1.GameContent.Load<Song>("Music/TravelingSong");
         }
 
-        public virtual void play(GameTime gameTime, SpriteBatch spriteBatch)
+        public void setWorld(World w)
         {
-            if (MediaPlayer.State == MediaState.Paused || MediaPlayer.State == MediaState.Playing)
+            world = w;
+        }
+
+        protected virtual void moveTo(Vector2 newPosition, BaseSprite obj, int speed)
+        {
+            if (isAtPosition(newPosition, obj) != true)
             {
-                MediaPlayer.Resume();
-            }
-            else
-            {
-                if (music != null)
+                if (isAtYPosition(newPosition, obj) != true)
+                    moveY(newPosition, obj, speed);
+                else
                 {
-                    MediaPlayer.Play(music);
+                    if (isAtXPosition(newPosition, obj) != true)
+                        moveX(newPosition, obj, speed);
                 }
             }
-
-            if (playOrder == 0)
-            {
-                player.Position = new Vector2(765, 362);
-                playOrder++;
-            }
-            else if (playOrder == 1)
-            {
-                moveLeft(player, 1);
-                if (player.Position.X >= 664 && player.Position.X <= 666)
-                    playOrder++;
-            }
-            else if (playOrder == 2)
-            {
-                moveUp(player, 1);
-                if (player.Position.Y >= 314 && player.Position.Y <= 316)
-                    playOrder++;
-            }
-            else if (playOrder == 3)
-            {
-                moveLeft(player, 1);
-                if (player.Position.X >= 374 && player.Position.X <= 376)
-                    playOrder++;
-            }
-            else if (playOrder == 4)
-            {
-                moveUp(player, 1);
-                if (player.Position.Y >= 254 && player.Position.Y <= 256)
-                    playOrder++;
-            }
-            else if (playOrder == 5)
-            {
-                moveLeft(player, 1);
-                if (player.Position.X >= 139 && player.Position.X <= 141)
-                    playOrder++;
-            }
-            else if (playOrder == 6)
-            {
-                moveUp(player, 1);
-                if (player.Position.Y >= 154 && player.Position.Y <= 156)
-                {
-                    playOrder++;
-                    player.cutsceneMove(Orientation.UP);
-                }
-            }
-
-            player.cutsceneUpdate(gameTime);
-
-            if (playOrder == lastOrder)
-            {
-                music = null;
-                MediaPlayer.Stop();
-            }
         }
 
-        protected virtual void moveTo(Vector2 newPosition, BaseSprite obj)
+        protected virtual void moveX(Vector2 newPosition, BaseSprite obj, int speed)
         {
-            if (obj.Position.X - newPosition.X < obj.Position.Y - newPosition.Y)
-            {
-                if (obj.Position.X < newPosition.X)
-                    moveRight(obj, 1);
-                else
-                    moveLeft(obj, 1);
-            }
+            if (obj.Position.X < newPosition.X)
+                moveRight(obj, speed);
             else
-            {
-                if (obj.Position.Y < newPosition.Y)
-                    moveDown(obj, 1);
-                else
-                    moveUp(obj, 1);
-            }
+                moveLeft(obj, speed);
+        }
+
+        protected virtual void moveY(Vector2 newPosition, BaseSprite obj, int speed)
+        {
+            if (obj.Position.Y < newPosition.Y)
+                moveDown(obj, speed);
+            else
+                moveUp(obj, speed);
         }
 
         protected virtual void moveUp(BaseSprite obj, int speed)
@@ -192,6 +138,36 @@ namespace AdlezHolder
             }
         }
 
+        protected virtual Boolean isAtPosition(Vector2 position, BaseSprite obj)
+        {
+            if (obj.Position.X <= (position.X + 1) && obj.Position.X >= (position.X - 1) && obj.Position.Y <= (position.Y + 1) && obj.Position.Y >= (position.Y - 1))
+                return true;
+            else
+                return false;
+        }
 
+        protected virtual Boolean isAtYPosition(Vector2 position, BaseSprite obj)
+        {
+            if (obj.Position.Y <= (position.Y + 1) && obj.Position.Y >= (position.Y - 1))
+                return true;
+            else
+                return false;
+        }
+
+        protected virtual Boolean isAtXPosition(Vector2 position, BaseSprite obj)
+        {
+            if (obj.Position.X <= (position.X + 1) && obj.Position.X >= (position.X - 1))
+                return true;
+            else
+                return false;
+        }
+
+        public Boolean CanStartDialog()
+        {
+            if (Game1.MainGameState == GameState.TALKING)
+                return true;
+            else
+                return false;
+        }
     }
 }

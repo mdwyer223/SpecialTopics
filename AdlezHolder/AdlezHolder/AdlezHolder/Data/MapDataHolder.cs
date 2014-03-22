@@ -32,6 +32,8 @@ namespace AdlezHolder
         protected List<Particle> particles;
         protected List<Item> items;
 
+        protected MessageBox box;
+
         protected Texture2D background;
         protected Rectangle backgroundRec;
         protected Vector2 position;
@@ -287,8 +289,6 @@ namespace AdlezHolder
             bottomLeftCornerView = new Vector2(0, Game1.DisplayHeight);
             bottomRightCornerView = new Vector2(Game1.DisplayWidth, Game1.DisplayHeight);
 
-            //update the tripwires and adjust them here
-
             updateCorners();
 
             adjustBackground(map.Player, keys);
@@ -337,15 +337,15 @@ namespace AdlezHolder
                     }
                 }
                 else if (everything[i].IsDead)
-                {
+                    {
                     everything.RemoveAt(i);
                     i--;
                     if (i < 0)
                         i = 0;
                 }
-
             }
 
+            
             for (int i = 0; i < particles.Count; i++)
             {
                 if (particles[i] != null)
@@ -440,7 +440,14 @@ namespace AdlezHolder
                 }
             }
 
-            changeDrawOrder(everything);
+            if (box != null)
+            {
+                box.Update();
+                if (!box.IsVisible)
+                {
+                    box = null;
+                }
+            }
         }
 
         protected virtual void adjustBackground(Character player, KeyboardState keys)
@@ -478,6 +485,37 @@ namespace AdlezHolder
                     moveToX = topRightCornerView.X - topRightCorner.X;
                     adjustObjectsBackgroundTripWires(new Vector2(moveToX, 0), true);
                 }
+            }
+                
+        }
+
+        protected virtual void adjust(Character player, KeyboardState keys, TripWire obj)
+        {
+            //check if the player is attacking here*******************************
+            if (keys.IsKeyDown(Keys.W) && player.Direction == Orientation.UP && moveObjectsDown)
+            {
+                Vector2 newPos = new Vector2(obj.Position.X, obj.Position.Y);
+                newPos.Y += player.Speed;
+                obj.Position = newPos;
+            }
+            else if (keys.IsKeyDown(Keys.S) && player.Direction == Orientation.DOWN && moveObjectsUp)
+            {
+                Vector2 newPos = new Vector2(obj.Position.X, obj.Position.Y);
+                newPos.Y -= player.Speed;
+                obj.Position = newPos;
+            }
+
+            if (keys.IsKeyDown(Keys.A) && player.Direction == Orientation.LEFT && moveObjectsRight)
+            {
+                Vector2 newPos = new Vector2(obj.Position.X, obj.Position.Y);
+                newPos.X += player.Speed;
+                obj.Position = newPos;
+            }
+            else if (keys.IsKeyDown(Keys.D) && player.Direction == Orientation.RIGHT && moveObjectsLeft)
+            {
+                Vector2 newPos = new Vector2(obj.Position.X, obj.Position.Y);
+                newPos.X -= player.Speed;
+                obj.Position = newPos;
             }
         }
 
@@ -517,15 +555,6 @@ namespace AdlezHolder
 
                 obj.Position = pos;
             }
-
-            foreach (Particle p in particles)
-            {
-                Vector2 pos = p.Position;
-
-                pos += vecToMove;
-
-                p.Position = pos;
-            }
         }
 
         public virtual void Draw(SpriteBatch spriteBatch)
@@ -554,6 +583,12 @@ namespace AdlezHolder
             else
             {
                 delay = true;
+            }
+
+
+            if (box != null)
+            {
+                box.Draw(spriteBatch);
             }
 
             if (brightnessValue <= 0)
@@ -683,6 +718,12 @@ namespace AdlezHolder
             everything.Add(newObject);           
         }
 
+        public void addItem(Item item)
+        {
+            items.Add(item);
+            everything.Add(item);
+        }
+        
         public void addEnemy(Enemy newEnemy)
         {
             enemies.Add(newEnemy);
@@ -695,12 +736,6 @@ namespace AdlezHolder
             npcs.Add(newNpc);
             anSprites.Add(newNpc);
             everything.Add(newNpc);  
-        }
-
-        public void addItem(Item item)
-        {
-            items.Add(item);
-            everything.Add(item);
         }
 
         public void addChest(Chest chest)
@@ -738,6 +773,11 @@ namespace AdlezHolder
             particles.Add(p);
         }
 
+        public void addMBox(MessageBox b)
+        {
+            box = b;
+        }
+
         public void changePlayer(Character player)
         {
             everything.Insert(0, player);
@@ -751,6 +791,6 @@ namespace AdlezHolder
         public void changeBackgroundY(int y)
         {
             backgroundRec.Y += y;
-        }
+        }       
     }
 }

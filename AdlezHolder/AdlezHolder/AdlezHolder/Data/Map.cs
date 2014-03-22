@@ -128,9 +128,12 @@ namespace AdlezHolder
 
         public void Update(GameTime gameTime)
         {
-            if (Game1.MainGameState == GameState.PLAYING)
+            if (Game1.MainGameState == GameState.PLAYING || Game1.MainGameState == GameState.CUTSCENE || Game1.MainGameState == GameState.TALKING)
             {
                 currentMapData.Update(this, gameTime);
+            }
+            if (Game1.MainGameState == GameState.PLAYING)
+            {
                 player.Update(this, gameTime);
             }
         }

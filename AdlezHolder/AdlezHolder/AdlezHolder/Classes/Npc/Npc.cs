@@ -38,7 +38,7 @@ namespace AdlezHolder
              int displayWidth, int displayHeight, Vector2 startPosition)
             : base(defaultTexture, scaleFactor, SecondsToCrossScreen, displayWidth,startPosition)
         {
-            box = new MessageBox(messageBoxBackground, 1, displayWidth, displayHeight);
+            box = new MessageBox(1f);
         }
 
         public override void Update(Map data)

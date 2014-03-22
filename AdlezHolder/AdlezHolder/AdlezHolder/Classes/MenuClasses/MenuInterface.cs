@@ -18,15 +18,18 @@ namespace AdlezHolder
 
         SaveMenu save;
         Game1 game;
+        World world;
 
         KeyboardState keys, oldKeys;       
 
         Button Newbutton, Loadbutton, Continuebutton;
         BaseSprite adlezGraphic;
+
         int buttonIndex;
         bool ePressed;
 
         public MenuInterface(Game1 game)
+
         {
             this.game = game;
 

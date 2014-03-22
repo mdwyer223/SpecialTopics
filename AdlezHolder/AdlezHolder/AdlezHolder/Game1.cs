@@ -16,7 +16,7 @@ namespace AdlezHolder
     {
         CUTSCENE, PLAYING, INVENTORY,
         SHOP, MAINMENU, PAUSEMENU,
-        GAMEOVER, INFOSCREEN, INTRO
+        GAMEOVER, INFOSCREEN, TALKING, BLANK, INTRO
     }
 
     public enum ParticleState
@@ -26,15 +26,19 @@ namespace AdlezHolder
 
     public class Game1 : Microsoft.Xna.Framework.Game
     {
+        static CutscenePlayer cutscenePlayer;
+        Cutscene currentScene;
+        bool action = false;
+
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
+        //GameTime game;
         
-        World world;
+        static World world;
         MainMenu menu;
         DisplayComponent healthDisplay;
         PauseComponent pauseMenu;
-        CutscenePlayer cutscene;
-        Cutscene scene;
+        DeathAnimation deathAni;
         ParticleHandler pHandler;
         InformationScreen infoScreen;
         InGameEditor editor;
@@ -51,7 +55,12 @@ namespace AdlezHolder
         {
             get { return otherContent; }
         }
-
+        static GameState previousGameState = GameState.BLANK;
+        public static GameState PreviousGameState
+        {
+            get { return previousGameState; }
+            set { previousGameState = value; }
+        }
         static GameState mainGameState = GameState.INTRO;
         public static GameState MainGameState
         {
@@ -93,8 +102,8 @@ namespace AdlezHolder
         protected override void Initialize()
         {
             displayWidth = GraphicsDevice.Viewport.Width;
-            displayHeight = GraphicsDevice.Viewport.Height; 
-            
+            displayHeight = GraphicsDevice.Viewport.Height;
+
             infoScreen = new InformationScreen();
             intro = new StoryIntro();
 
@@ -120,21 +129,20 @@ namespace AdlezHolder
 
             healthDisplay.Visible = healthDisplay.Enabled = false;
 
-            cutscene = new CutscenePlayer(this);
-            Components.Add(cutscene);
-            scene = new Cutscene();
-
-            cutscene.Enabled = false;
-
             pHandler = new ParticleHandler(this);
             Components.Add(pHandler);
             pHandler.Visible = pHandler.Enabled = true;
+
+            cutscenePlayer = new CutscenePlayer(this, world);
+            Components.Add(cutscenePlayer);
+            currentScene = new AlphaCutscene(world);
+
+            cutscenePlayer.Enabled = false;
 
             editor = new InGameEditor(this);
             Components.Add(editor);
             editor.Enabled = editor.Visible = true;
 
-            
             base.Initialize();
         }
 
@@ -165,7 +173,6 @@ namespace AdlezHolder
         protected override void Update(GameTime gameTime)
         {
             KeyboardState keys = Keyboard.GetState();
-            mouse = Mouse.GetState();
 
             if (world.Map != null)
             {
@@ -190,7 +197,7 @@ namespace AdlezHolder
                 menu.Visible = false;
                 menu.Enabled = false;
 
-                cutscene.Enabled = false;
+                cutscenePlayer.Enabled = false;
             }
             else if (mainGameState == GameState.MAINMENU)
             {
@@ -206,11 +213,7 @@ namespace AdlezHolder
                 pauseMenu.Enabled = false;
                 pauseMenu.Visible = false;
 
-                cutscene.Enabled = false;
-
-                //if menu.isLoadingFile
-                //world = new world(SaveFile);
-                //components.add(world) <-- maybe, test the top first
+                cutscenePlayer.Enabled = false;
             }
 
             else if (mainGameState == GameState.PAUSEMENU)
@@ -229,25 +232,17 @@ namespace AdlezHolder
             }
             else if (mainGameState == GameState.CUTSCENE)
             {
-                world.Map.changeMap(new LeftPassage());
-                cutscene.Data = world.Map.CurrentData;
+                cutscenePlayer.Data = world.Map.CurrentData;
 
                 menu.Visible = false;
                 menu.Enabled = false;
 
                 healthDisplay.Visible = false;
 
-                world.Enabled = false;
+                world.Enabled = true;
                 world.Visible = true;
 
-                cutscene.Enabled = true;
-
-                cutscene.playCutscene(scene, world.Map.Player);
-                if (cutscene.Scene != null && cutscene.Scene.Over)
-                {
-                    mainGameState = GameState.PLAYING;
-                    world.Map.changeMap(new MainRoom(world.Map.Player));
-                }
+                cutscenePlayer.Enabled = true;
             }
             else if (mainGameState == GameState.GAMEOVER)
             {
@@ -263,10 +258,9 @@ namespace AdlezHolder
                 pauseMenu.Enabled = false;
                 pauseMenu.Visible = false;
 
-                cutscene.Enabled = false;
+                cutscenePlayer.Enabled = false;
 
                 world.Map.Player.cutsceneMove(Orientation.UP);
-                world.Map.changeMap(new MainRoom(world.Map.Player));
             }
             else if (mainGameState == GameState.INFOSCREEN)
             {
@@ -283,9 +277,25 @@ namespace AdlezHolder
                     mainGameState = GameState.MAINMENU;
                 }
             }
+            else if (mainGameState == GameState.TALKING)
+            {
+                world.Visible = true;
+                world.Enabled = true;
+
+                healthDisplay.Visible = false;
+                healthDisplay.Enabled = false;
+
+                pauseMenu.Enabled = false;
+                pauseMenu.Visible = false;
+
+                menu.Visible = false;
+                menu.Enabled = false;
+
+                cutscenePlayer.Enabled = true;
+            }
             base.Update(gameTime);
 
-            pHandler.Update(gameTime);
+            //previousGameState = mainGameState;
         }
 
         /// <summary>
@@ -315,17 +325,16 @@ namespace AdlezHolder
             }
 
             base.Draw(gameTime);
+        }
 
-            if (Keyboard.GetState().IsKeyDown(Keys.RightShift))
+        public static void newCutscene(Cutscene scene, Character player)
+        {
+            if (scene != null)
             {
-                spriteBatch.Begin();
-                spriteBatch.Draw(Game1.GameContent.Load<Texture2D>("Random/Particle"), new Rectangle(mouse.X, mouse.Y, 2, 2), Color.Red);
-                spriteBatch.DrawString(Game1.GameContent.Load<SpriteFont>("SpriteFont1"), 
-                    "Position:  " + mouse.X + " " + mouse.Y, new Vector2(0, Game1.DisplayHeight - 30),Color.White);
-                spriteBatch.End();
+                scene.setWorld(world);
+                cutscenePlayer.playCutscene(scene, player);
+                mainGameState = GameState.CUTSCENE;
             }
-
-            pHandler.Draw(gameTime);
         }
 
         public void loadGame(GameData dataFile)

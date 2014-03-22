@@ -19,16 +19,18 @@ namespace AdlezHolder
         int count,messageIndex;
         KeyboardState keys;
         KeyboardState oldKeys;
-        
-        public MessageBox(Texture2D texture, float scaleFactor, int displayWidth, int displayHeight)
-            : base(texture, scaleFactor,displayWidth, 0, Vector2.Zero)
+
+        public MessageBox(float scaleFactor)
+            : base(Game1.GameContent.Load<Texture2D>("Random/The best thing ever"), scaleFactor, Game1.DisplayWidth, 0, Vector2.Zero)
         {
             this.hide();
 
-            this.Position = new Vector2(0, displayHeight - DrawnRec.Height);
+            this.Position = new Vector2(0, Game1.DisplayHeight - DrawnRec.Height);
 
             messagePosition = new Vector2(Position.X + 11, Position.Y + 4);
-            spritefont = Game1.GameContent.Load<SpriteFont>("SpriteFont1");           
+            spritefont = Game1.GameContent.Load<SpriteFont>("SpriteFont1");
+
+            messageIndex = 0;
         }
 
         public virtual void  Update()
@@ -84,14 +86,14 @@ namespace AdlezHolder
             IsVisible = true;
             this.messages = new string[1];
             this.messages[0] = message;
-            messageIndex = -1;
+            messageIndex = 0;
         }
 
         public void show(string[] message)
         {
             IsVisible = true;
             this.messages = message;
-            messageIndex = -1;
+            messageIndex = 0;
         }
     }
 }
