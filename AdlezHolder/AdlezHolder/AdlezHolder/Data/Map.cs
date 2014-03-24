@@ -141,7 +141,7 @@ namespace AdlezHolder
         public void Draw(SpriteBatch spriteBatch)
         {
             currentMapData.Draw(spriteBatch);
-            player.Draw(spriteBatch);
+            //player.Draw(spriteBatch);
         }
     }
 }

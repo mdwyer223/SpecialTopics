@@ -88,16 +88,17 @@ namespace AdlezHolder
                 //if (!show)
                 //{
                 //    box = new MessageBox(1f);
-                //    box.show("Hi");
+                //    box.show("Hi this is bob. Hi this is bob.Hi this is bob.Hi this is bob.Hi this is bob.Hi this is bob.Hi this is bob.Hi this is bob.Hi this is bob.Hi this is bob.Hi this is bob.");
                 //    data.addMBox(box);
                 //    show = true;
                 //}
 
                 //if (!box.IsVisible)
                 //{
-                    show = false;
-                    playOrder++;
+                //    show = false;
+                //    playOrder++;
                 //}
+                playOrder++;
             }
             else if (playOrder == 6)
             {
