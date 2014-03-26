@@ -22,8 +22,7 @@ namespace AdlezHolder
         int inDisplayWidth, inDisplayHeight;
         Boolean dead = false;
         Gameover gameOver;
-        bool death = false, setDeath = false;
-        DeathAnimation deathAni;
+        bool setDeathAni = false;
        
 
         public int MaxHealth
@@ -86,25 +85,21 @@ namespace AdlezHolder
             damagedHealth = health;
             damagedHealth = healthScale(currentHealth/(float)totalHealth, damagedHealth);
             
-            if (!setDeath)
-            {
-                deathAni = new DeathAnimation();
-                setDeath = true;
-            }
-            
             if (currentHealth == 0)
             {
-                death = true;
-                if (death)
+                if (!setDeathAni)
                 {
-                    deathAni.Update();
-
-                    if (deathAni.Over)
-                        death = false;
+                    Game1.newCutscene(new DeathAnimation(), player);
+                    setDeathAni = true;
                 }
-                dead = true;
-                currentHealth = max;
-                gameOver.visible = true;
+
+                if (Game1.MainGameState != GameState.CUTSCENE)
+                {
+                    dead = true;
+                    currentHealth = max;
+                    gameOver.visible = true;
+                }
+                
             }
                             
             gameOver.update(this, player);

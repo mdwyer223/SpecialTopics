@@ -989,5 +989,22 @@ namespace AdlezHolder
         {
             didTele = value;
         }
+
+        public void setIdle(Texture2D[] images)
+        {
+            Texture2D[] left, right, forward, backward;
+
+            left = new Texture2D[1];
+            right = new Texture2D[1];
+            forward = new Texture2D[1];
+            backward = new Texture2D[1];
+
+            forward[0] = images[1];
+            backward[0] = images[0];
+            left[0] = images[2];
+            right[0] = images[3];
+            Idle = new FullAnimation(backward, forward, left, right, .2f);
+            playAnimation(Idle);
+        }
     }
 }

@@ -43,7 +43,7 @@ namespace AdlezHolder
             world = w;
         }
 
-        protected virtual void moveTo(Vector2 newPosition, BaseSprite obj, int speed)
+        protected virtual void moveTo(Vector2 newPosition, BaseSprite obj, float speed)
         {
             if (isAtPosition(newPosition, obj) != true)
             {
@@ -57,7 +57,7 @@ namespace AdlezHolder
             }
         }
 
-        protected virtual void moveX(Vector2 newPosition, BaseSprite obj, int speed)
+        protected virtual void moveX(Vector2 newPosition, BaseSprite obj, float speed)
         {
             if (obj.Position.X < newPosition.X)
                 moveRight(obj, speed);
@@ -65,7 +65,7 @@ namespace AdlezHolder
                 moveLeft(obj, speed);
         }
 
-        protected virtual void moveY(Vector2 newPosition, BaseSprite obj, int speed)
+        protected virtual void moveY(Vector2 newPosition, BaseSprite obj, float speed)
         {
             if (obj.Position.Y < newPosition.Y)
                 moveDown(obj, speed);
@@ -73,7 +73,7 @@ namespace AdlezHolder
                 moveUp(obj, speed);
         }
 
-        protected virtual void moveUp(BaseSprite obj, int speed)
+        protected virtual void moveUp(BaseSprite obj, float speed)
         {
             Vector2 newPosition = obj.Position;
             newPosition.Y -= speed;
@@ -85,7 +85,7 @@ namespace AdlezHolder
             }
         }
 
-        protected virtual void moveDown(BaseSprite obj, int speed)
+        protected virtual void moveDown(BaseSprite obj, float speed)
         {
             Vector2 newPosition = obj.Position;
             newPosition.Y += speed;
@@ -97,7 +97,7 @@ namespace AdlezHolder
             }
         }
 
-        protected virtual void moveLeft(BaseSprite obj, int speed)
+        protected virtual void moveLeft(BaseSprite obj, float speed)
         {
             Vector2 newPosition = obj.Position;
             newPosition.X -= speed;
@@ -109,7 +109,7 @@ namespace AdlezHolder
             }
         }
 
-        protected virtual void moveRight(BaseSprite obj, int speed)
+        protected virtual void moveRight(BaseSprite obj, float speed)
         {
             Vector2 newPosition = obj.Position;
             newPosition.X += speed;
@@ -169,5 +169,6 @@ namespace AdlezHolder
             else
                 return false;
         }
+
     }
 }

@@ -174,6 +174,7 @@ namespace AdlezHolder
         {
             KeyboardState keys = Keyboard.GetState();
 
+
             if (world.Map != null)
             {
                 editor.getMap(world.Map);
