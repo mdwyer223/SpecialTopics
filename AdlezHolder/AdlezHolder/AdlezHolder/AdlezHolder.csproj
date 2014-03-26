@@ -211,8 +211,6 @@
     <Compile Include="Components\UpgradeTree\SwordTree.cs" />
     <Compile Include="Components\World\DisplayComponent.cs" />
     <Compile Include="Components\World\HealthBar.cs" />
-    <Compile Include="Components\World\WeaponSelect.cs" />
-    <Compile Include="Components\World\World.cs" />
     <Compile Include="Data\Buildings\Building4.cs" />
     <Compile Include="Data\Buildings\Building1.cs" />
     <Compile Include="Data\Buildings\Building2.cs" />
