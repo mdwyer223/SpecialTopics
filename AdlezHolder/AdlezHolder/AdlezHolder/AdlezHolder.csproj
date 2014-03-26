@@ -124,7 +124,6 @@
     <Compile Include="Classes\Animation\Animation.cs" />
     <Compile Include="Classes\Animation\FullAnimation.cs" />
     <Compile Include="Classes\BaseSprite.cs" />
-    <Compile Include="Classes\Character.cs" />
     <Compile Include="Classes\Drops\Arrow.cs" />
     <Compile Include="Classes\Drops\FireStone.cs" />
     <Compile Include="Classes\Drops\Gem.cs" />
@@ -138,7 +137,6 @@
     <Compile Include="Classes\Gameover.cs" />
     <Compile Include="Classes\Inventory\Inventory.cs" />
     <Compile Include="Classes\ItemShop\ItemShopHome.cs" />
-    <Compile Include="Classes\MenuClasses\Button.cs" />
     <Compile Include="Classes\MenuClasses\MenuInterface.cs" />
     <Compile Include="Classes\MenuClasses\SaveMenu.cs" />
     <Compile Include="Classes\Message.cs" />
@@ -195,10 +193,6 @@
     <Compile Include="Classes\UpgradeClasses\Weapons\Sword\SwordSpeedNode.cs" />
     <Compile Include="Classes\UpgradeClasses\Weapons\Sword\WaveNode.cs" />
     <Compile Include="Classes\Weapons\Bomb.cs" />
-    <Compile Include="Classes\Weapons\BombObj.cs" />
-    <Compile Include="Classes\Weapons\Bow.cs" />
-    <Compile Include="Classes\Weapons\Projectile.cs" />
-    <Compile Include="Classes\Weapons\Sword.cs" />
     <Compile Include="Components\CutscenePlayer.cs" />
     <Compile Include="Components\ItemShop.cs" />
     <Compile Include="Components\MainMenu\FilesMenu.cs" />
@@ -207,7 +201,6 @@
     <Compile Include="Components\Particles\ParticleEngine.cs" />
     <Compile Include="Components\Particles\ParticleHandler.cs" />
     <Compile Include="Components\PauseMenu\InventoryMenu.cs" />
-    <Compile Include="Components\PauseMenu\PauseComponent.cs" />
     <Compile Include="Components\PauseMenu\PauseMenu.cs" />
     <Compile Include="Components\PauseMenu\WepStats.cs" />
     <Compile Include="Components\PauseMenu\WorldMap.cs" />
