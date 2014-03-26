@@ -17,8 +17,8 @@ namespace AdlezHolder
         Character player;
         int playOrder = 0;
         int lastOrder = 7;
-        MessageBox box = new MessageBox(Game1.GameContent.Load<Texture2D>("Random/The best thing ever"), 1, 800, 400);
-
+        MessageBox box = new MessageBox(.4f);
+                        //new MessageBox(Game1.GameContent.Load<Texture2D>("Random/The best thing ever"), 1, 800, 400);
         Song music;
 
         public MapDataHolder Data

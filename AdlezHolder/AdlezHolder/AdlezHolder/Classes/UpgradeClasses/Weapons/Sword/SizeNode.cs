@@ -14,13 +14,19 @@ namespace AdlezHolder
 {
     class SizeNode:UpgradeNode
     {
-        public SizeNode(Texture2D texture, float scaleFactor, Vector2 startPosition)
-            : base(texture, scaleFactor, startPosition)
-        { 
-        }
-        public void upgrade(double multiplier, Sword sword)
+        double multiplier = 1.25;
+        public SizeNode(Texture2D texture, float scaleFactor, Vector2 startPosition, int price)
+            : base(texture, scaleFactor, startPosition, price)
         {
-            sword.UpgradeSize(multiplier);
+            this.setNodeName("Size Node");
+            this.setCost(price);
         }
+        public override void upgradeSword(Sword x)
+        {
+            x.UpgradeSize(multiplier);
+            base.upgradeSword(x);
+            this.setChangesString("\nYour Swords Size Has Now Increased!");
+        }
+
     }
 }

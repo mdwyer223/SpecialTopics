@@ -12,15 +12,22 @@ using Microsoft.Xna.Framework.Media;
 
 namespace AdlezHolder
 {
-    class UpgradeRadiusNode : UpgradeNode
+    class RadiusNode : UpgradeNode
     {
-        public UpgradeRadiusNode(Texture2D texture, float scaleFactor, Vector2 startPosition)
-            : base(texture, scaleFactor, startPosition)
+        double multiplier;
+        public RadiusNode(Texture2D texture, float scaleFactor, Vector2 startPosition, int price)
+            : base(texture, scaleFactor, startPosition, price)
         {
+            this.setNodeName("Radius Node");
+            multiplier = 1.5;
+            this.setCost(price);
         }
-        public void upgrade(double multiplier, Bomb bomb)
+
+        public override void upgradeBomb(Bomb x)
         {
-            bomb.UpgradeRadius(multiplier);
+            x.UpgradeRadius(multiplier);
+            base.upgradeBomb(x);
+            this.setChangesString("\nYour Bomb's Range Increased!");
         }
     }
 }

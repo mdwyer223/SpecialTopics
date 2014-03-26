@@ -13,15 +13,23 @@ using Microsoft.Xna.Framework.Media;
 namespace AdlezHolder
 {
     class SwordDamageNode : UpgradeNode
+    
     {
-        public SwordDamageNode(Texture2D texture, float scaleFactor, Vector2 startPosition)
-            : base(texture, scaleFactor, startPosition)
+        double multiplier;
+        public SwordDamageNode(Texture2D texture, float scaleFactor, Vector2 startPosition, int price)
+            : base(texture, scaleFactor, startPosition, price)
         {
+            this.setNodeName("Damage Node");
+            multiplier = 1.5;
+            this.setCost(price);
         }
-        public void upgrade(double multiplier, Sword sword)
+
+        public override void upgradeSword(Sword x)
         {
-            sword.UpgradeDamage(multiplier);
+            x.UpgradeDamage(multiplier);
+            base.upgradeSword(x);
+            this.setChangesString("\nYour Sword Now Does " + x.Damage + " Damage!");
         }
-      
+
     }
 }

@@ -13,68 +13,68 @@ using Microsoft.Xna.Framework.Media;
 
 namespace AdlezHolder
 {
-    public class CutscenePlayer : Microsoft.Xna.Framework.GameComponent
-    {
-        KeyboardState keys, oldKeys;
-        SpriteBatch spriteBatch;
-        MapDataHolder data;
+    //public class CutscenePlayer : Microsoft.Xna.Framework.GameComponent
+    //{
+    //    KeyboardState keys, oldKeys;
+    //    SpriteBatch spriteBatch;
+    //    MapDataHolder data;
 
-        Cutscene currentCutscene;
+    //    Cutscene currentCutscene;
 
-        public MapDataHolder Data
-        {
-            set { data = value; }
-        }
+    //    public MapDataHolder Data
+    //    {
+    //        set { data = value; }
+    //    }
 
-        public Cutscene Scene
-        {
-            get { return currentCutscene; }
-        }
+    //    public Cutscene Scene
+    //    {
+    //        get { return currentCutscene; }
+    //    }
 
-        public CutscenePlayer(Game game)
-            : base(game)
-        {
-            spriteBatch = new SpriteBatch(game.GraphicsDevice);
-        }
+    //    public CutscenePlayer(Game game)
+    //        : base(game)
+    //    {
+    //        spriteBatch = new SpriteBatch(game.GraphicsDevice);
+    //    }
 
-        public override void Initialize()
-        {
-            // TODO: Add your initialization code here
+    //    public override void Initialize()
+    //    {
+    //        // TODO: Add your initialization code here
 
-            base.Initialize();
-        }
+    //        base.Initialize();
+    //    }
 
-        /// <summary>
-        /// Allows the game component to update itself.
-        /// </summary>
-        /// <param name="gameTime">Provides a snapshot of timing values.</param>
-        public override void Update(GameTime gameTime)
-        {
-            if (currentCutscene == null)
-            {
-                Game1.MainGameState = GameState.PLAYING;
-                return;
-            }
-            else
-            {
-                currentCutscene.play(gameTime, spriteBatch);
-            }
+    //    /// <summary>
+    //    /// Allows the game component to update itself.
+    //    /// </summary>
+    //    /// <param name="gameTime">Provides a snapshot of timing values.</param>
+    //    public override void Update(GameTime gameTime)
+    //    {
+    //        if (currentCutscene == null)
+    //        {
+    //            Game1.MainGameState = GameState.PLAYING;
+    //            return;
+    //        }
+    //        else
+    //        {
+    //            currentCutscene.play(gameTime, spriteBatch);
+    //        }
 
-            base.Update(gameTime);
-        }
+    //        base.Update(gameTime);
+    //    }
 
-        private void changeGameState(GameState newState)
-        {
-            Game1.MainGameState = newState;
-        }
+    //    private void changeGameState(GameState newState)
+    //    {
+    //        Game1.MainGameState = newState;
+    //    }
 
-        public void playCutscene(Cutscene newScene, Character player)
-        {
-            if (currentCutscene == newScene)
-                return;
-            currentCutscene = newScene;
-            currentCutscene.Data = data;
-            currentCutscene.Player = player;
-        }
-    }
+    //    public void playCutscene(Cutscene newScene, Character player)
+    //    {
+    //        if (currentCutscene == newScene)
+    //            return;
+    //        currentCutscene = newScene;
+    //        currentCutscene.Data = data;
+    //        currentCutscene.Player = player;
+    //    }
+    //}
 }

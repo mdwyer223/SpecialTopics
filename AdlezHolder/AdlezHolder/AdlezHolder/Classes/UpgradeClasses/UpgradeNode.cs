@@ -16,10 +16,8 @@ namespace AdlezHolder
     public class UpgradeNode : BaseSprite
     {
         bool purchased, locked;
-        int cost, money;
-        string result;
-        string nodeName;
-
+        string nodeName, changesString;
+        int cost;
 
         
         Color FADED = new Color(50, 50, 50, 50);
@@ -31,41 +29,36 @@ namespace AdlezHolder
             get { return selected; }
             set
             {
-                if (value)
+                if (value && ImageColor != Color.OrangeRed)
                     ImageColor = NORMAL;
                 else
-                    ImageColor = FADED;
+                {
+                    if (ImageColor != Color.OrangeRed)
+                        ImageColor = FADED;
+                }
+               
                 selected = value;
             }
         }
 
-        public UpgradeNode(Texture2D texture, float scaleFactor, Vector2 startPosition)
+        public UpgradeNode(Texture2D texture, float scaleFactor, Vector2 startPosition, int price)
             :base(texture,scaleFactor,Game1.DisplayWidth,5, startPosition)
         {
             DrawnRec = new Rectangle(0, 0, 20, 20);
             purchased = false;
             locked = true;
-            cost = 0;
-            nodeName = "";
+            cost = price;
+            nodeName = "Node Name";
         }
 
-        public void purchaseItem()
-        {
-            if (money >= cost)
-            {
-                money -= cost;
-                locked = true;
-                purchased = true;
-                result = "Purchase Made";
-            }
-            else
-            {
-                result = "Not Enough Cash!";
-            }
-        }
         public void lockItem()
         {
             locked = true;
+        }
+        public void purchaseItem()
+        {
+            purchased = true;
+            this.ImageColor = Color.OrangeRed;
         }
         public void setRec(int moveAmount)
         {
@@ -79,9 +72,21 @@ namespace AdlezHolder
         {
             cost = x;
         }
+        public virtual void setChangesString(string x)
+        {
+            changesString = x;
+        }
+        public void setNodeName(string x)
+        {
+            nodeName = x;
+        }
         public int getCost
         {
             get{return cost;}
+        }
+        public string getChangesString
+        {
+            get { return changesString; }
         }
         public bool isPurchased
         {
@@ -91,8 +96,18 @@ namespace AdlezHolder
         {
             get { return locked; }
         }
+        public string getName
+        {
+            get { return nodeName; }
+        }
 
-        public void upgrade()
+        public virtual void  upgradeSword(Sword x)
+        {
+        }
+        public virtual void upgradeBomb(Bomb x)
+        {
+        }
+        public virtual void upgradeBow(Bow x)
         {
         }
             

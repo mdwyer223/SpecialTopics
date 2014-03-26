@@ -12,17 +12,22 @@ using Microsoft.Xna.Framework.Media;
 
 namespace AdlezHolder
 {
-    class UpgradeBombDamageNode : UpgradeNode
+    class BombDamageNode : UpgradeNode
     {
-        public UpgradeBombDamageNode(Texture2D texture, float scaleFactor, Vector2 startPosition)
-            : base(texture, scaleFactor, startPosition)
-        {  
-        }
-       
-        public void upgrade(double multiplier, Bomb bomb)
+        double multiplier;
+       public BombDamageNode(Texture2D texture, float scaleFactor, Vector2 startPosition, int price)
+            : base(texture, scaleFactor, startPosition, price)
         {
-            bomb.UpgradeDamage(multiplier);
+            this.setNodeName("Damage Node");
+            multiplier = 1.5;
+            this.setCost(price);
         }
-    
+
+        public override void upgradeBomb(Bomb x)
+        {
+            x.UpgradeDamage(multiplier);
+            base.upgradeBomb(x);
+            this.setChangesString("\nYour Bomb Now Does " + x.Damage  + " Damage!");
+        }
     }
 }

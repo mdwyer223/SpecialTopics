@@ -13,15 +13,20 @@ using Microsoft.Xna.Framework.Media;
 
 namespace AdlezHolder
 {
-    class UpgradeESlotBombNode : UpgradeNode
+    class BombESlotNode : UpgradeNode
     {
-        public UpgradeESlotBombNode(Texture2D texture, float scaleFactor,Vector2 startPosition)
-            :base(texture,scaleFactor,startPosition)
-        { 
-        }
-        public void upgrade(int numOfEnchantments, Bomb bomb)
+        public BombESlotNode(Texture2D texture, float scaleFactor, Vector2 startPosition, int price)
+            :base(texture,scaleFactor,startPosition, price)
         {
-          //  bomb.increaseEnchantmentSlot();
+            this.setNodeName("Enchantment Slots Node");
+            this.setCost(price);
+        }
+
+        public override void upgradeBomb(Bomb x)
+        {
+            x.increaseEnchantmentSlot(1);
+            base.upgradeBomb(x);
+            this.setChangesString("\nYour Enchantment Slots Have Increased By 1!");
         }
     }
 }

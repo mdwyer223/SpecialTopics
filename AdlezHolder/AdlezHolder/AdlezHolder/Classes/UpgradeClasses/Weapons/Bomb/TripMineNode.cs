@@ -12,15 +12,20 @@ using Microsoft.Xna.Framework.Media;
 
 namespace AdlezHolder
 {
-    class UpgradeTripMineNode : UpgradeNode
+    class TripMineNode : UpgradeNode
     {
-        public UpgradeTripMineNode(Texture2D texture, float scaleFactor, Vector2 startPosition)
-            : base(texture, scaleFactor, startPosition)
-        {   
-        }
-        public void upgrade(bool state, Bomb bomb)
+        public TripMineNode(Texture2D texture, float scaleFactor, Vector2 startPosition, int price)
+            : base(texture, scaleFactor, startPosition, price)
         {
-           // bomb.upgradeTripMine(state);
+            this.setNodeName("Trip Mine Node");
+            this.setCost(price);
+        }
+
+        public override void upgradeBomb(Bomb x)
+        {
+            x.TripMine(true);
+            base.upgradeBomb(x);
+            this.setChangesString("\nYour Bomb Now Has The Trip Mine Ability");
         }
     }
 }

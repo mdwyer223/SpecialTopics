@@ -15,8 +15,9 @@ namespace AdlezHolder
     public enum GameState
     {
         CUTSCENE, PLAYING, INVENTORY,
-        SHOP, MAINMENU, PAUSEMENU,
-        GAMEOVER, INFOSCREEN
+        UPGRADESHOP, MAINMENU, PAUSEMENU,
+        GAMEOVER, INFOSCREEN, SAVEMENU, 
+        TALKING, BLANK
     }
 
     public enum ParticleState
@@ -28,17 +29,17 @@ namespace AdlezHolder
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
-        
+        FilesMenu filesMenu;
         World world;
+        SwordTree swordtree;
         MainMenu menu;
         DisplayComponent healthDisplay;
         PauseComponent pauseMenu;
-        CutscenePlayer cutscene;
-        Cutscene scene;
+       // CutscenePlayer cutscene;
+       // Cutscene scene;
         ParticleHandler pHandler;
         InformationScreen infoScreen;
-
-        MouseState mouse;
+        UpgradeShop upgradeShop;
 
         // make viewport static too?
         // would it work it changing screensizes
@@ -66,11 +67,18 @@ namespace AdlezHolder
         {
             get { return displayWidth; }
         }
-
         static int displayHeight;
         public static int DisplayHeight
         {
             get { return displayHeight; }
+        }
+
+        static GameState previousGameState = GameState.BLANK;
+
+        public static GameState PreviousGameState
+        {
+            get { return previousGameState; }
+            set { previousGameState = value; }
         }
 
         public Game1()
@@ -90,9 +98,12 @@ namespace AdlezHolder
         protected override void Initialize()
         {
             displayWidth = GraphicsDevice.Viewport.Width;
-            displayHeight = GraphicsDevice.Viewport.Height; 
-            
+            displayHeight = GraphicsDevice.Viewport.Height;
+            filesMenu = new FilesMenu(this);
             infoScreen = new InformationScreen();
+            upgradeShop = new UpgradeShop(this);
+            upgradeShop.Initialize();
+            filesMenu.Initialize();
 
             world = new World(this);
             Components.Add(world);
@@ -105,6 +116,7 @@ namespace AdlezHolder
 
             menu.Visible = false;
             menu.Enabled = false;
+            Components.Add(upgradeShop);
 
             pauseMenu = new PauseComponent(this);
             Components.Add(pauseMenu);
@@ -114,13 +126,15 @@ namespace AdlezHolder
             healthDisplay = new DisplayComponent(this);
             Components.Add(healthDisplay);
 
+            upgradeShop.Visible = false;
+            upgradeShop.Enabled = false;
             healthDisplay.Visible = healthDisplay.Enabled = false;
 
-            cutscene = new CutscenePlayer(this);
-            Components.Add(cutscene);
-            scene = new Cutscene();
+            //cutscene = new CutscenePlayer(this);
+            //Components.Add(cutscene);
+           // scene = new Cutscene();
 
-            cutscene.Enabled = false;
+            //cutscene.Enabled = false;
 
             pHandler = new ParticleHandler(this);
             Components.Add(pHandler);
@@ -157,7 +171,6 @@ namespace AdlezHolder
         protected override void Update(GameTime gameTime)
         {
             KeyboardState keys = Keyboard.GetState();
-            mouse = Mouse.GetState();
 
             if (mainGameState == GameState.PLAYING)
             {
@@ -174,13 +187,22 @@ namespace AdlezHolder
                 pauseMenu.Enabled = false;
                 pauseMenu.Visible = false;
 
+                upgradeShop.Visible = false;
+                upgradeShop.Enabled = false;
+
                 menu.Visible = false;
                 menu.Enabled = false;
 
-                cutscene.Enabled = false;
+                filesMenu.Enabled = false;
+                filesMenu.Visible = false;
+
+                //cutscene.Enabled = false;
             }
             else if (mainGameState == GameState.MAINMENU)
             {
+                
+                upgradeShop.Visible = false;
+                upgradeShop.Enabled = false;
                 menu.Enabled = true;
                 menu.Visible = true;
 
@@ -193,23 +215,56 @@ namespace AdlezHolder
                 pauseMenu.Enabled = false;
                 pauseMenu.Visible = false;
 
-                cutscene.Enabled = false;
+                filesMenu.Enabled = false;
+                filesMenu.Visible = false;
+
+                //cutscene.Enabled = false;
 
                 //if menu.isLoadingFile
                 //world = new world(SaveFile);
                 //components.add(world) <-- maybe, test the top first
             }
+            else if (mainGameState == GameState.SAVEMENU)
+            {
+                filesMenu.Update(gameTime);
+                filesMenu.Enabled = true;
+                filesMenu.Visible = true;
+               
+                menu.Enabled = false;
+                menu.Visible = false;
+
+                world.Visible = false;
+                world.Enabled = false;
+
+                healthDisplay.Visible = false;
+                healthDisplay.Enabled = false;
+
+                pauseMenu.Enabled = false;
+                pauseMenu.Visible = false;
+
+                upgradeShop.Visible = false;
+                upgradeShop.Enabled = false;
+
+
+            }
+
 
             else if (mainGameState == GameState.PAUSEMENU)
             {
                 pauseMenu.Visible = pauseMenu.Enabled = true;
-                pauseMenu.getInventory(world.Map.Player.PlayerInvent.ItemList, world.Map.Player.PlayerInvent.MaxSlots);
+                pauseMenu.getInventory(world.Map.Player.PlayerInvent.ItemList);
 
                 menu.Visible = false;
                 menu.Enabled = false;
 
                 world.Visible = true;
                 world.Enabled = false;
+
+                filesMenu.Enabled = false;
+                filesMenu.Visible = false;
+
+                upgradeShop.Visible = false;
+                upgradeShop.Enabled = false;
 
                 healthDisplay.Visible = false;
                 healthDisplay.Enabled = false;
@@ -217,22 +272,27 @@ namespace AdlezHolder
             else if (mainGameState == GameState.CUTSCENE)
             {
                 world.Map.changeMap(new LeftPassage());
-                cutscene.Data = world.Map.CurrentData;
+                //cutscene.Data = world.Map.CurrentData;
 
                 menu.Visible = false;
                 menu.Enabled = false;
+                filesMenu.Enabled = false;
+                filesMenu.Visible = false;
 
                 world.Enabled = false;
                 world.Visible = true;
+                upgradeShop.Visible = false;
+                upgradeShop.Enabled = false;
 
-                cutscene.Enabled = true;
 
-                cutscene.playCutscene(scene, world.Map.Player);
-                if (cutscene.Scene != null && cutscene.Scene.Over)
-                {
-                    mainGameState = GameState.PLAYING;
-                    world.Map.changeMap(new MainRoom(world.Map.Player));
-                }
+                //cutscene.Enabled = true;
+
+                //cutscene.playCutscene(scene, world.Map.Player);
+                //if (cutscene.Scene != null && cutscene.Scene.Over)
+                //{
+                //    mainGameState = GameState.PLAYING;
+                //    world.Map.changeMap(new MainRoom(world.Map.Player));
+                //}
             }
             else if (mainGameState == GameState.GAMEOVER)
             {
@@ -245,10 +305,16 @@ namespace AdlezHolder
                 healthDisplay.Visible = true;
                 healthDisplay.Enabled = true;
 
+                filesMenu.Enabled = false;
+                filesMenu.Visible = false;
+
                 pauseMenu.Enabled = false;
                 pauseMenu.Visible = false;
+                upgradeShop.Visible = false;
+                upgradeShop.Enabled = false;
 
-                cutscene.Enabled = false;
+
+                //cutscene.Enabled = false;
 
                 world.Map.Player.cutsceneMove(Orientation.UP);
                 world.Map.changeMap(new MainRoom(world.Map.Player));
@@ -259,6 +325,27 @@ namespace AdlezHolder
                 {
                     mainGameState = GameState.MAINMENU;
                 }
+            }
+            else if (mainGameState == GameState.UPGRADESHOP)
+            {
+                upgradeShop.Update(gameTime);
+                upgradeShop.Visible = true;
+                upgradeShop.Enabled = true;
+                menu.Enabled = false;
+                menu.Visible = false;
+
+                world.Visible = false ;
+                world.Enabled =  false;
+
+                healthDisplay.Visible = false;
+                healthDisplay.Enabled = false;
+
+                filesMenu.Enabled = false;
+                filesMenu.Visible = false;
+
+                pauseMenu.Enabled = false;
+                pauseMenu.Visible = false;
+
             }
             base.Update(gameTime);
 
@@ -284,17 +371,22 @@ namespace AdlezHolder
                 infoScreen.Draw(spriteBatch);
                 spriteBatch.End();
             }
-
-            base.Draw(gameTime);
-
-            if (Keyboard.GetState().IsKeyDown(Keys.RightShift))
+            else if (mainGameState == GameState.UPGRADESHOP)
             {
                 spriteBatch.Begin();
-                spriteBatch.Draw(Game1.GameContent.Load<Texture2D>("Random/Particle"), new Rectangle(mouse.X, mouse.Y, 2, 2), Color.Red);
-                spriteBatch.DrawString(Game1.GameContent.Load<SpriteFont>("SpriteFont1"), 
-                    "Position:  " + mouse.X + " " + mouse.Y, new Vector2(0, Game1.DisplayHeight - 30),Color.White);
+                spriteBatch.Draw(Content.Load<Texture2D>("TitleScreen"), new Rectangle(0, 0, DisplayWidth, DisplayHeight), Color.White);
+                upgradeShop.Draw(gameTime);
                 spriteBatch.End();
             }
+            else if (mainGameState == GameState.SAVEMENU)
+            {
+                spriteBatch.Begin();
+                filesMenu.Draw(gameTime);
+                spriteBatch.End();
+            }
+
+
+            base.Draw(gameTime);
 
             pHandler.Draw(gameTime);
         }

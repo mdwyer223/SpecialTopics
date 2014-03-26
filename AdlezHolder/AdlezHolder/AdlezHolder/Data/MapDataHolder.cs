@@ -192,17 +192,6 @@ namespace AdlezHolder
                                 i = 0;
                         }
                     }
-                    if (everything[i].GetType() == typeof(BombObj))
-                    {
-                        BombObj b = (BombObj)everything[i];
-                        if (b.BlowUp)
-                        {
-                            everything.RemoveAt(i);
-                            i--;
-                            if (i < 0)
-                                i = 0;
-                        }
-                    }
                     if (everything[i].GetType() == typeof(Item)
                         || everything[i].GetType() == typeof(Arrow)
                         || everything[i].GetType() == typeof(Money))
@@ -215,22 +204,12 @@ namespace AdlezHolder
                         }
                     }
                 }
-                else if (everything[i].IsDead)
-                {
-                    everything.RemoveAt(i);
-                    i--;
-                    if (i < 0)
-                        i = 0;
-                }
-
             }
 
             for (int i = 0; i < particles.Count; i++)
             {
                 if (particles[i] != null)
                 {
-                    particles[i].Update(gameTime);
-
                     List<BaseSprite> sprites = everything;
                     for (int j = 0; j < sprites.Count; j++)
                     {
@@ -240,46 +219,30 @@ namespace AdlezHolder
                             {
                                 Character c = (Character)sprites[j];
                                 c.damage(particles[i].Damage);
+                                particles.RemoveAt(i);
+                                i--;
+                                if (i < 0)
+                                    i = 0;
                             }
                             else if (sprites[j].GetType() == typeof(Skeleton))
                             {
                                 Skeleton s = (Skeleton)sprites[j];
                                 s.damage(this, particles[i].Damage);
-                            }
-                            else if (sprites[j].GetType() == typeof(Minotaur))
-                            {
-                                Minotaur m = (Minotaur)sprites[j];
-                                m.damage(this, particles[i].Damage);
-                            }
-                            else if (sprites[j].GetType() == typeof(BombObj))
-                            {
-                                BombObj b = (BombObj)sprites[j];
-                                b.rushDelay();
-                            }
-
-                            if (sprites[j].GetType() != typeof(Arrow)
-                                && sprites[j].GetType() != typeof(Money)
-                                && sprites[j].GetType() != typeof(Item)
-                                && sprites[j].GetType() != typeof(BombObj))
-                            {
                                 particles.RemoveAt(i);
                                 i--;
                                 if (i < 0)
                                     i = 0;
-                                break;
                             }
                         }
                     }
 
-                    if (i >= 0 && i < particles.Count)
+                    particles[i].Update(gameTime);
+                    if (particles[i].OffScreen)
                     {
-                        if (particles[i].OffScreen)
-                        {
-                            particles.RemoveAt(i);
-                            i--;
-                            if (i < 0)
-                                i = 0;
-                        }
+                        particles.RemoveAt(i);
+                        i--;
+                        if (i < 0)
+                            i = 0;
                     }
                 }
             }
@@ -368,20 +331,11 @@ namespace AdlezHolder
 
                 obj.Position = pos;
             }
-
-            foreach (Particle p in particles)
-            {
-                Vector2 pos = p.Position;
-
-                pos += vecToMove;
-
-                p.Position = pos;
-            }
         }
 
         public virtual void Draw(SpriteBatch spriteBatch)
         {
-            if (delay || Game1.MainGameState == GameState.CUTSCENE)
+            if (delay)
             {
                 if (background != null)
                 {

@@ -12,16 +12,22 @@ using Microsoft.Xna.Framework.Media;
 
 namespace AdlezHolder
 {
-    class UpgradeESlotBowNode : UpgradeNode
+    class BowESlotNode : UpgradeNode
     {
-        public UpgradeESlotBowNode(Texture2D texture, float scaleFactor, Vector2 startPosition)
-            : base(texture, scaleFactor, startPosition)
-        { 
+        int increase;
+        public BowESlotNode(Texture2D texture, float scaleFactor, Vector2 startPosition, int price)
+            : base(texture, scaleFactor, startPosition, price)
+        {
+            this.setNodeName("Enchantment Slots Node");
+            increase = 1;
+            this.setCost(price);
         }
 
-        public void upgrade(int numOfEnchantments, Bow bow)
+        public override void upgradeBow(Bow x)
         {
-           // bow.increaseEnchantmentSlot();
+            x.IncreaseEnchantmentSlots(increase);
+            base.upgradeBow(x);
+            this.setChangesString("Your Bow Now Has An Extra Enchament Slot!");
         }
     }
 }

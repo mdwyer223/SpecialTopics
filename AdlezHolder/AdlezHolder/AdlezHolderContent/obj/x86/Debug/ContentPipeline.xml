@@ -7,8 +7,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\BackgroundsAndFloors\Dungeons\Dungeon1\DungeonHallwayLeft.xnb</Output>
-      <Time>2013-12-20T12:17:33.7713679-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\BackgroundsAndFloors\Dungeons\Dungeon1\DungeonHallwayLeft.xnb</Output>
+      <Time>2014-03-21T12:25:34.7816718-04:00</Time>
     </Item>
     <Item>
       <Source>BackgroundsAndFloors\Dungeons\Dungeon1\DungeonHallwayRight.png</Source>
@@ -16,8 +16,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\BackgroundsAndFloors\Dungeons\Dungeon1\DungeonHallwayRight.xnb</Output>
-      <Time>2013-12-20T12:17:33.7713679-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\BackgroundsAndFloors\Dungeons\Dungeon1\DungeonHallwayRight.xnb</Output>
+      <Time>2014-03-21T12:25:34.7826735-04:00</Time>
     </Item>
     <Item>
       <Source>BackgroundsAndFloors\Dungeons\Dungeon1\DungeonMainRoom.png</Source>
@@ -25,8 +25,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\BackgroundsAndFloors\Dungeons\Dungeon1\DungeonMainRoom.xnb</Output>
-      <Time>2013-12-20T12:17:33.7713679-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\BackgroundsAndFloors\Dungeons\Dungeon1\DungeonMainRoom.xnb</Output>
+      <Time>2014-03-21T12:25:34.7846736-04:00</Time>
     </Item>
     <Item>
       <Source>BackgroundsAndFloors\Dungeons\Dungeon1\LeftCorner.png</Source>
@@ -34,8 +34,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\BackgroundsAndFloors\Dungeons\Dungeon1\LeftCorner.xnb</Output>
-      <Time>2013-12-20T12:17:33.7869687-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\BackgroundsAndFloors\Dungeons\Dungeon1\LeftCorner.xnb</Output>
+      <Time>2014-03-21T12:25:34.7856732-04:00</Time>
     </Item>
     <Item>
       <Source>BackgroundsAndFloors\Dungeons\Dungeon1\RightCorner.png</Source>
@@ -43,8 +43,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\BackgroundsAndFloors\Dungeons\Dungeon1\RightCorner.xnb</Output>
-      <Time>2013-12-20T12:17:33.7869687-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\BackgroundsAndFloors\Dungeons\Dungeon1\RightCorner.xnb</Output>
+      <Time>2014-03-21T12:25:34.7866729-04:00</Time>
     </Item>
     <Item>
       <Source>BackgroundsAndFloors\Dungeons\Dungeon1\TopLeft.png</Source>
@@ -52,8 +52,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\BackgroundsAndFloors\Dungeons\Dungeon1\TopLeft.xnb</Output>
-      <Time>2013-12-20T12:17:33.7869687-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\BackgroundsAndFloors\Dungeons\Dungeon1\TopLeft.xnb</Output>
+      <Time>2014-03-21T12:25:34.7876742-04:00</Time>
     </Item>
     <Item>
       <Source>BackgroundsAndFloors\Dungeons\Dungeon1\TopRight.png</Source>
@@ -61,8 +61,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\BackgroundsAndFloors\Dungeons\Dungeon1\TopRight.xnb</Output>
-      <Time>2013-12-20T12:17:33.7869687-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\BackgroundsAndFloors\Dungeons\Dungeon1\TopRight.xnb</Output>
+      <Time>2014-03-21T12:25:34.7876742-04:00</Time>
     </Item>
     <Item>
       <Source>Alistar\B.png</Source>
@@ -70,8 +70,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Alistar\B.xnb</Output>
-      <Time>2013-12-20T12:17:33.6933681-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Alistar\B.xnb</Output>
+      <Time>2014-03-21T12:25:34.7016672-04:00</Time>
     </Item>
     <Item>
       <Source>Alistar\BL.png</Source>
@@ -79,8 +79,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Alistar\BL.xnb</Output>
-      <Time>2013-12-20T12:17:33.6933681-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Alistar\BL.xnb</Output>
+      <Time>2014-03-21T12:25:34.7016672-04:00</Time>
     </Item>
     <Item>
       <Source>Alistar\BR.png</Source>
@@ -88,8 +88,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Alistar\BR.xnb</Output>
-      <Time>2013-12-20T12:17:33.6933681-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Alistar\BR.xnb</Output>
+      <Time>2014-03-21T12:25:34.7026673-04:00</Time>
     </Item>
     <Item>
       <Source>Alistar\FL.png</Source>
@@ -97,8 +97,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Alistar\FL.xnb</Output>
-      <Time>2013-12-20T12:17:33.6933681-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Alistar\FL.xnb</Output>
+      <Time>2014-03-21T12:25:34.7036686-04:00</Time>
     </Item>
     <Item>
       <Source>Alistar\FR.png</Source>
@@ -106,8 +106,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Alistar\FR.xnb</Output>
-      <Time>2013-12-20T12:17:33.6933681-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Alistar\FR.xnb</Output>
+      <Time>2014-03-21T12:25:34.7046674-04:00</Time>
     </Item>
     <Item>
       <Source>Alistar\F.png</Source>
@@ -115,8 +115,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Alistar\F.xnb</Output>
-      <Time>2013-12-20T12:17:33.6933681-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Alistar\F.xnb</Output>
+      <Time>2014-03-21T12:25:34.7036686-04:00</Time>
     </Item>
     <Item>
       <Source>Alistar\L.png</Source>
@@ -124,8 +124,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Alistar\L.xnb</Output>
-      <Time>2013-12-20T12:17:33.6933681-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Alistar\L.xnb</Output>
+      <Time>2014-03-21T12:25:34.7056679-04:00</Time>
     </Item>
     <Item>
       <Source>Alistar\LL.png</Source>
@@ -133,8 +133,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Alistar\LL.xnb</Output>
-      <Time>2013-12-20T12:17:33.6933681-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Alistar\LL.xnb</Output>
+      <Time>2014-03-21T12:25:34.7326618-04:00</Time>
     </Item>
     <Item>
       <Source>Alistar\LR.png</Source>
@@ -142,8 +142,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Alistar\LR.xnb</Output>
-      <Time>2013-12-20T12:17:33.6933681-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Alistar\LR.xnb</Output>
+      <Time>2014-03-21T12:25:34.73367-04:00</Time>
     </Item>
     <Item>
       <Source>Alistar\R.png</Source>
@@ -151,8 +151,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Alistar\R.xnb</Output>
-      <Time>2013-12-20T12:17:33.6933681-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Alistar\R.xnb</Output>
+      <Time>2014-03-21T12:25:34.73367-04:00</Time>
     </Item>
     <Item>
       <Source>Alistar\RL.png</Source>
@@ -160,8 +160,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Alistar\RL.xnb</Output>
-      <Time>2013-12-20T12:17:33.6933681-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Alistar\RL.xnb</Output>
+      <Time>2014-03-21T12:25:34.7346709-04:00</Time>
     </Item>
     <Item>
       <Source>Alistar\RR.png</Source>
@@ -169,8 +169,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Alistar\RR.xnb</Output>
-      <Time>2013-12-20T12:17:33.6933681-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Alistar\RR.xnb</Output>
+      <Time>2014-03-21T12:25:34.7356702-04:00</Time>
     </Item>
     <Item>
       <Source>Random\The best thing ever.png</Source>
@@ -178,8 +178,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Random\The best thing ever.xnb</Output>
-      <Time>2013-12-20T12:17:33.9741691-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Random\The best thing ever.xnb</Output>
+      <Time>2014-03-21T12:25:35.0116859-04:00</Time>
     </Item>
     <Item>
       <Source>bomb selected.png</Source>
@@ -187,8 +187,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\bomb selected.xnb</Output>
-      <Time>2013-12-20T12:17:34.0366402-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\bomb selected.xnb</Output>
+      <Time>2014-03-21T12:25:35.0648689-04:00</Time>
     </Item>
     <Item>
       <Source>bow selected.png</Source>
@@ -196,8 +196,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\bow selected.xnb</Output>
-      <Time>2013-12-20T12:17:34.0366402-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\bow selected.xnb</Output>
+      <Time>2014-03-21T12:25:35.065869-04:00</Time>
     </Item>
     <Item>
       <Source>FL.png</Source>
@@ -205,8 +205,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\FL.xnb</Output>
-      <Time>2013-12-20T12:17:33.8805697-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\FL.xnb</Output>
+      <Time>2014-03-21T12:25:34.8636764-04:00</Time>
     </Item>
     <Item>
       <Source>ForwardRightFootSword.png</Source>
@@ -214,8 +214,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ForwardRightFootSword.xnb</Output>
-      <Time>2013-12-20T12:17:33.8805697-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ForwardRightFootSword.xnb</Output>
+      <Time>2014-03-21T12:25:34.8646773-04:00</Time>
     </Item>
     <Item>
       <Source>sword selected.png</Source>
@@ -223,8 +223,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\sword selected.xnb</Output>
-      <Time>2013-12-20T12:17:34.0366402-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\sword selected.xnb</Output>
+      <Time>2014-03-21T12:25:35.066869-04:00</Time>
     </Item>
     <Item>
       <Source>The best thing ever 2.png</Source>
@@ -232,8 +232,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\The best thing ever 2.xnb</Output>
-      <Time>2013-12-20T12:17:34.005372-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\The best thing ever 2.xnb</Output>
+      <Time>2014-03-21T12:25:35.0156874-04:00</Time>
     </Item>
     <Item>
       <Source>The best thing ever.png</Source>
@@ -241,8 +241,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\The best thing ever.xnb</Output>
-      <Time>2013-12-20T12:17:34.005372-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\The best thing ever.xnb</Output>
+      <Time>2014-03-21T12:25:35.0156874-04:00</Time>
     </Item>
     <Item>
       <Source>transparent.png</Source>
@@ -250,8 +250,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\transparent.xnb</Output>
-      <Time>2013-12-20T12:17:34.0366402-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\transparent.xnb</Output>
+      <Time>2014-03-21T12:25:35.0678687-04:00</Time>
     </Item>
     <Item>
       <Source>Upgrade bar (lev 1).png</Source>
@@ -259,8 +259,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Upgrade bar (lev 1).xnb</Output>
-      <Time>2013-12-20T12:17:34.005372-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Upgrade bar (lev 1).xnb</Output>
+      <Time>2014-03-21T12:25:35.026686-04:00</Time>
     </Item>
     <Item>
       <Source>Upgrade bar (lev 2).png</Source>
@@ -268,8 +268,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Upgrade bar (lev 2).xnb</Output>
-      <Time>2013-12-20T12:17:34.005372-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Upgrade bar (lev 2).xnb</Output>
+      <Time>2014-03-21T12:25:35.0276861-04:00</Time>
     </Item>
     <Item>
       <Source>Upgrade bar (lev 3).png</Source>
@@ -277,8 +277,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Upgrade bar (lev 3).xnb</Output>
-      <Time>2013-12-20T12:17:34.0210402-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Upgrade bar (lev 3).xnb</Output>
+      <Time>2014-03-21T12:25:35.0488667-04:00</Time>
     </Item>
     <Item>
       <Source>Upgrade bar (lev 4).png</Source>
@@ -286,8 +286,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Upgrade bar (lev 4).xnb</Output>
-      <Time>2013-12-20T12:17:34.0210402-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Upgrade bar (lev 4).xnb</Output>
+      <Time>2014-03-21T12:25:35.0498688-04:00</Time>
     </Item>
     <Item>
       <Source>Upgrade Bar Default.png</Source>
@@ -295,8 +295,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Upgrade Bar Default.xnb</Output>
-      <Time>2013-12-20T12:17:34.005372-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Upgrade Bar Default.xnb</Output>
+      <Time>2014-03-21T12:25:35.0256864-04:00</Time>
     </Item>
     <Item>
       <Source>Upgrade bar Full(lev 5).png</Source>
@@ -304,8 +304,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Upgrade bar Full(lev 5).xnb</Output>
-      <Time>2013-12-20T12:17:34.0210402-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Upgrade bar Full(lev 5).xnb</Output>
+      <Time>2014-03-21T12:25:35.0498688-04:00</Time>
     </Item>
     <Item>
       <Source>Box\Box.png</Source>
@@ -313,8 +313,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Box\Box.xnb</Output>
-      <Time>2013-12-20T12:17:33.8337709-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Box\Box.xnb</Output>
+      <Time>2014-03-21T12:25:34.8226755-04:00</Time>
     </Item>
     <Item>
       <Source>Box\BoxBreaking.png</Source>
@@ -322,8 +322,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Box\BoxBreaking.xnb</Output>
-      <Time>2013-12-20T12:17:33.8337709-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Box\BoxBreaking.xnb</Output>
+      <Time>2014-03-21T12:25:34.8236756-04:00</Time>
     </Item>
     <Item>
       <Source>Box\BoxBreaking2.png</Source>
@@ -331,8 +331,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Box\BoxBreaking2.xnb</Output>
-      <Time>2013-12-20T12:17:33.8337709-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Box\BoxBreaking2.xnb</Output>
+      <Time>2014-03-21T12:25:34.8246756-04:00</Time>
     </Item>
     <Item>
       <Source>Box\BoxBreaking3.png</Source>
@@ -340,8 +340,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Box\BoxBreaking3.xnb</Output>
-      <Time>2013-12-20T12:17:33.8337709-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Box\BoxBreaking3.xnb</Output>
+      <Time>2014-03-21T12:25:34.8256753-04:00</Time>
     </Item>
     <Item>
       <Source>Box\BoxBreaking4.png</Source>
@@ -349,8 +349,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Box\BoxBreaking4.xnb</Output>
-      <Time>2013-12-20T12:17:33.8337709-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Box\BoxBreaking4.xnb</Output>
+      <Time>2014-03-21T12:25:34.8266745-04:00</Time>
     </Item>
     <Item>
       <Source>BackgroundsAndFloors\Dungeons\FixedDungeon1\MainRoom.png</Source>
@@ -358,8 +358,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\BackgroundsAndFloors\Dungeons\FixedDungeon1\MainRoom.xnb</Output>
-      <Time>2013-12-20T12:17:33.8025688-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\BackgroundsAndFloors\Dungeons\FixedDungeon1\MainRoom.xnb</Output>
+      <Time>2014-03-21T12:25:34.7986753-04:00</Time>
     </Item>
     <Item>
       <Source>Weapons\bomb selected.png</Source>
@@ -367,8 +367,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Weapons\bomb selected.xnb</Output>
-      <Time>2013-12-20T12:17:34.0210402-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Weapons\bomb selected.xnb</Output>
+      <Time>2014-03-21T12:25:35.0538691-04:00</Time>
     </Item>
     <Item>
       <Source>Weapons\bow selected.png</Source>
@@ -376,8 +376,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Weapons\bow selected.xnb</Output>
-      <Time>2013-12-20T12:17:34.0366402-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Weapons\bow selected.xnb</Output>
+      <Time>2014-03-21T12:25:35.058869-04:00</Time>
     </Item>
     <Item>
       <Source>Weapons\lock.png</Source>
@@ -385,8 +385,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Weapons\lock.xnb</Output>
-      <Time>2013-12-20T12:17:34.0366402-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Weapons\lock.xnb</Output>
+      <Time>2014-03-21T12:25:35.0618691-04:00</Time>
     </Item>
     <Item>
       <Source>Weapons\sword selected.png</Source>
@@ -394,8 +394,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Weapons\sword selected.xnb</Output>
-      <Time>2013-12-20T12:17:34.0366402-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Weapons\sword selected.xnb</Output>
+      <Time>2014-03-21T12:25:35.0638689-04:00</Time>
     </Item>
     <Item>
       <Source>Weapons\bomb unselected.png</Source>
@@ -403,8 +403,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Weapons\bomb unselected.xnb</Output>
-      <Time>2013-12-20T12:17:34.0366402-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Weapons\bomb unselected.xnb</Output>
+      <Time>2014-03-21T12:25:35.0558704-04:00</Time>
     </Item>
     <Item>
       <Source>Weapons\bow unselected.png</Source>
@@ -412,8 +412,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Weapons\bow unselected.xnb</Output>
-      <Time>2013-12-20T12:17:34.0366402-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Weapons\bow unselected.xnb</Output>
+      <Time>2014-03-21T12:25:35.0598694-04:00</Time>
     </Item>
     <Item>
       <Source>Weapons\health_backgroung.png</Source>
@@ -421,8 +421,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Weapons\health_backgroung.xnb</Output>
-      <Time>2013-12-20T12:17:34.0366402-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Weapons\health_backgroung.xnb</Output>
+      <Time>2014-03-21T12:25:35.0598694-04:00</Time>
     </Item>
     <Item>
       <Source>Weapons\health_bar.png</Source>
@@ -430,8 +430,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Weapons\health_bar.xnb</Output>
-      <Time>2013-12-20T12:17:34.0366402-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Weapons\health_bar.xnb</Output>
+      <Time>2014-03-21T12:25:35.0608691-04:00</Time>
     </Item>
     <Item>
       <Source>Weapons\sword unselected.png</Source>
@@ -439,8 +439,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Weapons\sword unselected.xnb</Output>
-      <Time>2013-12-20T12:17:34.0366402-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Weapons\sword unselected.xnb</Output>
+      <Time>2014-03-21T12:25:35.0638689-04:00</Time>
     </Item>
     <Item>
       <Source>BackgroundsAndFloors\Dungeons\FixedDungeon1\DungeonHallwayLeft.png</Source>
@@ -448,8 +448,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\BackgroundsAndFloors\Dungeons\FixedDungeon1\DungeonHallwayLeft.xnb</Output>
-      <Time>2013-12-20T12:17:33.7869687-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\BackgroundsAndFloors\Dungeons\FixedDungeon1\DungeonHallwayLeft.xnb</Output>
+      <Time>2014-03-21T12:25:34.7916761-04:00</Time>
     </Item>
     <Item>
       <Source>BackgroundsAndFloors\Dungeons\FixedDungeon1\DungeonHallwayRight.png</Source>
@@ -457,8 +457,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\BackgroundsAndFloors\Dungeons\FixedDungeon1\DungeonHallwayRight.xnb</Output>
-      <Time>2013-12-20T12:17:33.7869687-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\BackgroundsAndFloors\Dungeons\FixedDungeon1\DungeonHallwayRight.xnb</Output>
+      <Time>2014-03-21T12:25:34.7936733-04:00</Time>
     </Item>
     <Item>
       <Source>BackgroundsAndFloors\Dungeons\FixedDungeon1\DungeonRoomBottomLeft.png</Source>
@@ -466,8 +466,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\BackgroundsAndFloors\Dungeons\FixedDungeon1\DungeonRoomBottomLeft.xnb</Output>
-      <Time>2013-12-20T12:17:33.8025688-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\BackgroundsAndFloors\Dungeons\FixedDungeon1\DungeonRoomBottomLeft.xnb</Output>
+      <Time>2014-03-21T12:25:34.7946401-04:00</Time>
     </Item>
     <Item>
       <Source>BackgroundsAndFloors\Dungeons\FixedDungeon1\DungeonRoomBottomRight.png</Source>
@@ -475,8 +475,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\BackgroundsAndFloors\Dungeons\FixedDungeon1\DungeonRoomBottomRight.xnb</Output>
-      <Time>2013-12-20T12:17:33.8025688-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\BackgroundsAndFloors\Dungeons\FixedDungeon1\DungeonRoomBottomRight.xnb</Output>
+      <Time>2014-03-21T12:25:34.7956726-04:00</Time>
     </Item>
     <Item>
       <Source>BackgroundsAndFloors\Dungeons\FixedDungeon1\DungeonRoomTopLeft.png</Source>
@@ -484,8 +484,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\BackgroundsAndFloors\Dungeons\FixedDungeon1\DungeonRoomTopLeft.xnb</Output>
-      <Time>2013-12-20T12:17:33.8025688-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\BackgroundsAndFloors\Dungeons\FixedDungeon1\DungeonRoomTopLeft.xnb</Output>
+      <Time>2014-03-21T12:25:34.7966723-04:00</Time>
     </Item>
     <Item>
       <Source>BackgroundsAndFloors\Dungeons\FixedDungeon1\DungeonRoomTopRight.png</Source>
@@ -493,8 +493,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\BackgroundsAndFloors\Dungeons\FixedDungeon1\DungeonRoomTopRight.xnb</Output>
-      <Time>2013-12-20T12:17:33.8025688-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\BackgroundsAndFloors\Dungeons\FixedDungeon1\DungeonRoomTopRight.xnb</Output>
+      <Time>2014-03-21T12:25:34.7976727-04:00</Time>
     </Item>
     <Item>
       <Source>ComputerPpl\Enemies\Skeleton\Move\SB.png</Source>
@@ -502,8 +502,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Enemies\Skeleton\Move\SB.xnb</Output>
-      <Time>2013-12-20T12:17:33.8649689-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Enemies\Skeleton\Move\SB.xnb</Output>
+      <Time>2014-03-21T12:25:34.8556763-04:00</Time>
     </Item>
     <Item>
       <Source>ComputerPpl\Enemies\Skeleton\Move\SBL.png</Source>
@@ -511,8 +511,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Enemies\Skeleton\Move\SBL.xnb</Output>
-      <Time>2013-12-20T12:17:33.8649689-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Enemies\Skeleton\Move\SBL.xnb</Output>
+      <Time>2014-03-21T12:25:34.8576773-04:00</Time>
     </Item>
     <Item>
       <Source>ComputerPpl\Enemies\Skeleton\Move\SBR.png</Source>
@@ -520,8 +520,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Enemies\Skeleton\Move\SBR.xnb</Output>
-      <Time>2013-12-20T12:17:33.8649689-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Enemies\Skeleton\Move\SBR.xnb</Output>
+      <Time>2014-03-21T12:25:34.8576773-04:00</Time>
     </Item>
     <Item>
       <Source>ComputerPpl\Enemies\Skeleton\Move\SF.png</Source>
@@ -529,8 +529,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Enemies\Skeleton\Move\SF.xnb</Output>
-      <Time>2013-12-20T12:17:33.8649689-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Enemies\Skeleton\Move\SF.xnb</Output>
+      <Time>2014-03-21T12:25:34.8586765-04:00</Time>
     </Item>
     <Item>
       <Source>ComputerPpl\Enemies\Skeleton\Move\SFL.png</Source>
@@ -538,8 +538,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Enemies\Skeleton\Move\SFL.xnb</Output>
-      <Time>2013-12-20T12:17:33.8649689-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Enemies\Skeleton\Move\SFL.xnb</Output>
+      <Time>2014-03-21T12:25:34.8586765-04:00</Time>
     </Item>
     <Item>
       <Source>ComputerPpl\Enemies\Skeleton\Move\SFR.png</Source>
@@ -547,8 +547,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Enemies\Skeleton\Move\SFR.xnb</Output>
-      <Time>2013-12-20T12:17:33.8649689-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Enemies\Skeleton\Move\SFR.xnb</Output>
+      <Time>2014-03-21T12:25:34.8596761-04:00</Time>
     </Item>
     <Item>
       <Source>ComputerPpl\Enemies\Skeleton\Move\SL.png</Source>
@@ -556,8 +556,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Enemies\Skeleton\Move\SL.xnb</Output>
-      <Time>2013-12-20T12:17:33.8649689-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Enemies\Skeleton\Move\SL.xnb</Output>
+      <Time>2014-03-21T12:25:34.8596761-04:00</Time>
     </Item>
     <Item>
       <Source>ComputerPpl\Enemies\Skeleton\Move\SLL.png</Source>
@@ -565,8 +565,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Enemies\Skeleton\Move\SLL.xnb</Output>
-      <Time>2013-12-20T12:17:33.8805697-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Enemies\Skeleton\Move\SLL.xnb</Output>
+      <Time>2014-03-21T12:25:34.8606766-04:00</Time>
     </Item>
     <Item>
       <Source>ComputerPpl\Enemies\Skeleton\Move\SLR.png</Source>
@@ -574,8 +574,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Enemies\Skeleton\Move\SLR.xnb</Output>
-      <Time>2013-12-20T12:17:33.8805697-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Enemies\Skeleton\Move\SLR.xnb</Output>
+      <Time>2014-03-21T12:25:34.8616767-04:00</Time>
     </Item>
     <Item>
       <Source>ComputerPpl\Enemies\Skeleton\Move\SR.png</Source>
@@ -583,8 +583,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Enemies\Skeleton\Move\SR.xnb</Output>
-      <Time>2013-12-20T12:17:33.8805697-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Enemies\Skeleton\Move\SR.xnb</Output>
+      <Time>2014-03-21T12:25:34.8616767-04:00</Time>
     </Item>
     <Item>
       <Source>ComputerPpl\Enemies\Skeleton\Move\SRL.png</Source>
@@ -592,8 +592,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Enemies\Skeleton\Move\SRL.xnb</Output>
-      <Time>2013-12-20T12:17:33.8805697-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Enemies\Skeleton\Move\SRL.xnb</Output>
+      <Time>2014-03-21T12:25:34.8626763-04:00</Time>
     </Item>
     <Item>
       <Source>ComputerPpl\Enemies\Skeleton\Move\SRR.png</Source>
@@ -601,8 +601,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Enemies\Skeleton\Move\SRR.xnb</Output>
-      <Time>2013-12-20T12:17:33.8805697-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Enemies\Skeleton\Move\SRR.xnb</Output>
+      <Time>2014-03-21T12:25:34.8626763-04:00</Time>
     </Item>
     <Item>
       <Source>ComputerPpl\Enemies\Skeleton\Attack\SBA.png</Source>
@@ -610,8 +610,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Enemies\Skeleton\Attack\SBA.xnb</Output>
-      <Time>2013-12-20T12:17:33.8649689-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Enemies\Skeleton\Attack\SBA.xnb</Output>
+      <Time>2014-03-21T12:25:34.8506756-04:00</Time>
     </Item>
     <Item>
       <Source>ComputerPpl\Enemies\Skeleton\Attack\SBA2.png</Source>
@@ -619,8 +619,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Enemies\Skeleton\Attack\SBA2.xnb</Output>
-      <Time>2013-12-20T12:17:33.8649689-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Enemies\Skeleton\Attack\SBA2.xnb</Output>
+      <Time>2014-03-21T12:25:34.8506756-04:00</Time>
     </Item>
     <Item>
       <Source>ComputerPpl\Enemies\Skeleton\Attack\SFA.png</Source>
@@ -628,8 +628,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Enemies\Skeleton\Attack\SFA.xnb</Output>
-      <Time>2013-12-20T12:17:33.8649689-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Enemies\Skeleton\Attack\SFA.xnb</Output>
+      <Time>2014-03-21T12:25:34.8516765-04:00</Time>
     </Item>
     <Item>
       <Source>ComputerPpl\Enemies\Skeleton\Attack\SFA2.png</Source>
@@ -637,8 +637,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Enemies\Skeleton\Attack\SFA2.xnb</Output>
-      <Time>2013-12-20T12:17:33.8649689-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Enemies\Skeleton\Attack\SFA2.xnb</Output>
+      <Time>2014-03-21T12:25:34.8526757-04:00</Time>
     </Item>
     <Item>
       <Source>ComputerPpl\Enemies\Skeleton\Attack\SLA.png</Source>
@@ -646,8 +646,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Enemies\Skeleton\Attack\SLA.xnb</Output>
-      <Time>2013-12-20T12:17:33.8649689-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Enemies\Skeleton\Attack\SLA.xnb</Output>
+      <Time>2014-03-21T12:25:34.8526757-04:00</Time>
     </Item>
     <Item>
       <Source>ComputerPpl\Enemies\Skeleton\Attack\SLA2.png</Source>
@@ -655,8 +655,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Enemies\Skeleton\Attack\SLA2.xnb</Output>
-      <Time>2013-12-20T12:17:33.8649689-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Enemies\Skeleton\Attack\SLA2.xnb</Output>
+      <Time>2014-03-21T12:25:34.8536766-04:00</Time>
     </Item>
     <Item>
       <Source>ComputerPpl\Enemies\Skeleton\Attack\SRA.png</Source>
@@ -664,8 +664,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Enemies\Skeleton\Attack\SRA.xnb</Output>
-      <Time>2013-12-20T12:17:33.8649689-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Enemies\Skeleton\Attack\SRA.xnb</Output>
+      <Time>2014-03-21T12:25:34.8546767-04:00</Time>
     </Item>
     <Item>
       <Source>ComputerPpl\Enemies\Skeleton\Attack\SRA2.png</Source>
@@ -673,8 +673,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Enemies\Skeleton\Attack\SRA2.xnb</Output>
-      <Time>2013-12-20T12:17:33.8649689-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Enemies\Skeleton\Attack\SRA2.xnb</Output>
+      <Time>2014-03-21T12:25:34.8546767-04:00</Time>
     </Item>
     <Item>
       <Source>MenuButtons\Continue.png</Source>
@@ -682,8 +682,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\MenuButtons\Continue.xnb</Output>
-      <Time>2013-12-20T12:17:33.8805697-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\MenuButtons\Continue.xnb</Output>
+      <Time>2014-03-21T12:25:34.8706768-04:00</Time>
     </Item>
     <Item>
       <Source>MenuButtons\LoadGame.png</Source>
@@ -691,8 +691,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\MenuButtons\LoadGame.xnb</Output>
-      <Time>2013-12-20T12:17:33.8805697-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\MenuButtons\LoadGame.xnb</Output>
+      <Time>2014-03-21T12:25:34.8716769-04:00</Time>
     </Item>
     <Item>
       <Source>MenuButtons\NewGame.png</Source>
@@ -700,8 +700,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\MenuButtons\NewGame.xnb</Output>
-      <Time>2013-12-20T12:17:33.8805697-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\MenuButtons\NewGame.xnb</Output>
+      <Time>2014-03-21T12:25:34.8726782-04:00</Time>
     </Item>
     <Item>
       <Source>AdlezTitle.png</Source>
@@ -709,8 +709,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AdlezTitle.xnb</Output>
-      <Time>2013-12-20T12:17:33.6933681-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AdlezTitle.xnb</Output>
+      <Time>2014-03-21T12:25:34.663667-04:00</Time>
     </Item>
     <Item>
       <Source>AlistarSword\B.png</Source>
@@ -718,8 +718,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarSword\B.xnb</Output>
-      <Time>2013-12-20T12:17:33.740169-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarSword\B.xnb</Output>
+      <Time>2014-03-21T12:25:34.7516716-04:00</Time>
     </Item>
     <Item>
       <Source>AlistarSword\BL.png</Source>
@@ -727,8 +727,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarSword\BL.xnb</Output>
-      <Time>2013-12-20T12:17:33.740169-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarSword\BL.xnb</Output>
+      <Time>2014-03-21T12:25:34.7516716-04:00</Time>
     </Item>
     <Item>
       <Source>AlistarSword\BR.png</Source>
@@ -736,8 +736,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarSword\BR.xnb</Output>
-      <Time>2013-12-20T12:17:33.740169-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarSword\BR.xnb</Output>
+      <Time>2014-03-21T12:25:34.752672-04:00</Time>
     </Item>
     <Item>
       <Source>AlistarSword\F.png</Source>
@@ -745,8 +745,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarSword\F.xnb</Output>
-      <Time>2013-12-20T12:17:33.740169-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarSword\F.xnb</Output>
+      <Time>2014-03-21T12:25:34.7536717-04:00</Time>
     </Item>
     <Item>
       <Source>AlistarSword\FL.png</Source>
@@ -754,8 +754,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarSword\FL.xnb</Output>
-      <Time>2013-12-20T12:17:33.740169-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarSword\FL.xnb</Output>
+      <Time>2014-03-21T12:25:34.7536717-04:00</Time>
     </Item>
     <Item>
       <Source>AlistarSword\FR.png</Source>
@@ -763,8 +763,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarSword\FR.xnb</Output>
-      <Time>2013-12-20T12:17:33.740169-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarSword\FR.xnb</Output>
+      <Time>2014-03-21T12:25:34.7556369-04:00</Time>
     </Item>
     <Item>
       <Source>AlistarSword\L.png</Source>
@@ -772,8 +772,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarSword\L.xnb</Output>
-      <Time>2013-12-20T12:17:33.7557666-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarSword\L.xnb</Output>
+      <Time>2014-03-21T12:25:34.7566723-04:00</Time>
     </Item>
     <Item>
       <Source>AlistarSword\LL.png</Source>
@@ -781,8 +781,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarSword\LL.xnb</Output>
-      <Time>2013-12-20T12:17:33.7557666-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarSword\LL.xnb</Output>
+      <Time>2014-03-21T12:25:34.7576707-04:00</Time>
     </Item>
     <Item>
       <Source>AlistarSword\LR.png</Source>
@@ -790,8 +790,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarSword\LR.xnb</Output>
-      <Time>2013-12-20T12:17:33.7557666-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarSword\LR.xnb</Output>
+      <Time>2014-03-21T12:25:34.7576707-04:00</Time>
     </Item>
     <Item>
       <Source>AlistarSword\R.png</Source>
@@ -799,8 +799,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarSword\R.xnb</Output>
-      <Time>2013-12-20T12:17:33.7557666-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarSword\R.xnb</Output>
+      <Time>2014-03-21T12:25:34.7586712-04:00</Time>
     </Item>
     <Item>
       <Source>AlistarSword\RL.png</Source>
@@ -808,8 +808,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarSword\RL.xnb</Output>
-      <Time>2013-12-20T12:17:33.7557666-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarSword\RL.xnb</Output>
+      <Time>2014-03-21T12:25:34.7596716-04:00</Time>
     </Item>
     <Item>
       <Source>AlistarSword\RR.png</Source>
@@ -817,8 +817,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarSword\RR.xnb</Output>
-      <Time>2013-12-20T12:17:33.7557666-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarSword\RR.xnb</Output>
+      <Time>2014-03-21T12:25:34.7606721-04:00</Time>
     </Item>
     <Item>
       <Source>AlistarSwordAttack\B1.png</Source>
@@ -826,8 +826,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarSwordAttack\B1.xnb</Output>
-      <Time>2013-12-20T12:17:33.7557666-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarSwordAttack\B1.xnb</Output>
+      <Time>2014-03-21T12:25:34.7616713-04:00</Time>
     </Item>
     <Item>
       <Source>AlistarSwordAttack\B2.png</Source>
@@ -835,8 +835,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarSwordAttack\B2.xnb</Output>
-      <Time>2013-12-20T12:17:33.7557666-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarSwordAttack\B2.xnb</Output>
+      <Time>2014-03-21T12:25:34.7626722-04:00</Time>
     </Item>
     <Item>
       <Source>AlistarSwordAttack\F1.png</Source>
@@ -844,8 +844,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarSwordAttack\F1.xnb</Output>
-      <Time>2013-12-20T12:17:33.7557666-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarSwordAttack\F1.xnb</Output>
+      <Time>2014-03-21T12:25:34.7636723-04:00</Time>
     </Item>
     <Item>
       <Source>AlistarSwordAttack\F2.png</Source>
@@ -853,8 +853,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarSwordAttack\F2.xnb</Output>
-      <Time>2013-12-20T12:17:33.7557666-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarSwordAttack\F2.xnb</Output>
+      <Time>2014-03-21T12:25:34.7646621-04:00</Time>
     </Item>
     <Item>
       <Source>AlistarSwordAttack\L1.png</Source>
@@ -862,8 +862,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarSwordAttack\L1.xnb</Output>
-      <Time>2013-12-20T12:17:33.7557666-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarSwordAttack\L1.xnb</Output>
+      <Time>2014-03-21T12:25:34.7656712-04:00</Time>
     </Item>
     <Item>
       <Source>AlistarSwordAttack\L2.png</Source>
@@ -871,8 +871,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarSwordAttack\L2.xnb</Output>
-      <Time>2013-12-20T12:17:33.7557666-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarSwordAttack\L2.xnb</Output>
+      <Time>2014-03-21T12:25:34.7666708-04:00</Time>
     </Item>
     <Item>
       <Source>AlistarSwordAttack\R1.png</Source>
@@ -880,8 +880,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarSwordAttack\R1.xnb</Output>
-      <Time>2013-12-20T12:17:33.7557666-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarSwordAttack\R1.xnb</Output>
+      <Time>2014-03-21T12:25:34.7676709-04:00</Time>
     </Item>
     <Item>
       <Source>AlistarSwordAttack\R2.png</Source>
@@ -889,8 +889,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarSwordAttack\R2.xnb</Output>
-      <Time>2013-12-20T12:17:33.7557666-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarSwordAttack\R2.xnb</Output>
+      <Time>2014-03-21T12:25:34.7686726-04:00</Time>
     </Item>
     <Item>
       <Source>AlistarSwordAttack\LeftSwoosh.png</Source>
@@ -898,8 +898,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarSwordAttack\LeftSwoosh.xnb</Output>
-      <Time>2013-12-20T12:17:33.7557666-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarSwordAttack\LeftSwoosh.xnb</Output>
+      <Time>2014-03-21T12:25:34.7666708-04:00</Time>
     </Item>
     <Item>
       <Source>AlistarSwordAttack\BackSwoosh.png</Source>
@@ -907,8 +907,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarSwordAttack\BackSwoosh.xnb</Output>
-      <Time>2013-12-20T12:17:33.7557666-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarSwordAttack\BackSwoosh.xnb</Output>
+      <Time>2014-03-21T12:25:34.7626722-04:00</Time>
     </Item>
     <Item>
       <Source>AlistarSwordAttack\FrontSwoosh.png</Source>
@@ -916,8 +916,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarSwordAttack\FrontSwoosh.xnb</Output>
-      <Time>2013-12-20T12:17:33.7557666-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarSwordAttack\FrontSwoosh.xnb</Output>
+      <Time>2014-03-21T12:25:34.7656712-04:00</Time>
     </Item>
     <Item>
       <Source>AlistarSwordAttack\RightSwoosh.png</Source>
@@ -925,8 +925,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarSwordAttack\RightSwoosh.xnb</Output>
-      <Time>2013-12-20T12:17:33.7557666-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarSwordAttack\RightSwoosh.xnb</Output>
+      <Time>2014-03-21T12:25:34.7696722-04:00</Time>
     </Item>
     <Item>
       <Source>BackgroundsAndFloors\Dungeons\FixedDungeon1\BossHallway.png</Source>
@@ -934,8 +934,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\BackgroundsAndFloors\Dungeons\FixedDungeon1\BossHallway.xnb</Output>
-      <Time>2013-12-20T12:17:33.7869687-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\BackgroundsAndFloors\Dungeons\FixedDungeon1\BossHallway.xnb</Output>
+      <Time>2014-03-21T12:25:34.7906744-04:00</Time>
     </Item>
     <Item>
       <Source>Chests\Chest.png</Source>
@@ -943,8 +943,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Chests\Chest.xnb</Output>
-      <Time>2013-12-20T12:17:33.8337709-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Chests\Chest.xnb</Output>
+      <Time>2014-03-21T12:25:34.8326753-04:00</Time>
     </Item>
     <Item>
       <Source>Chests\EmptyChest.png</Source>
@@ -952,8 +952,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Chests\EmptyChest.xnb</Output>
-      <Time>2013-12-20T12:17:33.8337709-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Chests\EmptyChest.xnb</Output>
+      <Time>2014-03-21T12:25:34.8326753-04:00</Time>
     </Item>
     <Item>
       <Source>BackgroundsAndFloors\Dungeons\FixedDungeon1\DungeonRoomBoss.png</Source>
@@ -961,8 +961,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\BackgroundsAndFloors\Dungeons\FixedDungeon1\DungeonRoomBoss.xnb</Output>
-      <Time>2013-12-20T12:17:33.7869687-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\BackgroundsAndFloors\Dungeons\FixedDungeon1\DungeonRoomBoss.xnb</Output>
+      <Time>2014-03-21T12:25:34.7946401-04:00</Time>
     </Item>
     <Item>
       <Source>Box\MetalBox.png</Source>
@@ -970,8 +970,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Box\MetalBox.xnb</Output>
-      <Time>2013-12-20T12:17:33.8337709-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Box\MetalBox.xnb</Output>
+      <Time>2014-03-21T12:25:34.8266745-04:00</Time>
     </Item>
     <Item>
       <Source>BackgroundsAndFloors\Landscapes\LeftPassage.png</Source>
@@ -979,8 +979,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\BackgroundsAndFloors\Landscapes\LeftPassage.xnb</Output>
-      <Time>2013-12-20T12:17:33.8025688-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\BackgroundsAndFloors\Landscapes\LeftPassage.xnb</Output>
+      <Time>2014-03-21T12:25:34.8086746-04:00</Time>
     </Item>
     <Item>
       <Source>TitleScreen.png</Source>
@@ -988,8 +988,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\TitleScreen.xnb</Output>
-      <Time>2013-12-20T12:17:34.005372-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\TitleScreen.xnb</Output>
+      <Time>2014-03-21T12:25:35.0186872-04:00</Time>
     </Item>
     <Item>
       <Source>ComputerPpl\Bosses\D1 Boss\Move\B.png</Source>
@@ -997,8 +997,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Bosses\D1 Boss\Move\B.xnb</Output>
-      <Time>2013-12-20T12:17:33.8493693-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Bosses\D1 Boss\Move\B.xnb</Output>
+      <Time>2014-03-21T12:25:34.8416763-04:00</Time>
     </Item>
     <Item>
       <Source>ComputerPpl\Bosses\D1 Boss\Move\BL.png</Source>
@@ -1006,8 +1006,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Bosses\D1 Boss\Move\BL.xnb</Output>
-      <Time>2013-12-20T12:17:33.8493693-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Bosses\D1 Boss\Move\BL.xnb</Output>
+      <Time>2014-03-21T12:25:34.8426755-04:00</Time>
     </Item>
     <Item>
       <Source>ComputerPpl\Bosses\D1 Boss\Move\BR.png</Source>
@@ -1015,8 +1015,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Bosses\D1 Boss\Move\BR.xnb</Output>
-      <Time>2013-12-20T12:17:33.8493693-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Bosses\D1 Boss\Move\BR.xnb</Output>
+      <Time>2014-03-21T12:25:34.8436752-04:00</Time>
     </Item>
     <Item>
       <Source>ComputerPpl\Bosses\D1 Boss\Move\F.png</Source>
@@ -1024,8 +1024,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Bosses\D1 Boss\Move\F.xnb</Output>
-      <Time>2013-12-20T12:17:33.8493693-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Bosses\D1 Boss\Move\F.xnb</Output>
+      <Time>2014-03-21T12:25:34.8436752-04:00</Time>
     </Item>
     <Item>
       <Source>ComputerPpl\Bosses\D1 Boss\Move\FL.png</Source>
@@ -1033,8 +1033,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Bosses\D1 Boss\Move\FL.xnb</Output>
-      <Time>2013-12-20T12:17:33.8493693-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Bosses\D1 Boss\Move\FL.xnb</Output>
+      <Time>2014-03-21T12:25:34.8446752-04:00</Time>
     </Item>
     <Item>
       <Source>ComputerPpl\Bosses\D1 Boss\Move\FR.png</Source>
@@ -1042,8 +1042,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Bosses\D1 Boss\Move\FR.xnb</Output>
-      <Time>2013-12-20T12:17:33.8493693-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Bosses\D1 Boss\Move\FR.xnb</Output>
+      <Time>2014-03-21T12:25:34.8456761-04:00</Time>
     </Item>
     <Item>
       <Source>ComputerPpl\Bosses\D1 Boss\Move\L.png</Source>
@@ -1051,8 +1051,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Bosses\D1 Boss\Move\L.xnb</Output>
-      <Time>2013-12-20T12:17:33.8493693-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Bosses\D1 Boss\Move\L.xnb</Output>
+      <Time>2014-03-21T12:25:34.8456761-04:00</Time>
     </Item>
     <Item>
       <Source>ComputerPpl\Bosses\D1 Boss\Move\LL.png</Source>
@@ -1060,8 +1060,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Bosses\D1 Boss\Move\LL.xnb</Output>
-      <Time>2013-12-20T12:17:33.8493693-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Bosses\D1 Boss\Move\LL.xnb</Output>
+      <Time>2014-03-21T12:25:34.8466758-04:00</Time>
     </Item>
     <Item>
       <Source>ComputerPpl\Bosses\D1 Boss\Move\LR.png</Source>
@@ -1069,8 +1069,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Bosses\D1 Boss\Move\LR.xnb</Output>
-      <Time>2013-12-20T12:17:33.8493693-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Bosses\D1 Boss\Move\LR.xnb</Output>
+      <Time>2014-03-21T12:25:34.8476758-04:00</Time>
     </Item>
     <Item>
       <Source>ComputerPpl\Bosses\D1 Boss\Move\R.png</Source>
@@ -1078,8 +1078,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Bosses\D1 Boss\Move\R.xnb</Output>
-      <Time>2013-12-20T12:17:33.8649689-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Bosses\D1 Boss\Move\R.xnb</Output>
+      <Time>2014-03-21T12:25:34.8476758-04:00</Time>
     </Item>
     <Item>
       <Source>ComputerPpl\Bosses\D1 Boss\Move\RL.png</Source>
@@ -1087,8 +1087,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Bosses\D1 Boss\Move\RL.xnb</Output>
-      <Time>2013-12-20T12:17:33.8649689-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Bosses\D1 Boss\Move\RL.xnb</Output>
+      <Time>2014-03-21T12:25:34.8486759-04:00</Time>
     </Item>
     <Item>
       <Source>ComputerPpl\Bosses\D1 Boss\Move\RR.png</Source>
@@ -1096,8 +1096,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Bosses\D1 Boss\Move\RR.xnb</Output>
-      <Time>2013-12-20T12:17:33.8649689-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Bosses\D1 Boss\Move\RR.xnb</Output>
+      <Time>2014-03-21T12:25:34.8486759-04:00</Time>
     </Item>
     <Item>
       <Source>ComputerPpl\Bosses\D1 Boss\Attack\F1.png</Source>
@@ -1105,8 +1105,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Bosses\D1 Boss\Attack\F1.xnb</Output>
-      <Time>2013-12-20T12:17:33.8493693-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Bosses\D1 Boss\Attack\F1.xnb</Output>
+      <Time>2014-03-21T12:25:34.8366756-04:00</Time>
     </Item>
     <Item>
       <Source>ComputerPpl\Bosses\D1 Boss\Attack\F2.png</Source>
@@ -1114,8 +1114,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Bosses\D1 Boss\Attack\F2.xnb</Output>
-      <Time>2013-12-20T12:17:33.8493693-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Bosses\D1 Boss\Attack\F2.xnb</Output>
+      <Time>2014-03-21T12:25:34.8366756-04:00</Time>
     </Item>
     <Item>
       <Source>ComputerPpl\Bosses\D1 Boss\Attack\L1.png</Source>
@@ -1123,8 +1123,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Bosses\D1 Boss\Attack\L1.xnb</Output>
-      <Time>2013-12-20T12:17:33.8493693-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Bosses\D1 Boss\Attack\L1.xnb</Output>
+      <Time>2014-03-21T12:25:34.8376748-04:00</Time>
     </Item>
     <Item>
       <Source>ComputerPpl\Bosses\D1 Boss\Attack\L2.png</Source>
@@ -1132,8 +1132,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Bosses\D1 Boss\Attack\L2.xnb</Output>
-      <Time>2013-12-20T12:17:33.8493693-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Bosses\D1 Boss\Attack\L2.xnb</Output>
+      <Time>2014-03-21T12:25:34.8376748-04:00</Time>
     </Item>
     <Item>
       <Source>ComputerPpl\Bosses\D1 Boss\Attack\R1.png</Source>
@@ -1141,8 +1141,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Bosses\D1 Boss\Attack\R1.xnb</Output>
-      <Time>2013-12-20T12:17:33.8493693-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Bosses\D1 Boss\Attack\R1.xnb</Output>
+      <Time>2014-03-21T12:25:34.8386749-04:00</Time>
     </Item>
     <Item>
       <Source>ComputerPpl\Bosses\D1 Boss\Attack\R2.png</Source>
@@ -1150,8 +1150,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Bosses\D1 Boss\Attack\R2.xnb</Output>
-      <Time>2013-12-20T12:17:33.8493693-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Bosses\D1 Boss\Attack\R2.xnb</Output>
+      <Time>2014-03-21T12:25:34.8406762-04:00</Time>
     </Item>
     <Item>
       <Source>ComputerPpl\Bosses\D1 Boss\Attack\B1.png</Source>
@@ -1159,8 +1159,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Bosses\D1 Boss\Attack\B1.xnb</Output>
-      <Time>2013-12-20T12:17:33.8493693-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Bosses\D1 Boss\Attack\B1.xnb</Output>
+      <Time>2014-03-21T12:25:34.8346746-04:00</Time>
     </Item>
     <Item>
       <Source>ComputerPpl\Bosses\D1 Boss\Attack\B2.png</Source>
@@ -1168,8 +1168,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Bosses\D1 Boss\Attack\B2.xnb</Output>
-      <Time>2013-12-20T12:17:33.8493693-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Bosses\D1 Boss\Attack\B2.xnb</Output>
+      <Time>2014-03-21T12:25:34.8356747-04:00</Time>
     </Item>
     <Item>
       <Source>Traps\arrowtrap.png</Source>
@@ -1177,8 +1177,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Traps\arrowtrap.xnb</Output>
-      <Time>2013-12-20T12:17:34.005372-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Traps\arrowtrap.xnb</Output>
+      <Time>2014-03-21T12:25:35.0256864-04:00</Time>
     </Item>
     <Item>
       <Source>SteelArrow.png</Source>
@@ -1186,8 +1186,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\SteelArrow.xnb</Output>
-      <Time>2013-12-20T12:17:33.9898401-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\SteelArrow.xnb</Output>
+      <Time>2014-03-21T12:25:35.0146857-04:00</Time>
     </Item>
     <Item>
       <Source>Torch\Light1.png</Source>
@@ -1195,8 +1195,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Torch\Light1.xnb</Output>
-      <Time>2013-12-20T12:17:34.005372-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Torch\Light1.xnb</Output>
+      <Time>2014-03-21T12:25:35.0196864-04:00</Time>
     </Item>
     <Item>
       <Source>Torch\Light2.png</Source>
@@ -1204,8 +1204,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Torch\Light2.xnb</Output>
-      <Time>2013-12-20T12:17:34.005372-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Torch\Light2.xnb</Output>
+      <Time>2014-03-21T12:25:35.0206865-04:00</Time>
     </Item>
     <Item>
       <Source>Torch\Light3.png</Source>
@@ -1213,8 +1213,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Torch\Light3.xnb</Output>
-      <Time>2013-12-20T12:17:34.005372-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Torch\Light3.xnb</Output>
+      <Time>2014-03-21T12:25:35.0216878-04:00</Time>
     </Item>
     <Item>
       <Source>Torch\Torch1.png</Source>
@@ -1222,8 +1222,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Torch\Torch1.xnb</Output>
-      <Time>2013-12-20T12:17:34.005372-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Torch\Torch1.xnb</Output>
+      <Time>2014-03-21T12:25:35.0216878-04:00</Time>
     </Item>
     <Item>
       <Source>Torch\Torch2.png</Source>
@@ -1231,8 +1231,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Torch\Torch2.xnb</Output>
-      <Time>2013-12-20T12:17:34.005372-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Torch\Torch2.xnb</Output>
+      <Time>2014-03-21T12:25:35.0226874-04:00</Time>
     </Item>
     <Item>
       <Source>Torch\Torch3.png</Source>
@@ -1240,8 +1240,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Torch\Torch3.xnb</Output>
-      <Time>2013-12-20T12:17:34.005372-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Torch\Torch3.xnb</Output>
+      <Time>2014-03-21T12:25:35.0246871-04:00</Time>
     </Item>
     <Item>
       <Source>Random\LightScreen.png</Source>
@@ -1249,8 +1249,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Random\LightScreen.xnb</Output>
-      <Time>2013-12-20T12:17:33.9741691-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Random\LightScreen.xnb</Output>
+      <Time>2014-03-21T12:25:35.0106854-04:00</Time>
     </Item>
     <Item>
       <Source>Buildings\BottomLeftHouse.png</Source>
@@ -1258,8 +1258,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Buildings\BottomLeftHouse.xnb</Output>
-      <Time>2013-12-20T12:17:33.8337709-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Buildings\BottomLeftHouse.xnb</Output>
+      <Time>2014-03-21T12:25:34.8286751-04:00</Time>
     </Item>
     <Item>
       <Source>Buildings\BottomRightHouse.png</Source>
@@ -1267,8 +1267,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Buildings\BottomRightHouse.xnb</Output>
-      <Time>2013-12-20T12:17:33.8337709-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Buildings\BottomRightHouse.xnb</Output>
+      <Time>2014-03-21T12:25:34.8296751-04:00</Time>
     </Item>
     <Item>
       <Source>Buildings\TopLeftHouse.png</Source>
@@ -1276,8 +1276,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Buildings\TopLeftHouse.xnb</Output>
-      <Time>2013-12-20T12:17:33.8337709-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Buildings\TopLeftHouse.xnb</Output>
+      <Time>2014-03-21T12:25:34.8306415-04:00</Time>
     </Item>
     <Item>
       <Source>Buildings\TopRightHouse.png</Source>
@@ -1285,8 +1285,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Buildings\TopRightHouse.xnb</Output>
-      <Time>2013-12-20T12:17:33.8337709-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Buildings\TopRightHouse.xnb</Output>
+      <Time>2014-03-21T12:25:34.8316752-04:00</Time>
     </Item>
     <Item>
       <Source>BackgroundsAndFloors\Landscapes\FountainINTOWNSQUARE.png</Source>
@@ -1294,8 +1294,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\BackgroundsAndFloors\Landscapes\FountainINTOWNSQUARE.xnb</Output>
-      <Time>2013-12-20T12:17:33.8025688-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\BackgroundsAndFloors\Landscapes\FountainINTOWNSQUARE.xnb</Output>
+      <Time>2014-03-21T12:25:34.7996733-04:00</Time>
     </Item>
     <Item>
       <Source>BackgroundsAndFloors\Landscapes\TownSquare.png</Source>
@@ -1303,8 +1303,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\BackgroundsAndFloors\Landscapes\TownSquare.xnb</Output>
-      <Time>2013-12-20T12:17:33.8337709-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\BackgroundsAndFloors\Landscapes\TownSquare.xnb</Output>
+      <Time>2014-03-21T12:25:34.8206967-04:00</Time>
     </Item>
     <Item>
       <Source>BackgroundsAndFloors\Buildings\HOUSE4.png</Source>
@@ -1312,8 +1312,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\BackgroundsAndFloors\Buildings\HOUSE4.xnb</Output>
-      <Time>2013-12-20T12:17:33.7713679-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\BackgroundsAndFloors\Buildings\HOUSE4.xnb</Output>
+      <Time>2014-03-21T12:25:34.7786728-04:00</Time>
     </Item>
     <Item>
       <Source>Random\Particle.png</Source>
@@ -1321,8 +1321,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Random\Particle.xnb</Output>
-      <Time>2013-12-20T12:17:33.9741691-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Random\Particle.xnb</Output>
+      <Time>2014-03-21T12:25:35.0116859-04:00</Time>
     </Item>
     <Item>
       <Source>Items\10Coin.png</Source>
@@ -1330,8 +1330,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Items\10Coin.xnb</Output>
-      <Time>2013-12-20T12:17:33.8805697-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Items\10Coin.xnb</Output>
+      <Time>2014-03-21T12:25:34.8656773-04:00</Time>
     </Item>
     <Item>
       <Source>Items\1Coin.png</Source>
@@ -1339,8 +1339,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Items\1Coin.xnb</Output>
-      <Time>2013-12-20T12:17:33.8805697-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Items\1Coin.xnb</Output>
+      <Time>2014-03-21T12:25:34.8656773-04:00</Time>
     </Item>
     <Item>
       <Source>Items\5Coin.png</Source>
@@ -1348,8 +1348,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Items\5Coin.xnb</Output>
-      <Time>2013-12-20T12:17:33.8805697-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Items\5Coin.xnb</Output>
+      <Time>2014-03-21T12:25:34.8666774-04:00</Time>
     </Item>
     <Item>
       <Source>Items\CyanStone.png</Source>
@@ -1357,8 +1357,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Items\CyanStone.xnb</Output>
-      <Time>2013-12-20T12:17:33.8805697-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Items\CyanStone.xnb</Output>
+      <Time>2014-03-21T12:25:34.8666774-04:00</Time>
     </Item>
     <Item>
       <Source>Items\Key.png</Source>
@@ -1366,8 +1366,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Items\Key.xnb</Output>
-      <Time>2013-12-20T12:17:33.8805697-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Items\Key.xnb</Output>
+      <Time>2014-03-21T12:25:34.8676766-04:00</Time>
     </Item>
     <Item>
       <Source>Items\MagentaStone.png</Source>
@@ -1375,8 +1375,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Items\MagentaStone.xnb</Output>
-      <Time>2013-12-20T12:17:33.8805697-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Items\MagentaStone.xnb</Output>
+      <Time>2014-03-21T12:25:34.8686689-04:00</Time>
     </Item>
     <Item>
       <Source>Items\SteelArrow.png</Source>
@@ -1384,8 +1384,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Items\SteelArrow.xnb</Output>
-      <Time>2013-12-20T12:17:33.8805697-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Items\SteelArrow.xnb</Output>
+      <Time>2014-03-21T12:25:34.8686689-04:00</Time>
     </Item>
     <Item>
       <Source>Items\WoodenArrow.png</Source>
@@ -1393,8 +1393,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Items\WoodenArrow.xnb</Output>
-      <Time>2013-12-20T12:17:33.8805697-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Items\WoodenArrow.xnb</Output>
+      <Time>2014-03-21T12:25:34.8696768-04:00</Time>
     </Item>
     <Item>
       <Source>Items\YellowStone.png</Source>
@@ -1402,8 +1402,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Items\YellowStone.xnb</Output>
-      <Time>2013-12-20T12:17:33.8805697-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Items\YellowStone.xnb</Output>
+      <Time>2014-03-21T12:25:34.8696768-04:00</Time>
     </Item>
     <Item>
       <Source>AlistarBow\B.png</Source>
@@ -1411,8 +1411,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarBow\B.xnb</Output>
-      <Time>2013-12-20T12:17:33.6933681-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarBow\B.xnb</Output>
+      <Time>2014-03-21T12:25:34.736669-04:00</Time>
     </Item>
     <Item>
       <Source>AlistarBow\BL.png</Source>
@@ -1420,8 +1420,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarBow\BL.xnb</Output>
-      <Time>2013-12-20T12:17:33.7089677-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarBow\BL.xnb</Output>
+      <Time>2014-03-21T12:25:34.737669-04:00</Time>
     </Item>
     <Item>
       <Source>AlistarBow\BR.png</Source>
@@ -1429,8 +1429,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarBow\BR.xnb</Output>
-      <Time>2013-12-20T12:17:33.7089677-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarBow\BR.xnb</Output>
+      <Time>2014-03-21T12:25:34.737669-04:00</Time>
     </Item>
     <Item>
       <Source>AlistarBow\F.png</Source>
@@ -1438,8 +1438,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarBow\F.xnb</Output>
-      <Time>2013-12-20T12:17:33.7089677-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarBow\F.xnb</Output>
+      <Time>2014-03-21T12:25:34.7386695-04:00</Time>
     </Item>
     <Item>
       <Source>AlistarBow\FL.png</Source>
@@ -1447,8 +1447,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarBow\FL.xnb</Output>
-      <Time>2013-12-20T12:17:33.7089677-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarBow\FL.xnb</Output>
+      <Time>2014-03-21T12:25:34.73967-04:00</Time>
     </Item>
     <Item>
       <Source>AlistarBow\FR.png</Source>
@@ -1456,8 +1456,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarBow\FR.xnb</Output>
-      <Time>2013-12-20T12:17:33.7246384-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarBow\FR.xnb</Output>
+      <Time>2014-03-21T12:25:34.7406705-04:00</Time>
     </Item>
     <Item>
       <Source>AlistarBow\L.png</Source>
@@ -1465,8 +1465,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarBow\L.xnb</Output>
-      <Time>2013-12-20T12:17:33.7246384-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarBow\L.xnb</Output>
+      <Time>2014-03-21T12:25:34.7416701-04:00</Time>
     </Item>
     <Item>
       <Source>AlistarBow\LL.png</Source>
@@ -1474,8 +1474,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarBow\LL.xnb</Output>
-      <Time>2013-12-20T12:17:33.7246384-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarBow\LL.xnb</Output>
+      <Time>2014-03-21T12:25:34.7426718-04:00</Time>
     </Item>
     <Item>
       <Source>AlistarBow\LR.png</Source>
@@ -1483,8 +1483,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarBow\LR.xnb</Output>
-      <Time>2013-12-20T12:17:33.740169-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarBow\LR.xnb</Output>
+      <Time>2014-03-21T12:25:34.7426718-04:00</Time>
     </Item>
     <Item>
       <Source>AlistarBow\R.png</Source>
@@ -1492,8 +1492,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarBow\R.xnb</Output>
-      <Time>2013-12-20T12:17:33.740169-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarBow\R.xnb</Output>
+      <Time>2014-03-21T12:25:34.7436698-04:00</Time>
     </Item>
     <Item>
       <Source>AlistarBow\RL.png</Source>
@@ -1501,8 +1501,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarBow\RL.xnb</Output>
-      <Time>2013-12-20T12:17:33.740169-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarBow\RL.xnb</Output>
+      <Time>2014-03-21T12:25:34.7446695-04:00</Time>
     </Item>
     <Item>
       <Source>AlistarBow\RR.png</Source>
@@ -1510,8 +1510,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarBow\RR.xnb</Output>
-      <Time>2013-12-20T12:17:33.740169-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarBow\RR.xnb</Output>
+      <Time>2014-03-21T12:25:34.7446695-04:00</Time>
     </Item>
     <Item>
       <Source>AlistarBowAttack\B1.png</Source>
@@ -1519,8 +1519,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarBowAttack\B1.xnb</Output>
-      <Time>2013-12-20T12:17:33.740169-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarBowAttack\B1.xnb</Output>
+      <Time>2014-03-21T12:25:34.7456695-04:00</Time>
     </Item>
     <Item>
       <Source>AlistarBowAttack\B2.png</Source>
@@ -1528,8 +1528,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarBowAttack\B2.xnb</Output>
-      <Time>2013-12-20T12:17:33.740169-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarBowAttack\B2.xnb</Output>
+      <Time>2014-03-21T12:25:34.74667-04:00</Time>
     </Item>
     <Item>
       <Source>AlistarBowAttack\F1.png</Source>
@@ -1537,8 +1537,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarBowAttack\F1.xnb</Output>
-      <Time>2013-12-20T12:17:33.740169-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarBowAttack\F1.xnb</Output>
+      <Time>2014-03-21T12:25:34.74667-04:00</Time>
     </Item>
     <Item>
       <Source>AlistarBowAttack\F2.png</Source>
@@ -1546,8 +1546,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarBowAttack\F2.xnb</Output>
-      <Time>2013-12-20T12:17:33.740169-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarBowAttack\F2.xnb</Output>
+      <Time>2014-03-21T12:25:34.7476713-04:00</Time>
     </Item>
     <Item>
       <Source>AlistarBowAttack\L1.png</Source>
@@ -1555,8 +1555,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarBowAttack\L1.xnb</Output>
-      <Time>2013-12-20T12:17:33.740169-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarBowAttack\L1.xnb</Output>
+      <Time>2014-03-21T12:25:34.7486714-04:00</Time>
     </Item>
     <Item>
       <Source>AlistarBowAttack\L2.png</Source>
@@ -1564,8 +1564,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarBowAttack\L2.xnb</Output>
-      <Time>2013-12-20T12:17:33.740169-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarBowAttack\L2.xnb</Output>
+      <Time>2014-03-21T12:25:34.7496714-04:00</Time>
     </Item>
     <Item>
       <Source>AlistarBowAttack\R1.png</Source>
@@ -1573,8 +1573,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarBowAttack\R1.xnb</Output>
-      <Time>2013-12-20T12:17:33.740169-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarBowAttack\R1.xnb</Output>
+      <Time>2014-03-21T12:25:34.7496714-04:00</Time>
     </Item>
     <Item>
       <Source>AlistarBowAttack\R2.png</Source>
@@ -1582,8 +1582,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarBowAttack\R2.xnb</Output>
-      <Time>2013-12-20T12:17:33.740169-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarBowAttack\R2.xnb</Output>
+      <Time>2014-03-21T12:25:34.7506698-04:00</Time>
     </Item>
     <Item>
       <Source>Projectiles\SteelArrowDown.png</Source>
@@ -1591,8 +1591,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Projectiles\SteelArrowDown.xnb</Output>
-      <Time>2013-12-20T12:17:33.9741691-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Projectiles\SteelArrowDown.xnb</Output>
+      <Time>2014-03-21T12:25:35.0056855-04:00</Time>
     </Item>
     <Item>
       <Source>Projectiles\SteelArrowLeft.png</Source>
@@ -1600,8 +1600,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Projectiles\SteelArrowLeft.xnb</Output>
-      <Time>2013-12-20T12:17:33.9741691-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Projectiles\SteelArrowLeft.xnb</Output>
+      <Time>2014-03-21T12:25:35.0066852-04:00</Time>
     </Item>
     <Item>
       <Source>Projectiles\SteelArrowRight.png</Source>
@@ -1609,8 +1609,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Projectiles\SteelArrowRight.xnb</Output>
-      <Time>2013-12-20T12:17:33.9741691-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Projectiles\SteelArrowRight.xnb</Output>
+      <Time>2014-03-21T12:25:35.0087173-04:00</Time>
     </Item>
     <Item>
       <Source>Projectiles\SteelArrowUp.png</Source>
@@ -1618,8 +1618,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Projectiles\SteelArrowUp.xnb</Output>
-      <Time>2013-12-20T12:17:33.9741691-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Projectiles\SteelArrowUp.xnb</Output>
+      <Time>2014-03-21T12:25:35.009685-04:00</Time>
     </Item>
     <Item>
       <Source>Weapons\Bomb.png</Source>
@@ -1627,8 +1627,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Weapons\Bomb.xnb</Output>
-      <Time>2013-12-20T12:17:34.0210402-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Weapons\Bomb.xnb</Output>
+      <Time>2014-03-21T12:25:35.0508689-04:00</Time>
     </Item>
     <Item>
       <Source>BackgroundsAndFloors\Buildings\HOUSE.png</Source>
@@ -1636,8 +1636,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\BackgroundsAndFloors\Buildings\HOUSE.xnb</Output>
-      <Time>2013-12-20T12:17:33.7557666-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\BackgroundsAndFloors\Buildings\HOUSE.xnb</Output>
+      <Time>2014-03-21T12:25:34.7716716-04:00</Time>
     </Item>
     <Item>
       <Source>BackgroundsAndFloors\Buildings\HOUSE2.png</Source>
@@ -1645,8 +1645,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\BackgroundsAndFloors\Buildings\HOUSE2.xnb</Output>
-      <Time>2013-12-20T12:17:33.7713679-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\BackgroundsAndFloors\Buildings\HOUSE2.xnb</Output>
+      <Time>2014-03-21T12:25:34.7746746-04:00</Time>
     </Item>
     <Item>
       <Source>BackgroundsAndFloors\Buildings\HOUSE3.png</Source>
@@ -1654,8 +1654,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\BackgroundsAndFloors\Buildings\HOUSE3.xnb</Output>
-      <Time>2013-12-20T12:17:33.7713679-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\BackgroundsAndFloors\Buildings\HOUSE3.xnb</Output>
+      <Time>2014-03-21T12:25:34.7766731-04:00</Time>
     </Item>
     <Item>
       <Source>BackgroundsAndFloors\Buildings\HOUSE5.png</Source>
@@ -1663,8 +1663,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\BackgroundsAndFloors\Buildings\HOUSE5.xnb</Output>
-      <Time>2013-12-20T12:17:33.7713679-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\BackgroundsAndFloors\Buildings\HOUSE5.xnb</Output>
+      <Time>2014-03-21T12:25:34.7806729-04:00</Time>
     </Item>
     <Item>
       <Source>Weapons\BombAnime\Bomb2.png</Source>
@@ -1672,8 +1672,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Weapons\BombAnime\Bomb2.xnb</Output>
-      <Time>2013-12-20T12:17:34.0210402-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Weapons\BombAnime\Bomb2.xnb</Output>
+      <Time>2014-03-21T12:25:35.0518689-04:00</Time>
     </Item>
     <Item>
       <Source>Weapons\BombAnime\Bomb3.png</Source>
@@ -1681,8 +1681,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Weapons\BombAnime\Bomb3.xnb</Output>
-      <Time>2013-12-20T12:17:34.0210402-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Weapons\BombAnime\Bomb3.xnb</Output>
+      <Time>2014-03-21T12:25:35.052869-04:00</Time>
     </Item>
     <Item>
       <Source>Weapons\BombAnime\Bomb4.png</Source>
@@ -1690,8 +1690,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Weapons\BombAnime\Bomb4.xnb</Output>
-      <Time>2013-12-20T12:17:34.0210402-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Weapons\BombAnime\Bomb4.xnb</Output>
+      <Time>2014-03-21T12:25:35.052869-04:00</Time>
     </Item>
     <Item>
       <Source>SpriteFont1.spritefont</Source>
@@ -1699,8 +1699,8 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\SpriteFont1.xnb</Output>
-      <Time>2013-12-20T12:17:33.9741691-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\SpriteFont1.xnb</Output>
+      <Time>2014-03-21T12:25:35.012686-04:00</Time>
     </Item>
     <Item>
       <Source>SpriteFont2.spritefont</Source>
@@ -1708,8 +1708,8 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\SpriteFont2.xnb</Output>
-      <Time>2013-12-20T12:17:33.9898401-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\SpriteFont2.xnb</Output>
+      <Time>2014-03-21T12:25:35.0136725-04:00</Time>
     </Item>
     <Item>
       <Source>GameOverFont.spritefont</Source>
@@ -1717,8 +1717,8 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\GameOverFont.xnb</Output>
-      <Time>2013-12-20T12:17:33.8805697-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\GameOverFont.xnb</Output>
+      <Time>2014-03-21T12:25:34.8646773-04:00</Time>
     </Item>
     <Item>
       <Source>Music\Theme.mp3</Source>
@@ -1726,9 +1726,9 @@
       <Importer>Mp3Importer</Importer>
       <Processor>SongProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Music\Theme.xnb</Output>
-      <Extra>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Music\Theme.wma</Extra>
-      <Time>2013-12-20T12:17:33.9429744-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Music\Theme.xnb</Output>
+      <Extra>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Music\Theme.wma</Extra>
+      <Time>2014-03-21T12:25:34.9656901-04:00</Time>
     </Item>
     <Item>
       <Source>Music\TravelingSong.mp3</Source>
@@ -1736,9 +1736,9 @@
       <Importer>Mp3Importer</Importer>
       <Processor>SongProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Music\TravelingSong.xnb</Output>
-      <Extra>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Music\TravelingSong.wma</Extra>
-      <Time>2013-12-20T12:17:33.9741691-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Music\TravelingSong.xnb</Output>
+      <Extra>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Music\TravelingSong.wma</Extra>
+      <Time>2014-03-21T12:25:35.0037769-04:00</Time>
     </Item>
     <Item>
       <Source>Music\DungeonTheme1.mp3</Source>
@@ -1746,9 +1746,9 @@
       <Importer>Mp3Importer</Importer>
       <Processor>SongProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Music\DungeonTheme1.xnb</Output>
-      <Extra>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Music\DungeonTheme1.wma</Extra>
-      <Time>2013-12-20T12:17:33.9117739-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Music\DungeonTheme1.xnb</Output>
+      <Extra>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Music\DungeonTheme1.wma</Extra>
+      <Time>2014-03-21T12:25:34.9217682-04:00</Time>
     </Item>
     <Item>
       <Source>Music\SFX\Hit By Enemy.wav</Source>
@@ -1756,8 +1756,8 @@
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Music\SFX\Hit By Enemy.xnb</Output>
-      <Time>2013-12-20T12:17:33.9273846-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Music\SFX\Hit By Enemy.xnb</Output>
+      <Time>2014-03-21T12:25:34.9256835-04:00</Time>
     </Item>
     <Item>
       <Source>Music\SFX\Hit Enemy.wav</Source>
@@ -1765,8 +1765,62 @@
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Music\SFX\Hit Enemy.xnb</Output>
-      <Time>2013-12-20T12:17:33.9273846-05:00</Time>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Music\SFX\Hit Enemy.xnb</Output>
+      <Time>2014-03-21T12:25:34.9266815-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Particle.png</Source>
+      <Name>Particle</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Particle.xnb</Output>
+      <Time>2014-03-24T12:10:44.6966342-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Buy.png</Source>
+      <Name>Buy</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Buy.xnb</Output>
+      <Time>2014-03-24T12:11:38.0100252-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Exit.png</Source>
+      <Name>Exit</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Exit.xnb</Output>
+      <Time>2014-03-24T12:11:38.0100252-04:00</Time>
+    </Item>
+    <Item>
+      <Source>ItemShopBack.png</Source>
+      <Name>ItemShopBack</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ItemShopBack.xnb</Output>
+      <Time>2014-03-24T12:11:38.0256491-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Sell.png</Source>
+      <Name>Sell</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Sell.xnb</Output>
+      <Time>2014-03-24T12:11:38.0256491-04:00</Time>
+    </Item>
+    <Item>
+      <Source>SpriteFont3.spritefont</Source>
+      <Name>SpriteFont3</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\SpriteFont3.xnb</Output>
+      <Time>2014-03-24T12:47:20.2890838-04:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
@@ -1774,10 +1828,10 @@
       <TargetProfile>HiDef</TargetProfile>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolderContent\</RootDirectory>
-      <LoggerRootDirectory>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\</LoggerRootDirectory>
-      <IntermediateDirectory>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolderContent\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolderContent\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolderContent\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\Nick\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>

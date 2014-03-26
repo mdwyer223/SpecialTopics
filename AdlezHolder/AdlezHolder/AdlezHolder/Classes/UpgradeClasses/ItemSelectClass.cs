@@ -13,28 +13,29 @@ using Microsoft.Xna.Framework.Media;
 
 namespace AdlezHolder
 {
+    public enum TreeGameState
+    {
+        BOWTREE,BOMBTREE,SWORDTREE,ITEMSELECT
+    }
+
     public class ItemSelectClass
     {
-        SwordUpgradeClass upgradeSwordTree;
-       // BombUpgradeClass bomb;
-       // BowUpgradeClass bow;
-       // ArmorUpgradeClass armor;
-
+        //BowUpgradeClass bow;
         KeyboardState keys, oldKeys;
-        Button swordButton, bombButton, bowButton, armorButton, placementButton;
+        Button swordButton, bombButton, bowButton, placementButton;
         int numOfButton;
-        bool ePressed;
+        SwordTree swordtree;
+        BombTree bombtree;
 
-        Rectangle overScan;
-        Vector2 buttonPosition;
-        Vector2 startPosition;
-        int nodeSeperationHeight,nodeSeperationWidth;
-        Vector2 nodePosition;
-        Sword swordTest;
-
-        public ItemSelectClass(Sword x)
+        static TreeGameState currentTreeGameState = TreeGameState.ITEMSELECT;
+        public static TreeGameState CurrentTreeGameState
         {
-            swordTest = x;
+            get { return currentTreeGameState; }
+            set { currentTreeGameState = value; }
+        }
+      
+        public ItemSelectClass(Game game)
+        {
             Rectangle overScan;
             Vector2 buttonPosition;
             Vector2 startPosition;
@@ -45,16 +46,12 @@ namespace AdlezHolder
             displayWidth = Game1.DisplayWidth;
             displayHeight = Game1.DisplayHeight;
             numOfButton = 0;
-            //bomb = new BombUpgradeClass(view, scaleFactor);
-           // bow = new BowUpgradeClass(view, scaleFactor);
-           // armor = new ArmorUpgradeClass(view, scaleFactor);
-            ePressed = true;
-
+           // bow = new BowUpgradeClass();
             placementButton = new Button(Game1.GameContent.Load<Texture2D>("transparent"), displayWidth, Vector2.Zero);
-           
+
             int marginWidth = (int)(displayWidth * .1);
             int marginHeight = (int)(displayHeight * .1);
-           
+
 
             overScan.Width = displayWidth - marginWidth;
             overScan.Height = displayHeight - marginHeight;
@@ -67,90 +64,100 @@ namespace AdlezHolder
             middleButton = placementButton.DrawnRec.Width / 2;
             buttonPosition.X = middleScreen - middleButton;
 
-            widthSeperation = overScan.Width / 6;
-            heightSeparation = overScan.Height / 6;
+            widthSeperation = overScan.Width / 3;
+            heightSeparation = overScan.Height / 3;
 
             startPosition.Y = heightSeparation;
-            startPosition.X = widthSeperation * 2;
+            startPosition.X = widthSeperation / 3;
 
 
 
-            swordButton = new Button(Game1.GameContent.Load<Texture2D>("MenuButtons/NewGame"), .3f, startPosition);
-            startPosition.X = startPosition.X + widthSeperation;
-            
-            //if(bombUnlocked)
-            bombButton = new Button(Game1.GameContent.Load<Texture2D>("MenuButtons/NewGame"), .3f, startPosition);
+            swordButton = new Button(Game1.GameContent.Load<Texture2D>("sword selected"), .3f, startPosition);
+            startPosition.X += widthSeperation;
+
+            //if (bombUnlocked)
+                bombButton = new Button(Game1.GameContent.Load<Texture2D>("bomb selected"), .3f, startPosition);
             //else
-            //    bombButton = new Button(Game1.otherContent.Load<Texture2D>("lock"), .3f, displayWidth, startPosition, Game1.otherContent.Load<SpriteFont>("SpriteFont1"), "");
-            startPosition.X = startPosition.X + widthSeperation;
-            
-            //if(bowUnlocked)
-            bowButton = new Button(Game1.GameContent.Load<Texture2D>("MenuButtons/NewGame"), .3f, startPosition);
-            //else
-            //    bowButton = new Button(Game1.otherContent.Load<Texture2D>("lock"), .3f, displayWidth, startPosition, Game1.otherContent.Load<SpriteFont>("SpriteFont1"),"");
-                startPosition.X = startPosition.X + widthSeperation;
+                //bombButton = new Button(Game1.GameContent.Load<Texture2D>("Weapons/lock"), .3f, startPosition);
+            startPosition.X += widthSeperation;
 
-                armorButton = new Button(Game1.GameContent.Load<Texture2D>("MenuButtons/NewGame"), .3f, startPosition);
+            //if (bowUnlocked)
+                bowButton = new Button(Game1.GameContent.Load<Texture2D>("bow selected"), .3f, startPosition);
+            //else
+                //bowButton = new Button(Game1.GameContent.Load<Texture2D>("Weapons/lock"), .3f, startPosition);
+            
 
             swordButton.Selected = true;
-            upgradeSwordTree = new SwordUpgradeClass(swordTest);
-
-        }   
-
+            swordtree = new SwordTree(game);
+            game.Components.Add(swordtree);
+            swordtree.Enabled = false;
+            swordtree.Initialize();
+            swordtree.Visible = false;
+            bombtree = new BombTree(game);
+            game.Components.Add(bombtree);
+            bombtree.Enabled = false;
+            bombtree.Initialize();
+            bombtree.Visible = false;
+            
+        }
         public void Update(GameTime gameTime)
         {
-            upgradeSwordTree.Update(gameTime);
             keys = Keyboard.GetState();
 
-            if (ePressed)
+            if (CurrentTreeGameState == TreeGameState.SWORDTREE)
             {
-
+                swordtree.Enabled = true;
+                swordtree.Visible = true;
+                bombtree.Enabled = false;
+                bombtree.Visible = false;
+            }
+            else if (CurrentTreeGameState == TreeGameState.BOMBTREE)
+            {
+                bombtree.Enabled = true;
+                bombtree.Visible = true;
+                swordtree.Enabled = false;
+                swordtree.Visible = false;
+            }
+            else
+            {
                 if (keys.IsKeyDown(Keys.A) && oldKeys.IsKeyUp(Keys.A))
                 {
                     if (numOfButton > 0)
                         numOfButton -= 1;
                     else
-                        numOfButton = 3;
+                    {
+                        numOfButton = 2;
+                    }
 
                 }
 
                 if (keys.IsKeyDown(Keys.D) && oldKeys.IsKeyUp(Keys.D))
                 {
-                    if (numOfButton < 3)
+                    if (numOfButton < 2)
                         numOfButton += 1;
                     else
                         numOfButton = 0;
 
                 }
-                
+
                 if (numOfButton == 0)
                 {
                     swordButton.Selected = true;
-
                     bombButton.Selected = false;
-                    armorButton.Selected = false;
+                    bowButton.Selected = false;
 
                 }
                 else if (numOfButton == 1)
                 {
                     bombButton.Selected = true;
-
                     swordButton.Selected = false;
                     bowButton.Selected = false;
                 }
                 else if (numOfButton == 2)
                 {
                     bowButton.Selected = true;
-
                     bombButton.Selected = false;
-                    armorButton.Selected = false;
-                }
-                else
-                {
-                    armorButton.Selected = true;
-
-                    bowButton.Selected = false;
-                    swordButton.Selected  = false;
+                    swordButton.Selected = false;
                 }
 
                 //Checks if enter is pressed and which button it is pressed on
@@ -159,43 +166,43 @@ namespace AdlezHolder
                 {
                     if (numOfButton == 0)
                     {
-                        //start SwordUpgradeClass
-                        ePressed = false;
+                        this.changeTreeGameState(TreeGameState.SWORDTREE);
                     }
 
                     else if (numOfButton == 1)
                     {
-                        //start BombUpgradeButton
-                        ePressed = false;
+                        this.changeTreeGameState(TreeGameState.BOMBTREE);
                     }
                     else if (numOfButton == 2)
                     {
-                        //start BowUpgradeButton
-                        ePressed = false;
+                        this.changeTreeGameState(TreeGameState.BOWTREE);
                     }
-                    else
-                    {
-                        //start ArmorUpgradeButton
-                        ePressed = false;
-                    }
-
                 }
+                if (keys.IsKeyDown(Keys.Escape) && oldKeys.IsKeyUp(Keys.Escape))
+                    changeGameState(GameState.PLAYING);
+
                 oldKeys = keys;
+
             }
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
-
-                //swordButton.Draw(spriteBatch);
-                //bombButton.Draw(spriteBatch);
-                //bowButton.Draw(spriteBatch);
-                //armorButton.Draw(spriteBatch);
-            upgradeSwordTree.Draw(spriteBatch);
-
+            spriteBatch.DrawString(Game1.GameContent.Load<SpriteFont>("SpriteFont3"), "Weapon shop", new Vector2(Game1.DisplayWidth / 3, Game1.DisplayHeight*(1/3)), Color.Black);
+            spriteBatch.DrawString(Game1.GameContent.Load<SpriteFont>("SpriteFont3"), "Weapon shop", new Vector2(Game1.DisplayWidth /3 - 4, Game1.DisplayHeight*(1/3) - 4), Color.White);
+            if(swordtree.Enabled != true && bombtree.Enabled != true )
+            {
+                swordButton.Draw(spriteBatch);
+                bombButton.Draw(spriteBatch);
+                bowButton.Draw(spriteBatch);
+            }
         }
 
-        private void changeGameState(GameState newState)    
+        private void changeTreeGameState( TreeGameState newState)    
+        {
+           currentTreeGameState = newState;
+        }
+        private void changeGameState(GameState newState)
         {
             Game1.MainGameState = newState;
         }

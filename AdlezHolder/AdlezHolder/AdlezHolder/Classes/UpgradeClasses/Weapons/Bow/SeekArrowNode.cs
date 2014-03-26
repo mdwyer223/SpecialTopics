@@ -13,14 +13,20 @@ using Microsoft.Xna.Framework.Media;
 namespace AdlezHolder
 {
     class UpgradeSeekArrowNode : UpgradeNode
-    {
-        public UpgradeSeekArrowNode(Texture2D texture, float scaleFactor, Vector2 startPosition)
-            : base(texture, scaleFactor, startPosition)
+     {
+        public UpgradeSeekArrowNode(Texture2D texture, float scaleFactor, Vector2 startPosition, int price)
+            : base(texture, scaleFactor, startPosition, price)
         {
+            this.setNodeName("Seek Arrows Node");
+            this.setCost(price);
         }
-        public void upgrade(bool state, Bow bow)
+
+        public override void upgradeBow(Bow x)
         {
-           // bow.upgradeSeekArrow(state);
+            x.SeekArrows(true);
+            base.upgradeBow(x);
+            this.setChangesString("Your Bow Now Has Seek Arrows!");
         }
-    }
 }
+}
+

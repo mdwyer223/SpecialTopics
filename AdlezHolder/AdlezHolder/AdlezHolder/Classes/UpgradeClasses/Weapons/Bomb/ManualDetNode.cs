@@ -12,15 +12,20 @@ using Microsoft.Xna.Framework.Media;
 
 namespace AdlezHolder
 {
-    class UpgradeManualDetNode : UpgradeNode
+    class ManualDetNode : UpgradeNode
     {
-        public UpgradeManualDetNode(Texture2D texture, float scaleFactor,Vector2 startPosition)
-            :base(texture,scaleFactor,startPosition)
-        {  
-        }
-        public void upgrade(bool state, Bomb bomb)
+        public ManualDetNode(Texture2D texture, float scaleFactor,Vector2 startPosition, int price)
+            :base(texture,scaleFactor,startPosition, price)
         {
-            //bomb.UpgradeManualDet(state);
+            this.setNodeName("Manual Detonation Node");
+            this.setCost(price);
+        }
+
+        public override void upgradeBomb(Bomb x)
+        {
+            x.ManualDet(true);
+            base.upgradeBomb(x);
+            this.setChangesString("\nYour Bomb Now Has The Manual Denonation Ability");
         }
     }
 }

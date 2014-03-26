@@ -14,13 +14,18 @@ namespace AdlezHolder
 {
     class WaveNode : UpgradeNode
      {
-        public WaveNode(Texture2D texture, float scaleFactor, Vector2 startPosition)
-            : base(texture, scaleFactor, startPosition)
-        { 
-        }
-        public void upgrade(bool state, Sword sword)
+        public WaveNode(Texture2D texture, float scaleFactor, Vector2 startPosition, int price)
+            : base(texture, scaleFactor, startPosition, price)
         {
-            sword.UpgradeWave(state);
+            this.setNodeName("Wave Node");
+            this.setCost(price);
         }
+        public override void upgradeSword(Sword x)
+        {
+            x.UpgradeWave(true);
+            base.upgradeSword(x);
+            this.setChangesString("\nYour Sword Now Has The Wave Ability!");
+        }
+
     }
 }

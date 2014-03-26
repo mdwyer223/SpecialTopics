@@ -12,15 +12,20 @@ using Microsoft.Xna.Framework.Media;
 
 namespace AdlezHolder
 {
-    class UpgradeSmokeBombNode : UpgradeNode
+    class SmokeBombNode : UpgradeNode
     {
-        public UpgradeSmokeBombNode(Texture2D texture, float scaleFactor, Vector2 startPosition)
-            : base(texture, scaleFactor, startPosition)
+        public SmokeBombNode(Texture2D texture, float scaleFactor, Vector2 startPosition, int price)
+            : base(texture, scaleFactor, startPosition, price)
         {
+            this.setNodeName("Smoke Bomb Node");
+            this.setCost(price);
         }
-        public void upgrade(bool state, Bomb bomb)
+
+        public override void upgradeBomb(Bomb x)
         {
-           // bomb.upgradeSmokeBomb(state);
+            x.SmokeBomb(true);
+            base.upgradeBomb(x);
+            this.setChangesString("\nYour Bomb Now Has The Smoke Ability");
         }
     }
 }

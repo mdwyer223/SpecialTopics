@@ -1,4 +1,5 @@
-﻿using System;
+﻿//DOCUMENTS
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -39,6 +40,10 @@ namespace AdlezHolder
         public int Size
         {
             get { return Size; }
+        }
+        public int ESlots
+        {
+            get { return enchantmentSlots; }
         }
         public bool isDead
         {
@@ -102,19 +107,20 @@ namespace AdlezHolder
                 speed = (int)(speed * multiplier);
         }
 
-        public void GetTree()
+        public UpgradeNode[,] GetTree(int displayWidth, int displayHeight)
         {
+            Vector2 nodePosition;
             Texture2D nodeTexture = Game1.GameContent.Load<Texture2D>("Particle");
             float scalefactor = .3f;
-
-            int displayWidth, displayHeight;
+            Rectangle overScan;
             int widthSeperation, heightSeparation, nodeTopRow, nodeMiddleRow, nodeBottomRow;
+
+            displayWidth = Game1.DisplayWidth;
+            displayHeight = Game1.DisplayHeight;
+
             int marginWidth = (int)(displayWidth * .05);
             int marginHeight = (int)(displayHeight * .05);
-            Vector2 nodePosition;
 
-            nodePosition.X = widthSeperation;
-            nodePosition.Y = heightSeparation;
 
             overScan.Width = displayWidth - marginWidth;
             overScan.Height = displayHeight - marginHeight;
@@ -122,38 +128,85 @@ namespace AdlezHolder
             overScan.X = displayWidth + marginWidth;
             overScan.Y = displayHeight - marginHeight;
 
-            heightSeparation = overScan.Height / 6;
+            heightSeparation = overScan.Height / 8;
             widthSeperation = overScan.Width / 4;
+
+            nodePosition.X = widthSeperation;
+            nodePosition.Y = heightSeparation;
+
+            nodeBottomRow = heightSeparation * 4;
+            nodeMiddleRow = heightSeparation * 3;
+            nodeTopRow = heightSeparation * 2;
+            int cost = 100;
 
             multiNodeArray = new UpgradeNode[7, 3];
             //Row1
             multiNodeArray[0, 0] = null;
-            multiNodeArray[0, 1] = new SwordDamageNode(nodeTexture, scalefactor, nodePosition);
+            nodePosition.Y = nodeMiddleRow;
+            multiNodeArray[0, 1] = new SwordDamageNode(nodeTexture, scalefactor, nodePosition, cost);
+            cost =(int)(cost * 1.25);
             multiNodeArray[0, 2] = null;
             //Row 2
-            multiNodeArray[1, 0] = new SwordESlotNode(nodeTexture, scalefactor, nodePosition);//work on eSLots
-            multiNodeArray[1, 1] = new SizeNode(nodeTexture, scalefactor, nodePosition);
-            multiNodeArray[1, 2] = new SpeedSwordNode(nodeTexture, scalefactor, nodePosition);
+            nodePosition.X = nodePosition.X + widthSeperation;
+            nodePosition.Y = nodeTopRow;
+            multiNodeArray[1, 0] = new SwordESlotNode(nodeTexture, scalefactor, nodePosition, cost);//work on eSLots
+            cost = (int)(cost * 1.25);
+            nodePosition.Y = nodeMiddleRow;
+            multiNodeArray[1, 1] = new SizeNode(nodeTexture, scalefactor, nodePosition, cost);
+            cost = (int)(cost * 1.25);
+            nodePosition.Y = nodeBottomRow;
+            multiNodeArray[1, 2] = new SpeedSwordNode(nodeTexture, scalefactor, nodePosition, cost);
+            cost = (int)(cost * 1.25);
+
             //Row 3
+            nodePosition.X = nodePosition.X + widthSeperation;
             multiNodeArray[2, 0] = null;
-            multiNodeArray[2, 1] = new SwordDamageNode(nodeTexture, scalefactor, nodePosition);
+            nodePosition.Y = nodeMiddleRow;
+            multiNodeArray[2, 1] = new SwordDamageNode(nodeTexture, scalefactor, nodePosition, cost);
+            cost = (int)(cost * 1.25);
             multiNodeArray[2, 2] = null;
             //Row 4
+            nodePosition.X = nodePosition.X + widthSeperation;
             multiNodeArray[3, 0] = null;
-            multiNodeArray[3, 1] = new UpgradeNode(nodeTexture, scalefactor, nodePosition);
+            nodePosition.Y = nodeMiddleRow;
+            multiNodeArray[3, 1] = new UpgradeNode(nodeTexture, scalefactor, nodePosition, cost);
+            cost = (int)(cost * 1.25);
             multiNodeArray[3, 2] = null;
             //Row 5
-            multiNodeArray[4, 0] = new SwordDamageNode(nodeTexture, scalefactor, nodePosition);
-            multiNodeArray[4, 1] = new SpeedSwordNode(nodeTexture, scalefactor, nodePosition);
-            multiNodeArray[4, 2] = new SwordESlotNode(nodeTexture, scalefactor, nodePosition);
+            nodePosition.X = nodePosition.X + widthSeperation;
+            nodePosition.Y = nodeTopRow;
+            multiNodeArray[4, 0] = new SwordDamageNode(nodeTexture, scalefactor, nodePosition, cost);
+            cost = (int)(cost * 1.25);
+            nodePosition.Y = nodeMiddleRow;
+            multiNodeArray[4, 1] = new SpeedSwordNode(nodeTexture, scalefactor, nodePosition, cost);
+            cost = (int)(cost * 1.25);
+            nodePosition.Y = nodeBottomRow;
+            multiNodeArray[4, 2] = new SwordESlotNode(nodeTexture, scalefactor, nodePosition, cost);
+            cost = (int)(cost * 1.25);
             //Row 6
-            multiNodeArray[5, 0] = new SpeedSwordNode(nodeTexture, scalefactor, nodePosition);
-            multiNodeArray[5, 1] = new SizeNode(nodeTexture, scalefactor, nodePosition);
-            multiNodeArray[5, 2] = new SwordDamageNode(nodeTexture, scalefactor, nodePosition);
+            nodePosition.X = nodePosition.X + widthSeperation;
+            nodePosition.Y = nodeTopRow;
+            cost = (int)(cost * 1.25);
+            multiNodeArray[5, 0] = new SpeedSwordNode(nodeTexture, scalefactor, nodePosition, cost);
+            cost = (int)(cost * 1.25);
+            nodePosition.Y = nodeMiddleRow;
+            multiNodeArray[5, 1] = new SizeNode(nodeTexture, scalefactor, nodePosition, cost);
+            cost = (int)(cost * 1.25);
+            nodePosition.Y = nodeBottomRow;
+            multiNodeArray[5, 2] = new SwordDamageNode(nodeTexture, scalefactor, nodePosition, cost);
+            cost = (int)(cost * 1.25);
             //Row 7
-            multiNodeArray[6, 0] = new SwordESlotNode(nodeTexture, scalefactor, nodePosition);//work on eSLots
-            multiNodeArray[6, 1] = new WaveNode(nodeTexture, scalefactor, nodePosition);
-            multiNodeArray[6, 2] = new SizeNode(nodeTexture, scalefactor, nodePosition);
+            nodePosition.X = nodePosition.X + widthSeperation;
+            nodePosition.Y = nodeTopRow;
+            multiNodeArray[6, 0] = new SwordESlotNode(nodeTexture, scalefactor, nodePosition, cost);//work on eSLots
+            cost = (int)(cost * 1.35);
+            nodePosition.Y = nodeMiddleRow;
+            multiNodeArray[6, 1] = new WaveNode(nodeTexture, scalefactor, nodePosition, cost);
+            cost = (int)((cost -(cost * .35)));
+            nodePosition.Y = nodeBottomRow;
+            multiNodeArray[6, 2] = new SizeNode(nodeTexture, scalefactor, nodePosition, cost);
+
+            return multiNodeArray;
         }
 
         public void Update(MapDataHolder data, Character player,GameTime gameTime)

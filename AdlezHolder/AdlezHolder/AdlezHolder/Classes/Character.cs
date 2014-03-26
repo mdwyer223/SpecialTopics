@@ -262,7 +262,7 @@ namespace AdlezHolder
             {
                 if (!bombSet)
                 {
-                    bomb.addBomb(this.position, data.CurrentData);
+                    bomb.addBomb(this.position);
                     bombSet = true;
                 }
                 return;

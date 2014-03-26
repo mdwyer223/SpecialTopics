@@ -18,16 +18,33 @@ namespace AdlezHolder
         SpriteBatch spriteBatch;
         Color screenColor;
         MenuInterface menu;
+        Game game;
+        int count;
+        const int TICK_SECOND = 60;
+
+        public new bool Enabled
+        {
+            get { return base.Enabled; }
+            set
+            {
+                base.Enabled = value;
+                if (!value)                
+                    count = 0;
+                
+            }
+
+        }
 
         public MainMenu(Game game)
             : base(game)
         {
             screenColor = Color.MidnightBlue;
+            this.game = game;
         }
 
         public override void Initialize()
         {
-            menu = new MenuInterface(Game.GraphicsDevice.Viewport, .3f);
+            menu = new MenuInterface();
             spriteBatch = new SpriteBatch(Game.GraphicsDevice);
             base.Initialize();
         }
@@ -37,14 +54,34 @@ namespace AdlezHolder
         /// </summary>
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         public override void Update(GameTime gameTime)
-        {
+        {       
+            
             keys = Keyboard.GetState();
-
             menu.Update(gameTime);
 
+            if (count > TICK_SECOND / 3)
+            {
+                if (keys.IsKeyDown(Keys.Escape) && oldKeys.IsKeyUp(Keys.Escape))
+                {
+                    game.Exit();
+                }
+            }
+            else
+            {
+                count++;
+            }
+            
+            if ((menu.isQuitSelected() == true) && (keys.IsKeyDown(Keys.Enter) && oldKeys.IsKeyUp(Keys.Enter)))
+            {   
+                game.Exit();
+            }
+            
+           
+            
             oldKeys = keys;
-
             base.Update(gameTime);
+            
+            
         }
 
         public override void Draw(GameTime gameTime)

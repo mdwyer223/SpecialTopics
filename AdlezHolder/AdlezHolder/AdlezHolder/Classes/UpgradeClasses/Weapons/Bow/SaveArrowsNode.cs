@@ -14,13 +14,18 @@ namespace AdlezHolder
 {
     class UpgradeSaveArrowsNode : UpgradeNode
     {
-        public UpgradeSaveArrowsNode(Texture2D texture, float scaleFactor, Vector2 startPosition)
-            : base(texture, scaleFactor, startPosition)
+        public UpgradeSaveArrowsNode(Texture2D texture, float scaleFactor, Vector2 startPosition, int price)
+            : base(texture, scaleFactor, startPosition, price)
         {
+            this.setNodeName("Save Arrows Node");
+            this.setCost(price);
         }
-        public void upgrade(bool state, Bow bow)
+
+        public override void upgradeBow(Bow x)
         {
-           // bow.upgradeSaveArrows(state);
+            x.SaveArrows(true);
+            base.upgradeBow(x);
+            this.setChangesString("Your Bow Now Has Save Arrows!");
         }
     }
 }

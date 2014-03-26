@@ -105,7 +105,7 @@ namespace AdlezHolder
             positions.Add(quitPos);
 
             stats = new WepStats(game1, border);
-            invent = new InventoryMenu(border);
+            invent = new InventoryMenu(game1);
             map = new WorldMap(game1);
             menuIndex = 0;
         }
@@ -235,9 +235,9 @@ namespace AdlezHolder
             spriteBatch.End();
         }
 
-        public void getInventory(List<Item> items, int slots)
+        public void getInventory(List<Item> items)
         {
-            invent.updateInvent(items, slots);
+            invent.updateInvent(items);
         }
     }
 }

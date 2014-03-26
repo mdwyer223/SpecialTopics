@@ -13,14 +13,13 @@ namespace AdlezHolder
 {
     public class TestingField : MapDataHolder
     {
-        bool itemAdd = false, setPlayer = false;
+        bool itemAdd = false;
         KeyboardState keys, oldKeys;
 
         public TestingField()
             : base()
         {
             backgroundRec = new Rectangle(0, 0, 0, 0);
-            
 
             Skeleton sprite = new Skeleton(Game1.GameContent.Load<Texture2D>("ComputerPpl/Enemies/Skeleton/Move/SF"),
                 .04f, 8, new Vector2(300, -300));
@@ -58,11 +57,6 @@ namespace AdlezHolder
             }
             base.Update(map, gameTime);
 
-            if (!setPlayer)
-            {
-                map.Player.Position = new Vector2(Game1.DisplayWidth / 2, Game1.DisplayHeight / 2);
-                setPlayer = true;
-            }
             oldKeys = keys;
         }
     }

@@ -55,7 +55,6 @@ namespace AdlezHolder
         {
             currentMapData = map;
             currentMapData.changePlayer(player);
-            Game1.ParticleState = ParticleState.OFF;
         }
 
         public void Update(GameTime gameTime)

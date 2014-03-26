@@ -8,14 +8,14 @@
     <framework targetVersion="4.0" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="AdlezHolder.exe.manifest" size="86040">
+    <dependentAssembly dependencyType="install" codebase="AdlezHolder.exe.manifest" size="88328">
       <assemblyIdentity name="AdlezHolder.exe" version="1.0.0.5" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="x86" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>wPvzSVFSIMXSQBoUkqq6onHxV7E=</dsig:DigestValue>
+        <dsig:DigestValue>HXddYErxZkBZd5O8frnDftPPeVo=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

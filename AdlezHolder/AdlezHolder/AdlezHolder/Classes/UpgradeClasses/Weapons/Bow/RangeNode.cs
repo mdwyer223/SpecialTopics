@@ -12,15 +12,22 @@ using Microsoft.Xna.Framework.Media;
 
 namespace AdlezHolder
 {
-    class UpgradeRangeNode : UpgradeNode
+    class RangeNode : UpgradeNode
     {
-        public UpgradeRangeNode(Texture2D texture, float scaleFactor, Vector2 startPosition)
-            : base(texture, scaleFactor, startPosition)
-        { 
-        }
-        public void upgrade(double multiplier, Bow bow)
+        double multiplier;
+        public RangeNode(Texture2D texture, float scaleFactor, Vector2 startPosition, int price)
+            : base(texture, scaleFactor, startPosition, price)
         {
-          // bow.upgradeRange();
+            this.setNodeName("Range Node");
+            multiplier = 1.25;
+            this.setCost(price);
+        }
+
+        public override void upgradeBow(Bow x)
+        {
+            x.UpgradeRange(multiplier);
+            base.upgradeBow(x);
+            this.setChangesString("Your Bow's Range Has Increased!");
         }
     }
 }

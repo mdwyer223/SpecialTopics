@@ -14,13 +14,18 @@ namespace AdlezHolder
 {
     class SwordESlotNode : UpgradeNode
     {
-        public SwordESlotNode(Texture2D texture, float scaleFactor, Vector2 startPosition)
-            :base(texture,scaleFactor,startPosition)
-        { 
-        }
-        public void upgrade(int numOfEnchantments, Sword sword)
+        public SwordESlotNode(Texture2D texture, float scaleFactor, Vector2 startPosition, int price)
+            :base(texture,scaleFactor,startPosition, price)
         {
-            sword.increaseEnchantmentSlot(numOfEnchantments);
+            this.setNodeName("Enchanment Slot Node");
+            this.setCost(price);
         }
+        public override void upgradeSword(Sword x)
+        {
+            x.increaseEnchantmentSlot(1);
+            this.setChangesString("\nYour Sword Now Has " + x.ESlots + " Enchament Slots!");
+            base.upgradeSword(x);
+        }
+
     }
 }

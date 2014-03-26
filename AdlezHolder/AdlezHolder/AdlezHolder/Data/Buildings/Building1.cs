@@ -15,6 +15,7 @@ namespace AdlezHolder
     public class Building1 : MapDataHolder
     {
         Nwot town;
+        KeyboardState keys, oldKeys;
 
         public Building1(Character player)
         {
@@ -25,9 +26,13 @@ namespace AdlezHolder
             player.Position = new Vector2((Game1.DisplayWidth) - player.CollisionRec.Width,
                 Game1.DisplayHeight / 2);
 
-            TripWire exit = new TripWire(.02f, new Rectangle(Game1.DisplayWidth - 15, 
+            TripWire exit = new TripWire(.02f, new Rectangle(Game1.DisplayWidth - 43, 
                 Game1.DisplayHeight / 2, 10, 30));
             addTripWire(exit);
+
+            TripWire shop = new TripWire(.02f, new Rectangle(Game1.DisplayWidth - 300, 
+                Game1.DisplayHeight / 2, 20, 20));
+            addTripWire(shop);
         }
 
         //nothing SHOULD be overrided, unless there is a specific reason for it
@@ -35,17 +40,25 @@ namespace AdlezHolder
         public override void Update(Map map, GameTime gameTime)
         {
             bool change = false;
+            keys = Keyboard.GetState();
 
             for (int i = 0; i < tripWires.Count; i++)
             {
-                tripWires[i].Update(map.Player.CollisionRec);
+                tripWires[i].Update(map.Player.CollisionRec);                
 
-                if (tripWires[i].IfTripped && map.Player.Direction == Orientation.RIGHT)
+                if (tripWires[0].IfTripped && map.Player.Direction == Orientation.RIGHT)
                 {
                     change = true;
                     town = new Nwot();
                 }
+
+                if (tripWires[1].IfTripped && (keys.IsKeyDown(Keys.Space) && oldKeys.IsKeyUp(Keys.Space)))
+                {
+
+                    changeGameState(GameState.UPGRADESHOP);
+                }
             }
+            oldKeys = keys;
 
             if (change)
             {
@@ -64,7 +77,13 @@ namespace AdlezHolder
             if (tripWires.Count > 0 && tripWires[0] != null)
             {
                 spriteBatch.DrawString(Game1.GameContent.Load<SpriteFont>("SpriteFont1"), "Exit", tripWires[0].Position, Color.White);
+                spriteBatch.DrawString(Game1.GameContent.Load<SpriteFont>("SpriteFont1"), "Shop", tripWires[1].Position, Color.White);
             }
+        }
+
+        private void changeGameState(GameState newState)
+        {
+            Game1.MainGameState = newState;
         }
     }
 }

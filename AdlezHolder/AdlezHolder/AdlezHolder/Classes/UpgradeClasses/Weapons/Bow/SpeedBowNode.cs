@@ -12,15 +12,23 @@ using Microsoft.Xna.Framework.Media;
 
 namespace AdlezHolder
 {
-    class UpgradeSpeedBowNode: UpgradeNode
+    class SpeedBowNode: UpgradeNode
     {
-        public UpgradeSpeedBowNode(Texture2D texture, float scaleFactor, Vector2 startPosition)
-            : base(texture, scaleFactor, startPosition)
+   
+        double multiplier;
+        public SpeedBowNode(Texture2D texture, float scaleFactor, Vector2 startPosition, int price)
+            : base(texture, scaleFactor, startPosition, price)
         {
+            this.setNodeName("Speed Node");
+            multiplier = 1.25;
+            this.setCost(price);
         }
-        public void upgrade(double multiplier, Bow bow)
+
+        public override void upgradeBow(Bow x)
         {
-            bow.UpgradeSpeed(multiplier);
+            x.UpgradeSpeed(multiplier);
+            base.upgradeBow(x);
+            this.setChangesString("Your Bow's Speed Has Increased!");
         }
     }
 }

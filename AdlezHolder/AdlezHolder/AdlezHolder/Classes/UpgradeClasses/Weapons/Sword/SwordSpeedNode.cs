@@ -13,15 +13,21 @@ namespace AdlezHolder
 {
     class SpeedSwordNode: UpgradeNode
     {
-        public SpeedSwordNode(Texture2D texture, float scaleFactor, Vector2 startPosition)
-            : base(texture, scaleFactor, startPosition)
+        double multiplier = 1.25;
+        public SpeedSwordNode(Texture2D texture, float scaleFactor, Vector2 startPosition, int price)
+            : base(texture, scaleFactor, startPosition,price)
         {
+            this.setNodeName("Damage Node");
+            this.setCost(price);
         }
 
-        public void upgrade(double multiplier, Sword sword)
+        public override void upgradeSword(Sword x)
         {
-            sword.UpgradeSpeed(multiplier);
+            x.UpgradeSpeed(multiplier);
+            base.upgradeSword(x);
+            this.setChangesString("\nYour Swords Speed Has Now Increased!");
         }
+
 
     }
 }
