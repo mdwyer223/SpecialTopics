@@ -84,21 +84,20 @@ namespace AdlezHolder
             }
             else if (playOrder == 5)
             {
-                //Game1.MainGameState = GameState.TALKING;
-                //if (!show)
-                //{
-                //    box = new MessageBox(1f);
-                //    box.show("Hi this is bob. Hi this is bob.Hi this is bob.Hi this is bob.Hi this is bob.Hi this is bob.Hi this is bob.Hi this is bob.Hi this is bob.Hi this is bob.Hi this is bob.");
-                //    data.addMBox(box);
-                //    show = true;
-                //}
+                Game1.MainGameState = GameState.TALKING;
+                if (!show)
+                {
+                    box = new MessageBox(1f);
+                    box.show("Hi this is bob. Hi this is bob.Hi this is bob.Hi this is bob.Hi this is bob.Hi this is bob.Hi this is bob.Hi this is bob.Hi this is bob.Hi this is bob.Hi this is bob.");
+                    data.addMBox(box);
+                    show = true;
+                }
 
-                //if (!box.IsVisible)
-                //{
-                //    show = false;
-                //    playOrder++;
-                //}
-                playOrder++;
+                if (!box.Visible)
+                {
+                    show = false;
+                    playOrder++;
+                }
             }
             else if (playOrder == 6)
             {

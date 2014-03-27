@@ -61,7 +61,7 @@ namespace AdlezHolder
             get { return previousGameState; }
             set { previousGameState = value; }
         }
-        static GameState mainGameState = GameState.INTRO;
+        static GameState mainGameState = GameState.MAINMENU;
         public static GameState MainGameState
         {
             get { return mainGameState; }
@@ -272,9 +272,12 @@ namespace AdlezHolder
             else if (mainGameState == GameState.INTRO)
             {
                 intro.Update(gameTime);
+                menu.Enabled = false;
+                menu.Visible = false;
                 if (intro.Over)
                 {
-                    mainGameState = GameState.MAINMENU;
+                    world.Map.changeMap(new Tutorial());
+                    mainGameState = GameState.PLAYING;
                 }
             }
             else if (mainGameState == GameState.TALKING)

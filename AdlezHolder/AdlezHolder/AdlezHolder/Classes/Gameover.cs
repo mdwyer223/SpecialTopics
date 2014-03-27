@@ -58,7 +58,7 @@ namespace AdlezHolder
                             fading = false;
                         }
                     }
-                    if (keys.IsKeyDown(Keys.Enter) && oldKeys.IsKeyUp(Keys.Enter))
+                    if (keys.IsKeyDown(Keys.Space) && oldKeys.IsKeyUp(Keys.Space))
                     {
                         Game1.MainGameState = GameState.MAINMENU;
                         healthBar.IsDead = false;
@@ -81,8 +81,8 @@ namespace AdlezHolder
                 {
                     gameOverSize = gameOverFont.MeasureString("Game Over");
                     spriteBatch.DrawString(gameOverFont, "Game Over", new Vector2(backRec.X + (backRec.Width / 2) - (gameOverSize.X / 2), backRec.Y + (backRec.Height / 3)), Color.White);
-                    continueSize = continueFont.MeasureString("Press Enter to continue");
-                    spriteBatch.DrawString(continueFont, "Press Enter to continue", new Vector2(Game1.DisplayWidth - (int)(continueSize.X * 1.1), Game1.DisplayHeight - (int)(continueSize.Y * 1.25)), new Color(blinkCount, blinkCount, blinkCount));
+                    continueSize = continueFont.MeasureString("Press Space to continue");
+                    spriteBatch.DrawString(continueFont, "Press Space to continue", new Vector2(Game1.DisplayWidth - (int)(continueSize.X * 1.1), Game1.DisplayHeight - (int)(continueSize.Y * 1.25)), new Color(blinkCount, blinkCount, blinkCount));
                 }
         }
     }

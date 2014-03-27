@@ -38,7 +38,7 @@ namespace AdlezHolder
         {
             map = new Map();
 
-            map.changeMap(new Tutorial());
+            map.changeMap(new Nwot());
                 
             base.Initialize();
         }

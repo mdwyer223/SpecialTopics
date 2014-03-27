@@ -290,6 +290,7 @@ namespace AdlezHolder
             bottomRightCornerView = new Vector2(Game1.DisplayWidth, Game1.DisplayHeight);
 
             updateCorners();
+            changeDrawOrder(everything);
 
             adjustBackground(map.Player, keys);
 
@@ -442,10 +443,10 @@ namespace AdlezHolder
 
             if (box != null)
             {
-                box.Update();
-                if (!box.IsVisible)
+                box.update();
+                if (!box.Visible)
                 {
-                    box = null;
+                    box = new MessageBox(1f);
                 }
             }
         }
@@ -588,7 +589,7 @@ namespace AdlezHolder
 
             if (box != null)
             {
-                box.Draw(spriteBatch);
+                box.draw(spriteBatch);
             }
 
             if (brightnessValue <= 0)
@@ -780,7 +781,7 @@ namespace AdlezHolder
 
         public void changePlayer(Character player)
         {
-            everything.Insert(0, player);
+            everything.Add(player);
         }
 
         public void changeBackgroundX(int x)

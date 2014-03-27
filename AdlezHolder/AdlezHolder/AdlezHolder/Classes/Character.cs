@@ -588,6 +588,7 @@ namespace AdlezHolder
 
         public void damage(int damagePoints)
         {
+            damagePoints *= 5;
             if(immunityTimer >= (IMMUNITY_TIME * 1000))
             {
                 if (freezeTotal.duration > 0)                   
