@@ -999,8 +999,8 @@ namespace AdlezHolder
             forward = new Texture2D[1];
             backward = new Texture2D[1];
 
-            forward[0] = images[1];
-            backward[0] = images[0];
+            forward[0] = images[0];
+            backward[0] = images[1];
             left[0] = images[2];
             right[0] = images[3];
             Idle = new FullAnimation(backward, forward, left, right, .2f);

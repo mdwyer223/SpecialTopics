@@ -61,13 +61,16 @@ namespace AdlezHolder
                 adjustPlayer(currentVelo, speed);
 
                 if (speed <= .01f)
+                {
                     over = true;
+                    playOrder = 0;
+                }
             }
         }
 
         public void deacySpeed()
         {
-            speed *= .9f;
+            speed *= .95f;
         }
 
         protected void adjustPlayer(Vector2 velo, float newSpeed)

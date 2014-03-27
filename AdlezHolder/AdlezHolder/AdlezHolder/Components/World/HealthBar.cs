@@ -97,9 +97,9 @@ namespace AdlezHolder
                 {
                     dead = true;
                     currentHealth = max;
+                    setDeathAni = false;
                     gameOver.visible = true;
                 }
-                
             }
                             
             gameOver.update(this, player);

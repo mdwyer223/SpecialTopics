@@ -93,8 +93,7 @@ namespace AdlezHolder
 
         protected override void setAttributes()
         {
-
-            this.Strength = 15;
+            this.Strength = 50;
             this.HitPoints = this.MaxHealthPoints = 200;
         }
 
