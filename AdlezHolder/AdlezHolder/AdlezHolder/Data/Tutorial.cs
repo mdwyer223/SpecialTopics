@@ -28,10 +28,10 @@ namespace AdlezHolder
         public override void Update(Map map, GameTime gameTime)
         {
             keys = Keyboard.GetState();
-            if (keys.IsKeyDown(Keys.B) && oldkeys.IsKeyUp(Keys.B))
-            {
-                Game1.newCutscene(new DeathAnimation(), map.Player);
-            }
+            //if (keys.IsKeyDown(Keys.B) && oldkeys.IsKeyUp(Keys.B))
+            //{
+            //    Game1.newCutscene(new DeathAnimation(), map.Player);
+            //}
 
             if (!changePos)
             {
