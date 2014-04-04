@@ -17,7 +17,7 @@ namespace AdlezHolder
         public GameData()
         {
             Map map = new Map();
-            map.changeMap(new MainRoom());
+            map.changeMap(new Nwot());
 
             mapStruct = map.SaveData;
         }

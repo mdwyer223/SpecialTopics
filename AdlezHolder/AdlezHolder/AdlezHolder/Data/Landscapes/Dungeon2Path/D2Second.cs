@@ -14,6 +14,7 @@ namespace AdlezHolder
         public D2Second(string id)
             : base(id)
         {
+            backgroundDirectory = "BackgroundsAndFloors/Landscapes/Grass";
             TripWire t = new TripWire(.02f, new Rectangle(0, backgroundRec.Height - 10, backgroundRec.Width, 10));
             addTripWire(t);
 

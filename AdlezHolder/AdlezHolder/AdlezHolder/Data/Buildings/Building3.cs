@@ -25,7 +25,7 @@ namespace AdlezHolder
             player.Position = new Vector2((Game1.DisplayWidth) - player.CollisionRec.Width,
                 Game1.DisplayHeight / 2);
 
-            TripWire exit = new TripWire(.02f, new Rectangle(Game1.DisplayWidth - 15,
+            TripWire exit = new TripWire(.02f, new Rectangle(Game1.DisplayWidth - 43,
                 Game1.DisplayHeight / 2, 10, 30));
             addTripWire(exit);
         }

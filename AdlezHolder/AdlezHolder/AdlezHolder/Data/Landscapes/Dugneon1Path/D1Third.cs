@@ -14,6 +14,7 @@ namespace AdlezHolder
         public D1Third(string id)
             : base(id)
         {
+            backgroundDirectory = "BackgroundsAndFloors/Landscapes/Grass";
             //left
             TripWire t = new TripWire(.02f, new Rectangle(0, 0, 10, backgroundRec.Height));
             addTripWire(t);

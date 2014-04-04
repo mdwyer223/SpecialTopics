@@ -50,7 +50,10 @@ namespace AdlezHolder
         {
             if (Visible)
             {
-                keys = Keyboard.GetState();
+                if (messageComplete || boxFull)
+                {
+                    keys = Keyboard.GetState();
+                }
                 messageWidth = (int)messageSize.X;
                 messageHeight = (int)messageSize.Y;
                 if (keys.IsKeyDown(Keys.Space) && oldKeys.IsKeyUp(Keys.Space))

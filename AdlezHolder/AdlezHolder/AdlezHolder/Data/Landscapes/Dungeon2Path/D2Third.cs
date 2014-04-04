@@ -14,6 +14,7 @@ namespace AdlezHolder
         public D2Third(string id)
             : base(id)
         {
+            backgroundDirectory = "BackgroundsAndFloors/Landscapes/Grass";
             TripWire t = new TripWire(.02f, new Rectangle(0, 0, 10, backgroundRec.Height));
             addTripWire(t);
 
@@ -68,7 +69,7 @@ namespace AdlezHolder
             }
             else if (next)
             {
-                //dungeon2
+                map.changeMap(new MainRoom2("d2third"));
             }
             else
             {

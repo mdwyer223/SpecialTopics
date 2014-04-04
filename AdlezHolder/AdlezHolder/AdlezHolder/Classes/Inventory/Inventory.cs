@@ -78,7 +78,13 @@ namespace AdlezHolder
             items = oldItems;
             this.maxSlots = newMaxSlots;
         }
-
+        public void subtractItem(Character player, int selected)
+        {
+            if (items.Count != 0)
+            {
+                items.RemoveAt(selected);
+            }
+        }
         public void addItem(Item item, Character player)
         {
             bool sameObj = false;

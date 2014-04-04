@@ -230,15 +230,17 @@ namespace AdlezHolder
                 }
                 else if (currentMenu == SelectedMenu.SAVE)
                 {
-                    spriteBatch.DrawString(spriteFont, "Unavailable in the alpha.", new Vector2(351, 208), Color.White);
+                    spriteBatch.DrawString(spriteFont, "Saving....", new Vector2(351, 208), Color.White);
+                    SaveFile file = game1.Save;
+                    file.save(game1.GameData);
+                    Game1.MainGameState = GameState.PLAYING;
                 }
                 else if (currentMenu == SelectedMenu.LOAD)
                 {
-                    SaveFile file = new SaveFile(1);
+                    SaveFile file = game1.Save;
                     file.load();
-                        game1.loadGame(file.Data);
-                        Game1.MainGameState = GameState.PLAYING;
-                
+                    game1.loadGame(file.Data);
+                    inTabs = true;                
                 }
 
                 for (int x = 0; x < 7; x++)

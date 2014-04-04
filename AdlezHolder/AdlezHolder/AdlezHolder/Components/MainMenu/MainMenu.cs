@@ -19,6 +19,19 @@ namespace AdlezHolder
         Color screenColor;
         MenuInterface menu;
         Game1 game;
+        int count;
+        const int TICK_SECOND = 60;
+
+        public new bool Enabled
+        {
+            get { return base.Enabled; }
+            set
+            {
+                base.Enabled = value;
+                if (!value)
+                    count = 0;
+            }
+        }
 
         public MainMenu(Game1 game)
             : base(game)
@@ -29,7 +42,7 @@ namespace AdlezHolder
 
         public override void Initialize()
         {
-            menu = new MenuInterface(game);
+            menu = new MenuInterface();
             spriteBatch = new SpriteBatch(Game.GraphicsDevice);
             base.Initialize();
         }
@@ -43,6 +56,23 @@ namespace AdlezHolder
             keys = Keyboard.GetState();
 
             menu.Update(gameTime);
+
+            if (count > TICK_SECOND / 3)
+            {
+                if (keys.IsKeyDown(Keys.Escape) && oldKeys.IsKeyUp(Keys.Escape))
+                {
+                    game.Exit();
+                }
+            }
+            else
+            {
+                count++;
+            }
+
+            if ((menu.isQuitSelected() == true) && (keys.IsKeyDown(Keys.Enter)) && (oldKeys.IsKeyUp(Keys.Enter)))
+            {
+                game.Exit();
+            }
 
             oldKeys = keys;
 

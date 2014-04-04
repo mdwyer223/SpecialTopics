@@ -14,6 +14,8 @@ namespace AdlezHolder
         float speed, reductionTime;
         int damage, range, originalDamage, reductionTimer;
         bool dead = true, hit = false;
+        bool wave = false;
+        int size, enchantmentSlots = 0;
 
         Color color;
         Texture2D texture;
@@ -71,7 +73,34 @@ namespace AdlezHolder
 
             }
         }
+        public void UpgradeDamage(double multiplier)
+        {
+            damage = (int)(damage * multiplier);
+        }
 
+        public void UpgradeWave(bool onOff)
+        {
+            wave = onOff;
+        }
+        public void UpgradeSize(double multiplier)
+        {
+            size = (int)(size * multiplier);
+        }
+        public void UpgradeRange(double multiplier)
+        {
+            range = (int)(range * multiplier);
+        }
+
+        public void UpgradeSpeed(double multiplier)
+        {
+            speed = (int)(speed * multiplier);
+        }
+
+
+        public void increaseEnchantmentSlot(int numOfIncrease)
+        {
+            enchantmentSlots += numOfIncrease;
+        }
         public float Speed
         {
             get{ return speed; }
@@ -105,6 +134,10 @@ namespace AdlezHolder
         public List<Gem> Gems
         {
             get { return gemList; }
+        }
+        public int ESlots
+        {
+            get { return enchantmentSlots; }
         }
 
         public GemStruct LifeStealStruct
@@ -215,6 +248,106 @@ namespace AdlezHolder
             {
                 spriteBatch.Draw(texture, collisionRec, color);
             }
+        }
+        public UpgradeNode[,] GetTree(int displayWidth, int displayHeight)
+        {
+            Vector2 nodePosition;
+            float scalefactor = .3f;
+            Rectangle overScan;
+            int widthSeperation, heightSeparation, nodeTopRow, nodeMiddleRow, nodeBottomRow;
+
+            displayWidth = Game1.DisplayWidth;
+            displayHeight = Game1.DisplayHeight;
+
+            int marginWidth = (int)(displayWidth * .05);
+            int marginHeight = (int)(displayHeight * .05);
+
+
+            overScan.Width = displayWidth - marginWidth;
+            overScan.Height = displayHeight - marginHeight;
+
+            overScan.X = displayWidth + marginWidth;
+            overScan.Y = displayHeight - marginHeight;
+
+            heightSeparation = overScan.Height / 8;
+            widthSeperation = overScan.Width / 4;
+
+            nodePosition.X = widthSeperation;
+            nodePosition.Y = heightSeparation;
+
+            nodeBottomRow = heightSeparation * 4;
+            nodeMiddleRow = heightSeparation * 3;
+            nodeTopRow = heightSeparation * 2;
+            int cost = 100;
+            UpgradeNode[,] multiNodeArray;
+            multiNodeArray = new UpgradeNode[7, 3];
+            //Row1
+            multiNodeArray[0, 0] = null;
+            nodePosition.Y = nodeMiddleRow;
+            multiNodeArray[0, 1] = new SwordDamageNode(Game1.GameContent.Load<Texture2D>("damage"), scalefactor, nodePosition, cost);
+            cost = (int)(cost * 1.25);
+            multiNodeArray[0, 2] = null;
+            //Row 2
+            nodePosition.X = nodePosition.X + widthSeperation;
+            nodePosition.Y = nodeTopRow;
+            multiNodeArray[1, 0] = new SwordESlotNode(Game1.GameContent.Load<Texture2D>("speical"), scalefactor, nodePosition, cost);//work on eSLots
+            cost = (int)(cost * 1.25);
+            nodePosition.Y = nodeMiddleRow;
+            multiNodeArray[1, 1] = new SizeNode(Game1.GameContent.Load<Texture2D>("speical"), scalefactor, nodePosition, cost);
+            cost = (int)(cost * 1.25);
+            nodePosition.Y = nodeBottomRow;
+            multiNodeArray[1, 2] = new SpeedSwordNode(Game1.GameContent.Load<Texture2D>("speed"), scalefactor, nodePosition, cost);
+            cost = (int)(cost * 1.25);
+
+            //Row 3
+            nodePosition.X = nodePosition.X + widthSeperation;
+            multiNodeArray[2, 0] = null;
+            nodePosition.Y = nodeMiddleRow;
+            multiNodeArray[2, 1] = new SwordDamageNode(Game1.GameContent.Load<Texture2D>("damage"), scalefactor, nodePosition, cost);
+            cost = (int)(cost * 1.25);
+            multiNodeArray[2, 2] = null;
+            //Row 4
+            nodePosition.X = nodePosition.X + widthSeperation;
+            multiNodeArray[3, 0] = null;
+            nodePosition.Y = nodeMiddleRow;
+            multiNodeArray[3, 1] = new UpgradeNode(Game1.GameContent.Load<Texture2D>("blank"), scalefactor, nodePosition, cost);
+            cost = (int)(cost * 1.25);
+            multiNodeArray[3, 2] = null;
+            //Row 5
+            nodePosition.X = nodePosition.X + widthSeperation;
+            nodePosition.Y = nodeTopRow;
+            multiNodeArray[4, 0] = new SwordDamageNode(Game1.GameContent.Load<Texture2D>("damage"), scalefactor, nodePosition, cost);
+            cost = (int)(cost * 1.25);
+            nodePosition.Y = nodeMiddleRow;
+            multiNodeArray[4, 1] = new SpeedSwordNode(Game1.GameContent.Load<Texture2D>("speed"), scalefactor, nodePosition, cost);
+            cost = (int)(cost * 1.25);
+            nodePosition.Y = nodeBottomRow;
+            multiNodeArray[4, 2] = new SwordESlotNode(Game1.GameContent.Load<Texture2D>("speical"), scalefactor, nodePosition, cost);
+            cost = (int)(cost * 1.25);
+            //Row 6
+            nodePosition.X = nodePosition.X + widthSeperation;
+            nodePosition.Y = nodeTopRow;
+            cost = (int)(cost * 1.25);
+            multiNodeArray[5, 0] = new SpeedSwordNode(Game1.GameContent.Load<Texture2D>("speed"), scalefactor, nodePosition, cost);
+            cost = (int)(cost * 1.25);
+            nodePosition.Y = nodeMiddleRow;
+            multiNodeArray[5, 1] = new SizeNode(Game1.GameContent.Load<Texture2D>("speical"), scalefactor, nodePosition, cost);
+            cost = (int)(cost * 1.25);
+            nodePosition.Y = nodeBottomRow;
+            multiNodeArray[5, 2] = new SwordDamageNode(Game1.GameContent.Load<Texture2D>("damage"), scalefactor, nodePosition, cost);
+            cost = (int)(cost * 1.25);
+            //Row 7
+            nodePosition.X = nodePosition.X + widthSeperation;
+            nodePosition.Y = nodeTopRow;
+            multiNodeArray[6, 0] = new SwordESlotNode(Game1.GameContent.Load<Texture2D>("speical"), scalefactor, nodePosition, cost);//work on eSLots
+            cost = (int)(cost * 1.35);
+            nodePosition.Y = nodeMiddleRow;
+            multiNodeArray[6, 1] = new WaveNode(Game1.GameContent.Load<Texture2D>("speical"), scalefactor, nodePosition, cost);
+            cost = (int)((cost - (cost * .35)));
+            nodePosition.Y = nodeBottomRow;
+            multiNodeArray[6, 2] = new SizeNode(Game1.GameContent.Load<Texture2D>("speical"), scalefactor, nodePosition, cost);
+
+            return multiNodeArray;
         }
 
         public void damageEnemy(Enemy enemy, MapDataHolder data, Character player)

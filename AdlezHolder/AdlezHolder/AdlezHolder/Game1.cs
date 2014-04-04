@@ -16,7 +16,8 @@ namespace AdlezHolder
     {
         CUTSCENE, PLAYING, INVENTORY,
         SHOP, MAINMENU, PAUSEMENU,
-        GAMEOVER, INFOSCREEN, TALKING, BLANK, INTRO
+        GAMEOVER, INFOSCREEN, TALKING, BLANK, INTRO,
+        UPGRADESHOP, ITEMSHOP, SAVEMENU
     }
 
     public enum ParticleState
@@ -36,19 +37,26 @@ namespace AdlezHolder
         
         static World world;
         MainMenu menu;
+        SaveMenu sMenu;
+        UpgradeShop uShop;
         DisplayComponent healthDisplay;
         PauseComponent pauseMenu;
         DeathAnimation deathAni;
         ParticleHandler pHandler;
         InformationScreen infoScreen;
         InGameEditor editor;
-
+        itemShop iShop;
         StoryIntro intro;
 
         MouseState mouse;
 
         // make viewport static too?
         // would it work it changing screensizes
+
+        public static World WorldReference
+        {
+            get { return world; }
+        }
 
         static ContentManager otherContent;
         public static ContentManager GameContent
@@ -85,6 +93,17 @@ namespace AdlezHolder
             get { return displayHeight; }
         }
 
+        public SaveFile Save
+        {
+            get;
+            set;
+        }
+
+        public GameData GameData
+        {
+            get { return new GameData(world.Map); }
+        }
+
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -119,6 +138,12 @@ namespace AdlezHolder
             menu.Visible = false;
             menu.Enabled = false;
 
+            iShop = new itemShop(this);
+            Components.Add(iShop);
+            iShop.Visible = false;
+            iShop.Enabled = false;
+
+
             pauseMenu = new PauseComponent(this);
             Components.Add(pauseMenu);
 
@@ -142,6 +167,12 @@ namespace AdlezHolder
             editor = new InGameEditor(this);
             Components.Add(editor);
             editor.Enabled = editor.Visible = true;
+
+            sMenu = new SaveMenu();
+
+            uShop = new UpgradeShop(this);
+            Components.Add(uShop);
+            uShop.Enabled = uShop.Visible = false;
 
             base.Initialize();
         }
@@ -188,11 +219,17 @@ namespace AdlezHolder
                 world.Visible = true;
                 world.Enabled = true;
 
+                uShop.Enabled = false;
+                uShop.Visible = false;
+
                 healthDisplay.Visible = true;
                 healthDisplay.Enabled = true;
 
                 pauseMenu.Enabled = false;
                 pauseMenu.Visible = false;
+                iShop.Enabled = false;
+                iShop.Visible = false;
+
 
                 menu.Visible = false;
                 menu.Enabled = false;
@@ -203,6 +240,12 @@ namespace AdlezHolder
             {
                 menu.Enabled = true;
                 menu.Visible = true;
+                iShop.Enabled = false;
+                iShop.Visible = false;
+
+
+                uShop.Enabled = false;
+                uShop.Visible = false;
 
                 world.Visible = false;
                 world.Enabled = false;
@@ -215,11 +258,36 @@ namespace AdlezHolder
 
                 cutscenePlayer.Enabled = false;
             }
+            else if (mainGameState == GameState.SAVEMENU)
+            {
+                sMenu.Update(gameTime, this);
 
+                uShop.Enabled = false;
+                uShop.Visible = false;
+
+                menu.Enabled = false;
+                menu.Visible = false;
+
+                world.Visible = false;
+                world.Enabled = false;
+
+                healthDisplay.Visible = false;
+                healthDisplay.Enabled = false;
+
+                pauseMenu.Enabled = false;
+                iShop.Enabled = false;
+                iShop.Visible = false;
+                pauseMenu.Visible = false;
+
+                cutscenePlayer.Enabled = false;
+            }
             else if (mainGameState == GameState.PAUSEMENU)
             {
                 pauseMenu.Visible = pauseMenu.Enabled = true;
                 pauseMenu.getPlayer(world.Map.Player);
+
+                uShop.Enabled = false;
+                uShop.Visible = false;
 
                 menu.Visible = false;
                 menu.Enabled = false;
@@ -229,10 +297,58 @@ namespace AdlezHolder
 
                 healthDisplay.Visible = false;
                 healthDisplay.Enabled = false;
+                iShop.Enabled = false;
+                iShop.Visible = false;
+
+            }
+            else if (mainGameState == GameState.UPGRADESHOP)
+            {
+                uShop.Enabled = true;
+                uShop.Visible = true;
+
+                menu.Enabled = false;
+                menu.Visible = false;
+
+                world.Visible = false;
+                world.Enabled = false;
+
+                healthDisplay.Visible = false;
+                healthDisplay.Enabled = false;
+
+                pauseMenu.Enabled = false;
+                pauseMenu.Visible = false;
+                iShop.Enabled = false;
+                iShop.Visible = false;
+
+                cutscenePlayer.Enabled = false;
+            }
+            else if (mainGameState == GameState.ITEMSHOP)
+            {
+                iShop.Enabled = true;
+                iShop.Visible = true;
+                menu.Enabled = false;
+                menu.Visible = false;
+
+                world.Visible = false;
+                world.Enabled = false;
+
+                healthDisplay.Visible = false;
+                healthDisplay.Enabled = false;
+
+                pauseMenu.Enabled = false;
+                pauseMenu.Visible = false;
+
+                cutscenePlayer.Enabled = false;
+                uShop.Enabled = false;
+                uShop.Visible = false;
+
             }
             else if (mainGameState == GameState.CUTSCENE)
             {
                 cutscenePlayer.Data = world.Map.CurrentData;
+
+                uShop.Enabled = false;
+                uShop.Visible = false;
 
                 menu.Visible = false;
                 menu.Enabled = false;
@@ -241,6 +357,8 @@ namespace AdlezHolder
 
                 world.Enabled = true;
                 world.Visible = true;
+                iShop.Enabled = false;
+                iShop.Visible = false;
 
                 cutscenePlayer.Enabled = true;
             }
@@ -254,6 +372,9 @@ namespace AdlezHolder
 
                 healthDisplay.Visible = true;
                 healthDisplay.Enabled = true;
+
+                iShop.Enabled = false;
+                iShop.Visible = false;
 
                 pauseMenu.Enabled = false;
                 pauseMenu.Visible = false;
@@ -294,6 +415,9 @@ namespace AdlezHolder
                 menu.Visible = false;
                 menu.Enabled = false;
 
+                iShop.Enabled = false;
+                iShop.Visible = false;
+
                 cutscenePlayer.Enabled = true;
             }
             base.Update(gameTime);
@@ -312,6 +436,24 @@ namespace AdlezHolder
             {
                 spriteBatch.Begin();
                 spriteBatch.Draw(Content.Load<Texture2D>("TitleScreen"), new Rectangle(0,0, DisplayWidth, DisplayHeight), Color.White);
+                spriteBatch.End();
+            }
+            else if (mainGameState == GameState.SAVEMENU)
+            {
+                spriteBatch.Begin();
+                sMenu.Draw(spriteBatch);
+                spriteBatch.End();
+            }
+            else if (mainGameState == GameState.UPGRADESHOP)
+            {
+                spriteBatch.Begin();
+                spriteBatch.Draw(Content.Load<Texture2D>("TitleScreen"), new Rectangle(0,0, DisplayWidth, DisplayHeight), Color.White);
+                spriteBatch.End();
+            }
+            else if (mainGameState == GameState.ITEMSHOP)
+            {
+                spriteBatch.Begin();
+                spriteBatch.Draw(Content.Load<Texture2D>("ItemShopBack"), new Rectangle(0, 0, DisplayWidth, DisplayHeight), Color.White);
                 spriteBatch.End();
             }
             else if (mainGameState == GameState.INFOSCREEN)

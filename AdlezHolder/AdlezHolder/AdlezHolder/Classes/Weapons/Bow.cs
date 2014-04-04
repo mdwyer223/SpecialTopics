@@ -12,7 +12,11 @@ namespace AdlezHolder
     public class Bow
     {
         int damage, range;
+        int eSlots, carryLimit, arrowShots;
         float speed;
+        bool seekArrows = false;
+        bool saveArrows = false;
+
 
         Color color;
         Vector2 velocity, start;
@@ -117,7 +121,137 @@ namespace AdlezHolder
         {
             get { return freezeStruct; }
         }
+        public void SaveArrows(bool onOff)
+        {
+            saveArrows = onOff;
+        }
+        public void SeekArrows(bool onOff)
+        {
+            seekArrows = onOff;
+        }
+        public void UpgradeDamage(double multiplier)
+        {
+            damage = (int)(damage * multiplier);
+        }
+        public void UpgradeRange(double multiplier)
+        {
+            range = (int)(range * multiplier);
+        }
+        public void UpgradeSpeed(double multiplier)
+        {
+            speed = (int)(speed * multiplier);
+        }
+        public void IncreaseEnchantmentSlots(int numOfIncrease)
+        {
+            eSlots += numOfIncrease;
+        }
 
+        public void increaseCarryLimit(int numOfIncrease)
+        {
+            carryLimit += numOfIncrease;
+        }
+        public void UpgradeArrowShots(int numOfIncrease)
+        {
+            arrowShots += numOfIncrease;
+        }
+        public UpgradeNode[,] GetTree(int displayWidth, int displayHeight)
+        {
+            Vector2 nodePosition;
+            float scalefactor = .3f;
+            Rectangle overScan;
+            int widthSeperation, heightSeparation, nodeTopRow, nodeMiddleRow, nodeBottomRow;
+
+            displayWidth = Game1.DisplayWidth;
+            displayHeight = Game1.DisplayHeight;
+
+            int marginWidth = (int)(displayWidth * .05);
+            int marginHeight = (int)(displayHeight * .05);
+
+
+            overScan.Width = displayWidth - marginWidth;
+            overScan.Height = displayHeight - marginHeight;
+
+            overScan.X = displayWidth + marginWidth;
+            overScan.Y = displayHeight - marginHeight;
+
+            heightSeparation = overScan.Height / 8;
+            widthSeperation = overScan.Width / 4;
+
+            nodePosition.X = widthSeperation;
+            nodePosition.Y = heightSeparation;
+
+            nodeBottomRow = heightSeparation * 4;
+            nodeMiddleRow = heightSeparation * 3;
+            nodeTopRow = heightSeparation * 2;
+            int cost = 100;
+
+            UpgradeNode[,] bowTreeArray = new UpgradeNode[7, 3];
+            bowTreeArray = new UpgradeNode[7, 3];
+            //row1    
+            nodePosition.Y = nodeMiddleRow;
+            bowTreeArray[0, 1] = new BowDamageNode(Game1.GameContent.Load<Texture2D>("damage"), scalefactor, nodePosition, cost);
+            cost = (int)(cost * 1.265);
+            nodePosition.Y = nodeTopRow;
+            bowTreeArray[0, 0] = new RangeNode(Game1.GameContent.Load<Texture2D>("range"), scalefactor, nodePosition, cost);
+            cost = (int)(cost * 1.265);
+            nodePosition.Y = nodeBottomRow;
+            bowTreeArray[0, 2] = new BowESlotNode(Game1.GameContent.Load<Texture2D>("speical"), scalefactor, nodePosition, cost);
+            cost = (int)(cost * 1.265);
+            //row2
+            nodePosition.X = nodePosition.X + widthSeperation;
+            cost = (int)(cost * 1.265);
+            nodePosition.Y = nodeMiddleRow;
+            bowTreeArray[1, 1] = new ArrowsShotNode(Game1.GameContent.Load<Texture2D>("speical"), scalefactor, nodePosition, cost);
+            cost = (int)(cost * 1.265);
+
+
+            //row3
+            nodePosition.X = nodePosition.X + widthSeperation;
+            nodePosition.Y = nodeMiddleRow;
+            bowTreeArray[2, 1] = new BowDamageNode(Game1.GameContent.Load<Texture2D>("damage"), scalefactor, nodePosition, cost);
+            cost = (int)(cost * 1.265);
+            //row4
+            nodePosition.X = nodePosition.X + widthSeperation;
+            nodePosition.Y = nodeTopRow;
+            bowTreeArray[3, 0] = new BowESlotNode(Game1.GameContent.Load<Texture2D>("speical"), scalefactor, nodePosition, cost);
+            cost = (int)(cost - (cost * .1));
+            nodePosition.Y = nodeMiddleRow;
+            bowTreeArray[3, 1] = new UpgradeNode(Game1.GameContent.Load<Texture2D>("blank"), scalefactor, nodePosition, cost);
+            cost = (int)(cost - (cost * .15));
+            nodePosition.Y = nodeBottomRow;
+            bowTreeArray[3, 2] = new BowDamageNode(Game1.GameContent.Load<Texture2D>("damage"), scalefactor, nodePosition, cost);
+            cost = (int)(cost * 1.265);
+            //row5
+            nodePosition.X = nodePosition.X + widthSeperation;
+            nodePosition.Y = nodeTopRow;
+            cost = (int)(cost - (cost * .01));
+            bowTreeArray[4, 0] = new RangeNode(Game1.GameContent.Load<Texture2D>("range"), scalefactor, nodePosition, cost);
+            cost = (int)(cost * 1.265);
+            nodePosition.Y = nodeMiddleRow;
+            bowTreeArray[4, 1] = new BowDamageNode(Game1.GameContent.Load<Texture2D>("damage"), scalefactor, nodePosition, cost);
+            cost = (int)(cost * 1.265);
+            nodePosition.Y = nodeBottomRow;
+            bowTreeArray[4, 2] = new ArrowsShotNode(Game1.GameContent.Load<Texture2D>("speical"), scalefactor, nodePosition, cost);
+            cost = (int)(cost * 1.265);
+            //row6
+            nodePosition.X = nodePosition.X + widthSeperation;
+            nodePosition.Y = nodeMiddleRow;
+            bowTreeArray[5, 1] = new RangeNode(Game1.GameContent.Load<Texture2D>("range"), scalefactor, nodePosition, cost);
+
+            //row7
+            nodePosition.X = nodePosition.X + widthSeperation;
+            nodePosition.Y = nodeTopRow;
+            cost = (int)(cost * 1.465);
+            bowTreeArray[6, 0] = new ArrowsShotNode(Game1.GameContent.Load<Texture2D>("range"), scalefactor, nodePosition, cost);
+            nodePosition.Y = nodeMiddleRow;
+            cost = (int)(cost - (cost * .02));
+            bowTreeArray[6, 1] = new UpgradeSeekArrowNode(Game1.GameContent.Load<Texture2D>("speical"), scalefactor, nodePosition, cost);
+            cost = (int)(cost * 1.165);
+            nodePosition.Y = nodeBottomRow;
+            bowTreeArray[6, 2] = new UpgradeSaveArrowsNode(Game1.GameContent.Load<Texture2D>("speical"), scalefactor, nodePosition, cost);
+
+            return bowTreeArray;
+        }
         public Bow(float scaleFactor)
         {   
             color = Color.White;
@@ -136,7 +270,7 @@ namespace AdlezHolder
 
             gemList.Add(new IceStone(.02f, Vector2.Zero, 1, 1));
         }
-
+       
         public void Update(Map data, GameTime gameTime)
         {
             if (data.Player.Direction == Orientation.DOWN)

@@ -95,6 +95,30 @@ namespace AdlezHolder
                     this.currentMapData = new Nwot();
                     currentMapData.load(mapStruct);
                     break;
+                case "d1first":
+                    this.currentMapData = new D1First();
+                    currentMapData.load(mapStruct);
+                    break;
+                case "d1second":
+                    this.currentMapData = new D1Second("");
+                    currentMapData.load(mapStruct);
+                    break;
+                case "d1third":
+                    this.currentMapData = new D1Third("");
+                    currentMapData.load(mapStruct);
+                    break;
+                case "d2first":
+                    this.currentMapData = new D2First("");
+                    currentMapData.load(mapStruct);
+                    break;
+                case "d2second":
+                    this.currentMapData = new D2Second("");
+                    currentMapData.load(mapStruct);
+                    break;
+                case "d2third":
+                    this.currentMapData = new D2Third("");
+                    currentMapData.load(mapStruct);
+                    break;                    
             }
 
             changeMap(this.CurrentData);

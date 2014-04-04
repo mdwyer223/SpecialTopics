@@ -26,6 +26,8 @@ namespace AdlezHolder
         string lastPlace = "";
         bool changePos = false;
 
+        bool showBox, spawnWave, wave1;
+
         public MainRoom2()
             : base()
         {
@@ -200,7 +202,36 @@ namespace AdlezHolder
                 {
                     map.Player.Position = new Vector2(background.Width - 166, 800);
                 }
+                else if (lastPlace.Equals("d2third"))
+                {
+                    map.Player.Position = new Vector2((backgroundRec.Width / 2), backgroundRec.Height - map.Player.CollisionRec.Height - 5);
+                    map.Player.addMessage(new Message("Saving disabled", Color.Red));
+                }
                 lastPlace = "";
+            }
+
+            if (!showBox)
+            {
+                showBox = true;
+                box = new MessageBox(1f);
+                box.show("What the hell is this place...?");
+            }
+
+            if (!box.Visible && !wave1)
+            {
+                spawnWave = true;
+                wave1 = true;
+            }
+
+            if (enemies.Count <= 0 && wave1)
+            {
+                spawnWave = true;
+            }
+
+            if (spawnWave)
+            {
+                spawnSkeleWave(map.Player);
+                spawnWave = false;
             }
 
             for (int i = 0; i < tripWires.Count; i++)
@@ -249,6 +280,7 @@ namespace AdlezHolder
                 }
             }
 
+            /*
             if (changeLeftT)
             {
                 map.changeMap(new LeftTop(map.Player));
@@ -279,6 +311,21 @@ namespace AdlezHolder
                 {
                     base.Update(map, gameTime);
                 }
+            }
+             */
+            if (lastPlace.Equals(""))
+            {
+                base.Update(map, gameTime);
+            }
+        }
+
+        private void spawnSkeleWave(Character player)
+        {
+            Random rand = new Random();
+            for (int i = 0; i < 10; i++)
+            {
+                addEnemy(new Skeleton(Game1.GameContent.Load<Texture2D>("ComputerPpl/Enemies/Skeleton/Move/SF"), .07f, 8, 
+                    new Vector2((float)((rand.NextDouble() * (rand.Next(-50,50))) + player.Position.X), player.Position.Y - 100)));
             }
         }
     }

@@ -106,6 +106,18 @@ namespace AdlezHolder
                     mapData.mapId = "lPassage"; //this will probably be changed to a better name later
                 else if (this.GetType() == typeof(Nwot))
                     mapData.mapId = "nwot";
+                else if (this.GetType() == typeof(D1First))
+                    mapData.mapId = "d1first";
+                else if (this.GetType() == typeof(D1Second))
+                    mapData.mapId = "d1second";
+                else if (this.GetType() == typeof(D1Third))
+                    mapData.mapId = "d1third";
+                else if (this.GetType() == typeof(D2First))
+                    mapData.mapId = "d2first";
+                else if (this.GetType() == typeof(D2Second))
+                    mapData.mapId = "d2second";
+                else if (this.GetType() == typeof(D2Third))
+                    mapData.mapId = "d2third";
 
                 mapData.backgroundPath = backgroundDirectory;
                 return mapData;
