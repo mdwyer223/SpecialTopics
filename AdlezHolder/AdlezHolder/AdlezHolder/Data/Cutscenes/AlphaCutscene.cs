@@ -84,6 +84,7 @@ namespace AdlezHolder
             }
             else if (playOrder == 5)
             {
+                /*
                 Game1.MainGameState = GameState.TALKING;
                 if (!show)
                 {
@@ -98,6 +99,8 @@ namespace AdlezHolder
                     show = false;
                     playOrder++;
                 }
+                 */
+                playOrder++;
             }
             else if (playOrder == 6)
             {
