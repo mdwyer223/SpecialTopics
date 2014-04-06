@@ -120,6 +120,11 @@ namespace AdlezHolder
                 {
                     map.Player.Position = new Vector2((backgroundRec.Width / 2) - map.Player.DrawnRec.Width, map.Player.DrawnRec.Height + 5);
                 }
+                else if (lastPlace.Equals(""))
+                {
+                    box = new MessageBox(1f);
+                    box.show("Let's head south, I am getting a strange feeling from there...");
+                }
                 lastPlace = "";
                 changePos = true;
             }

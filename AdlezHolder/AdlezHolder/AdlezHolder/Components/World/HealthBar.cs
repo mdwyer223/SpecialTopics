@@ -78,14 +78,6 @@ namespace AdlezHolder
             if (dead)
             {
                 gameOver.update(this, player);
-            }
-
-            if (dead && Game1.MainGameState == GameState.PLAYING)
-            {
-                Rectangle rec = segments[0];
-                rec.Width = 0;
-                segments[0] = rec;
-
                 gameOver.visible = true;
                 return;
             }
@@ -229,6 +221,16 @@ namespace AdlezHolder
             oldDead = dead;
             prevTotal = totalHealth;
             prevCurrentHealth = currentHealth;
+
+            if (dead && Game1.MainGameState == GameState.PLAYING)
+            {
+                Rectangle rec = segments[0];
+                rec.Width = 0;
+                segments[0] = rec;
+
+                gameOver.visible = true;
+                return;
+            }
         }
 
         public void draw(SpriteBatch spriteBatch)

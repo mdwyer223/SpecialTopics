@@ -51,6 +51,13 @@ namespace AdlezHolder
             newTrip = new TripWire(.02f, new Rectangle(472, 218, 60, 3));
             addTripWire(newTrip);
 
+            Chest c = new Chest(.03f, new Vector2(300, 300), ChestType.BRONZE);
+            addChest(c);
+            c = new Chest(.03f, new Vector2(400, 300), ChestType.SILVER);
+            addChest(c);
+            c = new Chest(.03f, new Vector2(500, 300), ChestType.GOLD);
+            addChest(c);
+
             music = Game1.GameContent.Load<Song>("Music/DungeonTheme1");
         }
 

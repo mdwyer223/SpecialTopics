@@ -257,7 +257,7 @@ namespace AdlezHolder
 
                 if (i == 0 && tripWires[i].IfTripped && map.Player.Direction == Orientation.RIGHT)
                 {
-                    if (TopLeftCorner.OpenChest || keys.IsKeyDown(Keys.LeftControl))
+                    if (TopLeftCorner.OpenChest)
                     {
                         changeRight = true;
                     }
@@ -275,7 +275,7 @@ namespace AdlezHolder
 
                 else if (i == 2 && tripWires[i].IfTripped && map.Player.Direction == Orientation.UP)
                 {
-                    if (TopRightCorner.OpenChest || keys.IsKeyDown(Keys.LeftControl))
+                    if (TopRightCorner.OpenChest)
                     {
                         changeBoss = true;
                     }

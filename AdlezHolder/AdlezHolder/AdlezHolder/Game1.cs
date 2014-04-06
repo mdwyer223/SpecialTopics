@@ -166,7 +166,7 @@ namespace AdlezHolder
 
             editor = new InGameEditor(this);
             Components.Add(editor);
-            editor.Enabled = editor.Visible = true;
+            editor.Enabled = editor.Visible = false;
 
             sMenu = new SaveMenu();
 

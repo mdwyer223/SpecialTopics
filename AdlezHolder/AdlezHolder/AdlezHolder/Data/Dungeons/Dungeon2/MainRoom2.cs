@@ -24,7 +24,7 @@ namespace AdlezHolder
         RightBot rB;
 
         string lastPlace = "";
-        bool changePos = false;
+        bool changePos = false, changeTrack = false;
 
         bool showBox, spawnWave, wave1;
 
@@ -82,7 +82,8 @@ namespace AdlezHolder
 
             int x = (Game1.DisplayWidth - background.Width) / 2;
             int y = (Game1.DisplayHeight - background.Height);
-        
+
+            music = Game1.GameContent.Load<Song>("Music/First Nation");
           }
 
         public MainRoom2(string id)
@@ -142,6 +143,7 @@ namespace AdlezHolder
 
             lastPlace = id;
 
+            music = Game1.GameContent.Load<Song>("Music/First Nation");
         }
 
         public MainRoom2(Character player)
@@ -167,6 +169,8 @@ namespace AdlezHolder
                 Game1.GameContent.Load<Texture2D>("Random/The best thing ever"), new Vector2(130, backgroundRec.Height));
             addImmovable(wall);
              */
+
+            music = Game1.GameContent.Load<Song>("Music/First Nation");
         }
 
         public override void Update(Map map, GameTime gameTime)
@@ -174,6 +178,19 @@ namespace AdlezHolder
             bool changeLeftT = false, changeLeftB = false;
             bool changeRightT = false, changeRightB = false;
             bool changeTopL = false, changeTopR = false;
+
+            if (!changeTrack)
+            {
+                changeTrack = true;
+                if (MediaPlayer.State == MediaState.Playing)
+                {
+                    MediaPlayer.Stop();
+                    if (music != null)
+                    {
+                        MediaPlayer.Play(music);
+                    }
+                }
+            }
 
             if (!changePos)
             {
@@ -221,6 +238,15 @@ namespace AdlezHolder
             {
                 spawnWave = true;
                 wave1 = true;
+            }
+
+            for (int i = 0; i < enemies.Count; i++)
+            {
+                if (enemies[i] != null)
+                {
+                    if (enemies[i].IsDead)
+                        enemies.RemoveAt(i);
+                }
             }
 
             if (enemies.Count <= 0 && wave1)
