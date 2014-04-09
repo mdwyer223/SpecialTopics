@@ -24,14 +24,14 @@ namespace AdlezHolder
         public AlphaCutscene(World ogWorld)
         {
             music = Game1.GameContent.Load<Song>("Music/TravelingSong");
-            box = new MessageBox(1f);
+            box = new MessageBox(1f, false);
             world = ogWorld;
         }
 
         public AlphaCutscene()
         {
             music = Game1.GameContent.Load<Song>("Music/TravelingSong");
-            box = new MessageBox(1f);
+            box = new MessageBox(1f, false);
         }
 
         public override void play(GameTime gameTime)
@@ -84,21 +84,20 @@ namespace AdlezHolder
             }
             else if (playOrder == 5)
             {
-                //Game1.MainGameState = GameState.TALKING;
-                //if (!show)
-                //{
-                //    box = new MessageBox(1f);
-                //    box.show("Hi this is bob. Hi this is bob.Hi this is bob.Hi this is bob.Hi this is bob.Hi this is bob.Hi this is bob.Hi this is bob.Hi this is bob.Hi this is bob.Hi this is bob.");
-                //    data.addMBox(box);
-                //    show = true;
-                //}
+                Game1.MainGameState = GameState.TALKING;
+                if (!show)
+                {
+                    box = new MessageBox(1f, false);
+                    box.show("Hi this is bob. Hi this is bob.Hi this is bob.Hi this is bob.Hi this is bob.Hi this is bob.Hi this is bob.Hi this is bob.Hi this is bob.Hi this is bob.Hi this is bob.");
+                    data.addMBox(box);
+                    show = true;
+                }
 
-                //if (!box.IsVisible)
-                //{
-                //    show = false;
-                //    playOrder++;
-                //}
-                playOrder++;
+                if (!box.Visible)
+                {
+                    show = false;
+                    playOrder++;
+                }
             }
             else if (playOrder == 6)
             {

@@ -442,8 +442,8 @@ namespace AdlezHolder
 
             if (box != null)
             {
-                box.Update();
-                if (!box.IsVisible)
+                box.update();
+                if (!box.Visible)
                 {
                     box = null;
                 }
@@ -588,7 +588,7 @@ namespace AdlezHolder
 
             if (box != null)
             {
-                box.Draw(spriteBatch);
+                box.draw(spriteBatch);
             }
 
             if (brightnessValue <= 0)
@@ -596,8 +596,8 @@ namespace AdlezHolder
                 spriteBatch.Draw(dark, new Rectangle(-10, -10, Game1.DisplayWidth +20, Game1.DisplayHeight +20),
                     new Color(255, 255, 255) * (float)((Math.Abs(brightnessValue) / 255f)));
             }
-
         }
+
 
         private int getBrightnessValue(Map data)
         {

@@ -18,6 +18,7 @@ namespace AdlezHolder
     public class InGameEditor : Microsoft.Xna.Framework.DrawableGameComponent
     {
         Map m;
+        World w;
         SpriteBatch spriteBatch;
         KeyboardState keys, oldkeys;
 
@@ -25,12 +26,14 @@ namespace AdlezHolder
 
         bool editing = false, enteringCommand = true;
 
-        public InGameEditor(Game game)
+        public InGameEditor(Game game, World world)
             : base(game)
         {
             keys = oldkeys = Keyboard.GetState();
 
             command = option = "";
+
+            w = world;
         }
         protected override void LoadContent()
         {
@@ -585,6 +588,11 @@ namespace AdlezHolder
                 else if (command.Contains("SNOW"))
                 {
                     Game1.ParticleState = ParticleState.SNOW;
+                }
+                else if (command.Contains("LIBRARY"))
+                {
+                    //Game1.newCutscene(new LibraryCutscene(), m.Player);
+                    w.Map.changeMap(new OutsideCave());
                 }
 
                 command = option = "";

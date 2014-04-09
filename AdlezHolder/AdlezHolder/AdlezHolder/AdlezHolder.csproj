@@ -199,6 +199,7 @@
     <Compile Include="Data\Buildings\Building3.cs" />
     <Compile Include="Data\Cutscenes\AlphaCutscene.cs" />
     <Compile Include="Data\Cutscenes\Cutscene.cs" />
+    <Compile Include="Data\Cutscenes\LibraryCutscene.cs" />
     <Compile Include="Data\Cutscenes\StoryIntro.cs" />
     <Compile Include="Data\Dungeons\Dungeon2\LeftBot.cs" />
     <Compile Include="Data\Dungeons\Dungeon2\LeftTop.cs" />
@@ -232,7 +233,9 @@
     <Compile Include="Data\Landscapes\Dungeon2Path\D2Third.cs" />
     <Compile Include="Data\Cutscenes\DeathAnimation.cs" />
     <Compile Include="Data\Landscapes\LeftPassage.cs" />
+    <Compile Include="Data\Landscapes\Library.cs" />
     <Compile Include="Data\Landscapes\Nwot.cs" />
+    <Compile Include="Data\Landscapes\OutsideCave.cs" />
     <Compile Include="Data\Map.cs" />
     <Compile Include="Data\MapDataHolder.cs" />
     <Compile Include="Data\SaveStuff\GameData.cs" />

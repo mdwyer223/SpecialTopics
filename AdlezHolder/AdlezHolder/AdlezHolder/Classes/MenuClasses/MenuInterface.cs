@@ -160,6 +160,7 @@ namespace AdlezHolder
                     {
                         MediaPlayer.Stop();
                         changeGameState(GameState.PLAYING);
+                        //Game1.newCutscene(new LibraryCutscene(), );
                     }
                     
                 }

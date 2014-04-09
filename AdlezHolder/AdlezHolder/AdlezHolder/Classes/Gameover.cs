@@ -79,8 +79,8 @@ namespace AdlezHolder
 
                 if (fadeCount == 255)
                 {
-                    gameOverSize = gameOverFont.MeasureString("Game Over");
-                    spriteBatch.DrawString(gameOverFont, "Game Over", new Vector2(backRec.X + (backRec.Width / 2) - (gameOverSize.X / 2), backRec.Y + (backRec.Height / 3)), Color.White);
+                    gameOverSize = gameOverFont.MeasureString("#REKT");
+                    spriteBatch.DrawString(gameOverFont, "#REKT", new Vector2(backRec.X + (backRec.Width / 2) - (gameOverSize.X / 2), backRec.Y + (backRec.Height / 3)), Color.White);
                     continueSize = continueFont.MeasureString("Press Enter to continue");
                     spriteBatch.DrawString(continueFont, "Press Enter to continue", new Vector2(Game1.DisplayWidth - (int)(continueSize.X * 1.1), Game1.DisplayHeight - (int)(continueSize.Y * 1.25)), new Color(blinkCount, blinkCount, blinkCount));
                 }

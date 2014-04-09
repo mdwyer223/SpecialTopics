@@ -139,7 +139,7 @@ namespace AdlezHolder
 
             cutscenePlayer.Enabled = false;
 
-            editor = new InGameEditor(this);
+            editor = new InGameEditor(this, world);
             Components.Add(editor);
             editor.Enabled = editor.Visible = true;
 
@@ -173,6 +173,7 @@ namespace AdlezHolder
         protected override void Update(GameTime gameTime)
         {
             KeyboardState keys = Keyboard.GetState();
+            mouse = Mouse.GetState();
 
 
             if (world.Map != null)
@@ -326,6 +327,11 @@ namespace AdlezHolder
             }
 
             base.Draw(gameTime);
+
+            spriteBatch.Begin();
+            spriteBatch.Draw(Content.Load<Texture2D>("Random/Particle"), new Rectangle(mouse.X, mouse.Y, 2, 2), Color.Red);
+            spriteBatch.DrawString(Content.Load<SpriteFont>("SpriteFont1"), "X: " + mouse.X + " Y: " + mouse.Y, new Vector2(5, 460), Color.White);
+            spriteBatch.End();
         }
 
         public static void newCutscene(Cutscene scene, Character player)

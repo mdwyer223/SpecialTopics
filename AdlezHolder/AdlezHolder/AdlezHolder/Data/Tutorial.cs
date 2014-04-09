@@ -32,7 +32,6 @@ namespace AdlezHolder
             //{
             //    Game1.newCutscene(new DeathAnimation(), map.Player);
             //}
-
             if (!changePos)
             {
                 map.Player.Position = new Vector2(400, 240);

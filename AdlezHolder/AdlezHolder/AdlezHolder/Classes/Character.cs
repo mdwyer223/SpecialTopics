@@ -630,7 +630,6 @@ namespace AdlezHolder
                         break;
                 }
             }
-
         }
 
         public void heal(int healPoints)
@@ -1005,6 +1004,11 @@ namespace AdlezHolder
             right[0] = images[3];
             Idle = new FullAnimation(backward, forward, left, right, .2f);
             playAnimation(Idle);
+        }
+
+        public void setIsVisible(bool isVis)
+        {
+            IsVisible = isVis;
         }
     }
 }
