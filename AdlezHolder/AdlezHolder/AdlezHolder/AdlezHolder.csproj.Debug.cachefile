@@ -1,0 +1,252 @@
+Content\Alistar\B.xnb
+Content\Alistar\BL.xnb
+Content\Alistar\BR.xnb
+Content\Alistar\FL.xnb
+Content\Alistar\FR.xnb
+Content\Alistar\F.xnb
+Content\Alistar\L.xnb
+Content\Alistar\LL.xnb
+Content\Alistar\LR.xnb
+Content\Alistar\R.xnb
+Content\Alistar\RL.xnb
+Content\Alistar\RR.xnb
+Content\Random\The best thing ever.xnb
+Content\Box\Box.xnb
+Content\Box\BoxBreaking.xnb
+Content\Box\BoxBreaking2.xnb
+Content\Box\BoxBreaking3.xnb
+Content\Box\BoxBreaking4.xnb
+Content\BackgroundsAndFloors\Dungeons\FixedDungeon1\MainRoom.xnb
+Content\Weapons\bomb selected.xnb
+Content\Weapons\bow selected.xnb
+Content\Weapons\lock.xnb
+Content\Weapons\sword selected.xnb
+Content\Weapons\bomb unselected.xnb
+Content\Weapons\bow unselected.xnb
+Content\Weapons\health_backgroung.xnb
+Content\Weapons\health_bar.xnb
+Content\Weapons\sword unselected.xnb
+Content\BackgroundsAndFloors\Dungeons\FixedDungeon1\DungeonHallwayLeft.xnb
+Content\BackgroundsAndFloors\Dungeons\FixedDungeon1\DungeonHallwayRight.xnb
+Content\BackgroundsAndFloors\Dungeons\FixedDungeon1\DungeonRoomBottomLeft.xnb
+Content\BackgroundsAndFloors\Dungeons\FixedDungeon1\DungeonRoomBottomRight.xnb
+Content\BackgroundsAndFloors\Dungeons\FixedDungeon1\DungeonRoomTopLeft.xnb
+Content\BackgroundsAndFloors\Dungeons\FixedDungeon1\DungeonRoomTopRight.xnb
+Content\ComputerPpl\Enemies\Skeleton\Move\SB.xnb
+Content\ComputerPpl\Enemies\Skeleton\Move\SBL.xnb
+Content\ComputerPpl\Enemies\Skeleton\Move\SBR.xnb
+Content\ComputerPpl\Enemies\Skeleton\Move\SF.xnb
+Content\ComputerPpl\Enemies\Skeleton\Move\SFL.xnb
+Content\ComputerPpl\Enemies\Skeleton\Move\SFR.xnb
+Content\ComputerPpl\Enemies\Skeleton\Move\SL.xnb
+Content\ComputerPpl\Enemies\Skeleton\Move\SLL.xnb
+Content\ComputerPpl\Enemies\Skeleton\Move\SLR.xnb
+Content\ComputerPpl\Enemies\Skeleton\Move\SR.xnb
+Content\ComputerPpl\Enemies\Skeleton\Move\SRL.xnb
+Content\ComputerPpl\Enemies\Skeleton\Move\SRR.xnb
+Content\ComputerPpl\Enemies\Skeleton\Attack\SBA.xnb
+Content\ComputerPpl\Enemies\Skeleton\Attack\SBA2.xnb
+Content\ComputerPpl\Enemies\Skeleton\Attack\SFA.xnb
+Content\ComputerPpl\Enemies\Skeleton\Attack\SFA2.xnb
+Content\ComputerPpl\Enemies\Skeleton\Attack\SLA.xnb
+Content\ComputerPpl\Enemies\Skeleton\Attack\SLA2.xnb
+Content\ComputerPpl\Enemies\Skeleton\Attack\SRA.xnb
+Content\ComputerPpl\Enemies\Skeleton\Attack\SRA2.xnb
+Content\MenuButtons\Continue.xnb
+Content\MenuButtons\LoadGame.xnb
+Content\MenuButtons\NewGame.xnb
+Content\AlistarSword\B.xnb
+Content\AlistarSword\BL.xnb
+Content\AlistarSword\BR.xnb
+Content\AlistarSword\F.xnb
+Content\AlistarSword\FL.xnb
+Content\AlistarSword\FR.xnb
+Content\AlistarSword\L.xnb
+Content\AlistarSword\LL.xnb
+Content\AlistarSword\LR.xnb
+Content\AlistarSword\R.xnb
+Content\AlistarSword\RL.xnb
+Content\AlistarSword\RR.xnb
+Content\AlistarSwordAttack\B1.xnb
+Content\AlistarSwordAttack\B2.xnb
+Content\AlistarSwordAttack\F1.xnb
+Content\AlistarSwordAttack\F2.xnb
+Content\AlistarSwordAttack\L1.xnb
+Content\AlistarSwordAttack\L2.xnb
+Content\AlistarSwordAttack\R1.xnb
+Content\AlistarSwordAttack\R2.xnb
+Content\AlistarSwordAttack\LeftSwoosh.xnb
+Content\AlistarSwordAttack\BackSwoosh.xnb
+Content\AlistarSwordAttack\FrontSwoosh.xnb
+Content\AlistarSwordAttack\RightSwoosh.xnb
+Content\BackgroundsAndFloors\Dungeons\FixedDungeon1\BossHallway.xnb
+Content\Chests\Chest.xnb
+Content\Chests\EmptyChest.xnb
+Content\BackgroundsAndFloors\Dungeons\FixedDungeon1\DungeonRoomBoss.xnb
+Content\Box\MetalBox.xnb
+Content\BackgroundsAndFloors\Landscapes\LeftPassage.xnb
+Content\TitleScreen.xnb
+Content\ComputerPpl\Bosses\D1 Boss\Move\B.xnb
+Content\ComputerPpl\Bosses\D1 Boss\Move\BL.xnb
+Content\ComputerPpl\Bosses\D1 Boss\Move\BR.xnb
+Content\ComputerPpl\Bosses\D1 Boss\Move\F.xnb
+Content\ComputerPpl\Bosses\D1 Boss\Move\FL.xnb
+Content\ComputerPpl\Bosses\D1 Boss\Move\FR.xnb
+Content\ComputerPpl\Bosses\D1 Boss\Move\L.xnb
+Content\ComputerPpl\Bosses\D1 Boss\Move\LL.xnb
+Content\ComputerPpl\Bosses\D1 Boss\Move\LR.xnb
+Content\ComputerPpl\Bosses\D1 Boss\Move\R.xnb
+Content\ComputerPpl\Bosses\D1 Boss\Move\RL.xnb
+Content\ComputerPpl\Bosses\D1 Boss\Move\RR.xnb
+Content\ComputerPpl\Bosses\D1 Boss\Attack\F1.xnb
+Content\ComputerPpl\Bosses\D1 Boss\Attack\F2.xnb
+Content\ComputerPpl\Bosses\D1 Boss\Attack\L1.xnb
+Content\ComputerPpl\Bosses\D1 Boss\Attack\L2.xnb
+Content\ComputerPpl\Bosses\D1 Boss\Attack\R1.xnb
+Content\ComputerPpl\Bosses\D1 Boss\Attack\R2.xnb
+Content\ComputerPpl\Bosses\D1 Boss\Attack\B1.xnb
+Content\ComputerPpl\Bosses\D1 Boss\Attack\B2.xnb
+Content\Traps\arrowtrap.xnb
+Content\Torch\Light1.xnb
+Content\Torch\Light2.xnb
+Content\Torch\Light3.xnb
+Content\Torch\Torch1.xnb
+Content\Torch\Torch2.xnb
+Content\Torch\Torch3.xnb
+Content\Random\LightScreen.xnb
+Content\Buildings\BottomLeftHouse.xnb
+Content\Buildings\BottomRightHouse.xnb
+Content\Buildings\TopLeftHouse.xnb
+Content\Buildings\TopRightHouse.xnb
+Content\BackgroundsAndFloors\Landscapes\FountainINTOWNSQUARE.xnb
+Content\BackgroundsAndFloors\Landscapes\TownSquare.xnb
+Content\BackgroundsAndFloors\Buildings\HOUSE4.xnb
+Content\Random\Particle.xnb
+Content\Items\10Coin.xnb
+Content\Items\1Coin.xnb
+Content\Items\5Coin.xnb
+Content\Items\CyanStone.xnb
+Content\Items\Key.xnb
+Content\Items\MagentaStone.xnb
+Content\Items\SteelArrow.xnb
+Content\Items\WoodenArrow.xnb
+Content\Items\YellowStone.xnb
+Content\AlistarBow\B.xnb
+Content\AlistarBow\BL.xnb
+Content\AlistarBow\BR.xnb
+Content\AlistarBow\F.xnb
+Content\AlistarBow\FL.xnb
+Content\AlistarBow\FR.xnb
+Content\AlistarBow\L.xnb
+Content\AlistarBow\LL.xnb
+Content\AlistarBow\LR.xnb
+Content\AlistarBow\R.xnb
+Content\AlistarBow\RL.xnb
+Content\AlistarBow\RR.xnb
+Content\AlistarBowAttack\B1.xnb
+Content\AlistarBowAttack\B2.xnb
+Content\AlistarBowAttack\F1.xnb
+Content\AlistarBowAttack\F2.xnb
+Content\AlistarBowAttack\L1.xnb
+Content\AlistarBowAttack\L2.xnb
+Content\AlistarBowAttack\R1.xnb
+Content\AlistarBowAttack\R2.xnb
+Content\Projectiles\SteelArrowDown.xnb
+Content\Projectiles\SteelArrowLeft.xnb
+Content\Projectiles\SteelArrowRight.xnb
+Content\Projectiles\SteelArrowUp.xnb
+Content\Weapons\Bomb.xnb
+Content\BackgroundsAndFloors\Buildings\HOUSE.xnb
+Content\BackgroundsAndFloors\Buildings\HOUSE2.xnb
+Content\BackgroundsAndFloors\Buildings\HOUSE3.xnb
+Content\BackgroundsAndFloors\Buildings\HOUSE5.xnb
+Content\Weapons\BombAnime\Bomb2.xnb
+Content\Weapons\BombAnime\Bomb3.xnb
+Content\Weapons\BombAnime\Bomb4.xnb
+Content\ComputerPpl\Enemies\Mage\Move\B.xnb
+Content\ComputerPpl\Enemies\Mage\Move\BL.xnb
+Content\ComputerPpl\Enemies\Mage\Move\BR.xnb
+Content\ComputerPpl\Enemies\Mage\Move\F.xnb
+Content\ComputerPpl\Enemies\Mage\Move\FL.xnb
+Content\ComputerPpl\Enemies\Mage\Move\FR.xnb
+Content\ComputerPpl\Enemies\Mage\Move\L.xnb
+Content\ComputerPpl\Enemies\Mage\Move\LL.xnb
+Content\ComputerPpl\Enemies\Mage\Move\LR.xnb
+Content\ComputerPpl\Enemies\Mage\Move\R.xnb
+Content\ComputerPpl\Enemies\Mage\Move\RL.xnb
+Content\ComputerPpl\Enemies\Mage\Move\RR.xnb
+Content\ComputerPpl\Enemies\Thing\Move\TB.xnb
+Content\ComputerPpl\Enemies\Thing\Move\TBL.xnb
+Content\ComputerPpl\Enemies\Thing\Move\TBR.xnb
+Content\ComputerPpl\Enemies\Thing\Move\TF.xnb
+Content\ComputerPpl\Enemies\Thing\Move\TFL.xnb
+Content\ComputerPpl\Enemies\Thing\Move\TFR.xnb
+Content\ComputerPpl\Enemies\Thing\Move\TL.xnb
+Content\ComputerPpl\Enemies\Thing\Move\TLL.xnb
+Content\ComputerPpl\Enemies\Thing\Move\TLR.xnb
+Content\ComputerPpl\Enemies\Thing\Move\TR.xnb
+Content\ComputerPpl\Enemies\Thing\Move\TRL.xnb
+Content\ComputerPpl\Enemies\Thing\Move\TRR.xnb
+Content\Ronnin\FL.xnb
+Content\Wep Icons\bomb selected.xnb
+Content\Wep Icons\bow selected.xnb
+Content\Wep Icons\sword selected.xnb
+Content\Menu Pics\AdlezTitle.xnb
+Content\BackgroundsAndFloors\Dungeons\Dungeon2\Up.xnb
+Content\BackgroundsAndFloors\Dungeons\Dungeon2\Right.xnb
+Content\BackgroundsAndFloors\Dungeons\Dungeon2\RightUp.xnb
+Content\BackgroundsAndFloors\Dungeons\Dungeon2\MainRoom.xnb
+Content\BackgroundsAndFloors\Dungeons\Dungeon2\Left.xnb
+Content\BackgroundsAndFloors\Dungeons\Dungeon2\Down.xnb
+Content\Items\1BluePotion.xnb
+Content\Items\1GreenPotion.xnb
+Content\Items\1RedPotion.xnb
+Content\Items\2BluePotions.xnb
+Content\Items\2GreenPotions.xnb
+Content\Items\2RedPotions.xnb
+Content\Items\3BluePotions.xnb
+Content\Items\3GreenPotions.xnb
+Content\Items\3RedPotions.xnb
+Content\Rain\1.xnb
+Content\Rain\2.xnb
+Content\Rain\3.xnb
+Content\Rain\4.xnb
+Content\Rain\1x1.xnb
+Content\Rain\1x2.xnb
+Content\BackgroundsAndFloors\Landscapes\Grass.xnb
+Content\NatureObjects\FlowerPatch1.xnb
+Content\NatureObjects\FlowerPatch3.xnb
+Content\NatureObjects\FlowerPatch2.xnb
+Content\NatureObjects\PurpleFlower.xnb
+Content\NatureObjects\RedFlower.xnb
+Content\NatureObjects\Tree1.xnb
+Content\NatureObjects\Tree2.xnb
+Content\NatureObjects\Tree3.xnb
+Content\NatureObjects\YellowFlowerPatch.xnb
+Content\NatureObjects\YellowFlower.xnb
+Content\NatureObjects\RockLeft.xnb
+Content\NatureObjects\RockRight.xnb
+Content\Buy.xnb
+Content\Exit.xnb
+Content\ItemShopBack.xnb
+Content\Sell.xnb
+Content\blank.xnb
+Content\capacity.xnb
+Content\damage.xnb
+Content\range.xnb
+Content\speed.xnb
+Content\speical.xnb
+Content\SpriteFont1.xnb
+Content\SpriteFont2.xnb
+Content\GameOverFont.xnb
+Content\SpriteFont3.xnb
+Content\Music\Theme.xnb
+Content\Music\TravelingSong.xnb
+Content\Music\DungeonTheme1.xnb
+Content\Music\First Nation.xnb
+Content\Music\SFX\Hit By Enemy.xnb
+Content\Music\SFX\Hit Enemy.xnb
+Content\Music\Theme.wma
+Content\Music\TravelingSong.wma
+Content\Music\DungeonTheme1.wma
+Content\Music\First Nation.wma

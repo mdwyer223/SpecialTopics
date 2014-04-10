@@ -1,0 +1,2282 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XnaContent xmlns:Pipeline="Microsoft.Xna.Framework.Content.Pipeline">
+  <Asset Type="Pipeline:BuildItemCollection">
+    <Item>
+      <Source>Alistar\B.png</Source>
+      <Name>Alistar\B</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Alistar\B.xnb</Output>
+      <Time>2014-04-10T12:25:37.0360745-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Alistar\BL.png</Source>
+      <Name>Alistar\BL</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Alistar\BL.xnb</Output>
+      <Time>2014-04-10T12:25:37.0370752-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Alistar\BR.png</Source>
+      <Name>Alistar\BR</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Alistar\BR.xnb</Output>
+      <Time>2014-04-10T12:25:37.0370752-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Alistar\FL.png</Source>
+      <Name>Alistar\FL</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Alistar\FL.xnb</Output>
+      <Time>2014-04-10T12:25:37.0616761-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Alistar\FR.png</Source>
+      <Name>Alistar\FR</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Alistar\FR.xnb</Output>
+      <Time>2014-04-10T12:25:37.0616761-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Alistar\F.png</Source>
+      <Name>Alistar\F</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Alistar\F.xnb</Output>
+      <Time>2014-04-10T12:25:37.0370752-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Alistar\L.png</Source>
+      <Name>Alistar\L</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Alistar\L.xnb</Output>
+      <Time>2014-04-10T12:25:37.0626784-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Alistar\LL.png</Source>
+      <Name>Alistar\LL</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Alistar\LL.xnb</Output>
+      <Time>2014-04-10T12:25:37.0626784-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Alistar\LR.png</Source>
+      <Name>Alistar\LR</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Alistar\LR.xnb</Output>
+      <Time>2014-04-10T12:25:37.0636774-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Alistar\R.png</Source>
+      <Name>Alistar\R</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Alistar\R.xnb</Output>
+      <Time>2014-04-10T12:25:37.0636774-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Alistar\RL.png</Source>
+      <Name>Alistar\RL</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Alistar\RL.xnb</Output>
+      <Time>2014-04-10T12:25:37.0636774-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Alistar\RR.png</Source>
+      <Name>Alistar\RR</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Alistar\RR.xnb</Output>
+      <Time>2014-04-10T12:25:37.0636774-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Random\The best thing ever.png</Source>
+      <Name>Random\The best thing ever</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Random\The best thing ever.xnb</Output>
+      <Time>2014-04-10T12:25:38.0921672-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Box\Box.png</Source>
+      <Name>Box\Box</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Box\Box.xnb</Output>
+      <Time>2014-04-10T12:25:37.552037-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Box\BoxBreaking.png</Source>
+      <Name>Box\BoxBreaking</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Box\BoxBreaking.xnb</Output>
+      <Time>2014-04-10T12:25:37.552037-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Box\BoxBreaking2.png</Source>
+      <Name>Box\BoxBreaking2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Box\BoxBreaking2.xnb</Output>
+      <Time>2014-04-10T12:25:37.552037-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Box\BoxBreaking3.png</Source>
+      <Name>Box\BoxBreaking3</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Box\BoxBreaking3.xnb</Output>
+      <Time>2014-04-10T12:25:37.5530377-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Box\BoxBreaking4.png</Source>
+      <Name>Box\BoxBreaking4</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Box\BoxBreaking4.xnb</Output>
+      <Time>2014-04-10T12:25:37.5530377-07:00</Time>
+    </Item>
+    <Item>
+      <Source>BackgroundsAndFloors\Dungeons\FixedDungeon1\MainRoom.png</Source>
+      <Name>BackgroundsAndFloors\Dungeons\FixedDungeon1\MainRoom</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\BackgroundsAndFloors\Dungeons\FixedDungeon1\MainRoom.xnb</Output>
+      <Time>2014-04-10T12:25:37.299107-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Weapons\bomb selected.png</Source>
+      <Name>Weapons\bomb selected</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Weapons\bomb selected.xnb</Output>
+      <Time>2014-04-10T12:25:38.0998654-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Weapons\bow selected.png</Source>
+      <Name>Weapons\bow selected</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Weapons\bow selected.xnb</Output>
+      <Time>2014-04-10T12:25:38.1021691-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Weapons\lock.png</Source>
+      <Name>Weapons\lock</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Weapons\lock.xnb</Output>
+      <Time>2014-04-10T12:25:38.1031697-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Weapons\sword selected.png</Source>
+      <Name>Weapons\sword selected</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Weapons\sword selected.xnb</Output>
+      <Time>2014-04-10T12:25:38.1041704-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Weapons\bomb unselected.png</Source>
+      <Name>Weapons\bomb unselected</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Weapons\bomb unselected.xnb</Output>
+      <Time>2014-04-10T12:25:38.1011671-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Weapons\bow unselected.png</Source>
+      <Name>Weapons\bow unselected</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Weapons\bow unselected.xnb</Output>
+      <Time>2014-04-10T12:25:38.1021691-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Weapons\health_backgroung.png</Source>
+      <Name>Weapons\health_backgroung</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Weapons\health_backgroung.xnb</Output>
+      <Time>2014-04-10T12:25:38.1031697-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Weapons\health_bar.png</Source>
+      <Name>Weapons\health_bar</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Weapons\health_bar.xnb</Output>
+      <Time>2014-04-10T12:25:38.1031697-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Weapons\sword unselected.png</Source>
+      <Name>Weapons\sword unselected</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Weapons\sword unselected.xnb</Output>
+      <Time>2014-04-10T12:25:38.105171-07:00</Time>
+    </Item>
+    <Item>
+      <Source>BackgroundsAndFloors\Dungeons\FixedDungeon1\DungeonHallwayLeft.png</Source>
+      <Name>BackgroundsAndFloors\Dungeons\FixedDungeon1\DungeonHallwayLeft</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\BackgroundsAndFloors\Dungeons\FixedDungeon1\DungeonHallwayLeft.xnb</Output>
+      <Time>2014-04-10T12:25:37.2946981-07:00</Time>
+    </Item>
+    <Item>
+      <Source>BackgroundsAndFloors\Dungeons\FixedDungeon1\DungeonHallwayRight.png</Source>
+      <Name>BackgroundsAndFloors\Dungeons\FixedDungeon1\DungeonHallwayRight</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\BackgroundsAndFloors\Dungeons\FixedDungeon1\DungeonHallwayRight.xnb</Output>
+      <Time>2014-04-10T12:25:37.2961028-07:00</Time>
+    </Item>
+    <Item>
+      <Source>BackgroundsAndFloors\Dungeons\FixedDungeon1\DungeonRoomBottomLeft.png</Source>
+      <Name>BackgroundsAndFloors\Dungeons\FixedDungeon1\DungeonRoomBottomLeft</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\BackgroundsAndFloors\Dungeons\FixedDungeon1\DungeonRoomBottomLeft.xnb</Output>
+      <Time>2014-04-10T12:25:37.2971061-07:00</Time>
+    </Item>
+    <Item>
+      <Source>BackgroundsAndFloors\Dungeons\FixedDungeon1\DungeonRoomBottomRight.png</Source>
+      <Name>BackgroundsAndFloors\Dungeons\FixedDungeon1\DungeonRoomBottomRight</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\BackgroundsAndFloors\Dungeons\FixedDungeon1\DungeonRoomBottomRight.xnb</Output>
+      <Time>2014-04-10T12:25:37.2971061-07:00</Time>
+    </Item>
+    <Item>
+      <Source>BackgroundsAndFloors\Dungeons\FixedDungeon1\DungeonRoomTopLeft.png</Source>
+      <Name>BackgroundsAndFloors\Dungeons\FixedDungeon1\DungeonRoomTopLeft</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\BackgroundsAndFloors\Dungeons\FixedDungeon1\DungeonRoomTopLeft.xnb</Output>
+      <Time>2014-04-10T12:25:37.2981076-07:00</Time>
+    </Item>
+    <Item>
+      <Source>BackgroundsAndFloors\Dungeons\FixedDungeon1\DungeonRoomTopRight.png</Source>
+      <Name>BackgroundsAndFloors\Dungeons\FixedDungeon1\DungeonRoomTopRight</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\BackgroundsAndFloors\Dungeons\FixedDungeon1\DungeonRoomTopRight.xnb</Output>
+      <Time>2014-04-10T12:25:37.2981076-07:00</Time>
+    </Item>
+    <Item>
+      <Source>ComputerPpl\Enemies\Skeleton\Move\SB.png</Source>
+      <Name>ComputerPpl\Enemies\Skeleton\Move\SB</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Enemies\Skeleton\Move\SB.xnb</Output>
+      <Time>2014-04-10T12:25:37.6892799-07:00</Time>
+    </Item>
+    <Item>
+      <Source>ComputerPpl\Enemies\Skeleton\Move\SBL.png</Source>
+      <Name>ComputerPpl\Enemies\Skeleton\Move\SBL</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Enemies\Skeleton\Move\SBL.xnb</Output>
+      <Time>2014-04-10T12:25:37.6902801-07:00</Time>
+    </Item>
+    <Item>
+      <Source>ComputerPpl\Enemies\Skeleton\Move\SBR.png</Source>
+      <Name>ComputerPpl\Enemies\Skeleton\Move\SBR</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Enemies\Skeleton\Move\SBR.xnb</Output>
+      <Time>2014-04-10T12:25:37.691285-07:00</Time>
+    </Item>
+    <Item>
+      <Source>ComputerPpl\Enemies\Skeleton\Move\SF.png</Source>
+      <Name>ComputerPpl\Enemies\Skeleton\Move\SF</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Enemies\Skeleton\Move\SF.xnb</Output>
+      <Time>2014-04-10T12:25:37.6922818-07:00</Time>
+    </Item>
+    <Item>
+      <Source>ComputerPpl\Enemies\Skeleton\Move\SFL.png</Source>
+      <Name>ComputerPpl\Enemies\Skeleton\Move\SFL</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Enemies\Skeleton\Move\SFL.xnb</Output>
+      <Time>2014-04-10T12:25:37.6932821-07:00</Time>
+    </Item>
+    <Item>
+      <Source>ComputerPpl\Enemies\Skeleton\Move\SFR.png</Source>
+      <Name>ComputerPpl\Enemies\Skeleton\Move\SFR</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Enemies\Skeleton\Move\SFR.xnb</Output>
+      <Time>2014-04-10T12:25:37.6932821-07:00</Time>
+    </Item>
+    <Item>
+      <Source>ComputerPpl\Enemies\Skeleton\Move\SL.png</Source>
+      <Name>ComputerPpl\Enemies\Skeleton\Move\SL</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Enemies\Skeleton\Move\SL.xnb</Output>
+      <Time>2014-04-10T12:25:37.6942853-07:00</Time>
+    </Item>
+    <Item>
+      <Source>ComputerPpl\Enemies\Skeleton\Move\SLL.png</Source>
+      <Name>ComputerPpl\Enemies\Skeleton\Move\SLL</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Enemies\Skeleton\Move\SLL.xnb</Output>
+      <Time>2014-04-10T12:25:37.8320482-07:00</Time>
+    </Item>
+    <Item>
+      <Source>ComputerPpl\Enemies\Skeleton\Move\SLR.png</Source>
+      <Name>ComputerPpl\Enemies\Skeleton\Move\SLR</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Enemies\Skeleton\Move\SLR.xnb</Output>
+      <Time>2014-04-10T12:25:37.8330565-07:00</Time>
+    </Item>
+    <Item>
+      <Source>ComputerPpl\Enemies\Skeleton\Move\SR.png</Source>
+      <Name>ComputerPpl\Enemies\Skeleton\Move\SR</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Enemies\Skeleton\Move\SR.xnb</Output>
+      <Time>2014-04-10T12:25:37.8340563-07:00</Time>
+    </Item>
+    <Item>
+      <Source>ComputerPpl\Enemies\Skeleton\Move\SRL.png</Source>
+      <Name>ComputerPpl\Enemies\Skeleton\Move\SRL</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Enemies\Skeleton\Move\SRL.xnb</Output>
+      <Time>2014-04-10T12:25:37.8340563-07:00</Time>
+    </Item>
+    <Item>
+      <Source>ComputerPpl\Enemies\Skeleton\Move\SRR.png</Source>
+      <Name>ComputerPpl\Enemies\Skeleton\Move\SRR</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Enemies\Skeleton\Move\SRR.xnb</Output>
+      <Time>2014-04-10T12:25:37.835057-07:00</Time>
+    </Item>
+    <Item>
+      <Source>ComputerPpl\Enemies\Skeleton\Attack\SBA.png</Source>
+      <Name>ComputerPpl\Enemies\Skeleton\Attack\SBA</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Enemies\Skeleton\Attack\SBA.xnb</Output>
+      <Time>2014-04-10T12:25:37.6573583-07:00</Time>
+    </Item>
+    <Item>
+      <Source>ComputerPpl\Enemies\Skeleton\Attack\SBA2.png</Source>
+      <Name>ComputerPpl\Enemies\Skeleton\Attack\SBA2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Enemies\Skeleton\Attack\SBA2.xnb</Output>
+      <Time>2014-04-10T12:25:37.658359-07:00</Time>
+    </Item>
+    <Item>
+      <Source>ComputerPpl\Enemies\Skeleton\Attack\SFA.png</Source>
+      <Name>ComputerPpl\Enemies\Skeleton\Attack\SFA</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Enemies\Skeleton\Attack\SFA.xnb</Output>
+      <Time>2014-04-10T12:25:37.6593597-07:00</Time>
+    </Item>
+    <Item>
+      <Source>ComputerPpl\Enemies\Skeleton\Attack\SFA2.png</Source>
+      <Name>ComputerPpl\Enemies\Skeleton\Attack\SFA2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Enemies\Skeleton\Attack\SFA2.xnb</Output>
+      <Time>2014-04-10T12:25:37.6603612-07:00</Time>
+    </Item>
+    <Item>
+      <Source>ComputerPpl\Enemies\Skeleton\Attack\SLA.png</Source>
+      <Name>ComputerPpl\Enemies\Skeleton\Attack\SLA</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Enemies\Skeleton\Attack\SLA.xnb</Output>
+      <Time>2014-04-10T12:25:37.6613618-07:00</Time>
+    </Item>
+    <Item>
+      <Source>ComputerPpl\Enemies\Skeleton\Attack\SLA2.png</Source>
+      <Name>ComputerPpl\Enemies\Skeleton\Attack\SLA2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Enemies\Skeleton\Attack\SLA2.xnb</Output>
+      <Time>2014-04-10T12:25:37.6623629-07:00</Time>
+    </Item>
+    <Item>
+      <Source>ComputerPpl\Enemies\Skeleton\Attack\SRA.png</Source>
+      <Name>ComputerPpl\Enemies\Skeleton\Attack\SRA</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Enemies\Skeleton\Attack\SRA.xnb</Output>
+      <Time>2014-04-10T12:25:37.6872747-07:00</Time>
+    </Item>
+    <Item>
+      <Source>ComputerPpl\Enemies\Skeleton\Attack\SRA2.png</Source>
+      <Name>ComputerPpl\Enemies\Skeleton\Attack\SRA2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Enemies\Skeleton\Attack\SRA2.xnb</Output>
+      <Time>2014-04-10T12:25:37.6882788-07:00</Time>
+    </Item>
+    <Item>
+      <Source>MenuButtons\Continue.png</Source>
+      <Name>MenuButtons\Continue</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\MenuButtons\Continue.xnb</Output>
+      <Time>2014-04-10T12:25:37.8600735-07:00</Time>
+    </Item>
+    <Item>
+      <Source>MenuButtons\LoadGame.png</Source>
+      <Name>MenuButtons\LoadGame</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\MenuButtons\LoadGame.xnb</Output>
+      <Time>2014-04-10T12:25:37.8740811-07:00</Time>
+    </Item>
+    <Item>
+      <Source>MenuButtons\NewGame.png</Source>
+      <Name>MenuButtons\NewGame</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\MenuButtons\NewGame.xnb</Output>
+      <Time>2014-04-10T12:25:37.8740811-07:00</Time>
+    </Item>
+    <Item>
+      <Source>AlistarSword\B.png</Source>
+      <Name>AlistarSword\B</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarSword\B.xnb</Output>
+      <Time>2014-04-10T12:25:37.0726833-07:00</Time>
+    </Item>
+    <Item>
+      <Source>AlistarSword\BL.png</Source>
+      <Name>AlistarSword\BL</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarSword\BL.xnb</Output>
+      <Time>2014-04-10T12:25:37.0726833-07:00</Time>
+    </Item>
+    <Item>
+      <Source>AlistarSword\BR.png</Source>
+      <Name>AlistarSword\BR</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarSword\BR.xnb</Output>
+      <Time>2014-04-10T12:25:37.0726833-07:00</Time>
+    </Item>
+    <Item>
+      <Source>AlistarSword\F.png</Source>
+      <Name>AlistarSword\F</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarSword\F.xnb</Output>
+      <Time>2014-04-10T12:25:37.073684-07:00</Time>
+    </Item>
+    <Item>
+      <Source>AlistarSword\FL.png</Source>
+      <Name>AlistarSword\FL</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarSword\FL.xnb</Output>
+      <Time>2014-04-10T12:25:37.073684-07:00</Time>
+    </Item>
+    <Item>
+      <Source>AlistarSword\FR.png</Source>
+      <Name>AlistarSword\FR</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarSword\FR.xnb</Output>
+      <Time>2014-04-10T12:25:37.0746855-07:00</Time>
+    </Item>
+    <Item>
+      <Source>AlistarSword\L.png</Source>
+      <Name>AlistarSword\L</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarSword\L.xnb</Output>
+      <Time>2014-04-10T12:25:37.0746855-07:00</Time>
+    </Item>
+    <Item>
+      <Source>AlistarSword\LL.png</Source>
+      <Name>AlistarSword\LL</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarSword\LL.xnb</Output>
+      <Time>2014-04-10T12:25:37.0746855-07:00</Time>
+    </Item>
+    <Item>
+      <Source>AlistarSword\LR.png</Source>
+      <Name>AlistarSword\LR</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarSword\LR.xnb</Output>
+      <Time>2014-04-10T12:25:37.0746855-07:00</Time>
+    </Item>
+    <Item>
+      <Source>AlistarSword\R.png</Source>
+      <Name>AlistarSword\R</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarSword\R.xnb</Output>
+      <Time>2014-04-10T12:25:37.1670218-07:00</Time>
+    </Item>
+    <Item>
+      <Source>AlistarSword\RL.png</Source>
+      <Name>AlistarSword\RL</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarSword\RL.xnb</Output>
+      <Time>2014-04-10T12:25:37.1680211-07:00</Time>
+    </Item>
+    <Item>
+      <Source>AlistarSword\RR.png</Source>
+      <Name>AlistarSword\RR</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarSword\RR.xnb</Output>
+      <Time>2014-04-10T12:25:37.1690214-07:00</Time>
+    </Item>
+    <Item>
+      <Source>AlistarSwordAttack\B1.png</Source>
+      <Name>AlistarSwordAttack\B1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarSwordAttack\B1.xnb</Output>
+      <Time>2014-04-10T12:25:37.1720858-07:00</Time>
+    </Item>
+    <Item>
+      <Source>AlistarSwordAttack\B2.png</Source>
+      <Name>AlistarSwordAttack\B2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarSwordAttack\B2.xnb</Output>
+      <Time>2014-04-10T12:25:37.1730873-07:00</Time>
+    </Item>
+    <Item>
+      <Source>AlistarSwordAttack\F1.png</Source>
+      <Name>AlistarSwordAttack\F1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarSwordAttack\F1.xnb</Output>
+      <Time>2014-04-10T12:25:37.1743984-07:00</Time>
+    </Item>
+    <Item>
+      <Source>AlistarSwordAttack\F2.png</Source>
+      <Name>AlistarSwordAttack\F2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarSwordAttack\F2.xnb</Output>
+      <Time>2014-04-10T12:25:37.1743984-07:00</Time>
+    </Item>
+    <Item>
+      <Source>AlistarSwordAttack\L1.png</Source>
+      <Name>AlistarSwordAttack\L1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarSwordAttack\L1.xnb</Output>
+      <Time>2014-04-10T12:25:37.1754021-07:00</Time>
+    </Item>
+    <Item>
+      <Source>AlistarSwordAttack\L2.png</Source>
+      <Name>AlistarSwordAttack\L2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarSwordAttack\L2.xnb</Output>
+      <Time>2014-04-10T12:25:37.1754021-07:00</Time>
+    </Item>
+    <Item>
+      <Source>AlistarSwordAttack\R1.png</Source>
+      <Name>AlistarSwordAttack\R1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarSwordAttack\R1.xnb</Output>
+      <Time>2014-04-10T12:25:37.1764023-07:00</Time>
+    </Item>
+    <Item>
+      <Source>AlistarSwordAttack\R2.png</Source>
+      <Name>AlistarSwordAttack\R2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarSwordAttack\R2.xnb</Output>
+      <Time>2014-04-10T12:25:37.1764023-07:00</Time>
+    </Item>
+    <Item>
+      <Source>AlistarSwordAttack\LeftSwoosh.png</Source>
+      <Name>AlistarSwordAttack\LeftSwoosh</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarSwordAttack\LeftSwoosh.xnb</Output>
+      <Time>2014-04-10T12:25:37.1764023-07:00</Time>
+    </Item>
+    <Item>
+      <Source>AlistarSwordAttack\BackSwoosh.png</Source>
+      <Name>AlistarSwordAttack\BackSwoosh</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarSwordAttack\BackSwoosh.xnb</Output>
+      <Time>2014-04-10T12:25:37.1730873-07:00</Time>
+    </Item>
+    <Item>
+      <Source>AlistarSwordAttack\FrontSwoosh.png</Source>
+      <Name>AlistarSwordAttack\FrontSwoosh</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarSwordAttack\FrontSwoosh.xnb</Output>
+      <Time>2014-04-10T12:25:37.1754021-07:00</Time>
+    </Item>
+    <Item>
+      <Source>AlistarSwordAttack\RightSwoosh.png</Source>
+      <Name>AlistarSwordAttack\RightSwoosh</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarSwordAttack\RightSwoosh.xnb</Output>
+      <Time>2014-04-10T12:25:37.1774034-07:00</Time>
+    </Item>
+    <Item>
+      <Source>BackgroundsAndFloors\Dungeons\FixedDungeon1\BossHallway.png</Source>
+      <Name>BackgroundsAndFloors\Dungeons\FixedDungeon1\BossHallway</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\BackgroundsAndFloors\Dungeons\FixedDungeon1\BossHallway.xnb</Output>
+      <Time>2014-04-10T12:25:37.2946981-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Chests\Chest.png</Source>
+      <Name>Chests\Chest</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Chests\Chest.xnb</Output>
+      <Time>2014-04-10T12:25:37.5569954-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Chests\EmptyChest.png</Source>
+      <Name>Chests\EmptyChest</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Chests\EmptyChest.xnb</Output>
+      <Time>2014-04-10T12:25:37.5569954-07:00</Time>
+    </Item>
+    <Item>
+      <Source>BackgroundsAndFloors\Dungeons\FixedDungeon1\DungeonRoomBoss.png</Source>
+      <Name>BackgroundsAndFloors\Dungeons\FixedDungeon1\DungeonRoomBoss</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\BackgroundsAndFloors\Dungeons\FixedDungeon1\DungeonRoomBoss.xnb</Output>
+      <Time>2014-04-10T12:25:37.2961028-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Box\MetalBox.png</Source>
+      <Name>Box\MetalBox</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Box\MetalBox.xnb</Output>
+      <Time>2014-04-10T12:25:37.5530377-07:00</Time>
+    </Item>
+    <Item>
+      <Source>BackgroundsAndFloors\Landscapes\LeftPassage.png</Source>
+      <Name>BackgroundsAndFloors\Landscapes\LeftPassage</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\BackgroundsAndFloors\Landscapes\LeftPassage.xnb</Output>
+      <Time>2014-04-10T12:25:37.5440313-07:00</Time>
+    </Item>
+    <Item>
+      <Source>TitleScreen.png</Source>
+      <Name>TitleScreen</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\TitleScreen.xnb</Output>
+      <Time>2014-04-10T12:25:38.0958623-07:00</Time>
+    </Item>
+    <Item>
+      <Source>ComputerPpl\Bosses\D1 Boss\Move\B.png</Source>
+      <Name>ComputerPpl\Bosses\D1 Boss\Move\B</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Bosses\D1 Boss\Move\B.xnb</Output>
+      <Time>2014-04-10T12:25:37.5619987-07:00</Time>
+    </Item>
+    <Item>
+      <Source>ComputerPpl\Bosses\D1 Boss\Move\BL.png</Source>
+      <Name>ComputerPpl\Bosses\D1 Boss\Move\BL</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Bosses\D1 Boss\Move\BL.xnb</Output>
+      <Time>2014-04-10T12:25:37.5619987-07:00</Time>
+    </Item>
+    <Item>
+      <Source>ComputerPpl\Bosses\D1 Boss\Move\BR.png</Source>
+      <Name>ComputerPpl\Bosses\D1 Boss\Move\BR</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Bosses\D1 Boss\Move\BR.xnb</Output>
+      <Time>2014-04-10T12:25:37.5619987-07:00</Time>
+    </Item>
+    <Item>
+      <Source>ComputerPpl\Bosses\D1 Boss\Move\F.png</Source>
+      <Name>ComputerPpl\Bosses\D1 Boss\Move\F</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Bosses\D1 Boss\Move\F.xnb</Output>
+      <Time>2014-04-10T12:25:37.5629994-07:00</Time>
+    </Item>
+    <Item>
+      <Source>ComputerPpl\Bosses\D1 Boss\Move\FL.png</Source>
+      <Name>ComputerPpl\Bosses\D1 Boss\Move\FL</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Bosses\D1 Boss\Move\FL.xnb</Output>
+      <Time>2014-04-10T12:25:37.5629994-07:00</Time>
+    </Item>
+    <Item>
+      <Source>ComputerPpl\Bosses\D1 Boss\Move\FR.png</Source>
+      <Name>ComputerPpl\Bosses\D1 Boss\Move\FR</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Bosses\D1 Boss\Move\FR.xnb</Output>
+      <Time>2014-04-10T12:25:37.564-07:00</Time>
+    </Item>
+    <Item>
+      <Source>ComputerPpl\Bosses\D1 Boss\Move\L.png</Source>
+      <Name>ComputerPpl\Bosses\D1 Boss\Move\L</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Bosses\D1 Boss\Move\L.xnb</Output>
+      <Time>2014-04-10T12:25:37.564-07:00</Time>
+    </Item>
+    <Item>
+      <Source>ComputerPpl\Bosses\D1 Boss\Move\LL.png</Source>
+      <Name>ComputerPpl\Bosses\D1 Boss\Move\LL</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Bosses\D1 Boss\Move\LL.xnb</Output>
+      <Time>2014-04-10T12:25:37.5720126-07:00</Time>
+    </Item>
+    <Item>
+      <Source>ComputerPpl\Bosses\D1 Boss\Move\LR.png</Source>
+      <Name>ComputerPpl\Bosses\D1 Boss\Move\LR</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Bosses\D1 Boss\Move\LR.xnb</Output>
+      <Time>2014-04-10T12:25:37.5720126-07:00</Time>
+    </Item>
+    <Item>
+      <Source>ComputerPpl\Bosses\D1 Boss\Move\R.png</Source>
+      <Name>ComputerPpl\Bosses\D1 Boss\Move\R</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Bosses\D1 Boss\Move\R.xnb</Output>
+      <Time>2014-04-10T12:25:37.5730137-07:00</Time>
+    </Item>
+    <Item>
+      <Source>ComputerPpl\Bosses\D1 Boss\Move\RL.png</Source>
+      <Name>ComputerPpl\Bosses\D1 Boss\Move\RL</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Bosses\D1 Boss\Move\RL.xnb</Output>
+      <Time>2014-04-10T12:25:37.5730137-07:00</Time>
+    </Item>
+    <Item>
+      <Source>ComputerPpl\Bosses\D1 Boss\Move\RR.png</Source>
+      <Name>ComputerPpl\Bosses\D1 Boss\Move\RR</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Bosses\D1 Boss\Move\RR.xnb</Output>
+      <Time>2014-04-10T12:25:37.5730137-07:00</Time>
+    </Item>
+    <Item>
+      <Source>ComputerPpl\Bosses\D1 Boss\Attack\F1.png</Source>
+      <Name>ComputerPpl\Bosses\D1 Boss\Attack\F1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Bosses\D1 Boss\Attack\F1.xnb</Output>
+      <Time>2014-04-10T12:25:37.5589967-07:00</Time>
+    </Item>
+    <Item>
+      <Source>ComputerPpl\Bosses\D1 Boss\Attack\F2.png</Source>
+      <Name>ComputerPpl\Bosses\D1 Boss\Attack\F2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Bosses\D1 Boss\Attack\F2.xnb</Output>
+      <Time>2014-04-10T12:25:37.5589967-07:00</Time>
+    </Item>
+    <Item>
+      <Source>ComputerPpl\Bosses\D1 Boss\Attack\L1.png</Source>
+      <Name>ComputerPpl\Bosses\D1 Boss\Attack\L1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Bosses\D1 Boss\Attack\L1.xnb</Output>
+      <Time>2014-04-10T12:25:37.5599974-07:00</Time>
+    </Item>
+    <Item>
+      <Source>ComputerPpl\Bosses\D1 Boss\Attack\L2.png</Source>
+      <Name>ComputerPpl\Bosses\D1 Boss\Attack\L2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Bosses\D1 Boss\Attack\L2.xnb</Output>
+      <Time>2014-04-10T12:25:37.5599974-07:00</Time>
+    </Item>
+    <Item>
+      <Source>ComputerPpl\Bosses\D1 Boss\Attack\R1.png</Source>
+      <Name>ComputerPpl\Bosses\D1 Boss\Attack\R1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Bosses\D1 Boss\Attack\R1.xnb</Output>
+      <Time>2014-04-10T12:25:37.5599974-07:00</Time>
+    </Item>
+    <Item>
+      <Source>ComputerPpl\Bosses\D1 Boss\Attack\R2.png</Source>
+      <Name>ComputerPpl\Bosses\D1 Boss\Attack\R2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Bosses\D1 Boss\Attack\R2.xnb</Output>
+      <Time>2014-04-10T12:25:37.5610045-07:00</Time>
+    </Item>
+    <Item>
+      <Source>ComputerPpl\Bosses\D1 Boss\Attack\B1.png</Source>
+      <Name>ComputerPpl\Bosses\D1 Boss\Attack\B1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Bosses\D1 Boss\Attack\B1.xnb</Output>
+      <Time>2014-04-10T12:25:37.5579961-07:00</Time>
+    </Item>
+    <Item>
+      <Source>ComputerPpl\Bosses\D1 Boss\Attack\B2.png</Source>
+      <Name>ComputerPpl\Bosses\D1 Boss\Attack\B2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Bosses\D1 Boss\Attack\B2.xnb</Output>
+      <Time>2014-04-10T12:25:37.5589967-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Traps\arrowtrap.png</Source>
+      <Name>Traps\arrowtrap</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Traps\arrowtrap.xnb</Output>
+      <Time>2014-04-10T12:25:38.0978641-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Torch\Light1.png</Source>
+      <Name>Torch\Light1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Torch\Light1.xnb</Output>
+      <Time>2014-04-10T12:25:38.0958623-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Torch\Light2.png</Source>
+      <Name>Torch\Light2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Torch\Light2.xnb</Output>
+      <Time>2014-04-10T12:25:38.0968634-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Torch\Light3.png</Source>
+      <Name>Torch\Light3</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Torch\Light3.xnb</Output>
+      <Time>2014-04-10T12:25:38.0968634-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Torch\Torch1.png</Source>
+      <Name>Torch\Torch1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Torch\Torch1.xnb</Output>
+      <Time>2014-04-10T12:25:38.0968634-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Torch\Torch2.png</Source>
+      <Name>Torch\Torch2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Torch\Torch2.xnb</Output>
+      <Time>2014-04-10T12:25:38.0968634-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Torch\Torch3.png</Source>
+      <Name>Torch\Torch3</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Torch\Torch3.xnb</Output>
+      <Time>2014-04-10T12:25:38.0978641-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Random\LightScreen.png</Source>
+      <Name>Random\LightScreen</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Random\LightScreen.xnb</Output>
+      <Time>2014-04-10T12:25:38.0911669-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Buildings\BottomLeftHouse.png</Source>
+      <Name>Buildings\BottomLeftHouse</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Buildings\BottomLeftHouse.xnb</Output>
+      <Time>2014-04-10T12:25:37.5540383-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Buildings\BottomRightHouse.png</Source>
+      <Name>Buildings\BottomRightHouse</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Buildings\BottomRightHouse.xnb</Output>
+      <Time>2014-04-10T12:25:37.5550385-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Buildings\TopLeftHouse.png</Source>
+      <Name>Buildings\TopLeftHouse</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Buildings\TopLeftHouse.xnb</Output>
+      <Time>2014-04-10T12:25:37.5559935-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Buildings\TopRightHouse.png</Source>
+      <Name>Buildings\TopRightHouse</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Buildings\TopRightHouse.xnb</Output>
+      <Time>2014-04-10T12:25:37.5559935-07:00</Time>
+    </Item>
+    <Item>
+      <Source>BackgroundsAndFloors\Landscapes\FountainINTOWNSQUARE.png</Source>
+      <Name>BackgroundsAndFloors\Landscapes\FountainINTOWNSQUARE</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\BackgroundsAndFloors\Landscapes\FountainINTOWNSQUARE.xnb</Output>
+      <Time>2014-04-10T12:25:37.299107-07:00</Time>
+    </Item>
+    <Item>
+      <Source>BackgroundsAndFloors\Landscapes\TownSquare.png</Source>
+      <Name>BackgroundsAndFloors\Landscapes\TownSquare</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\BackgroundsAndFloors\Landscapes\TownSquare.xnb</Output>
+      <Time>2014-04-10T12:25:37.5510355-07:00</Time>
+    </Item>
+    <Item>
+      <Source>BackgroundsAndFloors\Buildings\HOUSE4.png</Source>
+      <Name>BackgroundsAndFloors\Buildings\HOUSE4</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\BackgroundsAndFloors\Buildings\HOUSE4.xnb</Output>
+      <Time>2014-04-10T12:25:37.201046-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Random\Particle.png</Source>
+      <Name>Random\Particle</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Random\Particle.xnb</Output>
+      <Time>2014-04-10T12:25:38.0921672-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Items\10Coin.png</Source>
+      <Name>Items\10Coin</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Items\10Coin.xnb</Output>
+      <Time>2014-04-10T12:25:37.8460621-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Items\1Coin.png</Source>
+      <Name>Items\1Coin</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Items\1Coin.xnb</Output>
+      <Time>2014-04-10T12:25:37.8480635-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Items\5Coin.png</Source>
+      <Name>Items\5Coin</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Items\5Coin.xnb</Output>
+      <Time>2014-04-10T12:25:37.8540696-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Items\CyanStone.png</Source>
+      <Name>Items\CyanStone</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Items\CyanStone.xnb</Output>
+      <Time>2014-04-10T12:25:37.8550702-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Items\Key.png</Source>
+      <Name>Items\Key</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Items\Key.xnb</Output>
+      <Time>2014-04-10T12:25:37.8550702-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Items\MagentaStone.png</Source>
+      <Name>Items\MagentaStone</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Items\MagentaStone.xnb</Output>
+      <Time>2014-04-10T12:25:37.8560709-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Items\SteelArrow.png</Source>
+      <Name>Items\SteelArrow</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Items\SteelArrow.xnb</Output>
+      <Time>2014-04-10T12:25:37.8560709-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Items\WoodenArrow.png</Source>
+      <Name>Items\WoodenArrow</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Items\WoodenArrow.xnb</Output>
+      <Time>2014-04-10T12:25:37.8570716-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Items\YellowStone.png</Source>
+      <Name>Items\YellowStone</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Items\YellowStone.xnb</Output>
+      <Time>2014-04-10T12:25:37.8580722-07:00</Time>
+    </Item>
+    <Item>
+      <Source>AlistarBow\B.png</Source>
+      <Name>AlistarBow\B</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarBow\B.xnb</Output>
+      <Time>2014-04-10T12:25:37.0646793-07:00</Time>
+    </Item>
+    <Item>
+      <Source>AlistarBow\BL.png</Source>
+      <Name>AlistarBow\BL</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarBow\BL.xnb</Output>
+      <Time>2014-04-10T12:25:37.0646793-07:00</Time>
+    </Item>
+    <Item>
+      <Source>AlistarBow\BR.png</Source>
+      <Name>AlistarBow\BR</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarBow\BR.xnb</Output>
+      <Time>2014-04-10T12:25:37.0656791-07:00</Time>
+    </Item>
+    <Item>
+      <Source>AlistarBow\F.png</Source>
+      <Name>AlistarBow\F</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarBow\F.xnb</Output>
+      <Time>2014-04-10T12:25:37.0656791-07:00</Time>
+    </Item>
+    <Item>
+      <Source>AlistarBow\FL.png</Source>
+      <Name>AlistarBow\FL</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarBow\FL.xnb</Output>
+      <Time>2014-04-10T12:25:37.0656791-07:00</Time>
+    </Item>
+    <Item>
+      <Source>AlistarBow\FR.png</Source>
+      <Name>AlistarBow\FR</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarBow\FR.xnb</Output>
+      <Time>2014-04-10T12:25:37.0666798-07:00</Time>
+    </Item>
+    <Item>
+      <Source>AlistarBow\L.png</Source>
+      <Name>AlistarBow\L</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarBow\L.xnb</Output>
+      <Time>2014-04-10T12:25:37.0666798-07:00</Time>
+    </Item>
+    <Item>
+      <Source>AlistarBow\LL.png</Source>
+      <Name>AlistarBow\LL</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarBow\LL.xnb</Output>
+      <Time>2014-04-10T12:25:37.0676813-07:00</Time>
+    </Item>
+    <Item>
+      <Source>AlistarBow\LR.png</Source>
+      <Name>AlistarBow\LR</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarBow\LR.xnb</Output>
+      <Time>2014-04-10T12:25:37.0676813-07:00</Time>
+    </Item>
+    <Item>
+      <Source>AlistarBow\R.png</Source>
+      <Name>AlistarBow\R</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarBow\R.xnb</Output>
+      <Time>2014-04-10T12:25:37.0676813-07:00</Time>
+    </Item>
+    <Item>
+      <Source>AlistarBow\RL.png</Source>
+      <Name>AlistarBow\RL</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarBow\RL.xnb</Output>
+      <Time>2014-04-10T12:25:37.0686811-07:00</Time>
+    </Item>
+    <Item>
+      <Source>AlistarBow\RR.png</Source>
+      <Name>AlistarBow\RR</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarBow\RR.xnb</Output>
+      <Time>2014-04-10T12:25:37.0686811-07:00</Time>
+    </Item>
+    <Item>
+      <Source>AlistarBowAttack\B1.png</Source>
+      <Name>AlistarBowAttack\B1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarBowAttack\B1.xnb</Output>
+      <Time>2014-04-10T12:25:37.0686811-07:00</Time>
+    </Item>
+    <Item>
+      <Source>AlistarBowAttack\B2.png</Source>
+      <Name>AlistarBowAttack\B2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarBowAttack\B2.xnb</Output>
+      <Time>2014-04-10T12:25:37.0696818-07:00</Time>
+    </Item>
+    <Item>
+      <Source>AlistarBowAttack\F1.png</Source>
+      <Name>AlistarBowAttack\F1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarBowAttack\F1.xnb</Output>
+      <Time>2014-04-10T12:25:37.0696818-07:00</Time>
+    </Item>
+    <Item>
+      <Source>AlistarBowAttack\F2.png</Source>
+      <Name>AlistarBowAttack\F2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarBowAttack\F2.xnb</Output>
+      <Time>2014-04-10T12:25:37.0696818-07:00</Time>
+    </Item>
+    <Item>
+      <Source>AlistarBowAttack\L1.png</Source>
+      <Name>AlistarBowAttack\L1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarBowAttack\L1.xnb</Output>
+      <Time>2014-04-10T12:25:37.070685-07:00</Time>
+    </Item>
+    <Item>
+      <Source>AlistarBowAttack\L2.png</Source>
+      <Name>AlistarBowAttack\L2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarBowAttack\L2.xnb</Output>
+      <Time>2014-04-10T12:25:37.0716835-07:00</Time>
+    </Item>
+    <Item>
+      <Source>AlistarBowAttack\R1.png</Source>
+      <Name>AlistarBowAttack\R1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarBowAttack\R1.xnb</Output>
+      <Time>2014-04-10T12:25:37.0716835-07:00</Time>
+    </Item>
+    <Item>
+      <Source>AlistarBowAttack\R2.png</Source>
+      <Name>AlistarBowAttack\R2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarBowAttack\R2.xnb</Output>
+      <Time>2014-04-10T12:25:37.0716835-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Projectiles\SteelArrowDown.png</Source>
+      <Name>Projectiles\SteelArrowDown</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Projectiles\SteelArrowDown.xnb</Output>
+      <Time>2014-04-10T12:25:38.0873931-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Projectiles\SteelArrowLeft.png</Source>
+      <Name>Projectiles\SteelArrowLeft</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Projectiles\SteelArrowLeft.xnb</Output>
+      <Time>2014-04-10T12:25:38.0873931-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Projectiles\SteelArrowRight.png</Source>
+      <Name>Projectiles\SteelArrowRight</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Projectiles\SteelArrowRight.xnb</Output>
+      <Time>2014-04-10T12:25:38.0891639-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Projectiles\SteelArrowUp.png</Source>
+      <Name>Projectiles\SteelArrowUp</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Projectiles\SteelArrowUp.xnb</Output>
+      <Time>2014-04-10T12:25:38.0891639-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Weapons\Bomb.png</Source>
+      <Name>Weapons\Bomb</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Weapons\Bomb.xnb</Output>
+      <Time>2014-04-10T12:25:38.0988647-07:00</Time>
+    </Item>
+    <Item>
+      <Source>BackgroundsAndFloors\Buildings\HOUSE.png</Source>
+      <Name>BackgroundsAndFloors\Buildings\HOUSE</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\BackgroundsAndFloors\Buildings\HOUSE.xnb</Output>
+      <Time>2014-04-10T12:25:37.180405-07:00</Time>
+    </Item>
+    <Item>
+      <Source>BackgroundsAndFloors\Buildings\HOUSE2.png</Source>
+      <Name>BackgroundsAndFloors\Buildings\HOUSE2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\BackgroundsAndFloors\Buildings\HOUSE2.xnb</Output>
+      <Time>2014-04-10T12:25:37.1814061-07:00</Time>
+    </Item>
+    <Item>
+      <Source>BackgroundsAndFloors\Buildings\HOUSE3.png</Source>
+      <Name>BackgroundsAndFloors\Buildings\HOUSE3</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\BackgroundsAndFloors\Buildings\HOUSE3.xnb</Output>
+      <Time>2014-04-10T12:25:37.2000453-07:00</Time>
+    </Item>
+    <Item>
+      <Source>BackgroundsAndFloors\Buildings\HOUSE5.png</Source>
+      <Name>BackgroundsAndFloors\Buildings\HOUSE5</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\BackgroundsAndFloors\Buildings\HOUSE5.xnb</Output>
+      <Time>2014-04-10T12:25:37.2067057-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Weapons\BombAnime\Bomb2.png</Source>
+      <Name>Weapons\BombAnime\Bomb2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Weapons\BombAnime\Bomb2.xnb</Output>
+      <Time>2014-04-10T12:25:38.0988647-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Weapons\BombAnime\Bomb3.png</Source>
+      <Name>Weapons\BombAnime\Bomb3</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Weapons\BombAnime\Bomb3.xnb</Output>
+      <Time>2014-04-10T12:25:38.0988647-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Weapons\BombAnime\Bomb4.png</Source>
+      <Name>Weapons\BombAnime\Bomb4</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Weapons\BombAnime\Bomb4.xnb</Output>
+      <Time>2014-04-10T12:25:38.0998654-07:00</Time>
+    </Item>
+    <Item>
+      <Source>ComputerPpl\Enemies\Mage\Move\B.png</Source>
+      <Name>ComputerPpl\Enemies\Mage\Move\B</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Enemies\Mage\Move\B.xnb</Output>
+      <Time>2014-04-10T12:25:37.5740139-07:00</Time>
+    </Item>
+    <Item>
+      <Source>ComputerPpl\Enemies\Mage\Move\BL.png</Source>
+      <Name>ComputerPpl\Enemies\Mage\Move\BL</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Enemies\Mage\Move\BL.xnb</Output>
+      <Time>2014-04-10T12:25:37.5740139-07:00</Time>
+    </Item>
+    <Item>
+      <Source>ComputerPpl\Enemies\Mage\Move\BR.png</Source>
+      <Name>ComputerPpl\Enemies\Mage\Move\BR</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Enemies\Mage\Move\BR.xnb</Output>
+      <Time>2014-04-10T12:25:37.575015-07:00</Time>
+    </Item>
+    <Item>
+      <Source>ComputerPpl\Enemies\Mage\Move\F.png</Source>
+      <Name>ComputerPpl\Enemies\Mage\Move\F</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Enemies\Mage\Move\F.xnb</Output>
+      <Time>2014-04-10T12:25:37.575015-07:00</Time>
+    </Item>
+    <Item>
+      <Source>ComputerPpl\Enemies\Mage\Move\FL.png</Source>
+      <Name>ComputerPpl\Enemies\Mage\Move\FL</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Enemies\Mage\Move\FL.xnb</Output>
+      <Time>2014-04-10T12:25:37.575015-07:00</Time>
+    </Item>
+    <Item>
+      <Source>ComputerPpl\Enemies\Mage\Move\FR.png</Source>
+      <Name>ComputerPpl\Enemies\Mage\Move\FR</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Enemies\Mage\Move\FR.xnb</Output>
+      <Time>2014-04-10T12:25:37.5760157-07:00</Time>
+    </Item>
+    <Item>
+      <Source>ComputerPpl\Enemies\Mage\Move\L.png</Source>
+      <Name>ComputerPpl\Enemies\Mage\Move\L</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Enemies\Mage\Move\L.xnb</Output>
+      <Time>2014-04-10T12:25:37.5760157-07:00</Time>
+    </Item>
+    <Item>
+      <Source>ComputerPpl\Enemies\Mage\Move\LL.png</Source>
+      <Name>ComputerPpl\Enemies\Mage\Move\LL</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Enemies\Mage\Move\LL.xnb</Output>
+      <Time>2014-04-10T12:25:37.6085966-07:00</Time>
+    </Item>
+    <Item>
+      <Source>ComputerPpl\Enemies\Mage\Move\LR.png</Source>
+      <Name>ComputerPpl\Enemies\Mage\Move\LR</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Enemies\Mage\Move\LR.xnb</Output>
+      <Time>2014-04-10T12:25:37.6543563-07:00</Time>
+    </Item>
+    <Item>
+      <Source>ComputerPpl\Enemies\Mage\Move\R.png</Source>
+      <Name>ComputerPpl\Enemies\Mage\Move\R</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Enemies\Mage\Move\R.xnb</Output>
+      <Time>2014-04-10T12:25:37.6543563-07:00</Time>
+    </Item>
+    <Item>
+      <Source>ComputerPpl\Enemies\Mage\Move\RL.png</Source>
+      <Name>ComputerPpl\Enemies\Mage\Move\RL</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Enemies\Mage\Move\RL.xnb</Output>
+      <Time>2014-04-10T12:25:37.655357-07:00</Time>
+    </Item>
+    <Item>
+      <Source>ComputerPpl\Enemies\Mage\Move\RR.png</Source>
+      <Name>ComputerPpl\Enemies\Mage\Move\RR</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Enemies\Mage\Move\RR.xnb</Output>
+      <Time>2014-04-10T12:25:37.655357-07:00</Time>
+    </Item>
+    <Item>
+      <Source>ComputerPpl\Enemies\Thing\Move\TB.png</Source>
+      <Name>ComputerPpl\Enemies\Thing\Move\TB</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Enemies\Thing\Move\TB.xnb</Output>
+      <Time>2014-04-10T12:25:37.8370583-07:00</Time>
+    </Item>
+    <Item>
+      <Source>ComputerPpl\Enemies\Thing\Move\TBL.png</Source>
+      <Name>ComputerPpl\Enemies\Thing\Move\TBL</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Enemies\Thing\Move\TBL.xnb</Output>
+      <Time>2014-04-10T12:25:37.8370583-07:00</Time>
+    </Item>
+    <Item>
+      <Source>ComputerPpl\Enemies\Thing\Move\TBR.png</Source>
+      <Name>ComputerPpl\Enemies\Thing\Move\TBR</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Enemies\Thing\Move\TBR.xnb</Output>
+      <Time>2014-04-10T12:25:37.838059-07:00</Time>
+    </Item>
+    <Item>
+      <Source>ComputerPpl\Enemies\Thing\Move\TF.png</Source>
+      <Name>ComputerPpl\Enemies\Thing\Move\TF</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Enemies\Thing\Move\TF.xnb</Output>
+      <Time>2014-04-10T12:25:37.8390584-07:00</Time>
+    </Item>
+    <Item>
+      <Source>ComputerPpl\Enemies\Thing\Move\TFL.png</Source>
+      <Name>ComputerPpl\Enemies\Thing\Move\TFL</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Enemies\Thing\Move\TFL.xnb</Output>
+      <Time>2014-04-10T12:25:37.8400599-07:00</Time>
+    </Item>
+    <Item>
+      <Source>ComputerPpl\Enemies\Thing\Move\TFR.png</Source>
+      <Name>ComputerPpl\Enemies\Thing\Move\TFR</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Enemies\Thing\Move\TFR.xnb</Output>
+      <Time>2014-04-10T12:25:37.8400599-07:00</Time>
+    </Item>
+    <Item>
+      <Source>ComputerPpl\Enemies\Thing\Move\TL.png</Source>
+      <Name>ComputerPpl\Enemies\Thing\Move\TL</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Enemies\Thing\Move\TL.xnb</Output>
+      <Time>2014-04-10T12:25:37.8410614-07:00</Time>
+    </Item>
+    <Item>
+      <Source>ComputerPpl\Enemies\Thing\Move\TLL.png</Source>
+      <Name>ComputerPpl\Enemies\Thing\Move\TLL</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Enemies\Thing\Move\TLL.xnb</Output>
+      <Time>2014-04-10T12:25:37.8420629-07:00</Time>
+    </Item>
+    <Item>
+      <Source>ComputerPpl\Enemies\Thing\Move\TLR.png</Source>
+      <Name>ComputerPpl\Enemies\Thing\Move\TLR</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Enemies\Thing\Move\TLR.xnb</Output>
+      <Time>2014-04-10T12:25:37.8430632-07:00</Time>
+    </Item>
+    <Item>
+      <Source>ComputerPpl\Enemies\Thing\Move\TR.png</Source>
+      <Name>ComputerPpl\Enemies\Thing\Move\TR</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Enemies\Thing\Move\TR.xnb</Output>
+      <Time>2014-04-10T12:25:37.8430632-07:00</Time>
+    </Item>
+    <Item>
+      <Source>ComputerPpl\Enemies\Thing\Move\TRL.png</Source>
+      <Name>ComputerPpl\Enemies\Thing\Move\TRL</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Enemies\Thing\Move\TRL.xnb</Output>
+      <Time>2014-04-10T12:25:37.844063-07:00</Time>
+    </Item>
+    <Item>
+      <Source>ComputerPpl\Enemies\Thing\Move\TRR.png</Source>
+      <Name>ComputerPpl\Enemies\Thing\Move\TRR</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Enemies\Thing\Move\TRR.xnb</Output>
+      <Time>2014-04-10T12:25:37.8450598-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Ronnin\FL.png</Source>
+      <Name>Ronnin\FL</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Ronnin\FL.xnb</Output>
+      <Time>2014-04-10T12:25:38.0928591-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Wep Icons\bomb selected.png</Source>
+      <Name>Wep Icons\bomb selected</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Wep Icons\bomb selected.xnb</Output>
+      <Time>2014-04-10T12:25:38.105171-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Wep Icons\bow selected.png</Source>
+      <Name>Wep Icons\bow selected</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Wep Icons\bow selected.xnb</Output>
+      <Time>2014-04-10T12:25:38.1061717-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Wep Icons\sword selected.png</Source>
+      <Name>Wep Icons\sword selected</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Wep Icons\sword selected.xnb</Output>
+      <Time>2014-04-10T12:25:38.1081089-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Menu Pics\AdlezTitle.png</Source>
+      <Name>Menu Pics\AdlezTitle</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Menu Pics\AdlezTitle.xnb</Output>
+      <Time>2014-04-10T12:25:37.8590729-07:00</Time>
+    </Item>
+    <Item>
+      <Source>BackgroundsAndFloors\Dungeons\Dungeon2\Up.png</Source>
+      <Name>BackgroundsAndFloors\Dungeons\Dungeon2\Up</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\BackgroundsAndFloors\Dungeons\Dungeon2\Up.xnb</Output>
+      <Time>2014-04-10T12:25:37.2936974-07:00</Time>
+    </Item>
+    <Item>
+      <Source>BackgroundsAndFloors\Dungeons\Dungeon2\Right.png</Source>
+      <Name>BackgroundsAndFloors\Dungeons\Dungeon2\Right</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\BackgroundsAndFloors\Dungeons\Dungeon2\Right.xnb</Output>
+      <Time>2014-04-10T12:25:37.2766451-07:00</Time>
+    </Item>
+    <Item>
+      <Source>BackgroundsAndFloors\Dungeons\Dungeon2\RightUp.png</Source>
+      <Name>BackgroundsAndFloors\Dungeons\Dungeon2\RightUp</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\BackgroundsAndFloors\Dungeons\Dungeon2\RightUp.xnb</Output>
+      <Time>2014-04-10T12:25:37.2846923-07:00</Time>
+    </Item>
+    <Item>
+      <Source>BackgroundsAndFloors\Dungeons\Dungeon2\MainRoom.png</Source>
+      <Name>BackgroundsAndFloors\Dungeons\Dungeon2\MainRoom</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\BackgroundsAndFloors\Dungeons\Dungeon2\MainRoom.xnb</Output>
+      <Time>2014-04-10T12:25:37.2669327-07:00</Time>
+    </Item>
+    <Item>
+      <Source>BackgroundsAndFloors\Dungeons\Dungeon2\Left.png</Source>
+      <Name>BackgroundsAndFloors\Dungeons\Dungeon2\Left</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\BackgroundsAndFloors\Dungeons\Dungeon2\Left.xnb</Output>
+      <Time>2014-04-10T12:25:37.2243357-07:00</Time>
+    </Item>
+    <Item>
+      <Source>BackgroundsAndFloors\Dungeons\Dungeon2\Down.png</Source>
+      <Name>BackgroundsAndFloors\Dungeons\Dungeon2\Down</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\BackgroundsAndFloors\Dungeons\Dungeon2\Down.xnb</Output>
+      <Time>2014-04-10T12:25:37.2137112-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Items\1BluePotion.png</Source>
+      <Name>Items\1BluePotion</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Items\1BluePotion.xnb</Output>
+      <Time>2014-04-10T12:25:37.8470624-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Items\1GreenPotion.png</Source>
+      <Name>Items\1GreenPotion</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Items\1GreenPotion.xnb</Output>
+      <Time>2014-04-10T12:25:37.8480635-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Items\1RedPotion.png</Source>
+      <Name>Items\1RedPotion</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Items\1RedPotion.xnb</Output>
+      <Time>2014-04-10T12:25:37.8490637-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Items\2BluePotions.png</Source>
+      <Name>Items\2BluePotions</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Items\2BluePotions.xnb</Output>
+      <Time>2014-04-10T12:25:37.8500631-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Items\2GreenPotions.png</Source>
+      <Name>Items\2GreenPotions</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Items\2GreenPotions.xnb</Output>
+      <Time>2014-04-10T12:25:37.8510672-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Items\2RedPotions.png</Source>
+      <Name>Items\2RedPotions</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Items\2RedPotions.xnb</Output>
+      <Time>2014-04-10T12:25:37.8510672-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Items\3BluePotions.png</Source>
+      <Name>Items\3BluePotions</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Items\3BluePotions.xnb</Output>
+      <Time>2014-04-10T12:25:37.8520678-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Items\3GreenPotions.png</Source>
+      <Name>Items\3GreenPotions</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Items\3GreenPotions.xnb</Output>
+      <Time>2014-04-10T12:25:37.8530685-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Items\3RedPotions.png</Source>
+      <Name>Items\3RedPotions</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Items\3RedPotions.xnb</Output>
+      <Time>2014-04-10T12:25:37.8530685-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Rain\1.png</Source>
+      <Name>Rain\1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Rain\1.xnb</Output>
+      <Time>2014-04-10T12:25:38.0901671-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Rain\2.png</Source>
+      <Name>Rain\2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Rain\2.xnb</Output>
+      <Time>2014-04-10T12:25:38.0901671-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Rain\3.png</Source>
+      <Name>Rain\3</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Rain\3.xnb</Output>
+      <Time>2014-04-10T12:25:38.0911669-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Rain\4.png</Source>
+      <Name>Rain\4</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Rain\4.xnb</Output>
+      <Time>2014-04-10T12:25:38.0911669-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Rain\1x1.png</Source>
+      <Name>Rain\1x1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Rain\1x1.xnb</Output>
+      <Time>2014-04-10T12:25:38.0901671-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Rain\1x2.png</Source>
+      <Name>Rain\1x2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Rain\1x2.xnb</Output>
+      <Time>2014-04-10T12:25:38.0901671-07:00</Time>
+    </Item>
+    <Item>
+      <Source>BackgroundsAndFloors\Landscapes\Grass.png</Source>
+      <Name>BackgroundsAndFloors\Landscapes\Grass</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\BackgroundsAndFloors\Landscapes\Grass.xnb</Output>
+      <Time>2014-04-10T12:25:37.5052958-07:00</Time>
+    </Item>
+    <Item>
+      <Source>NatureObjects\FlowerPatch1.png</Source>
+      <Name>NatureObjects\FlowerPatch1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\NatureObjects\FlowerPatch1.xnb</Output>
+      <Time>2014-04-10T12:25:38.0823919-07:00</Time>
+    </Item>
+    <Item>
+      <Source>NatureObjects\FlowerPatch3.png</Source>
+      <Name>NatureObjects\FlowerPatch3</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\NatureObjects\FlowerPatch3.xnb</Output>
+      <Time>2014-04-10T12:25:38.0837924-07:00</Time>
+    </Item>
+    <Item>
+      <Source>NatureObjects\FlowerPatch2.png</Source>
+      <Name>NatureObjects\FlowerPatch2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\NatureObjects\FlowerPatch2.xnb</Output>
+      <Time>2014-04-10T12:25:38.0823919-07:00</Time>
+    </Item>
+    <Item>
+      <Source>NatureObjects\PurpleFlower.png</Source>
+      <Name>NatureObjects\PurpleFlower</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\NatureObjects\PurpleFlower.xnb</Output>
+      <Time>2014-04-10T12:25:38.0837924-07:00</Time>
+    </Item>
+    <Item>
+      <Source>NatureObjects\RedFlower.png</Source>
+      <Name>NatureObjects\RedFlower</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\NatureObjects\RedFlower.xnb</Output>
+      <Time>2014-04-10T12:25:38.0837924-07:00</Time>
+    </Item>
+    <Item>
+      <Source>NatureObjects\Tree1.png</Source>
+      <Name>NatureObjects\Tree1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\NatureObjects\Tree1.xnb</Output>
+      <Time>2014-04-10T12:25:38.0847943-07:00</Time>
+    </Item>
+    <Item>
+      <Source>NatureObjects\Tree2.png</Source>
+      <Name>NatureObjects\Tree2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\NatureObjects\Tree2.xnb</Output>
+      <Time>2014-04-10T12:25:38.085795-07:00</Time>
+    </Item>
+    <Item>
+      <Source>NatureObjects\Tree3.png</Source>
+      <Name>NatureObjects\Tree3</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\NatureObjects\Tree3.xnb</Output>
+      <Time>2014-04-10T12:25:38.085795-07:00</Time>
+    </Item>
+    <Item>
+      <Source>NatureObjects\YellowFlowerPatch.png</Source>
+      <Name>NatureObjects\YellowFlowerPatch</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\NatureObjects\YellowFlowerPatch.xnb</Output>
+      <Time>2014-04-10T12:25:38.0867957-07:00</Time>
+    </Item>
+    <Item>
+      <Source>NatureObjects\YellowFlower.png</Source>
+      <Name>NatureObjects\YellowFlower</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\NatureObjects\YellowFlower.xnb</Output>
+      <Time>2014-04-10T12:25:38.085795-07:00</Time>
+    </Item>
+    <Item>
+      <Source>NatureObjects\RockLeft.png</Source>
+      <Name>NatureObjects\RockLeft</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\NatureObjects\RockLeft.xnb</Output>
+      <Time>2014-04-10T12:25:38.0847943-07:00</Time>
+    </Item>
+    <Item>
+      <Source>NatureObjects\RockRight.png</Source>
+      <Name>NatureObjects\RockRight</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\NatureObjects\RockRight.xnb</Output>
+      <Time>2014-04-10T12:25:38.0847943-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Buy.png</Source>
+      <Name>Buy</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Buy.xnb</Output>
+      <Time>2014-03-25T12:18:12.1623444-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Exit.png</Source>
+      <Name>Exit</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Exit.xnb</Output>
+      <Time>2014-03-25T12:18:12.1623444-07:00</Time>
+    </Item>
+    <Item>
+      <Source>ItemShopBack.png</Source>
+      <Name>ItemShopBack</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ItemShopBack.xnb</Output>
+      <Time>2014-03-25T12:18:12.1633451-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Sell.png</Source>
+      <Name>Sell</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Sell.xnb</Output>
+      <Time>2014-03-25T12:18:12.1713803-07:00</Time>
+    </Item>
+    <Item>
+      <Source>blank.png</Source>
+      <Name>blank</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\blank.xnb</Output>
+      <Time>2014-04-10T12:25:38.1234921-07:00</Time>
+    </Item>
+    <Item>
+      <Source>capacity.png</Source>
+      <Name>capacity</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\capacity.xnb</Output>
+      <Time>2014-04-10T12:25:38.1340448-07:00</Time>
+    </Item>
+    <Item>
+      <Source>damage.png</Source>
+      <Name>damage</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\damage.xnb</Output>
+      <Time>2014-04-10T12:25:38.1529112-07:00</Time>
+    </Item>
+    <Item>
+      <Source>range.png</Source>
+      <Name>range</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\range.xnb</Output>
+      <Time>2014-04-10T12:25:38.1719348-07:00</Time>
+    </Item>
+    <Item>
+      <Source>speed.png</Source>
+      <Name>speed</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\speed.xnb</Output>
+      <Time>2014-04-10T12:25:38.1965716-07:00</Time>
+    </Item>
+    <Item>
+      <Source>speical.png</Source>
+      <Name>speical</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\speical.xnb</Output>
+      <Time>2014-04-10T12:25:38.2130171-07:00</Time>
+    </Item>
+    <Item>
+      <Source>SpriteFont1.spritefont</Source>
+      <Name>SpriteFont1</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\SpriteFont1.xnb</Output>
+      <Time>2014-04-10T12:25:38.0928591-07:00</Time>
+    </Item>
+    <Item>
+      <Source>SpriteFont2.spritefont</Source>
+      <Name>SpriteFont2</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\SpriteFont2.xnb</Output>
+      <Time>2014-04-10T12:25:38.0928591-07:00</Time>
+    </Item>
+    <Item>
+      <Source>GameOverFont.spritefont</Source>
+      <Name>GameOverFont</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\GameOverFont.xnb</Output>
+      <Time>2014-04-10T12:25:37.8450598-07:00</Time>
+    </Item>
+    <Item>
+      <Source>SpriteFont3.spritefont</Source>
+      <Name>SpriteFont3</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\SpriteFont3.xnb</Output>
+      <Time>2014-04-10T12:25:38.0938614-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Music\Theme.mp3</Source>
+      <Name>Music\Theme</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Music\Theme.xnb</Output>
+      <Extra>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Music\Theme.wma</Extra>
+      <Time>2014-04-10T12:25:38.0191475-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Music\TravelingSong.mp3</Source>
+      <Name>Music\TravelingSong</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Music\TravelingSong.xnb</Output>
+      <Extra>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Music\TravelingSong.wma</Extra>
+      <Time>2014-04-10T12:25:38.0813912-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Music\DungeonTheme1.mp3</Source>
+      <Name>Music\DungeonTheme1</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Music\DungeonTheme1.xnb</Output>
+      <Extra>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Music\DungeonTheme1.wma</Extra>
+      <Time>2014-04-10T12:25:37.9301181-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Music\First Nation.mp3</Source>
+      <Name>Music\First Nation</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Music\First Nation.xnb</Output>
+      <Extra>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Music\First Nation.wma</Extra>
+      <Time>2014-04-10T12:25:37.9531316-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Music\SFX\Hit By Enemy.wav</Source>
+      <Name>Music\SFX\Hit By Enemy</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Music\SFX\Hit By Enemy.xnb</Output>
+      <Time>2014-04-10T12:25:37.9551334-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Music\SFX\Hit Enemy.wav</Source>
+      <Name>Music\SFX\Hit Enemy</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Music\SFX\Hit Enemy.xnb</Output>
+      <Time>2014-04-10T12:25:37.9561341-07:00</Time>
+    </Item>
+    <BuildSuccessful>true</BuildSuccessful>
+    <Settings>
+      <TargetPlatform>Windows</TargetPlatform>
+      <TargetProfile>HiDef</TargetProfile>
+      <BuildConfiguration>Debug</BuildConfiguration>
+      <CompressContent>false</CompressContent>
+      <RootDirectory>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolderContent\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolderContent\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\</OutputDirectory>
+    </Settings>
+    <Assemblies>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.XImporter.dll</Key>
+        <Value>2010-08-23T12:41:18-07:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.VideoImporters.dll</Key>
+        <Value>2010-08-23T12:41:18-07:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.TextureImporter.dll</Key>
+        <Value>2010-08-23T12:41:18-07:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.FBXImporter.dll</Key>
+        <Value>2010-08-23T12:41:18-07:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.EffectImporter.dll</Key>
+        <Value>2010-08-23T12:41:18-07:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.AudioImporters.dll</Key>
+        <Value>2010-08-23T12:41:18-07:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\WINDOWS\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
+        <Value>2014-02-02T20:43:11.4887699-08:00</Value>
+      </Assembly>
+    </Assemblies>
+  </Asset>
+</XnaContent>
