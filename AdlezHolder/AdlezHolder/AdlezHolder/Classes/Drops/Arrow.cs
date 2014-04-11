@@ -35,10 +35,12 @@ namespace AdlezHolder
             if (steel)
             {
                 Image = Game1.GameContent.Load<Texture2D>("Items/SteelArrow");
+                this.value = 100;
             }
             else
             {
                 Image = Game1.GameContent.Load<Texture2D>("Items/WoodenArrow");
+                this.value = 25;
             }
         }
 
@@ -61,5 +63,29 @@ namespace AdlezHolder
 
             base.Update(data, gameTime);
         }
+        public override string getEffectsString()
+        {
+            return "You Have Sold An Arrow";
+        }
+        public override string getName()
+        {
+            if (steel)
+            {
+                return "Steel Arrow";
+            }
+            else 
+            return "Arrow";
+        }
+
+        public override string getChangesString()
+        {
+            if (steel)
+            {
+                return "You Now Have A Steel Arrow!";
+            }
+            else
+                return "You Now Have An Arrow!";
+        }
+
     }
 }

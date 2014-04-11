@@ -74,7 +74,7 @@ namespace AdlezHolder
             protected set { attackRangeMod = value; }
         }
 
-        int hitPoints = 150;
+        int hitPoints = 75;
         public int HitPoints
         {
             get { return hitPoints; }
@@ -87,7 +87,7 @@ namespace AdlezHolder
             } 
         }
 
-        int maxHealthPoints = 150;
+        int maxHealthPoints = 75;
         public int MaxHealthPoints
         {
             get { return maxHealthPoints; }

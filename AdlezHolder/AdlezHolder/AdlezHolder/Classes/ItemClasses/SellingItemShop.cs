@@ -29,23 +29,23 @@ namespace AdlezHolder
         KeyboardState keys, oldKeys;
         int playersCash;
         Character tempCharacter;
-        bool wasJustPurchased = false;
+        bool emptyInventory = false;
 
         public SellingItemShop(Character Character)
         {
-            itemArray = new Item[5, 5];
             tempCharacter = Character;
             //tempData
-            VampiricStone vampStone = new VampiricStone(.05f,Vector2.One,3,4);
-            Arrow arrowS = new Arrow(.05f, true, "", 100, Vector2.One,5); ;
-            Arrow arrow = new Arrow(.05f,false,"",30,Vector2.One,10); 
+            VampiricStone vampStone = new VampiricStone(.05f,Vector2.Zero,3,4);
+            Arrow arrowS = new Arrow(.05f, true, "", 100, Vector2.Zero, 5); ;
+            Arrow arrow = new Arrow(.05f, false, "", 30, Vector2.Zero, 10); 
             RuggedLeather leather = new RuggedLeather();
-            FireStone gem = new FireStone(.05f,Vector2.One,1,2);
-            LightningStone lightStone = new LightningStone(.05f, Vector2.One, 1, 2);
-            PoisonStone pStone = new PoisonStone(.05f, Vector2.One, 1, 2);
+            FireStone gem = new FireStone(.05f, Vector2.Zero, 1, 2);
+            LightningStone lightStone = new LightningStone(.05f, Vector2.Zero, 1, 2);
+            PoisonStone pStone = new PoisonStone(.05f, Vector2.Zero, 1, 2);
+            tempCharacter.PlayerInvent.subtractItem(tempCharacter, 0);
             tempCharacter.PlayerInvent.addItem(vampStone, tempCharacter);
             tempCharacter.PlayerInvent.addItem(lightStone, tempCharacter);
-            tempCharacter.PlayerInvent.addItem(arrow, tempCharacter);
+            tempCharacter.PlayerInvent.addItem(gem, tempCharacter);
             tempCharacter.PlayerInvent.addItem(arrowS, tempCharacter);
             tempCharacter.PlayerInvent.addItem(vampStone, tempCharacter);
             tempCharacter.PlayerInvent.addItem(lightStone, tempCharacter);
@@ -72,13 +72,25 @@ namespace AdlezHolder
             playersCash = tempCharacter.Money;
             itemImage = tempItemArray[0].getItemImage();
 
-            itemPicture = new BaseSprite(itemImage, .2f, displayWidth, 0,itemImageVector) ;
-            switchToBuy = new Button(Game1.GameContent.Load<Texture2D>("The best thing ever"), .3f, buttonPosition);
+            itemPicture = new BaseSprite(itemImage, .1f, displayWidth, 0,itemImageVector) ;
+            switchToBuy = new Button(Game1.GameContent.Load<Texture2D>("Random/The best thing ever"), .3f, buttonPosition);
         }
 
 
         public void Update(GameTime gameTime)
         {
+            if(tempItemArray.Length == 0)
+            {
+                emptyInventory = true;
+            }
+            else
+            {
+                emptyInventory = false;
+            }
+
+            if(emptyInventory == false)
+            {
+
             bool wasJustSold = false;
             playersCash = tempCharacter.Money;
             keys = Keyboard.GetState();
@@ -245,7 +257,7 @@ namespace AdlezHolder
                             tempCharacter.addFunds((int)(itemArray[itemColumnIndex, itemRowIndex].getCost() * .75));
                             this.setPlayerInvent();
                         }
-                        if (itemArray[0, 0] != null)
+                        if (itemArray.Length != 0)
                         {
                             itemColumnIndex = 0;
                             itemRowIndex = 0;
@@ -279,10 +291,13 @@ namespace AdlezHolder
 
             oldKeys = keys;
         }
-
-        //private void changeItemGameState(ItemGameState newState)
-        //{
-        //}
+            else
+            {
+                infoBox.deleteMessage();
+                infoBox.receiveMessage("You Have No Items In Your Inventory");
+                infoBox.update();
+            }
+        }
 
         public void setPlayerInvent()
         {
@@ -305,81 +320,53 @@ namespace AdlezHolder
             overScan.Y = displayHeight - marginHeight;
 
             heightSeparation = overScan.Height / 8;
-            widthSeperation = overScan.Width / 8;
+            widthSeperation = overScan.Width / 6;
 
-            itemPosition.X = widthSeperation * 3;
+            itemPosition.X = widthSeperation *2;
             itemPosition.Y = heightSeparation;
 
             itemBottomRow = heightSeparation * 4;
             itemMiddleRow = heightSeparation * 3;
-            itemTopRow = heightSeparation * 2;
-
-
             tempItemArray = tempCharacter.PlayerInvent.ItemList.ToArray<Item>();
+            itemTopRow = heightSeparation * 2;
+            itemPosition.Y = itemTopRow;
 
-            int count = 0;
-            for (int i = 0; i < tempItemArray.Length; i++)
+           
+            itemArray = new Item[tempItemArray.Length / 3, 3];
+            for (int row = 0; row < 3; row++)
             {
-                if (count == 0)
+                for (int col = 0; col < tempItemArray.Length / 3; col++)
                 {
-                    itemPosition.Y = itemTopRow;
-                }
-                else if (count == 1)
-                {
-                    itemPosition.Y = itemMiddleRow;
-                }
-                else if (count == 2)
-                {
-                    itemPosition.Y = itemBottomRow;
-                }
-                
-
-                if (tempItemArray[i] != null)
-                {
-                    tempItemArray[i].Position = itemPosition;
-                    if (count != 2)
-                    {
-                        count++;
-                    }
-                    else
-                    {
-                        count = 0;
-                        itemPosition = itemPosition;
-                        itemPosition.X += widthSeperation;
-                    }
+                    itemArray[col, row] = tempItemArray[col + row];
                 }
             }
-
-            int row = 0, column = 0;
-
-            for (int i = 0; i < tempItemArray.Length; i++)
+            int countCol = 0, countRow = 0;
+            itemPosition.X = widthSeperation;
+            itemPosition.Y = itemTopRow;
+            for (float x = itemPosition.X; x < itemPosition.X + widthSeperation * (tempItemArray.Length / 3); x += widthSeperation)
             {
-                itemArray[column, row] = tempItemArray[i];
-                row++;
-                if ((i + 1) % 3 == 0 && i != 0)
+                for (float y = itemPosition.Y; y < (3) * heightSeparation + itemPosition.Y; y += heightSeparation)
                 {
-                    column++;
-                    row = 0;
+                    itemArray[countCol, countRow].Position = new Vector2(x, y);
+                    countRow = (countRow + 1) % 3 ;
                 }
+                if (countCol >= tempItemArray.Length / 3 - 1)
+                    countCol = 0;
+                else
+                    countCol++;
             }
+
+            //TODO: test stuff position stuff
+
         }
    
         public void Draw(SpriteBatch spriteBatch)
         {
-            int countCol = 0,countRow = 0;
-            for (int i = 0; i < tempItemArray.Length; i++)
+            for (int row = 0; row < 3; row++)
             {
-                if (tempItemArray[i] != null)
-                {
-                    if (countRow > 2)
-                    {
-                        countCol++;
-                        countRow = 0;
-                    }
-                    itemArray[countCol, countRow].Position = itemArray[countCol, countRow].Position;
-                    itemArray[countCol,countRow].Draw(spriteBatch);
-                    countRow++;
-
+                for (int col = 0; col < tempItemArray.Length / 3; col++)
+                {   
+                    itemArray[col, row].Draw(spriteBatch);
                 }
             }
             infoBox.draw(spriteBatch);

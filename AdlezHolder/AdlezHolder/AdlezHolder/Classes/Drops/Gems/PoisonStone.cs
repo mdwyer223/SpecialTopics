@@ -35,30 +35,35 @@ namespace AdlezHolder
                 this.Chance = .10f;
                 this.Duration = 10f;
                 this.Damage = 10;
+                this.value = 50;
             }
             else if (tier == 2)
             {
                 this.Chance = .125f;
                 this.Duration = 20f;
                 this.Damage = 20;
+                this.value = 100;
             }
             else if (tier == 3)
             {
                 this.Chance = .15f;
                 this.Duration = 15f;
                 this.Damage = 40;
+                this.value = 150;
             }
             else if (tier == 4)
             {
                 this.Chance = .20f;
                 this.Duration = 13f;
                 this.Damage = 50;
+                this.value = 250;
             }
             else if (tier == 5)
             {
                 this.Chance = .25f;
                 this.Duration = 15f;
                 this.Damage = 60;
+                this.value = 350;
             }
             else
             {
@@ -83,6 +88,38 @@ namespace AdlezHolder
             }
 
             base.Update(gameTime);
+        }
+        public override string getEffectsString()
+        {
+            return "You Have Sold a Poison Stone";
+        }
+        public override string getName()
+        {
+            if (tier == 1)
+            {
+                return "Lev 1 Poison Stone";
+            }
+            else if (tier == 2)
+            {
+                return "Lev 2 Poison Stone";
+            }
+            else if (tier == 3)
+            {
+                return "Lev 3 Poison Stone";
+            }
+            else if (tier == 4)
+            {
+                return "Lev 4 Poison Stone";
+            }
+            else
+            {
+                return "Lev 5 Poison Stone";
+            }
+        }
+
+        public override string getChangesString()
+        {
+            return "You Now Have a Poison Stone!";
         }
     }
 }

@@ -21,7 +21,6 @@ namespace AdlezHolder
         int displayWidth = Game1.DisplayWidth;
         BaseSprite itemPicture;
         NodeMessageBox infoBox;
-        Button switchToSell;
         Item selectedItem, lastItem;
         int itemRowIndex, itemColumnIndex;
         string itemMessage, enoughCash;
@@ -51,13 +50,12 @@ namespace AdlezHolder
             itemColumnIndex = 0;
             itemRowIndex = 1;
 
-            itemArray[0, 0].Selected = false;
+            itemArray[0, 1].Selected = false;
             tempCharacter = Character;
             playersCash = tempCharacter.Money;
             itemImage = itemArray[0, 1].getItemImage();
 
-            itemPicture = new BaseSprite(itemImage, .2f, displayWidth, 0,itemImageVector) ;
-            switchToSell = new Button(Game1.GameContent.Load<Texture2D>("The best thing ever"), .3f, buttonPosition);
+            itemPicture = new BaseSprite(itemImage, .075f, displayWidth, 0,itemImageVector) ;
         }
 
 
@@ -85,7 +83,7 @@ namespace AdlezHolder
                     if (itemArray[itemColumnIndex, itemRowIndex] != null)
                     {
                         itemArray[itemColumnIndex, itemRowIndex].Selected = false;
-                        itemMessage = "\nPress Enter to Purchase" + "\n" + itemArray[itemColumnIndex, itemRowIndex].getEffectsString();
+                        itemMessage = "\nPress Enter to Purchase\n";
                         itemImage = itemArray[itemColumnIndex, itemRowIndex].getItemImage();
 
 
@@ -96,7 +94,7 @@ namespace AdlezHolder
                         itemRowIndex = 1;
                         itemArray[itemColumnIndex, itemRowIndex].Selected = false;
                         lastItem = itemArray[1, 0];
-                        itemMessage = "\nPress Enter to Purchase" + "\n" + itemArray[itemColumnIndex, itemRowIndex].getEffectsString();
+                        itemMessage = "\nPress Enter to Purchase\n";
                         itemImage = itemArray[itemColumnIndex, itemRowIndex].getItemImage();
                     }
                 }
@@ -121,7 +119,7 @@ namespace AdlezHolder
                     if (itemArray[itemColumnIndex, itemRowIndex] != null)
                     {
                         itemArray[itemColumnIndex, itemRowIndex].Selected = false;
-                        itemMessage = "\nPress Enter to Purchase" + "\n" + itemArray[itemColumnIndex, itemRowIndex].getEffectsString();
+                        itemMessage = "\nPress Enter to Purchase\n";
                         itemImage = itemArray[itemColumnIndex, itemRowIndex].getItemImage();
                     }
                     else
@@ -129,7 +127,7 @@ namespace AdlezHolder
                         itemRowIndex = 1;
                         itemArray[itemColumnIndex, itemRowIndex].Selected = false;
                         lastItem = itemArray[1, 0];
-                        itemMessage = "\nPress Enter to Purchase" + "\n" + itemArray[itemColumnIndex, itemRowIndex].getEffectsString();
+                        itemMessage = "\nPress Enter to Purchase\n";
                         itemImage = itemArray[itemColumnIndex, itemRowIndex].getItemImage();
                     }
                 }
@@ -144,7 +142,7 @@ namespace AdlezHolder
                     itemColumnIndex--;
                     itemArray[itemColumnIndex, itemRowIndex].Selected = false;
                     wasJustPurchased = false;
-                    itemMessage = "\nPress Enter to Purchase" + "\n" + itemArray[itemColumnIndex, itemRowIndex].getEffectsString();
+                    itemMessage = "\nPress Enter to Purchase\n";
                     itemImage = itemArray[itemColumnIndex, itemRowIndex].getItemImage();
                     itemPicture.setImage(itemImage);
                 }
@@ -161,7 +159,7 @@ namespace AdlezHolder
                     itemColumnIndex++;
                     itemArray[itemColumnIndex, itemRowIndex].Selected = false;
                     wasJustPurchased = false;
-                    itemMessage = "\nPress Enter to Purchase"   +  "\n" + itemArray[itemColumnIndex, itemRowIndex].getEffectsString();
+                    itemMessage = "\nPress Enter to Purchase\n";
                     itemImage = itemArray[itemColumnIndex, itemRowIndex].getItemImage();
                     itemPicture.setImage(itemImage);
                 }
@@ -209,7 +207,7 @@ namespace AdlezHolder
 
             if (wasJustPurchased)
             {
-                itemMessage = "\nPurchase Complete" +  itemArray[itemColumnIndex, itemRowIndex].getChangesString();
+                itemMessage = "\nPurchase Complete\n" + itemArray[itemColumnIndex, itemRowIndex].getChangesString();
             }
 
 
@@ -242,7 +240,6 @@ namespace AdlezHolder
             }
             infoBox.draw(spriteBatch);
             itemPicture.Draw(spriteBatch);
-            switchToSell.Draw(spriteBatch);
         }
 
         public void getTownsItems(int x)
@@ -277,34 +274,33 @@ namespace AdlezHolder
 
             if (x == 1)
             {
-                string name = "blank";
                 itemPosition.Y = itemTopRow;
-                itemArray[0, 0] = new Item(Game1.GameContent.Load<Texture2D>("Items/CyanStone"), scalefactor, itemPosition, name, false, false, false, 50, 100000);
+                itemArray[0, 0] = new FireStone(.05f, itemPosition, 2, 100000);
                 itemPosition.Y = itemMiddleRow;
-                itemArray[0, 1] = new Arrow(.3f, true, "Steel Arrow", 100, itemPosition, 1000);
+                itemArray[0, 1] = new Arrow(.05f, true, "Steel Arrow", 100, itemPosition, 1000);
                 itemPosition.Y = itemBottomRow;
-                itemArray[0, 2] = new IceStone(.3f, itemPosition, 2, 100000);
-                itemPosition.Y = itemTopRow;
-                itemPosition.X = itemPosition.X + widthSeperation;
-                itemArray[1, 0] = new IceStone(.3f, itemPosition, 2, 100000);
-                itemPosition.Y = itemMiddleRow;
-                itemArray[1, 1] = new IceStone(.3f, itemPosition, 2, 100000);
-                itemPosition.Y = itemBottomRow;
-                itemArray[1, 2] = new IceStone(.3f, itemPosition, 2, 100000);
+                itemArray[0, 2] = new IceStone(.05f, itemPosition, 2, 100000);
                 itemPosition.Y = itemTopRow;
                 itemPosition.X = itemPosition.X + widthSeperation;
-                itemArray[2, 0] = new Arrow(.3f, false, "Wood Arrow", 100, itemPosition, 100000);
+                itemArray[1, 0] = new IceStone(.05f, itemPosition, 2, 100000);
                 itemPosition.Y = itemMiddleRow;
-                itemArray[2, 1] = new IceStone(.3f, itemPosition, 2, 100000);
+                itemArray[1, 1] = new IceStone(.05f, itemPosition, 2, 100000);
                 itemPosition.Y = itemBottomRow;
-                itemArray[2, 2] = new FireStone(.3f, itemPosition, 2, 100000);
+                itemArray[1, 2] = new IceStone(.05f, itemPosition, 2, 100000);
                 itemPosition.Y = itemTopRow;
                 itemPosition.X = itemPosition.X + widthSeperation;
-                itemArray[3, 0] = new IceStone(.3f, itemPosition, 2, 100000);
+                itemArray[2, 0] = new Arrow(.05f, false, "Wood Arrow", 100, itemPosition, 100000);
                 itemPosition.Y = itemMiddleRow;
-                itemArray[3, 1] = new PoisonStone(.3f, itemPosition, 2, 100000);
+                itemArray[2, 1] = new IceStone(.05f, itemPosition, 2, 100000);
                 itemPosition.Y = itemBottomRow;
-                itemArray[3, 2] = new IceStone(.3f, itemPosition, 2, 100000);
+                itemArray[2, 2] = new FireStone(.05f, itemPosition, 2, 100000);
+                itemPosition.Y = itemTopRow;
+                itemPosition.X = itemPosition.X + widthSeperation;
+                itemArray[3, 0] = new IceStone(.05f, itemPosition, 2, 100000);
+                itemPosition.Y = itemMiddleRow;
+                itemArray[3, 1] = new PoisonStone(.05f, itemPosition, 2, 100000);
+                itemPosition.Y = itemBottomRow;
+                itemArray[3, 2] = new IceStone(.05f, itemPosition, 2, 100000);
             }
 
             else if (x == 2)
@@ -313,30 +309,30 @@ namespace AdlezHolder
                 itemPosition.Y = itemTopRow;
                 itemArray[0, 0] = new Item(Game1.GameContent.Load<Texture2D>("Items/CyanStone"), scalefactor, itemPosition, name, false, false, false, 50,100000);
                 itemPosition.Y = itemMiddleRow;
-                itemArray[0, 1] = new Arrow(.3f, true, "Steel Arrow", 100, itemPosition,1000);
+                itemArray[0, 1] = new Arrow(.05f, true, "Steel Arrow", 100, itemPosition, 1000);
                 itemPosition.Y = itemBottomRow;
-                itemArray[0, 2] = new IceStone(.3f, itemPosition, 2, 100000);
+                itemArray[0, 2] = new IceStone(.05f, itemPosition, 2, 100000);
                 itemPosition.Y = itemTopRow;
                 itemPosition.X = itemPosition.X + widthSeperation;
-                itemArray[1, 0] = new IceStone(.3f, itemPosition, 2, 100000);
+                itemArray[1, 0] = new IceStone(.05f, itemPosition, 2, 100000);
                 itemPosition.Y = itemMiddleRow;
-                itemArray[1, 1] = new IceStone(.3f, itemPosition, 2, 100000);
+                itemArray[1, 1] = new IceStone(.05f, itemPosition, 2, 100000);
                 itemPosition.Y = itemBottomRow;
-                itemArray[1, 2] = new IceStone(.3f, itemPosition, 2, 100000);
+                itemArray[1, 2] = new IceStone(.05f, itemPosition, 2, 100000);
                 itemPosition.Y = itemTopRow;
                 itemPosition.X = itemPosition.X + widthSeperation;
-                itemArray[2, 0] = new Arrow(.3f, false, "Wood Arrow", 100, itemPosition,100000);
+                itemArray[2, 0] = new Arrow(.05f, false, "Wood Arrow", 100, itemPosition, 100000);
                 itemPosition.Y = itemMiddleRow;
-                itemArray[2, 1] = new IceStone(.3f, itemPosition, 2, 100000);
+                itemArray[2, 1] = new IceStone(.05f, itemPosition, 2, 100000);
                 itemPosition.Y = itemBottomRow;
-                itemArray[2, 2] = new FireStone(.3f, itemPosition, 2, 100000);
+                itemArray[2, 2] = new FireStone(.05f, itemPosition, 2, 100000);
                 itemPosition.Y = itemTopRow;
                 itemPosition.X = itemPosition.X + widthSeperation;
-                itemArray[3, 0] = new IceStone(.3f, itemPosition, 2, 100000);
+                itemArray[3, 0] = new IceStone(.05f, itemPosition, 2, 100000);
                 itemPosition.Y = itemMiddleRow;
-                itemArray[3, 1] = new PoisonStone(.3f, itemPosition, 2, 100000);
+                itemArray[3, 1] = new PoisonStone(.05f, itemPosition, 2, 100000);
                 itemPosition.Y = itemBottomRow;
-                itemArray[3, 2] = new IceStone(.3f, itemPosition, 2, 100000);
+                itemArray[3, 2] = new IceStone(.05f, itemPosition, 2, 100000);
                
             }
 
@@ -346,30 +342,30 @@ namespace AdlezHolder
                 itemPosition.Y = itemTopRow;
                 itemArray[0, 0] = new Item(Game1.GameContent.Load<Texture2D>("Items/CyanStone"), scalefactor, itemPosition, name, false, false, false, 50, 100000);
                 itemPosition.Y = itemMiddleRow;
-                itemArray[0, 1] = new Arrow(.3f, true, "Steel Arrow", 100, itemPosition, 1000);
+                itemArray[0, 1] = new Arrow(.05f, true, "Steel Arrow", 100, itemPosition, 1000);
                 itemPosition.Y = itemBottomRow;
-                itemArray[0, 2] = new IceStone(.3f, itemPosition, 2, 100000);
+                itemArray[0, 2] = new IceStone(.05f, itemPosition, 2, 100000);
                 itemPosition.Y = itemTopRow;
                 itemPosition.X = itemPosition.X + widthSeperation;
-                itemArray[1, 0] = new IceStone(.3f, itemPosition, 2, 100000);
+                itemArray[1, 0] = new IceStone(.05f, itemPosition, 2, 100000);
                 itemPosition.Y = itemMiddleRow;
-                itemArray[1, 1] = new IceStone(.3f, itemPosition, 2, 100000);
+                itemArray[1, 1] = new IceStone(.05f, itemPosition, 2, 100000);
                 itemPosition.Y = itemBottomRow;
-                itemArray[1, 2] = new IceStone(.3f, itemPosition, 2, 100000);
+                itemArray[1, 2] = new IceStone(.05f, itemPosition, 2, 100000);
                 itemPosition.Y = itemTopRow;
                 itemPosition.X = itemPosition.X + widthSeperation;
-                itemArray[2, 0] = new Arrow(.3f, false, "Wood Arrow", 100, itemPosition, 100000);
+                itemArray[2, 0] = new Arrow(.05f, false, "Wood Arrow", 100, itemPosition, 100000);
                 itemPosition.Y = itemMiddleRow;
-                itemArray[2, 1] = new IceStone(.3f, itemPosition, 2, 100000);
+                itemArray[2, 1] = new IceStone(.05f, itemPosition, 2, 100000);
                 itemPosition.Y = itemBottomRow;
-                itemArray[2, 2] = new FireStone(.3f, itemPosition, 2, 100000);
+                itemArray[2, 2] = new FireStone(.05f, itemPosition, 2, 100000);
                 itemPosition.Y = itemTopRow;
                 itemPosition.X = itemPosition.X + widthSeperation;
-                itemArray[3, 0] = new IceStone(.3f, itemPosition, 2, 100000);
+                itemArray[3, 0] = new IceStone(.05f, itemPosition, 2, 100000);
                 itemPosition.Y = itemMiddleRow;
-                itemArray[3, 1] = new PoisonStone(.3f, itemPosition, 2, 100000);
+                itemArray[3, 1] = new PoisonStone(.05f, itemPosition, 2, 100000);
                 itemPosition.Y = itemBottomRow;
-                itemArray[3, 2] = new IceStone(.3f, itemPosition, 2, 100000);
+                itemArray[3, 2] = new IceStone(.05f, itemPosition, 2, 100000);
             }
             else
             {

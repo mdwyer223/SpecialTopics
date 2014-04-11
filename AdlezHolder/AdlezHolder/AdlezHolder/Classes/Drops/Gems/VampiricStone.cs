@@ -32,22 +32,27 @@ namespace AdlezHolder
             if (tier == 1)
             {
                 this.Chance = .1f;
+                this.value = 100;
             }
             else if (tier == 2)
             {
                 this.Chance = .15f;
+                this.value = 150;
             }
             else if (tier == 3)
             {
+                this.value = 225;
                 this.Chance = .175f;
             }
             else if (tier == 4)
             {
                 this.Chance = .2f;
+                this.value = 300;
             }
             else if (tier == 5)
             {
                 this.Chance = .25f;
+                this.value = 400;
             }
             else
             {
@@ -72,6 +77,38 @@ namespace AdlezHolder
             }
 
             base.Update(gameTime);
+        }
+        public override string getEffectsString()
+        {
+            return "You Have Sold a Vampiric Stone";
+        }
+        public override string getName()
+        {
+            if (tier == 1)
+            {
+                return "Lev 1 Vampiric Stone";
+            }
+            else if (tier == 2)
+            {
+                return "Lev 2 Vampiric Stone";
+            }
+            else if (tier == 3)
+            {
+                return "Lev 3 Vampiric Stone";
+            }
+            else if (tier == 4)
+            {
+                return "Lev 4 Vampiric Stone";
+            }
+            else
+            {
+                return "Lev 5 Vampiric Stone";
+            }
+        }
+
+        public override string getChangesString()
+        {
+            return "You Now Have a Vampiric Stone!";
         }
     }
 }

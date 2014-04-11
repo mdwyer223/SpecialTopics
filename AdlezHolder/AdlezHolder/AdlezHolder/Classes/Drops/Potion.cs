@@ -13,7 +13,7 @@ namespace AdlezHolder
     {
         int healingPower;
         bool collected;
-
+        int tempTier;
         public override bool Dead
         {
             get
@@ -27,7 +27,7 @@ namespace AdlezHolder
                 "Potion", true, false, true, 50, numberOf)
         {
             options.Add("Use");
-
+            tempTier = tier;
             if (tier == 1)
             {
                 healingPower = 50;
@@ -84,6 +84,53 @@ namespace AdlezHolder
             }
 
             base.chooseOption(s, items);
+        }
+        public string getEffectsString()
+        {
+            if (tempTier == 1)
+            {
+                return "You Have Sold a Lev 1 Potion";
+            }
+            else if (tempTier == 2)
+            {
+                return "You Have Sold a Lev 2 Potion";
+            }
+            else
+            {
+                return "You Have Sold a Lev 3 Potion";
+            }
+        }
+        public override string getName()
+        {
+            if (tempTier == 1)
+            {
+                return "Lev 1 Potion";
+            }
+            else if (tempTier == 2)
+            {
+                return "Lev 2 Potion";
+            }
+            else
+            {
+                return "Lev 3 Potion";
+            }
+
+        }
+
+        public override string getChangesString()
+        {
+            if (tempTier == 1)
+            {
+                return "You Now Have a Lev 1 Potion";
+            }
+            else if (tempTier == 2)
+            {
+                return "You Now Have a Lev 2 Potion";
+            }
+            else
+            {
+                return "You Now Have a Lev 3 Potion";
+            }
         }
     }
 }

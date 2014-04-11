@@ -33,26 +33,31 @@ namespace AdlezHolder
             {
                 this.Chance = .10f;
                 this.Duration = .25f;
+                this.value = 60;
             }
             else if (tier == 2)
             {
                 this.Chance = .125f;
                 this.Duration = .5f;
+                this.value = 100;
             }
             else if (tier == 3)
             {
                 this.Chance = .15f;
                 this.Duration = .6f;
+                this.value = 140;
             }
             else if (tier == 4)
             {
                 this.Chance = .20f;
                 this.Duration = .75f;
+                this.value = 210;
             }
             else if (tier == 5)
             {
                 this.Chance = .25f;
                 this.Duration = 1f;
+                this.value = 325;
             }
             else
             {
@@ -77,6 +82,38 @@ namespace AdlezHolder
             }
 
             base.Update(gameTime);
+        }
+        public override string getEffectsString()
+        {
+            return "You Have Sold a Lightning Stone";
+        }
+        public override string getName()
+        {
+            if (tier == 1)
+            {
+                return "Lev 1 Lightning Stone";
+            }
+            else if (tier == 2)
+            {
+                return "Lev 2 Lightning Stone";
+            }
+            else if (tier == 3)
+            {
+                return "Lev 3 Lightning Stone";
+            }
+            else if (tier == 4)
+            {
+                return "Lev 4 Lightning Stone";
+            }
+            else
+            {
+                return "Lev 5 Lightning Stone";
+            }
+        }
+
+        public override string getChangesString()
+        {
+            return "You Now Have a Lightning Stone!";
         }
     }
 }

@@ -42,30 +42,35 @@ namespace AdlezHolder
                 this.Chance = .05f;
                 this.CritDamage = 1f;
                 this.Duration = 1f;
+                this.value = 75;
             }
             else if (tier == 2)
             {
                 this.Chance = .075f;
                 this.CritDamage = 1.25f;
                 this.Duration = 3f;
+                this.value = 90;
             }
             else if (tier == 3)
             {
                 this.Chance = .1f;
                 this.CritDamage = 1.5f;
                 this.Duration = 2f;
+                this.value = 115;
             }
             else if (tier == 4)
             {
                 this.Chance = .125f;
                 this.CritDamage = 1.75f;
                 this.Duration = 2.5f;
+                this.value = 225;
             }
             else if (tier == 5)
             {
                 this.Chance = .15f;
                 this.CritDamage = 2f;
                 this.Duration = 3f;
+                this.value = 350;
             }
             else
             {
@@ -90,6 +95,38 @@ namespace AdlezHolder
             }
 
             base.Update(gameTime);
+        }
+        public override string getEffectsString()
+        {
+            return "You Have Sold a Ice Stone";
+        }
+        public override string getName()
+        {
+            if (tier == 1)
+            {
+                return "Lev 1 Ice Stone";
+            }
+            else if (tier == 2)
+            {
+                return "Lev 2 Ice Stone";
+            }
+            else if (tier == 3)
+            {
+                return "Lev 3 Ice Stone";
+            }
+            else if (tier == 4)
+            {
+                return "Lev 4 Ice Stone";
+            }
+            else
+            {
+                return "Lev 5 Ice Stone";
+            }
+        }
+
+        public override string getChangesString()
+        {
+            return "You Now Have a Ice Stone!";
         }
     }
 }

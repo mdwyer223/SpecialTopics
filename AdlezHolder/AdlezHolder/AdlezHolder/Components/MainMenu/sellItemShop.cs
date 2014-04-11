@@ -49,7 +49,7 @@ namespace AdlezHolder
             }
             keys = Keyboard.GetState();
             oldKeys = keys;
-
+            itemShopSelling.Update(gameTime);
             base.Update(gameTime);
         }
 

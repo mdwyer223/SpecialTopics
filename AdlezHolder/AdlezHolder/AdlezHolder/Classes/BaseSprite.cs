@@ -101,7 +101,10 @@ namespace AdlezHolder
         public Vector2 Position
         {
             get { return position; }
-            set { position = value; }
+            set 
+            { 
+                position = value;
+            }
         }
 
         public Vector2 Center
@@ -115,20 +118,22 @@ namespace AdlezHolder
             }// TODO: CHANGE: set; 
         }
 
+     
         public Rectangle DrawnRec
         {
             get 
             {
                 return new Rectangle(
-                   (int)position.X + drawnRec.X,
-                   (int)position.Y + drawnRec.Y,
+                   (int)position.X,// + drawnRec.X,
+                   (int)position.Y,// + drawnRec.Y,
                    drawnRec.Width,
                    drawnRec.Height);
             }
             protected set 
             { 
-                drawnRec.Width = value.Width;
-                drawnRec.Height = value.Height;
+                drawnRec = value;
+                //drawnRec.Width = value.Width;
+                //drawnRec.Height = value.Height;
             }
         }
 

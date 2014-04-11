@@ -47,5 +47,19 @@ namespace AdlezHolder
 
             base.Update(gameTime);
         }
+        public  override string getEffectsString()
+        {
+            return "You Have Sold Your Bomb";
+        }
+        public override string getName()
+        {
+            return "Bomb";
+        }
+
+        public override string getChangesString()
+        {
+            return "You Now Have Another Bomb!";
+        }
+
     }
 }

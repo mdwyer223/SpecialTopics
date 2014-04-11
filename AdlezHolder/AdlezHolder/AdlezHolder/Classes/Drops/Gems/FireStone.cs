@@ -35,30 +35,35 @@ namespace AdlezHolder
                 this.Chance = .10f;
                 this.Duration = 10f;
                 this.Damage = 10;
+                this.value = 50;
             }
             else if (tier == 2)
             {
                 this.Chance = .125f;
                 this.Duration = 8f;
                 this.Damage = 15;
+                this.value = 100;
             }
             else if (tier == 3)
             {
                 this.Chance = .15f;
                 this.Duration = 6f;
                 this.Damage = 25;
+                this.value = 150;
             }
             else if (tier == 4)
             {
                 this.Chance = .20f;
                 this.Duration = 4f;
                 this.Damage = 35;
+                this .value = 200;
             }
             else if (tier == 5)
             {
                 this.Chance = .25f;
                 this.Duration = 3f;
                 this.Damage = 45;
+                this.value = 500;
             }
             else
             {
@@ -84,5 +89,40 @@ namespace AdlezHolder
 
             base.Update(gameTime);
         }
+        public override string getEffectsString()
+        {
+            return "You Have Sold a Fire Stone";
+        }
+        public override string getName()
+        {
+            if (tier == 1)
+            {
+              return "Lev 1 Fire Stone";
+            }
+            else if (tier == 2)
+            {
+                return "Lev 2 Fire Stone";
+            }
+            else if (tier == 3)
+            {
+                return "Lev 3 Fire Stone";
+            }
+            else if (tier == 4)
+            {
+                return "Lev 4 Fire Stone";
+            }
+            else
+            {
+                return "Lev 5 Fire Stone";
+            }
+
+
+        }
+
+        public override string getChangesString()
+        {
+            return "You Now Have a Fire Stone!";
+        }
+
     }
 }

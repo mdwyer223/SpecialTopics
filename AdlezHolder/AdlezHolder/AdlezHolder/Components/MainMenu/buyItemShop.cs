@@ -21,12 +21,14 @@ namespace AdlezHolder
         Character tempcharacter;
         BasicItemShop itemShopBuying;
         bool addPlayer = false;
+        Game1 game;
 
         public buyItemShop(Game game, Character character)
             : base(game)
         {
             screenColor = Color.MidnightBlue;
             tempcharacter = character;
+            this.game = (Game1)game;
         }
 
         public override void Initialize()
@@ -46,12 +48,10 @@ namespace AdlezHolder
                 itemShopBuying = new BasicItemShop(tempcharacter);
                 addPlayer = true;
             }
-            else
-            {
-                itemShopBuying.Update(gameTime);
-            }
             keys = Keyboard.GetState();
             oldKeys = keys;
+            itemShopBuying.getTownsItems(1);
+            itemShopBuying.Update(gameTime);
             base.Update(gameTime);
         }
 

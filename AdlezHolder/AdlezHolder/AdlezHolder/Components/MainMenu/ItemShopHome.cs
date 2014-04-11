@@ -86,6 +86,10 @@ namespace AdlezHolder
                 buyitems = new buyItemShop(tempgame, Game1.WorldReference.Map.Player);
                 sellitems.Enabled = false;
                 sellitems.Visible = false;
+                tempgame.Components.Add(sellitems);
+                tempgame.Components.Add(buyitems);
+                sellitems.Initialize();
+                buyitems.Initialize();
                 buyitems.Enabled = false;
                 buyitems.Visible = false; 
                 addplayer = false;
@@ -128,13 +132,13 @@ namespace AdlezHolder
                     SellButton.Selected = true;
                 }
 
-                //if (keys.IsKeyDown(Keys.Enter) && oldKeys.IsKeyUp(Keys.Enter))
-                //{
-                //    if (buySelected)
-                //        this.changeItemGameState(ItemShopGameState.BUYITEMS);
-                //    else
-                //        this.changeItemGameState(ItemShopGameState.SELLITEMS);
-                //}
+                if (keys.IsKeyDown(Keys.Enter) && oldKeys.IsKeyUp(Keys.Enter))
+                {
+                    if (buySelected)
+                        this.changeItemGameState(ItemShopGameState.BUYITEMS);
+                    else
+                        this.changeItemGameState(ItemShopGameState.SELLITEMS);
+                }
 
                 if (keys.IsKeyDown(Keys.Escape) && oldKeys.IsKeyUp(Keys.Escape))
                 {
