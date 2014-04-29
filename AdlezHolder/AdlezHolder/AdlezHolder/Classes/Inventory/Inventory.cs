@@ -78,9 +78,9 @@ namespace AdlezHolder
             items = oldItems;
             this.maxSlots = newMaxSlots;
         }
-        public void subtractItem(Character player, int selected)
+        public void subtractItem(Character player, int selected, bool isNotEmpty)
         {
-            if (items.Count != 0)
+            if (items.Count != 0 && isNotEmpty)
             {
                 items.RemoveAt(selected);
             }

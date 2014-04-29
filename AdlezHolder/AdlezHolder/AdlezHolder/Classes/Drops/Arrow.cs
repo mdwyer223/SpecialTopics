@@ -12,6 +12,7 @@ namespace AdlezHolder
     public class Arrow : Item
     {
         bool steel, collected;
+        string name;
 
         public override bool Dead
         {
@@ -27,7 +28,7 @@ namespace AdlezHolder
         }
 
         public Arrow(float scaleFactor, bool steel, string tag, int value, Vector2 startPosition, int numberOf)
-            : base(Game1.GameContent.Load<Texture2D>("Items/WoodenArrow"), scaleFactor, startPosition, tag, true, false, true, value, numberOf)
+            : base(Game1.GameContent.Load<Texture2D>("Items/WoodenArrow"), scaleFactor, startPosition, "Arrow", true, false, true, value, numberOf)
         {
             collected = false;
             this.steel = steel;
@@ -35,11 +36,13 @@ namespace AdlezHolder
             if (steel)
             {
                 Image = Game1.GameContent.Load<Texture2D>("Items/SteelArrow");
+                name = "Steel Arrow";
                 this.value = 100;
             }
             else
             {
                 Image = Game1.GameContent.Load<Texture2D>("Items/WoodenArrow");
+                name = "Wooden Arrow";
                 this.value = 25;
             }
         }

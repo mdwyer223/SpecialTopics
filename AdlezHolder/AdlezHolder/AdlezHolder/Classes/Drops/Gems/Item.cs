@@ -14,6 +14,7 @@ namespace AdlezHolder
         Color FADED = new Color(50, 50, 50, 50);
         Color NORMAL = new Color(255, 255, 255, 250);
         bool selected;
+        bool emptyItem;
 
         public bool Selected
         {
@@ -119,6 +120,11 @@ namespace AdlezHolder
 
             options = new List<string>();
             options.Add("Drop");
+            if (this.tag == "empty")
+            {
+                
+                emptyItem = true;
+            }
         }
 
         public override void Update(Map data, GameTime gameTime)
@@ -200,22 +206,26 @@ namespace AdlezHolder
         {
             return this.Image;
         }
+        public void changePosition(Vector2 newPos)
+        {
+            this.position = newPos;
+        }
         public int getCost()
         {
             return this.value;
         }
         public virtual string getEffectsString()
         {
-            return "effects string";
+            return "empty";
         }
         public virtual string getName()
         {
-            return "Item";
+            return "empty";
         }
 
         public virtual string getChangesString()
         {
-            return "changes string";
+            return "";
         }
     }
 }

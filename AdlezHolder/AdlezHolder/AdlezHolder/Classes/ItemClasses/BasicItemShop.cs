@@ -399,6 +399,12 @@ namespace AdlezHolder
                 itemArray[3, 2] = new IceStone(.3f, itemPosition, 2, 100000);
             }
         }
+
+        private void changeItemGameState(ItemShopGameState newState)
+        {
+            ItemShopHome.CurrentItemState = newState;
+        }
+
     }
 }
 
