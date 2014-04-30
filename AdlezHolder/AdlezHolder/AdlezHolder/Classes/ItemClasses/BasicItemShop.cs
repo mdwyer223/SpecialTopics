@@ -64,7 +64,10 @@ namespace AdlezHolder
             bool wasJustPurchased = false;
             playersCash = tempCharacter.Money;
             keys = Keyboard.GetState();
-
+            if (keys.IsKeyDown(Keys.Escape) && oldKeys.IsKeyUp(Keys.Escape))
+            {
+               changeItemGameState(ItemShopGameState.ITEMSHOP);
+            }
             if (keys.IsKeyDown(Keys.S) && oldKeys.IsKeyUp(Keys.S))
             {
                 wasJustPurchased = false;
@@ -220,9 +223,10 @@ namespace AdlezHolder
             oldKeys = keys;
         }
 
-        //private void changeItemGameState(ItemGameState newState)
-        //{
-        //}
+        private void changeItemGameState(ItemShopGameState newState)
+        {
+            ItemShopHome.CurrentItemState = newState;
+        }
 
    
         public void Draw(SpriteBatch spriteBatch)
@@ -400,10 +404,6 @@ namespace AdlezHolder
             }
         }
 
-        private void changeItemGameState(ItemShopGameState newState)
-        {
-            ItemShopHome.CurrentItemState = newState;
-        }
 
     }
 }
