@@ -14,9 +14,16 @@ namespace AdlezHolder
     public class OutsideCave : MapDataHolder
     {
         SpriteBatch sBatch;
-        LibraryCutscene lC;
+        //LibraryCutscene lC;
         Rectangle rec;
-        bool startScene = true;
+        //bool startScene = true;
+        bool openPit;
+
+        public bool Pit
+        {
+            get { return openPit; }
+            set { openPit = value; }
+        }
 
         public OutsideCave()
             : base()
@@ -26,18 +33,12 @@ namespace AdlezHolder
 
             music = Game1.GameContent.Load<Song>("Music/TravelingSong");
 
-            lC = new LibraryCutscene();
+            //lC = new LibraryCutscene();
             rec = new Rectangle(630, 350, 50, 50);
         }
 
         public override void Update(Map map, GameTime gameTime)
         {
-            if (startScene)
-            {
-                Game1.newCutscene(lC, map.Player);
-                startScene = false;
-            }
-
             base.Update(map, gameTime);
         }
 
@@ -45,7 +46,7 @@ namespace AdlezHolder
         {
             base.Draw(spriteBatch);
 
-            if (lC.Pit)
+            if (Pit)
                 spriteBatch.Draw(Game1.GameContent.Load<Texture2D>("Random/The best thing ever"), rec, Color.White);
         }
     }

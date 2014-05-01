@@ -591,8 +591,8 @@ namespace AdlezHolder
                 }
                 else if (command.Contains("LIBRARY"))
                 {
-                    //Game1.newCutscene(new LibraryCutscene(), m.Player);
-                    w.Map.changeMap(new OutsideCave());
+                    Game1.newCutscene(new LibraryCutscene(), m.Player);
+                    //w.Map.changeMap(new OutsideCave());
                 }
 
                 command = option = "";

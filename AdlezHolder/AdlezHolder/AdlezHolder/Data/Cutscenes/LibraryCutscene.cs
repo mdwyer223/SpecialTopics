@@ -15,19 +15,16 @@ namespace AdlezHolder
 {
     public class LibraryCutscene : Cutscene
     {
-        int playOrder = 0;
+        int playOrder = 21;
         MessageBox box;
         bool show = false;
-        bool openPit = false;
-
-        public bool Pit
-        {
-            get { return openPit; }
-            set { openPit = value; }
-        }
+        Library lib;
+        OutsideCave outCave;
 
         public LibraryCutscene()
         {
+            lib = new Library();
+            outCave = new OutsideCave();
         }
 
         public override void play(GameTime gameTime)
@@ -46,7 +43,7 @@ namespace AdlezHolder
 
             if (playOrder == 0)
             {
-                //world.Map.changeMap(new OutsideCave());
+                world.Map.changeMap(outCave);
                 Game1.ParticleState = ParticleState.RAIN;
                 player.Position = new Vector2(-100, 235);
                 playOrder++;
@@ -179,7 +176,7 @@ namespace AdlezHolder
             {
                 Game1.MainGameState = GameState.TALKING;
                 player.setIsVisible(false);
-                openPit = true;
+                outCave.Pit = true;
                 if (!show)
                 {
                     box = new MessageBox(1f, true);
@@ -196,14 +193,16 @@ namespace AdlezHolder
             }
             else if (playOrder == 14)
             {
-                Pit = true;
-                world.Map.changeMap(new Library());
+                //Pit = true;
+                world.Map.changeMap(lib);
                 player.setIsVisible(true);
                 player.Position = new Vector2(300, -200);
                 playOrder++;
             }
             else if (playOrder == 15)
             {
+                outCave.Pit = false;
+
                 moveTo(new Vector2(300, 350), player, 6);
                 //fall down
                 if (isAtPosition(new Vector2(300, 346), player) == true)
@@ -230,27 +229,59 @@ namespace AdlezHolder
             }
             else if (playOrder == 17)
             {
-                moveTo(new Vector2(516, 269), player, 1);
+                moveTo(new Vector2(516, 261), player, 1);
                 //move up and right
-                if (isAtPosition(new Vector2(516, 269), player) == true)
+                if (isAtPosition(new Vector2(516, 261), player) == true)
                     playOrder++;
 
                 player.cutsceneUpdate(gameTime);
             }
             else if (playOrder == 18)
             {
-                moveTo(new Vector2(516, 274), player, 1);
+                moveTo(new Vector2(516, 266), player, 1);
                 //move down
-                if (isAtPosition(new Vector2(516, 274), player) == true)
+                if (isAtPosition(new Vector2(516, 266), player) == true)
                     playOrder++;
 
                 player.cutsceneUpdate(gameTime);
             }
+            else if (playOrder == 19)
+            {
+                lib.BookVisibility = false;
+                moveTo(new Vector2(300, 264), player, 1);
+                //move left
+                if (isAtPosition(new Vector2(300, 264), player) == true)
+                    playOrder++;
 
-            //if (Game1.MainGameState == GameState.CUTSCENE) //makes it so that the character will stop walking during dialog
-                //player.cutsceneUpdate(gameTime);
+                player.cutsceneUpdate(gameTime);
+            }
+            else if (playOrder == 20)
+            {
+                moveTo(new Vector2(80, 330), player, 1);
+                //move down and left
+                if (isAtPosition(new Vector2(80, 330), player) == true)
+                    playOrder++;
 
-        }
-    
+                player.cutsceneUpdate(gameTime);
+            }
+            else if (playOrder == 21)
+            {
+                world.Map.changeMap(outCave);
+                //player.setIsVisible(true);
+                player.Position = new Vector2(512, 108);
+                playOrder++;
+            }
+            else if (playOrder == 22)
+            {
+                //shakeBackground(6);
+                moveBackground(new Vector2(5, 0));
+                moveTo(new Vector2(542, 108), player, 1);
+                //move down and left
+                if (isAtPosition(new Vector2(650, 108), player) == true)
+                    playOrder++;
+
+                
+            }
+        }  
     }
 }
