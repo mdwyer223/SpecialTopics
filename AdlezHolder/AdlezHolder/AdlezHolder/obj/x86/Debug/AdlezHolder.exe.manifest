@@ -100,7 +100,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>nyRm3oBtEdOZm3Ccd4RjPQ/fs6I=</dsig:DigestValue>
+        <dsig:DigestValue>R/KObehAMR6KGv0xXt6dcOddk7U=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -1553,13 +1553,13 @@
       <dsig:DigestValue>BW8BhNHupGENsRlsYxck08ac7W8=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\GameOverFont.xnb" size="146606">
+  <file name="Content\GameOverFont.xnb" size="140462">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>tRjaJnL6Tu97LE9yU3xX8p6tPtU=</dsig:DigestValue>
+      <dsig:DigestValue>H8dYuPVqAtlXt3qopEBx6OrsuoM=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\Items\10Coin.xnb" size="379">
@@ -1775,7 +1775,7 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>11ZpH7cLc2Q8ryewDVfS8XQ4YGI=</dsig:DigestValue>
+      <dsig:DigestValue>1epduRvUIgDPLXIGoZCmz4fubuk=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\Music\DungeonTheme1.xnb" size="131">
@@ -1793,7 +1793,7 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>PmE6b2rpM2btED2EJTOBTEpUcAo=</dsig:DigestValue>
+      <dsig:DigestValue>5ulBJQdmBmpu+4+QcQsRKAai/1s=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\Music\First Nation.xnb" size="130">
@@ -1829,7 +1829,7 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>QaJH0oQJDG0iWGVugOmIQ9qEUhI=</dsig:DigestValue>
+      <dsig:DigestValue>cp/G3ebRqSbYH1hBjVD5oV7ECWI=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\Music\Theme.xnb" size="123">
@@ -1847,7 +1847,7 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>fBksgzRcrRLgo9mQ1KoRz2KPLqs=</dsig:DigestValue>
+      <dsig:DigestValue>0NvBfRwUahcMsES5ZrJfo4toPug=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\Music\TravelingSong.xnb" size="131">
@@ -2129,13 +2129,13 @@
       <dsig:DigestValue>tCf2wu00loZrtlTJn+Vb4Lnhh7Y=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\SpriteFont1.xnb" size="23214">
+  <file name="Content\SpriteFont1.xnb" size="20654">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>6AHhMfi1eSFRiKRO6zHrbab23eU=</dsig:DigestValue>
+      <dsig:DigestValue>KDvqsaz98ynFliDERzYUDwIo94Q=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\SpriteFont2.xnb" size="12206">
@@ -2147,13 +2147,13 @@
       <dsig:DigestValue>R1+PFJhlS20GgFMK2Ggy+QAV/4c=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\SpriteFont3.xnb" size="84142">
+  <file name="Content\SpriteFont3.xnb" size="80046">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>lyvfzLh909XMxw1Cdi/OaPUIXnA=</dsig:DigestValue>
+      <dsig:DigestValue>rSKwjca5A3npTtQzv4Slvoms4XE=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\TitleScreen.xnb" size="1920187">

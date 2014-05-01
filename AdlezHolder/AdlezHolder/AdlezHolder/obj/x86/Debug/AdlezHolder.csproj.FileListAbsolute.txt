@@ -260,3 +260,265 @@ C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\A
 C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\obj\x86\Debug\AdlezHolder.application
 C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\obj\x86\Debug\AdlezHolder.exe
 C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\obj\x86\Debug\AdlezHolder.pdb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Alistar\B.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Alistar\BL.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Alistar\BR.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Alistar\FL.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Alistar\FR.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Alistar\F.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Alistar\L.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Alistar\LL.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Alistar\LR.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Alistar\R.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Alistar\RL.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Alistar\RR.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Random\The best thing ever.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Box\Box.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Box\BoxBreaking.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Box\BoxBreaking2.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Box\BoxBreaking3.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Box\BoxBreaking4.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\BackgroundsAndFloors\Dungeons\FixedDungeon1\MainRoom.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Weapons\bomb selected.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Weapons\bow selected.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Weapons\lock.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Weapons\sword selected.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Weapons\bomb unselected.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Weapons\bow unselected.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Weapons\health_backgroung.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Weapons\health_bar.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Weapons\sword unselected.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\BackgroundsAndFloors\Dungeons\FixedDungeon1\DungeonHallwayLeft.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\BackgroundsAndFloors\Dungeons\FixedDungeon1\DungeonHallwayRight.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\BackgroundsAndFloors\Dungeons\FixedDungeon1\DungeonRoomBottomLeft.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\BackgroundsAndFloors\Dungeons\FixedDungeon1\DungeonRoomBottomRight.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\BackgroundsAndFloors\Dungeons\FixedDungeon1\DungeonRoomTopLeft.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\BackgroundsAndFloors\Dungeons\FixedDungeon1\DungeonRoomTopRight.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Enemies\Skeleton\Move\SB.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Enemies\Skeleton\Move\SBL.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Enemies\Skeleton\Move\SBR.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Enemies\Skeleton\Move\SF.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Enemies\Skeleton\Move\SFL.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Enemies\Skeleton\Move\SFR.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Enemies\Skeleton\Move\SL.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Enemies\Skeleton\Move\SLL.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Enemies\Skeleton\Move\SLR.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Enemies\Skeleton\Move\SR.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Enemies\Skeleton\Move\SRL.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Enemies\Skeleton\Move\SRR.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Enemies\Skeleton\Attack\SBA.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Enemies\Skeleton\Attack\SBA2.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Enemies\Skeleton\Attack\SFA.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Enemies\Skeleton\Attack\SFA2.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Enemies\Skeleton\Attack\SLA.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Enemies\Skeleton\Attack\SLA2.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Enemies\Skeleton\Attack\SRA.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Enemies\Skeleton\Attack\SRA2.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\MenuButtons\Continue.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\MenuButtons\LoadGame.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\MenuButtons\NewGame.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarSword\B.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarSword\BL.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarSword\BR.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarSword\F.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarSword\FL.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarSword\FR.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarSword\L.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarSword\LL.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarSword\LR.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarSword\R.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarSword\RL.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarSword\RR.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarSwordAttack\B1.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarSwordAttack\B2.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarSwordAttack\F1.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarSwordAttack\F2.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarSwordAttack\L1.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarSwordAttack\L2.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarSwordAttack\R1.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarSwordAttack\R2.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarSwordAttack\LeftSwoosh.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarSwordAttack\BackSwoosh.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarSwordAttack\FrontSwoosh.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarSwordAttack\RightSwoosh.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\BackgroundsAndFloors\Dungeons\FixedDungeon1\BossHallway.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Chests\Chest.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Chests\EmptyChest.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\BackgroundsAndFloors\Dungeons\FixedDungeon1\DungeonRoomBoss.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Box\MetalBox.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\BackgroundsAndFloors\Landscapes\LeftPassage.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\TitleScreen.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Bosses\D1 Boss\Move\B.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Bosses\D1 Boss\Move\BL.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Bosses\D1 Boss\Move\BR.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Bosses\D1 Boss\Move\F.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Bosses\D1 Boss\Move\FL.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Bosses\D1 Boss\Move\FR.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Bosses\D1 Boss\Move\L.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Bosses\D1 Boss\Move\LL.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Bosses\D1 Boss\Move\LR.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Bosses\D1 Boss\Move\R.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Bosses\D1 Boss\Move\RL.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Bosses\D1 Boss\Move\RR.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Bosses\D1 Boss\Attack\F1.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Bosses\D1 Boss\Attack\F2.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Bosses\D1 Boss\Attack\L1.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Bosses\D1 Boss\Attack\L2.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Bosses\D1 Boss\Attack\R1.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Bosses\D1 Boss\Attack\R2.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Bosses\D1 Boss\Attack\B1.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Bosses\D1 Boss\Attack\B2.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Traps\arrowtrap.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Torch\Light1.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Torch\Light2.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Torch\Light3.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Torch\Torch1.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Torch\Torch2.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Torch\Torch3.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Random\LightScreen.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Buildings\BottomLeftHouse.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Buildings\BottomRightHouse.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Buildings\TopLeftHouse.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Buildings\TopRightHouse.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\BackgroundsAndFloors\Landscapes\FountainINTOWNSQUARE.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\BackgroundsAndFloors\Landscapes\TownSquare.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\BackgroundsAndFloors\Buildings\HOUSE4.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Random\Particle.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Items\10Coin.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Items\1Coin.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Items\5Coin.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Items\CyanStone.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Items\Key.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Items\MagentaStone.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Items\SteelArrow.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Items\WoodenArrow.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Items\YellowStone.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarBow\B.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarBow\BL.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarBow\BR.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarBow\F.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarBow\FL.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarBow\FR.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarBow\L.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarBow\LL.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarBow\LR.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarBow\R.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarBow\RL.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarBow\RR.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarBowAttack\B1.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarBowAttack\B2.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarBowAttack\F1.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarBowAttack\F2.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarBowAttack\L1.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarBowAttack\L2.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarBowAttack\R1.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\AlistarBowAttack\R2.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Projectiles\SteelArrowDown.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Projectiles\SteelArrowLeft.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Projectiles\SteelArrowRight.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Projectiles\SteelArrowUp.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Weapons\Bomb.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\BackgroundsAndFloors\Buildings\HOUSE.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\BackgroundsAndFloors\Buildings\HOUSE2.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\BackgroundsAndFloors\Buildings\HOUSE3.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\BackgroundsAndFloors\Buildings\HOUSE5.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Weapons\BombAnime\Bomb2.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Weapons\BombAnime\Bomb3.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Weapons\BombAnime\Bomb4.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Enemies\Mage\Move\B.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Enemies\Mage\Move\BL.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Enemies\Mage\Move\BR.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Enemies\Mage\Move\F.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Enemies\Mage\Move\FL.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Enemies\Mage\Move\FR.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Enemies\Mage\Move\L.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Enemies\Mage\Move\LL.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Enemies\Mage\Move\LR.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Enemies\Mage\Move\R.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Enemies\Mage\Move\RL.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Enemies\Mage\Move\RR.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Enemies\Thing\Move\TB.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Enemies\Thing\Move\TBL.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Enemies\Thing\Move\TBR.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Enemies\Thing\Move\TF.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Enemies\Thing\Move\TFL.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Enemies\Thing\Move\TFR.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Enemies\Thing\Move\TL.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Enemies\Thing\Move\TLL.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Enemies\Thing\Move\TLR.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Enemies\Thing\Move\TR.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Enemies\Thing\Move\TRL.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ComputerPpl\Enemies\Thing\Move\TRR.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Ronnin\FL.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Wep Icons\bomb selected.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Wep Icons\bow selected.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Wep Icons\sword selected.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Menu Pics\AdlezTitle.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\BackgroundsAndFloors\Dungeons\Dungeon2\Up.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\BackgroundsAndFloors\Dungeons\Dungeon2\Right.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\BackgroundsAndFloors\Dungeons\Dungeon2\RightUp.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\BackgroundsAndFloors\Dungeons\Dungeon2\MainRoom.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\BackgroundsAndFloors\Dungeons\Dungeon2\Left.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\BackgroundsAndFloors\Dungeons\Dungeon2\Down.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Items\1BluePotion.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Items\1GreenPotion.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Items\1RedPotion.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Items\2BluePotions.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Items\2GreenPotions.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Items\2RedPotions.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Items\3BluePotions.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Items\3GreenPotions.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Items\3RedPotions.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Rain\1.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Rain\2.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Rain\3.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Rain\4.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Rain\1x1.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Rain\1x2.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\BackgroundsAndFloors\Landscapes\Grass.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\NatureObjects\FlowerPatch1.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\NatureObjects\FlowerPatch3.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\NatureObjects\FlowerPatch2.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\NatureObjects\PurpleFlower.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\NatureObjects\RedFlower.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\NatureObjects\Tree1.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\NatureObjects\Tree2.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\NatureObjects\Tree3.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\NatureObjects\YellowFlowerPatch.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\NatureObjects\YellowFlower.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\NatureObjects\RockLeft.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\NatureObjects\RockRight.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Buy.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Exit.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ItemShopBack.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Sell.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\blank.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\capacity.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\damage.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\range.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\speed.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\speical.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\SpriteFont1.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\SpriteFont2.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\GameOverFont.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\SpriteFont3.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Music\Theme.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Music\TravelingSong.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Music\DungeonTheme1.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Music\First Nation.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Music\SFX\Hit By Enemy.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Music\SFX\Hit Enemy.xnb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Music\Theme.wma
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Music\TravelingSong.wma
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Music\DungeonTheme1.wma
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Music\First Nation.wma
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\AdlezHolder.exe.manifest
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\AdlezHolder.application
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\AdlezHolder.exe
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\AdlezHolder.pdb
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\obj\x86\Debug\AdlezHolder.csprojResolveAssemblyReference.cache
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\obj\x86\Debug\AdlezHolder.exe.manifest
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\obj\x86\Debug\AdlezHolder.application
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\obj\x86\Debug\AdlezHolder.exe
+C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\obj\x86\Debug\AdlezHolder.pdb

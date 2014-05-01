@@ -66,27 +66,6 @@ namespace AdlezHolder
 
         public void Update(GameTime gameTime)
         {
-            if(tempItemArray.Length == 0)
-            {
-                emptyInventory = true;
-
-
-            //    if (keys.IsKeyDown(Keys.Escape) && oldKeys.IsKeyUp(Keys.Escape))
-            //    {
-            //        this.changeItemGameState(ItemShopGameState.ITEMSHOP);
-
-            //    }
-
-            //    oldKeys = keys;
-            //}
-            //else
-            //{
-            //    emptyInventory = false;
-            //}
-
-            //if(emptyInventory == false)
-            //{
-
             bool wasJustSold = false;
             playersCash = tempCharacter.Money;
             keys = Keyboard.GetState();
@@ -298,13 +277,7 @@ namespace AdlezHolder
 
             oldKeys = keys;
         }
-            else
-            {
-                infoBox.deleteMessage();
-                infoBox.receiveMessage("You Have No Items In Your Inventory");
-                infoBox.update();
-            }
-        }
+        
 
         public void setPlayerInvent()
         {

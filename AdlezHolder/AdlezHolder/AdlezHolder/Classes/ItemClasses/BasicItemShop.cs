@@ -100,9 +100,13 @@ namespace AdlezHolder
                 }
                 itemPicture.setImage(itemImage);
             }
-
+            if (keys.IsKeyDown(Keys.Escape) && oldKeys.IsKeyUp(Keys.Escape))
+            {
+                this.changeItemGameState(ItemShopGameState.ITEMSHOP);
+            }
             if (keys.IsKeyDown(Keys.W) && oldKeys.IsKeyUp(Keys.W))
             {
+
                 if (itemArray[itemColumnIndex, itemRowIndex] != null)
                 {
                     wasJustPurchased = false;
