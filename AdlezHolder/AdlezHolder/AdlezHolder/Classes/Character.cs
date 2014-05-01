@@ -194,7 +194,7 @@ namespace AdlezHolder
 
             playAnimation(Idle);
 
-            currentHealthPoints = healthPointsMax = 200;
+            currentHealthPoints = healthPointsMax = 500;
 
             damaged = Game1.GameContent.Load<SoundEffect>("Music/SFX/Hit By Enemy");
 

@@ -42,6 +42,8 @@ namespace AdlezHolder
         protected int brightnessValue;
 
         bool delay;
+        MessageBox box;
+        KeyboardState oldKeys;
 
         public Rectangle BackgroundRec
         {
@@ -149,6 +151,7 @@ namespace AdlezHolder
         public virtual void Update(Map map, GameTime gameTime)
         {
             KeyboardState keys = Keyboard.GetState();
+            box = new MessageBox(1f);
 
             if (MediaPlayer.State == MediaState.Paused || MediaPlayer.State == MediaState.Playing)
             {
@@ -161,7 +164,11 @@ namespace AdlezHolder
                     MediaPlayer.Play(music);
                 }
             }
-
+            if (keys.IsKeyDown(Keys.T) && oldKeys.IsKeyUp(Keys.T))
+            {
+                box.show("At one time, Adlez was an expansive, fertile land upon which a powerful emperor ruled. However,  Power tends to corrupt, and absolute power corrupts absolutely. Great men are almost always bad men - Lord John Emerich Acton. History has shown that men granted great power rarely have the wisdom to use it. And indeed this ancient emperor was no exception; he was soon overcome by an insatiable hunger for power. Arrogance and greed overcame honor and responsibility. Exorbitant taxes were extorted from his people, every crime was punishable by death, and unsustainable conscription strangled the life out of the countryside. Any attempt at rebellion was met with the Tyrant's iron heel.");
+            }
+            box.update();
             brightnessValue = getBrightnessValue(map);
 
             topLeftCornerView = new Vector2(0, 0);
@@ -283,7 +290,7 @@ namespace AdlezHolder
                     }
                 }
             }
-
+            oldKeys = keys;
             changeDrawOrder(everything);
         }
 
@@ -412,7 +419,7 @@ namespace AdlezHolder
                 spriteBatch.Draw(dark, new Rectangle(0, 0, Game1.DisplayWidth, Game1.DisplayHeight),
                     new Color(255, 255, 255) * (float)((Math.Abs(brightnessValue) / 255f)));
             }
-
+            box.draw(spriteBatch);
         }
 
         private int getBrightnessValue(Map data)

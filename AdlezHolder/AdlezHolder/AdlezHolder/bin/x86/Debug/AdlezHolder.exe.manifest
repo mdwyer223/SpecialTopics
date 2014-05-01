@@ -93,14 +93,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="AdlezHolder.exe" size="133632">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="AdlezHolder.exe" size="135680">
       <assemblyIdentity name="AdlezHolder" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>n0EY0b4K9LdnCEYlxfJaJHv2GQE=</dsig:DigestValue>
+        <dsig:DigestValue>fFC0mm5XsmfqSzo18dGMz5QVd+A=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

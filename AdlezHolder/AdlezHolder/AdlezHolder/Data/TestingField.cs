@@ -29,6 +29,7 @@ namespace AdlezHolder
 
         public override void Update(Map map, GameTime gameTime)
         {
+            MessageBox box = new MessageBox(1f);
             keys = Keyboard.GetState();
             if (!itemAdd)
             {
@@ -56,6 +57,7 @@ namespace AdlezHolder
                     .04f, 8, new Vector2(300, 300));
                 addEnemy(sprite);
             }
+
             base.Update(map, gameTime);
 
             if (!setPlayer)

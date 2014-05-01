@@ -10,7 +10,7 @@ using Microsoft.Xna.Framework.Input;
 
 namespace AdlezHolder
 {
-    class MessageBox
+    public class MessageBox
     {
         String message;
         String currentMessage, printedMessage, tempString;
@@ -18,7 +18,7 @@ namespace AdlezHolder
         Vector2 messagePosition;
         Boolean boxFull = false, heightCheck = false, cutOff = false, messageComplete = false;
         protected Boolean visible;
-        int count, messageWidth, messageHeight, nextLineCount = 0, spaceIndex, prevSpaceIndex, lineCount, checkCharacterCount;
+        int displayCount, messageCount, messageWidth, messageHeight, nextLineCount = 0, spaceIndex, prevSpaceIndex, lineCount, checkCharacterCount;
         KeyboardState keys;
         KeyboardState oldKeys;
         Vector2 messageSize, checkSizeWidth, checkSizeHeight, checkSizeTemp, continueTextSize;
@@ -33,8 +33,8 @@ namespace AdlezHolder
 
         public MessageBox(float scaleFactor)
         {
-            texture = Game1.GameContent.Load<Texture2D>("The best thing ever");
-                    
+            texture = Game1.GameContent.Load<Texture2D>("Random/The best thing ever");
+
             spritefont = Game1.GameContent.Load<SpriteFont>("SpriteFont1");
 
             rectangle.Width = (int)((Game1.DisplayWidth * scaleFactor) + 0.5f);
@@ -50,7 +50,10 @@ namespace AdlezHolder
         {
             if (Visible)
             {
-                keys = Keyboard.GetState();
+                if (messageComplete || boxFull)
+                {
+                    keys = Keyboard.GetState();
+                }
                 messageWidth = (int)messageSize.X;
                 messageHeight = (int)messageSize.Y;
                 if (keys.IsKeyDown(Keys.Space) && oldKeys.IsKeyUp(Keys.Space))
@@ -71,11 +74,11 @@ namespace AdlezHolder
 
                 if (!messageComplete)
                 {
-                    if (count < message.Length && visible)
+                    if (messageCount < message.Length && visible)
                     {
                         if (!boxFull)
                         {
-                            spaceIndex = message.IndexOf(" ", count);
+                            spaceIndex = message.IndexOf(" ", displayCount);
                             if (currentMessage != null && prevSpaceIndex != spaceIndex)
                             {
                                 if (spaceIndex > 0)
@@ -99,8 +102,9 @@ namespace AdlezHolder
 
                             if (!cutOff)
                             {
-                                currentMessage += message.Substring(count, 1);
-                                count++;
+                                currentMessage += message.Substring(displayCount, 1);
+                                displayCount++;
+                                messageCount++;
                                 lineCount++;
                             }
 
@@ -116,15 +120,16 @@ namespace AdlezHolder
                             if (cutOff && currentMessage != "")
                             {
                                 currentMessage += "\n";
+                                messageCount--;
                                 nextLineCount = lineCount;
                                 tempString = "";
                                 cutOff = false;
                             }
                         }
                     }
-                    else if (!visible && count >= message.Length)
+                    else if (!visible && displayCount >= message.Length)
                     {
-                        count = 0;
+                        messageCount = displayCount = 0;
                         currentMessage = "";
                         nextLineCount = 0;
                         lineCount = 0;
@@ -132,7 +137,11 @@ namespace AdlezHolder
                     }
                 }
 
-                oldKeys = keys;
+                if (messageComplete || boxFull)
+                {
+                    oldKeys = keys;
+                }
+                    
                 printedMessage = currentMessage;
 
                 if (printedMessage == "")
@@ -142,14 +151,17 @@ namespace AdlezHolder
 
                 if (heightCheck == true)
                 {
-                    currentMessage += message.Substring(count, 1);
-                    count++;                 
-                    spaceIndex = message.IndexOf(" ", count);
+                    currentMessage += message.Substring(displayCount, 1);
+                    if (displayCount < message.Length)
+                    {
+                        displayCount++;
+                    }
+                    spaceIndex = message.IndexOf(" ", messageCount);
 
                     if (currentMessage != null && prevSpaceIndex != spaceIndex)
                     {
                         if (spaceIndex > 0)
-                        {
+                        {//TODO: fix prevSpaceIndex count
                             tempString = currentMessage.Substring(nextLineCount) + message.Substring(prevSpaceIndex + 1, spaceIndex - prevSpaceIndex - 1);
                         }
                         else
@@ -167,38 +179,45 @@ namespace AdlezHolder
                     }
                 }
 
-                if (count >= message.Length)
+                if (displayCount >= message.Length)
                 {
                     messageComplete = true;
+                    heightCheck = false;
                 }
 
-                prevSpaceIndex = spaceIndex;
+                if (spaceIndex != -1)
+                {
+                    prevSpaceIndex = spaceIndex;
+                }
             }
         }
 
         public void draw(SpriteBatch spriteBatch)
         {
-                
-            spriteBatch.Draw(Game1.GameContent.Load<Texture2D>("The best thing ever"), rectangle, Color.White);               
-            if (printedMessage != null)               
-            {                
-                spriteBatch.DrawString(spritefont, printedMessage, messagePosition, Color.White);             
-            }               
-            if (boxFull && (checkCharacterCount >= 70))                
-            {             
-                spriteBatch.DrawString(spritefont, "Press space to continue", new Vector2(rectangle.Width - (int)(continueTextSize.X * 1.1), rectangle.Y + rectangle.Height - continueTextSize.Y + 5), Color.White);               
-            }               
-            else if(messageComplete)              
-            {                
-                spriteBatch.DrawString(spritefont, "Press space to continue", new Vector2(rectangle.Width - (int)(continueTextSize.X * 1.1), rectangle.Y + rectangle.Height - continueTextSize.Y + 5), Color.White);            
+            if (visible)
+            {
+                spriteBatch.Draw(Game1.GameContent.Load<Texture2D>("Random/The best thing ever"), rectangle, Color.White);
+                if (printedMessage != null)
+                {
+                    spriteBatch.DrawString(spritefont, printedMessage, messagePosition, Color.White);
+                }
+                if (boxFull && (checkCharacterCount >= 70))
+                {
+                    spriteBatch.DrawString(spritefont, "Press space to continue", new Vector2(rectangle.Width - (int)(continueTextSize.X * 1.1), rectangle.Y + rectangle.Height - continueTextSize.Y + 5), Color.White);
+                }
+                else if (messageComplete)
+                {
+                    spriteBatch.DrawString(spritefont, "Press space to continue", new Vector2(rectangle.Width - (int)(continueTextSize.X * 1.1), rectangle.Y + rectangle.Height - continueTextSize.Y + 5), Color.White);
+                }
             }
         }
 
         public void hide()
         {
             Visible = false;
-            messageComplete = false;   
-            count = 0;
+            messageComplete = false;
+            displayCount = 0;
+            messageCount = 0;
             nextLineCount = 0;
             lineCount = 0;
             tempString = "";
@@ -212,7 +231,7 @@ namespace AdlezHolder
             Visible = true;
             this.message = message;
             messageSize = spritefont.MeasureString(this.message);
-            Game1.MainGameState = GameState.TALKING;   
+            Game1.MainGameState = GameState.TALKING;
         }
     }
 }

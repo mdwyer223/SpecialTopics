@@ -237,7 +237,7 @@ namespace AdlezHolder
                 {
                     attackTimer = 0;
                     isAttacking = false;
-                    data.Player.damage(strength);
+                    data.Player.damage(75);//strength);
                 }
             }
         }

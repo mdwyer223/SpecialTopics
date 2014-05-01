@@ -146,16 +146,21 @@ namespace AdlezHolder
                     Rectangle test = segments[segments.Count - 1];
                     test.Width = (int)((fullHealth.Width - segmentWidth * (numSegments - 1) - (numSegments - 1)) * (leftoverHealth / (float)(totalHealth % 100.0f)));
                     segments[segments.Count - 1] = test;
+                    if (segments[segments.Count - 1].Width == 0)
+                        segments.RemoveAt(segments.Count - 1);
                 }
                 else
                 {
                     Rectangle test = segments[segments.Count - 1];
                     test.Width = (int)(segmentWidth * (leftoverHealth / 100.0f));
                     segments[segments.Count - 1] = test;
+                    if (segments[segments.Count - 1].Width == 0)
+                        segments.RemoveAt(segments.Count - 1);
                 }
-                            
 
-                leftoverHealth = (prevCurrentHealth % 100) - damage;
+                if (prevCurrentHealth % 100 != 0 || prevCurrentHealth == 0)
+                    leftoverHealth = (prevCurrentHealth % 100) - damage;
+             
                 if (leftoverHealth < 0)
                 {
                     int oldSeg = prevCurrentHealth / 100;
