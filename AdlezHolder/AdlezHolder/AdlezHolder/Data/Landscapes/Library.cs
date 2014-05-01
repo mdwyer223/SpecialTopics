@@ -13,6 +13,15 @@ namespace AdlezHolder
 {
     public class Library : MapDataHolder
     {
+        bool bookVis = true;
+
+
+        public bool BookVisibility
+        {
+            get { return bookVis; }
+            set { bookVis = value; }
+        }
+
            public Library()
             : base()
         {
@@ -30,9 +39,11 @@ namespace AdlezHolder
         public override void Draw(SpriteBatch spriteBatch)
         {
             base.Draw(spriteBatch);
+            //Actual book
+            if (BookVisibility)
+                spriteBatch.Draw(Game1.GameContent.Load<Texture2D>("Levon/Levon"), new Rectangle(500,298,58,35), Color.White); //Levon
 
-            spriteBatch.Draw(Game1.GameContent.Load<Texture2D>("Levon/Levon"), new Rectangle(500,300,58,35), Color.White); //Levon
-            //greater than 110 for x and greater than 222 for y 
+            //Decoration Books
             spriteBatch.Draw(Game1.GameContent.Load<Texture2D>("Levon/Levon2"), new Rectangle(176, 378, 58, 35), Color.White);
             spriteBatch.Draw(Game1.GameContent.Load<Texture2D>("Levon/Levon3"), new Rectangle(369, 400, 58, 35), Color.White);
             spriteBatch.Draw(Game1.GameContent.Load<Texture2D>("Levon/Levon4"), new Rectangle(580, 230, 58, 35), Color.White);

@@ -162,13 +162,28 @@ namespace AdlezHolder
                 return false;
         }
 
-        public Boolean CanStartDialog()
+        public void shakeBackground(int shakes)
         {
-            if (Game1.MainGameState == GameState.TALKING)
-                return true;
-            else
-                return false;
+            Vector2 shakeRight = new Vector2(10,0);
+            Vector2 shakeLeft = new Vector2(-10, 0);
+            Vector2 center = new Vector2(0, 0);
+
+            for (int i = 0; i<shakes; i++)
+            {
+                moveBackground(shakeRight);
+                moveBackground(center);
+                moveBackground(shakeLeft);
+            }
+
         }
+
+        //public Boolean CanStartDialog()
+        //{
+        //    if (Game1.MainGameState == GameState.TALKING)
+        //        return true;
+        //    else
+        //        return false;
+        //}
 
     }
 }
