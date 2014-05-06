@@ -236,6 +236,7 @@
     <Compile Include="Data\Landscapes\Library.cs" />
     <Compile Include="Data\Landscapes\Nwot.cs" />
     <Compile Include="Data\Landscapes\OutsideCave.cs" />
+    <Compile Include="Data\Landscapes\OutsideCaveFull.cs" />
     <Compile Include="Data\Map.cs" />
     <Compile Include="Data\MapDataHolder.cs" />
     <Compile Include="Data\SaveStuff\GameData.cs" />

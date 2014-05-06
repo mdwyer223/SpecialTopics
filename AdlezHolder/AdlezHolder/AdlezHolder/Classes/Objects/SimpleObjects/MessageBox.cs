@@ -219,6 +219,8 @@ namespace AdlezHolder
         {
             Visible = false;
             messageComplete = false;
+            keys = new KeyboardState();
+            oldKeys = new KeyboardState();
             displayCount = 0;
             messageCount = 0;
             nextLineCount = 0;

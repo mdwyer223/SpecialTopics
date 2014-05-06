@@ -88,7 +88,7 @@ namespace AdlezHolder
                 if (!show)
                 {
                     box = new MessageBox(1f, false);
-                    box.show("Hi this is bob. Hi this is bob.Hi this is bob.Hi this is bob.Hi this is bob.Hi this is bob.Hi this is bob.Hi this is bob.Hi this is bob.Hi this is bob.Hi this is bob.");
+                    box.show("I have a bad feeling about this place.");
                     data.addMBox(box);
                     show = true;
                 }

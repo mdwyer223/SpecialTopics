@@ -15,16 +15,18 @@ namespace AdlezHolder
 {
     public class LibraryCutscene : Cutscene
     {
-        int playOrder = 21;
+        int playOrder = 0;
         MessageBox box;
         bool show = false;
         Library lib;
         OutsideCave outCave;
+        OutsideCaveFull fullCave;
 
         public LibraryCutscene()
         {
             lib = new Library();
             outCave = new OutsideCave();
+            fullCave = new OutsideCaveFull();
         }
 
         public override void play(GameTime gameTime)
@@ -247,6 +249,23 @@ namespace AdlezHolder
             }
             else if (playOrder == 19)
             {
+                Game1.MainGameState = GameState.TALKING;
+                if (!show)
+                {
+                    box = new MessageBox(1f, true);
+                    box.show("This looks interesting.");
+                    data.addMBox(box);
+                    show = true;
+                }
+
+                if (!box.Visible)
+                {
+                    show = false;
+                    playOrder++;
+                }
+            }
+            else if (playOrder == 20)
+            {
                 lib.BookVisibility = false;
                 moveTo(new Vector2(300, 264), player, 1);
                 //move left
@@ -255,7 +274,7 @@ namespace AdlezHolder
 
                 player.cutsceneUpdate(gameTime);
             }
-            else if (playOrder == 20)
+            else if (playOrder == 21)
             {
                 moveTo(new Vector2(80, 330), player, 1);
                 //move down and left
@@ -264,23 +283,162 @@ namespace AdlezHolder
 
                 player.cutsceneUpdate(gameTime);
             }
-            else if (playOrder == 21)
+            else if (playOrder == 22)
             {
                 world.Map.changeMap(outCave);
-                //player.setIsVisible(true);
+                Game1.ParticleState = ParticleState.RAIN;
                 player.Position = new Vector2(512, 108);
                 playOrder++;
             }
-            else if (playOrder == 22)
+            else if (playOrder == 23)
             {
-                //shakeBackground(6);
-                moveBackground(new Vector2(5, 0));
-                moveTo(new Vector2(542, 108), player, 1);
-                //move down and left
-                if (isAtPosition(new Vector2(650, 108), player) == true)
+                moveTo(new Vector2(430, 150), player, 1);
+                //move down
+                if (isAtPosition(new Vector2(430, 150), player) == true)
                     playOrder++;
 
-                
+                player.cutsceneUpdate(gameTime);
+            }
+            else if (playOrder == 24)
+            {
+                moveTo(new Vector2(380, 150), player, 1);
+                //move left
+                if (isAtPosition(new Vector2(380, 150), player) == true)
+                    playOrder++;
+
+                player.cutsceneUpdate(gameTime);
+            }
+            else if (playOrder == 25)
+            {
+                moveTo(new Vector2(350, 190), player, 1);
+                //move down and left
+                if (isAtPosition(new Vector2(350, 190), player) == true)
+                    playOrder++;
+
+                player.cutsceneUpdate(gameTime);
+            }
+            else if (playOrder == 26)
+            {
+                moveTo(new Vector2(280, 210), player, 1);
+                //move down and left
+                if (isAtPosition(new Vector2(280, 210), player) == true)
+                    playOrder++;
+
+                player.cutsceneUpdate(gameTime);
+            }
+            else if (playOrder == 27)
+            {
+                Game1.MainGameState = GameState.TALKING;
+                if (!show)
+                {
+                    box = new MessageBox(1f, false);
+                    box.show("*RUMBLE*");
+                    data.addMBox(box);
+                    show = true;
+                }
+
+                if (!box.Visible)
+                {
+                    show = false;
+                    playOrder++;
+                }
+            }
+            else if (playOrder == 28)
+            {
+                world.Map.changeMap(fullCave);
+                Game1.ParticleState = ParticleState.RAIN;
+                playOrder++;
+            }
+            else if (playOrder == 29)
+            {
+                moveTo(new Vector2(283, 210), player, 1);
+                Game1.MainGameState = GameState.TALKING;
+                if (!show)
+                {
+                    box = new MessageBox(1f, false);
+                    box.show("Whoa");
+                    data.addMBox(box);
+                    show = true;
+                }
+
+                if (!box.Visible)
+                {
+                    show = false;
+                    playOrder++;
+                }
+            }
+            else if (playOrder == 30)
+            {
+                moveTo(new Vector2(280, 210), player, 1);
+                Game1.MainGameState = GameState.TALKING;
+                if (!show)
+                {
+                    box = new MessageBox(1f, false);
+                    box.show("Better get back to town soon.");
+                    data.addMBox(box);
+                    show = true;
+                }
+
+                if (!box.Visible)
+                {
+                    show = false;
+                    playOrder++;
+                }
+            }
+            else if (playOrder == 31)
+            {
+                moveTo(new Vector2(0, 230), player, 1);
+                //move down and left
+                if (isAtPosition(new Vector2(0, 230), player) == true)
+                    playOrder++;
+
+                player.cutsceneUpdate(gameTime);
+            }
+            else if (playOrder == 32)
+            {
+                world.Map.changeMap(new D2Second("third"));
+                Game1.ParticleState = ParticleState.RAIN;
+                playOrder++;
+            }
+            else if (playOrder == 33)
+            {
+                moveTo(new Vector2(750, 230), player, 1);
+                Game1.MainGameState = GameState.TALKING;
+                if (!show)
+                {
+                    box = new MessageBox(1f, false);
+                    box.show("Looks like the weather is clearing up for now.");
+                    data.addMBox(box);
+                    show = true;
+                }
+
+                if (!box.Visible)
+                {
+                    show = false;
+                    playOrder++;
+                }
+            }
+            else if (playOrder == 34)
+            {
+                Game1.ParticleState = ParticleState.OFF;
+                Game1.MainGameState = GameState.TALKING;
+                if (!show)
+                {
+                    box = new MessageBox(1f, false);
+                    box.show("I should get home before it starts raining again.");
+                    data.addMBox(box);
+                    show = true;
+                }
+
+                if (!box.Visible)
+                {
+                    show = false;
+                    playOrder++;
+                }
+            }
+            else
+            {
+                Game1.MainGameState = GameState.PLAYING;
             }
         }  
     }
