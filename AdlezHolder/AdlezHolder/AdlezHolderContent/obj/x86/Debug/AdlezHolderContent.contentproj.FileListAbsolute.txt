@@ -1,2 +1,3 @@
 C:\Users\Josh Raslowsky\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolderContent\obj\x86\Debug\AdlezHolderContent.contentprojResolveAssemblyReference.cache
 C:\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolderContent\obj\x86\Debug\AdlezHolderContent.contentprojResolveAssemblyReference.cache
+C:\Users\Bryan\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolderContent\obj\x86\Debug\AdlezHolderContent.contentprojResolveAssemblyReference.cache

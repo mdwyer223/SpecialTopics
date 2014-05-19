@@ -93,14 +93,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="AdlezHolder.exe" size="303104">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="AdlezHolder.exe" size="302080">
       <assemblyIdentity name="AdlezHolder" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>gd42zdufVipDDwcfEBeyjIELpbs=</dsig:DigestValue>
+        <dsig:DigestValue>32so9QNxjrYJU32nDXCSEElBRQ0=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -1775,7 +1775,7 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>1epduRvUIgDPLXIGoZCmz4fubuk=</dsig:DigestValue>
+      <dsig:DigestValue>+/lKSZa++JxlOmscFzLmKDFNEac=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\Music\DungeonTheme1.xnb" size="131">
@@ -1793,7 +1793,7 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>5ulBJQdmBmpu+4+QcQsRKAai/1s=</dsig:DigestValue>
+      <dsig:DigestValue>kqw+ljcJFye+5j8ZnjpiUn8U+wg=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\Music\First Nation.xnb" size="130">
@@ -1829,7 +1829,7 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>cp/G3ebRqSbYH1hBjVD5oV7ECWI=</dsig:DigestValue>
+      <dsig:DigestValue>Fd0nZ7qAJTM96V16wY2Z33lbDwQ=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\Music\Theme.xnb" size="123">
@@ -1847,7 +1847,7 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>0NvBfRwUahcMsES5ZrJfo4toPug=</dsig:DigestValue>
+      <dsig:DigestValue>GmaHC3muQzMM1mrrNg2NT8yJVJA=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\Music\TravelingSong.xnb" size="131">

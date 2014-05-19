@@ -69,11 +69,10 @@ namespace AdlezHolder
             return rectangle;
         }
 
-        public void update(int max, int current, Character player)
+        public void update(int max, int current, Character player)//Subtracting too many bars or not adding enough...?  breaks after lifestealing and restarting at full health.
         {
 
             dead = current <= 0;
-
 
             if (dead)
             {
@@ -122,103 +121,120 @@ namespace AdlezHolder
 
             if (prevCurrentHealth != currentHealth)
             {
-                if (currentHealth > totalHealth)
+                if (currentHealth >= totalHealth)
                 {
                     Rectangle test = segments[segments.Count - 1];
-                    test.Width = (int)(fullHealth.Width - segmentWidth * (numSegments - 1) - (numSegments - 1));
+                    test.Width = (int)(fullHealth.Width - segmentWidth * (segments.Count - 1) - (segments.Count - 1));
                     segments[segments.Count - 1] = test;
                     currentHealth = totalHealth;
                     return;
                 }
 
-                damage = prevCurrentHealth - currentHealth;
-                leftoverHealth = currentHealth % 100;
+                segments = new List<Rectangle>();
+                int currentSeg = currentHealth / 100;
+                if (currentHealth % 100 > 0)
+                    currentSeg++;
+
+                health.X = fullHealth.X;
+                segments.Add(health);                
+                for (int i = 1; i < currentSeg; i++)
+                {
+                //    Rectangle test = segments[i - 1];
+                //    test.Width = segmentWidth;
+                //    segments[i - 1] = test;
+
+                    health.X = segments[i - 1].X + segments[i - 1].Width + 1;
+                    segments.Add(health);
+                    //health.X = fullHealth.X;
+                }
+
+                //damage = prevCurrentHealth - currentHealth;'
+                if (currentHealth % 100 != 0)
+                    leftoverHealth = currentHealth % 100;
+                else
+                    leftoverHealth = 100;
                 if (currentHealth / 100 == totalHealth / 100)
                 {
                     Rectangle test = segments[segments.Count - 1];
                     test.Width = (int)((fullHealth.Width - segmentWidth * (numSegments - 1) - (numSegments - 1)) * (leftoverHealth / (float)(totalHealth % 100.0f)));
                     segments[segments.Count - 1] = test;
-                    if (segments[segments.Count - 1].Width == 0)
-                        segments.RemoveAt(segments.Count - 1);
                 }
                 else
                 {
-                    if (segments.Count != 0)
-                    {
+                    //if (segments.Count != 0)
+                    //{
                         Rectangle test = segments[segments.Count - 1];
                         test.Width = (int)(segmentWidth * (leftoverHealth / 100.0f));
                         segments[segments.Count - 1] = test;
-                        if (segments[segments.Count - 1].Width == 0)
-                            segments.RemoveAt(segments.Count - 1);
-                    }
+                    //}
                 }
 
-                if (prevCurrentHealth % 100 != 0 || prevCurrentHealth == 0)
-                    leftoverHealth = (prevCurrentHealth % 100) - damage;
+                //if (prevCurrentHealth % 100 != 0 || prevCurrentHealth == 0)
+                //    leftoverHealth = (prevCurrentHealth % 100) - damage;
 
-                if (leftoverHealth < 0)
-                {
-                    int oldSeg = prevCurrentHealth / 100;
-                    if (prevCurrentHealth % 100 > 0)
-                        oldSeg++;
+                //if (leftoverHealth < 0)
+                //{
+                //    int oldSeg = prevCurrentHealth / 100;
+                //    if (prevCurrentHealth % 100 > 0)
+                //        oldSeg++;
 
-                    int currentSeg = currentHealth / 100;
-                    if (currentHealth % 100 > 0)
-                        currentSeg++;
+                //    int currentSeg = currentHealth / 100;
+                //    if (currentHealth % 100 > 0)
+                //        currentSeg++;
 
-                    for (int i = oldSeg; i > currentSeg; i--)
-                    {
-                        numSegments--;
-                        segments.RemoveAt(segments.Count - 1);
-                    }
-                    if (leftoverHealth < 0)
-                    {
-                        leftoverHealth = currentHealth % 100;
-                        if (segments.Count != 0)
-                        {
-                            Rectangle test = segments[segments.Count - 1];
-                            test.Width = (int)(segmentWidth * (leftoverHealth / 100.0f));
-                            segments[segments.Count - 1] = test;
-                        }
+                //    for (int i = oldSeg; i > currentSeg; i--)
+                //    {
+                //        numSegments--;
+                //        segments.RemoveAt(segments.Count - 1);
+                //    }
+                //    if (leftoverHealth < 0)
+                //    {
+                //        leftoverHealth = currentHealth % 100;
+                //        if (segments.Count != 0)
+                //        {
+                //            Rectangle test = segments[segments.Count - 1];
+                //            test.Width = (int)(segmentWidth * (leftoverHealth / 100.0f));
+                //            segments[segments.Count - 1] = test;
+                //        }
 
-                    }
-                }
-                else if (leftoverHealth > 100)
-                {
-                    int oldSeg = prevCurrentHealth / 100;
-                    if (prevCurrentHealth % 100 > 0)
-                        oldSeg++;
+                //    }
+                //}
+                //else if (leftoverHealth > 100)
+                //{
+                //    int oldSeg = prevCurrentHealth / 100;
+                //    if (prevCurrentHealth % 100 > 0)
+                //        oldSeg++;
 
-                    int currentSeg = currentHealth / 100;
-                    if (currentHealth % 100 > 0)
-                        currentSeg++;
+                //    int currentSeg = currentHealth / 100;
+                //    if (currentHealth % 100 > 0)
+                //        currentSeg++;
 
-                    for (int i = oldSeg; i < currentSeg; i++)
-                    {
-                        Rectangle test = segments[i - 1];
-                        test.Width = segmentWidth;
-                        segments[i - 1] = test;
+                //    for (int i = oldSeg; i < currentSeg; i++)
+                //    {
+                //        Rectangle test = segments[i - 1];
+                //        test.Width = segmentWidth;
+                //        segments[i - 1] = test;
 
-                        numSegments++;
-                        health.X = segments[i - 1].X + segments[i - 1].Width + 1;
-                        segments.Add(health);
-                        health.X = fullHealth.X;
-                    }
-                    int leftOverHeal = currentHealth % 100;
-                    if (leftOverHeal > 0)
-                    {
-                        Rectangle test = segments[segments.Count - 1];
-                        if (currentHealth / 100 == totalHealth / 100)
-                        {
-                            test.Width = (int)((fullHealth.Width - segmentWidth * (numSegments - 1) - (numSegments - 1)) * (leftOverHeal / (float)(totalHealth % 100.0f)));
-                        }
-                        else
-                        {
-                            test.Width = (int)(segmentWidth * (leftOverHeal / 100.0f));
-                        }
-                        segments[segments.Count - 1] = test;
-                    }
-                }
+                //        numSegments++;
+                //        health.X = segments[i - 1].X + segments[i - 1].Width + 1;
+                //        segments.Add(health);
+                //        health.X = fullHealth.X;
+                //    }
+                //    int leftOverHeal = currentHealth % 100;
+                //    if (leftOverHeal > 0)
+                //    {
+                //        Rectangle test = segments[segments.Count - 1];
+                //        if (currentHealth / 100 == totalHealth / 100)
+                //        {
+                //            test.Width = (int)((fullHealth.Width - segmentWidth * (numSegments - 1) - (numSegments - 1)) * (leftOverHeal / (float)(totalHealth % 100.0f)));
+                //        }
+                //        else
+                //        {
+                //            test.Width = (int)(segmentWidth * (leftOverHeal / 100.0f));
+                //        }
+                //        segments[segments.Count - 1] = test;
+                //    }
+                //}
             }
 
             oldDead = dead;
