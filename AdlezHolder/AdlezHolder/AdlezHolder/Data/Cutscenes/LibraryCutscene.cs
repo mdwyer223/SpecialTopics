@@ -65,7 +65,7 @@ namespace AdlezHolder
                 if (!show)
                 {
                     box = new MessageBox(1f, false);
-                    box.show("Damn, It's raining. We better make this quick");
+                    box.show("Damn, It's raining. We better make this quickDamn, It's raining. We better make this quickDamn, It's raining. We better make this quickDamn, It's raining. We better make this quickDamn, It's raining. We better make this quickDamn, It's raining. We better make this quickDamn, It's raining. We better make this quickDamn, It's raining. We better make this quickDamn, It's raining. We better make this quickDamn, It's raining. We better make this quickDamn, It's raining. We better make this quickDamn, It's raining. We better make this quickDamn, It's raining. We better make this quickDamn, It's raining. We better make this quick");
                     data.addMBox(box);
                     show = true;
                 }
