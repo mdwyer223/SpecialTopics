@@ -93,14 +93,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="AdlezHolder.exe" size="302080">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="AdlezHolder.exe" size="303616">
       <assemblyIdentity name="AdlezHolder" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>HEiqhL/iiTS56yiCGU72jJwlmfs=</dsig:DigestValue>
+        <dsig:DigestValue>kvRG3+KJd9gnI4toT+vZYTcjwRY=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -1793,7 +1793,7 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>kqw+ljcJFye+5j8ZnjpiUn8U+wg=</dsig:DigestValue>
+      <dsig:DigestValue>t24bMaQhwI5nNrQcmRQrIBtqPq4=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\Music\First Nation.xnb" size="130">

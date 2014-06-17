@@ -2060,7 +2060,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Bryan\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Buy.xnb</Output>
-      <Time>2014-05-13T12:16:53.3214641-04:00</Time>
+      <Time>2014-05-27T12:28:18.5733732-04:00</Time>
     </Item>
     <Item>
       <Source>Exit.png</Source>
@@ -2069,7 +2069,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Bryan\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Exit.xnb</Output>
-      <Time>2014-05-13T12:16:53.3214641-04:00</Time>
+      <Time>2014-05-27T12:28:18.5743733-04:00</Time>
     </Item>
     <Item>
       <Source>ItemShopBack.png</Source>
@@ -2078,7 +2078,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Bryan\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\ItemShopBack.xnb</Output>
-      <Time>2014-05-13T12:16:53.3224641-04:00</Time>
+      <Time>2014-05-27T12:28:18.5743733-04:00</Time>
     </Item>
     <Item>
       <Source>Sell.png</Source>
@@ -2087,7 +2087,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Bryan\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Sell.xnb</Output>
-      <Time>2014-05-13T12:16:53.4004686-04:00</Time>
+      <Time>2014-05-27T12:28:18.8533892-04:00</Time>
     </Item>
     <Item>
       <Source>blank.png</Source>
@@ -2096,7 +2096,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Bryan\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\blank.xnb</Output>
-      <Time>2014-05-13T12:16:53.4014686-04:00</Time>
+      <Time>2014-05-27T12:28:18.8553894-04:00</Time>
     </Item>
     <Item>
       <Source>capacity.png</Source>
@@ -2105,7 +2105,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Bryan\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\capacity.xnb</Output>
-      <Time>2014-05-13T12:16:53.4024687-04:00</Time>
+      <Time>2014-05-27T12:28:18.8703902-04:00</Time>
     </Item>
     <Item>
       <Source>damage.png</Source>
@@ -2114,7 +2114,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Bryan\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\damage.xnb</Output>
-      <Time>2014-05-13T12:16:53.4034688-04:00</Time>
+      <Time>2014-05-27T12:28:18.8723903-04:00</Time>
     </Item>
     <Item>
       <Source>range.png</Source>
@@ -2123,7 +2123,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Bryan\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\range.xnb</Output>
-      <Time>2014-05-13T12:16:53.4624721-04:00</Time>
+      <Time>2014-05-27T12:28:18.918393-04:00</Time>
     </Item>
     <Item>
       <Source>speed.png</Source>
@@ -2132,7 +2132,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Bryan\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\speed.xnb</Output>
-      <Time>2014-05-13T12:16:53.4634722-04:00</Time>
+      <Time>2014-05-27T12:28:18.9203931-04:00</Time>
     </Item>
     <Item>
       <Source>speical.png</Source>
@@ -2141,7 +2141,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Bryan\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\speical.xnb</Output>
-      <Time>2014-05-13T12:16:53.4644722-04:00</Time>
+      <Time>2014-05-27T12:28:18.9223932-04:00</Time>
     </Item>
     <Item>
       <Source>SpriteFont1.spritefont</Source>
@@ -2177,7 +2177,7 @@
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Bryan\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\SpriteFont3.xnb</Output>
-      <Time>2014-05-13T12:16:53.4004686-04:00</Time>
+      <Time>2014-05-27T12:28:18.8543893-04:00</Time>
     </Item>
     <Item>
       <Source>Music\Theme.mp3</Source>
@@ -2217,7 +2217,7 @@
       <Options>None</Options>
       <Output>C:\Users\Bryan\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Music\First Nation.xnb</Output>
       <Extra>C:\Users\Bryan\Documents\GitHub\SpecialTopics\AdlezHolder\AdlezHolder\AdlezHolder\bin\x86\Debug\Content\Music\First Nation.wma</Extra>
-      <Time>2014-05-13T12:16:53.3974684-04:00</Time>
+      <Time>2014-05-27T12:28:18.6203759-04:00</Time>
     </Item>
     <Item>
       <Source>Music\SFX\Hit By Enemy.wav</Source>

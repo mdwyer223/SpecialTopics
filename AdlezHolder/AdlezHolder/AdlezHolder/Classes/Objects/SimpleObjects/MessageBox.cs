@@ -50,9 +50,9 @@ namespace AdlezHolder
         {
             if (Visible)
             {
-                if (messageComplete || boxFull)
+                if (messageComplete || boxFull)//doesn't hit when it should be hitting. step through
                 {
-                    keys = Keyboard.GetState();
+                     keys = Keyboard.GetState();
                 }
                 messageWidth = (int)messageSize.X;
                 messageHeight = (int)messageSize.Y;
@@ -168,7 +168,7 @@ namespace AdlezHolder
 
                     checkCharacterCount = tempString.Length;
 
-                    if (checkCharacterCount > 70)
+                    if (checkCharacterCount >= 70)
                     {
                         heightCheck = false;
                         nextLineCount = lineCount;

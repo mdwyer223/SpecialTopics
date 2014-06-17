@@ -84,12 +84,12 @@ namespace AdlezHolder
             }
             else if (playOrder == 5)
             {
-                /*
+                
                 Game1.MainGameState = GameState.TALKING;
                 if (!show)
                 {
                     box = new MessageBox(1f);
-                    box.show("Hi this is bob. Hi this is bob.Hi this is bob.Hi this is bob.Hi this is bob.Hi this is bob.Hi this is bob.Hi this is bob.Hi this is bob.Hi this is bob.Hi this is bob.");
+                    box.show("Hi this is bob. Hi this is bob.Hi this is bob.Hi this is bob.Hi this is bob.Hi this is bob.Hi this is bob.Hi this is bob.Hi this is bob.Hi this is bob.Hi this is bob.Hi this is bob. Hi this is bob.Hi this is bob.Hi this is bob.Hi this is bob.Hi this is bob.Hi this is bob.Hi this is bob.Hi this is bob.Hi this is bob.Hi this is bob.Hi this is bob. Hi this is bob.Hi this is bob.Hi this is bob.Hi this is bob.Hi this is bob.Hi this is bob.Hi this is bob.Hi this is bob.Hi this is bob.Hi this is bob.Hi this is bob. Hi this is bob.Hi this is bob.Hi this is bob.Hi this is bob.Hi this is bob.Hi this is bob.Hi this is bob.Hi this is bob.Hi this is bob.Hi this is bob.");
                     data.addMBox(box);
                     show = true;
                 }
@@ -99,8 +99,6 @@ namespace AdlezHolder
                     show = false;
                     playOrder++;
                 }
-                 */
-                playOrder++;
             }
             else if (playOrder == 6)
             {
